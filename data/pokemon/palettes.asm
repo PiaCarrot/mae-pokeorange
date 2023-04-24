@@ -411,6 +411,8 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/johto/slowking/shiny.pal"
 	INCBIN "gfx/pokemon/johto/misdreavus/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/johto/misdreavus/shiny.pal"
+	INCLUDE "gfx/pokemon/johto/unown/normal.pal" ; not front.gbcpal
+	INCLUDE "gfx/pokemon/johto/unown/shiny.pal"
 	INCBIN "gfx/pokemon/johto/wobbuffet/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/johto/wobbuffet/shiny.pal"
 	INCBIN "gfx/pokemon/johto/girafarig/front.gbcpal", middle_colors
@@ -691,5 +693,3 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/sinnoh/manaphy/shiny.pal"
 	INCBIN "gfx/pokemon/other/sylveon/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/other/sylveon/shiny.pal"
-	INCLUDE "gfx/pokemon/johto/unown/normal.pal" ; not front.gbcpal
-	INCLUDE "gfx/pokemon/johto/unown/shiny.pal"
