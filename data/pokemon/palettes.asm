@@ -535,6 +535,12 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/hoenn/hariyama/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/azurill/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/hoenn/azurill/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/aron/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/aron/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/lairon/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/lairon/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/aggron/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/aggron/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/carvanha/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/hoenn/carvanha/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/sharpedo/front.gbcpal", middle_colors

@@ -366,6 +366,7 @@ AlphabeticalPokedexOrder:
 	dw TYRANITAR
 	dw TYROGUE
 	dw UMBREON
+	dw UNOWN
 ;	dw URSALUNA
 	dw URSARING
 	dw VAPOREON
@@ -402,5 +403,4 @@ AlphabeticalPokedexOrder:
 ;	dw ZOROARK
 ;	dw ZORUA
 	dw ZUBAT
-	dw UNOWN
 	assert_table_length NUM_POKEMON

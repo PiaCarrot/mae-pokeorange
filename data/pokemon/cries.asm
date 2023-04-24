@@ -195,6 +195,7 @@ PokemonCries::
 	mon_cry CRY_MARILL,     -$01f,  $180 ; MURKROW
 	mon_cry CRY_SLOWKING,    $104,  $200 ; SLOWKING
 	mon_cry CRY_HOOTHOOT,    $130,  $0e8 ; MISDREAVUS
+	mon_cry CRY_HOOTHOOT,    $162,  $100 ; UNOWN
 	mon_cry CRY_AMPHAROS,    $27b,  $144 ; WOBBUFFET
 	mon_cry CRY_GIRAFARIG,   $041,  $200 ; GIRAFARIG
 	mon_cry CRY_SLOWKING,    $080,  $100 ; PINECO
@@ -341,5 +342,4 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MANAPHY
 ;Secret
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SYLVEON
-	mon_cry CRY_HOOTHOOT,    $162,  $100 ; UNOWN
 	assert_table_length NUM_POKEMON

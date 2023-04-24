@@ -190,6 +190,7 @@ PokedexDataPointerTable:
 	dba MurkrowPokedexEntry
 	dba SlowkingPokedexEntry
 	dba MisdreavusPokedexEntry
+	dba UnownPokedexEntry
 	dba WobbuffetPokedexEntry
 	dba GirafarigPokedexEntry
 	dba PinecoPokedexEntry
@@ -342,5 +343,4 @@ PokedexDataPointerTable:
 ;	Other Dex Start Here
 ;==========================
 	dba SylveonPokedexEntry
-	dba UnownPokedexEntry
 	assert_table_length NUM_POKEMON

@@ -191,6 +191,7 @@ NewPokedexOrder:
 	dw MURKROW
 	dw SLOWKING
 	dw MISDREAVUS
+	dw UNOWN
 	dw WOBBUFFET
 	dw GIRAFARIG
 	dw PINECO
@@ -334,7 +335,6 @@ NewPokedexOrder:
 	dw PHIONE
 	dw MANAPHY
 	dw SYLVEON
-	dw UNOWN
 	; dw AEGISLASH
 	; dw ANNIHILAPE
 	; dw APPLETUN
