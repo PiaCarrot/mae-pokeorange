@@ -845,6 +845,7 @@ BattleAnim_Thunderpunch:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_LIGHTNING
 	anim_obj ANIM_OBJ_PUNCH_SHAKE, 136, 56, $43
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 0, 1, SFX_THUNDER
 	anim_obj ANIM_OBJ_THUNDER3, 152, 68, $0
 	anim_wait 64
@@ -852,6 +853,7 @@ BattleAnim_Thunderpunch:
 
 BattleAnim_Thundershock:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj ANIM_OBJ_THUNDERSHOCK_BALL, 136, 56, $2
 	anim_wait 16
 	anim_sound 0, 1, SFX_THUNDERSHOCK
@@ -861,6 +863,7 @@ BattleAnim_Thundershock:
 
 BattleAnim_Thunderbolt:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
 	anim_wait 16
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
@@ -873,17 +876,19 @@ BattleAnim_Thunderbolt:
 
 BattleAnim_ThunderWave:
 	anim_1gfx ANIM_GFX_LIGHTNING
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj ANIM_OBJ_THUNDER_WAVE, 136, 56, $0
 	anim_wait 20
 	anim_bgp $1b
-	anim_incobj 1
+	anim_incobj  1
 	anim_wait 96
 	anim_ret
 
 BattleAnim_Thunder:
 	anim_1gfx ANIM_GFX_LIGHTNING
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20
 	anim_sound 0, 1, SFX_THUNDER
 	anim_obj ANIM_OBJ_THUNDER2, 120, 68, $0
@@ -3155,6 +3160,7 @@ BattleAnim_ZapCannon:
 	anim_sound 6, 2, SFX_ZAP_CANNON
 	anim_obj ANIM_OBJ_ZAP_CANNON, 64, 92, $2
 	anim_wait 40
+	anim_obp0 $0
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
 	anim_wait 16
@@ -3426,19 +3432,22 @@ BattleAnim_MilkDrink:
 
 BattleAnim_Spark:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 0, 0, SFX_ZAP_CANNON
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
 	anim_wait 24
 	anim_setobj $1, $3
 	anim_wait 1
-	anim_call BattleAnim_TargetObj_1Row
+	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
 	anim_sound 0, 0, SFX_SPARK
 	anim_wait 16
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_wait 4
-	anim_incobj 2
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 1
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
