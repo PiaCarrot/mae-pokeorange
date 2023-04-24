@@ -193,6 +193,7 @@ PokemonNames::
 	db "MURKROW@@@"
 	db "SLOWKING@@"
 	db "MISDREAVUS"
+	db "UNOWN@@@@@"
 	db "WOBBUFFET@"
 	db "GIRAFARIG@"
 	db "PINECO@@@@"
@@ -339,5 +340,4 @@ PokemonNames::
 	db "MANAPHY@@@"
 ;SECRET
 	db "SYLVEON@@@"
-	db "UNOWN@@@@@"
 	assert_table_length NUM_POKEMON

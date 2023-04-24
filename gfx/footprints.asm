@@ -187,6 +187,7 @@ INCBIN "gfx/footprints/umbreon.1bpp"
 INCBIN "gfx/footprints/murkrow.1bpp"
 INCBIN "gfx/footprints/slowking.1bpp"
 INCBIN "gfx/footprints/misdreavus.1bpp"
+INCBIN "gfx/footprints/unown.1bpp"
 INCBIN "gfx/footprints/wobbuffet.1bpp"
 INCBIN "gfx/footprints/girafarig.1bpp"
 INCBIN "gfx/footprints/pineco.1bpp"
@@ -338,4 +339,3 @@ INCBIN "gfx/footprints/sinnoh/manaphy.1bpp"
 ;	Other Footprints Start Here
 ;===============================
 INCBIN "gfx/footprints/other/sylveon.1bpp"
-INCBIN "gfx/footprints/unown.1bpp"
