@@ -239,9 +239,9 @@ BattleAnim_FakeOut:
 BattleAnim_Uproar:
 	anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_NOISE
 	anim_sound 6, 2, SFX_SNORE
-	anim_obj ANIM_OBJ_UPROAR_NOTE, 32, 84, $28
-	anim_obj ANIM_OBJ_UPROAR_NOTE, 48, 76, $30
-	anim_obj ANIM_OBJ_UPROAR_NOTE, 64, 84, $38
+	anim_obj ANIM_OBJ_UPROAR, 32, 84, $28
+	anim_obj ANIM_OBJ_UPROAR, 48, 76, $30
+	anim_obj ANIM_OBJ_UPROAR, 64, 84, $38
 	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
 	anim_wait 32
 	anim_sound 6, 2, SFX_SNORE
