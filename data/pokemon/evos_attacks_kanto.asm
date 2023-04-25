@@ -484,7 +484,9 @@ ArbokEvosAttacks:
 PikachuEvosAttacks:
 	dbbw EVOLVE_ITEM, THUNDERSTONE, RAICHU
 	db 0 ; no more evolutions
-	dbw 6, UPROAR
+	dbw 1, THUNDERSHOCK
+	dbw 1, GROWL
+	dbw 6, TAIL_WHIP
 	dbw 8, THUNDER_WAVE
 	dbw 11, QUICK_ATTACK
 	dbw 15, DOUBLE_TEAM
