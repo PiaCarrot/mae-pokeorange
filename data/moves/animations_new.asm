@@ -237,13 +237,22 @@ BattleAnim_FakeOut:
 	anim_ret
 
 BattleAnim_Uproar:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_POUND
-	anim_obj ANIM_OBJ_PALM, 136, 56, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
+	anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_NOISE
+	anim_sound 6, 2, SFX_SNORE
+	anim_obj ANIM_OBJ_UPROAR_NOTE, 32, 84, $28
+	anim_obj ANIM_OBJ_UPROAR_NOTE, 48, 76, $30
+	anim_obj ANIM_OBJ_UPROAR_NOTE, 64, 84, $38
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 32
+	anim_sound 6, 2, SFX_SNORE
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 32
+	anim_sound 6, 2, SFX_SNORE
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 4
+	anim_wait 32
 	anim_ret
+
 
 BattleAnim_Stockpile:
 	anim_1gfx ANIM_GFX_HIT
@@ -817,12 +826,24 @@ BattleAnim_SlackOff:
 	anim_ret
 
 BattleAnim_HyperVoice:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_POUND
-	anim_obj ANIM_OBJ_PALM, 136, 56, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
+	anim_2gfx ANIM_GFX_NOISE, ANIM_GFX_PSYCHIC
+.loop
+	anim_cry $0
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj ANIM_OBJ_SOUND, 64, 100, $2
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 28
+	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj ANIM_OBJ_SOUND, 64, 100, $2
+	anim_wait 28
+	anim_loop 2, .loop
+	anim_wait 8
 	anim_ret
 
 BattleAnim_PoisonFang:
