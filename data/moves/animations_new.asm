@@ -368,9 +368,98 @@ BattleAnim_Swallow:
 	anim_ret
 
 BattleAnim_HeatWave:
+	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_FIRE
+	anim_bgp $90
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_sound 0, 0, SFX_EMBER
+.loop
+	anim_obj ANIM_OBJ_HEAT_WAVE, 88, 0, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 56, 16, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 72, 32, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 24, 48, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_HEAT_WAVE, 40, 64, $1
+	anim_loop 3, .loop
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_ret
+
 BattleAnim_Hail:
+	anim_1gfx ANIM_GFX_ICE
+	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
+.loop
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
+	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_HAIL, 56, 16, $2
+	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
+	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
+	anim_obj ANIM_OBJ_HAIL, 88, 0, $1
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
+	anim_obj ANIM_OBJ_HAIL, 56, 16, $1
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_ret
+
 BattleAnim_Torment:
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_STATUS
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_TORMENT, 64, 106, $2
+	anim_wait 32
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_TORMENT, 32, 106, $2
+	anim_wait 32
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_TORMENT, 76, 84, $2
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_TORMENT, 20, 84, $2
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_TORMENT, 64, 62, $2
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_TORMENT, 32, 62, $2
+	anim_wait 48
+	anim_clearobjs
+	anim_sound 0, 1, SFX_KINESIS_2
+	anim_obj ANIM_OBJ_ANGER, 112, 50, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_KINESIS_2
+	anim_obj ANIM_OBJ_ANGER, 148, 32, $0
+	anim_wait 32
+	anim_ret
+
+
+
 BattleAnim_Flatter:
+	anim_1gfx ANIM_GFX_FLATTER
+	anim_sound 0, 0, SFX_ENCORE
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $28
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $5c
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $10
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $e8
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $9c
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $d0
+	anim_wait 6
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $1c
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $50
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $dc
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $90
+	anim_wait 128
 	anim_ret
 
 BattleAnim_WillOWisp:
