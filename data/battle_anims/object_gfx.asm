@@ -32,7 +32,7 @@ AnimObjGFX:
 	anim_obj_gfx 18, AnimObjRopeGFX
 	anim_obj_gfx 14, AnimObjPsychicGFX
 	anim_obj_gfx 10, AnimObjReflectGFX
-	anim_obj_gfx 27, AnimObjStatusGFX
+	anim_obj_gfx 31, AnimObjStatusGFX
 	anim_obj_gfx 12, AnimObjSandGFX
 	anim_obj_gfx 14, AnimObjWebGFX
 	anim_obj_gfx 16, AnimObjHazeGFX
@@ -52,4 +52,5 @@ AnimObjGFX:
 	anim_obj_gfx 13, AnimObjTauntGFX
 	anim_obj_gfx  5, AnimObjStarsGFX
  	anim_obj_gfx 18, AnimObjMeteorGFX
+ 	anim_obj_gfx  4, AnimObjFlatterGFX
 	assert_table_length NUM_ANIM_GFX + 1
