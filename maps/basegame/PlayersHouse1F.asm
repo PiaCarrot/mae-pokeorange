@@ -1,9 +1,5 @@
 	object_const_def
 	const PLAYERSHOUSE1F_MOM1
-	const PLAYERSHOUSE1F_MOM2
-	const PLAYERSHOUSE1F_MOM3
-	const PLAYERSHOUSE1F_MOM4
-	const PLAYERSHOUSE1F_POKEFAN_F
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
@@ -36,59 +32,25 @@ MeetMomScript:
 	opentext
 	writetext ElmsLookingForYouText
 	promptbutton
+	loadmenu .AltStarterMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .AltStarterPika
+	ifequal 2, .AltStarterEevee
+.AltStarterPika
+	; setevent ALT_STARTER_PIKACHU
+.AltStarterEevee
+	; setevent ALT_STARTER_EEVEE
+	writetext MomChoseAltStarterText
+	promptbutton
+; replace with giveitem POKE_PAGER
 	getstring STRING_BUFFER_4, PokegearName
 	scall PlayersHouse1FReceiveItemStd
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	setflag ENGINE_MAP_CARD
-	addcellnum PHONE_MOM
 	setscene SCENE_PLAYERSHOUSE1F_NOOP
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
-	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	writetext MomGivesPokegearText
 	promptbutton
 	special SetDayOfWeek
-.SetDayOfWeek:
-	writetext IsItDSTText
-	yesorno
-	iffalse .WrongDay
-	special InitialSetDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
-	sjump .DayOfWeekDone
-
-.WrongDay:
-	special InitialClearDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
-.DayOfWeekDone:
-	writetext ComeHomeForDSTText
-	yesorno
-	iffalse .ExplainPhone
-	sjump .KnowPhone
-
-.KnowPhone:
-	writetext KnowTheInstructionsText
-	promptbutton
-	sjump .FinishPhone
-
-.ExplainPhone:
-	writetext DontKnowTheInstructionsText
-	promptbutton
-	sjump .FinishPhone
-
-.FinishPhone:
-	writetext InstructionsNextText
-	waitbutton
-	writetext GetStarterText
-	promptbutton
-	waitsfx
-	getmonname STRING_BUFFER_3, PIKACHU
-	writetext ReceivedStarterText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	promptbutton
-	givepoke PIKACHU, 5, BERRY
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -108,6 +70,19 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+	
+.AltStarterMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 6, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .AltStarterMenuData
+	db 1 ; default option
+
+.AltStarterMenuData:
+	db STATICMENU_CURSOR ; flags
+	db 2 ; items
+	db "PIKACHU DOLL@"
+	db "EEVEE DOLL@"
+
 
 MeetMomTalkedScript:
 	playmusic MUSIC_MOM
@@ -134,7 +109,7 @@ MomScript:
 	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .GotAPokemon
-	writetext HurryUpElmIsWaitingText
+	writetext MomDefaultText
 	waitbutton
 	closetext
 	end
@@ -160,38 +135,6 @@ MomScript:
 	closetext
 	end
 
-NeighborScript:
-	faceplayer
-	opentext
-	checktime MORN
-	iftrue .MornScript
-	checktime DAY
-	iftrue .DayScript
-	checktime NITE
-	iftrue .NiteScript
-
-.MornScript:
-	writetext NeighborMornIntroText
-	promptbutton
-	sjump .Main
-
-.DayScript:
-	writetext NeighborDayIntroText
-	promptbutton
-	sjump .Main
-
-.NiteScript:
-	writetext NeighborNiteIntroText
-	promptbutton
-	sjump .Main
-
-.Main:
-	writetext NeighborText
-	waitbutton
-	closetext
-	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
-	end
-
 PlayersHouse1FTVScript:
 	jumptext PlayersHouse1FTVText
 
@@ -205,123 +148,82 @@ PlayersHouse1FFridgeScript:
 	jumptext PlayersHouse1FFridgeText
 
 MomTurnsTowardPlayerMovement:
-	turn_head RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
 	step_end
 
 MomWalksToPlayerMovement:
 	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
 	step_end
 
 MomTurnsBackMovement:
-	turn_head LEFT
+	slow_step LEFT
+	slow_step LEFT
 	step_end
 
 MomWalksBackMovement:
 	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
 	step_end
 
 ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
+	text "MOM: Hey, kiddo!"
+	line "Today is the day"
+	cont "you go on your own"
+	cont "journey! Your mama"
+	cont "knows that you'll"
+	cont "make her proud!"
+	
+	para "… … …"
 
-	para "ELM, was looking"
-	line "for you."
-
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
-
-	para "Oh! I almost for-"
-	line "got! Your #MON"
-
-	para "GEAR is back from"
-	line "the repair shop."
-
-	para "Here you go!"
+	para "MOM: Hey, kiddo!"
+	line "I meant to ask you"
+	cont "something!"
+	cont "I want to buy a"
+	cont "new doll for your"
+	cont "room!"
+	
+	para "Which do you like"
+	line "more? PIKACHU or"
+	cont "EEVEE?"
+	done
+	
+MomChoseAltStarterText:
+	text "MOM: Good choice,"
+	line "kiddo!"
+	
+	para "Also, I wanted to"
+	line "give you this, so"
+	cont "mama can always"
+	cont "keep tabs on you!"
 	done
 
 MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
+	text "#MON PAGER, or"
+	line "just #PAGER."
 
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
+	para "It allows people"
+	line "to send messages"
+	cont "to you, though you"
+	cont "can't reply back."
 
-	para "It comes with a"
-	line "CLOCK, PHONE,"
-	cont "and TOWN MAP!"
-
-	para "Oh, the day of the"
-	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
+	para "Technology is so"
+	line "crazy! One day we"
+	cont "call eachother and"
+	cont "listen to RADIO on"
+	cont "the go, I'm sure!"
 	done
 
-IsItDSTText:
-	text "Is it Daylight"
-	line "Saving Time now?"
-	done
-
-ComeHomeForDSTText:
-	text "Come home to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time."
-
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
-	done
-
-KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
-	done
-
-DontKnowTheInstructionsText:
-	text "I'll read the"
-	line "instructions."
-
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
-	done
-
-InstructionsNextText:
-	text "Phone numbers are"
-	line "stored in memory."
-
-	para "Just choose a name"
-	line "you want to call."
-
-	para "Gee, isn't that"
-	line "convenient?"
-	done
-
-GetStarterText:
-	text "One more thing!"
-	line "Here's your first"
-	cont "#MON!"
-	done
-
-ReceivedStarterText:
-	text "<PLAYER> received"
-	line "@"
-	text_ram wStringBuffer3
-	text "!"
-	done
-
-HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
-	line "ing for you."
-
-	para "Hurry up, baby!"
+MomDefaultText:
+	text "MOM: Hey, kiddo!"
+	line "Today is the day"
+	cont "you go on your own"
+	cont "journey! Your mama"
+	cont "knows that you'll"
+	cont "make her proud!"
 	done
 
 SoWhatWasProfElmsErrandText:
@@ -345,49 +247,16 @@ ImBehindYouText:
 	line "the way!"
 	done
 
-NeighborMornIntroText:
-	text "Good morning,"
-	line "<PLAY_G>!"
-
-	para "I'm visiting!"
-	done
-
-NeighborDayIntroText:
-	text "Hello, <PLAY_G>!"
-	line "I'm visiting!"
-	done
-
-NeighborNiteIntroText:
-	text "Good evening,"
-	line "<PLAY_G>!"
-
-	para "I'm visiting!"
-	done
-
-NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
-
-	para "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
-	done
-
 PlayersHouse1FStoveText:
-	text "Mom's specialty!"
-
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
+	text "A adept arranging"
+	line "for MOTHER…"
+	
+	para "VOLCANO BAKEMEAT!"
 	done
 
 PlayersHouse1FSinkText:
 	text "The sink is spot-"
-	line "less. Mom likes it"
+	line "less. MOM likes it"
 	cont "clean."
 	done
 
@@ -395,42 +264,41 @@ PlayersHouse1FFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 
-	para "FRESH WATER and"
-	line "tasty LEMONADE!"
+	para "LEFTOVERS and a"
+	line "bottle of MOO MOO"
+	cont "MILK… Yum!"
 	done
 
 PlayersHouse1FTVText:
-	text "There's a movie on"
-	line "TV: Stars dot the"
-
-	para "sky as two boys"
-	line "ride on a train…"
-
-	para "I'd better get"
-	line "rolling too!"
+	text "There's an anime"
+	line "playing on TV:"
+	
+	para "A boy and his"
+	line "PIKACHU travel"
+	cont "through the KANTO"
+	cont "REGION…"
+	
+	para "It's time for me"
+	line "to get goin', too!"
 	done
 
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, VALENCIA_ISLAND, 1
-	warp_event  7,  7, VALENCIA_ISLAND, 1
-	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
+	warp_event  2,  7, VALENCIA_ISLAND, 1
+	warp_event  3,  7, VALENCIA_ISLAND, 1
+	warp_event 11,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events
-	coord_event  8,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
-	coord_event  9,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
+	coord_event 10,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomLeftScript
+	coord_event 11,  4, SCENE_PLAYERSHOUSE1F_MEET_MOM, MeetMomRightScript
 
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, PlayersHouse1FStoveScript
 	bg_event  1,  1, BGEVENT_READ, PlayersHouse1FSinkScript
 	bg_event  2,  1, BGEVENT_READ, PlayersHouse1FFridgeScript
-	bg_event  4,  1, BGEVENT_READ, PlayersHouse1FTVScript
+	bg_event  6,  1, BGEVENT_READ, PlayersHouse1FTVScript
 
 	def_object_events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, -1

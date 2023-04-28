@@ -13,7 +13,26 @@ ValenciaIslandFlypointCallback:
 	
 ValenciaYoungsterScript:
 	jumptextfaceplayer ValenciaYoungsterText
-	
+	; opentext
+	; setflag ENGINE_POKEDEX
+	; callasm CheatFillPokedex
+	; closetext
+	; end
+
+; CheatFillPokedex:
+	; ld a, 1
+	; ld [wFirstUnownSeen], a
+	; ld hl, wPokedexSeen
+	; call .Fill
+	; ld hl, wPokedexCaught
+; .Fill:
+	; ld a, %11111111
+	; ld bc, 62 ; 001-248
+	; call ByteFill
+	; ld a, %11111111
+	; ld bc, 31 ; 249-496
+	; ret
+
 ValenciaTechnologyGuyScript:
 	jumptextfaceplayer ValenciaTechnologyGuyText	
 	
@@ -55,11 +74,11 @@ ValenciaLassScript:
 	jumptextfaceplayer ValenciaLassText
 	
 ValenciaLassText:
-	text "Uwaah! <PLAYER>!"
-	line "You ever heard of"
-	cont "the #MON called"
-	cont "DUD<COLON>SPARCE? I hear"
-	cont "it's super-rare!"
+	text "Splish! <PLAYER>!"
+	line "I love the sound"
+	cont "the water makes"
+	cont "when I SPLASH in"
+	cont "the puddles!"
 	done
 
 ValenciaIsland_MapEvents:
@@ -75,9 +94,9 @@ ValenciaIsland_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 11,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1
+	object_event 13,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1
 	object_event 16, 18, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ValenciaTechnologyGuyScript, -1
-	object_event  4,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1
-	object_event 39, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaLassScript, -1
+	object_event  5,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1
+	object_event 32,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaLassScript, -1
 	object_event 38, 38, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ;some flag for going on a walk
 	object_event 30, 37, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ;dratini appear flag
