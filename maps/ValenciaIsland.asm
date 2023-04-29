@@ -13,6 +13,14 @@ ValenciaIslandFlypointCallback:
 	
 ValenciaYoungsterScript:
 ;	jumptextfaceplayer ValenciaYoungsterText
+;	setflag ENGINE_POKEDEX
+;	callasm CheatFillPokedex
+	loadwildmon PIKACHU, 5
+	catchtutorial BATTLETYPE_TUTORIAL
+	end
+
+
+PhoneCallScript: ;currently unused
 	pause 10
 	playsound SFX_CALL
 	waitsfx
@@ -22,8 +30,6 @@ ValenciaYoungsterScript:
 	opentext
 	writetext PhoneCallTest1
 	waitsfx
-;	setflag ENGINE_POKEDEX
-;	callasm CheatFillPokedex
 	promptbutton
 	writetext PhoneCallTest2
 	promptbutton
@@ -132,5 +138,5 @@ ValenciaIsland_MapEvents:
 	object_event 16, 18, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ValenciaTechnologyGuyScript, -1
 	object_event  5,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1
 	object_event 32,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaLassScript, -1
-	object_event 38, 38, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ;some flag for going on a walk
-	object_event 30, 37, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ;dratini appear flag
+	object_event 38, 38, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRATINI_VALENCIA_IVY
+	object_event 30, 37, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRATINI_VALENCIA_APPEAR
