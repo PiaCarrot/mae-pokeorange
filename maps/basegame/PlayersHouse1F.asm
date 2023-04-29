@@ -38,9 +38,11 @@ MeetMomScript:
 	ifequal 1, .AltStarterPika
 	ifequal 2, .AltStarterEevee
 .AltStarterPika
-	; setevent ALT_STARTER_PIKACHU
+	setevent EVENT_GOT_PIKACHU_FROM_IVY
+	sjump .Continue
 .AltStarterEevee
-	; setevent ALT_STARTER_EEVEE
+	setevent EVENT_GOT_EEVEE_FROM_IVY
+.Continue
 	writetext MomChoseAltStarterText
 	promptbutton
 ; replace with giveitem POKE_PAGER
@@ -101,13 +103,19 @@ MomScript:
 	checkscene
 	iffalse MeetMomTalkedScript ; SCENE_PLAYERSHOUSE1F_MEET_MOM
 	opentext
-	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-	iftrue .FirstTimeBanking
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .BankOfMom
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .GaveMysteryEgg
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_MOM_DEFEATED
+	iftrue .DefeatedMom
+	checkevent EVENT_DRAKE_DEFEATED
+	iftrue .BecameChampion
+	checkevent EVENT_LUANA_DEFEATED
+	iftrue .GotFourthBadge
+	checkevent EVENT_RUDY_DEFEATED
+	iftrue .GotThirdBadge
+	checkevent EVENT_DANNY_DEFEATED
+	iftrue .GotSecondBadge
+	checkevent EVENT_CISSY_DEFEATED
+	iftrue .GotFirstBadge
+	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iftrue .GotAPokemon
 	writetext MomDefaultText
 	waitbutton
@@ -115,22 +123,43 @@ MomScript:
 	end
 
 .GotAPokemon:
-	writetext SoWhatWasProfElmsErrandText
+	writetext MomGotStarterText
 	waitbutton
 	closetext
 	end
 
-.FirstTimeBanking:
-	writetext ImBehindYouText
+.GotFirstBadge:
+	writetext MomFirstBadgeText
 	waitbutton
 	closetext
 	end
 
-.GaveMysteryEgg:
-	setevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-.BankOfMom:
-	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	special BankOfMom
+.GotSecondBadge:
+	writetext MomSecondBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotThirdBadge:
+	writetext MomThirdBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotFourthBadge:
+	writetext MomFourthBadgeText
+	waitbutton
+	closetext
+	end
+
+.BecameChampion:
+	writetext MomBecameChampionText
+	waitbutton
+	closetext
+	end
+
+.DefeatedMom:
+	writetext DefeatedMomText
 	waitbutton
 	closetext
 	end
@@ -146,6 +175,21 @@ PlayersHouse1FSinkScript:
 
 PlayersHouse1FFridgeScript:
 	jumptext PlayersHouse1FFridgeText
+
+RotomOvenScript:
+	end
+
+RotomWashScript:
+	end
+
+RotomFrostScript:
+	end
+
+RotomFanScript:
+	end
+
+RotomMowScript:
+	end
 
 MomTurnsTowardPlayerMovement:
 	slow_step RIGHT
@@ -182,7 +226,7 @@ ElmsLookingForYouText:
 	para "MOM: Hey, kiddo!"
 	line "I meant to ask you"
 	cont "something!"
-	cont "I want to buy a"
+	cont "LORI is bringing a"
 	cont "new doll for your"
 	cont "room!"
 	
@@ -203,7 +247,7 @@ MomChoseAltStarterText:
 
 MomGivesPokegearText:
 	text "#MON PAGER, or"
-	line "just #PAGER."
+	line "just #PAGE."
 
 	para "It allows people"
 	line "to send messages"
@@ -226,25 +270,100 @@ MomDefaultText:
 	cont "make her proud!"
 	done
 
-SoWhatWasProfElmsErrandText:
-	text "So, what was PROF."
-	line "ELM's errand?"
-
-	para "…"
-
-	para "That does sound"
-	line "challenging."
-
-	para "But, you should be"
-	line "proud that people"
-	cont "rely on you."
+MomGotStarterText:
+	text "MOM: Hey, kiddo!"
+	line "So you got your"
+	cont "first POKéMON!"
+	cont "Stay safe on your"
+	cont "travels, I'll be"
+	cont "rooting for you!"
 	done
 
-ImBehindYouText:
-	text "<PLAYER>, do it!"
+MomFirstBadgeText:
+	text "MOM: Hey, kiddo!"
+	line "So you got your"
+	cont "first badge, huh!"
+	cont "CORAL-EYE BADGE"
+	cont "is so pretty!"
+	cont "Keep up the good"
+	cont "work, baby!"
+	done
 
-	para "I'm behind you all"
-	line "the way!"
+MomSecondBadgeText:
+	text "MOM: Hey, kiddo!"
+	line "So you got your"
+	cont "second badge, huh!"
+	cont "SEA RUBY…"
+	cont "How did you like"
+	cont "the snow?"
+	done
+
+MomThirdBadgeText:
+	text "MOM: Hey, kiddo!"
+	line "So you got your"
+	cont "third badge, huh!"
+	cont "SPIKE SHELL…"
+	cont "I heard from LORI,"
+	cont "but you must be"
+	cont "getting strong!"
+	done
+
+MomFourthBadgeText:
+	text "MOM: Hey, kiddo!"
+	line "So you got your"
+	cont "fourth badge, huh!"
+	cont "JADE STAR!"
+	cont "So you beat LUANA,"
+	cont "hmm? What did you"
+	cont "think of her?"
+	done
+
+MomBecameChampionText:
+	text "MOM: Hey, kiddo!"
+	line "I'm so proud of"
+	cont "you!"
+	cont "I think it's time"
+	cont "I told you a bit"
+	cont "about myself."
+
+	para "When I was your"
+	line "age, I took on the"
+	cont "ORANGE CREW."
+
+	para "I was a real good"
+	line "TRAINER too!"
+
+	para "At the time, I too"
+	line "became CHAMPION."
+
+	para "I met your father,"
+	line "and eventually we"
+	cont "had you…"
+
+	para "I retired, but I"
+	line "don't regret it"
+	cont "one bit! I'm so"
+	cont "happy I could see"
+	cont "my baby follow in"
+	cont "my footsteps. But,"
+	cont "I want you to go"
+	cont "even further."
+
+	para "Meet me on ROUTE"
+	line "49, on the beach!"
+	cont "Let's see just how"
+	cont "strong you've"
+	cont "become!"
+	done
+	
+DefeatedMomText:
+	text "MOM: It's not for"
+	line "me to say, but"
+	cont "that LOCKET is one"
+	cont "of a pair. I think"
+	cont "there's plenty of"
+	cont "adventure for you"
+	cont "yet, baby!"
 	done
 
 PlayersHouse1FStoveText:
@@ -270,13 +389,12 @@ PlayersHouse1FFridgeText:
 	done
 
 PlayersHouse1FTVText:
-	text "There's an anime"
+	text "There's a cartoon"
 	line "playing on TV:"
 	
-	para "A boy and his"
-	line "PIKACHU travel"
-	cont "through the KANTO"
-	cont "REGION…"
+	para "Two kids ride a"
+	line "raft around some"
+	cont "tropical islands."
 	
 	para "It's time for me"
 	line "to get goin', too!"
@@ -302,3 +420,8 @@ PlayersHouse1F_MapEvents:
 
 	def_object_events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, -1
+	object_event  8,  1, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomOvenScript, EVENT_ROTOM_OVEN_PURCHASED
+	object_event  4,  1, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomWashScript, EVENT_ROTOM_WASH_PURCHASED
+	object_event  2,  1, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomFrostScript, EVENT_ROTOM_FROST_PURCHASED
+	object_event  6,  4, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomFanScript, EVENT_ROTOM_FAN_PURCHASED
+	object_event  3,  4, SPRITE_MOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RotomMowScript, EVENT_ROTOM_MOW_PURCHASED

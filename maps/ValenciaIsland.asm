@@ -12,12 +12,46 @@ ValenciaIslandFlypointCallback:
 	endcallback
 	
 ValenciaYoungsterScript:
-	jumptextfaceplayer ValenciaYoungsterText
-	; opentext
-	; setflag ENGINE_POKEDEX
-	; callasm CheatFillPokedex
-	; closetext
-	; end
+;	jumptextfaceplayer ValenciaYoungsterText
+	pause 10
+	playsound SFX_CALL
+	waitsfx
+	pause 10
+	playsound SFX_CALL
+	waitsfx
+	opentext
+	writetext PhoneCallTest1
+	waitsfx
+;	setflag ENGINE_POKEDEX
+;	callasm CheatFillPokedex
+	promptbutton
+	writetext PhoneCallTest2
+	promptbutton
+	closetext
+	checkevent EVENT_GOT_PIKACHU_FROM_IVY
+	iftrue .GetPikachuDoll
+	setevent EVENT_DECO_EEVEE_DOLL
+	sjump .Continue
+.GetPikachuDoll
+	setevent EVENT_DECO_PIKACHU_DOLL
+.Continue
+	setevent EVENT_DECO_BIG_LAPRAS_DOLL
+	end
+	
+PhoneCallTest1:
+	text "… … …"
+	line "A new message!"
+	done
+	
+PhoneCallTest2:
+	text "MOM: Hey kiddo!"
+	line "LORI dropped your"
+	cont "new DOLL off!"
+	cont "She also got you"
+	cont "something extra!"
+	cont "Check your PC when"
+	cont "you get home."
+	done
 
 ; CheatFillPokedex:
 	; ld a, 1

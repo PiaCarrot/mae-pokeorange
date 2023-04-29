@@ -52,7 +52,7 @@ DecorationAttributes:
 	decoration DECO_DOLL,    7,               SET_UP_DOLL,       EVENT_DECO_ODDISH_DOLL,             SPRITE_ODDISH
 	decoration DECO_DOLL,    15,              SET_UP_DOLL,       EVENT_DECO_GENGAR_DOLL,             SPRITE_GENGAR
 	decoration DECO_DOLL,    14,              SET_UP_DOLL,       EVENT_DECO_SHELLDER_DOLL,           SPRITE_SHELLDER
-	decoration DECO_DOLL,    13,              SET_UP_DOLL,       EVENT_DECO_GRIMER_DOLL,             SPRITE_GRIMER
+	decoration DECO_DOLL,    13,              SET_UP_DOLL,       EVENT_DECO_EEVEE_DOLL,              SPRITE_EEVEE
 	decoration DECO_DOLL,    17,              SET_UP_DOLL,       EVENT_DECO_VOLTORB_DOLL,            SPRITE_VOLTORB
 	decoration DECO_DOLL,    3,               SET_UP_DOLL,       EVENT_DECO_WEEDLE_DOLL,             SPRITE_WEEDLE
 	decoration DECO_DOLL,    22,              SET_UP_DOLL,       EVENT_DECO_UNOWN_DOLL,              SPRITE_UNOWN
@@ -77,7 +77,7 @@ DecorationAttributePokemonNames:
 	dw MACHOP     ; 10
 	dw TENTACOOL  ; 11
 	dw GEODUDE    ; 12
-	dw GRIMER     ; 13
+	dw EEVEE      ; 13
 	dw SHELLDER   ; 14
 	dw GENGAR     ; 15
 	dw ONIX       ; 16

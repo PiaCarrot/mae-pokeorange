@@ -127,7 +127,7 @@ ENDM
 	deco  ODDISH_DOLL
 	deco  GENGAR_DOLL
 	deco  SHELLDER_DOLL
-	deco  GRIMER_DOLL
+	deco  EEVEE_DOLL
 	deco  VOLTORB_DOLL
 	deco  WEEDLE_DOLL
 	deco  UNOWN_DOLL

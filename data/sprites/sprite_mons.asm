@@ -22,7 +22,7 @@ SpriteMons:
 	dw STARMIE
 	dw BULBASAUR
 	dw JIGGLYPUFF
-	dw GRIMER
+	dw EEVEE
 	dw EKANS
 	dw PARAS
 	dw TENTACOOL
