@@ -131,6 +131,8 @@
 	const MUSIC_VALENCIA_TOWN
 	const MUSIC_LOOKER
 	const MUSIC_ROUTE_24_GBS
+	const MUSIC_RIDING_LAPRAS
+	const MUSIC_ORANGEWILD
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)

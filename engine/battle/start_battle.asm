@@ -58,11 +58,11 @@ PlayBattleMusic:
 	and a
 	jr nz, .kantowild
 
-	ld de, MUSIC_JOHTO_WILD_BATTLE
+	ld de, MUSIC_ORANGEWILD
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jr nz, .done
-	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
+	ld de, MUSIC_ORANGEWILD
 	jr .done
 
 .kantowild

@@ -15,8 +15,11 @@ ValenciaYoungsterScript:
 ;	jumptextfaceplayer ValenciaYoungsterText
 ;	setflag ENGINE_POKEDEX
 ;	callasm CheatFillPokedex
+	opentext
+	givepoke PIKACHU, 5
 	loadwildmon PIKACHU, 5
 	catchtutorial BATTLETYPE_TUTORIAL
+	closetext
 	end
 
 

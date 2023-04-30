@@ -686,6 +686,9 @@ GetPlayerOrMonPalettePointer:
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .male
+    ld a, [wBattleType]
+    cp BATTLETYPE_TUTORIAL
+    jr z, .ivy
 	ld a, [wPlayerGender]
 	and a
 	jr z, .male
@@ -695,7 +698,11 @@ GetPlayerOrMonPalettePointer:
 .male
 	ld hl, PlayerPalette
 	ret
-
+	
+.ivy
+	ld hl, PokemonProfPalette
+	ret
+	
 GetFrontpicPalettePointer:
 	and a
 	jp nz, GetMonNormalOrShinyPalettePointer

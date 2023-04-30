@@ -178,6 +178,10 @@ SECTION "Songs TriteHexagon", ROMX
 
 INCLUDE "audio/music/orange/route24gbs.asm"
 
+SECTION "Songs Mmmm", ROMX
+
+INCLUDE "audio/music/orange/ridinglapras.asm"
+
 SECTION "Sound Effects", ROMX
 
 INCLUDE "audio/sfx.asm"
