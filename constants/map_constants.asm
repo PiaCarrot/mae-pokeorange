@@ -55,6 +55,7 @@ ENDM
 	map_const PLAYERS_HOUSE_1F,                             6,  4 ;  2
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  3
 	map_const VALENCIA_ISLAND,                             24, 24 ;  3
+	map_const IVYS_LAB,									    8,  5
 	endgroup
 
 	newgroup INDIGO                                               ;  4

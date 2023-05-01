@@ -13,6 +13,7 @@
 	const TILESET_BATTLE_TOWER_INSIDE  ; 16
 	const TILESET_ICE_PATH             ; 1d
 	const TILESET_VALENCIA_MANDARIN_NORTH
+	const TILESET_LAB
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

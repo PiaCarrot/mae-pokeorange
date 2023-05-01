@@ -174,13 +174,12 @@ INCLUDE "audio/music/orange/lugiassong.asm"
 INCLUDE "audio/music/orange/orangegymbattle.asm"
 INCLUDE "audio/music/orange/orangetrainerbattle.asm"
 
-SECTION "Songs TriteHexagon", ROMX
+SECTION "Songs Other", ROMX
+INCLUDE "audio/music/orange/ridinglapras.asm" ;mmmm
+INCLUDE "audio/music/orange/route24gbs.asm"   ;TriteHexagon
 
-INCLUDE "audio/music/orange/route24gbs.asm"
 
-SECTION "Songs Mmmm", ROMX
 
-INCLUDE "audio/music/orange/ridinglapras.asm"
 
 SECTION "Sound Effects", ROMX
 

@@ -27,4 +27,5 @@ Tilesets::
 	tileset TilesetBattleTowerInside
 	tileset TilesetIcePath
 	tileset TilesetValenciaMandarinNorth
+	tileset TilesetLab
 	assert_table_length NUM_TILESETS + 1

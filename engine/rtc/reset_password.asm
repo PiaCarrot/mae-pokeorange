@@ -4,7 +4,7 @@ _ResetClock:
 	call GetSGBLayout
 	call LoadStandardFont
 	call LoadFontsExtra
-	ld de, MUSIC_MAIN_MENU
+	ld de, MUSIC_RIDING_LAPRAS
 	call PlayMusic
 	ld hl, .PasswordAskResetClockText
 	call PrintText

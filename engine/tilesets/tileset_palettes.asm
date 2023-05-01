@@ -6,6 +6,8 @@ LoadSpecialMapPalette:
 	jr z, .battle_tower_inside
 	cp TILESET_ICE_PATH
 	jr z, .ice_path
+	cp TILESET_LAB
+	jr z, .lab
 	jr .do_nothing
 
 .pokecom_2f
@@ -24,6 +26,11 @@ LoadSpecialMapPalette:
 	cp INDOOR ; Hall of Fame
 	jr z, .do_nothing
 	call LoadIcePathPalette
+	scf
+	ret
+	
+.lab
+	call LoadLabPalette
 	scf
 	ret
 
@@ -63,3 +70,14 @@ LoadIcePathPalette:
 
 IcePathPalette:
 INCLUDE "gfx/tilesets/ice_path.pal"
+
+LoadLabPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, LabPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+LabPalette:
+INCLUDE "gfx/tilesets/lab.pal"

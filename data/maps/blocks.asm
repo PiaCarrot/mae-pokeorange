@@ -63,3 +63,6 @@ HallOfFame_Blocks:
 	
 ValenciaIsland_Blocks:
 	INCBIN "maps/ValenciaIsland.blk"
+	
+IvysLab_Blocks:
+	INCBIN "maps/IvysLab.blk"

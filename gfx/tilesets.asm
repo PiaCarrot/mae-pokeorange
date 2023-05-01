@@ -143,3 +143,12 @@ TilesetValenciaMandarinNorthColl::
 INCLUDE "data/tilesets/valencia_mandarin_north_collision.asm"
 
 SECTION "Tileset Data 8", ROMX
+
+TilesetLabGFX::
+INCBIN "gfx/tilesets/lab.2bpp.lz"
+
+TilesetLabMeta::
+INCBIN "data/tilesets/lab_metatiles.bin"
+
+TilesetLabColl::
+INCLUDE "data/tilesets/lab_collision.asm"
