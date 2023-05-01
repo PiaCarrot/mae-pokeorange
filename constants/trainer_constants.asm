@@ -27,7 +27,6 @@ DEF CHRIS EQU __trainer_class__
 	const PHONECONTACT_BUENA
 DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
-DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 
@@ -228,4 +227,5 @@ DEF KRIS EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 
+DEF KRIS EQU __trainer_class__
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

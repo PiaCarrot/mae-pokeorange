@@ -297,7 +297,7 @@ Pokecenter2F_CheckGender:
 	closetext
 	playsound SFX_TINGLE
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_RED << 4)
+	setval (PAL_NPC_PURPLE << 4)
 	special SetPlayerPalette
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
 	setflag ENGINE_KRIS_IN_CABLE_CLUB
@@ -324,7 +324,7 @@ Script_WalkOutOfLinkTradeRoom:
 	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	playsound SFX_TINGLE
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_BLUE << 4)
+	setval (PAL_NPC_RED << 4)
 	special SetPlayerPalette
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
 	special UpdatePlayerSprite
@@ -346,7 +346,7 @@ Script_WalkOutOfLinkBattleRoom:
 	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	playsound SFX_TINGLE
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_BLUE << 4)
+	setval (PAL_NPC_RED << 4)
 	special SetPlayerPalette
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
 	special UpdatePlayerSprite
@@ -405,7 +405,7 @@ TimeCapsuleScript_CheckPlayerGender:
 	closetext
 	playsound SFX_TINGLE
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_RED << 4)
+	setval (PAL_NPC_PURPLE << 4)
 	special SetPlayerPalette
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingDown
 	faceobject PLAYER, POKECENTER2F_TIME_CAPSULE_RECEPTIONIST
@@ -434,7 +434,7 @@ Script_LeftTimeCapsule:
 	clearflag ENGINE_KRIS_IN_CABLE_CLUB
 	playsound SFX_TINGLE
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingRight
-	setval (PAL_NPC_BLUE << 4)
+	setval (PAL_NPC_RED << 4)
 	special SetPlayerPalette
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerSpinsClockwiseEndsFacingLeft
 	special UpdatePlayerSprite
@@ -827,7 +827,7 @@ Pokecenter2F_MapEvents:
 	bg_event  7,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
 
 	def_object_events
-	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
-	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
-	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
+	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
+	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
+	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
 	object_event  1,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY
