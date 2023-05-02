@@ -3014,6 +3014,7 @@ wBattleTowerBattleRoomSceneID::     db
 wBattleTowerElevatorSceneID::       db
 wBattleTowerHallwaySceneID::        db
 wPlayersHouse1FSceneID::            db
+wIvysLabSceneID::                   db
 wIndigoPlateauPokecenter1FSceneID:: db
 wWillsRoomSceneID::                 db
 wKogasRoomSceneID::                 db

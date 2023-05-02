@@ -1040,9 +1040,9 @@
 ; The map script command macros `disappear` and `appear` set/clear these flags and immediately apply the effect on visibility.
 ; The map script command macros `setevent` and `clearevent` set/clear these flags, and their effects will be seen when the map is reloaded.
 ; Johto itemballs
-	const EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	const EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-	const EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	const EVENT_CHARMANDER_POKEBALL_IN_IVYS_LAB
+	const EVENT_SQUIRTLE_POKEBALL_IN_IVYS_LAB
+	const EVENT_BULBASAUR_POKEBALL_IN_IVYS_LAB
 	const EVENT_VIOLET_CITY_PP_UP
 	const EVENT_VIOLET_CITY_RARE_CANDY
 	const EVENT_LAKE_OF_RAGE_ELIXER

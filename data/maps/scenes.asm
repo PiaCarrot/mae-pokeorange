@@ -16,6 +16,7 @@ MapScenes::
 	scene_var BATTLE_TOWER_BATTLE_ROOM,     wBattleTowerBattleRoomSceneID
 
 	scene_var PLAYERS_HOUSE_1F,             wPlayersHouse1FSceneID
+	scene_var IVYS_LAB,                     wIvysLabSceneID
 
 	scene_var INDIGO_PLATEAU_POKECENTER_1F, wIndigoPlateauPokecenter1FSceneID
 	scene_var WILLS_ROOM,                   wWillsRoomSceneID
