@@ -23,6 +23,6 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 16
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 17
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 18
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; 19
+	tilecoll WALL, WALL, WALL, WALL ; 19
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 1a
-	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; 1b
+	tilecoll WALL, WALL, WALL, WALL ; 1b
