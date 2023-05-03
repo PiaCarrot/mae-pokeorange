@@ -64,6 +64,7 @@ IvysLab_MapScripts:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_IVY
+	setevent EVENT_MET_CROSS_ON_VALENCIA
 	setscene SCENE_IVYSLAB_NOOP
 	end
 	
@@ -82,9 +83,6 @@ LabTryToLeaveScript:
 	closetext
 	setmapscene VALENCIA_ISLAND, SCENE_VALENCIA_ISLAND_ALT_STARTER
 	clearevent EVENT_ALT_STARTER_VALENCIA_IVY
-	checkevent EVENT_MEET_SECRET_STARTER_REQS
-	iftrue .ClearDratiniFlag
-.Continue
 	applymovement ELMSLAB_ELM, ASIvysLabIvyMovement1
 	turnobject ELMSLAB_ELM, UP
 	turnobject PLAYER, DOWN
@@ -102,10 +100,6 @@ LabTryToLeaveScript:
 	warp VALENCIA_ISLAND, 29, 13
 	end
 	
-.ClearDratiniFlag
-	clearevent EVENT_DRATINI_VALENCIA_APPEAR
-	sjump .Continue
-	
 LabTryToLeaveScript3:
 	turnobject ELMSLAB_ELM, LEFT
 	turnobject PLAYER, RIGHT
@@ -121,9 +115,6 @@ LabTryToLeaveScript3:
 	closetext
 	setmapscene VALENCIA_ISLAND, SCENE_VALENCIA_ISLAND_ALT_STARTER
 	clearevent EVENT_ALT_STARTER_VALENCIA_IVY
-	checkevent EVENT_MEET_SECRET_STARTER_REQS
-	iftrue .ClearDratiniFlag
-.Continue
 	applymovement ELMSLAB_ELM, ASIvysLabIvyMovement3
 	turnobject ELMSLAB_ELM, RIGHT
 	turnobject PLAYER, LEFT
@@ -140,10 +131,7 @@ LabTryToLeaveScript3:
 	waitsfx
 	warp VALENCIA_ISLAND, 29, 13
 	end
-	
-.ClearDratiniFlag
-	clearevent EVENT_DRATINI_VALENCIA_APPEAR
-	sjump .Continue
+
 
 LabTryToLeaveScript2:
 	turnobject ELMSLAB_ELM, DOWN
@@ -281,6 +269,7 @@ ElmDirectionsScript:
 	writetext IvyAfterGettingStarterText2
 	waitbutton
 	closetext
+	setevent EVENT_MET_CROSS_ON_VALENCIA
 	setevent EVENT_GOT_A_POKEMON_FROM_IVY
 	setscene SCENE_IVYSLAB_NOOP
 	end

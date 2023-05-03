@@ -5,6 +5,7 @@
 	const VALENCIA_ISLAND_LASS
 	const VALENCIA_ISLAND_IVY
 	const VALENCIA_ISLAND_DRATINI
+	const VALENCIA_ISLAND_CROSS
 
 ValenciaIsland_MapScripts:
 	def_scene_scripts
@@ -63,6 +64,7 @@ ValenciaIsland_MapScripts:
 	writetext ASIvyScriptText5
 	checkevent EVENT_GOT_PIKACHU_FROM_IVY
 	iftrue .ASPikachuScript
+	setevent EVENT_GOT_EEVEE_FROM_IVY
 	givepoke EEVEE, 5
 	cry EEVEE
 	loadwildmon EEVEE, 5
@@ -94,6 +96,7 @@ ValenciaIsland_MapScripts:
 	end
 	
 .ASPikachuScript
+	setevent EVENT_GOT_PIKACHU_FROM_IVY
 	givepoke PIKACHU, 5
 	cry PIKACHU
 	loadwildmon PIKACHU, 5
@@ -109,6 +112,64 @@ ValenciaIsland_MapScripts:
 	sjump .ContinueASPikaOrEevee2
 
 .DratiniScript:
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement6
+	stopfollow
+	special RestartMapMusic
+	turnobject VALENCIA_ISLAND_IVY, DOWN
+	turnobject PLAYER, DOWN
+	opentext
+	writetext ASIvyScriptText9
+	waitbutton
+	closetext
+	cry DRATINI
+	waitsfx
+	showemote EMOTE_SHOCK, PLAYER, 15
+	showemote EMOTE_SHOCK, VALENCIA_ISLAND_IVY, 15
+	opentext
+	writetext ASIvyScriptText10
+	waitbutton
+	closetext
+	clearevent EVENT_DRATINI_VALENCIA_APPEAR
+	appear VALENCIA_ISLAND_DRATINI
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement7
+	follow VALENCIA_ISLAND_IVY, PLAYER
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement8
+	stopfollow
+	showemote EMOTE_SHOCK, VALENCIA_ISLAND_IVY, 15
+	opentext
+	writetext ASIvyScriptText11
+	waitbutton
+	closetext
+	turnobject VALENCIA_ISLAND_IVY, RIGHT
+	opentext
+	writetext ASIvyScriptText12
+	waitbutton
+	turnobject VALENCIA_ISLAND_IVY, LEFT
+	givepoke DRATINI, 5
+	cry DRATINI
+	loadwildmon DRATINI, 5
+	catchtutorial BATTLETYPE_TUTORIAL
+	setevent EVENT_DRATINI_VALENCIA_APPEAR
+	disappear VALENCIA_ISLAND_DRATINI
+	turnobject VALENCIA_ISLAND_IVY, RIGHT
+	opentext
+	getmonname STRING_BUFFER_3, DRATINI
+	writetext ASIvyScriptText13
+	waitbutton
+	writetext ReceivedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	;do you want to give it a nickname
+	writetext ASIvyScriptText7
+	waitbutton
+	closetext
+	setscene SCENE_VALENCIA_ISLAND_NOOP
+	setmapscene IVYS_LAB, SCENE_IVYSLAB_ALT_STARTER
+	setevent EVENT_ALT_STARTER_VALENCIA_IVY
+	setevent EVENT_GOT_DRATINI_FROM_IVY
+	special FadeOutPalettes
+	waitsfx
+	warp IVYS_LAB, 2, 5
 	end
 	
 ValenciaIslandFlypointCallback:
@@ -124,14 +185,9 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	
 	
 ValenciaYoungsterScript:
-;	jumptextfaceplayer ValenciaYoungsterText
+	jumptextfaceplayer ValenciaYoungsterText
 ;	setflag ENGINE_POKEDEX
 ;	callasm CheatFillPokedex
-;	opentext
-;	givepoke PIKACHU, 5
-;	loadwildmon PIKACHU, 5
-;	catchtutorial BATTLETYPE_TUTORIAL
-;	closetext
 	end
 
 
@@ -198,6 +254,40 @@ ValenciaCooltrainerScript:
 	waitbutton
 	closetext
 	end
+	
+ValenciaCrossScript:
+	opentext
+	writetext ValenciaCrossText1
+	waitbutton
+	showemote EMOTE_SHOCK, VALENCIA_ISLAND_CROSS, 15
+	turnobject VALENCIA_ISLAND_CROSS, LEFT
+	writetext ValenciaCrossText2
+	waitbutton
+	closetext
+	playsound SFX_TACKLE
+	applymovement PLAYER, ValenciaCrossShovesYouMovement
+	applymovement VALENCIA_ISLAND_CROSS, ValenciaCrossLeavingMovement
+	setevent EVENT_MEET_SECRET_STARTER_REQS
+	setevent EVENT_MET_CROSS_ON_VALENCIA
+	disappear VALENCIA_ISLAND_CROSS
+	end
+	
+ValenciaCrossText1:
+	text "???: Hmph."
+	line "It got away."
+	
+	para "Whatever, I'll get"
+	line "something even"
+	cont "better on the next"
+	cont "island."
+	done
+	
+ValenciaCrossText2:
+	text "???: Huh?"
+	line "You got a problem?"
+	
+	para "Get out of my way."
+	done
 
 ValenciaYoungsterText:
 	text "Yo, <PLAYER>!"
@@ -316,6 +406,50 @@ ASIvyScriptText8:
 	cont "entrust it to you!"
 	done
 	
+ASIvyScriptText9:
+	text "IVY: This is my"
+	line "secret spot!"
+	
+	para "It's where I met"
+	line "my partner #MON"
+	cont "GYARADOS!"
+	done
+	
+ASIvyScriptText10:
+	text "IVY: Did you hear"
+	line "that?! Let's go"
+	cont "check it out!"
+	done
+	
+ASIvyScriptText11:
+	text "IVY: Wait a sec!"
+	line "What is that!?"
+	cont "It can't be…"
+	cont "Is that a DRATINI?"
+	done
+	
+ASIvyScriptText12:
+	text "IVY: <PLAYER>,"
+	line "this is a once in"
+	cont "a lifetime chance!"
+	cont "We have to catch"
+	cont "it!"
+	done
+	
+ASIvyScriptText13:
+	text "IVY: Incredible!"
+	line "I can't believe we"
+	cont "caught a DRATINI!"
+	
+	para "It's known to be"
+	line "near legendary in"
+	cont "terms of rarity!"
+
+	para "It must be fate,"
+	line "<PLAYER>. So, I"
+	cont "entrust it to you!"
+	done
+	
 ASPlayerMovement1:
 	step DOWN
 	step_end
@@ -371,6 +505,78 @@ ASIvyMovement5:
 	step RIGHT
 	step RIGHT
 	step_end
+	
+ASIvyMovement6:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+	
+ASIvyMovement7:
+	step DOWN
+	step LEFT
+	step LEFT
+	step UP
+	step_end
+	
+ASIvyMovement8:
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+ValenciaCrossShovesYouMovement:
+	turn_head DOWN
+	fix_facing
+	jump_step UP
+	remove_fixed_facing
+	step_end
+	
+ValenciaCrossLeavingMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step_end
 
 ValenciaIsland_MapEvents:
 	db 0, 0 ; filler
@@ -392,3 +598,4 @@ ValenciaIsland_MapEvents:
 	object_event 32,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaLassScript, -1
 	object_event 29, 15, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALT_STARTER_VALENCIA_IVY
 	object_event 30, 37, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRATINI_VALENCIA_APPEAR
+	object_event 43, 22, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCrossScript, EVENT_MET_CROSS_ON_VALENCIA

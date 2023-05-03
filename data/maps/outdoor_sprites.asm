@@ -67,6 +67,7 @@ NewBarkGroupSprites:
 	db SPRITE_DRATINI
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
+	db SPRITE_RIVAL
 	db SPRITE_POKE_BALL
 
 IndigoGroupSprites:
