@@ -3,6 +3,7 @@
 	const ELMSLAB_POKE_BALL1
 	const ELMSLAB_POKE_BALL2
 	const ELMSLAB_POKE_BALL3
+	const IVYS_LAB_GYARADOS
 
 IvysLab_MapScripts:
 	def_scene_scripts
@@ -12,7 +13,7 @@ IvysLab_MapScripts:
 	scene_script .IvysLabNoOp, SCENE_IVYSLAB_NOOP
 
 	def_callbacks
-	
+
 .MeetIvy:
 	priorityjump .WalkUpToIvy
 	end
@@ -281,12 +282,85 @@ IvysLabPoster1:
 	jumptext IvysLabPoster1Text
 	
 IvysLabPoster1Text:
-	text "WATER #MON"
-	line "INCUBATION CHAMBER"
+	text "GYARADOS' ROOM"
 	done
 
 IvysLabPoster2:
-	jumptext IvysLabPoster2Text
+	opentext
+	writetext IvysLabPoster2Text1
+	yesorno
+	iffalse .End
+	writetext IvysLabPoster2Text2
+	waitbutton
+	writetext IvysLabPoster2Continue
+	yesorno
+	iffalse .End
+	writetext IvysLabPoster2Text3
+	waitbutton
+	writetext IvysLabPoster2Continue
+	yesorno
+	iffalse .End
+	writetext IvysLabPoster2Text4
+	waitbutton
+.End
+	closetext
+	end
+
+IvysLabPoster2Text1:
+	text "It seems to be a"
+	line "log of GYARADOS'"
+	cont "activity. Want to"
+	cont "read it?"
+	done
+	
+IvysLabPoster2Text2:
+	text "MAGIKARP NOTES"
+	
+	para "DAY 1"
+	line "I found a MAGIKARP"
+	cont "on the beach this"
+	cont "morning."
+	
+	para "It was stuck on"
+	line "the sand bank and"
+	cont "was in critical"
+	cont "condition, so I"
+	cont "took it into the"
+	cont "lab to nurse."
+	done
+	
+IvysLabPoster2Text3:
+	text "DAY 6"
+	line "MAGIKARP is pretty"
+	cont "much healthy!"
+	cont "It seems to be"
+	cont "splashing with a"
+	cont "lot of vigor."
+	done
+	
+IvysLabPoster2Text4:
+	text "DAY 14"
+	line "I took MAGIKARP to"
+	cont "the beach to set"
+	cont "free, but it came"
+	cont "right back to me!"
+	
+	para "The most amazing"
+	line "thing happened and"
+	cont "it evolved into"
+	cont "GYARADOS!"
+	
+	para "I think GYARADOS"
+	line "and I are going to"
+	cont "be great friends!"
+	
+	para "The log appears to"
+	line "end here."
+	done
+	
+IvysLabPoster2Continue:
+	text "Continue reading?"
+	done
 
 IvysLabTrashcan:
 	jumptext IvysLabTrashcanText
@@ -315,6 +389,14 @@ ElmsLabHealingMachine_HealParty:
 	special HealMachineAnim
 	pause 30
 	special RestartMapMusic
+	closetext
+	end
+	
+IvysGyaradosScript:
+	opentext
+	writetext IvysGyaradosText
+	cry GYARADOS
+	waitbutton
 	closetext
 	end
 	
@@ -460,18 +542,6 @@ IvysLabBookShelfText:
 	cont "ABILITY."
 	done
 	
-IvysLabPoster2Text:
-	text "Day 6"
-	line "MAGIKARP is doing"
-	cont "well. Its injuries"
-	cont "have healed!"
-	
-	para "The rest of the"
-	line "log is illegible,"
-	cont "due to water"
-	cont "damage."
-	done
-	
 IvysLabTrashcanText:
 	text "It's just trash."
 	done
@@ -484,6 +554,10 @@ IvysLabGotDexText:
 IvysLabIvyLetsGoText:
 	text "IVY: Alright,"
 	line "let's go then!"
+	done
+	
+IvysGyaradosText:
+	text "Gyaaaaash!"
 	done
 	
 IvysLab_WalkUpToIvyMovement:
@@ -588,3 +662,4 @@ IvysLab_MapEvents:
 	object_event 12,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_CHARMANDER_POKEBALL_IN_IVYS_LAB
 	object_event 13,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_SQUIRTLE_POKEBALL_IN_IVYS_LAB
 	object_event 11,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_BULBASAUR_POKEBALL_IN_IVYS_LAB
+	object_event 11,  9, SPRITE_GYARADOS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IvysGyaradosScript, -1
