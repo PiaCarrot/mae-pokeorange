@@ -131,9 +131,9 @@ Music:
 	dba Music_StarterOrangeRoute
 	dba Music_CityOrange
 	dba Music_ValenciaTown
-	dba Music_Looker
 	dba Music_Route24GBS
 	dba Music_RidingLapras
+	dba Music_Looker
 	dba Music_OrangeWild
 ; e91a3
 	assert_table_length NUM_MUSIC_SONGS
