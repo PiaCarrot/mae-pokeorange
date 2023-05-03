@@ -3015,6 +3015,7 @@ wBattleTowerElevatorSceneID::       db
 wBattleTowerHallwaySceneID::        db
 wPlayersHouse1FSceneID::            db
 wIvysLabSceneID::                   db
+wValenciaIslandSceneID::            db
 wIndigoPlateauPokecenter1FSceneID:: db
 wWillsRoomSceneID::                 db
 wKogasRoomSceneID::                 db
@@ -3023,7 +3024,7 @@ wKarensRoomSceneID::                db
 wLancesRoomSceneID::                db
 wHallOfFameSceneID::                db
 
-	ds 112
+	ds 110
 
 ; fight counts
 wJackFightCount::    db

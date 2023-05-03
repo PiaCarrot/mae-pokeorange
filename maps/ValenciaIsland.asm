@@ -1,25 +1,137 @@
 	object_const_def
+	const VALENCIA_ISLAND_YOUNGSTER
+	const VALENCIA_ISLAND_TECHNOLOGY_GUY
+	const VALENCIA_ISLAND_GATE_GUARDIAN
+	const VALENCIA_ISLAND_LASS
+	const VALENCIA_ISLAND_IVY
+	const VALENCIA_ISLAND_DRATINI
 
 ValenciaIsland_MapScripts:
 	def_scene_scripts
+	scene_script .ValenciaIslandNoOp, SCENE_VALENCIA_ISLAND_NOOP
+	scene_script .AltStarterScript, SCENE_VALENCIA_ISLAND_ALT_STARTER
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback
+	callback MAPCALLBACK_NEWMAP, ValenciaIslandFlypointCallback
+	callback MAPCALLBACK_TILES, ValenciaIslandAltStarterEventCutTreeCallback
 
+.ValenciaIslandNoOp:
+	end
+
+.AltStarterScript:
+	priorityjump .AltStarterCutscene
+	end
+	
+.AltStarterCutscene:
+	applymovement PLAYER, ASPlayerMovement1
+	turnobject VALENCIA_ISLAND_IVY, UP
+	opentext
+	writetext ASIvyScriptText1
+	waitbutton
+	closetext
+	playmusic MUSIC_SHOW_ME_AROUND
+	follow VALENCIA_ISLAND_IVY, PLAYER
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement1
+	turnobject PLAYER, LEFT
+	turnobject VALENCIA_ISLAND_IVY, RIGHT
+	opentext
+	writetext ASIvyScriptText2
+	waitbutton
+	closetext
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement2
+	turnobject PLAYER, DOWN
+	turnobject VALENCIA_ISLAND_IVY, UP
+	opentext
+	writetext ASIvyScriptText3
+	waitbutton
+	closetext
+	checkevent EVENT_MEET_SECRET_STARTER_REQS
+	iftrue .DratiniScript
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement3
+	stopfollow
+	turnobject VALENCIA_ISLAND_IVY, LEFT
+	showemote EMOTE_SHOCK, VALENCIA_ISLAND_IVY, 15
+	turnobject VALENCIA_ISLAND_IVY, UP
+	opentext
+	writetext ASIvyScriptText4
+	waitbutton
+	closetext
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement4
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, VALENCIA_ISLAND_IVY, 15
+	opentext
+	writetext ASIvyScriptText5
+	checkevent EVENT_GOT_PIKACHU_FROM_IVY
+	iftrue .ASPikachuScript
+	givepoke EEVEE, 5
+	cry EEVEE
+	loadwildmon EEVEE, 5
+.ContinueASPikaOrEevee
+	catchtutorial BATTLETYPE_TUTORIAL
+	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement5
+	turnobject PLAYER, DOWN
+	turnobject VALENCIA_ISLAND_IVY, UP
+	opentext
+	checkevent EVENT_GOT_PIKACHU_FROM_IVY
+	iftrue .ASPikachuScript2
+	getmonname STRING_BUFFER_3, EEVEE
+	writetext ASIvyScriptText6
+	waitbutton
+	writetext ReceivedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+.ContinueASPikaOrEevee2
+	;do you want to give it a nickname
+	writetext ASIvyScriptText7
+	waitbutton
+	closetext
+	setscene SCENE_VALENCIA_ISLAND_NOOP
+	setmapscene IVYS_LAB, SCENE_IVYSLAB_ALT_STARTER
+	setevent EVENT_ALT_STARTER_VALENCIA_IVY
+	special FadeOutPalettes
+	waitsfx
+	warp IVYS_LAB, 2, 5
+	end
+	
+.ASPikachuScript
+	givepoke PIKACHU, 5
+	cry PIKACHU
+	loadwildmon PIKACHU, 5
+	sjump .ContinueASPikaOrEevee
+	
+.ASPikachuScript2
+	getmonname STRING_BUFFER_3, PIKACHU
+	writetext ASIvyScriptText8
+	waitbutton
+	writetext ReceivedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	sjump .ContinueASPikaOrEevee2
+
+.DratiniScript:
+	end
+	
 ValenciaIslandFlypointCallback:
 	setflag ENGINE_FLYPOINT_NEW_BARK
-	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	endcallback
+	
+ValenciaIslandAltStarterEventCutTreeCallback:
+	checkevent EVENT_ALT_STARTER_VALENCIA_IVY
+	iftrue .DoNothingToTheTree
+	changeblock 18, 26, $36
+.DoNothingToTheTree
+	endcallback
+	
 	
 ValenciaYoungsterScript:
 ;	jumptextfaceplayer ValenciaYoungsterText
 ;	setflag ENGINE_POKEDEX
 ;	callasm CheatFillPokedex
-	opentext
-	givepoke PIKACHU, 5
-	loadwildmon PIKACHU, 5
-	catchtutorial BATTLETYPE_TUTORIAL
-	closetext
+;	opentext
+;	givepoke PIKACHU, 5
+;	loadwildmon PIKACHU, 5
+;	catchtutorial BATTLETYPE_TUTORIAL
+;	closetext
 	end
 
 
@@ -123,6 +235,142 @@ ValenciaLassText:
 	cont "when I SPLASH in"
 	cont "the puddles!"
 	done
+	
+ASIvyScriptText1:
+	text "IVY: I know a good"
+	line "spot, follow me!"
+	done
+	
+ASIvyScriptText2:
+	text "IVY: In case you"
+	line "didn't know, this"
+	cont "is my house."
+	
+	para "My AIDES live with"
+	line "me. You should"
+	cont "chat with them at"
+	cont "some point."
+	done
+	
+ASIvyScriptText3:
+	text "IVY: It's just a"
+	line "tad bit further,"
+	cont "<PLAYER>!"
+	done
+	
+ASIvyScriptText4:
+	text "IVY: Oh?"
+	line "When did all this"
+	cont "tall grass grow"
+	cont "here?"
+	
+	para "Sorry, <PLAYER>!"
+	line "I gotta check it"
+	cont "out!"
+	done
+
+ASIvyScriptText5:
+	text "IVY: Woah!"
+	done
+	
+ReceivedAltStarterText:
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+	
+ASIvyScriptText6:
+	text "IVY: Wow! I can't"
+	line "believe we found"
+	cont "an EEVEE!"
+	
+	para "It's a very rare"
+	line "#MON."
+	
+	para "It must be fate,"
+	line "<PLAYER>. So, I"
+	cont "entrust it to you!"
+	done
+	
+ASIvyScriptText7:
+	text "IVY: Well, it's"
+	line "been quite the"
+	cont "event today, huh!"
+	
+	para "I suppose we can"
+	line "go back to the lab"
+	cont "now. Follow me!"
+	done
+	
+ASIvyScriptText8:
+	text "IVY: Wow! I can't"
+	line "believe we found"
+	cont "a PIKACHU!"
+	
+	para "It's a very rare"
+	line "#MON."
+	
+	para "It must be fate,"
+	line "<PLAYER>. So, I"
+	cont "entrust it to you!"
+	done
+	
+ASPlayerMovement1:
+	step DOWN
+	step_end
+	
+ASIvyMovement1:
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+	
+ASIvyMovement2:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+	
+ASIvyMovement3:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step_end
+
+ASIvyMovement4:
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+ASIvyMovement5:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
 
 ValenciaIsland_MapEvents:
 	db 0, 0 ; filler
@@ -138,9 +386,9 @@ ValenciaIsland_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 13,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1
+	object_event 14,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1
 	object_event 16, 18, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ValenciaTechnologyGuyScript, -1
 	object_event  5,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1
 	object_event 32,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaLassScript, -1
-	object_event 38, 38, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRATINI_VALENCIA_IVY
+	object_event 29, 15, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALT_STARTER_VALENCIA_IVY
 	object_event 30, 37, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRATINI_VALENCIA_APPEAR
