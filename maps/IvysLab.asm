@@ -67,6 +67,7 @@ IvysLab_MapScripts:
 	setevent EVENT_GOT_A_POKEMON_FROM_IVY
 	setevent EVENT_MET_CROSS_ON_VALENCIA
 	setscene SCENE_IVYSLAB_NOOP
+	setmapscene ROUTE_49, SCENE_ROUTE_49_NOOP
 	end
 	
 LabTryToLeaveScript:
@@ -273,6 +274,7 @@ ElmDirectionsScript:
 	setevent EVENT_MET_CROSS_ON_VALENCIA
 	setevent EVENT_GOT_A_POKEMON_FROM_IVY
 	setscene SCENE_IVYSLAB_NOOP
+	setmapscene ROUTE_49, SCENE_ROUTE_49_NOOP
 	end
 	
 IvysLabBookShelf:

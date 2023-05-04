@@ -1,7 +1,6 @@
 	object_const_def
 	const VALENCIA_ISLAND_YOUNGSTER
 	const VALENCIA_ISLAND_TECHNOLOGY_GUY
-	const VALENCIA_ISLAND_GATE_GUARDIAN
 	const VALENCIA_ISLAND_LASS
 	const VALENCIA_ISLAND_IVY
 	const VALENCIA_ISLAND_DRATINI
@@ -183,13 +182,10 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 .DoNothingToTheTree
 	endcallback
 	
-	
 ValenciaYoungsterScript:
 	jumptextfaceplayer ValenciaYoungsterText
 ;	setflag ENGINE_POKEDEX
 ;	callasm CheatFillPokedex
-	end
-
 
 PhoneCallScript: ;currently unused
 	pause 10
@@ -247,14 +243,6 @@ PhoneCallTest2:
 ValenciaTechnologyGuyScript:
 	jumptextfaceplayer ValenciaTechnologyGuyText	
 	
-ValenciaCooltrainerScript:
-	faceplayer
-	opentext
-	writetext ValenciaCooltrainerText
-	waitbutton
-	closetext
-	end
-	
 ValenciaCrossScript:
 	opentext
 	writetext ValenciaCrossText1
@@ -302,17 +290,6 @@ ValenciaTechnologyGuyText:
 	para "Now people can"
 	line "make their own"
 	cont "GAMEBOY games!"
-	done
-	
-ValenciaCooltrainerText:
-	text "Ah, <PLAYER>!"
-	line "Aren't you meeting"
-	cont "PROF. IVY to get"
-	cont "get your first"
-	cont "#MON?"
-	
-	para "Her lab is on"
-	line "BAYVIEW ROAD."
 	done
 	
 ValenciaLassScript:
@@ -594,7 +571,6 @@ ValenciaIsland_MapEvents:
 	def_object_events
 	object_event 14,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1
 	object_event 16, 18, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ValenciaTechnologyGuyScript, -1
-	object_event  5,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ValenciaCooltrainerScript, -1
 	object_event 32,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaLassScript, -1
 	object_event 29, 15, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALT_STARTER_VALENCIA_IVY
 	object_event 30, 37, SPRITE_DRATINI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRATINI_VALENCIA_APPEAR
