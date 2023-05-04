@@ -66,3 +66,9 @@ ValenciaIsland_Blocks:
 	
 IvysLab_Blocks:
 	INCBIN "maps/IvysLab.blk"
+	
+Route49_Blocks:
+	INCBIN "maps/Route49.blk"
+	
+Route49North_Blocks:
+	INCBIN "maps/Route49North.blk"

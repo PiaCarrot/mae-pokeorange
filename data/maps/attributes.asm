@@ -97,7 +97,16 @@ MACRO connection
 ENDM
 
 	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, 0
-	map_attributes ValenciaIsland, VALENCIA_ISLAND, $10, 0
+
+	map_attributes ValenciaIsland, VALENCIA_ISLAND, $10, WEST
+	connection west, Route49, ROUTE_49, -2
+
+	map_attributes Route49, ROUTE_49, $10, NORTH | EAST
+	connection north, Route49North, ROUTE_49_NORTH, -1
+	connection east, ValenciaIsland, VALENCIA_ISLAND, 2
+
+	map_attributes Route49North, ROUTE_49_NORTH, $10, SOUTH
+	connection south, Route49, ROUTE_49, 1
 
 	map_attributes BattleTowerOutside, BATTLE_TOWER_OUTSIDE, $05, 0
 

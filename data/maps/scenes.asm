@@ -18,6 +18,7 @@ MapScenes::
 	scene_var PLAYERS_HOUSE_1F,             wPlayersHouse1FSceneID
 	scene_var IVYS_LAB,                     wIvysLabSceneID
 	scene_var VALENCIA_ISLAND,              wValenciaIslandSceneID
+	scene_var ROUTE_49,              		wRoute49SceneID
 
 	scene_var INDIGO_PLATEAU_POKECENTER_1F, wIndigoPlateauPokecenter1FSceneID
 	scene_var WILLS_ROOM,                   wWillsRoomSceneID

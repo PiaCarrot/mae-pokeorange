@@ -31,7 +31,6 @@ MeetMomRightScript:
 MeetMomScript:
 	opentext
 	writetext ElmsLookingForYouText
-	promptbutton
 	loadmenu .AltStarterMenuHeader
 	verticalmenu
 	closewindow
