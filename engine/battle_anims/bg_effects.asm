@@ -2930,12 +2930,12 @@ BattleBGEffects_CheckSGB:
 
 BattleBGEffects_Sine:
 	ld e, a
-	callfar BattleAnim_Sine_e
+	callfar Sine
 	ld a, e
 	ret
 
 BattleBGEffects_Cosine:
 	ld e, a
-	callfar BattleAnim_Cosine_e
+	callfar Cosine
 	ld a, e
 	ret
