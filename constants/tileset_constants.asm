@@ -14,6 +14,7 @@
 	const TILESET_ICE_PATH             ; 1d
 	const TILESET_VALENCIA_MANDARIN_NORTH
 	const TILESET_LAB
+	const TILESET_HOUSES
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

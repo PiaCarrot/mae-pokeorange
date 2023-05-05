@@ -51,6 +51,9 @@ INCLUDE "gfx/tilesets/valencia_mandarin_north_palette_map.asm"
 TilesetLabPalMap:
 INCLUDE "gfx/tilesets/lab_palette_map.asm"
 
+TilesetHousesPalMap:
+INCLUDE "gfx/tilesets/houses_palette_map.asm"
+
 MapGroupPalettes: ; unreferenced
 ; entries correspond to MAPGROUP_* constants
 rept NUM_MAP_GROUPS

@@ -152,3 +152,12 @@ INCBIN "data/tilesets/lab_metatiles.bin"
 
 TilesetLabColl::
 INCLUDE "data/tilesets/lab_collision.asm"
+
+TilesetHousesGFX::
+INCBIN "gfx/tilesets/houses.2bpp.lz"
+
+TilesetHousesMeta::
+INCBIN "data/tilesets/houses_metatiles.bin"
+
+TilesetHousesColl::
+INCLUDE "data/tilesets/houses_collision.asm"

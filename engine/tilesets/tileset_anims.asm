@@ -123,6 +123,7 @@ TilesetChampionsRoomAnim:
 TilesetPlayersRoomAnim:
 TilesetPokeComCenterAnim:
 TilesetBattleTowerInsideAnim:
+TilesetHousesAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
