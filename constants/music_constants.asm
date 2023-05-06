@@ -133,6 +133,7 @@
 	const MUSIC_RIDING_LAPRAS
 	const MUSIC_LOOKER
 	const MUSIC_ORANGEWILD
+	const MUSIC_ORANGE_ENCOUNTER
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

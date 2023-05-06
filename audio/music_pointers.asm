@@ -135,5 +135,6 @@ Music:
 	dba Music_RidingLapras
 	dba Music_Looker
 	dba Music_OrangeWild
+	dba Music_OrangeEncounter
 ; e91a3
 	assert_table_length NUM_MUSIC_SONGS

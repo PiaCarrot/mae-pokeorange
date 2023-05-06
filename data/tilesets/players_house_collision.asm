@@ -3,7 +3,7 @@
 	tilecoll WALL, WALL, RADIO, TV ; 02
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 03
 	tilecoll WALL, WALL, WALL, WALL ; 04
-	tilecoll WALL, WALL, FLOOR, WALL ; 05
+	tilecoll WALL, WALL, WALL, WALL ; 05
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 06
 	tilecoll WALL, WALL, WALL, WALL ; 07
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 08

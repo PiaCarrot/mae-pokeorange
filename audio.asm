@@ -165,6 +165,7 @@ SECTION "Songs Regen 3", ROMX
 
 
 INCLUDE "audio/music/orange/looker.asm"
+INCLUDE "audio/music/orange/orangeencounter.asm"
 
 SECTION "Songs Monstarules", ROMX
 
