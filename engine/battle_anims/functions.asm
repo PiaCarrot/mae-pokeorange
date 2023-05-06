@@ -4286,18 +4286,6 @@ BattleAnim_IncAnonJumptableIndex:
 	inc [hl]
 	ret
 
-Sine_e:
-	ld a, e
-	call Sine
-	ld e, a
-	ret
-
-Cosine_e:
-	ld a, e
-	call Cosine
-	ld e, a
-	ret
-
 BattleAnimFunction_RockTomb:
 	call BattleAnim_AnonJumptable
 
