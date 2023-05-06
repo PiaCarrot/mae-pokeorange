@@ -111,7 +111,7 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call LoadBox
 	call ResumeGameLogic
 	ld de, SFX_SAVE
-	jp PlaySFX
+	jmp PlaySFX
 
 StartMoveMonWOMail_SaveGame:
 	ld hl, MoveMonWOMailSaveText
@@ -222,7 +222,7 @@ SavedTheGame:
 	call PrintText
 	ld de, SFX_SAVE
 	call WaitPlaySFX
-	jp WaitSFX
+	jmp WaitSFX
 
 .saving_text
 	text "Saving…"
@@ -324,7 +324,7 @@ EraseLinkBattleStats:
 	ld bc, sLinkBattleStatsEnd - sLinkBattleStats
 	xor a
 	call ByteFill
-	jp CloseSRAM
+	jmp CloseSRAM
 
 EraseMysteryGift:
 	ld a, BANK(sBackupMysteryGiftItem)
@@ -333,7 +333,7 @@ EraseMysteryGift:
 	ld bc, sBackupMysteryGiftItemEnd - sBackupMysteryGiftItem
 	xor a
 	call ByteFill
-	jp CloseSRAM
+	jmp CloseSRAM
 
 EraseHallOfFame:
 	ld a, BANK(sHallOfFame)
@@ -342,16 +342,16 @@ EraseHallOfFame:
 	ld bc, sHallOfFameEnd - sHallOfFame
 	xor a
 	call ByteFill
-	jp CloseSRAM
+	jmp CloseSRAM
 
 Function14d18: ; unreferenced
-	ld a, BANK(s4_a007) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a007) ; MBC30 bank used by jmp Crystal; inaccessible by MBC3
 	call OpenSRAM
 	ld hl, .Data
 	ld de, s4_a007
 	ld bc, 4 * 12
 	call CopyBytes
-	jp CloseSRAM
+	jmp CloseSRAM
 
 .Data:
 	db $0d, $02, $00, $05, $00, $00, $22, $02, $01, $05, $00, $00
@@ -364,14 +364,14 @@ EraseBattleTowerStatus:
 	call OpenSRAM
 	xor a
 	ld [sBattleTowerChallengeState], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SaveData:
 	call _SaveData
 	ret
 
 Function14d6c: ; unreferenced
-	ld a, BANK(s4_a60b) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a60b) ; MBC30 bank used by jmp Crystal; inaccessible by MBC3
 	call OpenSRAM
 	ld a, [s4_a60b] ; address of MBC30 bank
 	ld b, $0
@@ -386,7 +386,7 @@ Function14d6c: ; unreferenced
 	ret
 
 Function14d83: ; unreferenced
-	ld a, BANK(s4_a60c) ; aka BANK(s4_a60d) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s4_a60c) ; aka BANK(s4_a60d) ; MBC30 bank used by jmp Crystal; inaccessible by MBC3
 	call OpenSRAM
 	xor a
 	ld [s4_a60c], a ; address of MBC30 bank
@@ -395,7 +395,7 @@ Function14d83: ; unreferenced
 	ret
 
 Function14d93: ; unreferenced
-	ld a, BANK(s7_a000) ; MBC30 bank used by JP Crystal; inaccessible by MBC3
+	ld a, BANK(s7_a000) ; MBC30 bank used by jmp Crystal; inaccessible by MBC3
 	call OpenSRAM
 	xor a
 	ld [s7_a000], a ; address of MBC30 bank
@@ -416,7 +416,7 @@ ValidateSave:
 	ld [sCheckValue1], a
 	ld a, SAVE_CHECK_VALUE_2
 	ld [sCheckValue2], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SaveOptions:
 	ld a, BANK(sOptions)
@@ -428,7 +428,7 @@ SaveOptions:
 	ld a, [wOptions]
 	and ~(1 << NO_TEXT_SCROLL)
 	ld [sOptions], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SavePlayerData:
 	ld a, BANK(sPlayerData)
@@ -441,7 +441,7 @@ SavePlayerData:
 	ld de, sCurMapData
 	ld bc, wCurMapDataEnd - wCurMapData
 	call CopyBytes
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SavePokemonData:
 	ld a, BANK(sPokemonData)
@@ -474,7 +474,7 @@ SaveIndexTables:
 	call CopyBytes
 	pop af
 	ldh [rSVBK], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SaveBox:
 	call GetBoxAddress
@@ -496,7 +496,7 @@ SaveBox:
 	ld b, a
 	ld c, 0
 	farcall BillsPC_ConvertBoxData
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SaveChecksum:
 	ld a, BANK(sMoveIndexTable)
@@ -583,7 +583,7 @@ SaveBackupIndexTables:
 	call CopyBytes
 	pop af
 	ldh [rSVBK], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 SaveBackupChecksum:
 	ld a, BANK(sBackupMoveIndexTable)
@@ -800,7 +800,7 @@ LoadIndexTables:
 	call CopyBytes
 	pop af
 	ldh [rSVBK], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 LoadBox:
 	call GetBoxAddress
@@ -819,7 +819,7 @@ LoadBox:
 	; GC the table now that lots of entries are free
 	farcall ForceGarbageCollection
 	call UpdateIndexesForLoadedBox
-	jp CloseSRAM
+	jmp CloseSRAM
 
 VerifyChecksum:
 	ld hl, sSaveData
@@ -898,7 +898,7 @@ LoadBackupIndexTables:
 	call CopyBytes
 	pop af
 	ldh [rSVBK], a
-	jp CloseSRAM
+	jmp CloseSRAM
 
 VerifyBackupChecksum:
 	ld hl, sBackupSaveData
@@ -958,7 +958,7 @@ _SaveData:
 	ld a, [hli]
 	ld [s4_a60e + 1], a
 
-	jp CloseSRAM
+	jmp CloseSRAM
 
 _LoadData:
 	ld a, BANK(sCrystalData)
@@ -977,7 +977,7 @@ _LoadData:
 	ld a, [s4_a60e + 1]
 	ld [hli], a
 
-	jp CloseSRAM
+	jmp CloseSRAM
 
 GetBoxAddress:
 	ld a, [wCurBox]
@@ -1137,7 +1137,7 @@ ComputeSavedBoxIndexTable:
 	ld c, a
 	xor a
 	ld b, a
-	jp ByteFill
+	jmp ByteFill
 
 LoadBoxAddress:
 ; Load box via wBoxPartialData.

@@ -25,7 +25,7 @@ NextCallReceiveDelay:
 	ld hl, .ReceiveCallDelays
 	add hl, de
 	ld a, [hl]
-	jp RestartReceiveCallDelay
+	jr RestartReceiveCallDelay
 
 .ReceiveCallDelays:
 	db 20, 10, 5, 3
@@ -84,7 +84,7 @@ CheckReceiveCallDelay:
 
 RestartDailyResetTimer:
 	ld hl, wDailyResetTimer
-	jp InitOneDayCountdown
+	jr InitOneDayCountdown
 
 CheckDailyResetTimer::
 	ld hl, wDailyResetTimer
@@ -222,7 +222,7 @@ UnusedCheckSwarmFlag: ; unreferenced
 RestartLuckyNumberCountdown:
 	call .GetDaysUntilNextFriday
 	ld hl, wLuckyNumberDayTimer
-	jp InitNDaysCountdown
+	jmp InitNDaysCountdown
 
 .GetDaysUntilNextFriday:
 	call GetWeekday
@@ -240,7 +240,7 @@ RestartLuckyNumberCountdown:
 
 _CheckLuckyNumberShowFlag:
 	ld hl, wLuckyNumberDayTimer
-	jp CheckDayDependentEventHL
+	jmp CheckDayDependentEventHL
 
 DoMysteryGiftIfDayHasPassed:
 	ld a, BANK(sMysteryGiftTimer)
