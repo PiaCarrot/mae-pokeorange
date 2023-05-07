@@ -354,8 +354,8 @@ GetIconBank:
 GetGFXUnlessMobile:
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
-	jp nz, Request2bpp
-	jp Get2bppViaHDMA
+	jmp nz, Request2bpp
+	jmp Get2bppViaHDMA
 
 FreezeMonIcons:
 	ld hl, wSpriteAnimationStructs

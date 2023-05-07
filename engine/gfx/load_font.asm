@@ -6,14 +6,14 @@ EnableHDMAForGraphics:
 Get1bppOptionalHDMA: ; unreferenced
 	ld a, [EnableHDMAForGraphics]
 	and a
-	jp nz, Get1bppViaHDMA
-	jp Get1bpp
+	jmp nz, Get1bppViaHDMA
+	jmp Get1bpp
 
 Get2bppOptionalHDMA: ; unreferenced
 	ld a, [EnableHDMAForGraphics]
 	and a
-	jp nz, Get2bppViaHDMA
-	jp Get2bpp
+	jmp nz, Get2bppViaHDMA
+	jmp Get2bpp
 
 _LoadStandardFont::
 	ld de, Font

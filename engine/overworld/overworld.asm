@@ -255,7 +255,7 @@ GetMonSprite:
 	add hl, de
 	ld a, [hl]
 	and a
-	jp nz, GetMonSprite
+	jr nz, GetMonSprite
 
 .NoBreedmon:
 	ld a, WALKING_SPRITE

@@ -326,7 +326,7 @@ ApplyDeletionToMapObject::
 
 DeleteObjectStruct::
 	call ApplyDeletionToMapObject
-	jp MaskObject
+	jmp MaskObject
 
 CopyPlayerObjectTemplate::
 	push hl
@@ -338,7 +338,7 @@ CopyPlayerObjectTemplate::
 	inc de
 	pop hl
 	ld bc, MAPOBJECT_LENGTH - 1
-	jp CopyBytes
+	jmp CopyBytes
 
 LoadMovementDataPointer::
 ; Load the movement data pointer for object a.
