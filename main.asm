@@ -375,9 +375,6 @@ INCLUDE "engine/events/trainer_scripts.asm"
 SECTION "Move Anims", ROMX
 
 INCLUDE "data/moves/animation_pointers.asm"
-INCLUDE "data/moves/animations.asm"
-INCLUDE "data/moves/special_animations.asm"
-INCLUDE "data/moves/animations_new.asm"
 
 
 SECTION "bank32", ROMX
