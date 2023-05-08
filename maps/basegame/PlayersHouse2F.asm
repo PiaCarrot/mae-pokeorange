@@ -172,7 +172,14 @@ endc
 	end
 
 PlayersHouseBookshelfScript:
+if DEF(_DEBUG)
+	loadwildmon MAGIKARP, 100
+	startbattle
+	reloadmapafterbattle
+	end
+else
 	jumpstd PictureBookshelfScript
+endc
 
 PlayersHousePCScript:
 	opentext
