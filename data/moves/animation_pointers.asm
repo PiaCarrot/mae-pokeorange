@@ -5,3 +5,7 @@ BattleAnimations::
 	indirect_entries SPECIAL_ANIM_OFFSET - NUM_SPECIAL_ANIMS - 1
 	indirect_entries SPECIAL_ANIM_OFFSET - 1, SpecialAnimations
 	indirect_table_end
+
+INCLUDE "data/moves/animations_1.asm"
+INCLUDE "data/moves/animations_2.asm"
+INCLUDE "data/moves/special_animations.asm"
