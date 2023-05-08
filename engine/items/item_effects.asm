@@ -1102,7 +1102,7 @@ ReturnToBattle_UseBall:
 TownMapEffect:
 	call FadeToMenu
 	farcall _TownMap
-	call DoItemEffect ;Call_ExitMenu
+	call Call_ExitMenu
 	xor a
 	ldh [hBGMapMode], a
 	farcall Pack_InitGFX
