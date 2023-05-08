@@ -5,7 +5,7 @@ ItemNames::
 	li "BRIGHTPOWDER"
 	li "GREAT BALL"
 	li "# BALL"
-	li "TERU-SAMA"
+	li "SEA MAP"
 	li "BICYCLE"
 	li "MOON STONE"
 	li "ANTIDOTE"
