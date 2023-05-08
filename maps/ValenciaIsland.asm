@@ -560,7 +560,7 @@ ValenciaIsland_MapEvents:
 
 	def_warp_events
 	warp_event 15,  5, PLAYERS_HOUSE_1F, 1
-	warp_event  5, 19, BATTLE_TOWER_OUTSIDE, 1
+	warp_event  5, 19, VALENCIA_NEIGHBOR_HOUSE, 1
 	warp_event 19, 15, INDIGO_PLATEAU_POKECENTER_1F, 1
 	warp_event 29, 13, IVYS_LAB, 1
 

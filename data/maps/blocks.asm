@@ -74,6 +74,7 @@ Route49North_Blocks:
 	INCBIN "maps/Route49North.blk"
 	
 IslandHouse_Blocks:
+ValenciaNeighborHouse_Blocks:
 	INCBIN "maps/IslandHouse.blk"
 	
 TraditionalHouse_Blocks:

@@ -39,6 +39,7 @@ INCLUDE "maps/ValenciaIsland.asm"
 INCLUDE "maps/IvysLab.asm"
 INCLUDE "maps/Route49.asm"
 INCLUDE "maps/Route49North.asm"
+INCLUDE "maps/ValenciaNeighborHouse.asm"
 
 SECTION "Map Scripts 6", ROMX
 
