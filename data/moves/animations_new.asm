@@ -370,6 +370,7 @@ BattleAnim_Swallow:
 	anim_ret
 
 BattleAnim_HeatWave:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_FIRE
 	anim_bgp $90
 	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
@@ -390,6 +391,7 @@ BattleAnim_HeatWave:
 	anim_ret
 
 BattleAnim_Hail:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 	anim_1gfx ANIM_GFX_ICE
 	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
 .loop
@@ -465,20 +467,33 @@ BattleAnim_Flatter:
 	anim_ret
 
 BattleAnim_WillOWisp:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BLUE
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgp $1b
 	anim_sound 6, 2, SFX_SLUDGE_BOMB
-	anim_obj ANIM_OBJ_WILL_O_WISP, 64, 92, $0
+	anim_obj ANIM_OBJ_DRAGON_RAGE, 64, 92, $0
 	anim_wait 40
 	anim_sound 0, 0, SFX_CURSE
 .loop
-    anim_obj ANIM_OBJ_WILL_O_WISP_IMPACT, 132, 68, $0
-    anim_wait 8
-    anim_loop 4, .loop
-    anim_wait 40
-    anim_ret
+	anim_obj ANIM_OBJ_SACRED_FIRE, 132, 68, $0
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 40
+	anim_ret
 
 BattleAnim_Memento:
+	anim_1gfx ANIM_GFX_ANGELS
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_bgp $1b
+	anim_obp0 $f
+	anim_obj ANIM_OBJ_SPITE, 124, 16, $0
+	anim_sound 0, 1, SFX_SPITE
+	anim_wait 96
+	anim_ret
+
 BattleAnim_Facade:
 BattleAnim_FocusPunch:
 BattleAnim_SmellingSalts:
