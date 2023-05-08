@@ -20,8 +20,8 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjIceGFX
 	anim_obj_gfx 10, AnimObjPokeBallGFX
 	anim_obj_gfx  9, AnimObjPoisonGFX
-	anim_obj_gfx 13, AnimObjBubbleGFX
-	anim_obj_gfx 18, AnimObjNoiseGFX
+	anim_obj_gfx 14, AnimObjBubbleGFX
+	anim_obj_gfx 16, AnimObjNoiseGFX
 	anim_obj_gfx  2, AnimObjPowderGFX
 	anim_obj_gfx 11, AnimObjBeamGFX
 	anim_obj_gfx  9, AnimObjSpeedGFX
@@ -36,9 +36,9 @@ AnimObjGFX:
 	anim_obj_gfx 12, AnimObjSandGFX
 	anim_obj_gfx 14, AnimObjWebGFX
 	anim_obj_gfx 16, AnimObjHazeGFX
-	anim_obj_gfx  7, AnimObjHornGFX
+	anim_obj_gfx 11, AnimObjHornGFX
 	anim_obj_gfx  8, AnimObjFlowerGFX
-	anim_obj_gfx 40, AnimObjMiscGFX
+	anim_obj_gfx 41, AnimObjMiscGFX
 	anim_obj_gfx 36, AnimObjSkyAttackGFX
 	anim_obj_gfx 16, AnimObjGlobeGFX
 	anim_obj_gfx 48, AnimObjShapesGFX
@@ -51,6 +51,9 @@ AnimObjGFX:
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx 13, AnimObjTauntGFX
 	anim_obj_gfx  5, AnimObjStarsGFX
- 	anim_obj_gfx 18, AnimObjMeteorGFX
- 	anim_obj_gfx  4, AnimObjFlatterGFX
+	anim_obj_gfx 18, AnimObjMeteorGFX
+	anim_obj_gfx  4, AnimObjFlatterGFX
+	anim_obj_gfx  2, AnimObjMisc2GFX
+	anim_obj_gfx 10, AnimObjBeamLightGFX
+	anim_obj_gfx  9, AnimObjSmokePuffGFX
 	assert_table_length NUM_ANIM_GFX + 1

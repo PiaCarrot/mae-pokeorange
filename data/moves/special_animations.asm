@@ -1,4 +1,5 @@
 SpecialAnimations:
+	dw BattleAnim_HeldItemTrigger
 	dw BattleAnim_ThrowPokeBall  ; -16
 	dw BattleAnim_SendOutMon
 	dw BattleAnim_ReturnMon
@@ -21,7 +22,17 @@ SpecialAnimations:
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
+	dw BattleAnim_InRain
+	dw BattleAnim_InSun
 .IndirectEnd::
+
+BattleAnim_HeldItemTrigger:
+	anim_1gfx ANIM_GFX_BUBBLE
+	anim_sound 0, 0, SFX_FULL_HEAL
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_call BattleAnim_Recover_branch
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_ret
 
 BattleAnim_ThrowPokeBall:
 	anim_if_param_equal NO_ITEM, .TheTrainerBlockedTheBall
@@ -228,6 +239,7 @@ BattleAnim_Slp:
 	anim_ret
 
 BattleAnim_Brn:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_1gfx ANIM_GFX_FIRE
 .loop
 	anim_sound 0, 0, SFX_BURN
@@ -248,19 +260,21 @@ BattleAnim_Psn:
 	anim_ret
 
 BattleAnim_Sap:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_BELLY_DRUM_NOTESORB, 128, 48, $2
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
 	anim_wait 6
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_BELLY_DRUM_NOTESORB, 136, 64, $3
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
 	anim_wait 6
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_BELLY_DRUM_NOTESORB, 136, 32, $4
+	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
 	anim_wait 16
 	anim_ret
 
 BattleAnim_Frz:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 	anim_1gfx ANIM_GFX_ICE
 	anim_obj ANIM_OBJ_FROZEN, 44, 110, $0
 	anim_sound 0, 0, SFX_SHINE
@@ -286,20 +300,6 @@ BattleAnim_InLove:
 	anim_sound 0, 0, SFX_LICK
 	anim_obj ANIM_OBJ_HEART, 36, 72, $0
 	anim_wait 32
-	anim_ret
-
-BattleAnim_InSandstorm:
-	anim_1gfx ANIM_GFX_POWDER
-	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_SANDSTORM, 72, 0, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_SANDSTORM, 56, 0, $2
-.loop
-	anim_sound 0, 1, SFX_MENU
-	anim_wait 8
-	anim_loop 6, .loop
-	anim_wait 8
 	anim_ret
 
 BattleAnim_InNightmare:

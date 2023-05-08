@@ -270,6 +270,7 @@ BattleAnim_Uproar:
 
 
 BattleAnim_Stockpile:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_GRAY
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 .loop
@@ -319,6 +320,7 @@ BattleAnim_SpitUp:
 
 
 BattleAnim_Swallow:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BLUE
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
