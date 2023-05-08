@@ -91,7 +91,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_CUT_LONG_DOWN_LEFT
 	const ANIM_OBJ_CUT_LONG_DOWN_RIGHT
 	const ANIM_OBJ_SOLAR_BEAM_CHARGE
-	const ANIM_OBJ_BELLY_DRUM_NOTESORB_CENTER
+	const ANIM_OBJ_ABSORB_CENTER
 	const ANIM_OBJ_GUST
 	const ANIM_OBJ_VINE_WHIP1
 	const ANIM_OBJ_VINE_WHIP2
@@ -99,7 +99,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_RAZOR_WIND2
 	const ANIM_OBJ_SONICBOOM_JP
 	const ANIM_OBJ_WARP
-	const ANIM_OBJ_BELLY_DRUM_NOTESORB
+	const ANIM_OBJ_ABSORB
 	const ANIM_OBJ_EGG
 	const ANIM_OBJ_FOCUS
 	const ANIM_OBJ_BIND1
@@ -209,7 +209,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_B0
 	const ANIM_OBJ_PSYCH_UP
 	const ANIM_OBJ_ANCIENTPOWER
-	const ANIM_OBJ_SHOOTING_SPARKLEROBLAST
+	const ANIM_OBJ_AEROBLAST
 	const ANIM_OBJ_SHADOW_BALL
 	const ANIM_OBJ_ROCK_SMASH
 	const ANIM_OBJ_FLOWER
@@ -218,8 +218,6 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_PLAYERHEAD_1ROW
 	const ANIM_OBJ_ENEMYFEET_2ROW
 	const ANIM_OBJ_PLAYERHEAD_2ROW
-	const ANIM_OBJ_WILL_O_WISP
-	const ANIM_OBJ_WILL_O_WISP_IMPACT
 	const ANIM_OBJ_CHARGE
 	const ANIM_OBJ_TAUNT
 	const ANIM_OBJ_ASSIST
@@ -232,13 +230,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_AIR_CUTTER
 	const ANIM_OBJ_OVERHEAT
  	const ANIM_OBJ_ROCK_TOMB
-	const ANIM_OBJ_MUDDY_WATER
  	const ANIM_OBJ_METEOR
-	const ANIM_OBJ_FALLING_BALL
 	const ANIM_OBJ_SEED
 	const ANIM_OBJ_ROCK_BLAST
 	const ANIM_OBJ_VOLT_TACKLE
-	const ANIM_OBJ_STICK
 	const ANIM_OBJ_BIG_WAVE
 	const ANIM_OBJ_UPROAR
 	const ANIM_OBJ_ENERGY_ORB
@@ -249,6 +244,12 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_TORMENT
 	const ANIM_OBJ_FLATTER_1
 	const ANIM_OBJ_FLATTER_2
+	const ANIM_OBJ_MINIMIZE
+	const ANIM_OBJ_MEDIUM_HORN
+	const ANIM_OBJ_RISING_BUBBLE
+	const ANIM_OBJ_BUBBLE_SPLASH
+	const ANIM_OBJ_OCTAZOOKA_SMOKE
+	const ANIM_OBJ_INK_SPLASH
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -533,6 +534,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_BA
 	const BATTLEANIMFRAMESET_BC
 	const BATTLEANIMFRAMESET_BD
+	const BATTLEANIMFRAMESET_BE
+	const BATTLEANIMFRAMESET_BF
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -862,6 +865,9 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_STARS
 	const ANIM_GFX_METEOR
 	const ANIM_GFX_FLATTER
+	const ANIM_GFX_MISC_2
+	const ANIM_GFX_BEAM_LIGHT
+	const ANIM_GFX_SMOKE_PUFF
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -907,16 +913,21 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 ; custom bg/obj palettes (see gfx/battle_anims/custom.pal)
 ; the first 6 matches PAL_BATTLE_OB_GRAY/YELLOW/...
 	const_def
-	const PAL_BTLCUSTOM_GRAY     ; 0
-	const PAL_BTLCUSTOM_YELLOW   ; 1
-	const PAL_BTLCUSTOM_RED      ; 2
-	const PAL_BTLCUSTOM_GREEN    ; 3
-	const PAL_BTLCUSTOM_BLUE     ; 4
-	const PAL_BTLCUSTOM_BROWN    ; 5
-	const PAL_BTLCUSTOM_METALLIC ; 6
-	const PAL_BTLCUSTOM_PURPLE   ; 7
-	const PAL_BTLCUSTOM_ICE      ; 8
-	const PAL_BTLCUSTOM_FIRE     ; 9
+	const PAL_BTLCUSTOM_GRAY            ; 0
+	const PAL_BTLCUSTOM_YELLOW          ; 1
+	const PAL_BTLCUSTOM_RED             ; 2
+	const PAL_BTLCUSTOM_GREEN           ; 3
+	const PAL_BTLCUSTOM_BLUE            ; 4
+	const PAL_BTLCUSTOM_BROWN           ; 5
+	const PAL_BTLCUSTOM_PURPLE          ; 6
+	const PAL_BTLCUSTOM_ICE             ; 7
+	const PAL_BTLCUSTOM_FIRE            ; 8
+	const PAL_BTLCUSTOM_GLOBE           ; 9
+	const PAL_BTLCUSTOM_WATER           ; a
+	const PAL_BTLCUSTOM_BUBBLE          ; b
+	const PAL_BTLCUSTOM_DRAGONBREATH    ; c
+	const PAL_BTLCUSTOM_DRAGON_RAGE     ; d
+	const PAL_BTLCUSTOM_AURORA          ; e
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
