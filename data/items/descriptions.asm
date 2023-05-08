@@ -283,6 +283,10 @@ TownMapDesc:
 	db   "An SEA MAP of the"
 	next "ORANGE ISLANDS.@"
 
+TownMapDesc:
+	db   "A map of the"
+	next "Sinnoh Region.@"
+
 BicycleDesc:
 	db   "A collapsible bike"
 	next "for fast movement.@"
