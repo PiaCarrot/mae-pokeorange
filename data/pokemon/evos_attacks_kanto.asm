@@ -257,10 +257,10 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, SLUDGE
-	dbw 6, FIRE_BLAST
-	dbw 6, WATERFALL
-	dbw 6, SPIKE_CANNON
+	dbw 6, SLUDGE_BOMB
+	dbw 6, OCTAZOOKA
+	dbw 6, SUBSTITUTE
+	dbw 6, FLAME_WHEEL
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
