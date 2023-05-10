@@ -6263,6 +6263,15 @@ LoadEnemyMon:
 .NotRoaming:
 ; Register a contains wBattleType
 
+	cp BATTLETYPE_TUTORIAL
+	jr nz, .GenerateDVs
+
+	ld a, [wPartyMon1DVs]
+	ld b, a
+	ld a, [wPartyMon1DVs + 1]
+	ld c, a
+	jr .UpdateDVs
+
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_SHINY

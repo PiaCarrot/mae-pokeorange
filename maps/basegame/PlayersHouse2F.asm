@@ -173,9 +173,10 @@ endc
 
 PlayersHouseBookshelfScript:
 if DEF(_DEBUG)
-	loadwildmon MAGIKARP, 100
-	startbattle
-	reloadmapafterbattle
+	; loadwildmon MAGIKARP, 100
+	; startbattle
+	; reloadmapafterbattle
+	special HiddenStarter2
 	end
 else
 	jumpstd PictureBookshelfScript
