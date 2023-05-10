@@ -139,7 +139,7 @@
 	charmap "☎",         $d9
 	charmap "<BOLD_V>",  $da
 	charmap "<BOLD_S>",  $db
-	charmap "<COLON>",      $dc ; un for DUDunSPARCE
+	charmap "№",      $dc ; No.
 	charmap "“",         $dd ; opening quote
 	charmap "”",         $de ; closing quote
 

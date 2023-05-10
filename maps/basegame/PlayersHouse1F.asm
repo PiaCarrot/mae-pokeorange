@@ -224,10 +224,10 @@ ElmsLookingForYouText:
 
 	para "MOM: Hey, kiddo!"
 	line "I meant to ask you"
-	cont "something!"
-	cont "LORI is bringing a"
-	cont "new doll for your"
-	cont "room!"
+	cont "something! Your"
+	cont "AUNT PRIMA is"
+	cont "bringing a new doll"
+	cont "for your room!"
 	
 	para "Which do you like"
 	line "more? PIKACHU or"

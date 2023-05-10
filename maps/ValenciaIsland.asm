@@ -553,6 +553,42 @@ ValenciaCrossLeavingMovement:
 	step UP
 	step LEFT
 	step_end
+	
+PlayersHouseSign:
+	jumptext PlayersHouseSignText
+	
+IvysHouseSign:
+	jumptext IvysHouseSignText
+	
+IvysLabSign:
+	jumptext IvysLabSignText
+	
+ValenciaIslandSign:
+	jumptext ValenciaIslandSignText
+	
+PlayersHouseSignText:
+	text "<PLAYER>'s House"
+	done
+	
+IvysHouseSignText:
+	text "PHILENA IVY"
+	line "RESIDENCE"
+	
+	para "№.1 BAYVIEW"
+	done
+	
+IvysLabSignText:
+	text "IVY RESEARCH"
+	line "№.2 BAYVIEW"
+	done
+	
+ValenciaIslandSignText:
+	text "VALENCIA ISLAND"
+
+	para "IVY RESEARCH"
+	line "South side of"
+	cont "village."
+	done
 
 ValenciaIsland_MapEvents:
 	db 0, 0 ; filler
@@ -566,6 +602,10 @@ ValenciaIsland_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event 13,  5, BGEVENT_READ, PlayersHouseSign
+	bg_event 17, 15, BGEVENT_READ, IvysHouseSign
+	bg_event 27, 13, BGEVENT_READ, IvysLabSign
+	bg_event  8, 12, BGEVENT_READ, ValenciaIslandSign
 
 	def_object_events
 	object_event 14,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1
