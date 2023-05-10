@@ -130,8 +130,8 @@ if DEF(_DEBUG)
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove MINIMIZE,        wPartyMon1, 0
-	givepokemove SURF,       wPartyMon1, 1
-	givepokemove STRENGTH,   wPartyMon1, 2
+	givepokemove PIN_MISSILE,       wPartyMon1, 1
+	givepokemove SPIKE_CANNON,   wPartyMon1, 2
 	givepokemove CUT,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove FLASH,      wPartyMon2, 0

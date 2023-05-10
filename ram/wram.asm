@@ -3470,7 +3470,7 @@ wBattleAnimByte:: db
 wBattleAnimOAMPointerLo:: db
 
 UNION
-wBattleObjectTempID:: db
+wBattleObjectTempID:: dw
 wBattleObjectTempXCoord:: db
 wBattleObjectTempYCoord:: db
 wBattleObjectTempParam:: db

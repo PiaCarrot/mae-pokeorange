@@ -1955,44 +1955,44 @@ BattleAnim_Twineedle:
 	anim_ret
 
 BattleAnim_PinMissile:
-	; anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
-	; anim_sound 0, 0, SFX_RAZOR_WIND
-	; anim_obj ANIM_OBJ_MEDIUM_HORN, 64, 92, $28
-	; anim_wait 12
-	; anim_obj ANIM_OBJ_MEDIUM_HORN, 56, 84, $28
-	; anim_sound 0, 1, SFX_POISON_STING
-	; anim_obj ANIM_OBJ_HIT, 136, 56, $0
-	; anim_wait 12
-	; anim_obj ANIM_OBJ_MEDIUM_HORN, 52, 88, $28
-	; anim_sound 0, 1, SFX_POISON_STING
-	; anim_obj ANIM_OBJ_HIT, 128, 48, $0
-	; anim_wait 12
-	; anim_sound 0, 1, SFX_POISON_STING
-	; anim_obj ANIM_OBJ_HIT, 132, 52, $0
-	; anim_wait 16
+	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 64, 92, $28
+	anim_wait 12
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 56, 84, $28
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+	anim_wait 12
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 52, 88, $28
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT, 128, 48, $0
+	anim_wait 12
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT, 132, 52, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_SpikeCannon:
-; 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
-; 	anim_sound 0, 1, SFX_MEGA_PUNCH
-; .loop
-; 	anim_obj ANIM_OBJ_MEDIUM_HORN, 52, 88, $18
-; 	anim_wait 12
-; 	anim_obj ANIM_OBJ_MEDIUM_HORN, 64, 92, $18
-; 	anim_sound 0, 1, SFX_DOUBLE_KICK
-; 	anim_obj ANIM_OBJ_HIT, 130, 50, $0
-; 	anim_wait 12
-; 	anim_obj ANIM_OBJ_MEDIUM_HORN, 56, 84, $18
-; 	anim_sound 0, 1, SFX_DOUBLE_KICK
-; 	anim_obj ANIM_OBJ_HIT, 136, 56, $0
-; 	anim_wait 12
-; 	anim_obj ANIM_OBJ_MEDIUM_HORN, 60, 96, $18
-; 	anim_sound 0, 1, SFX_DOUBLE_KICK
-; 	anim_obj ANIM_OBJ_HIT, 128, 48, $0
-; 	anim_wait 12
-; 	anim_sound 0, 1, SFX_DOUBLE_KICK
-; 	anim_obj ANIM_OBJ_HIT, 137, 57, $0
-; 	anim_wait 16
+	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+.loop
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 52, 88, $18
+	anim_wait 12
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 64, 92, $18
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_HIT, 130, 50, $0
+	anim_wait 12
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 56, 84, $18
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+	anim_wait 12
+	anim_obj ANIM_OBJ_MEDIUM_HORN, 60, 96, $18
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_HIT, 128, 48, $0
+	anim_wait 12
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_HIT, 137, 57, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Transform:
