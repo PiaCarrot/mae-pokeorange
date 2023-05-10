@@ -1010,18 +1010,19 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	ret
 
 BattleAnimCmd_MinimizeOpp:
-	;Disabled for new animation. Remove comments (;) to re-enable
-	;ld a, [rSVBK]
-	;push af
-	;ld a, 1 ; unnecessary bankswitch?
-	;ld [rSVBK], a
-	;xor a ; sScratch
-	;call GetSRAMBank
-	;call GetMinimizePic
-	;call Request2bpp
-	;call CloseSRAM
-	;pop af
-	;ld [rSVBK], a
+	ldh a, [rSVBK]
+	push af
+	ld a, 1 ; unnecessary bankswitch?
+	ldh [rSVBK], a
+
+	xor a ; BANK(sScratch)
+	call OpenSRAM
+	call GetMinimizePic
+	call Request2bpp
+	call CloseSRAM
+
+	pop af
+	ldh [rSVBK], a
 	ret
 
 GetMinimizePic:

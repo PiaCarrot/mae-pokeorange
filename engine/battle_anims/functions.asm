@@ -100,7 +100,6 @@ DoBattleAnimFrame:
 	dw BattleAnimFunction_RadialMoveOut_Slow
 	dw BattleAnimFunction_RadialMoveOut_Fast
 	dw BattleAnimFunction_RadialMoveIn
-	dw BattleAnimFunction_BubbleSplash
 
 BattleAnimFunction_Null:
 	call BattleAnim_AnonJumptable
@@ -1004,12 +1003,6 @@ BattleAnim_ScatterHorizontal:
 	ld de, -$100
 	ret
 
-BattleAnimFunction_BubbleSplash:
-	call BattleAnim_AnonJumptable
-
-	dw BattleAnimFunction_RockSmash.after_frameset
-	dw BattleAnimFunction_RockSmash.one
-
 BattleAnimFunction_RockSmash:
 ; Object moves at an arc
 ; Obj Param: Bit 7 makes arc flip horizontally
@@ -1030,7 +1023,6 @@ BattleAnimFunction_RockSmash:
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
-.after_frameset
 	call BattleAnim_IncAnonJumptableIndex
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
