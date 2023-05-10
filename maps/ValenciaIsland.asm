@@ -64,9 +64,8 @@ ValenciaIsland_MapScripts:
 	checkevent EVENT_GOT_PIKACHU_FROM_IVY
 	iftrue .ASPikachuScript
 	setevent EVENT_GOT_EEVEE_FROM_IVY
-	givepoke EEVEE, 5
-	cry EEVEE
-	loadwildmon EEVEE, 5
+	;Special to encounter starter
+	special HiddenStarter1
 .ContinueASPikaOrEevee
 	catchtutorial BATTLETYPE_TUTORIAL
 	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement5
@@ -82,7 +81,8 @@ ValenciaIsland_MapScripts:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 .ContinueASPikaOrEevee2
-	;do you want to give it a nickname
+	;Special to name starter
+	special HiddenStarter2
 	writetext ASIvyScriptText7
 	waitbutton
 	closetext
@@ -96,9 +96,8 @@ ValenciaIsland_MapScripts:
 	
 .ASPikachuScript
 	setevent EVENT_GOT_PIKACHU_FROM_IVY
-	givepoke PIKACHU, 5
-	cry PIKACHU
-	loadwildmon PIKACHU, 5
+	;Special to encounter starter
+	special HiddenStarter1
 	sjump .ContinueASPikaOrEevee
 	
 .ASPikachuScript2
@@ -144,9 +143,8 @@ ValenciaIsland_MapScripts:
 	writetext ASIvyScriptText12
 	waitbutton
 	turnobject VALENCIA_ISLAND_IVY, LEFT
-	givepoke DRATINI, 5
-	cry DRATINI
-	loadwildmon DRATINI, 5
+	;Special to encounter starter
+	special HiddenStarter1
 	catchtutorial BATTLETYPE_TUTORIAL
 	setevent EVENT_DRATINI_VALENCIA_APPEAR
 	disappear VALENCIA_ISLAND_DRATINI
@@ -158,7 +156,8 @@ ValenciaIsland_MapScripts:
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	;do you want to give it a nickname
+	;Special to name starter
+	special HiddenStarter2
 	writetext ASIvyScriptText7
 	waitbutton
 	closetext

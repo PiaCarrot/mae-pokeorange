@@ -1011,7 +1011,7 @@ GiveShedinja:
 	push de
 
 ; Set wMonType to Party
-	ld a, 0
+	xor a ; PARTYMON
 	ld [wMonType], a
 
 
