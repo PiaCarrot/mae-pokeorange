@@ -29,4 +29,6 @@ KantoGymLeaders:
 	db SABRINA
 	db BLAINE
 	db BLUE
+	db LORELEI2
+	db LORELEI3
 	db -1

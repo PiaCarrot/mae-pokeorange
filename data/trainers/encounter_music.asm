@@ -71,6 +71,9 @@ TrainerEncounterMusic::
 	db MUSIC_ORANGE_ENCOUNTER       ; OFFICER
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_ORANGE_ENCOUNTER       ; mysticalman
+	db MUSIC_ORANGE_ENCOUNTER       ; lorelei1
+	db MUSIC_ORANGE_ENCOUNTER       ; lorelei2
+	db MUSIC_ORANGE_ENCOUNTER       ; lorelei3
 	assert_table_length NUM_TRAINER_CLASSES + 1
 	db MUSIC_ORANGE_ENCOUNTER       ; unused
 	db MUSIC_ORANGE_ENCOUNTER       ; unused

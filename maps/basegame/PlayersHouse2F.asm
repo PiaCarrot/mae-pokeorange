@@ -176,7 +176,10 @@ if DEF(_DEBUG)
 	; loadwildmon MAGIKARP, 100
 	; startbattle
 	; reloadmapafterbattle
-	special HiddenStarter2
+	loadtrainer LORELEI3, LORELEI_3
+	startbattle
+	reloadmapafterbattle
+	; special HiddenStarter2
 	end
 else
 	jumpstd PictureBookshelfScript

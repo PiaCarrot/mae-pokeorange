@@ -592,3 +592,43 @@ MysticalmanGroup:
 	db -1 ; end
 
 	end_list_items
+
+Lorelei1Group:
+	next_list_item ; AUNT (1)
+	db "PRIMA@", TRAINERTYPE_MOVES
+	db  5
+	dw SMOOCHUM, POUND, NO_MOVE, NO_MOVE, NO_MOVE
+	db -1 ; end
+
+	end_list_items
+
+Lorelei2Group:
+	next_list_item ; ELITE FOUR (1)
+	db "LORELEI@", TRAINERTYPE_MOVES
+	db 40
+	dw DEWGONG, TAKE_DOWN, AQUA_JET, ENCORE, ICE_BEAM
+	db 40
+	dw JYNX, BODY_SLAM, AVALANCHE, MEAN_LOOK, BLIZZARD
+	db 40
+	dw CLOYSTER, SPIKE_CANNON, BRINE, PROTECT, HAIL
+	db -1 ; end
+
+	end_list_items
+
+Lorelei3Group:
+	next_list_item ; ELITE FOUR (1)
+	db "LORELEI@", TRAINERTYPE_MOVES
+	db 40
+	dw DEWGONG, TAKE_DOWN, AQUA_JET, ENCORE, ICE_BEAM
+	db 40
+	dw JYNX, BODY_SLAM, AVALANCHE, MEAN_LOOK, BLIZZARD
+	db 40
+	dw CLOYSTER, SPIKE_CANNON, BRINE, PROTECT, HAIL
+	db 40
+	dw CLOYSTER, SPIKE_CANNON, BRINE, PROTECT, HAIL
+	db 40
+	dw CLOYSTER, SPIKE_CANNON, BRINE, PROTECT, HAIL
+	db 40
+	dw CLOYSTER, SPIKE_CANNON, BRINE, PROTECT, HAIL
+	db -1 ; end
+	end_list_items
