@@ -1,6 +1,8 @@
 SECTION "Hoenn Frames", ROMX
 
 HoennFramePointers:
+	dw PoochyenaFrames
+	dw MightyenaFrames
 	dw ZigzagoonFrames
 	dw LinooneFrames
 	dw WingullFrames
@@ -35,6 +37,8 @@ HoennFramePointers:
 	dw FlygonFrames
 	dw SwabluFrames
 	dw AltariaFrames
+	dw ZangooseFrames
+	dw SeviperFrames
 	dw FeebasFrames
 	dw MiloticFrames
 	dw KecleonFrames
@@ -56,6 +60,8 @@ HoennFramePointers:
 	dw LatiosFrames
 .IndirectEnd::
 
+PoochyenaFrames:     INCLUDE "gfx/pokemon/hoenn/poochyena/frames.asm"
+MightyenaFrames:     INCLUDE "gfx/pokemon/hoenn/mightyena/frames.asm"
 ZigzagoonFrames:     INCLUDE "gfx/pokemon/hoenn/zigzagoon/frames.asm"
 LinooneFrames:       INCLUDE "gfx/pokemon/hoenn/linoone/frames.asm"
 WingullFrames:       INCLUDE "gfx/pokemon/hoenn/wingull/frames.asm"
@@ -90,6 +96,8 @@ VibravaFrames:       INCLUDE "gfx/pokemon/hoenn/vibrava/frames.asm"
 FlygonFrames:        INCLUDE "gfx/pokemon/hoenn/flygon/frames.asm"
 SwabluFrames:        INCLUDE "gfx/pokemon/hoenn/swablu/frames.asm"
 AltariaFrames:       INCLUDE "gfx/pokemon/hoenn/altaria/frames.asm"
+ZangooseFrames:      INCLUDE "gfx/pokemon/hoenn/zangoose/frames.asm"
+SeviperFrames:       INCLUDE "gfx/pokemon/hoenn/seviper/frames.asm"
 FeebasFrames:        INCLUDE "gfx/pokemon/hoenn/feebas/frames.asm"
 MiloticFrames:       INCLUDE "gfx/pokemon/hoenn/milotic/frames.asm"
 KecleonFrames:       INCLUDE "gfx/pokemon/hoenn/kecleon/frames.asm"

@@ -238,6 +238,8 @@ PokedexDataPointerTable:
 ;==========================
 ;	Hoenn Dex Start Here
 ;==========================
+	dba PoochyenaPokedexEntry
+	dba MightyenaPokedexEntry
 	dba ZigzagoonPokedexEntry
 	dba LinoonePokedexEntry
 	dba WingullPokedexEntry
@@ -272,6 +274,8 @@ PokedexDataPointerTable:
 	dba FlygonPokedexEntry
 	dba SwabluPokedexEntry
 	dba AltariaPokedexEntry
+	dba ZangoosePokedexEntry
+	dba SeviperPokedexEntry
 	dba FeebasPokedexEntry
 	dba MiloticPokedexEntry
 	dba KecleonPokedexEntry

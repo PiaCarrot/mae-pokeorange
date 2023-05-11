@@ -239,6 +239,8 @@ PokemonNames::
 	db "HO-OH@@@@@"
 	db "CELEBI@@@@"
 ;HOENN
+	db "POOCHYENA@"
+	db "MIGHTYENA@"
 	db "ZIGZAGOON@"
 	db "LINOONE@@@"
 	db "WINGULL@@@"
@@ -273,6 +275,8 @@ PokemonNames::
 	db "FLYGON@@@@"
 	db "SWABLU@@@@"
 	db "ALTARIA@@@"
+	db "ZANGOOSE@@"
+	db "SEVIPER@@@"
 	db "FEEBAS@@@@"
 	db "MILOTIC@@@"
 	db "KECLEON@@@"

@@ -1,5 +1,7 @@
 BaseData2:
 ;HOENN
+INCLUDE "data/pokemon/base_stats/hoenn/poochyena.asm"
+INCLUDE "data/pokemon/base_stats/hoenn/mightyena.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/zigzagoon.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/linoone.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/wingull.asm"
@@ -34,6 +36,8 @@ INCLUDE "data/pokemon/base_stats/hoenn/vibrava.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/flygon.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/swablu.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/altaria.asm"
+INCLUDE "data/pokemon/base_stats/hoenn/zangoose.asm"
+INCLUDE "data/pokemon/base_stats/hoenn/seviper.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/feebas.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/milotic.asm"
 INCLUDE "data/pokemon/base_stats/hoenn/kecleon.asm"

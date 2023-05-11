@@ -249,6 +249,8 @@ CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"
 
 SECTION "Pokedex Entries 257-320", ROMX
 
+PoochyenaPokedexEntry::  INCLUDE "data/pokemon/dex_entries/hoenn/poochyena.asm"
+MightyenaPokedexEntry::  INCLUDE "data/pokemon/dex_entries/hoenn/mightyena.asm"
 ZigzagoonPokedexEntry::  INCLUDE "data/pokemon/dex_entries/hoenn/zigzagoon.asm"
 LinoonePokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/linoone.asm"
 WingullPokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/wingull.asm"
@@ -287,6 +289,8 @@ VibravaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/vibrava.asm"
 FlygonPokedexEntry::     INCLUDE "data/pokemon/dex_entries/hoenn/flygon.asm"
 SwabluPokedexEntry::     INCLUDE "data/pokemon/dex_entries/hoenn/swablu.asm"
 AltariaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/altaria.asm"
+ZangoosePokedexEntry::   INCLUDE "data/pokemon/dex_entries/hoenn/zangoose.asm"
+SeviperPokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/seviper.asm"
 FeebasPokedexEntry::     INCLUDE "data/pokemon/dex_entries/hoenn/feebas.asm"
 MiloticPokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/milotic.asm"
 KecleonPokedexEntry::    INCLUDE "data/pokemon/dex_entries/hoenn/kecleon.asm"

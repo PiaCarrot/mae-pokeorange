@@ -501,6 +501,10 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/johto/ho_oh/shiny.pal"
 	INCBIN "gfx/pokemon/johto/celebi/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/johto/celebi/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/poochyena/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/poochyena/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/mightyena/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/mightyena/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/zigzagoon/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/hoenn/zigzagoon/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/linoone/front.gbcpal", middle_colors
@@ -569,6 +573,10 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/hoenn/swablu/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/altaria/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/hoenn/altaria/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/zangoose/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/zangoose/shiny.pal"
+	INCBIN "gfx/pokemon/hoenn/seviper/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/hoenn/seviper/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/feebas/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/hoenn/feebas/shiny.pal"
 	INCBIN "gfx/pokemon/hoenn/milotic/front.gbcpal", middle_colors

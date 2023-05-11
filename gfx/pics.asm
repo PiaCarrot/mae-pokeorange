@@ -575,10 +575,18 @@ CelebiBackpic:            INCBIN "gfx/pokemon/johto/celebi/back.2bpp.lz"
 SECTION "Pokemon Pics 22", ROMX
 
 
+PoochyenaFrontpic:        INCBIN "gfx/pokemon/hoenn/poochyena/front.animated.2bpp.lz"
+PoochyenaBackpic:         INCBIN "gfx/pokemon/hoenn/poochyena/back.2bpp.lz"
+MightyenaFrontpic:        INCBIN "gfx/pokemon/hoenn/mightyena/front.animated.2bpp.lz"
+MightyenaBackpic:         INCBIN "gfx/pokemon/hoenn/mightyena/back.2bpp.lz"
 ZigzagoonFrontpic:        INCBIN "gfx/pokemon/hoenn/zigzagoon/front.animated.2bpp.lz"
 ZigzagoonBackpic:         INCBIN "gfx/pokemon/hoenn/zigzagoon/back.2bpp.lz"
 LinooneFrontpic:          INCBIN "gfx/pokemon/hoenn/linoone/front.animated.2bpp.lz"
 LinooneBackpic:           INCBIN "gfx/pokemon/hoenn/linoone/back.2bpp.lz"
+ZangooseFrontpic:         INCBIN "gfx/pokemon/hoenn/zangoose/front.animated.2bpp.lz"
+ZangooseBackpic:          INCBIN "gfx/pokemon/hoenn/zangoose/back.2bpp.lz"
+SeviperFrontpic:          INCBIN "gfx/pokemon/hoenn/seviper/front.animated.2bpp.lz"
+SeviperBackpic:           INCBIN "gfx/pokemon/hoenn/seviper/back.2bpp.lz"
 
 
 SECTION "Pokemon Pics 23", ROMX

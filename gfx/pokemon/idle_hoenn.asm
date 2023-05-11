@@ -1,6 +1,8 @@
 SECTION "Hoenn Idle AnimationIdles", ROMX
 
 HoennAnimationIdlePointers:
+	dw PoochyenaAnimationIdle
+	dw MightyenaAnimationIdle
 	dw ZigzagoonAnimationIdle
 	dw LinooneAnimationIdle
 	dw WingullAnimationIdle
@@ -35,6 +37,8 @@ HoennAnimationIdlePointers:
 	dw FlygonAnimationIdle
 	dw SwabluAnimationIdle
 	dw AltariaAnimationIdle
+	dw ZangooseAnimationIdle
+	dw SeviperAnimationIdle
 	dw FeebasAnimationIdle
 	dw MiloticAnimationIdle
 	dw KecleonAnimationIdle
@@ -56,6 +60,8 @@ HoennAnimationIdlePointers:
 	dw LatiosAnimationIdle
 .IndirectEnd::
 
+PoochyenaAnimationIdle:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim_idle.asm"
+MightyenaAnimationIdle:     INCLUDE "gfx/pokemon/hoenn/mightyena/anim_idle.asm"
 ZigzagoonAnimationIdle:     INCLUDE "gfx/pokemon/hoenn/zigzagoon/anim_idle.asm"
 LinooneAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/linoone/anim_idle.asm"
 WingullAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/wingull/anim_idle.asm"
@@ -90,6 +96,8 @@ VibravaAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/vibrava/anim_idle.asm"
 FlygonAnimationIdle:        INCLUDE "gfx/pokemon/hoenn/flygon/anim_idle.asm"
 SwabluAnimationIdle:        INCLUDE "gfx/pokemon/hoenn/swablu/anim_idle.asm"
 AltariaAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/altaria/anim_idle.asm"
+ZangooseAnimationIdle:      INCLUDE "gfx/pokemon/hoenn/zangoose/anim_idle.asm"
+SeviperAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/seviper/anim_idle.asm"
 FeebasAnimationIdle:        INCLUDE "gfx/pokemon/hoenn/feebas/anim_idle.asm"
 MiloticAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/milotic/anim_idle.asm"
 KecleonAnimationIdle:       INCLUDE "gfx/pokemon/hoenn/kecleon/anim_idle.asm"

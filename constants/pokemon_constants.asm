@@ -255,6 +255,8 @@ JOHTO_POKEMON EQU const_value
 	const HO_OH      ; fa
 	const CELEBI     ; fb
 ;HOENN_POKEMON EQU const_value
+	const POOCHYENA
+	const MIGHTYENA
 	const ZIGZAGOON
 	const LINOONE
 	const WINGULL
@@ -289,6 +291,8 @@ JOHTO_POKEMON EQU const_value
 	const FLYGON
 	const SWABLU
 	const ALTARIA
+	const ZANGOOSE
+	const SEVIPER
 	const FEEBAS
 	const MILOTIC
 	const KECLEON

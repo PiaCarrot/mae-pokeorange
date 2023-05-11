@@ -59,7 +59,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 	
 	def_grass_wildmons ROUTE_49
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 2, PIDGEY
 	dbw 2, CATERPIE
@@ -87,7 +87,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 	
 	def_grass_wildmons ROUTE_49_NORTH
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 2, PIDGEY
 	dbw 2, CATERPIE

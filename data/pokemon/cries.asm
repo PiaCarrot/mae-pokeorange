@@ -241,6 +241,8 @@ PokemonCries::
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
 ;Hoenn
+	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; POOCHYENA
+	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MIGHTYENA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ZIGZAGOON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LINOONE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WINGULL
@@ -275,6 +277,8 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FLYGON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SWABLU
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ALTARIA
+	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ZANGOOSE
+	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SEVIPER
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FEEBAS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MILOTIC
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; KECLEON

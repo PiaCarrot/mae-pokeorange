@@ -234,6 +234,8 @@ FirstEvoStages::
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw POOCHYENA
+	dw POOCHYENA
 	dw ZIGZAGOON
 	dw ZIGZAGOON
 	dw WINGULL
@@ -268,6 +270,8 @@ FirstEvoStages::
 	dw TRAPINCH
 	dw SWABLU
 	dw SWABLU
+	dw ZANGOOSE
+	dw SEVIPER
 	dw FEEBAS
 	dw FEEBAS
 	dw KECLEON

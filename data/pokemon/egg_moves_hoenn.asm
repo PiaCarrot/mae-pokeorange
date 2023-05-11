@@ -54,6 +54,10 @@ HoennEggMovePointers::
 	dw HoennNoEggMoves
 	dw HoennNoEggMoves
 	dw HoennNoEggMoves
+	dw HoennNoEggMoves
+	dw HoennNoEggMoves
+	dw HoennNoEggMoves
+	dw HoennNoEggMoves
 .IndirectEnd::
 
 HoennNoEggMoves:
