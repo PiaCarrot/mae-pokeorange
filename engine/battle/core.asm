@@ -1754,10 +1754,11 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jr z, .ended
+	jmp z, .ended
 
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
+	call .PlayWeatherAnimation
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
@@ -1767,7 +1768,7 @@ HandleWeather:
 	cp USING_EXTERNAL_CLOCK
 	jr z, .enemy_first
 
-; player first
+.player_first
 	call SetPlayerTurn
 	call .SandstormDamage
 	call SetEnemyTurn
@@ -1777,6 +1778,28 @@ HandleWeather:
 	call SetEnemyTurn
 	call .SandstormDamage
 	call SetPlayerTurn
+	jr .SandstormDamage
+
+.PlayWeatherAnimation:
+	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
+	ld [wNumHits], a
+	call SetPlayerTurn
+	ld hl, .WeatherAnimations
+	ld a, [wBattleWeather]
+	dec a
+	ld b, 0
+	ld c, a
+	add hl, bc
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	jmp Call_PlayBattleAnim
+
+.WeatherAnimations:
+	dw ANIM_IN_RAIN
+	dw ANIM_IN_SUN
+	dw ANIM_IN_SANDSTORM
 
 .SandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -1807,16 +1830,12 @@ HandleWeather:
 	ret z
 
 	call SwitchTurnCore
-	xor a
-	ld [wNumHits], a
-	ld de, ANIM_IN_SANDSTORM
-	call Call_PlayBattleAnim
 	call SwitchTurnCore
-	call GetEighthMaxHP
+	call GetSixteenthMaxHP
 	call SubtractHPFromUser
 
 	ld hl, SandstormHitsText
-	jmp StdBattleTextbox
+	jp StdBattleTextbox
 
 .ended
 	ld hl, .WeatherEndedMessages

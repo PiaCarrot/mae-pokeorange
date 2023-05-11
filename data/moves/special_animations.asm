@@ -302,6 +302,45 @@ BattleAnim_InLove:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_InSandstorm:
+	anim_1gfx ANIM_GFX_POWDER
+	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_SANDSTORM, 72, 0, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_SANDSTORM, 56, 0, $2
+.loop
+	anim_sound 0, 1, SFX_MENU
+	anim_wait 8
+	anim_loop 16, .loop
+	anim_wait 8
+	anim_ret
+
+BattleAnim_InSun:
+	anim_1gfx ANIM_GFX_WATER
+	anim_bgp $90
+	anim_sound 0, 1, SFX_MORNING_SUN
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 128
+	anim_ret
+
+BattleAnim_InRain:
+	anim_1gfx ANIM_GFX_WATER
+	anim_bgp $f8
+	anim_obp0 $7c
+	anim_sound 0, 1, SFX_RAIN_DANCE
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 128
+	anim_ret
+
 BattleAnim_InNightmare:
 	anim_1gfx ANIM_GFX_ANGELS
 	anim_sound 0, 0, SFX_BUBBLEBEAM
