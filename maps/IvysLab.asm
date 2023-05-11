@@ -402,6 +402,9 @@ IvysGyaradosScript:
 	closetext
 	end
 	
+IvysLabOldTV:
+	jumptext IvysLabOldTVText
+	
 ElmsLabHealingMachineText1:
 	text "A healing machine."
 	line "But, you have no"
@@ -562,6 +565,11 @@ IvysGyaradosText:
 	text "Gyaaaaash!"
 	done
 	
+IvysLabOldTVText:
+	text "Looks like an old"
+	line "radar for sonar."
+	done
+	
 IvysLab_WalkUpToIvyMovement:
 	step UP
 	step UP
@@ -658,6 +666,8 @@ IvysLab_MapEvents:
 	bg_event 12,  5, BGEVENT_READ, IvysLabPoster1
 	bg_event 14,  5, BGEVENT_READ, IvysLabPoster2
 	bg_event 14,  1, BGEVENT_READ, IvysLabTrashcan
+	bg_event  5,  1, BGEVENT_READ, IvysLabOldTV
+	bg_event  4,  1, BGEVENT_READ, IvysLabOldTV
 
 	def_object_events
 	object_event  2,  4, SPRITE_ELM, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ProfessorIvyScript, -1

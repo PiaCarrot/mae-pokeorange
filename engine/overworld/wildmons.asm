@@ -314,19 +314,19 @@ ChooseWildEncounter:
 	call CheckOnWater
 	jr nz, .ok
 ; Check if we buff the wild mon, and by how much.
-	; call Random
-	; cp 35 percent
-	; jr c, .ok
-	; inc b
-	; cp 65 percent
-	; jr c, .ok
-	; inc b
-	; cp 85 percent
-	; jr c, .ok
-	; inc b
-	; cp 95 percent
-	; jr c, .ok
-	; inc b
+	call Random
+	cp 35 percent
+	jr c, .ok
+	inc b
+	cp 65 percent
+	jr c, .ok
+	inc b
+	cp 85 percent
+	jr c, .ok
+	inc b
+	cp 95 percent
+	jr c, .ok
+	inc b
 ; Store the level
 .ok
 	ld a, b
