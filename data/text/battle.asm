@@ -1051,8 +1051,8 @@ BlewSpikesText:
 	prompt
 
 DownpourText:
-	text "A downpour"
-	line "started!"
+	text "It started to"
+	line "rain!"
 	prompt
 
 SunGotBrightText:

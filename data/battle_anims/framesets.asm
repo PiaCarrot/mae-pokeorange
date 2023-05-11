@@ -1329,7 +1329,3 @@ BattleAnimFrameData:
 .Frameset_c2:
 	frame BATTLEANIMOAMSET_14,  6
 	oamdelete
-
-.Frameset_c3:
-	frame BATTLEANIMOAMSET_14,  6
-	oamdelete

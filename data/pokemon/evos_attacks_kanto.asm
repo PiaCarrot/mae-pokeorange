@@ -257,10 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, SPARK
-	dbw 6, SACRED_FIRE
-	dbw 6, DYNAMICPUNCH
-	dbw 6, DRAGONBREATH
+	dbw 6, FACADE
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

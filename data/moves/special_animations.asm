@@ -341,6 +341,33 @@ BattleAnim_InRain:
 	anim_wait 128
 	anim_ret
 
+;BattleAnim_InHail:       --- reserved for when hail effect is implemented
+;	anim_1gfx ANIM_GFX_ICE
+;	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
+;.loop
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
+;	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_HAIL, 56, 16, $2
+;	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
+;	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
+;	anim_obj ANIM_OBJ_HAIL, 88, 0, $1
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
+;	anim_obj ANIM_OBJ_HAIL, 56, 16, $1
+;	anim_wait 8
+;	anim_loop 3, .loop
+;	anim_ret
+
 BattleAnim_InNightmare:
 	anim_1gfx ANIM_GFX_ANGELS
 	anim_sound 0, 0, SFX_BUBBLEBEAM
