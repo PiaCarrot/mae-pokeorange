@@ -382,10 +382,6 @@ SECTION "bank32", ROMX
 INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
 
-SECTION "Move Animation Framesets", ROMX
-
-INCLUDE "data/battle_anims/framesets.asm"
-
 
 SECTION "Move Animations", ROMX
 
@@ -473,6 +469,11 @@ INCLUDE "engine/link/mystery_gift.asm"
 INCLUDE "engine/battle/used_move_text.asm"
 INCLUDE "mobile/mobile_41.asm"
 INCLUDE "engine/gfx/load_overworld_font.asm"
+
+
+SECTION "Move Animation Framesets", ROMX
+
+INCLUDE "engine/battle_anims/framesets.asm"
 
 
 SECTION "mobile42", ROMX
