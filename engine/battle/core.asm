@@ -1754,15 +1754,24 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jmp z, .ended
+	jr nz, .continues
 
+; ended
+	ld hl, .WeatherEndedMessages
+	call .PrintWeatherMessage
+	xor a
+	ld [wBattleWeather], a
+	ret
+
+.continues
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 	call .PlayWeatherAnimation
 
+;check_sandstorm
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	ret nz
+	jr nz, .check_hail
 
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -1779,27 +1788,6 @@ HandleWeather:
 	call .SandstormDamage
 	call SetPlayerTurn
 	jr .SandstormDamage
-
-.PlayWeatherAnimation:
-	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
-	ld [wNumHits], a
-	call SetPlayerTurn
-	ld hl, .WeatherAnimations
-	ld a, [wBattleWeather]
-	dec a
-	ld b, 0
-	ld c, a
-	add hl, bc
-	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	jmp Call_PlayBattleAnim
-
-.WeatherAnimations:
-	dw ANIM_IN_RAIN
-	dw ANIM_IN_SUN
-	dw ANIM_IN_SANDSTORM
 
 .SandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
@@ -1837,12 +1825,78 @@ HandleWeather:
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
 
-.ended
-	ld hl, .WeatherEndedMessages
-	call .PrintWeatherMessage
-	xor a
-	ld [wBattleWeather], a
-	ret
+
+	
+.check_hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
+
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first_hail
+
+; player first
+	call SetPlayerTurn
+	call .HailDamage
+	call SetEnemyTurn
+	jr .HailDamage
+
+.enemy_first_hail
+	call SetEnemyTurn
+	call .HailDamage
+	call SetPlayerTurn
+
+.HailDamage:
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	ret nz
+
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok1
+	ld hl, wEnemyMonType1
+.ok1
+	ld a, [hli]
+	cp ICE
+	ret z
+
+	ld a, [hl]
+	cp ICE
+	ret z
+
+	call SwitchTurnCore
+	call SwitchTurnCore
+	call GetSixteenthMaxHP
+	call SubtractHPFromUser
+	
+	ld hl, PeltedByHailText
+	jp StdBattleTextbox
+
+
+.PlayWeatherAnimation:
+	xor a ; uses one byte of ROM, compared to two for "ld a, 1"
+	ld [wNumHits], a
+	call SetPlayerTurn
+	ld hl, .WeatherAnimations
+	ld a, [wBattleWeather]
+	dec a
+	ld b, 0
+	ld c, a
+	add hl, bc
+	add hl, bc
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	jmp Call_PlayBattleAnim
+
+.WeatherAnimations:
+	dw ANIM_IN_RAIN
+	dw ANIM_IN_SUN
+	dw ANIM_IN_SANDSTORM
+	dw ANIM_IN_HAIL
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -1861,12 +1915,14 @@ HandleWeather:
 	dw BattleText_RainContinuesToFall
 	dw BattleText_TheSunlightIsStrong
 	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinuesToFall
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
 
 SubtractHPFromTarget:
 	call SubtractHP
