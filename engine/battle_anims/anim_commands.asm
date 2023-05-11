@@ -342,7 +342,7 @@ BattleAnimCommands::
 	dw BattleAnimCmd_OBP0              ; f2
 	dw BattleAnimCmd_OBP1              ; f3
 	dw BattleAnimCmd_KeepSprites       ; f4
-	dw ClearEnemyHud                   ; f5
+	dw BattleAnim_ClearEnemyHud        ; f5
 	dw BattleAnimCmd_Obj               ; f6
 	dw BattleAnimCmd_Obj               ; f7
 	dw BattleAnimCmd_IfParamEqual      ; f8
