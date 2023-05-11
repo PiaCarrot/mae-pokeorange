@@ -148,7 +148,7 @@ BattleText_TheSandstormRages:
 BattleText_HailContinuesToFall:
 	text "Hail continues to"
 	line "fall."
-	prompt
+	done
 
 BattleText_TheRainStopped:
 	text "The rain stopped."

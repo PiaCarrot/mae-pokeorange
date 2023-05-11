@@ -196,8 +196,9 @@ ClearEnemyHud:
 ClearActorHud:
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .player
 .continue
+	jr z, .player
+
 	hlcoord 1, 0
 	lb bc, 4, 10
 	jr .clear_box

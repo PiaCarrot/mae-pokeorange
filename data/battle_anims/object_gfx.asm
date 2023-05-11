@@ -53,7 +53,7 @@ AnimObjGFX:
 	anim_obj_gfx  5, AnimObjStarsGFX
 	anim_obj_gfx 18, AnimObjMeteorGFX
 	anim_obj_gfx  4, AnimObjFlatterGFX
-	anim_obj_gfx  2, AnimObjMisc2GFX
+	anim_obj_gfx  3, AnimObjMisc2GFX
 	anim_obj_gfx 10, AnimObjBeamLightGFX
 	anim_obj_gfx  9, AnimObjSmokePuffGFX
 	assert_table_length NUM_ANIM_GFX + 1

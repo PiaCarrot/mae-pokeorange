@@ -343,6 +343,7 @@ BattleAnim_InRain:
 	anim_ret
 
 BattleAnim_InHail:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 	anim_1gfx ANIM_GFX_ICE
 	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
 .loop

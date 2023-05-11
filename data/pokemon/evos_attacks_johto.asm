@@ -114,15 +114,7 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, GROWL
-	dbw 6, FORESIGHT
-	dbw 11, PECK
-	dbw 16, HYPNOSIS
-	dbw 22, REFLECT
-	dbw 28, TAKE_DOWN
-	dbw 34, CONFUSION
-	dbw 48, DREAM_EATER
+	dbw 1, WISH
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
