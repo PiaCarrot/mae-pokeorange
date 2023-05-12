@@ -69,5 +69,8 @@ TrainerClassPVs:
         db 0, 0 ; OFFICER
         db 0, 0 ; GRUNTF
         db 0, 0 ; MYSTICALMAN
+        db 0, 0 ; LORELEI1
+        db 0, 0 ; LORELEI2
+        db 0, 0 ; LORELEI3
         assert_table_length NUM_TRAINER_CLASSES
     

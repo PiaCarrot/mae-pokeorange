@@ -39,4 +39,7 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db LORELEI1
+	db LORELEI2
+	db LORELEI3
 .End

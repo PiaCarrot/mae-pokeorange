@@ -22,7 +22,7 @@ ReadTrainerParty:
 	cp CAL
 	jr nz, .not_cal2
 	ld a, [wOtherTrainerID]
-	cp CAL2
+	cp CAL
 	jr z, .cal2
 	ld a, [wOtherTrainerClass]
 .not_cal2

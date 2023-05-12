@@ -17,19 +17,13 @@ QueueBattleAnimation:
 	ld b, h
 	ld hl, wLastAnimObjectIndex
 	inc [hl]
-	call InitBattleAnimation
-	ret
-
-DeinitBattleAnimation:
-	ld hl, BATTLEANIMSTRUCT_INDEX
-	add hl, bc
-	ld [hl], $0
-	ret
+	; fallthrough
 
 InitBattleAnimation:
-	ld a, [wBattleObjectTempID]
+	ld hl, wBattleObjectTempID
+	ld a, [hli]
 	ld e, a
-	ld d, 0
+	ld d, [hl]
 	ld hl, BattleAnimObjects
 rept BATTLEANIMOBJ_LENGTH
 	add hl, de
@@ -77,9 +71,16 @@ endr
 	ld [hl], a  ; BATTLEANIMSTRUCT_VAR2
 	ret
 
+DeinitBattleAnimation:
+	ld hl, BATTLEANIMSTRUCT_INDEX
+	add hl, bc
+	ld [hl], $0
+	ret
+
 BattleAnimOAMUpdate:
 	call InitBattleAnimBuffer
-	call GetBattleAnimFrame
+	farcall GetBattleAnimFrame
+	ld a, h
 	cp oamwait_command
 	jmp z, .done
 	cp oamdelete_command

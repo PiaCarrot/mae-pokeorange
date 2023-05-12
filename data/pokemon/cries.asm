@@ -157,15 +157,6 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $03c,  $140 ; DRAGONITE
 	mon_cry CRY_PARAS,       $099,  $17f ; MEWTWO
 	mon_cry CRY_PARAS,       $0ee,  $17f ; MEW
-	mon_cry CRY_CHIKORITA,  -$010,  $0b0 ; CHIKORITA
-	mon_cry CRY_CHIKORITA,  -$022,  $120 ; BAYLEEF
-	mon_cry CRY_CHIKORITA,  -$0b7,  $200 ; MEGANIUM
-	mon_cry CRY_CYNDAQUIL,   $347,  $080 ; CYNDAQUIL
-	mon_cry CRY_CYNDAQUIL,   $321,  $120 ; QUILAVA
-	mon_cry CRY_TYPHLOSION,  $f00,  $0d4 ; TYPHLOSION
-	mon_cry CRY_TOTODILE,    $46c,  $0e8 ; TOTODILE
-	mon_cry CRY_TOTODILE,    $440,  $110 ; CROCONAW
-	mon_cry CRY_TOTODILE,    $3fc,  $180 ; FERALIGATR
 	mon_cry CRY_SENTRET,     $08a,  $0b8 ; SENTRET
 	mon_cry CRY_SENTRET,     $06b,  $102 ; FURRET
 	mon_cry CRY_HOOTHOOT,    $091,  $0d8 ; HOOTHOOT
@@ -182,8 +173,6 @@ PokemonCries::
 	mon_cry CRY_CHIKORITA,   $0e8,  $0e8 ; IGGLYBUFF
 	mon_cry CRY_TOGEPI,      $010,  $100 ; TOGEPI
 	mon_cry CRY_TOGETIC,     $03b,  $038 ; TOGETIC
-	mon_cry CRY_NATU,       -$067,  $100 ; NATU
-	mon_cry CRY_NATU,       -$0a7,  $168 ; XATU
 	mon_cry CRY_MAREEP,      $022,  $0d8 ; MAREEP
 	mon_cry CRY_MAREEP,     -$007,  $180 ; FLAAFFY
 	mon_cry CRY_AMPHAROS,   -$07c,  $0e8 ; AMPHAROS
@@ -214,8 +203,6 @@ PokemonCries::
 	mon_cry CRY_DUNSPARCE,   $1c4,  $100 ; DUNSPARCE
 	mon_cry CRY_GLIGAR,     -$102,  $100 ; GLIGAR
 	mon_cry CRY_TYPHLOSION,  $0ef,  $0f7 ; STEELIX
-	mon_cry CRY_DUNSPARCE,   $112,  $0e8 ; SNUBBULL
-	mon_cry CRY_DUNSPARCE,   $000,  $180 ; GRANBULL
 	mon_cry CRY_SLOWKING,    $160,  $0e0 ; QWILFISH
 	mon_cry CRY_AMPHAROS,    $000,  $160 ; SCIZOR
 	mon_cry CRY_DUNSPARCE,   $290,  $0a8 ; SHUCKLE
@@ -225,12 +212,9 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,   $640,  $0d8 ; URSARING
 	mon_cry CRY_SLUGMA,     -$1d8,  $140 ; SLUGMA
 	mon_cry CRY_MAGCARGO,   -$20d,  $1c0 ; MAGCARGO
-	mon_cry CRY_CYNDAQUIL,   $1fe,  $140 ; SWINUB
-	mon_cry CRY_MAGCARGO,   -$109,  $100 ; PILOSWINE
 	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA
 	mon_cry CRY_SUNFLORA,    $00d,  $100 ; REMORAID
 	mon_cry CRY_TOTODILE,    $000,  $180 ; OCTILLERY
-	mon_cry CRY_TEDDIURSA,   $002,  $06a ; DELIBIRD
 	mon_cry CRY_MANTINE,    -$0be,  $0f0 ; MANTINE
 	mon_cry CRY_AMPHAROS,    $8a9,  $180 ; SKARMORY
 	mon_cry CRY_CYNDAQUIL,   $039,  $140 ; HOUNDOUR
@@ -240,7 +224,6 @@ PokemonCries::
 	mon_cry CRY_DONPHAN,     $000,  $1a0 ; DONPHAN
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON2
 	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
-	mon_cry CRY_PICHU,      -$21a,  $1f0 ; SMEARGLE
 	mon_cry CRY_AIPOM,       $02c,  $108 ; TYROGUE
 	mon_cry CRY_SLUGMA,      $000,  $100 ; HITMONTOP
 	mon_cry CRY_MARILL,      $068,  $100 ; SMOOCHUM
@@ -258,32 +241,10 @@ PokemonCries::
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
 ;Hoenn
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TREECKO
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GROVYLE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SCEPTILE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TORCHIC
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; COMBUSKEN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BLAZIKEN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MUDKIP
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MARSHTOMP
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SWAMPERT
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; POOCHYENA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MIGHTYENA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ZIGZAGOON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LINOONE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WURMPLE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SILCOON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BEAUTIFLY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CASCOON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DUSTOX
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LOTAD
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LOMBRE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUDICOLO
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SEEDOT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; NUZLEAF
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHIFTRY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TAILLOW
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SWELLOW
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WINGULL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PELIPPER
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; RALTS
@@ -293,71 +254,33 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MASQUERAIN
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHROOMISH
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BRELOOM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SLAKOTH
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; VIGOROTH
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SLAKING
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; NINCADA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; NINJASK
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHEDINJA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WHISMUR
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LOUDRED
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; EXPLOUD
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MAKUHITA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HARIYAMA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; AZURILL
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; NOSEPASS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SKITTY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DELCATTY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SABLEYE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MAWILE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ARON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LAIRON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; AGGRON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MEDITITE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MEDICHAM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ELECTRIKE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MANECTRIC
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PLUSLE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MINUN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; VOLBEAT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ILLUMISE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ROSELIA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GULPIN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SWALOT
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CARVANHA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHARPEDO
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WAILMER
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WAILORD
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; NUMEL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CAMERUPT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TORKOAL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SPOINK
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GRUMPIG
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SPINDA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TRAPINCH
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; VIBRAVA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FLYGON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CACNEA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CACTURNE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SWABLU
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ALTARIA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ZANGOOSE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SEVIPER
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUNATONE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SOLROCK
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BARBOACH
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WHISCASH
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CORPHISH
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CRAWDAUNT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BALTOY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CLAYDOL
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LILEEP
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CRADILY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ANORITH
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ARMALDO
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FEEBAS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MILOTIC
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CASTFORM
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; KECLEON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHUPPET
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BANETTE
@@ -365,109 +288,43 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DUSCLOPS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TROPIUS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CHIMECHO
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ABSOL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WYNAUT
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SNORUNT
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GLALIE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SPHEAL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SEALEO
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WALREIN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CLAMPERL
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HUNTAIL
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GOREBYSS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; RELICANTH
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUVDISC
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BAGON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHELGON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SALAMENCE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BELDUM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; METANG
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; METAGROSS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; REGIROCK
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; REGICE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; REGISTEEL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LATIAS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LATIOS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; KYOGRE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GROUDON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; RAYQUAZA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; JIRACHI
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DEOXYS
 ;Sinnoh
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TURTWIG
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GROTLE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TORTERRA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CHIMCHAR
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MONFERNO
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; INFERNAPE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PIPLUP
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PRINPLUP
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; EMPOLEON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; STARLY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; STARAVIA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; STARAPTOR
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BIDOOF
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BIBAREL
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; KRICKETOT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; KRICKETUNE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHINX
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUXIO
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUXRAY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BUDEW
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ROSERADE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CRANIDOS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; RAMPARDOS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHIELDON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BASTIODON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BURMY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WORMADAM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MOTHIM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; COMBEE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; VESPIQUEN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PACHIRISU
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BUIZEL
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FLOATZEL
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CHERUBI
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CHERRIM
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHELLOS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GASTRODON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; AMBIPOM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DRIFLOON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DRIFBLIM
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BUNEARY
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LOPUNNY
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MISMAGIUS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HONCHKROW
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GLAMEOW
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PURUGLY
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CHINGLING
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; STUNKY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SKUNTANK
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BRONZOR
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BRONZONG
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; BONSLY
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MIME_JR
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HAPPINY
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CHATOT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SPIRITOMB
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GIBLE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GABITE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GARCHOMP
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MUNCHLAX
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; RIOLU
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUCARIO
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HIPPOPOTAS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HIPPOWDON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SKORUPI
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DRAPION
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CROAGUNK
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; TOXICROAK
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CARNIVINE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FINNEON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LUMINEON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MANTYKE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SNOVER
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ABOMASNOW
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; WEAVILE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MAGNEZONE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LICKILICKY
@@ -480,29 +337,13 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; LEAFEON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GLACEON
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GLISCOR
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MAMOSWINE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PORYGON_Z
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GALLADE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PROBOPASS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DUSKNOIR
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; FROSLASS
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ROTOM
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; UXIE
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MESPRIT
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; AZELF
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DIALGA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PALKIA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; HEATRAN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; REGIGIGAS
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; GIRATINA
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; CRESSELIA
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; PHIONE
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; MANAPHY
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; DARKRAI
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SHAYMIN
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; ARCEUS
 ;Secret
 	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; SYLVEON
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; REGIELEKI
-	mon_cry CRY_BULBASAUR,   $0ee,  $081 ; REGIDRAGO
 	assert_table_length NUM_POKEMON

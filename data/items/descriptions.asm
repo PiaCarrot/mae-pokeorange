@@ -278,10 +278,10 @@ GreatBallDesc:
 PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
-
+	
 TownMapDesc:
-	db   "A map of the"
-	next "Sinnoh Region.@"
+	db   "An SEA MAP of the"
+	next "ORANGE ISLANDS.@"
 
 BicycleDesc:
 	db   "A collapsible bike"

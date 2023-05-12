@@ -1,15 +1,6 @@
 SECTION "Johto Bitmasks", ROMX
 
 JohtoBitmaskPointers:
-	dw ChikoritaBitmasks
-	dw BayleefBitmasks
-	dw MeganiumBitmasks
-	dw CyndaquilBitmasks
-	dw QuilavaBitmasks
-	dw TyphlosionBitmasks
-	dw TotodileBitmasks
-	dw CroconawBitmasks
-	dw FeraligatrBitmasks
 	dw SentretBitmasks
 	dw FurretBitmasks
 	dw HoothootBitmasks
@@ -26,8 +17,6 @@ JohtoBitmaskPointers:
 	dw IgglybuffBitmasks
 	dw TogepiBitmasks
 	dw TogeticBitmasks
-	dw NatuBitmasks
-	dw XatuBitmasks
 	dw MareepBitmasks
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
@@ -58,8 +47,6 @@ JohtoBitmaskPointers:
 	dw DunsparceBitmasks
 	dw GligarBitmasks
 	dw SteelixBitmasks
-	dw SnubbullBitmasks
-	dw GranbullBitmasks
 	dw QwilfishBitmasks
 	dw ScizorBitmasks
 	dw ShuckleBitmasks
@@ -69,12 +56,9 @@ JohtoBitmaskPointers:
 	dw UrsaringBitmasks
 	dw SlugmaBitmasks
 	dw MagcargoBitmasks
-	dw SwinubBitmasks
-	dw PiloswineBitmasks
 	dw CorsolaBitmasks
 	dw RemoraidBitmasks
 	dw OctilleryBitmasks
-	dw DelibirdBitmasks
 	dw MantineBitmasks
 	dw SkarmoryBitmasks
 	dw HoundourBitmasks
@@ -84,7 +68,6 @@ JohtoBitmaskPointers:
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
 	dw StantlerBitmasks
-	dw SmeargleBitmasks
 	dw TyrogueBitmasks
 	dw HitmontopBitmasks
 	dw SmoochumBitmasks
@@ -103,15 +86,6 @@ JohtoBitmaskPointers:
 	dw CelebiBitmasks
 .IndirectEnd::
 
-ChikoritaBitmasks:  INCLUDE "gfx/pokemon/johto/chikorita/bitmask.asm"
-BayleefBitmasks:    INCLUDE "gfx/pokemon/johto/bayleef/bitmask.asm"
-MeganiumBitmasks:   INCLUDE "gfx/pokemon/johto/meganium/bitmask.asm"
-CyndaquilBitmasks:  INCLUDE "gfx/pokemon/johto/cyndaquil/bitmask.asm"
-QuilavaBitmasks:    INCLUDE "gfx/pokemon/johto/quilava/bitmask.asm"
-TyphlosionBitmasks: INCLUDE "gfx/pokemon/johto/typhlosion/bitmask.asm"
-TotodileBitmasks:   INCLUDE "gfx/pokemon/johto/totodile/bitmask.asm"
-CroconawBitmasks:   INCLUDE "gfx/pokemon/johto/croconaw/bitmask.asm"
-FeraligatrBitmasks: INCLUDE "gfx/pokemon/johto/feraligatr/bitmask.asm"
 SentretBitmasks:    INCLUDE "gfx/pokemon/johto/sentret/bitmask.asm"
 FurretBitmasks:     INCLUDE "gfx/pokemon/johto/furret/bitmask.asm"
 HoothootBitmasks:   INCLUDE "gfx/pokemon/johto/hoothoot/bitmask.asm"
@@ -128,8 +102,6 @@ CleffaBitmasks:     INCLUDE "gfx/pokemon/johto/cleffa/bitmask.asm"
 IgglybuffBitmasks:  INCLUDE "gfx/pokemon/johto/igglybuff/bitmask.asm"
 TogepiBitmasks:     INCLUDE "gfx/pokemon/johto/togepi/bitmask.asm"
 TogeticBitmasks:    INCLUDE "gfx/pokemon/johto/togetic/bitmask.asm"
-NatuBitmasks:       INCLUDE "gfx/pokemon/johto/natu/bitmask.asm"
-XatuBitmasks:       INCLUDE "gfx/pokemon/johto/xatu/bitmask.asm"
 MareepBitmasks:     INCLUDE "gfx/pokemon/johto/mareep/bitmask.asm"
 FlaaffyBitmasks:    INCLUDE "gfx/pokemon/johto/flaaffy/bitmask.asm"
 AmpharosBitmasks:   INCLUDE "gfx/pokemon/johto/ampharos/bitmask.asm"
@@ -160,8 +132,6 @@ ForretressBitmasks: INCLUDE "gfx/pokemon/johto/forretress/bitmask.asm"
 DunsparceBitmasks:  INCLUDE "gfx/pokemon/johto/dunsparce/bitmask.asm"
 GligarBitmasks:     INCLUDE "gfx/pokemon/johto/gligar/bitmask.asm"
 SteelixBitmasks:    INCLUDE "gfx/pokemon/johto/steelix/bitmask.asm"
-SnubbullBitmasks:   INCLUDE "gfx/pokemon/johto/snubbull/bitmask.asm"
-GranbullBitmasks:   INCLUDE "gfx/pokemon/johto/granbull/bitmask.asm"
 QwilfishBitmasks:   INCLUDE "gfx/pokemon/johto/qwilfish/bitmask.asm"
 ScizorBitmasks:     INCLUDE "gfx/pokemon/johto/scizor/bitmask.asm"
 ShuckleBitmasks:    INCLUDE "gfx/pokemon/johto/shuckle/bitmask.asm"
@@ -171,12 +141,9 @@ TeddiursaBitmasks:  INCLUDE "gfx/pokemon/johto/teddiursa/bitmask.asm"
 UrsaringBitmasks:   INCLUDE "gfx/pokemon/johto/ursaring/bitmask.asm"
 SlugmaBitmasks:     INCLUDE "gfx/pokemon/johto/slugma/bitmask.asm"
 MagcargoBitmasks:   INCLUDE "gfx/pokemon/johto/magcargo/bitmask.asm"
-SwinubBitmasks:     INCLUDE "gfx/pokemon/johto/swinub/bitmask.asm"
-PiloswineBitmasks:  INCLUDE "gfx/pokemon/johto/piloswine/bitmask.asm"
 CorsolaBitmasks:    INCLUDE "gfx/pokemon/johto/corsola/bitmask.asm"
 RemoraidBitmasks:   INCLUDE "gfx/pokemon/johto/remoraid/bitmask.asm"
 OctilleryBitmasks:  INCLUDE "gfx/pokemon/johto/octillery/bitmask.asm"
-DelibirdBitmasks:   INCLUDE "gfx/pokemon/johto/delibird/bitmask.asm"
 MantineBitmasks:    INCLUDE "gfx/pokemon/johto/mantine/bitmask.asm"
 SkarmoryBitmasks:   INCLUDE "gfx/pokemon/johto/skarmory/bitmask.asm"
 HoundourBitmasks:   INCLUDE "gfx/pokemon/johto/houndour/bitmask.asm"
@@ -186,7 +153,6 @@ PhanpyBitmasks:     INCLUDE "gfx/pokemon/johto/phanpy/bitmask.asm"
 DonphanBitmasks:    INCLUDE "gfx/pokemon/johto/donphan/bitmask.asm"
 Porygon2Bitmasks:   INCLUDE "gfx/pokemon/johto/porygon2/bitmask.asm"
 StantlerBitmasks:   INCLUDE "gfx/pokemon/johto/stantler/bitmask.asm"
-SmeargleBitmasks:   INCLUDE "gfx/pokemon/johto/smeargle/bitmask.asm"
 TyrogueBitmasks:    INCLUDE "gfx/pokemon/johto/tyrogue/bitmask.asm"
 HitmontopBitmasks:  INCLUDE "gfx/pokemon/johto/hitmontop/bitmask.asm"
 SmoochumBitmasks:   INCLUDE "gfx/pokemon/johto/smoochum/bitmask.asm"

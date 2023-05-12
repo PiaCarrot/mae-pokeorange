@@ -154,10 +154,14 @@ LoadMiscTiles:
 	farcall LoadEmote
 	call GetMapEnvironment
 	call CheckOutdoorMap
-	ld c, EMOTE_GRASS_RUSTLE
 	jr z, .outdoor
 	ld c, EMOTE_BOULDER_DUST
-.outdoor
+	farcall LoadEmote
+	ret
+ .outdoor
+	ld c, EMOTE_GRASS_RUSTLE
+	farcall LoadEmote
+	ld c, EMOTE_PUDDLE_SPLASH
 	farcall LoadEmote
 	ret
 

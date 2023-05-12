@@ -1,15 +1,6 @@
 SECTION "Johto Animations", ROMX
 
 JohtoAnimationPointers:
-	dw ChikoritaAnimation
-	dw BayleefAnimation
-	dw MeganiumAnimation
-	dw CyndaquilAnimation
-	dw QuilavaAnimation
-	dw TyphlosionAnimation
-	dw TotodileAnimation
-	dw CroconawAnimation
-	dw FeraligatrAnimation
 	dw SentretAnimation
 	dw FurretAnimation
 	dw HoothootAnimation
@@ -26,8 +17,6 @@ JohtoAnimationPointers:
 	dw IgglybuffAnimation
 	dw TogepiAnimation
 	dw TogeticAnimation
-	dw NatuAnimation
-	dw XatuAnimation
 	dw MareepAnimation
 	dw FlaaffyAnimation
 	dw AmpharosAnimation
@@ -58,8 +47,6 @@ JohtoAnimationPointers:
 	dw DunsparceAnimation
 	dw GligarAnimation
 	dw SteelixAnimation
-	dw SnubbullAnimation
-	dw GranbullAnimation
 	dw QwilfishAnimation
 	dw ScizorAnimation
 	dw ShuckleAnimation
@@ -69,12 +56,9 @@ JohtoAnimationPointers:
 	dw UrsaringAnimation
 	dw SlugmaAnimation
 	dw MagcargoAnimation
-	dw SwinubAnimation
-	dw PiloswineAnimation
 	dw CorsolaAnimation
 	dw RemoraidAnimation
 	dw OctilleryAnimation
-	dw DelibirdAnimation
 	dw MantineAnimation
 	dw SkarmoryAnimation
 	dw HoundourAnimation
@@ -84,7 +68,6 @@ JohtoAnimationPointers:
 	dw DonphanAnimation
 	dw Porygon2Animation
 	dw StantlerAnimation
-	dw SmeargleAnimation
 	dw TyrogueAnimation
 	dw HitmontopAnimation
 	dw SmoochumAnimation
@@ -103,15 +86,6 @@ JohtoAnimationPointers:
 	dw CelebiAnimation
 .IndirectEnd::
 
-ChikoritaAnimation:  INCLUDE "gfx/pokemon/johto/chikorita/anim.asm"
-BayleefAnimation:    INCLUDE "gfx/pokemon/johto/bayleef/anim.asm"
-MeganiumAnimation:   INCLUDE "gfx/pokemon/johto/meganium/anim.asm"
-CyndaquilAnimation:  INCLUDE "gfx/pokemon/johto/cyndaquil/anim.asm"
-QuilavaAnimation:    INCLUDE "gfx/pokemon/johto/quilava/anim.asm"
-TyphlosionAnimation: INCLUDE "gfx/pokemon/johto/typhlosion/anim.asm"
-TotodileAnimation:   INCLUDE "gfx/pokemon/johto/totodile/anim.asm"
-CroconawAnimation:   INCLUDE "gfx/pokemon/johto/croconaw/anim.asm"
-FeraligatrAnimation: INCLUDE "gfx/pokemon/johto/feraligatr/anim.asm"
 SentretAnimation:    INCLUDE "gfx/pokemon/johto/sentret/anim.asm"
 FurretAnimation:     INCLUDE "gfx/pokemon/johto/furret/anim.asm"
 HoothootAnimation:   INCLUDE "gfx/pokemon/johto/hoothoot/anim.asm"
@@ -128,8 +102,6 @@ CleffaAnimation:     INCLUDE "gfx/pokemon/johto/cleffa/anim.asm"
 IgglybuffAnimation:  INCLUDE "gfx/pokemon/johto/igglybuff/anim.asm"
 TogepiAnimation:     INCLUDE "gfx/pokemon/johto/togepi/anim.asm"
 TogeticAnimation:    INCLUDE "gfx/pokemon/johto/togetic/anim.asm"
-NatuAnimation:       INCLUDE "gfx/pokemon/johto/natu/anim.asm"
-XatuAnimation:       INCLUDE "gfx/pokemon/johto/xatu/anim.asm"
 MareepAnimation:     INCLUDE "gfx/pokemon/johto/mareep/anim.asm"
 FlaaffyAnimation:    INCLUDE "gfx/pokemon/johto/flaaffy/anim.asm"
 AmpharosAnimation:   INCLUDE "gfx/pokemon/johto/ampharos/anim.asm"
@@ -160,8 +132,6 @@ ForretressAnimation: INCLUDE "gfx/pokemon/johto/forretress/anim.asm"
 DunsparceAnimation:  INCLUDE "gfx/pokemon/johto/dunsparce/anim.asm"
 GligarAnimation:     INCLUDE "gfx/pokemon/johto/gligar/anim.asm"
 SteelixAnimation:    INCLUDE "gfx/pokemon/johto/steelix/anim.asm"
-SnubbullAnimation:   INCLUDE "gfx/pokemon/johto/snubbull/anim.asm"
-GranbullAnimation:   INCLUDE "gfx/pokemon/johto/granbull/anim.asm"
 QwilfishAnimation:   INCLUDE "gfx/pokemon/johto/qwilfish/anim.asm"
 ScizorAnimation:     INCLUDE "gfx/pokemon/johto/scizor/anim.asm"
 ShuckleAnimation:    INCLUDE "gfx/pokemon/johto/shuckle/anim.asm"
@@ -171,12 +141,9 @@ TeddiursaAnimation:  INCLUDE "gfx/pokemon/johto/teddiursa/anim.asm"
 UrsaringAnimation:   INCLUDE "gfx/pokemon/johto/ursaring/anim.asm"
 SlugmaAnimation:     INCLUDE "gfx/pokemon/johto/slugma/anim.asm"
 MagcargoAnimation:   INCLUDE "gfx/pokemon/johto/magcargo/anim.asm"
-SwinubAnimation:     INCLUDE "gfx/pokemon/johto/swinub/anim.asm"
-PiloswineAnimation:  INCLUDE "gfx/pokemon/johto/piloswine/anim.asm"
 CorsolaAnimation:    INCLUDE "gfx/pokemon/johto/corsola/anim.asm"
 RemoraidAnimation:   INCLUDE "gfx/pokemon/johto/remoraid/anim.asm"
 OctilleryAnimation:  INCLUDE "gfx/pokemon/johto/octillery/anim.asm"
-DelibirdAnimation:   INCLUDE "gfx/pokemon/johto/delibird/anim.asm"
 MantineAnimation:    INCLUDE "gfx/pokemon/johto/mantine/anim.asm"
 SkarmoryAnimation:   INCLUDE "gfx/pokemon/johto/skarmory/anim.asm"
 HoundourAnimation:   INCLUDE "gfx/pokemon/johto/houndour/anim.asm"
@@ -186,7 +153,6 @@ PhanpyAnimation:     INCLUDE "gfx/pokemon/johto/phanpy/anim.asm"
 DonphanAnimation:    INCLUDE "gfx/pokemon/johto/donphan/anim.asm"
 Porygon2Animation:   INCLUDE "gfx/pokemon/johto/porygon2/anim.asm"
 StantlerAnimation:   INCLUDE "gfx/pokemon/johto/stantler/anim.asm"
-SmeargleAnimation:   INCLUDE "gfx/pokemon/johto/smeargle/anim.asm"
 TyrogueAnimation:    INCLUDE "gfx/pokemon/johto/tyrogue/anim.asm"
 HitmontopAnimation:  INCLUDE "gfx/pokemon/johto/hitmontop/anim.asm"
 SmoochumAnimation:   INCLUDE "gfx/pokemon/johto/smoochum/anim.asm"

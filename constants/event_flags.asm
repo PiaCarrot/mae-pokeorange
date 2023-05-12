@@ -31,11 +31,18 @@
 	const EVENT_GOT_OLD_ROD
 	const EVENT_GOT_GOOD_ROD
 	const EVENT_GOT_SUPER_ROD
-; Johto story events
-	const EVENT_GOT_A_POKEMON_FROM_ELM
-	const EVENT_GOT_CYNDAQUIL_FROM_ELM
-	const EVENT_GOT_TOTODILE_FROM_ELM
-	const EVENT_GOT_CHIKORITA_FROM_ELM
+; Johto story events 
+	const EVENT_GOT_A_POKEMON_FROM_IVY
+	const EVENT_GOT_CHARMANDER_FROM_IVY
+	const EVENT_GOT_SQUIRTLE_FROM_IVY
+	const EVENT_GOT_BULBASAUR_FROM_IVY
+	const EVENT_GOT_PIKACHU_FROM_IVY
+	const EVENT_GOT_EEVEE_FROM_IVY
+	const EVENT_GOT_DRATINI_FROM_IVY
+	const EVENT_MEET_SECRET_STARTER_REQS
+	const EVENT_MET_CROSS_ON_VALENCIA
+	const EVENT_GOT_TOWN_MAP
+	const EVENT_PASSED_LORELEI_R49
 	const EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	const EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	const EVENT_JASMINE_RETURNED_TO_GYM
@@ -132,10 +139,10 @@
 	const EVENT_RELEASED_THE_BEASTS
 	const EVENT_GOT_MASTER_BALL_FROM_ELM
 ; Johto hidden items
-	const EVENT_TIN_TOWER_4F_HIDDEN_MAX_POTION
-	const EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE
-	const EVENT_TIN_TOWER_5F_HIDDEN_CARBOS
+	const EVENT_ROUTE_49_HIDDEN_POTION
+	const EVENT_ROUTE_49_HIDDEN_STAR_PIECE
 	const EVENT_BURNED_TOWER_1F_HIDDEN_ETHER
+	const_skip ; unused in Crystal
 	const_skip ; unused in Crystal
 	const_skip ; unused in Crystal
 	const_skip ; unused in Crystal
@@ -202,9 +209,6 @@
 	const EVENT_GAVE_GS_BALL_TO_KURT
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
-; Unused: next 6 events
-
-	const_next 200
 ; Kanto story events
 	const EVENT_GOT_NUGGET_FROM_GUY
 	const EVENT_RETURNED_MACHINE_PART
@@ -268,9 +272,6 @@
 	const EVENT_DANA_GAVE_THUNDERSTONE
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
-; Unused: next 339 events
-
-	const_next 600
 ; Kurt Apricorn events
 	const EVENT_GAVE_KURT_RED_APRICORN
 	const EVENT_GAVE_KURT_BLU_APRICORN
@@ -384,7 +385,7 @@
 	const EVENT_DECO_ODDISH_DOLL
 	const EVENT_DECO_GENGAR_DOLL
 	const EVENT_DECO_SHELLDER_DOLL
-	const EVENT_DECO_GRIMER_DOLL
+	const EVENT_DECO_EEVEE_DOLL
 	const EVENT_DECO_VOLTORB_DOLL
 	const EVENT_DECO_WEEDLE_DOLL
 	const EVENT_DECO_UNOWN_DOLL
@@ -510,9 +511,6 @@
 	const EVENT_GOT_ODD_EGG
 	const_skip ; unused
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
-; Unused: next 167 events
-
-	const_next 1000
 ; Trainer flags
 ; Swimmer F
 	const EVENT_BEAT_SWIMMERF_ELAINE
@@ -746,15 +744,12 @@
 	const EVENT_BEAT_BEAUTY_JULIA
 	const EVENT_BEAT_BEAUTY_THERESA
 	const EVENT_BEAT_BEAUTY_VALERIE
-; Johto Gym Leaders
-	const EVENT_BEAT_FALKNER
-	const EVENT_BEAT_BUGSY
-	const EVENT_BEAT_WHITNEY
-	const EVENT_BEAT_MORTY
-	const EVENT_BEAT_JASMINE
-	const EVENT_BEAT_CHUCK
-	const EVENT_BEAT_PRYCE
-	const EVENT_BEAT_CLAIR
+; Orange Crew
+	const EVENT_CISSY_DEFEATED
+	const EVENT_DANNY_DEFEATED
+	const EVENT_RUDY_DEFEATED
+	const EVENT_LUANA_DEFEATED
+	const EVENT_DRAKE_DEFEATED
 ; Kanto Gym Leaders
 	const EVENT_BEAT_BROCK
 	const EVENT_BEAT_MISTY
@@ -1042,19 +1037,18 @@
 	const EVENT_BEAT_SAGE_GAKU
 	const EVENT_BEAT_SAGE_MASA
 	const EVENT_BEAT_SAGE_KOJI
-; Unused: next 116 events
-
-	const_next 1600
+; Orange Stuff
+	const EVENT_MOM_DEFEATED
 ; Sprite visibility flags
 ; When these events are cleared, the sprite becomes visible; when set, the sprite is hidden.
 ; The map script command macros `disappear` and `appear` set/clear these flags and immediately apply the effect on visibility.
 ; The map script command macros `setevent` and `clearevent` set/clear these flags, and their effects will be seen when the map is reloaded.
 ; Johto itemballs
-	const EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	const EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-	const EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-	const EVENT_VIOLET_CITY_PP_UP
-	const EVENT_VIOLET_CITY_RARE_CANDY
+	const EVENT_CHARMANDER_POKEBALL_IN_IVYS_LAB
+	const EVENT_SQUIRTLE_POKEBALL_IN_IVYS_LAB
+	const EVENT_BULBASAUR_POKEBALL_IN_IVYS_LAB
+	const EVENT_ROUTE_49_POTION
+	const EVENT_ROUTE_49_FRESHWATER
 	const EVENT_LAKE_OF_RAGE_ELIXER
 	const EVENT_LAKE_OF_RAGE_TM_DETECT
 	const EVENT_SPROUT_TOWER_1F_PARLYZ_HEAL
@@ -1176,8 +1170,13 @@
 	const EVENT_ROUTE_45_MAX_POTION
 	const EVENT_ROUTE_46_X_SPEED
 ; Johto people
-	const EVENT_RIVAL_NEW_BARK_TOWN
-	const EVENT_RIVAL_CHERRYGROVE_CITY
+	const EVENT_ROTOM_OVEN_PURCHASED
+	const EVENT_ROTOM_WASH_PURCHASED
+	const EVENT_ROTOM_FROST_PURCHASED
+	const EVENT_ROTOM_FAN_PURCHASED
+	const EVENT_ROTOM_MOW_PURCHASED
+	const EVENT_DRATINI_VALENCIA_APPEAR
+	const EVENT_ALT_STARTER_VALENCIA_IVY
 	const EVENT_RIVAL_AZALEA_TOWN
 	const EVENT_RIVAL_TEAM_ROCKET_BASE
 	const EVENT_RIVAL_GOLDENROD_UNDERGROUND
@@ -1229,7 +1228,6 @@
 	const EVENT_COPYCAT_2
 	const EVENT_GOLDENROD_SALE_OFF
 	const EVENT_GOLDENROD_SALE_ON
-	const_skip ; unused in Crystal
 	const EVENT_ILEX_FOREST_APPRENTICE
 	const EVENT_ILEX_FOREST_CHARCOAL_MASTER
 	const EVENT_CHARCOAL_KILN_FARFETCH_D
@@ -1351,11 +1349,6 @@
 	const EVENT_FLORIA_AT_SUDOWOODO
 	const EVENT_GOLDENROD_CITY_MOVE_TUTOR
 	const EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
-; Unused: next 0 events
-; (In pokegold the previous 4 event flags were not defined,
-; but in pokecrystal the 'const_next 1900' is redundant.)
-
-	const_next 1900
 ; Kanto people
 	const EVENT_ROUTE_24_ROCKET
 	const EVENT_CERULEAN_GYM_ROCKET
@@ -1459,7 +1452,4 @@
 	const EVENT_RADIO_TOWER_5F_ULTRA_BALL
 	const EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
 	const EVENT_BATTLE_TOWER_OPEN_CIVILIANS
-; Unused: next 48 events
-
-	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

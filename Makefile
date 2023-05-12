@@ -1,7 +1,7 @@
 roms := \
-	pokecrystal.gbc \
-	pokecrystal_debug.gbc
-patches := pokecrystal.patch
+	pokeorange.gbc \
+	pokeorange_debug.gbc
+patches := pokeorange.patch
 
 rom_obj := \
 	audio.o \
@@ -22,9 +22,9 @@ rom_obj := \
 	lib/mobile/main.o \
 	lib/mobile/mail.o
 
-pokecrystal_obj       := $(rom_obj:.o=.o)
-pokecrystal_debug_obj := $(rom_obj:.o=_debug.o)
-pokecrystal_vc_obj    := $(rom_obj:.o=_vc.o)
+pokeorange_obj       := $(rom_obj:.o=.o)
+pokeorange_debug_obj := $(rom_obj:.o=_debug.o)
+pokeorange_vc_obj    := $(rom_obj:.o=_vc.o)
 
 
 ### Build tools
@@ -45,15 +45,15 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal clean tidy tools
+.PHONY: all orange clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
-crystal:       pokecrystal.gbc
-crystal_debug: pokecrystal_debug.gbc
-crystal_vc:    pokecrystal.patch
+all: orange
+orange:       pokeorange.gbc
+orange_debug: pokeorange_debug.gbc
+orange_vc:    pokeorange.patch
 
 clean: tidy
 	find gfx \
@@ -79,9 +79,9 @@ tidy:
 	      $(patches:.patch=_vc.sym) \
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
-	      $(pokecrystal_obj) \
-		  $(pokecrystal_debug_obj) \
-	      $(pokecrystal_vc_obj) \
+	      $(pokeorange_obj) \
+		  $(pokeorange_debug_obj) \
+	      $(pokeorange_vc_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
 
@@ -95,9 +95,9 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(pokecrystal_obj):       RGBASMFLAGS +=
-$(pokecrystal_debug_obj): RGBASMFLAGS += -D _DEBUG
-$(pokecrystal_vc_obj):    RGBASMFLAGS += -D _CRYSTAL_VC
+$(pokeorange_obj):       RGBASMFLAGS +=
+$(pokeorange_debug_obj): RGBASMFLAGS += -D _DEBUG
+$(pokeorange_vc_obj):    RGBASMFLAGS += -D _orange_VC
 
 %.patch: vc/%.constants.sym %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -120,9 +120,9 @@ ifeq (,$(filter clean tidy tools,$(MAKECMDGOALS)))
 $(info $(shell $(MAKE) -C tools))
 
 # Dependencies for shared objects objects
-$(foreach obj, $(pokecrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
-$(foreach obj, $(pokecrystal_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
-$(foreach obj, $(pokecrystal_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
+$(foreach obj, $(pokeorange_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(pokeorange_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
+$(foreach obj, $(pokeorange_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
 
 # Dependencies for VC files that need to run scan_includes
 %.constants.sym: %.constants.asm $(shell tools/scan_includes %.constants.asm) | includes.asm rgbdscheck.o
@@ -131,13 +131,13 @@ $(foreach obj, $(pokecrystal_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm)
 endif
 
 
-pokecrystal_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
-pokecrystal_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
-pokecrystal_vc_opt      = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
+pokeorange_opt         = -Cjv -t PM_orange -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
+pokeorange_debug_opt   = -Cjv -t PM_orange -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
+pokeorange_vc_opt      = -Cjv -t PM_orange -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 5 -p 0
 
-pokecrystal_base         = us
-pokecrystal_vc_base      = us
-pokecrystal_debug_base   = dbg
+pokeorange_base         = us
+pokeorange_vc_base      = us
+pokeorange_debug_base   = dbg
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -n $*.sym -m $*.map -l layout.link -o $@ $(filter %.o,$^)
@@ -192,7 +192,7 @@ gfx/pokegear/pokegear_sprites.2bpp: tools/gfx += --trim-whitespace
 
 gfx/mystery_gift/mystery_gift.2bpp: tools/gfx += --trim-whitespace
 
-gfx/title/crystal.2bpp: tools/gfx += --interleave --png=$<
+gfx/title/orange.2bpp: tools/gfx += --interleave --png=$<
 gfx/title/old_fg.2bpp: tools/gfx += --interleave --png=$<
 gfx/title/logo.2bpp: rgbgfx += -x 4
 

@@ -19,7 +19,7 @@ CorrectPartyErrors: ; unreferenced
 	jr nc, .next_species
 
 	push hl
-	ld hl, SMEARGLE
+	ld hl, WOBBUFFET
 	call GetPokemonIDFromIndex
 	pop hl
 	ld [hl], a
@@ -55,7 +55,7 @@ CorrectPartyErrors: ; unreferenced
 	jr nc, .check_level
 
 	push hl
-	ld hl, SMEARGLE
+	ld hl, WOBBUFFET
 	call GetPokemonIDFromIndex
 	pop hl
 	ld [hl], a

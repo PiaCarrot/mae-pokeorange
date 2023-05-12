@@ -143,7 +143,6 @@ ROMX $32
 	"The End"
 ROMX $33
 	"Move Animations"
-	"Extra Songs 2"
 ROMX $34
 	"Pic Animations 1"
 ROMX $35
@@ -160,9 +159,8 @@ ROMX $39
 	"bank39"
 ROMX $3a
 	"Audio"
-	"Songs 1"
 ROMX $3b
-	"Songs 2"
+	"Songs 1"
 ROMX $3c
 	"Songs 3"
 	"Sound Effects"
@@ -199,6 +197,7 @@ ROMX $49
 ROMX $4a
 	"Trainer Pic Pointers"
 ROMX $4b
+	"Songs 2"
 ROMX $4c
 ROMX $4d
 ROMX $4e

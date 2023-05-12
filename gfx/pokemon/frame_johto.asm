@@ -1,15 +1,6 @@
 SECTION "Johto Frames", ROMX
 
 JohtoFramePointers:
-	dw ChikoritaFrames
-	dw BayleefFrames
-	dw MeganiumFrames
-	dw CyndaquilFrames
-	dw QuilavaFrames
-	dw TyphlosionFrames
-	dw TotodileFrames
-	dw CroconawFrames
-	dw FeraligatrFrames
 	dw SentretFrames
 	dw FurretFrames
 	dw HoothootFrames
@@ -26,8 +17,6 @@ JohtoFramePointers:
 	dw IgglybuffFrames
 	dw TogepiFrames
 	dw TogeticFrames
-	dw NatuFrames
-	dw XatuFrames
 	dw MareepFrames
 	dw FlaaffyFrames
 	dw AmpharosFrames
@@ -58,8 +47,6 @@ JohtoFramePointers:
 	dw DunsparceFrames
 	dw GligarFrames
 	dw SteelixFrames
-	dw SnubbullFrames
-	dw GranbullFrames
 	dw QwilfishFrames
 	dw ScizorFrames
 	dw ShuckleFrames
@@ -69,12 +56,9 @@ JohtoFramePointers:
 	dw UrsaringFrames
 	dw SlugmaFrames
 	dw MagcargoFrames
-	dw SwinubFrames
-	dw PiloswineFrames
 	dw CorsolaFrames
 	dw RemoraidFrames
 	dw OctilleryFrames
-	dw DelibirdFrames
 	dw MantineFrames
 	dw SkarmoryFrames
 	dw HoundourFrames
@@ -84,7 +68,6 @@ JohtoFramePointers:
 	dw DonphanFrames
 	dw Porygon2Frames
 	dw StantlerFrames
-	dw SmeargleFrames
 	dw TyrogueFrames
 	dw HitmontopFrames
 	dw SmoochumFrames
@@ -103,15 +86,6 @@ JohtoFramePointers:
 	dw CelebiFrames
 .IndirectEnd::
 
-ChikoritaFrames:  INCLUDE "gfx/pokemon/johto/chikorita/frames.asm"
-BayleefFrames:    INCLUDE "gfx/pokemon/johto/bayleef/frames.asm"
-MeganiumFrames:   INCLUDE "gfx/pokemon/johto/meganium/frames.asm"
-CyndaquilFrames:  INCLUDE "gfx/pokemon/johto/cyndaquil/frames.asm"
-QuilavaFrames:    INCLUDE "gfx/pokemon/johto/quilava/frames.asm"
-TyphlosionFrames: INCLUDE "gfx/pokemon/johto/typhlosion/frames.asm"
-TotodileFrames:   INCLUDE "gfx/pokemon/johto/totodile/frames.asm"
-CroconawFrames:   INCLUDE "gfx/pokemon/johto/croconaw/frames.asm"
-FeraligatrFrames: INCLUDE "gfx/pokemon/johto/feraligatr/frames.asm"
 SentretFrames:    INCLUDE "gfx/pokemon/johto/sentret/frames.asm"
 FurretFrames:     INCLUDE "gfx/pokemon/johto/furret/frames.asm"
 HoothootFrames:   INCLUDE "gfx/pokemon/johto/hoothoot/frames.asm"
@@ -128,8 +102,6 @@ CleffaFrames:     INCLUDE "gfx/pokemon/johto/cleffa/frames.asm"
 IgglybuffFrames:  INCLUDE "gfx/pokemon/johto/igglybuff/frames.asm"
 TogepiFrames:     INCLUDE "gfx/pokemon/johto/togepi/frames.asm"
 TogeticFrames:    INCLUDE "gfx/pokemon/johto/togetic/frames.asm"
-NatuFrames:       INCLUDE "gfx/pokemon/johto/natu/frames.asm"
-XatuFrames:       INCLUDE "gfx/pokemon/johto/xatu/frames.asm"
 MareepFrames:     INCLUDE "gfx/pokemon/johto/mareep/frames.asm"
 FlaaffyFrames:    INCLUDE "gfx/pokemon/johto/flaaffy/frames.asm"
 AmpharosFrames:   INCLUDE "gfx/pokemon/johto/ampharos/frames.asm"
@@ -160,8 +132,6 @@ ForretressFrames: INCLUDE "gfx/pokemon/johto/forretress/frames.asm"
 DunsparceFrames:  INCLUDE "gfx/pokemon/johto/dunsparce/frames.asm"
 GligarFrames:     INCLUDE "gfx/pokemon/johto/gligar/frames.asm"
 SteelixFrames:    INCLUDE "gfx/pokemon/johto/steelix/frames.asm"
-SnubbullFrames:   INCLUDE "gfx/pokemon/johto/snubbull/frames.asm"
-GranbullFrames:   INCLUDE "gfx/pokemon/johto/granbull/frames.asm"
 QwilfishFrames:   INCLUDE "gfx/pokemon/johto/qwilfish/frames.asm"
 ScizorFrames:     INCLUDE "gfx/pokemon/johto/scizor/frames.asm"
 ShuckleFrames:    INCLUDE "gfx/pokemon/johto/shuckle/frames.asm"
@@ -171,12 +141,9 @@ TeddiursaFrames:  INCLUDE "gfx/pokemon/johto/teddiursa/frames.asm"
 UrsaringFrames:   INCLUDE "gfx/pokemon/johto/ursaring/frames.asm"
 SlugmaFrames:     INCLUDE "gfx/pokemon/johto/slugma/frames.asm"
 MagcargoFrames:   INCLUDE "gfx/pokemon/johto/magcargo/frames.asm"
-SwinubFrames:     INCLUDE "gfx/pokemon/johto/swinub/frames.asm"
-PiloswineFrames:  INCLUDE "gfx/pokemon/johto/piloswine/frames.asm"
 CorsolaFrames:    INCLUDE "gfx/pokemon/johto/corsola/frames.asm"
 RemoraidFrames:   INCLUDE "gfx/pokemon/johto/remoraid/frames.asm"
 OctilleryFrames:  INCLUDE "gfx/pokemon/johto/octillery/frames.asm"
-DelibirdFrames:   INCLUDE "gfx/pokemon/johto/delibird/frames.asm"
 MantineFrames:    INCLUDE "gfx/pokemon/johto/mantine/frames.asm"
 SkarmoryFrames:   INCLUDE "gfx/pokemon/johto/skarmory/frames.asm"
 HoundourFrames:   INCLUDE "gfx/pokemon/johto/houndour/frames.asm"
@@ -186,7 +153,6 @@ PhanpyFrames:     INCLUDE "gfx/pokemon/johto/phanpy/frames.asm"
 DonphanFrames:    INCLUDE "gfx/pokemon/johto/donphan/frames.asm"
 Porygon2Frames:   INCLUDE "gfx/pokemon/johto/porygon2/frames.asm"
 StantlerFrames:   INCLUDE "gfx/pokemon/johto/stantler/frames.asm"
-SmeargleFrames:   INCLUDE "gfx/pokemon/johto/smeargle/frames.asm"
 TyrogueFrames:    INCLUDE "gfx/pokemon/johto/tyrogue/frames.asm"
 HitmontopFrames:  INCLUDE "gfx/pokemon/johto/hitmontop/frames.asm"
 SmoochumFrames:   INCLUDE "gfx/pokemon/johto/smoochum/frames.asm"

@@ -406,7 +406,7 @@ ValidateBTParty: ; unreferenced
 
 .invalid
 	push hl
-	ld hl, SMEARGLE
+	ld hl, WOBBUFFET
 	call GetPokemonIDFromIndex
 	pop hl
 	ld [hl], a

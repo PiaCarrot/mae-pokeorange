@@ -180,6 +180,11 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
+	command starthail               ; b0
+;==========================
+;	New Moves Start Here
+;==========================
+
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

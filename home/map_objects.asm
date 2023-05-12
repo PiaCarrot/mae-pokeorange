@@ -189,6 +189,10 @@ CheckStandingOnEntrance::
 	ret z
 	cp COLL_CAVE
 	ret
+	
+CheckPuddleTile::
+	cp COLL_PUDDLE
+	ret
 
 GetMapObject::
 ; Return the location of map object a in bc.

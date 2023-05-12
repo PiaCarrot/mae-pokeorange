@@ -12,8 +12,8 @@ EggMovePointers::
 	indirect_table 2, 1
 	indirect_entries MEW, KantoEggMovePointers
 	indirect_entries CELEBI, JohtoEggMovePointers
-	indirect_entries DEOXYS, HoennEggMovePointers
-	indirect_entries ARCEUS, SinnohEggMovePointers
+	indirect_entries LATIOS, HoennEggMovePointers
+	indirect_entries MANAPHY, SinnohEggMovePointers
 	indirect_entries NUM_POKEMON, OtherEggMovePointers
 	indirect_table_end
 

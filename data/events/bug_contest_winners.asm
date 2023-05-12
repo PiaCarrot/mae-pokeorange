@@ -20,61 +20,61 @@ BugContestantPointers:
 ;   dw 3rd-place mon, score
 
 BugContestant_BugCatcherDon:
-	db BUG_CATCHER, DON
+	db SCHOOLBOY, JACK1
 	dw KAKUNA,     300
 	dw METAPOD,    285
 	dw CATERPIE,   226
 
 BugContestant_BugCatcherEd:
-	db BUG_CATCHER, ED
+	db SCHOOLBOY, JACK1
 	dw BUTTERFREE, 286
 	dw BUTTERFREE, 251
 	dw CATERPIE,   237
 
 BugContestant_CooltrainerMNick:
-	db COOLTRAINERM, NICK
+	db SCHOOLBOY, JACK1
 	dw SCYTHER,    357
 	dw BUTTERFREE, 349
 	dw PINSIR,     368
 
 BugContestant_PokefanMWilliam:
-	db POKEFANM, WILLIAM
+	db SCHOOLBOY, JACK1
 	dw PINSIR,     332
 	dw BUTTERFREE, 324
 	dw VENONAT,    321
 
 BugContestant_BugCatcherBenny:
-	db BUG_CATCHER, BUG_CATCHER_BENNY
+	db SCHOOLBOY, JACK1
 	dw BUTTERFREE, 318
 	dw WEEDLE,     295
 	dw CATERPIE,   285
 
 BugContestant_CamperBarry:
-	db CAMPER, BARRY
+	db SCHOOLBOY, JACK1
 	dw PINSIR,     366
 	dw VENONAT,    329
 	dw KAKUNA,     314
 
 BugContestant_PicnickerCindy:
-	db PICNICKER, CINDY
+	db SCHOOLBOY, JACK1
 	dw BUTTERFREE, 341
 	dw METAPOD,    301
 	dw CATERPIE,   264
 
 BugContestant_BugCatcherJosh:
-	db BUG_CATCHER, JOSH
+	db SCHOOLBOY, JACK1
 	dw SCYTHER,    326
 	dw BUTTERFREE, 292
 	dw METAPOD,    282
 
 BugContestant_YoungsterSamuel:
-	db YOUNGSTER, SAMUEL
+	db SCHOOLBOY, JACK1
 	dw WEEDLE,     270
 	dw PINSIR,     282
 	dw CATERPIE,   251
 
 BugContestant_SchoolboyKipp:
-	db SCHOOLBOY, KIPP
+	db SCHOOLBOY, JACK1
 	dw VENONAT,    267
 	dw PARAS,      254
 	dw KAKUNA,     259

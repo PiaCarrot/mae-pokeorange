@@ -2,7 +2,7 @@ Intro_MainMenu:
 	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
-	ld de, MUSIC_MAIN_MENU
+	ld de, MUSIC_RIDING_LAPRAS
 	ld a, e
 	ld [wMapMusic], a
 	call PlayMusic
@@ -397,7 +397,7 @@ Continue:
 	jr FinishContinueFunction
 
 SpawnAfterRed:
-	ld a, SPAWN_MT_SILVER
+	ld a, SPAWN_NEW_BARK
 	ld [wDefaultSpawnpoint], a
 
 PostCreditsSpawn:
@@ -639,7 +639,7 @@ Continue_DisplayGameTime:
 	ld de, wGameTimeHours
 	lb bc, 2, 3
 	call PrintNum
-	ld [hl], "<COLON>"
+	ld [hl], ":"
 	inc hl
 	ld de, wGameTimeMinutes
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
@@ -650,7 +650,7 @@ OakSpeech:
 	call RotateFourPalettesLeft
 	call ClearTilemap
 
-	ld de, MUSIC_ROUTE_30
+	ld de, MUSIC_ROUTE_24_GBS
 	call PlayMusic
 
 	call RotateFourPalettesRight
@@ -671,7 +671,7 @@ if !DEF(_DEBUG)
 	call RotateThreePalettesRight
 	call ClearTilemap
 
-	ld hl, WOOPER
+	ld hl, GYARADOS
 	call GetPokemonIDFromIndex
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
@@ -733,7 +733,7 @@ OakText1:
 OakText2:
 	text_far _OakText2
 	text_asm
-	ld hl, WOOPER
+	ld hl, GYARADOS
 	call GetPokemonIDFromIndex
 	call PlayMonCry
 	call WaitSFX
@@ -801,9 +801,9 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "INDIGO@@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "ORANGE@@@@@"
 
 GSShowPlayerNamingChoices: ; unreferenced
 	call LoadMenuHeader
@@ -956,11 +956,11 @@ Intro_PlacePlayerSprite:
 	inc de
 	ld [hli], a ; tile id
 
-	ld b, PAL_OW_RED
+	ld b, PAL_OW_PURPLE
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .male
-	ld b, PAL_OW_BLUE
+	ld b, PAL_OW_RED
 .male
 	ld a, b
 

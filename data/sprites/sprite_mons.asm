@@ -22,7 +22,7 @@ SpriteMons:
 	dw STARMIE
 	dw BULBASAUR
 	dw JIGGLYPUFF
-	dw GRIMER
+	dw EEVEE
 	dw EKANS
 	dw PARAS
 	dw TENTACOOL
@@ -36,4 +36,5 @@ SpriteMons:
 	dw GYARADOS
 	dw LUGIA
 	dw HO_OH
+	dw DRATINI
 	assert_table_length NUM_POKEMON_SPRITES
