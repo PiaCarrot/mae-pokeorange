@@ -504,14 +504,10 @@ BattleAnim_Facade:
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
 	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
-	anim_obj ANIM_OBJ_DROPLET_1, 60, 98, $39
-	anim_obj ANIM_OBJ_DROPLET_2, 48, 98, $26
 	anim_wait 24
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
 	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
-	anim_obj ANIM_OBJ_DROPLET_1, 60, 78, $39
-	anim_obj ANIM_OBJ_DROPLET_2, 48, 78, $26
 	anim_wait 24
 	anim_loop 2, .loop
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
@@ -669,7 +665,6 @@ BattleAnim_Wish:
 
 BattleAnim_Assist:
 	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_1Row_2
 	anim_obj ANIM_OBJ_ASSIST, 44, 88, $0
 	anim_obj ANIM_OBJ_ASSIST, 44, 88, $10
 	anim_obj ANIM_OBJ_ASSIST, 44, 88, $20
@@ -678,13 +673,12 @@ BattleAnim_Assist:
 	anim_sound 0, 0, SFX_SWORDS_DANCE
 	anim_wait 8
 	anim_loop 6, .loop
-	anim_call BattleAnim_ShowMon_0_2
-	anim_wait 1
+	anim_wait 8
 	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
 	anim_incobj 4
-	anim_incobj 5
 	anim_wait 48
 	anim_ret
 
@@ -759,23 +753,23 @@ BattleAnim_KnockOff:
 	anim_ret
 
 BattleAnim_Endeavor:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SAND
-    anim_call BattleAnim_TargetObj_2Row_2
-    anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
-    anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
-    anim_wait 8
-.loop
-    anim_sound 0, 0, SFX_RETURN
-    anim_obj ANIM_OBJ_SWEAT, 56, 80, $0
-    anim_wait 14
-	anim_sound 0, 1, SFX_BITE
-    anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_wait 14
-    anim_loop 3, .loop
-    anim_wait 32
-    anim_incbgeffect ANIM_BG_FLAIL
-    anim_call BattleAnim_ShowMon_0_2
-    anim_ret
+;	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SAND
+;    anim_call BattleAnim_TargetObj_2Row_2
+;    anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
+;    anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+;    anim_wait 8
+;.loop
+;    anim_sound 0, 0, SFX_RETURN
+;    anim_obj ANIM_OBJ_SWEAT, 56, 80, $0
+;    anim_wait 14
+;	anim_sound 0, 1, SFX_BITE
+;    anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
+;	anim_wait 14
+;    anim_loop 3, .loop
+;    anim_wait 32
+;    anim_incbgeffect ANIM_BG_FLAIL
+;    anim_call BattleAnim_ShowMon_0_2
+;    anim_ret
 
 BattleAnim_Eruption:
 BattleAnim_SkillSwap:
