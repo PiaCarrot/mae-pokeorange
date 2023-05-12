@@ -236,6 +236,8 @@ NewPokedexOrder:
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw POOCHYENA
+	dw MIGHTYENA
 	dw ZIGZAGOON
 	dw LINOONE
 	dw WINGULL
@@ -270,6 +272,8 @@ NewPokedexOrder:
 	dw FLYGON
 	dw SWABLU
 	dw ALTARIA
+	dw ZANGOOSE
+	dw SEVIPER
 	dw FEEBAS
 	dw MILOTIC
 	dw KECLEON

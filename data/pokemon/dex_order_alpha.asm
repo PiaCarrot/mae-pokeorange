@@ -214,6 +214,7 @@ AlphabeticalPokedexOrder:
 	dw METAPOD
 	dw MEW
 	dw MEWTWO
+	dw MIGHTYENA
 	dw MILOTIC
 	dw MILTANK
 	dw MIME_JR
@@ -270,6 +271,7 @@ AlphabeticalPokedexOrder:
 	dw POLIWHIRL
 	dw POLIWRATH
 	dw PONYTA
+	dw POOCHYENA
 	dw PORYGON
 	dw PORYGON2
 	dw PORYGON_Z
@@ -305,6 +307,7 @@ AlphabeticalPokedexOrder:
 	dw SEALEO
 	dw SEEL
 	dw SENTRET
+	dw SEVIPER
 	dw SHARPEDO
 	dw SHEDINJA
 	dw SHELLDER
@@ -398,6 +401,7 @@ AlphabeticalPokedexOrder:
 ;	dw WYRDEER
 	dw YANMA
 	dw YANMEGA
+	dw ZANGOOSE
 	dw ZAPDOS
 	dw ZIGZAGOON
 ;	dw ZOROARK

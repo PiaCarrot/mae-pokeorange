@@ -227,5 +227,14 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 
+	trainerclass LORELEI1 ; 44
+	const LORELEI_1
+
+	trainerclass LORELEI2 ; 45
+	const LORELEI_2
+
+	trainerclass LORELEI3 ; 46
+	const LORELEI_3
+
 DEF KRIS EQU __trainer_class__
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

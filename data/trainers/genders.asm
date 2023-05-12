@@ -69,4 +69,8 @@ BTTrainerClassGenders:
 	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
-	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN
+	db MALE   ; MYSTICALMAN
+	db FEMALE ; LORELEI1
+	db FEMALE ; LORELEI2
+	db FEMALE ; LORELEI3
+	assert_table_length NUM_TRAINER_CLASSES

@@ -1,6 +1,8 @@
 SECTION "Hoenn Animations", ROMX
 
 HoennAnimationPointers:
+	dw PoochyenaAnimation
+	dw MightyenaAnimation
 	dw ZigzagoonAnimation
 	dw LinooneAnimation
 	dw WingullAnimation
@@ -35,6 +37,8 @@ HoennAnimationPointers:
 	dw FlygonAnimation
 	dw SwabluAnimation
 	dw AltariaAnimation
+	dw ZangooseAnimation
+	dw SeviperAnimation
 	dw FeebasAnimation
 	dw MiloticAnimation
 	dw KecleonAnimation
@@ -56,6 +60,8 @@ HoennAnimationPointers:
 	dw LatiosAnimation
 .IndirectEnd::
 
+PoochyenaAnimation:     INCLUDE "gfx/pokemon/hoenn/poochyena/anim.asm"
+MightyenaAnimation:     INCLUDE "gfx/pokemon/hoenn/mightyena/anim.asm"
 ZigzagoonAnimation:     INCLUDE "gfx/pokemon/hoenn/zigzagoon/anim.asm"
 LinooneAnimation:       INCLUDE "gfx/pokemon/hoenn/linoone/anim.asm"
 WingullAnimation:       INCLUDE "gfx/pokemon/hoenn/wingull/anim.asm"
@@ -90,6 +96,8 @@ VibravaAnimation:       INCLUDE "gfx/pokemon/hoenn/vibrava/anim.asm"
 FlygonAnimation:        INCLUDE "gfx/pokemon/hoenn/flygon/anim.asm"
 SwabluAnimation:        INCLUDE "gfx/pokemon/hoenn/swablu/anim.asm"
 AltariaAnimation:       INCLUDE "gfx/pokemon/hoenn/altaria/anim.asm"
+ZangooseAnimation:      INCLUDE "gfx/pokemon/hoenn/zangoose/anim.asm"
+SeviperAnimation:       INCLUDE "gfx/pokemon/hoenn/seviper/anim.asm"
 FeebasAnimation:        INCLUDE "gfx/pokemon/hoenn/feebas/anim.asm"
 MiloticAnimation:       INCLUDE "gfx/pokemon/hoenn/milotic/anim.asm"
 KecleonAnimation:       INCLUDE "gfx/pokemon/hoenn/kecleon/anim.asm"

@@ -95,7 +95,7 @@ FindNest:
 	ld a, [hli]
 	ldh [hMathBuffer + 1], a
 	inc hl
-	ld a, NUM_WATERMON
+	ld a, NUM_WATERMON * 3
 	call .SearchMapForMon
 	jr nc, .next_water
 	ld [de], a
@@ -270,12 +270,10 @@ ChooseWildEncounter:
 	jr nc, .nowildbattle
 	call CheckEncounterRoamMon
 	jr c, .startwildbattle
-
 	inc hl
 	inc hl
 	inc hl
 	call CheckOnWater
-	ld de, WaterMonProbTable
 	jr z, .watermon
 	inc hl
 	inc hl
@@ -283,9 +281,17 @@ ChooseWildEncounter:
 	ld bc, NUM_GRASSMON * 3
 	call AddNTimes
 	ld de, GrassMonProbTable
+	push hl
+	jmp .randomloop
 
 .watermon
 ; hl contains the pointer to the wild mon data, let's save that to the stack
+	inc hl
+	inc hl
+	ld a, [wTimeOfDay]
+	ld bc, NUM_WATERMON * 3
+	call AddNTimes
+	ld de, WaterMonProbTable
 	push hl
 .randomloop
 	call Random

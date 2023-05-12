@@ -127,7 +127,7 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_FUCHSIA
 	; setflag ENGINE_FLYPOINT_SAFFRON
 	; setflag ENGINE_FLYPOINT_CINNABAR
-	; hm slaves
+	; test mons
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove TRICK,        wPartyMon1, 0
 	givepokemove WISH,       wPartyMon1, 1
@@ -173,9 +173,13 @@ endc
 
 PlayersHouseBookshelfScript:
 if DEF(_DEBUG)
-	loadwildmon MAGIKARP, 100
+	; loadwildmon MAGIKARP, 100
+	; startbattle
+	; reloadmapafterbattle
+	loadtrainer LORELEI3, LORELEI_3
 	startbattle
 	reloadmapafterbattle
+	; special HiddenStarter2
 	end
 else
 	jumpstd PictureBookshelfScript

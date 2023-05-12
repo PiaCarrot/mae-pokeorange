@@ -64,9 +64,8 @@ ValenciaIsland_MapScripts:
 	checkevent EVENT_GOT_PIKACHU_FROM_IVY
 	iftrue .ASPikachuScript
 	setevent EVENT_GOT_EEVEE_FROM_IVY
-	givepoke EEVEE, 5
-	cry EEVEE
-	loadwildmon EEVEE, 5
+	;Special to encounter starter
+	special HiddenStarter1
 .ContinueASPikaOrEevee
 	catchtutorial BATTLETYPE_TUTORIAL
 	applymovement VALENCIA_ISLAND_IVY, ASIvyMovement5
@@ -82,7 +81,8 @@ ValenciaIsland_MapScripts:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 .ContinueASPikaOrEevee2
-	;do you want to give it a nickname
+	;Special to name starter
+	special HiddenStarter2
 	writetext ASIvyScriptText7
 	waitbutton
 	closetext
@@ -96,9 +96,8 @@ ValenciaIsland_MapScripts:
 	
 .ASPikachuScript
 	setevent EVENT_GOT_PIKACHU_FROM_IVY
-	givepoke PIKACHU, 5
-	cry PIKACHU
-	loadwildmon PIKACHU, 5
+	;Special to encounter starter
+	special HiddenStarter1
 	sjump .ContinueASPikaOrEevee
 	
 .ASPikachuScript2
@@ -144,9 +143,8 @@ ValenciaIsland_MapScripts:
 	writetext ASIvyScriptText12
 	waitbutton
 	turnobject VALENCIA_ISLAND_IVY, LEFT
-	givepoke DRATINI, 5
-	cry DRATINI
-	loadwildmon DRATINI, 5
+	;Special to encounter starter
+	special HiddenStarter1
 	catchtutorial BATTLETYPE_TUTORIAL
 	setevent EVENT_DRATINI_VALENCIA_APPEAR
 	disappear VALENCIA_ISLAND_DRATINI
@@ -158,7 +156,8 @@ ValenciaIsland_MapScripts:
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	;do you want to give it a nickname
+	;Special to name starter
+	special HiddenStarter2
 	writetext ASIvyScriptText7
 	waitbutton
 	closetext
@@ -554,6 +553,42 @@ ValenciaCrossLeavingMovement:
 	step UP
 	step LEFT
 	step_end
+	
+PlayersHouseSign:
+	jumptext PlayersHouseSignText
+	
+IvysHouseSign:
+	jumptext IvysHouseSignText
+	
+IvysLabSign:
+	jumptext IvysLabSignText
+	
+ValenciaIslandSign:
+	jumptext ValenciaIslandSignText
+	
+PlayersHouseSignText:
+	text "<PLAYER>'s House"
+	done
+	
+IvysHouseSignText:
+	text "PHILENA IVY"
+	line "RESIDENCE"
+	
+	para "№.1 BAYVIEW"
+	done
+	
+IvysLabSignText:
+	text "IVY RESEARCH"
+	line "№.2 BAYVIEW"
+	done
+	
+ValenciaIslandSignText:
+	text "VALENCIA ISLAND"
+
+	para "IVY RESEARCH"
+	line "South side of"
+	cont "village."
+	done
 
 ValenciaIsland_MapEvents:
 	db 0, 0 ; filler
@@ -567,6 +602,10 @@ ValenciaIsland_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event 13,  5, BGEVENT_READ, PlayersHouseSign
+	bg_event 17, 15, BGEVENT_READ, IvysHouseSign
+	bg_event 27, 13, BGEVENT_READ, IvysLabSign
+	bg_event  8, 12, BGEVENT_READ, ValenciaIslandSign
 
 	def_object_events
 	object_event 14,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ValenciaYoungsterScript, -1

@@ -122,7 +122,7 @@ PlayBattleMusic:
 	jr nz, .kantotrainer
 
 .johtotrainer
-	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	ld de, MUSIC_ORANGE_TRAINER_BATTLE
 	jr .done
 
 .kantotrainer

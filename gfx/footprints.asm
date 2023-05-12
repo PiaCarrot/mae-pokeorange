@@ -235,6 +235,8 @@ INCBIN "gfx/footprints/celebi.1bpp"
 ;===============================
 ;	Hoenn Footprints Start Here
 ;===============================
+INCBIN "gfx/footprints/hoenn/poochyena.1bpp"
+INCBIN "gfx/footprints/hoenn/mightyena.1bpp"
 INCBIN "gfx/footprints/hoenn/zigzagoon.1bpp"
 INCBIN "gfx/footprints/hoenn/linoone.1bpp"
 INCBIN "gfx/footprints/hoenn/wingull.1bpp"
@@ -269,6 +271,8 @@ INCBIN "gfx/footprints/hoenn/vibrava.1bpp"
 INCBIN "gfx/footprints/hoenn/flygon.1bpp"
 INCBIN "gfx/footprints/hoenn/swablu.1bpp"
 INCBIN "gfx/footprints/hoenn/altaria.1bpp"
+INCBIN "gfx/footprints/hoenn/zangoose.1bpp"
+INCBIN "gfx/footprints/hoenn/seviper.1bpp"
 INCBIN "gfx/footprints/hoenn/feebas.1bpp"
 INCBIN "gfx/footprints/hoenn/milotic.1bpp"
 INCBIN "gfx/footprints/hoenn/kecleon.1bpp"

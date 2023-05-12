@@ -1,6 +1,8 @@
 SECTION "Hoenn Bitmasks", ROMX
 
 HoennBitmaskPointers:
+	dw PoochyenaBitmasks
+	dw MightyenaBitmasks
 	dw ZigzagoonBitmasks
 	dw LinooneBitmasks
 	dw WingullBitmasks
@@ -35,6 +37,8 @@ HoennBitmaskPointers:
 	dw FlygonBitmasks
 	dw SwabluBitmasks
 	dw AltariaBitmasks
+	dw ZangooseBitmasks
+	dw SeviperBitmasks
 	dw FeebasBitmasks
 	dw MiloticBitmasks
 	dw KecleonBitmasks
@@ -56,6 +60,8 @@ HoennBitmaskPointers:
 	dw LatiosBitmasks
 .IndirectEnd::
 
+PoochyenaBitmasks:     INCLUDE "gfx/pokemon/hoenn/poochyena/bitmask.asm"
+MightyenaBitmasks:     INCLUDE "gfx/pokemon/hoenn/mightyena/bitmask.asm"
 ZigzagoonBitmasks:     INCLUDE "gfx/pokemon/hoenn/zigzagoon/bitmask.asm"
 LinooneBitmasks:       INCLUDE "gfx/pokemon/hoenn/linoone/bitmask.asm"
 WingullBitmasks:       INCLUDE "gfx/pokemon/hoenn/wingull/bitmask.asm"
@@ -90,6 +96,8 @@ VibravaBitmasks:       INCLUDE "gfx/pokemon/hoenn/vibrava/bitmask.asm"
 FlygonBitmasks:        INCLUDE "gfx/pokemon/hoenn/flygon/bitmask.asm"
 SwabluBitmasks:        INCLUDE "gfx/pokemon/hoenn/swablu/bitmask.asm"
 AltariaBitmasks:       INCLUDE "gfx/pokemon/hoenn/altaria/bitmask.asm"
+ZangooseBitmasks:      INCLUDE "gfx/pokemon/hoenn/zangoose/bitmask.asm"
+SeviperBitmasks:       INCLUDE "gfx/pokemon/hoenn/seviper/bitmask.asm"
 FeebasBitmasks:        INCLUDE "gfx/pokemon/hoenn/feebas/bitmask.asm"
 MiloticBitmasks:       INCLUDE "gfx/pokemon/hoenn/milotic/bitmask.asm"
 KecleonBitmasks:       INCLUDE "gfx/pokemon/hoenn/kecleon/bitmask.asm"

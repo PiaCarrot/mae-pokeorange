@@ -485,6 +485,10 @@ PokemonPicPointers::
 	dba HoOhBackpic
 	dba CelebiFrontpic
 	dba CelebiBackpic
+	dba PoochyenaFrontpic
+	dba PoochyenaBackpic
+	dba MightyenaFrontpic
+	dba MightyenaBackpic
 	dba ZigzagoonFrontpic
 	dba ZigzagoonBackpic
 	dba LinooneFrontpic
@@ -553,6 +557,10 @@ PokemonPicPointers::
 	dba SwabluBackpic
 	dba AltariaFrontpic
 	dba AltariaBackpic
+	dba ZangooseFrontpic
+	dba ZangooseBackpic
+	dba SeviperFrontpic
+	dba SeviperBackpic
 	dba FeebasFrontpic
 	dba FeebasBackpic
 	dba MiloticFrontpic

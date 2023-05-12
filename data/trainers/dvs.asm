@@ -69,4 +69,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
+	dn  7, 15, 13, 15 ; LORELEI1
+	dn  7, 15, 13, 15 ; LORELEI2
+	dn  7, 15, 13, 15 ; LORELEI3
 	assert_table_length NUM_TRAINER_CLASSES

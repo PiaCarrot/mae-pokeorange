@@ -1,6 +1,8 @@
 SECTION "Hoenn Evolutions and Attacks", ROMX
 
 HoennEvosAttacksPointers::
+	dw PoochyenaEvosAttacks
+	dw MightyenaEvosAttacks
 	dw ZigzagoonEvosAttacks
 	dw LinooneEvosAttacks
 	dw WingullEvosAttacks
@@ -35,6 +37,8 @@ HoennEvosAttacksPointers::
 	dw FlygonEvosAttacks
 	dw SwabluEvosAttacks
 	dw AltariaEvosAttacks
+	dw ZangooseEvosAttacks
+	dw SeviperEvosAttacks
 	dw FeebasEvosAttacks
 	dw MiloticEvosAttacks
 	dw KecleonEvosAttacks
@@ -55,6 +59,46 @@ HoennEvosAttacksPointers::
 	dw LatiasEvosAttacks
 	dw LatiosEvosAttacks
 .IndirectEnd::
+
+PoochyenaEvosAttacks:
+	dbbw EVOLVE_LEVEL, 18, MIGHTYENA
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 5, HOWL
+	dbw 9, SAND_ATTACK
+	dbw 13, BITE
+	dbw 17, ODOR_SLEUTH
+	dbw 21, ROAR
+	dbw 25, SWAGGER
+	dbw 29, ASSURANCE
+	dbw 33, SCARY_FACE
+	dbw 37, TAUNT
+	dbw 41, EMBARGO
+	dbw 45, TAKE_DOWN
+	dbw 49, SUCKER_PUNCH
+	dbw 53, CRUNCH
+	db 0 ; no more level-up moves
+
+MightyenaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, HOWL
+	dbw 1, SAND_ATTACK
+	dbw 1, BITE
+	dbw 5, HOWL
+	dbw 9, SAND_ATTACK
+	dbw 13, BITE
+	dbw 17, ODOR_SLEUTH
+	dbw 22, ROAR
+	dbw 27, SWAGGER
+	dbw 32, ASSURANCE
+	dbw 37, SCARY_FACE
+	dbw 42, TAUNT
+	dbw 47, EMBARGO
+	dbw 52, TAKE_DOWN
+	dbw 57, THIEF
+	dbw 62, SUCKER_PUNCH
+	db 0 ; no more level-up moves
 
 ZigzagoonEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, LINOONE
@@ -698,6 +742,41 @@ AltariaEvosAttacks:
 	dbw 54, DRAGON_PULSE
 	dbw 62, PERISH_SONG
 	dbw 70, SKY_ATTACK
+	db 0 ; no more level-up moves
+	
+ZangooseEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 5, QUICK_ATTACK
+	dbw 9, SWORDS_DANCE
+	dbw 14, FURY_CUTTER
+	dbw 18, SLASH
+	dbw 22, PURSUIT
+	dbw 27, EMBARGO
+	dbw 31, CRUSH_CLAW
+	dbw 35, TAUNT
+	dbw 40, DETECT
+	dbw 44, FALSE_SWIPE
+	dbw 48, X_SCISSOR
+	dbw 53, CLOSE_COMBAT
+	db 0 ; no more level-up moves
+
+SeviperEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, WRAP
+	dbw 7, LICK
+	dbw 10, BITE
+	dbw 16, POISON_TAIL
+	dbw 19, SCREECH
+	dbw 25, GLARE
+	dbw 28, CRUNCH
+	dbw 34, POISON_FANG
+	dbw 37, SWAGGER
+	dbw 43, HAZE
+	dbw 46, NIGHT_SLASH
+	dbw 52, POISON_JAB
+	dbw 55, WRING_OUT
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
