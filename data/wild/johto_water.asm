@@ -7,26 +7,20 @@ JohtoWaterWildMons:
 	; morn
 	dbw 4, TENTACOOL
 	dbw 4, WINGULL
-	dbw 5, WINGULL
-	dbw 5, WINGULL
 	dbw 4, HOPPIP
-	dbw 5, TENTACOOL
+	dbw 5, LUVDISC
 	dbw 5, LUVDISC
 	; day
 	dbw 4, TENTACOOL
 	dbw 4, WINGULL
-	dbw 5, WINGULL
-	dbw 5, WINGULL
 	dbw 4, HOPPIP
-	dbw 5, TENTACOOL
+	dbw 5, LUVDISC
 	dbw 5, LUVDISC
 	; nite
 	dbw 4, TENTACOOL
 	dbw 4, WINGULL
-	dbw 5, WINGULL
-	dbw 5, WINGULL
 	dbw 4, LUVDISC
-	dbw 5, TENTACOOL
+	dbw 5, LUVDISC
 	dbw 5, LUVDISC
 	end_water_wildmons
 	
@@ -35,26 +29,20 @@ JohtoWaterWildMons:
 	; morn
 	dbw 4, TENTACOOL
 	dbw 4, WINGULL
-	dbw 5, WINGULL
-	dbw 5, WINGULL
 	dbw 4, HOPPIP
-	dbw 5, TENTACOOL
+	dbw 5, LUVDISC
 	dbw 5, LUVDISC
 	; day
 	dbw 4, TENTACOOL
 	dbw 4, WINGULL
-	dbw 5, WINGULL
-	dbw 5, WINGULL
 	dbw 4, HOPPIP
-	dbw 5, TENTACOOL
+	dbw 5, LUVDISC
 	dbw 5, LUVDISC
 	; nite
 	dbw 4, TENTACOOL
 	dbw 4, WINGULL
-	dbw 5, WINGULL
-	dbw 5, WINGULL
 	dbw 4, LUVDISC
-	dbw 5, TENTACOOL
+	dbw 5, LUVDISC
 	dbw 5, LUVDISC
 	end_water_wildmons
 
