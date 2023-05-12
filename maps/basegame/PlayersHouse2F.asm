@@ -127,17 +127,17 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_FUCHSIA
 	; setflag ENGINE_FLYPOINT_SAFFRON
 	; setflag ENGINE_FLYPOINT_CINNABAR
-	; hm slaves
-	givepoke POOCHYENA, 100, LEFTOVERS
-	givepokemove FLY,        wPartyMon1, 0
-	givepokemove SURF,       wPartyMon1, 1
-	givepokemove STRENGTH,   wPartyMon1, 2
-	givepokemove CUT,        wPartyMon1, 3
-	givepoke MIGHTYENA, 100, LEFTOVERS
-	givepokemove FLASH,      wPartyMon2, 0
-	givepokemove ROCK_SMASH, wPartyMon2, 1
-	givepokemove HEADBUTT,   wPartyMon2, 2
-	givepokemove WATERFALL,  wPartyMon2, 3
+	; test mons
+	givepoke MEW, 100, LEFTOVERS
+	givepokemove TRICK,        wPartyMon1, 0
+	givepokemove WISH,       wPartyMon1, 1
+	givepokemove SUNNY_DAY,   wPartyMon1, 2
+	givepokemove RAIN_DANCE,        wPartyMon1, 3
+	givepoke MEW, 100, LEFTOVERS
+	givepokemove CRABHAMMER,      wPartyMon2, 0
+	givepokemove WATERFALL, wPartyMon2, 1
+	givepokemove FLAME_WHEEL,   wPartyMon2, 2
+	givepokemove SLUDGE_BOMB,  wPartyMon2, 3
 	closetext
 	end
 else

@@ -480,7 +480,7 @@ DEF NUM_ATTACKS EQU const_value - 1
 		fail "Too many moves defined!"
 	endc
 
-NUM_SPECIAL_ANIMS EQU $19 ;fix if more special (always on) animations are added
+NUM_SPECIAL_ANIMS EQU $1A ;fix if more special (always on) animations are added
 SPECIAL_ANIM_OFFSET EQU (1 + HIGH(NUM_ATTACKS + NUM_SPECIAL_ANIMS)) << 8
 
 ; Battle animations use the same constants as the moves
@@ -513,6 +513,7 @@ const_value = -NUM_SPECIAL_ANIMS
 	const ANIM_HIT_CONFUSION     ;  -1 (ffff)
 	const ANIM_IN_RAIN           ;
 	const ANIM_IN_SUN            ;
+	const ANIM_IN_HAIL           ;
 
 	if const_value
 		fail "Please adjust the initial constant value to ensure that the last animation constant has a value of -1"

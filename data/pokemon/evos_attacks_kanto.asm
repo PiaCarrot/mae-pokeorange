@@ -257,9 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, STOCKPILE
-	dbw 7, SPIT_UP
-	dbw 8, SWALLOW
+	dbw 6, TRICK
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

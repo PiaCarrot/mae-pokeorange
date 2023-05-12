@@ -188,10 +188,21 @@ BattleAnimFrameData:
 	dw .Frameset_b8 ; BATTLEANIMFRAMESET_B8
 	dw .Frameset_b9 ; BATTLEANIMFRAMESET_B9
 	dw .Frameset_ba ; BATTLEANIMFRAMESET_BA
+	dw .Frameset_bb ; BATTLEANIMFRAMESET_BB
 	dw .Frameset_bc ; BATTLEANIMFRAMESET_BC
 	dw .Frameset_bd ; BATTLEANIMFRAMESET_BD
-	dw .Frameset_bf ; BATTLEANIMFRAMESET_BE
+	dw .Frameset_be ; BATTLEANIMFRAMESET_BE
 	dw .Frameset_bf ; BATTLEANIMFRAMESET_BF
+	dw .Frameset_c0 ; BATTLEANIMFRAMESET_C0
+	dw .Frameset_c1 ; BATTLEANIMFRAMESET_C1
+	dw .Frameset_c2 ; BATTLEANIMFRAMESET_C2
+	dw .Frameset_c3 ; BATTLEANIMFRAMESET_C3
+	dw .Frameset_c4 ; BATTLEANIMFRAMESET_C4
+	dw .Frameset_c5 ; BATTLEANIMFRAMESET_C5
+	dw .Frameset_c6 ; BATTLEANIMFRAMESET_C6
+	dw .Frameset_c7 ; BATTLEANIMFRAMESET_C7
+	dw .Frameset_c8 ; BATTLEANIMFRAMESET_C8
+	dw .Frameset_c9 ; BATTLEANIMFRAMESET_C9
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1289,6 +1300,9 @@ BattleAnimFrameData:
 	oamframe BATTLEANIMOAMSET_D8,  16
 	oamdelete
 
+.Frameset_bb:
+	oamframe BATTLEANIMOAMSET_80,  8
+	oamend
 
 .Frameset_bc:
 	oamframe BATTLEANIMOAMSET_1E,  4
@@ -1302,11 +1316,52 @@ BattleAnimFrameData:
 	oamrestart
 
 .Frameset_be:
-	frame BATTLEANIMOAMSET_BD,  2
-	frame BATTLEANIMOAMSET_94,  2
-	frame BATTLEANIMOAMSET_1B,  2
+	oamframe BATTLEANIMOAMSET_BD,  2
+	oamframe BATTLEANIMOAMSET_94,  2
+	oamframe BATTLEANIMOAMSET_1B,  2
 	oamdelete
 
 .Frameset_bf:
-	frame BATTLEANIMOAMSET_1F,  8
+	oamframe BATTLEANIMOAMSET_1F,  8
 	oamend
+
+.Frameset_c0:
+	oamframe BATTLEANIMOAMSET_DA,  9
+	oamdelete
+
+.Frameset_c1:
+	oamframe BATTLEANIMOAMSET_BD,  8
+	oamend
+
+.Frameset_c2:
+	oamframe BATTLEANIMOAMSET_14,  6
+	oamdelete
+
+.Frameset_c3:
+	oamframe BATTLEANIMOAMSET_16,  16
+	oamdelete
+
+.Frameset_c4:
+	oamframe BATTLEANIMOAMSET_16,  16, OAM_X_FLIP
+	oamdelete
+
+.Frameset_c5:
+	oamframe BATTLEANIMOAMSET_03,  6
+	oamrestart
+
+.Frameset_c6:
+	oamframe BATTLEANIMOAMSET_BB,  4
+	oamdelete
+
+.Frameset_c7:
+	oamframe BATTLEANIMOAMSET_BB,  4, OAM_X_FLIP
+	oamdelete
+
+.Frameset_c8:
+	oamframe BATTLEANIMOAMSET_DB,  6
+	oamdelete
+
+.Frameset_c9:
+	oamframe BATTLEANIMOAMSET_1B,  20
+	oamframe BATTLEANIMOAMSET_94,  10
+	oamrestart

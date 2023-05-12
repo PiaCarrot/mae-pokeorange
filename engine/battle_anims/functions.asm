@@ -100,6 +100,8 @@ DoBattleAnimFrame:
 	dw BattleAnimFunction_RadialMoveOut_Slow
 	dw BattleAnimFunction_RadialMoveOut_Fast
 	dw BattleAnimFunction_RadialMoveIn
+	dw BattleAnimFunction_BubbleSplash
+	dw BattleAnimFunction_ObjectHover
 
 BattleAnimFunction_Null:
 	call BattleAnim_AnonJumptable
@@ -1003,6 +1005,12 @@ BattleAnim_ScatterHorizontal:
 	ld de, -$100
 	ret
 
+BattleAnimFunction_BubbleSplash:
+	call BattleAnim_AnonJumptable
+
+	dw BattleAnimFunction_RockSmash.after_frameset
+	dw BattleAnimFunction_RockSmash.one
+
 BattleAnimFunction_RockSmash:
 ; Object moves at an arc
 ; Obj Param: Bit 7 makes arc flip horizontally
@@ -1023,6 +1031,7 @@ BattleAnimFunction_RockSmash:
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
+.after_frameset
 	call BattleAnim_IncAnonJumptableIndex
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
@@ -4566,3 +4575,71 @@ BattleAnimFunction_RadialMoveIn:
 	ld [hld], a
 	ld [hl], d
 	ret
+
+BattleAnimFunction_ObjectHover:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	cp -1
+	jr nz, .not_done_climbing
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], 2
+	ret
+
+.not_done_climbing
+	ld d, a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld e, [hl]
+	ld hl, -$80
+	add hl, de
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], d
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], e
+	ret
+
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .delay_done
+	dec [hl]
+	ret
+
+.delay_done
+	ld [hl], 4
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cpl
+	inc a
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	ret
+
+.two
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $c0
+	ret nc
+	ld a, 8
+	jp BattleAnim_StepToTarget
