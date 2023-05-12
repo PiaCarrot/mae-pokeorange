@@ -121,9 +121,9 @@ JohtoGrassWildMons:
 	dbw 2, ODDISH
 	dbw 3, RATTATA
 	dbw 3, ODDISH
-	dbw 2, NIDORAN_M
+	dbw 2, VENONAT
 	dbw 3, NIDORAN_M
-	dbw 2, NIDORAN_F
+	dbw 3, VENONAT
 	dbw 3, NIDORAN_F
 	dbw 2, PARAS
 	dbw 2, HOOTHOOT
@@ -164,9 +164,9 @@ JohtoGrassWildMons:
 	dbw 2, ODDISH
 	dbw 3, RATTATA
 	dbw 3, ODDISH
-	dbw 2, NIDORAN_M
+	dbw 2, VENONAT
 	dbw 3, NIDORAN_M
-	dbw 2, NIDORAN_F
+	dbw 3, VENONAT
 	dbw 3, NIDORAN_F
 	dbw 2, PARAS
 	dbw 2, HOOTHOOT
