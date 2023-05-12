@@ -611,6 +611,7 @@ BattleAnim_Taunt:
 BattleAnim_Trick:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_clearenemyhud
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_sound 0, 1, SFX_GET_COIN_FROM_SLOTS
 	anim_obj ANIM_OBJ_TRICK, 90, 68, $18
 	anim_obj ANIM_OBJ_TRICK, 90, 68, $38

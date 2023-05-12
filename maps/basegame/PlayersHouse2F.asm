@@ -129,8 +129,8 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_CINNABAR
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove HAIL,        wPartyMon1, 0
-	givepokemove SANDSTORM,       wPartyMon1, 1
+	givepokemove TRICK,        wPartyMon1, 0
+	givepokemove WISH,       wPartyMon1, 1
 	givepokemove SUNNY_DAY,   wPartyMon1, 2
 	givepokemove RAIN_DANCE,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
