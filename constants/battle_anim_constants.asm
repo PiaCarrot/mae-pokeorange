@@ -255,8 +255,11 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SMELLINGSALT_R
 	const ANIM_OBJ_SMELLINGSALT_SUPRISED
 	const ANIM_OBJ_TRICK
-	const ANIM_OBJ_WISH
+	const ANIM_OBJ_WISH_1
 	const ANIM_OBJ_WISH_2
+	const ANIM_OBJ_ROOT_R
+	const ANIM_OBJ_ROOT_L
+	const ANIM_OBJ_ENERGY_INGRAIN
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -557,6 +560,9 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_C8
 	const BATTLEANIMFRAMESET_C9
 	const BATTLEANIMFRAMESET_CA
+	const BATTLEANIMFRAMESET_CB
+	const BATTLEANIMFRAMESET_CC
+	const BATTLEANIMFRAMESET_CD
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -783,6 +789,9 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_DB
 	const BATTLEANIMOAMSET_DC
 	const BATTLEANIMOAMSET_DD
+	const BATTLEANIMOAMSET_DE
+	const BATTLEANIMOAMSET_DF
+	const BATTLEANIMOAMSET_E0
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -893,6 +902,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_MISC_2
 	const ANIM_GFX_BEAM_LIGHT
 	const ANIM_GFX_SMOKE_PUFF
+	const ANIM_GFX_ROOTS
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

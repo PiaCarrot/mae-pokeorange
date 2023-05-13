@@ -638,7 +638,7 @@ BattleAnim_Wish:
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
 	anim_wait 16
 	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
-	anim_obj ANIM_OBJ_WISH, 30, 46, $42
+	anim_obj ANIM_OBJ_WISH_1, 30, 46, $42
 	anim_wait 16
 	anim_obj ANIM_OBJ_WISH_2, 50, 50, $0
 	anim_wait 16
@@ -683,6 +683,29 @@ BattleAnim_Assist:
 	anim_ret
 
 BattleAnim_Ingrain:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+	anim_2gfx ANIM_GFX_ROOTS, ANIM_GFX_CHARGE
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_R, 24, 104, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_L, 64, 104, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_R, 34, 104, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_L, 69, 104, $0
+	anim_wait 32
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $10
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $8
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $18
+	anim_wait 38
 	anim_ret
 
 BattleAnim_Superpower:

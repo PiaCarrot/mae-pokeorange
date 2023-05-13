@@ -56,4 +56,5 @@ AnimObjGFX:
 	anim_obj_gfx  3, AnimObjMisc2GFX
 	anim_obj_gfx 10, AnimObjBeamLightGFX
 	anim_obj_gfx  9, AnimObjSmokePuffGFX
+	anim_obj_gfx 16, AnimObjRootsGFX
 	assert_table_length NUM_ANIM_GFX + 1
