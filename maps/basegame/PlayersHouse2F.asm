@@ -131,8 +131,8 @@ if DEF(_DEBUG)
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove TRICK,        wPartyMon1, 0
 	givepokemove WISH,       wPartyMon1, 1
-	givepokemove SUNNY_DAY,   wPartyMon1, 2
-	givepokemove RAIN_DANCE,        wPartyMon1, 3
+	givepokemove ROLE_PLAY,   wPartyMon1, 2
+	givepokemove TRANSFORM,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove CRABHAMMER,      wPartyMon2, 0
 	givepokemove WATERFALL, wPartyMon2, 1
@@ -173,13 +173,10 @@ endc
 
 PlayersHouseBookshelfScript:
 if DEF(_DEBUG)
-	; loadwildmon MAGIKARP, 100
-	; startbattle
-	; reloadmapafterbattle
-	loadtrainer LORELEI3, LORELEI_3
+	loadwildmon SQUIRTLE, 100
+	; loadtrainer LORELEI3, LORELEI_3
 	startbattle
 	reloadmapafterbattle
-	; special HiddenStarter2
 	end
 else
 	jumpstd PictureBookshelfScript

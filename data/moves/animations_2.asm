@@ -626,9 +626,13 @@ BattleAnim_Trick:
 	anim_ret
 
 BattleAnim_RolePlay:
+	anim_1gfx ANIM_GFX_HIT
 	anim_transform
-	anim_wait 48
+	anim_sound 0, 1, SFX_SPITE
 	anim_updateactorpic
+	anim_wait 96
+	anim_dropsub
+	anim_ret
 
 BattleAnim_Wish:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_STARS
