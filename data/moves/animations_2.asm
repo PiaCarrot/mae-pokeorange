@@ -626,11 +626,13 @@ BattleAnim_Trick:
 	anim_ret
 
 BattleAnim_RolePlay:
-	anim_1gfx ANIM_GFX_HIT
+	anim_bgp $03
+	anim_wait 12
 	anim_transform
 	anim_sound 0, 1, SFX_SPITE
 	anim_updateactorpic
 	anim_wait 96
+	anim_clearobjs
 	anim_dropsub
 	anim_ret
 
