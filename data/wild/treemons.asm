@@ -2,6 +2,7 @@ TreeMons:
 ; entries correspond to TREEMON_SET_* constants
 	table_width 2, TreeMons
 	dw TreeMonSet_City
+	dw TreeMonSet_Island1
 	dw TreeMonSet_Canyon
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
@@ -17,6 +18,24 @@ TreeMons:
 ;	db  %, species, level
 
 TreeMonSet_City:
+TreeMonSet_Island1:
+; common
+	dbbw 50, 10, SPINARAK
+	dbbw 15, 10, LEDYBA
+	dbbw 15, 10, PINECO
+	dbbw 10, 10, AIPOM
+	dbbw 5, 10, LICKITUNG
+	dbbw 5, 10, LICKITUNG
+	db -1
+; rare
+	dbbw 50, 10, SPINARAK
+	dbbw 15, 10, LEDYBA
+	dbbw 15, 10, PINECO
+	dbbw 10, 10, AIPOM
+	dbbw 5, 10, LICKITUNG
+	dbbw 5, 10, LICKITUNG
+	db -1
+
 TreeMonSet_Canyon:
 ; common
 	dbbw 50, 10, SPEAROW

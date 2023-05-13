@@ -4,7 +4,8 @@ MACRO treemon_map
 ENDM
 
 TreeMonMaps:
-	treemon_map NEW_BARK_TOWN,        TREEMON_SET_CITY
+	treemon_map NEW_BARK_TOWN,        TREEMON_SET_CANYON
+	treemon_map VALENCIA_ISLAND,      TREEMON_SET_ISLAND_1
 	db -1
 
 RockMonMaps:
