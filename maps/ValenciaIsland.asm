@@ -182,9 +182,20 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	endcallback
 	
 ValenciaYoungsterScript:
-	jumptextfaceplayer ValenciaYoungsterText
+;	jumptextfaceplayer ValenciaYoungsterText
 ;	setflag ENGINE_POKEDEX
 ;	callasm CheatFillPokedex
+	opentext
+	writetext ValenciaYoungsterText
+	cry MACHOP
+	waitbutton
+	closetext
+	earthquake 30
+	opentext
+	writetext ValenciaYoungsterText
+	waitbutton
+	closetext
+	end
 
 PhoneCallScript: ;currently unused
 	pause 10

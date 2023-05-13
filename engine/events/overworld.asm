@@ -1261,14 +1261,15 @@ HeadbuttNothingText:
 HeadbuttFromMenuScript:
 	reloadmappart
 	special UpdateTimePals
-
+	
 HeadbuttScript:
-	callasm GetPartyNickname
-	writetext UseHeadbuttText
-
-	reloadmappart
-	callasm ShakeHeadbuttTree
-
+    callasm GetPartyNickname
+    writetext UseHeadbuttText
+	closetext
+    special WaitSFX
+    playsound SFX_SANDSTORM
+	earthquake 6
+	pause 6
 	callasm TreeMonEncounter
 	iffalse .no_battle
 	closetext
@@ -1278,6 +1279,7 @@ HeadbuttScript:
 	end
 
 .no_battle
+	opentext
 	writetext HeadbuttNothingText
 	waitbutton
 	closetext

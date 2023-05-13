@@ -1096,6 +1096,7 @@ Script_earthquake:
 	call GetScriptByte
 	ld [wEarthquakeMovementDataBuffer + 1], a
 	and %00111111
+	add a, a
 	ld [wEarthquakeMovementDataBuffer + 3], a
 	ld b, BANK(.script)
 	ld de, .script
