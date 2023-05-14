@@ -127,9 +127,9 @@ GetTreeMon:
 	call GetTreeScore
 	pop hl
 	and a ; TREEMON_SCORE_BAD
-	jr z, .bad
+	jr z, .rare
 	cp TREEMON_SCORE_GOOD
-	jr z, .good
+	jr z, .rare
 	cp TREEMON_SCORE_RARE
 	jr z, .rare
 	ret

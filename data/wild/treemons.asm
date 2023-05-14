@@ -9,7 +9,7 @@ TreeMons:
 	dw TreeMonSet_Kanto
 	dw TreeMonSet_Lake
 	dw TreeMonSet_Forest
-	dw TreeMonSet_Rock
+	dw TreeMonSet_ShoreRock1
 	assert_table_length NUM_TREEMON_SETS
 	dw TreeMonSet_City ; unused
 
@@ -20,20 +20,18 @@ TreeMons:
 TreeMonSet_City:
 TreeMonSet_Island1:
 ; common
-	dbbw 50, 10, SPINARAK
-	dbbw 15, 10, LEDYBA
-	dbbw 15, 10, PINECO
-	dbbw 10, 10, AIPOM
-	dbbw 5, 10, LICKITUNG
-	dbbw 5, 10, LICKITUNG
+	dbbw 60, 10, SPINARAK
+	dbbw 30, 10, LEDYBA
+	dbbw 5, 10, AIPOM
+	dbbw 4, 10, LICKITUNG
+	dbbw 1, 10, LICKITUNG
 	db -1
 ; rare
-	dbbw 50, 10, SPINARAK
-	dbbw 15, 10, LEDYBA
-	dbbw 15, 10, PINECO
-	dbbw 10, 10, AIPOM
-	dbbw 5, 10, LICKITUNG
-	dbbw 5, 10, LICKITUNG
+	dbbw 60, 10, SPINARAK
+	dbbw 30, 10, LEDYBA
+	dbbw 5, 10, AIPOM
+	dbbw 4, 10, LICKITUNG
+	dbbw 1, 10, LICKITUNG
 	db -1
 
 TreeMonSet_Canyon:
@@ -144,10 +142,10 @@ TreeMonSet_Forest:
 	dbbw  5, 10, KAKUNA
 	db -1
 
-TreeMonSet_Rock:
-	dbbw 60, 15, KRABBY
-	dbbw 30, 15, GEODUDE
-	dbbw 5, 15, SHUCKLE
-	dbbw 4, 15, SHUCKLE
-	dbbw 1, 15, SHUCKLE
+TreeMonSet_ShoreRock1:
+	dbbw 60, 15, SHUCKLE
+	dbbw 30, 15, SHUCKLE
+	dbbw 5, 15, KRABBY
+	dbbw 4, 15, KRABBY
+	dbbw 1, 15, KRABBY
 	db -1

@@ -1268,8 +1268,8 @@ HeadbuttScript:
 	closetext
     special WaitSFX
     playsound SFX_SANDSTORM
-	earthquake 6
-	pause 6
+	earthquake 12
+	pause 12
 	callasm TreeMonEncounter
 	iffalse .no_battle
 	closetext
