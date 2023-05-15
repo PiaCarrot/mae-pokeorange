@@ -11,7 +11,6 @@ SpecialAnimations:
 	dw BattleAnim_Frz
 	dw BattleAnim_Par
 	dw BattleAnim_InLove
-	dw BattleAnim_InSandstorm
 	dw BattleAnim_InNightmare
 	dw BattleAnim_InWhirlpool
 	dw BattleAnim_0         ;  -8
@@ -22,9 +21,6 @@ SpecialAnimations:
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
-	dw BattleAnim_InRain
-	dw BattleAnim_InSun
-	dw BattleAnim_InHail
 .IndirectEnd::
 
 BattleAnim_HeldItemTrigger:
@@ -301,73 +297,6 @@ BattleAnim_InLove:
 	anim_sound 0, 0, SFX_LICK
 	anim_obj ANIM_OBJ_HEART, 36, 72, $0
 	anim_wait 32
-	anim_ret
-
-BattleAnim_InSandstorm:
-	anim_1gfx ANIM_GFX_POWDER
-	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_SANDSTORM, 72, 0, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_SANDSTORM, 56, 0, $2
-.loop
-	anim_sound 0, 1, SFX_MENU
-	anim_wait 8
-	anim_loop 16, .loop
-	anim_wait 8
-	anim_ret
-
-BattleAnim_InSun:
-	anim_1gfx ANIM_GFX_WATER
-	anim_bgp $90
-	anim_sound 0, 1, SFX_MORNING_SUN
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
-	anim_wait 8
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
-	anim_wait 8
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
-	anim_wait 128
-	anim_ret
-
-BattleAnim_InRain:
-	anim_1gfx ANIM_GFX_WATER
-	anim_bgp $f8
-	anim_obp0 $7c
-	anim_sound 0, 1, SFX_RAIN_DANCE
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
-	anim_wait 128
-	anim_ret
-
-BattleAnim_InHail:
-	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
-	anim_1gfx ANIM_GFX_ICE
-	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
-.loop
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
-	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
-	anim_wait 8
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 56, 16, $2
-	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
-	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
-	anim_wait 8
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
-	anim_obj ANIM_OBJ_HAIL, 88, 0, $1
-	anim_wait 8
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
-	anim_obj ANIM_OBJ_HAIL, 56, 16, $1
-	anim_wait 8
-	anim_loop 3, .loop
 	anim_ret
 
 BattleAnim_InNightmare:

@@ -1893,10 +1893,10 @@ HandleWeather:
 	jmp Call_PlayBattleAnim
 
 .WeatherAnimations:
-	dw ANIM_IN_RAIN
-	dw ANIM_IN_SUN
-	dw ANIM_IN_SANDSTORM
-	dw ANIM_IN_HAIL
+	dw RAIN_DANCE
+	dw SUNNY_DAY
+	dw SANDSTORM
+	dw HAIL
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -4571,11 +4571,11 @@ ItemRecoveryAnim:
 	call SwitchTurnCore
 	xor a
 	ld [wNumHits], a
-	if HIGH(RECOVER)
-		ld a, HIGH(RECOVER)
+	if HIGH(ANIM_HELD_ITEM_TRIGGER)
+		ld a, HIGH(ANIM_HELD_ITEM_TRIGGER)
 	endc
 	ld [wFXAnimID + 1], a
-	ld a, LOW(RECOVER)
+	ld a, LOW(ANIM_HELD_ITEM_TRIGGER)
 	ld [wFXAnimID], a
 	predef PlayBattleAnim
 	call SwitchTurnCore
