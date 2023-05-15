@@ -70,6 +70,7 @@ NewBarkGroupSprites:
 	db SPRITE_RIVAL
 	db SPRITE_LORELEI
 	db SPRITE_POKE_BALL
+	db SPRITE_SHADOW
 
 IndigoGroupSprites:
 	db SPRITE_SUICUNE

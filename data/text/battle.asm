@@ -27,6 +27,12 @@ PokemonFellFromTreeText:
 	text " emerged"
 	line "from the foliage!"
 	prompt
+	
+PokemonSwoopedFromSkyText:
+	text_ram wEnemyMonNickname
+	text " swooped"
+	line "down from the sky!"
+	prompt
 
 WildCelebiAppearedText:
 	text "Wild @"

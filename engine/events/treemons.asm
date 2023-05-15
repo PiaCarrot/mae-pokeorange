@@ -54,6 +54,30 @@ RockMonEncounter:
 	ret
 
 	db $05 ; ????
+	
+SkyMonEncounter:
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, SkyMonMaps
+	call GetTreeMonSet
+	jr nc, .no_battle
+
+	call GetTreeMons
+	jr nc, .no_battle
+
+	call SelectTreeMon
+	jr nc, .no_battle
+
+	ret
+
+.no_battle
+	xor a
+	ret
+
+	db $05 ; ????
+
 
 GetTreeMonSet:
 ; Return carry and treemon set in a

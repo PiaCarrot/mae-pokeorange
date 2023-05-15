@@ -10,6 +10,7 @@ TreeMons:
 	dw TreeMonSet_Lake
 	dw TreeMonSet_Forest
 	dw TreeMonSet_ShoreRock1
+	dw TreeMonSet_Sky1
 	assert_table_length NUM_TREEMON_SETS
 	dw TreeMonSet_City ; unused
 
@@ -148,4 +149,12 @@ TreeMonSet_ShoreRock1:
 	dbbw 5, 15, KRABBY
 	dbbw 4, 15, KRABBY
 	dbbw 1, 15, KRABBY
+	db -1
+	
+TreeMonSet_Sky1:
+	dbbw 60, 4, SPEAROW
+	dbbw 30, 3, WINGULL
+	dbbw 5, 5, SPEAROW
+	dbbw 4, 4, WINGULL
+	dbbw 1, 5, WINGULL
 	db -1

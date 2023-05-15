@@ -1422,6 +1422,27 @@ HasRockSmash:
 .done
 	ld [wScriptVar], a
 	ret
+	
+SkyMonScript:
+	opentext
+	writetext SkyMonScriptText
+	disappear -2
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	callasm SkyMonEncounter
+	readmem wTempWildMonSpecies
+	iffalse .done
+	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_AIR
+	startbattle
+	reloadmapafterbattle
+.done
+	end
+	
+SkyMonScriptText:
+	text "Something attacked"
+	line "from the air!"
+	done
 
 FishFunction:
 	ld a, e

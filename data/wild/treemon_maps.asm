@@ -13,3 +13,7 @@ TreeMonMaps:
 RockMonMaps:
 	treemon_map BATTLE_TOWER_OUTSIDE, TREEMON_SET_SHORE_ROCK_1
 	db -1
+
+SkyMonMaps:
+	treemon_map ROUTE_49, TREEMON_SET_SKY_1
+	db -1
