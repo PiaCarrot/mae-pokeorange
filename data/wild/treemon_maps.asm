@@ -17,3 +17,7 @@ RockMonMaps:
 SkyMonMaps:
 	treemon_map ROUTE_49, TREEMON_SET_SKY_1
 	db -1
+
+DepthsMonMaps:
+	treemon_map ROUTE_49, TREEMON_SET_DEPTHS_1
+	db -1

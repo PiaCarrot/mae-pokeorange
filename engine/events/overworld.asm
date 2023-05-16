@@ -1444,6 +1444,27 @@ SkyMonScriptText:
 	line "from the air!"
 	done
 
+DepthsMonScript:
+	opentext
+	writetext DepthsMonScriptText
+	disappear -2
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	callasm DepthsMonEncounter
+	readmem wTempWildMonSpecies
+	iffalse .done
+	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_DEPTHS
+	startbattle
+	reloadmapafterbattle
+.done
+	end
+	
+DepthsMonScriptText:
+	text "Something attacked"
+	line "from the depths!"
+	done
+
 FishFunction:
 	ld a, e
 	push af

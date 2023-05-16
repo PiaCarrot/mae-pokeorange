@@ -33,6 +33,12 @@ PokemonSwoopedFromSkyText:
 	text " swooped"
 	line "down from the sky!"
 	prompt
+	
+PokemonAttackedFromDepthsText:
+	text_ram wEnemyMonNickname
+	text " attacked"
+	line "from the depths!"
+	prompt
 
 WildCelebiAppearedText:
 	text "Wild @"
