@@ -101,6 +101,11 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 31, 31
 	RGB 23, 30, 31
 	RGB 29, 25, 31
+; bright
+	RGB 31, 31, 31
+	RGB 28, 28, 28
+	RGB 16, 16, 16
+	RGB 10, 10, 10
 ; verybright
 	RGB 31, 31, 31
 	RGB 31, 31, 31

@@ -216,6 +216,7 @@ BattleAnimFrameData:
 	dw .Frameset_d4 ; BATTLEANIMFRAMESET_D4
 	dw .Frameset_d5 ; BATTLEANIMFRAMESET_D5
 	dw .Frameset_d6 ; BATTLEANIMFRAMESET_D6
+	dw .Frameset_d7 ; BATTLEANIMFRAMESET_D7
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1443,3 +1444,7 @@ BattleAnimFrameData:
 	oamframe BATTLEANIMOAMSET_E7,  1
 	oamframe BATTLEANIMOAMSET_E8,  1
 	oamrestart
+
+.Frameset_d7:
+	oamframe BATTLEANIMOAMSET_1B,  40
+	oamdelete
