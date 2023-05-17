@@ -154,16 +154,16 @@ TreeMonSet_ShoreRock1:
 	
 TreeMonSet_Sky1:
 	dbbw 60, 4, SPEAROW
-	dbbw 30, 3, WINGULL
-	dbbw 5, 5, SPEAROW
-	dbbw 4, 4, WINGULL
-	dbbw 1, 5, WINGULL
+	dbbw 30, 4, WINGULL
+	dbbw 5, 5, WINGULL
+	dbbw 4, 4, CHATOT
+	dbbw 1, 5, CHATOT
 	db -1
 	
 TreeMonSet_Depths1:
 	dbbw 60, 4, CARVANHA
-	dbbw 30, 3, FINNEON
-	dbbw 5, 5, CARVANHA
-	dbbw 4, 4, FINNEON
-	dbbw 1, 5, FINNEON
+	dbbw 30, 4, FINNEON
+	dbbw 5, 5, FINNEON
+	dbbw 4, 4, MANTYKE
+	dbbw 1, 5, MANTYKE
 	db -1

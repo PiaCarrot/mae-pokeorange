@@ -130,7 +130,7 @@ if DEF(_DEBUG)
 	; test mons
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove HEADBUTT,        wPartyMon1, 0
-	givepokemove WISH,       wPartyMon1, 1
+	givepokemove ROCK_SMASH,       wPartyMon1, 1
 	givepokemove SUNNY_DAY,   wPartyMon1, 2
 	givepokemove RAIN_DANCE,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS

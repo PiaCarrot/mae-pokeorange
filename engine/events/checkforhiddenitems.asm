@@ -81,3 +81,56 @@ CheckForHiddenItems:
 	call GetFarByte
 	inc hl
 	ret
+	
+RockItemEncounter:
+	ld a, [wMapTileset]
+	cp TILESET_VALENCIA_MANDARIN_NORTH
+	jr z, .SpecialRockItems
+	ld hl, .RockItems
+.continue
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.RockItems:
+	db 1, MAX_REVIVE
+	db 2, THICK_CLUB
+	db 4, NUGGET
+	db 6, STAR_PIECE
+	db 12, BIG_PEARL
+	db 18, ETHER
+	db 24, HARD_STONE
+	db 24, SOFT_SAND
+	db 48, PEARL
+	db 64, BRICK_PIECE
+	db -1
+	
+.SpecialRockItems:
+	ld hl, .LoadSpecialRockItems
+	jr .continue
+	
+.LoadSpecialRockItems:
+	db 1, RARE_CANDY
+	db 2, POTION ;SHINY_STONE
+	db 4, POTION ;DAWN_STONE
+	db 6, POTION ;DUSK_STONE
+	db 12, THUNDERSTONE
+	db 18, LEAF_STONE
+	db 24, WATER_STONE
+	db 24, FIRE_STONE
+	db 48, SUN_STONE
+	db 64, MOON_STONE
+	db -1
