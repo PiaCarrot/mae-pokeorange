@@ -59,4 +59,7 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjRootsGFX
 	anim_obj_gfx 64, AnimObjRecycleGFX
 	anim_obj_gfx  5, AnimObjLavaRocksGFX
+	anim_obj_gfx 16, AnimObjSnatchGFX
+	anim_obj_gfx  6, AnimObjGlowGFX
+	anim_obj_gfx 13, AnimObjBigGlowGFX
 	assert_table_length NUM_ANIM_GFX + 1

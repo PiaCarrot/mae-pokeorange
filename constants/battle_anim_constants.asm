@@ -221,7 +221,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_CHARGE
 	const ANIM_OBJ_TAUNT
 	const ANIM_OBJ_ASSIST
-	const ANIM_OBJ_HAND_REVERSE
+	const ANIM_OBJ_PALM_XFLIP
 	const ANIM_OBJ_TEETER_DANCE
 	const ANIM_OBJ_ICE_BALL
 	const ANIM_OBJ_LONG_PUNCH
@@ -274,6 +274,11 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_RED_X
 	const ANIM_OBJ_IMPRISON_RING
 	const ANIM_OBJ_DESCENDING_SPARKLE
+	const ANIM_OBJ_GRUDGE
+	const ANIM_OBJ_SNATCH
+	const ANIM_OBJ_SNATCH_2
+	const ANIM_OBJ_TAIL_GLOW
+	const ANIM_OBJ_BIG_GLOW
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -582,6 +587,10 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_D0
 	const BATTLEANIMFRAMESET_D1
 	const BATTLEANIMFRAMESET_D2
+	const BATTLEANIMFRAMESET_D3
+	const BATTLEANIMFRAMESET_D4
+	const BATTLEANIMFRAMESET_D5
+	const BATTLEANIMFRAMESET_D6
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -817,6 +826,8 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_E4
 	const BATTLEANIMOAMSET_E5
 	const BATTLEANIMOAMSET_E6
+	const BATTLEANIMOAMSET_E7
+	const BATTLEANIMOAMSET_E8
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -930,6 +941,9 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_ROOTS
 	const ANIM_GFX_RECYCLE
 	const ANIM_GFX_LAVA_ROCKS
+	const ANIM_GFX_SNATCH
+	const ANIM_GFX_GLOW
+	const ANIM_GFX_BIG_GLOW
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -998,6 +1012,10 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_RECYCLE         ; 14
 	const PAL_BTLCUSTOM_LAVA_ROCKS      ; 15
 	const PAL_BTLCUSTOM_SKILL_SWAP      ; 16
+	const PAL_BTLCUSTOM_WILL_O_WISP     ; 17
+	const PAL_BTLCUSTOM_GLOW_YELLOW     ; 18
+	const PAL_BTLCUSTOM_GLOW_LUSTER     ; 19
+	const PAL_BTLCUSTOM_VERY_BRIGHT     ; 1a
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
