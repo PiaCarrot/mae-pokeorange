@@ -305,7 +305,7 @@ RunBattleAnimCommand:
 BattleAnimCommands::
 ; entries correspond to anim_* constants (see macros/scripts/battle_anims.asm)
 	table_width 2, BattleAnimCommands
-	dw GenericDummyFunction            ; d0
+  dw GenericDummyFunction            ; d0
 	dw BattleAnimCmd_1GFX              ; d1
 	dw BattleAnimCmd_2GFX              ; d2
 	dw BattleAnimCmd_3GFX              ; d3

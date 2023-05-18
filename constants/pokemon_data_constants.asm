@@ -195,8 +195,8 @@ DEF EVOLVE_TYPES EQU const_value
 
 ; wild data
 
-DEF NUM_GRASSMON EQU 7 ; data/wild/*_grass.asm table size
-DEF NUM_WATERMON EQU 7 ; data/wild/*_water.asm table size
+DEF NUM_GRASSMON EQU 12 ; data/wild/*_grass.asm table size
+DEF NUM_WATERMON EQU 5  ; data/wild/*_water.asm table size
 
 DEF GRASS_WILDDATA_LENGTH EQU 2 + (1 + NUM_GRASSMON * 3) * 3
 DEF WATER_WILDDATA_LENGTH EQU 2 + (1 + NUM_WATERMON * 3) * 3
@@ -208,14 +208,18 @@ DEF NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.as
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
 	const TREEMON_SET_CITY
+	const TREEMON_SET_ISLAND_1
 	const TREEMON_SET_CANYON
 	const TREEMON_SET_TOWN
 	const TREEMON_SET_ROUTE
 	const TREEMON_SET_KANTO
 	const TREEMON_SET_LAKE
 	const TREEMON_SET_FOREST
-	const TREEMON_SET_ROCK
+	const TREEMON_SET_SHORE_ROCK_1
+	const TREEMON_SET_SKY_1
+	const TREEMON_SET_DEPTHS_1
 DEF NUM_TREEMON_SETS EQU const_value
+
 
 ; treemon scores
 	const_def

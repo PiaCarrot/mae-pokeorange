@@ -9372,6 +9372,12 @@ BattleStartMessage:
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
 	jr z, .PlaceBattleStartText
+	ld hl, PokemonSwoopedFromSkyText
+	cp BATTLETYPE_AIR
+	jr z, .PlaceBattleStartText
+	ld hl, PokemonAttackedFromDepthsText
+	cp BATTLETYPE_DEPTHS
+	jr z, .PlaceBattleStartText
 	ld hl, WildCelebiAppearedText
 	cp BATTLETYPE_CELEBI
 	jr z, .PlaceBattleStartText

@@ -110,3 +110,4 @@ StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
 SECTION "Sprites 3", ROMX
 
 LoreleiSpriteGFX::   		   INCBIN "gfx/sprites/lorelei.2bpp"
+ShadowSpriteGFX::   		   INCBIN "gfx/sprites/shadow.2bpp"

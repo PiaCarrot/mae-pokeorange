@@ -1261,14 +1261,15 @@ HeadbuttNothingText:
 HeadbuttFromMenuScript:
 	reloadmappart
 	special UpdateTimePals
-
+	
 HeadbuttScript:
-	callasm GetPartyNickname
-	writetext UseHeadbuttText
-
-	reloadmappart
-	callasm ShakeHeadbuttTree
-
+    callasm GetPartyNickname
+    writetext UseHeadbuttText
+	closetext
+    special WaitSFX
+    playsound SFX_SANDSTORM
+	earthquake 12
+	pause 12
 	callasm TreeMonEncounter
 	iffalse .no_battle
 	closetext
@@ -1278,6 +1279,7 @@ HeadbuttScript:
 	end
 
 .no_battle
+	opentext
 	writetext HeadbuttNothingText
 	waitbutton
 	closetext
@@ -1371,11 +1373,19 @@ RockSmashScript:
 
 	callasm RockMonEncounter
 	readmem wTempWildMonSpecies
-	iffalse .done
+	iffalse .no_battle
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
-.done
+	end
+	
+.no_battle
+	callasm RockItemEncounter
+	iffalse .no_item
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+.no_item
 	end
 
 MovementData_RockSmash:
@@ -1420,6 +1430,48 @@ HasRockSmash:
 .done
 	ld [wScriptVar], a
 	ret
+	
+SkyMonScript:
+	opentext
+	writetext SkyMonScriptText
+	disappear -2
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	callasm SkyMonEncounter
+	readmem wTempWildMonSpecies
+	iffalse .done
+	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_AIR
+	startbattle
+	reloadmapafterbattle
+.done
+	end
+	
+SkyMonScriptText:
+	text "Something attacked"
+	line "from the air!"
+	done
+
+DepthsMonScript:
+	opentext
+	writetext DepthsMonScriptText
+	disappear -2
+	playsound SFX_RAZOR_WIND
+	waitsfx
+	callasm DepthsMonEncounter
+	readmem wTempWildMonSpecies
+	iffalse .done
+	randomwildmon
+	loadvar VAR_BATTLETYPE, BATTLETYPE_DEPTHS
+	startbattle
+	reloadmapafterbattle
+.done
+	end
+	
+DepthsMonScriptText:
+	text "Something attacked"
+	line "from the depths!"
+	done
 
 FishFunction:
 	ld a, e

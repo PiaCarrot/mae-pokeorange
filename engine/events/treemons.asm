@@ -59,6 +59,53 @@ RockMonEncounter:
 	ret
 
 	db $05 ; ????
+	
+SkyMonEncounter:
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, SkyMonMaps
+	call GetTreeMonSet
+	jr nc, .no_battle
+
+	call GetTreeMons
+	jr nc, .no_battle
+
+	call SelectTreeMon
+	jr nc, .no_battle
+
+	ret
+
+.no_battle
+	xor a
+	ret
+
+	db $05 ; ????
+
+DepthsMonEncounter:
+	xor a
+	ld [wTempWildMonSpecies], a
+	ld [wCurPartyLevel], a
+
+	ld hl, DepthsMonMaps
+	call GetTreeMonSet
+	jr nc, .no_battle
+
+	call GetTreeMons
+	jr nc, .no_battle
+
+	call SelectTreeMon
+	jr nc, .no_battle
+
+	ret
+
+.no_battle
+	xor a
+	ret
+
+	db $05 ; ????
+
 
 GetTreeMonSet:
 ; Return carry and treemon set in a
@@ -132,9 +179,9 @@ GetTreeMon:
 	call GetTreeScore
 	pop hl
 	and a ; TREEMON_SCORE_BAD
-	jr z, .bad
+	jr z, .rare
 	cp TREEMON_SCORE_GOOD
-	jr z, .good
+	jr z, .rare
 	cp TREEMON_SCORE_RARE
 	jr z, .rare
 	ret

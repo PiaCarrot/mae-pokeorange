@@ -3,6 +3,7 @@
 	const ROUTE_49_LORELEI
 	const ROUTE_49_POTION
 	const ROUTE_49_FRESH_WATER
+	const ROUTE_49_SWOOPING_WINGULL
 
 Route49_MapScripts:
 	def_scene_scripts
@@ -219,6 +220,15 @@ Route49Potion:
 
 Route49FreshWater:
 	itemball FRESH_WATER
+	
+Route49Swoop:
+	jumpstd MonSkyScript
+	
+Route49Depths:
+	jumpstd MonDepthsScript
+	
+TestRock1:
+	jumpstd SmashRockScript
 
 Route49_MapEvents:
 	db 0, 0 ; filler
@@ -241,3 +251,8 @@ Route49_MapEvents:
 	object_event 20, 14, SPRITE_LORELEI, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_PASSED_LORELEI_R49
 	object_event  5, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route49Potion, EVENT_ROUTE_49_POTION
 	object_event 25, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route49FreshWater, EVENT_ROUTE_49_FRESHWATER
+	object_event  7,  8, SPRITE_SHADOW, SPRITEMOVEDATA_WANDER, 5, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Swoop, -1
+	object_event 30, 34, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1
+	object_event 35, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TestRock1, -1
+	object_event 33, 23, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TestRock1, -1
+	object_event 32, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TestRock1, -1
