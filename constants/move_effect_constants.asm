@@ -162,4 +162,8 @@
 ;==========================
 	const EFFECT_BLIZZARD
 	const EFFECT_HAIL
+	const EFFECT_SNATCH
+	const EFFECT_SURF
+	const EFFECT_WHIRLPOOL
+	const EFFECT_SECRET_POWER
 DEF NUM_MOVE_EFFECTS EQU const_value

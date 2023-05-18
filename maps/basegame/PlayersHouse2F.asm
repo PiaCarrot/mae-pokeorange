@@ -69,22 +69,22 @@ if DEF(_DEBUG)
 	giveitem POKE_BALL, 2
 	giveitem TOWN_MAP, 1
 	; all badges
-	; setflag ENGINE_ZEPHYRBADGE
-	; setflag ENGINE_HIVEBADGE
-	; setflag ENGINE_PLAINBADGE
-	; setflag ENGINE_FOGBADGE
-	; setflag ENGINE_STORMBADGE
-	; setflag ENGINE_MINERALBADGE
-	; setflag ENGINE_GLACIERBADGE
-	; setflag ENGINE_RISINGBADGE
-	; setflag ENGINE_BOULDERBADGE
-	; setflag ENGINE_CASCADEBADGE
-	; setflag ENGINE_THUNDERBADGE
-	; setflag ENGINE_RAINBOWBADGE
-	; setflag ENGINE_MARSHBADGE
-	; setflag ENGINE_SOULBADGE
-	; setflag ENGINE_VOLCANOBADGE
-	; setflag ENGINE_EARTHBADGE
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_FOGBADGE
+	setflag ENGINE_STORMBADGE
+	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_GLACIERBADGE
+	setflag ENGINE_RISINGBADGE
+	setflag ENGINE_BOULDERBADGE
+	setflag ENGINE_CASCADEBADGE
+	setflag ENGINE_THUNDERBADGE
+	setflag ENGINE_RAINBOWBADGE
+	setflag ENGINE_MARSHBADGE
+	setflag ENGINE_SOULBADGE
+	setflag ENGINE_VOLCANOBADGE
+	setflag ENGINE_EARTHBADGE
 	; setevent EVENT_BEAT_FALKNER
 	; setevent EVENT_BEAT_BUGSY
 	; setevent EVENT_BEAT_WHITNEY
@@ -173,13 +173,10 @@ endc
 
 PlayersHouseBookshelfScript:
 if DEF(_DEBUG)
-	; loadwildmon MAGIKARP, 100
-	; startbattle
-	; reloadmapafterbattle
-	loadtrainer LORELEI3, LORELEI_3
+	; loadwildmon SQUIRTLE, 100
+	loadtrainer LORELEI1, LORELEI_1
 	startbattle
 	reloadmapafterbattle
-	; special HiddenStarter2
 	end
 else
 	jumpstd PictureBookshelfScript

@@ -179,17 +179,22 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 ; wPlayerSubStatus2 or wEnemySubStatus2 bit flags
 	const_def
 	const SUBSTATUS_CURLED
+	const SUBSTATUS_FLINCHED
+	const SUBSTATUS_SNATCH
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
 	const_def
 	const SUBSTATUS_BIDE
 	const SUBSTATUS_RAMPAGE
 	const SUBSTATUS_IN_LOOP
-	const SUBSTATUS_FLINCHED
 	const SUBSTATUS_CHARGED
+	const SUBSTATUS_DIVING
 	const SUBSTATUS_UNDERGROUND
 	const SUBSTATUS_FLYING
 	const SUBSTATUS_CONFUSED
+
+
+SEMI_INVULNERABLE EQU 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND | 1 << SUBSTATUS_DIVING
 
 ; wPlayerSubStatus4 or wEnemySubStatus4 bit flags
 	const_def
@@ -232,6 +237,18 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 	const WEATHER_SUN_END
 	const WEATHER_SANDSTORM_END
 	const WEATHER_HAIL_END
+
+; battle environment, for Secret Power. Also see SecretPowerAnims
+	const_def ; secondary, animation
+	const BTLENV_NOT_SET ; Flags battle init to set environment.
+	const BTLENV_PLAIN ; Paralysis, Body Slam
+	const BTLENV_CAVE ; Flinch, Rock Throw
+	const BTLENV_ROCK_SMASH ; Flinch, Rock Smash
+	const BTLENV_TREE ; Sleep, Razor Leaf
+	const BTLENV_GRASS ; Sleep, Sleep Powder
+	const BTLENV_SURF ; Attack-1, Surf
+	const BTLENV_FISH ; Attack-1, Water Pulse
+	const BTLENV_ICE ; Freeze, Blizzard
 
 ; wBattleAction
 	const_def

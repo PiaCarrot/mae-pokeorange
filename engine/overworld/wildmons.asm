@@ -282,7 +282,7 @@ ChooseWildEncounter:
 	call AddNTimes
 	ld de, GrassMonProbTable
 	push hl
-	jmp .randomloop
+	jr .randomloop
 
 .watermon
 ; hl contains the pointer to the wild mon data, let's save that to the stack

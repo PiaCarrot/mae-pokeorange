@@ -206,6 +206,12 @@ BattleTurn:
 	call EnemyTriesToFlee
 	jr c, .quit
 
+	; Reset "per turn" flags
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_SNATCH, [hl]
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_SNATCH, [hl]
+
 	call DetermineMoveOrder
 	jr c, .false
 	call Battle_EnemyFirst
@@ -1118,7 +1124,7 @@ ResidualDamage:
 	ld de, ANIM_SAP
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and SEMI_INVULNERABLE
 	call z, Call_PlayBattleAnim_OnlyIfVisible
 	call SwitchTurnCore
 
@@ -1300,7 +1306,7 @@ HandleWrap:
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and SEMI_INVULNERABLE
 	jr nz, .skip_anim
 
 	call SwitchTurnCore
@@ -1823,7 +1829,7 @@ HandleWeather:
 	call SubtractHPFromUser
 
 	ld hl, SandstormHitsText
-	jp StdBattleTextbox
+	jmp StdBattleTextbox
 
 
 	
@@ -1873,7 +1879,7 @@ HandleWeather:
 	call SubtractHPFromUser
 	
 	ld hl, PeltedByHailText
-	jp StdBattleTextbox
+	jmp StdBattleTextbox
 
 
 .PlayWeatherAnimation:
@@ -1893,10 +1899,10 @@ HandleWeather:
 	jmp Call_PlayBattleAnim
 
 .WeatherAnimations:
-	dw ANIM_IN_RAIN
-	dw ANIM_IN_SUN
-	dw ANIM_IN_SANDSTORM
-	dw ANIM_IN_HAIL
+	dw RAIN_DANCE
+	dw SUNNY_DAY
+	dw SANDSTORM
+	dw HAIL
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -2042,25 +2048,6 @@ GetMaxHP:
 	ld a, [hl]
 	ld [wHPBuffer1], a
 	ld c, a
-	ret
-
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
 	ret
 
 CheckUserHasEnoughHP:
@@ -2520,10 +2507,7 @@ WinTrainerBattle:
 
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
-	call PrintWinLossText
-.skip_win_loss_text
-
+	call z, PrintWinLossText
 	jr .give_money
 
 .mobile
@@ -3071,9 +3055,7 @@ LostBattle:
 
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
-	call PrintWinLossText
-.skip_win_loss_text
+	jmp z, PrintWinLossText
 	ret
 
 .battle_tower
@@ -4571,11 +4553,11 @@ ItemRecoveryAnim:
 	call SwitchTurnCore
 	xor a
 	ld [wNumHits], a
-	if HIGH(RECOVER)
-		ld a, HIGH(RECOVER)
+	if HIGH(ANIM_HELD_ITEM_TRIGGER)
+		ld a, HIGH(ANIM_HELD_ITEM_TRIGGER)
 	endc
 	ld [wFXAnimID + 1], a
-	ld a, LOW(RECOVER)
+	ld a, LOW(ANIM_HELD_ITEM_TRIGGER)
 	ld [wFXAnimID], a
 	predef PlayBattleAnim
 	call SwitchTurnCore
@@ -6758,17 +6740,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
-
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -7121,20 +7092,6 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jmp Get2bpp
-
 EmptyBattleTextbox:
 	ld hl, .empty
 	jmp BattleTextbox
@@ -7213,7 +7170,7 @@ _BattleRandom::
 Call_PlayBattleAnim_OnlyIfVisible:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	and SEMI_INVULNERABLE
 	ret nz
 
 Call_PlayBattleAnim:
@@ -7247,8 +7204,8 @@ GiveExperiencePoints:
 	ret nz
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
-	ret nz
+	rra
+	ret c
 
 	call .EvenlyDivideExpAmongParticipants
 	xor a
@@ -8086,45 +8043,9 @@ GoodComeBackText:
 	text_far _GoodComeBackText
 	text_end
 
-TextJump_ComeBack: ; unreferenced
-	ld hl, ComeBackText
-	ret
-
 ComeBackText:
 	text_far _ComeBackText
 	text_end
-
-HandleSafariAngerEatingStatus: ; unreferenced
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl
-	assert wSafariMonEating - 1 == wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call SafeLoadTempTilemapToTilemap
-	pop hl
-	jmp StdBattleTextbox
 
 FillInExpBar:
 	push hl
@@ -8271,10 +8192,6 @@ GetBattleMonBackpic:
 	jr nz, GetBattleMonBackpic_DoAnim ; substitute
 
 DropPlayerSub:
-	ld a, [wPlayerMinimized]
-	and a
-	ld hl, BattleAnimCmd_MinimizeOpp
-	jr nz, GetBattleMonBackpic_DoAnim
 	ld a, [wCurPartySpecies]
 	push af
 	ld a, [wBattleMonSpecies]
@@ -8305,11 +8222,6 @@ GetEnemyMonFrontpic:
 	jr nz, GetEnemyMonFrontpic_DoAnim
 
 DropEnemySub:
-	ld a, [wEnemyMinimized]
-	and a
-	ld hl, BattleAnimCmd_MinimizeOpp
-	jr nz, GetEnemyMonFrontpic_DoAnim
-
 	ld a, [wCurPartySpecies]
 	push af
 	ld a, [wEnemyMonSpecies]
@@ -8342,6 +8254,8 @@ StartBattle:
 	and a
 	ret z
 
+	call SetSecretPowerEnvironment
+
 	ld a, [wTimeOfDayPal]
 	push af
 	call BattleIntro
@@ -8352,8 +8266,63 @@ StartBattle:
 	scf
 	ret
 
-CallDoBattle: ; unreferenced
-	call DoBattle
+SetSecretPowerEnvironment:
+; Sets the battle environment for Secret Power.
+	; Check if we've already prepared a battle environment.
+	ld a, [wBattleEnvironment]
+	and a
+	ret nz
+
+	; Surf/fishing has priority over general battle environments
+	call CheckOnWater
+	ld b, BTLENV_SURF
+	jr z, .got_env
+	ld a, [wBattleType]
+	cp BATTLETYPE_FISH
+	ld b, BTLENV_FISH
+	jr z, .got_env
+	cp BATTLETYPE_TREE
+	ld b, BTLENV_TREE
+	jr z, .got_env
+
+	; Before the more general "cave", we need to check if we're
+	; in a forest (Ilex/Viridian) or icy (Ice Path) area.
+	; BTLENV_TREE is already set from our previous check.
+	; lb de, GROUP_ILEX_FOREST, MAP_ILEX_FOREST
+	; call .CheckMap
+	; ret z
+;	lb de, GROUP_VIRIDIAN_FOREST, MAP_VIRIDIAN_FOREST
+;	call .CheckMap
+;	ret z
+
+	; Check for Ice Path
+	ld a, [wMapTileset]
+	cp TILESET_ICE_PATH
+	ld b, BTLENV_ICE
+	jr z, .got_env
+
+	; Finally, check the general environment.
+	ld a, [wEnvironment]
+	cp CAVE
+	ld b, BTLENV_CAVE
+	jr z, .got_env
+	cp ROUTE
+	ld b, BTLENV_GRASS ; Tall grass or route trainers
+	jr z, .got_env
+	ld b, BTLENV_PLAIN ; Default, including non-cave dungeons
+	jr .got_env
+
+.CheckMap:
+	ld a, [wMapGroup]
+	cp d
+	ret nz
+	ld a, [wMapNumber]
+	cp e
+	ret nz
+	; fallthrough
+.got_env
+	ld a, b
+	ld [wBattleEnvironment], a
 	ret
 
 BattleIntro:
@@ -8538,58 +8507,9 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	ld l, a
-	ld a, MOVE_PP
-	call GetMoveAttribute
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
-	ret
-
 ExitBattle:
 	call .HandleEndOfBattle
-	call CleanUpBattleRAM
-	ret
+	jr CleanUpBattleRAM
 
 .HandleEndOfBattle:
 	ld a, [wLinkMode]
@@ -8598,8 +8518,7 @@ ExitBattle:
 	call ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
-	call DisplayLinkBattleResult
-	ret
+	jmp DisplayLinkBattleResult
 
 .not_linked
 	ld a, [wBattleResult]
@@ -8676,8 +8595,7 @@ CheckPayDay:
 	bit 0, a
 	ret z
 	call ClearTilemap
-	call ClearBGPalettes
-	ret
+	jmp ClearBGPalettes
 
 ShowLinkBattleParticipantsAfterEnd:
 	farcall StubbedTrainerRankings_LinkBattles

@@ -8,7 +8,7 @@ AnimObjGFX:
 ; entries correspond to ANIM_GFX_* constants
 	table_width 4, AnimObjGFX
 	anim_obj_gfx  0, AnimObj00GFX
-	anim_obj_gfx 21, AnimObjHitGFX
+	anim_obj_gfx 35, AnimObjHitGFX
 	anim_obj_gfx  6, AnimObjCutGFX
 	anim_obj_gfx  6, AnimObjFireGFX
 	anim_obj_gfx 20, AnimObjWaterGFX
@@ -42,7 +42,7 @@ AnimObjGFX:
 	anim_obj_gfx 36, AnimObjSkyAttackGFX
 	anim_obj_gfx 16, AnimObjGlobeGFX
 	anim_obj_gfx 48, AnimObjShapesGFX
-	anim_obj_gfx 18, AnimObjObjectsGFX
+	anim_obj_gfx 21, AnimObjObjectsGFX
 	anim_obj_gfx 38, AnimObjShineGFX
 	anim_obj_gfx 35, AnimObjAngelsGFX
 	anim_obj_gfx 18, AnimObjWaveGFX
@@ -50,10 +50,16 @@ AnimObjGFX:
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx 13, AnimObjTauntGFX
-	anim_obj_gfx  5, AnimObjStarsGFX
+	anim_obj_gfx  7, AnimObjStarsGFX
 	anim_obj_gfx 18, AnimObjMeteorGFX
 	anim_obj_gfx  4, AnimObjFlatterGFX
 	anim_obj_gfx  3, AnimObjMisc2GFX
 	anim_obj_gfx 10, AnimObjBeamLightGFX
 	anim_obj_gfx  9, AnimObjSmokePuffGFX
+	anim_obj_gfx 16, AnimObjRootsGFX
+	anim_obj_gfx 64, AnimObjRecycleGFX
+	anim_obj_gfx  5, AnimObjLavaRocksGFX
+	anim_obj_gfx 16, AnimObjSnatchGFX
+	anim_obj_gfx  6, AnimObjGlowGFX
+	anim_obj_gfx 13, AnimObjBigGlowGFX
 	assert_table_length NUM_ANIM_GFX + 1

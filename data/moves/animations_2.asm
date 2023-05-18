@@ -41,7 +41,7 @@ MoveAnimations2:
 	dw BattleAnim_Grudge
 	dw BattleAnim_Snatch
 	dw BattleAnim_SecretPower
-	dw BattleAnim_Dewater
+	dw BattleAnim_Dive
 	dw BattleAnim_ArmThrust
 	dw BattleAnim_Camouflage
 	dw BattleAnim_TailGlow
@@ -380,13 +380,13 @@ BattleAnim_HeatWave:
 .loop
 	anim_obj ANIM_OBJ_HEAT_WAVE, 88, 0, $1
 	anim_wait 8
-	anim_obj ANIM_OBJ_HEAT_WAVE, 56, 16, $1
+	anim_obj ANIM_OBJ_HEAT_WAVE, 28, 0, $1
 	anim_wait 8
-	anim_obj ANIM_OBJ_HEAT_WAVE, 72, 32, $1
+	anim_obj ANIM_OBJ_HEAT_WAVE, 238, 0, $1
 	anim_wait 8
-	anim_obj ANIM_OBJ_HEAT_WAVE, 24, 48, $1
+	anim_obj ANIM_OBJ_HEAT_WAVE, 188, 0, $1
 	anim_wait 8
-	anim_obj ANIM_OBJ_HEAT_WAVE, 40, 64, $1
+	anim_obj ANIM_OBJ_HEAT_WAVE, 138, 0, $1
 	anim_loop 3, .loop
 	anim_wait 64
 	anim_incbgeffect ANIM_BG_WHIRLPOOL
@@ -399,23 +399,23 @@ BattleAnim_Hail:
 .loop
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
-	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
+	anim_obj ANIM_OBJ_HAIL, 68, 0, $1
 	anim_wait 8
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 56, 16, $2
-	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
+	anim_obj ANIM_OBJ_HAIL, 188, 0, $2
+	anim_obj ANIM_OBJ_HAIL, 168, 0, $0
 	anim_wait 8
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 72, 32, $1
-	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
+	anim_obj ANIM_OBJ_HAIL, 28, 0, $1
+	anim_obj ANIM_OBJ_HAIL, 8, 0, $2
 	anim_wait 8
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 04, 28, $0
-	anim_obj ANIM_OBJ_HAIL, 88, 0, $1
+	anim_obj ANIM_OBJ_HAIL, 238, 0, $0
+	anim_obj ANIM_OBJ_HAIL, 218, 0, $1
 	anim_wait 8
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_HAIL, 20, 44, $2
-	anim_obj ANIM_OBJ_HAIL, 56, 16, $1
+	anim_obj ANIM_OBJ_HAIL, 138, 0, $2
+	anim_obj ANIM_OBJ_HAIL, 118, 0, $1
 	anim_wait 8
 	anim_loop 3, .loop
 	anim_ret
@@ -467,7 +467,7 @@ BattleAnim_Flatter:
 	anim_ret
 
 BattleAnim_WillOWisp:
-	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgp $1b
 	anim_sound 6, 2, SFX_SLUDGE_BOMB
@@ -500,22 +500,28 @@ BattleAnim_Facade:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC_2
 	anim_call BattleAnim_TargetObj_2Row_2
 	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
-.loop
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_RED
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
 	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
-	anim_obj ANIM_OBJ_DROPLET_1, 60, 98, $39
-	anim_obj ANIM_OBJ_DROPLET_2, 48, 98, $26
 	anim_wait 24
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_WATER
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
 	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
-	anim_obj ANIM_OBJ_DROPLET_1, 60, 78, $39
-	anim_obj ANIM_OBJ_DROPLET_2, 48, 78, $26
 	anim_wait 24
-	anim_loop 2, .loop
-	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_YELLOW
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
+	anim_wait 24
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
+	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_wait 24
+	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
 	anim_call BattleAnim_ShowMon_0_2
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
@@ -608,6 +614,8 @@ BattleAnim_Taunt:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_Switcheroo:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
 BattleAnim_Trick:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_clearenemyhud
@@ -630,9 +638,25 @@ BattleAnim_Trick:
 	anim_ret
 
 BattleAnim_RolePlay:
+	anim_setobjpal PAL_BATTLE_OB_PLAYER, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GRAY
+	anim_call BattleAnim_TargetObj_1Row_2
+	anim_sound 0, 1, SFX_THIEF_2
 	anim_transform
-	anim_wait 48
+	anim_bgeffect ANIM_BG_TELEPORT, $0, $1, $0
+	anim_wait 24
 	anim_updateactorpic
+	anim_incbgeffect ANIM_BG_TELEPORT, $0, $1, $0
+	anim_sound 0, 1, SFX_SWEET_KISS
+	anim_wait 80
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_bgeffect ANIM_BG_TELEPORT, $0, $1, $0
+	anim_wait 16
+	anim_incbgeffect ANIM_BG_TELEPORT, $0, $1, $0
+	anim_wait 1
+	anim_dropsub
+	anim_call BattleAnim_ShowMon_0_2
+	anim_ret
 
 BattleAnim_Wish:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_STARS
@@ -642,7 +666,7 @@ BattleAnim_Wish:
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
 	anim_wait 16
 	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
-	anim_obj ANIM_OBJ_WISH, 30, 46, $42
+	anim_obj ANIM_OBJ_WISH_1, 30, 46, $42
 	anim_wait 16
 	anim_obj ANIM_OBJ_WISH_2, 50, 50, $0
 	anim_wait 16
@@ -669,7 +693,6 @@ BattleAnim_Wish:
 
 BattleAnim_Assist:
 	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_1Row_2
 	anim_obj ANIM_OBJ_ASSIST, 44, 88, $0
 	anim_obj ANIM_OBJ_ASSIST, 44, 88, $10
 	anim_obj ANIM_OBJ_ASSIST, 44, 88, $20
@@ -678,46 +701,117 @@ BattleAnim_Assist:
 	anim_sound 0, 0, SFX_SWORDS_DANCE
 	anim_wait 8
 	anim_loop 6, .loop
-	anim_call BattleAnim_ShowMon_0_2
-	anim_wait 1
+	anim_wait 8
 	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
 	anim_incobj 4
-	anim_incobj 5
 	anim_wait 48
 	anim_ret
 
 BattleAnim_Ingrain:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+	anim_2gfx ANIM_GFX_ROOTS, ANIM_GFX_CHARGE
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_R, 24, 104, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_L, 64, 104, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_R, 34, 104, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_ROOT_L, 69, 104, $0
+	anim_wait 32
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $10
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $8
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $18
+	anim_wait 38
 	anim_ret
 
 BattleAnim_Superpower:
-    anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
-    anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
-    anim_sound 0, 0, SFX_OUTRAGE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
-    anim_obj ANIM_OBJ_GROWTH, 48, 108, $0
-    anim_obj ANIM_OBJ_GROWTH, 48, 108, $20
-    anim_wait 4
-    anim_loop 4, .loop
-    anim_wait 48
-    anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
-    anim_call BattleAnim_TargetObj_2Row_2
-    anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-    anim_sound 0, 0, SFX_SPARK
-    anim_wait 8
-    anim_call BattleAnim_ShowMon_0_2
-    anim_sound 0, 1, SFX_THUNDER
-    anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
+	anim_sound 0, 0, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_FOCUS, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 36, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 52, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 28, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 20, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 68, 108, $8
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_incbgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_sound 0, 0, SFX_SPARK
+	anim_wait 16
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 1
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
 .loop2
-    anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
-    anim_wait 20
-    anim_loop 3, .loop2
-    anim_wait 16
-    anim_ret
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_wait 20
+	anim_loop 3, .loop2
+	anim_wait 16
+	anim_ret
 
 BattleAnim_MagicCoat:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_REFLECT
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $30
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $31
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $32
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $33
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $34
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $35
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $36
+	anim_obj ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $37
+	anim_obj ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_wait 24
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_wait 24
+	anim_clearobjs
+	anim_wait 40
+	anim_ret
+
 BattleAnim_Recycle:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RECYCLE
+	anim_1gfx ANIM_GFX_RECYCLE
+	anim_sound 0, 0, SFX_SHARPEN
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_obj ANIM_OBJ_RECYCLE, 48, 88, $0
+	anim_wait 104
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
 	anim_ret
 
 BattleAnim_Revenge:
@@ -754,37 +848,278 @@ BattleAnim_Revenge:
 	anim_ret
 
 BattleAnim_BrickBreak:
+	anim_1gfx ANIM_GFX_HIT
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_VERTICAL_CHOP_STILL, 136, 24, $30
+	anim_wait 16
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $2, $0
+	anim_wait 64
+	anim_clearobjs
+	anim_obj ANIM_OBJ_VERTICAL_CHOP, 136, 82, $30
+	anim_wait 8
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 34
+	anim_ret
+
 BattleAnim_Yawn:
+	anim_2gfx ANIM_GFX_SMOKE_PUFF, ANIM_GFX_STARS
+	anim_obp0 $54
+	anim_sound 16, 2, SFX_CURSE
+.loop
+	anim_wait 8
+	anim_obj ANIM_OBJ_YAWN_1, 64, 88, $4
+	anim_wait 8
+	anim_obj ANIM_OBJ_YAWN_1, 64, 80, $4
+	anim_wait 8
+	anim_obj ANIM_OBJ_YAWN_1, 64, 96, $4
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 22
+	anim_obp0 $70
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_YAWN_2, 126, 46, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_YAWN_2, 146, 46, $0
+	anim_wait 64
+	anim_ret
+
 BattleAnim_KnockOff:
+	anim_1gfx ANIM_GFX_HIT
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_PALM, 136, 08, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 16, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 24, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 32, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 40, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 48, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $1, $20
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_PALM, 136, 56, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 64, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_PALM, 136, 72, $0
+	anim_wait 8
+	anim_ret
 	anim_ret
 
 BattleAnim_Endeavor:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SAND
-    anim_call BattleAnim_TargetObj_2Row_2
-    anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
-    anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
-    anim_wait 8
-.loop
-    anim_sound 0, 0, SFX_RETURN
-    anim_obj ANIM_OBJ_SWEAT, 56, 80, $0
-    anim_wait 14
-	anim_sound 0, 1, SFX_BITE
-    anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_wait 14
-    anim_loop 3, .loop
-    anim_wait 32
-    anim_incbgeffect ANIM_BG_FLAIL
-    anim_call BattleAnim_ShowMon_0_2
-    anim_ret
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_MISC_2
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
+	anim_wait 21
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
+	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_wait 21
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
+	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_wait 21
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+	anim_call BattleAnim_ShowMon_0_2
+	anim_clearobjs
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 16
+	anim_ret
 
 BattleAnim_Eruption:
+	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_LAVA_ROCKS
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_2gfx ANIM_GFX_LAVA_ROCKS, ANIM_GFX_FIRE
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_wait 8
+	anim_sound 0, 1, SFX_OUTRAGE
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_WITHDRAW
+	anim_call BattleAnim_Eruption_branch
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_wait 24
+	anim_incbgeffect ANIM_BG_WITHDRAW
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_call BattleAnim_Eruption_branch
+	anim_wait 16
+	anim_call BattleAnim_ShowMon_0_2
+	anim_clearobjs
+	anim_obj ANIM_OBJ_ROCK_TOMB, 128, 70, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj ANIM_OBJ_ROCK_TOMB, 152, 70, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj ANIM_OBJ_ROCK_TOMB, 112, 70, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj ANIM_OBJ_ROCK_TOMB, 120, 68, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj ANIM_OBJ_ROCK_TOMB, 144, 68, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4, $4, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_Eruption_branch:
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $32
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 58, 88, $5c
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $e8
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $d0
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 58, 88, $50
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_ROCK, 48, 88, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $2e
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $31
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_ROCK, 48, 88, $33
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $2f
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_ROCK, 48, 88, $30
+	anim_wait 16
+	anim_ret
+
 BattleAnim_SkillSwap:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SKILL_SWAP
+	anim_1gfx ANIM_GFX_CHARGE
+.loop
+	anim_sound 6, 3, SFX_STOP_SLOT
+	anim_obj ANIM_OBJ_SKILL_SWAP_1, 136, 64, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_STOP_SLOT
+	anim_obj ANIM_OBJ_SKILL_SWAP_1, 136, 64, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_STOP_SLOT
+	anim_obj ANIM_OBJ_SKILL_SWAP_1, 136, 64, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_STOP_SLOT
+	anim_obj ANIM_OBJ_SKILL_SWAP_1, 136, 64, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_UNKNOWN_66
+	anim_obj ANIM_OBJ_SKILL_SWAP_2, 52, 88, $8
+	anim_wait 6
+	anim_sound 6, 3, SFX_UNKNOWN_66
+	anim_obj ANIM_OBJ_SKILL_SWAP_2, 52, 88, $8
+	anim_wait 6
+	anim_sound 6, 3, SFX_UNKNOWN_66
+	anim_obj ANIM_OBJ_SKILL_SWAP_2, 52, 88, $8
+	anim_wait 6
+	anim_sound 6, 3, SFX_UNKNOWN_66
+	anim_obj ANIM_OBJ_SKILL_SWAP_2, 52, 88, $8
+	anim_wait 6
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Imprison:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_IMPRISON_RING, 140, 44, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_IMPRISON_RING, 124, 60, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_IMPRISON_RING, 140, 60, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_IMPRISON_RING, 124, 44, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_IMPRISON_RING, 132, 52, $0
+	anim_wait 64
+	anim_clearobjs
+	anim_sound 6, 3, SFX_PLACE_PUZZLE_PIECE_DOWN
+	anim_obj ANIM_OBJ_RED_X, 132, 44, $2e
+	anim_wait 64
+	anim_ret
+
 BattleAnim_Refresh:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_SHINE
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_LIGHT_SCREEN
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_ICE
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+.loop
+	anim_obj ANIM_OBJ_DESCENDING_SPARKLE, 48, 64, $5
+	anim_wait 11
+	anim_loop 8, .loop
+	anim_wait 128
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER, 24, 96, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
+	anim_wait 21
+	anim_ret
+
 BattleAnim_Grudge:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
+	anim_1gfx ANIM_GFX_FIRE
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_SPITE
+	anim_obj ANIM_OBJ_GRUDGE, 48, 80, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 96, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 88, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 92, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 98, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 80, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 92, $0
+	anim_wait 16
+	anim_obj ANIM_OBJ_GRUDGE, 48, 88, $0
+	anim_wait 64
+	anim_ret
+
 BattleAnim_Snatch:
+	anim_1gfx ANIM_GFX_SHINE
+	anim_call BattleAnim_TargetObj_1Row_2
+	anim_bgeffect ANIM_BG_VITAL_THROW, $0, $1, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_FORESIGHT
+	anim_obj ANIM_OBJ_FORESIGHT, 48, 88, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_VITAL_THROW
+	anim_wait 16
+	anim_jump BattleAnim_ShowMon_0_2
+
 BattleAnim_SecretPower:
-BattleAnim_Dewater:
+BattleAnim_Dive:
 	anim_ret
 
 
@@ -800,27 +1135,109 @@ BattleAnim_ArmThrust:
 	
 BattleAnim_ArmThrust_branch:
 	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_HAND_REVERSE, 120, 48, $0
+	anim_obj ANIM_OBJ_PALM_XFLIP, 120, 48, $0
 	anim_wait 6
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 48, $0
 	anim_wait 8
 	anim_ret
 
 BattleAnim_Camouflage:
+	anim_sound 6, 3, SFX_WARP_TO
+	anim_bgeffect ANIM_BG_FADE_MON_TO_WHITE_WAIT_FADE_BACK, $0, $1, $60
+	anim_wait 112
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_WHITE_WAIT_FADE_BACK
+	anim_call BattleAnim_ShowMon_0_2
+	anim_wait 4
+	anim_ret
+
 BattleAnim_TailGlow:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_1gfx ANIM_GFX_GLOW
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_obj ANIM_OBJ_TAIL_GLOW, 48, 96, $0
+	anim_wait 112
+	anim_ret
+
 BattleAnim_LusterPurge:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
+	anim_2gfx ANIM_GFX_BIG_GLOW, ANIM_GFX_GLOW
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgp $90
+	anim_obj ANIM_OBJ_TAIL_GLOW, 48, 96, $0
+	anim_sound 0, 1, SFX_SWEET_KISS
+	anim_wait 32
+	anim_clearobjs
+	anim_2gfx ANIM_GFX_BIG_GLOW, ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_LUSTER
+	anim_setobjpal PAL_BATTLE_OB_PLAYER, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_obj ANIM_OBJ_BIG_GLOW, 48, 96, $0
+	anim_sound 0, 1, SFX_GS_INTRO_CHARIZARD_FIREBALL
+	anim_wait 64
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $24, $2, $0
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_MistBall:
+	anim_3gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE, ANIM_GFX_HAZE
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BRIGHT
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_OCTAZOOKA, 64, 92, $4
+	anim_wait 16
+	anim_sound 0, 1, SFX_BALL_POOF
+	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $24, $2, $0
+	anim_setobjpal PAL_BATTLE_OB_PLAYER, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_sound 0, 1, SFX_SPITE
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 24, $10
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 48, $2
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 88, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 32, $6
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 56, $c
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 80, $4
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 104, $e
+	anim_wait 64
+	anim_ret
+
 BattleAnim_FeatherDance:
+	anim_1gfx ANIM_GFX_MISC
+	anim_sound 0, 0, SFX_MORNING_SUN 
+.loop
+	anim_obj ANIM_OBJ_FEATHER_DANCE, 132, 36, $0
+	anim_wait 16
+	anim_loop 5, .loop
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+	anim_wait 96
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_call BattleAnim_ShowMon_1_2
 	anim_ret
 
 BattleAnim_TeeterDance:
 	anim_1gfx ANIM_GFX_NOISE
-    anim_call BattleAnim_TargetObj_2Row_2
+	anim_call BattleAnim_TargetObj_2Row_2
 	anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
 	anim_sound 0, 0, SFX_DEX_FANFARE_LESS_THAN_20
-    anim_wait 8
-    anim_obj ANIM_OBJ_TEETER_DANCE, 64, 80, $0
-    anim_wait 32
+	anim_wait 8
+	anim_obj ANIM_OBJ_TEETER_DANCE, 64, 80, $0
+	anim_wait 32
 	anim_obj ANIM_OBJ_TEETER_DANCE, 16, 80, $2
 	anim_wait 32
 	anim_obj ANIM_OBJ_TEETER_DANCE, 70, 80, $1
@@ -828,8 +1245,8 @@ BattleAnim_TeeterDance:
 	anim_obj ANIM_OBJ_TEETER_DANCE, 32, 80, $2
 	anim_wait 64
 	anim_incbgeffect ANIM_BG_FLAIL
-    anim_call BattleAnim_ShowMon_0_2
-    anim_ret
+	anim_call BattleAnim_ShowMon_0_2
+	anim_ret
 
 BattleAnim_BlazeKick:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_FIRE
@@ -1377,8 +1794,29 @@ BattleAnim_EarthPower:
     anim_wait 48
     anim_ret
 
-BattleAnim_Switcheroo:
 BattleAnim_GigaImpact:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
+	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
+	anim_sound 0, 0, SFX_OUTRAGE
+.loop
+	anim_obj ANIM_OBJ_GROWTH, 48, 108, $0
+	anim_obj ANIM_OBJ_GROWTH, 48, 108, $20
+	anim_wait 4
+	anim_loop 4, .loop
+	anim_wait 48
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_sound 0, 0, SFX_SPARK
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0_2
+	anim_sound 0, 1, SFX_THUNDER
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
+.loop2
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_wait 20
+	anim_loop 3, .loop2
+	anim_wait 16
 	anim_ret
 
 BattleAnim_NastyPlot:

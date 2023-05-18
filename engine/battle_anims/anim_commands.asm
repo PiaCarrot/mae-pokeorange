@@ -208,7 +208,7 @@ ClearActorHud:
 	lb bc, 5, 11
 
 .clear_box
-	jp ClearBox
+	jmp ClearBox
 
 BattleAnim_ClearOAM:
 	ld a, [wBattleAnimFlags]
@@ -997,21 +997,6 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	call FarCopyBytes
 	ret
 
-BattleAnimCmd_MinimizeOpp:
-	;Disabled for new animation. Remove comments (;) to re-enable
-	;ld a, [rSVBK]
-	;push af
-	;ld a, 1 ; unnecessary bankswitch?
-	;ld [rSVBK], a
-	;xor a ; sScratch
-	;call GetSRAMBank
-	;call GetMinimizePic
-	;call Request2bpp
-	;call CloseSRAM
-	;pop af
-	;ld [rSVBK], a
-	ret
-
 GetMinimizePic:
 	ld hl, sScratch
 	ld bc, (7 * 7) tiles
@@ -1094,7 +1079,7 @@ SetBattleAnimPal:
 	ld b, a
 .finish
 	call .SetPaletteData
-	jp SetPalettes
+	jmp SetPalettes
 
 .UserPal:
 	ldh a, [hBattleTurn]

@@ -10,7 +10,7 @@ LoadOverworldMonIcon:
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	jp GetIconBank
+	jmp GetIconBank
 	
 
 LoadMenuMonIcon:
