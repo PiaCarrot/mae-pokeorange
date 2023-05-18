@@ -36,12 +36,7 @@ BattleCommand_CheckSnatch:
 	push bc
 
 	; Now print the snatch message.
-	call CheckBattleScene
-	sbc a
-	inc a
-	ld [wBattleAnimParam], a
-	ld de, ANIM_SNATCHED_MOVE
-	call PlayFXAnimID
+	call BattleCommand_MoveDelay
 	ld hl, UserSnatchedOpponentMove
 	call StdBattleTextbox
 

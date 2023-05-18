@@ -1,19 +1,19 @@
 SpecialAnimations:
-	dw BattleAnim_HeldItemTrigger
-	dw BattleAnim_ThrowPokeBall  ; -16
+	dw BattleAnim_HeldItemTrigger ; 17
+	dw BattleAnim_ThrowPokeBall
 	dw BattleAnim_SendOutMon
 	dw BattleAnim_ReturnMon
 	dw BattleAnim_Confused
 	dw BattleAnim_Slp
 	dw BattleAnim_Brn
-	dw BattleAnim_Psn            ; -10
+	dw BattleAnim_Psn             ; -10
 	dw BattleAnim_Sap
 	dw BattleAnim_Frz
 	dw BattleAnim_Par
 	dw BattleAnim_InLove
 	dw BattleAnim_InNightmare
 	dw BattleAnim_InWhirlpool
-	dw BattleAnim_0         ;  -8
+	dw BattleAnim_0               ;  -8
 	dw BattleAnim_EnemyDamage
 	dw BattleAnim_EnemyStatDown
 	dw BattleAnim_PlayerStatDown

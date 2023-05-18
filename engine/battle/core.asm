@@ -206,6 +206,12 @@ BattleTurn:
 	call EnemyTriesToFlee
 	jr c, .quit
 
+	; Reset "per turn" flags
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_SNATCH, [hl]
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_SNATCH, [hl]
+
 	call DetermineMoveOrder
 	jr c, .false
 	call Battle_EnemyFirst

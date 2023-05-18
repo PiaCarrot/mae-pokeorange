@@ -129,10 +129,10 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_CINNABAR
 	; test mons
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove FRUSTRATION,        wPartyMon1, 0
-	givepokemove FURY_CUTTER,       wPartyMon1, 1
-	givepokemove TEETER_DANCE,   wPartyMon1, 2
-	givepokemove PAY_DAY,        wPartyMon1, 3
+	givepokemove TRICK,        wPartyMon1, 0
+	givepokemove WISH,       wPartyMon1, 1
+	givepokemove ROLE_PLAY,   wPartyMon1, 2
+	givepokemove SNATCH,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove CRABHAMMER,      wPartyMon2, 0
 	givepokemove WATERFALL, wPartyMon2, 1
@@ -173,8 +173,8 @@ endc
 
 PlayersHouseBookshelfScript:
 if DEF(_DEBUG)
-	loadwildmon MEW, 100
-	; loadtrainer LORELEI3, LORELEI_3
+	; loadwildmon SQUIRTLE, 100
+	loadtrainer LORELEI1, LORELEI_1
 	startbattle
 	reloadmapafterbattle
 	end

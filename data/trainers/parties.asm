@@ -596,8 +596,10 @@ MysticalmanGroup:
 Lorelei1Group:
 	next_list_item ; AUNT (1)
 	db "PRIMA@", TRAINERTYPE_MOVES
-	db  5
-	dw SMOOCHUM, POUND, NO_MOVE, NO_MOVE, NO_MOVE
+	; db  5
+	; dw SMOOCHUM, POUND, NO_MOVE, NO_MOVE, NO_MOVE
+	db  100
+	dw ELECTRODE, DEFENSE_CURL, SWORDS_DANCE, RECOVER, NO_MOVE
 	db -1 ; end
 
 	end_list_items
