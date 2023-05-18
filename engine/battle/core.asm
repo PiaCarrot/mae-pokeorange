@@ -8509,7 +8509,7 @@ InitEnemyWildmon:
 
 ExitBattle:
 	call .HandleEndOfBattle
-	jmp CleanUpBattleRAM
+	jr CleanUpBattleRAM
 
 .HandleEndOfBattle:
 	ld a, [wLinkMode]
