@@ -1823,7 +1823,7 @@ HandleWeather:
 	call SubtractHPFromUser
 
 	ld hl, SandstormHitsText
-	jp StdBattleTextbox
+	jmp StdBattleTextbox
 
 
 	
@@ -1873,7 +1873,7 @@ HandleWeather:
 	call SubtractHPFromUser
 	
 	ld hl, PeltedByHailText
-	jp StdBattleTextbox
+	jmp StdBattleTextbox
 
 
 .PlayWeatherAnimation:

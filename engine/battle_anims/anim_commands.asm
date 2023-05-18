@@ -208,7 +208,7 @@ ClearActorHud:
 	lb bc, 5, 11
 
 .clear_box
-	jp ClearBox
+	jmp ClearBox
 
 BattleAnim_ClearOAM:
 	ld a, [wBattleAnimFlags]
@@ -1094,7 +1094,7 @@ SetBattleAnimPal:
 	ld b, a
 .finish
 	call .SetPaletteData
-	jp SetPalettes
+	jmp SetPalettes
 
 .UserPal:
 	ldh a, [hBattleTurn]

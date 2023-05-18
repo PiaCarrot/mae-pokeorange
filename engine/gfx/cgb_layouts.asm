@@ -114,15 +114,15 @@ SetDefaultBattlePalette:
 	ld hl, BattleObjectPals - 1 palettes
 	ld bc, 1 palettes
 	call AddNTimes
-	jp FarCopyWRAM
+	jmp FarCopyWRAM
 
 SetBattlePal_Player:
 	call GetBattlemonBackpicPalettePointer
-	jp LoadPalette_White_Col1_Col2_Black
+	jmp LoadPalette_White_Col1_Col2_Black
 
 SetBattlePal_Enemy:
 	call GetEnemyFrontpicPalettePointer
-	jp LoadPalette_White_Col1_Col2_Black
+	jmp LoadPalette_White_Col1_Col2_Black
 
 SetBattlePal_EnemyHP:
 	ld a, [wEnemyHPPal]
@@ -138,11 +138,11 @@ SetBattlePal_HP:
 	add hl, hl
 	ld bc, HPBarPals
 	add hl, bc
-	jp LoadPalette_White_Col1_Col2_Black
+	jmp LoadPalette_White_Col1_Col2_Black
 
 SetBattlePal_Exp:
 	ld hl, ExpBarPalette
-	jp LoadPalette_White_Col1_Col2_Black
+	jmp LoadPalette_White_Col1_Col2_Black
 
 SetBattlePal_Text:
 	; Mobile Adapter connectivity changes bg pal 7.
@@ -153,7 +153,7 @@ SetBattlePal_Text:
 .got_pal
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
-	jp FarCopyWRAM
+	jmp FarCopyWRAM
 
 _CGB_BattleColors:
 	ld de, wBGPals1

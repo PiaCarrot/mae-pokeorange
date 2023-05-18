@@ -363,7 +363,7 @@ AnimateWallWaterTile:
 	ld sp, hl
 	ld l, e
 	ld h, d
-	jp WriteTile
+	jmp WriteTile
 
 .WallWaterTileFrames:
 	INCBIN "gfx/tilesets/lab/wall_water.2bpp"
@@ -393,7 +393,7 @@ AnimateLabWaterTile:
 	ld sp, hl
 	ld l, e
 	ld h, d
-	jp WriteTile
+	jmp WriteTile
 
 .LabWaterTileFrames:
 	INCBIN "gfx/tilesets/lab/lab_water.2bpp"
@@ -449,7 +449,7 @@ AnimateRockRightTiles:
     ld l, e
     ld h, d
 
-    jp WriteTwoTiles
+    jmp WriteTwoTiles
 	
 RSEWaterFrames: dw vTiles2 tile $16, RSEWaterTiles
 
@@ -618,7 +618,7 @@ AnimateTowerPillarTile:
 	ld sp, hl
 	ld l, e
 	ld h, d
-	jp WriteTile
+	jmp WriteTile
 
 .TowerPillarTileFrameOffsets:
 	db 0 tiles
@@ -679,7 +679,7 @@ AnimateWhirlpoolTiles: ; fc678
 	ld l, e
 	ld h, d
 
-	jp WriteTwoTiles
+	jmp WriteTwoTiles
 ; fc696
 
 WriteTileFromAnimBuffer:
@@ -693,7 +693,7 @@ WriteTileFromAnimBuffer:
 	ld sp, hl
 	ld h, d
 	ld l, e
-	jp WriteTile
+	jmp WriteTile
 
 ReadTileToAnimBuffer:
 ; Save the stack pointer in bc for WriteTile to restore
@@ -795,7 +795,7 @@ AnimateSeaweedTile1:
 
 	ld hl, vTiles2 tile $04
 
-	jp WriteTile
+	jmp WriteTile
 
 SeaweedTile1Frames:
 	INCBIN "gfx/tilesets/seaweed/1.2bpp"
@@ -824,7 +824,7 @@ AnimateSeaweedTile2:
 
 	ld hl, vTiles2 tile $14
 
-	jp WriteTile
+	jmp WriteTile
 
 SeaweedTile2Frames:
 	INCBIN "gfx/tilesets/seaweed/2.2bpp"
@@ -851,7 +851,7 @@ AnimateRSEBubbleTile:
 
 	ld hl, vTiles2 tile $03
 
-	jp WriteTile
+	jmp WriteTile
 
 RSEBubbleTileFrames:
 	INCBIN "gfx/tilesets/rse-bubble/1.2bpp"

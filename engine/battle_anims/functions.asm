@@ -4326,7 +4326,7 @@ BattleAnimFunction_RockTomb:
 	ld a, [hl]
 	and $3f
 	ret nz
-	jp BattleAnim_IncAnonJumptableIndex
+	jr BattleAnim_IncAnonJumptableIndex
 .two
 	ret
 
@@ -4335,14 +4335,14 @@ BattleAnimFunction_Overheat:
 	add hl, bc
 	ld a, [hl]
 	cp $40
-	jp nc, DeinitBattleAnimation
+	jmp nc, DeinitBattleAnimation
 	ld d, a
 	add 8
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
-	jp BattleAnim_StepCircle
+	jmp BattleAnim_StepCircle
 
 BattleAnimFunction_AirCutter:
 	call BattleAnim_AnonJumptable
@@ -4384,11 +4384,11 @@ BattleAnimFunction_AirCutter:
 	add hl, bc
 	ld a, [hl]
 	cp $e4
-	jp nc, DeinitBattleAnimation
+	jmp nc, DeinitBattleAnimation
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
-	jp BattleAnim_StepToTarget
+	jmp BattleAnim_StepToTarget
 
 BattleAnimFunction_RadialMoveOut:
 	call BattleAnim_AnonJumptable
@@ -4418,7 +4418,7 @@ BattleAnimFunction_RadialMoveOut:
 	ld [hli], a
 	ld [hl], e
 	cp 80 ; final position
-	jp nc, DeinitBattleAnimation
+	jmp nc, DeinitBattleAnimation
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld e, [hl]
@@ -4464,7 +4464,7 @@ BattleAnimFunction_RadialMoveOut_Slow:
 	ld [hli], a
 	ld [hl], e
 	cp 120 ; final position
-	jp nc, DeinitBattleAnimation
+	jmp nc, DeinitBattleAnimation
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld e, [hl]
@@ -4511,7 +4511,7 @@ BattleAnimFunction_RadialMoveOut_Fast:
 	ld [hli], a
 	ld [hl], e
 	cp 160 ; final position
-	jp nc, DeinitBattleAnimation
+	jmp nc, DeinitBattleAnimation
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld e, [hl]
@@ -4568,7 +4568,7 @@ BattleAnimFunction_RadialMoveIn:
 	ld e, [hl]
 	ld hl, -4.5
 	add hl, de
-	jp nc, DeinitBattleAnimation
+	jmp nc, DeinitBattleAnimation
 	ld e, l
 	ld d, h
 	ld hl, BATTLEANIMSTRUCT_VAR2
@@ -4644,4 +4644,4 @@ BattleAnimFunction_ObjectHover:
 	cp $c0
 	ret nc
 	ld a, 8
-	jp BattleAnim_StepToTarget
+	jmp BattleAnim_StepToTarget
