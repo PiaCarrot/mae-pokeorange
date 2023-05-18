@@ -2507,10 +2507,7 @@ WinTrainerBattle:
 
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
-	call PrintWinLossText
-.skip_win_loss_text
-
+	call z, PrintWinLossText
 	jr .give_money
 
 .mobile
@@ -3058,9 +3055,7 @@ LostBattle:
 
 	ld a, [wDebugFlags]
 	bit DEBUG_BATTLE_F, a
-	jr nz, .skip_win_loss_text
-	call PrintWinLossText
-.skip_win_loss_text
+	jmp z, PrintWinLossText
 	ret
 
 .battle_tower
@@ -7209,8 +7204,8 @@ GiveExperiencePoints:
 	ret nz
 
 	ld a, [wInBattleTowerBattle]
-	bit 0, a
-	ret nz
+	rra
+	ret c
 
 	call .EvenlyDivideExpAmongParticipants
 	xor a
@@ -8514,8 +8509,7 @@ InitEnemyWildmon:
 
 ExitBattle:
 	call .HandleEndOfBattle
-	call CleanUpBattleRAM
-	ret
+	jmp CleanUpBattleRAM
 
 .HandleEndOfBattle:
 	ld a, [wLinkMode]
@@ -8524,8 +8518,7 @@ ExitBattle:
 	call ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
-	call DisplayLinkBattleResult
-	ret
+	jmp DisplayLinkBattleResult
 
 .not_linked
 	ld a, [wBattleResult]
@@ -8602,8 +8595,7 @@ CheckPayDay:
 	bit 0, a
 	ret z
 	call ClearTilemap
-	call ClearBGPalettes
-	ret
+	jmp ClearBGPalettes
 
 ShowLinkBattleParticipantsAfterEnd:
 	farcall StubbedTrainerRankings_LinkBattles
