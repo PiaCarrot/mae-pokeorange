@@ -69,22 +69,22 @@ if DEF(_DEBUG)
 	giveitem POKE_BALL, 2
 	giveitem TOWN_MAP, 1
 	; all badges
-	; setflag ENGINE_ZEPHYRBADGE
-	; setflag ENGINE_HIVEBADGE
-	; setflag ENGINE_PLAINBADGE
-	; setflag ENGINE_FOGBADGE
-	; setflag ENGINE_STORMBADGE
-	; setflag ENGINE_MINERALBADGE
-	; setflag ENGINE_GLACIERBADGE
-	; setflag ENGINE_RISINGBADGE
-	; setflag ENGINE_BOULDERBADGE
-	; setflag ENGINE_CASCADEBADGE
-	; setflag ENGINE_THUNDERBADGE
-	; setflag ENGINE_RAINBOWBADGE
-	; setflag ENGINE_MARSHBADGE
-	; setflag ENGINE_SOULBADGE
-	; setflag ENGINE_VOLCANOBADGE
-	; setflag ENGINE_EARTHBADGE
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_FOGBADGE
+	setflag ENGINE_STORMBADGE
+	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_GLACIERBADGE
+	setflag ENGINE_RISINGBADGE
+	setflag ENGINE_BOULDERBADGE
+	setflag ENGINE_CASCADEBADGE
+	setflag ENGINE_THUNDERBADGE
+	setflag ENGINE_RAINBOWBADGE
+	setflag ENGINE_MARSHBADGE
+	setflag ENGINE_SOULBADGE
+	setflag ENGINE_VOLCANOBADGE
+	setflag ENGINE_EARTHBADGE
 	; setevent EVENT_BEAT_FALKNER
 	; setevent EVENT_BEAT_BUGSY
 	; setevent EVENT_BEAT_WHITNEY
@@ -129,10 +129,10 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_CINNABAR
 	; test mons
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove DIVE,        wPartyMon1, 0
+	givepokemove SECRET_POWER,        wPartyMon1, 0
 	givepokemove SURF,       wPartyMon1, 1
 	givepokemove WHIRLPOOL,   wPartyMon1, 2
-	givepokemove SNATCH,        wPartyMon1, 3
+	givepokemove BODY_SLAM,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove CRABHAMMER,      wPartyMon2, 0
 	givepokemove WATERFALL, wPartyMon2, 1

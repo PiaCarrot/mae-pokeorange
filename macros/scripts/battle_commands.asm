@@ -24,7 +24,7 @@ ENDM
 	command checkfaint              ; 11
 	command buildopponentrage       ; 12
 	command poisontarget            ; 13
-	command sleeptarget             ; 14
+	command sleep                   ; 14
 	command draintarget             ; 15
 	command eatdream                ; 16
 	command burntarget              ; 17
@@ -185,6 +185,7 @@ ENDM
 	command snatch                  ; af
 	command checksnatch             ; b0
 	command doubledivingdamage      ; b1
+	command secretpower             ; b2
 
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 

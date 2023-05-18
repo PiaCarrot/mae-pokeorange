@@ -166,4 +166,5 @@ MoveEffectsPointers:
 	dw Snatch
 	dw Surf
 	dw Whirlpool
+	dw SecretPower
 	assert_table_length NUM_MOVE_EFFECTS

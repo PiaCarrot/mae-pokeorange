@@ -28,7 +28,7 @@ DoSleep:
 	doturn
 	checkhit
 	checksafeguard
-	sleeptarget
+	sleep
 	endmove
 
 PoisonHit:
@@ -2158,4 +2158,25 @@ Snatch:
 	usedmovetext
 	doturn
 	snatch
+	endmove
+
+SecretPower:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	secretpower
 	endmove

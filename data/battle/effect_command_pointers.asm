@@ -25,7 +25,7 @@ BattleCommandPointers:
 	effectfn BattleCommand_CheckFaint
 	effectfn BattleCommand_BuildOpponentRage
 	effectfn BattleCommand_PoisonTarget
-	effectfn BattleCommand_SleepTarget
+	effectfn BattleCommand_Sleep
 	effectfn BattleCommand_DrainTarget
 	effectfn BattleCommand_EatDream
 	effectfn BattleCommand_BurnTarget
@@ -186,4 +186,5 @@ BattleCommandPointers:
 	effectfn BattleCommand_Snatch
 	effectfn BattleCommand_CheckSnatch
 	effectfn BattleCommand_DoubleDivingDamage
+	effectfn BattleCommand_SecretPower
 	assert_table_length NUM_EFFECT_COMMANDS
