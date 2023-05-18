@@ -156,7 +156,7 @@ HandleObjectAction:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	bit OBJ_FLAGS2_6, [hl]
-	jmp nz, SetFacingStanding
+	jr nz, SetFacingStanding
 	bit FROZEN_F, [hl]
 	jr nz, _CallFrozenObjectAction
 ; use first column (normal)
