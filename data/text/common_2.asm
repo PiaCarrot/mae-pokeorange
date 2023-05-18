@@ -733,6 +733,11 @@ _BattleDugText::
 	line "dug a hole!"
 	prompt
 
+_BattleDoveText::
+	text_start
+	line "hid underwater!"
+	prompt
+
 _ActorNameText::
 	text "<USER>@"
 	text_end

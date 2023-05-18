@@ -41,7 +41,7 @@ MoveAnimations2:
 	dw BattleAnim_Grudge
 	dw BattleAnim_Snatch
 	dw BattleAnim_SecretPower
-	dw BattleAnim_Dewater
+	dw BattleAnim_Dive
 	dw BattleAnim_ArmThrust
 	dw BattleAnim_Camouflage
 	dw BattleAnim_TailGlow
@@ -1119,7 +1119,7 @@ BattleAnim_Snatch:
 	anim_jump BattleAnim_ShowMon_0_2
 
 BattleAnim_SecretPower:
-BattleAnim_Dewater:
+BattleAnim_Dive:
 	anim_ret
 
 
