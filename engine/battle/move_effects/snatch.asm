@@ -9,11 +9,11 @@ BattleCommand_Snatch:
 
 	call AnimateCurrentMove
 	ld hl, WaitForOpponentMoveText
-	jmp StdBattleTextbox
+	jp StdBattleTextbox
 .failed
 	call AnimateFailedMove
 	call TryPrintButItFailed
-	jmp EndMoveEffect
+	jp EndMoveEffect
 
 BattleCommand_CheckSnatch:
 	; Check if opponent is snatching this move.
@@ -36,7 +36,12 @@ BattleCommand_CheckSnatch:
 	push bc
 
 	; Now print the snatch message.
-	call BattleCommand_MoveDelay
+	call CheckBattleScene
+	sbc a
+	inc a
+	ld [wBattleAnimParam], a
+	ld de, ANIM_SNATCHED_MOVE
+	call PlayFXAnimID
 	ld hl, UserSnatchedOpponentMove
 	call StdBattleTextbox
 
@@ -62,4 +67,5 @@ BattleCommand_CheckSnatch:
 	pop hl
 	ld [hl], b
 	call UpdateMoveData
-	jmp BattleCommand_SwitchTurn
+	jp BattleCommand_SwitchTurn
+	

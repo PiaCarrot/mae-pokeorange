@@ -131,7 +131,7 @@ if DEF(_DEBUG)
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove SECRET_POWER,        wPartyMon1, 0
 	givepokemove SURF,       wPartyMon1, 1
-	givepokemove WHIRLPOOL,   wPartyMon1, 2
+	givepokemove SNATCH,   wPartyMon1, 2
 	givepokemove BODY_SLAM,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove CRABHAMMER,      wPartyMon2, 0
