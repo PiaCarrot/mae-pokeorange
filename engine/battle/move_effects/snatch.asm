@@ -36,7 +36,7 @@ BattleCommand_CheckSnatch:
 	push bc
 
 	; Now print the snatch message.
-	call CheckBattleScene
+	call _CheckBattleScene
 	sbc a
 	inc a
 	ld [wBattleAnimParam], a

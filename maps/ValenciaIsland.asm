@@ -182,7 +182,7 @@ ValenciaIslandAltStarterEventCutTreeCallback:
 	endcallback
 	
 ValenciaYoungsterScript:
-;	verbosegiveitem RARE_CANDY, 99
+	verbosegiveitem RARE_CANDY, 99
 	jumptextfaceplayer ValenciaYoungsterText
 ;	setflag ENGINE_POKEDEX
 ;	callasm CheatFillPokedex
