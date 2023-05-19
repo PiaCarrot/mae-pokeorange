@@ -55,7 +55,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_POKE_BALL_BLOCKED
 	const ANIM_OBJ_EXPLOSION1
 	const ANIM_OBJ_EXPLOSION2
-	const ANIM_OBJ_MEAN_LOOKID
+	const ANIM_OBJ_ACID
 	const ANIM_OBJ_SLUDGE
 	const ANIM_OBJ_BETA_BALL_POOF
 	const ANIM_OBJ_BALL_POOF
@@ -281,6 +281,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_BIG_GLOW
 	const ANIM_OBJ_MIST_BALL_BG
 	const ANIM_OBJ_FEATHER_DANCE
+	const ANIM_OBJ_RADIAL_FLAME_SLOW
+	const ANIM_OBJ_RADIAL_FLAME
+	const ANIM_OBJ_MUD_SPORT_1
+	const ANIM_OBJ_MUD_SPORT_2
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -594,6 +598,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_D5
 	const BATTLEANIMFRAMESET_D6
 	const BATTLEANIMFRAMESET_D7
+	const BATTLEANIMFRAMESET_D8
+	const BATTLEANIMFRAMESET_D9
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -831,6 +837,7 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_E6
 	const BATTLEANIMOAMSET_E7
 	const BATTLEANIMOAMSET_E8
+	const BATTLEANIMOAMSET_E9
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
