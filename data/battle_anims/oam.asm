@@ -225,7 +225,7 @@ BattleAnimOAMData:
 	battleanimoam $00, 12, .OAMData_d7 ; BATTLEANIMOAMSET_D7
 	battleanimoam $10,  2, .OAMData_11 ; BATTLEANIMOAMSET_D8
 	battleanimoam $1b,  4, .OAMData_03 ; BATTLEANIMOAMSET_D9
-	battleanimoam $07,  4, .OAMData_03 ; BATTLEANIMOAMSET_DA
+	battleanimoam $09,  4, .OAMData_03 ; BATTLEANIMOAMSET_DA
 	battleanimoam $00, 12, .OAMData_db ; BATTLEANIMOAMSET_DB
 	battleanimoam $15,  4, .OAMData_04 ; BATTLEANIMOAMSET_DC
 	battleanimoam $02,  2, .OAMData_dd ; BATTLEANIMOAMSET_DD
