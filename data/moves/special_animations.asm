@@ -1,6 +1,6 @@
 SpecialAnimations:
-	dw BattleAnim_Snatched
-	dw BattleAnim_HeldItemTrigger ; 17
+	dw BattleAnim_SnatchedMove    ; -18
+	dw BattleAnim_HeldItemTrigger 
 	dw BattleAnim_ThrowPokeBall
 	dw BattleAnim_SendOutMon
 	dw BattleAnim_ReturnMon
@@ -24,7 +24,7 @@ SpecialAnimations:
 	dw BattleAnim_HitConfusion
 .IndirectEnd::
 
-BattleAnim_Snatched:
+BattleAnim_SnatchedMove:
 	anim_if_param_equal $0, .off
 	anim_2gfx ANIM_GFX_SNATCH, ANIM_GFX_SPEED
 	anim_sound 0, 0, SFX_MENU
@@ -167,32 +167,14 @@ BattleAnim_ThrowPokeBall:
 BattleAnim_SendOutMon:
 	anim_if_param_equal $0, .Normal
 	anim_if_param_equal $1, .Shiny
-	anim_if_param_equal $2, .Unknown
 	anim_1gfx ANIM_GFX_SMOKE
 	anim_call BattleAnim_TargetObj_1Row_Special
 	anim_bgeffect ANIM_BG_BETA_SEND_OUT_MON2, $0, $1, $0
 	anim_sound 0, 0, SFX_BALL_POOF
 	anim_obj ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
-	anim_wait 128
-	anim_wait 4
-	anim_call BattleAnim_ShowMon_0_Special
-	anim_ret
-
-.Unknown:
-	anim_1gfx ANIM_GFX_SMOKE
-	anim_call BattleAnim_TargetObj_1Row_Special
-	anim_bgeffect ANIM_BG_BETA_SEND_OUT_MON1, $0, $1, $0
-	anim_wait 1
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 4
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
-	anim_incbgeffect ANIM_BG_BETA_SEND_OUT_MON1
-	anim_wait 96
-	anim_incbgeffect ANIM_BG_BETA_SEND_OUT_MON1
-	anim_call BattleAnim_ShowMon_0_Special
-	anim_ret
+	anim_wait 132
+	anim_jump BattleAnim_ShowMon_0_Special
 
 .Shiny:
 	anim_1gfx ANIM_GFX_SPEED

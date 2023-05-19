@@ -43,7 +43,7 @@ BattleCommand_BeatUp:
 	and a
 	jmp nz, .beatup_fail
 
-	ld a, 1
+	inc a ; a = 1
 	ld [wBeatUpHitAtLeastOnce], a
 	ld hl, BeatUpAttackText
 	call StdBattleTextbox
@@ -143,7 +143,7 @@ BattleCommand_BeatUp:
 	and a
 	jr nz, .beatup_fail
 
-	ld a, $1
+	inc a ; a = 1
 	ld [wBeatUpHitAtLeastOnce], a
 	jr .finish_beatup
 
