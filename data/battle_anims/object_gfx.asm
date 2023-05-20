@@ -63,4 +63,5 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjGlowGFX
 	anim_obj_gfx 13, AnimObjBigGlowGFX
 	anim_obj_gfx  9, AnimObjTearGFX
+	anim_obj_gfx 16, AnimObjBlastBurnGFX
 	assert_table_length NUM_ANIM_GFX + 1
