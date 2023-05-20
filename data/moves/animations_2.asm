@@ -1074,14 +1074,7 @@ BattleAnim_Refresh:
 	anim_wait 11
 	anim_loop 8, .loop
 	anim_wait 128
-	anim_sound 0, 0, SFX_METRONOME
-	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_GLIMMER, 24, 96, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
-	anim_wait 21
-	anim_ret
+	anim_jump BattleAnim_Glimmer_branch
 
 BattleAnim_Grudge:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
@@ -1449,6 +1442,24 @@ BattleAnim_NeedleArm:
 	anim_ret
 
 BattleAnim_SlackOff:
+	anim_1gfx ANIM_GFX_SHINE
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_sound 16, 2, SFX_CURSE
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_WITHDRAW
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+; fallthrough
+BattleAnim_Glimmer_branch:
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER, 24, 96, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
+	anim_wait 21
 	anim_ret
 
 BattleAnim_HyperVoice:
@@ -1474,30 +1485,47 @@ BattleAnim_HyperVoice:
 
 BattleAnim_PoisonFang:
 	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_POISON
-    anim_obj ANIM_OBJ_BITE, 136, 56, $98
-    anim_obj ANIM_OBJ_BITE, 136, 56, $18
-    anim_wait 8
-    anim_sound 0, 1, SFX_BITE
-    anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $18
-    anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
-    anim_wait 4
-    anim_clearobjs
-    anim_wait 8
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $18
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_wait 8
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 .loop
-    anim_sound 0, 1, SFX_TOXIC
-    anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
-    anim_wait 8
-    anim_sound 0, 1, SFX_TOXIC
-    anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
-    anim_wait 8
-    anim_sound 0, 1, SFX_TOXIC
-    anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
-    anim_wait 8
-    anim_loop 2, .loop
-    anim_wait 48
-    anim_ret
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 48
+	anim_ret
 
 BattleAnim_CrushClaw:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_TEAR
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
+	anim_obj ANIM_OBJ_TEAR, 144, 48, $0
+	anim_wait 64
+	anim_call BattleAnim_ShowMon_1_Special
+	anim_ret
+
 BattleAnim_BlastBurn:
 BattleAnim_HydroCannon:
 	anim_ret
