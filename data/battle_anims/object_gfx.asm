@@ -13,7 +13,7 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjFireGFX
 	anim_obj_gfx 20, AnimObjWaterGFX
 	anim_obj_gfx 26, AnimObjLightningGFX
-	anim_obj_gfx 18, AnimObjPlantGFX
+	anim_obj_gfx 23, AnimObjPlantGFX
 	anim_obj_gfx 12, AnimObjSmokeGFX
 	anim_obj_gfx  9, AnimObjExplosionGFX
 	anim_obj_gfx 17, AnimObjRocksGFX
@@ -64,4 +64,6 @@ AnimObjGFX:
 	anim_obj_gfx 13, AnimObjBigGlowGFX
 	anim_obj_gfx  9, AnimObjTearGFX
 	anim_obj_gfx 16, AnimObjBlastBurnGFX
+	anim_obj_gfx 64, AnimObjVortexGFX
+	anim_obj_gfx  4, AnimObjHydroCannonGFX
 	assert_table_length NUM_ANIM_GFX + 1
