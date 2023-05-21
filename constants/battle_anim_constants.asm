@@ -298,6 +298,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_VORTEX
 	const ANIM_OBJ_HYDRO_CANNON
 	const ANIM_OBJ_SHRINKING_GLOW
+	const ANIM_OBJ_FRENZY_PLANT_L
+	const ANIM_OBJ_FRENZY_PLANT_R
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -625,6 +627,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_E3
 	const BATTLEANIMFRAMESET_E4
 	const BATTLEANIMFRAMESET_E5
+	const BATTLEANIMFRAMESET_E6
+	const BATTLEANIMFRAMESET_E7
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -867,6 +871,10 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_EB
 	const BATTLEANIMOAMSET_EC
 	const BATTLEANIMOAMSET_ED
+	const BATTLEANIMOAMSET_EE
+	const BATTLEANIMOAMSET_EF
+	const BATTLEANIMOAMSET_F0
+	const BATTLEANIMOAMSET_F1
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -987,6 +995,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_BLAST_BURN
 	const ANIM_GFX_VORTEX
 	const ANIM_GFX_HYDRO_CANNON
+	const ANIM_GFX_FRENZY_PLANT
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
