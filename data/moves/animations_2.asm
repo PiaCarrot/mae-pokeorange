@@ -928,8 +928,8 @@ BattleAnim_Endeavor:
 	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
 	anim_wait 21
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
 	anim_wait 21
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
@@ -1521,7 +1521,7 @@ BattleAnim_CrushClaw:
 	anim_wait 8
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
-	anim_obj ANIM_OBJ_TEAR, 144, 48, $0
+	anim_obj ANIM_OBJ_CLAW_TEAR, 144, 48, $0
 	anim_wait 64
 	anim_call BattleAnim_ShowMon_1_Special
 	anim_ret
@@ -1724,6 +1724,21 @@ BattleAnim_Aromatherapy:
 	anim_jump BattleAnim_Glimmer_branch
 
 BattleAnim_FakeTears:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_1gfx ANIM_GFX_MISC_2
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+.loop
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_TEARS_1, 64, 82, $3b
+	anim_wait 8
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_TEARS_2, 44, 82, $24
+	anim_wait 8
+	anim_loop 6, .loop
+	anim_incbgeffect ANIM_BG_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0_2
+	anim_wait 12
 	anim_ret
 
 BattleAnim_AirCutter:
