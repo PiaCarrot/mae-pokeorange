@@ -1628,6 +1628,7 @@ BattleAnim_MeteorMash:
 	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
 	anim_wait 64
 	anim_clearobjs
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $28, $2, $0
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_LONG_PUNCH, 136, 56, $0
@@ -1658,25 +1659,70 @@ BattleAnim_MeteorMash:
 	anim_ret
 
 BattleAnim_Astonish:
-	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_2Row_2
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_MISC_2
+	anim_battlergfx_2row
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_wait 6
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_sound 0, 1, SFX_TACKLE
-	anim_wait 4
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_incobj 1
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 1
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_FORESIGHT, 140, 56, $0
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_FORESIGHT, 136, 48, $0
+	anim_obj ANIM_OBJ_DROPLET_1, 146, 52, $38
+	anim_obj ANIM_OBJ_DROPLET_2, 126, 52, $28
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 4
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_FORESIGHT, 146, 50, $0
-	anim_wait 20
-	anim_call BattleAnim_ShowMon_0_2
 	anim_ret
 
 BattleAnim_WeatherBall:
+	anim_1gfx ANIM_GFX_WEATHER_BALL
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_WEATHER_BALL_RISE, 48, 88, $32
+	anim_wait 64
+	anim_clearobjs
+
+;	anim_sound 0, 0, SFX_SWEET_KISS -when weather is active
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
+	anim_wait 100
+	anim_ret
+
 BattleAnim_Aromatherapy:
+	anim_3gfx ANIM_GFX_FLOWER, ANIM_GFX_SPEED, ANIM_GFX_SHINE
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_LIGHT_SCREEN
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GREEN
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+
+.loop
+	anim_obj ANIM_OBJ_AROMATHERAPY, 148, 88, $22
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $21
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $23
+	anim_wait 8
+	anim_obj ANIM_OBJ_AROMATHERAPY, 148, 88, $1f
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $20
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 148, 88, $21
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 64
+	anim_jump BattleAnim_Glimmer_branch
+
 BattleAnim_FakeTears:
 	anim_ret
 

@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, FRENZY_PLANT
+	dbw 6, AROMATHERAPY
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
