@@ -1699,22 +1699,49 @@ BattleAnim_WeatherBall:
 	anim_if_param_equal $4, .rock
 
 	; NORMAL
-;	anim_sound 0, 0, SFX_SWEET_KISS -when weather is active
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
 	anim_wait 100
 	anim_ret
 
 .water
+	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 84
 	anim_ret
 
 .fire
+	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 84
 	anim_ret
 
 .ice
+	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 84
 	anim_ret
 
 .rock
+	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 84
 	anim_ret
 
 BattleAnim_Aromatherapy:

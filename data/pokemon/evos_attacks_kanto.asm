@@ -257,7 +257,11 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, FAKE_TEARS
+	dbw 6, WEATHER_BALL
+	dbw 6, RAIN_DANCE
+	dbw 6, SUNNY_DAY
+	dbw 6, SANDSTORM
+	dbw 6, HAIL
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
