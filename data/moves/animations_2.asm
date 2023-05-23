@@ -1692,10 +1692,29 @@ BattleAnim_WeatherBall:
 	anim_wait 64
 	anim_clearobjs
 
+	; default to NORMAL
+	anim_if_param_equal $1, .water
+	anim_if_param_equal $2, .fire
+	anim_if_param_equal $3, .ice
+	anim_if_param_equal $4, .rock
+
+	; NORMAL
 ;	anim_sound 0, 0, SFX_SWEET_KISS -when weather is active
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
 	anim_wait 100
+	anim_ret
+
+.water
+	anim_ret
+
+.fire
+	anim_ret
+
+.ice
+	anim_ret
+
+.rock
 	anim_ret
 
 BattleAnim_Aromatherapy:

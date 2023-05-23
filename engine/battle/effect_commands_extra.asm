@@ -249,6 +249,24 @@ BattleCommand_RechargeNextTurn:
 	set SUBSTATUS_RECHARGE, [hl]
 	ret
 
+BattleCommand_DoubleMinimizeDamage:
+	ld hl, wEnemyMinimized
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wPlayerMinimized
+.ok
+	ld a, [hl]
+	and a
+	ret z
+	jr DoubleDamage
+
+BattleCommand_DoubleWeatherBallDamage:
+	ld a, [wBattleWeather]
+	cp WEATHER_NONE
+	ret z
+	jr DoubleDamage
+
 BattleCommand_DoubleFlyingDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
@@ -271,28 +289,6 @@ BattleCommand_DoubleDivingDamage:
 	; fallthrough
 
 DoubleDamage:
-	ld hl, wCurDamage + 1
-	sla [hl]
-	dec hl
-	rl [hl]
-	jr nc, .quit
-
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-.quit
-	ret
-
-BattleCommand_DoubleMinimizeDamage:
-	ld hl, wEnemyMinimized
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wPlayerMinimized
-.ok
-	ld a, [hl]
-	and a
-	ret z
 	ld hl, wCurDamage + 1
 	sla [hl]
 	dec hl
