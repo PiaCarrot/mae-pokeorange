@@ -1811,34 +1811,51 @@ BattleAnim_AirCutter:
 	anim_ret
 
 BattleAnim_Overheat:
-	anim_1gfx ANIM_GFX_FIRE
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_SMOKE_PUFF
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 	anim_sound 0, 0, SFX_OUTRAGE
 	anim_wait 72
-	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
-	anim_wait 1
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $44, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 	anim_sound 0, 0, SFX_EMBER
 .loop
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $0
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $8
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $10
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $18
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $20
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $28
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $30
-	anim_obj ANIM_OBJ_OVERHEAT, 44, 88, $38
-	anim_wait 8
-	anim_loop 6, .loop
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $0
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $28
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $30
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $38
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $20
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $8
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $18
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $4
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $2b
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $14
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $3b
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $24
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 44, 88, $b
+	anim_wait 12
+	anim_clearobjs
+	anim_loop 5, .loop
+	anim_sound 0, 0, SFX_BURN
+	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $6
+	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2c
+	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $10
+	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $1d
+	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $39
+	anim_wait 16
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_obp0 $fc
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_CHARRED
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_CHARRED
+	anim_sound 0, 0, SFX_BALL_POOF
 .loop2
-	anim_sound 0, 0, SFX_BURN 
-	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $1
-	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $4
-	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $5
-	anim_wait 4
-	anim_loop 3, .loop2
+	anim_obj ANIM_OBJ_OVERHEAT_SMOKE, 36, 84, $30
+	anim_obj ANIM_OBJ_OVERHEAT_SMOKE, 120, 46, $30
+	anim_wait 1
+	anim_obj ANIM_OBJ_OVERHEAT_SMOKE, 60, 96, $30
+	anim_obj ANIM_OBJ_OVERHEAT_SMOKE, 144, 34, $30
+	anim_wait 8
+	anim_loop 6, .loop2
 	anim_wait 32
 	anim_ret
 
