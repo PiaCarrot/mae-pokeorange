@@ -1849,7 +1849,13 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_TRIPLE_KICK
 	jr z, .triplekick
+	cp EFFECT_WEATHER_BALL
+	jr z, .weather_anim
 	xor a
+	jr .got_anim
+.weather_anim
+	ld a, [wBattleWeather]
+.got_anim
 	ld [wBattleAnimParam], a
 
 .triplekick
@@ -6413,29 +6419,24 @@ GetCurrentMoveType:
 	cp WEATHER_HAIL
 	jr z, .set_ice_type
 ; sandstorm
-	ld a, 4
+	ld a, WEATHER_SANDSTORM
 	ld b, ROCK
 	jr .got_weather_type
 
 .set_normal_type
-	ld a, 0
 	ld b, NORMAL
 	jr .got_weather_type
 .set_water_type
-	ld a, 1
 	ld b, WATER
 	jr .got_weather_type
 .set_fire_type
-	ld a, 2
 	ld b, FIRE
 	jr .got_weather_type
 .set_ice_type
-	ld a, 3
 	ld b, ICE
 	;fallthrough
 
 .got_weather_type
-	ld [wBattleAnimParam], a
 	ld a, b
 	pop bc
 	ret

@@ -1695,8 +1695,8 @@ BattleAnim_WeatherBall:
 	; default to NORMAL
 	anim_if_param_equal $1, .water
 	anim_if_param_equal $2, .fire
-	anim_if_param_equal $3, .ice
-	anim_if_param_equal $4, .rock
+	anim_if_param_equal $3, .rock
+	anim_if_param_equal $4, .ice
 
 	; NORMAL
 	anim_sound 0, 0, SFX_METRONOME
@@ -1724,9 +1724,9 @@ BattleAnim_WeatherBall:
 	anim_wait 84
 	anim_ret
 
-.ice
+.rock
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
 	anim_sound 0, 0, SFX_SWEET_KISS
 	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
 	anim_wait 16
@@ -1734,9 +1734,9 @@ BattleAnim_WeatherBall:
 	anim_wait 84
 	anim_ret
 
-.rock
+.ice
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
 	anim_sound 0, 0, SFX_SWEET_KISS
 	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
 	anim_wait 16
