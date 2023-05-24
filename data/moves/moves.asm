@@ -337,7 +337,7 @@ Moves2:
 	move EFFECT_HEAL_BELL,           0, GRASS,          STATUS,   100,  5,   0 ; AROMATHERAPY
 	move EFFECT_SP_DEF_DOWN,         0, DARK,           STATUS,   100, 20,   0 ; FAKE_TEARS EFFECT_SP_DEF_DOWN_2
 	move EFFECT_NORMAL_HIT,         55, FLYING,         SPECIAL,   95, 25,   0 ; AIR_CUTTER
-	move EFFECT_NORMAL_HIT,        80, FIRE,           SPECIAL,   90,  5,   0 ; OVERHEAT EFFECT_SELF_SPATK_DN_2_HIT
+	move EFFECT_NORMAL_HIT,        140, FIRE,           SPECIAL,   90,  5,   0 ; OVERHEAT EFFECT_SELF_SPATK_DN_2_HIT
 	move EFFECT_FORESIGHT,           0, NORMAL,         STATUS,   100, 40,   0 ; ODOR_SLEUTH
 	move EFFECT_SPEED_DOWN_HIT,     50, ROCK,           PHYSICAL,  80, 10, 100 ; ROCK_TOMB
 	move EFFECT_ALL_UP_HIT,         60, BUG,            SPECIAL,  100,  5,  10 ; SILVER_WIND
