@@ -1803,7 +1803,6 @@ BattleAnim_Aromatherapy:
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GREEN
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
-
 .loop
 	anim_obj ANIM_OBJ_AROMATHERAPY, 148, 88, $22
 	anim_wait 8
@@ -1912,26 +1911,26 @@ BattleAnim_Overheat:
 	anim_ret
 
 BattleAnim_OdorSleuth:
-    anim_1gfx ANIM_GFX_SHINE
-    anim_call BattleAnim_UserObj_2Row_2
-    anim_sound 0, 0, SFX_TAIL_WHIP
-    anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
+	anim_1gfx ANIM_GFX_SHINE
+	anim_call BattleAnim_UserObj_2Row_2
+	anim_sound 0, 0, SFX_TAIL_WHIP
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
 .loop
-    anim_sound 0, 0, SFX_RAZOR_WIND
-    anim_wait 8
-    anim_loop 4, .loop
-    anim_wait 64
-    anim_incbgeffect ANIM_BG_WOBBLE_MON
-    anim_call BattleAnim_ShowMon_1_2
-    anim_wait 24
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_1_2
+	anim_wait 24
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-    anim_sound 0, 0, SFX_FORESIGHT
-    anim_obj ANIM_OBJ_FORESIGHT, 64, 88, $0
-    anim_wait 24
-    anim_ret	
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_obj ANIM_OBJ_FORESIGHT, 64, 88, $0
+	anim_wait 24
+	anim_ret
 
 BattleAnim_RockTomb:
-	anim_1gfx ANIM_GFX_ROCKS
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_OBJECTS
 	anim_obj ANIM_OBJ_ROCK_TOMB, 128, 70, $30
 	anim_wait 18
 	anim_sound 0, 1, SFX_EGG_BOMB
@@ -1948,10 +1947,47 @@ BattleAnim_RockTomb:
 	anim_wait 18
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $20, $2, $0
+	anim_wait 40
+	anim_clearobjs
+	anim_sound 6, 3, SFX_PLACE_PUZZLE_PIECE_DOWN
+	anim_obj ANIM_OBJ_RED_X, 132, 44, $2e
 	anim_wait 32
 	anim_ret
 
 BattleAnim_SilverWind:
+	anim_2gfx ANIM_GFX_HAZE, ANIM_GFX_SPEED
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgp $90
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+.loop
+	anim_obj ANIM_OBJ_WIND, 88, 32, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 56, 48, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 96, 80, $1
+	anim_obj ANIM_OBJ_WIND, 72, 64, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 24, 80, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 80, 56, $1
+	anim_obj ANIM_OBJ_WIND, 40, 96, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 88, 64, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 48, 64, $1
+	anim_obj ANIM_OBJ_WIND, 56, 48, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 72, 64, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 64, 32, $1
+	anim_obj ANIM_OBJ_WIND, 24, 80, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 40, 96, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 32, 96, $1
+	anim_loop 2, .loop
+	anim_wait 32
 	anim_ret
 
 BattleAnim_MetalSound:
