@@ -1707,36 +1707,23 @@ BattleAnim_WeatherBall:
 .water
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
-	anim_sound 0, 0, SFX_SWEET_KISS
-	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
-	anim_wait 16
-	anim_sound 0, 0, SFX_METRONOME
-	anim_wait 84
-	anim_ret
+	anim_jump .end_condition
 
 .fire
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
-	anim_sound 0, 0, SFX_SWEET_KISS
-	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
-	anim_wait 16
-	anim_sound 0, 0, SFX_METRONOME
-	anim_wait 84
-	anim_ret
+	anim_jump .end_condition
 
 .rock
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
-	anim_sound 0, 0, SFX_SWEET_KISS
-	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
-	anim_wait 16
-	anim_sound 0, 0, SFX_METRONOME
-	anim_wait 84
-	anim_ret
+	anim_jump .end_condition
 
 .ice
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+
+.end_condition
 	anim_sound 0, 0, SFX_SWEET_KISS
 	anim_obj ANIM_OBJ_WEATHER_BALL_FALL, 108, 196, $0e
 	anim_wait 16
