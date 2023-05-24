@@ -1960,7 +1960,6 @@ BattleAnim_SilverWind:
 	anim_bgp $90
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
-.loop
 	anim_obj ANIM_OBJ_WIND, 88, 32, $1
 	anim_wait 8
 	anim_obj ANIM_OBJ_WIND, 56, 48, $1
@@ -1986,15 +1985,21 @@ BattleAnim_SilverWind:
 	anim_obj ANIM_OBJ_WIND, 40, 96, $1
 	anim_wait 8
 	anim_obj ANIM_OBJ_WIND_SPARKLE, 32, 96, $1
-	anim_loop 2, .loop
-	anim_wait 32
+	anim_obj ANIM_OBJ_WIND, 88, 32, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 56, 48, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 72, 64, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_WIND, 24, 80, $1
+	anim_wait 8
 	anim_ret
 
 BattleAnim_MetalSound:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $16, $1, $20
-	anim_sound 6, 2, SFX_SUPERSONIC
+	anim_sound 6, 2, SFX_UNKNOWN_5F
 .loop
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 2
