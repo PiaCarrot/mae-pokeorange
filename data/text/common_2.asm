@@ -1510,9 +1510,9 @@ if !DEF(_DEBUG)
 	para "Welcome to the"
 	line "world of #MON!"
 
-	para "My name is OAK."
+	para "My name is IVY."
 
-	para "People call me the"
+	para "People call me a"
 	line "#MON PROF."
 endc
 	prompt

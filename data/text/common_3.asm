@@ -24,7 +24,7 @@ if !DEF(_DEBUG)
 endc
 
 	para "I'll be seeing you"
-	line "later!"
+	line "soon!"
 	done
 
 _ClockTimeMayBeWrongText::

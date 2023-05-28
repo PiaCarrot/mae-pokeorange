@@ -76,6 +76,7 @@ INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+Lorelei1Palette:
 INCBIN "gfx/trainers/lorelei1.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei2.gbcpal", middle_colors
 INCBIN "gfx/trainers/lorelei3.gbcpal", middle_colors

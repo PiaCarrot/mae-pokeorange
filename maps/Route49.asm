@@ -49,7 +49,7 @@ Route49YouDontHaveMon2:
 Route49Lorelei:
 	turnobject ROUTE_49_LORELEI, DOWN
 	showemote EMOTE_SHOCK, ROUTE_49_LORELEI, 15
-	playmusic MUSIC_AZALEA_TOWN
+	playmusic MUSIC_FOUR_ISLAND
 	applymovement ROUTE_49_LORELEI, Route49LoreleiMovement1
 	opentext
 	writetext Route49LoreleiText1
@@ -61,6 +61,8 @@ Route49Lorelei:
 	promptbutton
 	itemnotify
 	closetext
+	loadwildmon BELLSPROUT, 5
+	catchtutorial BATTLETYPE_TUTORIAL
 	setscene SCENE_ROUTE_49_NOOP
 	applymovement ROUTE_49_LORELEI, Route49LoreleiMovement2
 	disappear ROUTE_49_LORELEI
@@ -226,9 +228,6 @@ Route49Swoop:
 	
 Route49Depths:
 	jumpstd MonDepthsScript
-	
-TestRock1:
-	jumpstd SmashRockScript
 
 Route49_MapEvents:
 	db 0, 0 ; filler
@@ -253,6 +252,3 @@ Route49_MapEvents:
 	object_event 25, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route49FreshWater, EVENT_ROUTE_49_FRESHWATER
 	object_event  7,  8, SPRITE_SHADOW, SPRITEMOVEDATA_WANDER, 5, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Swoop, -1
 	object_event 30, 34, SPRITE_SHADOW, SPRITEMOVEDATA_SWIM_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route49Depths, -1
-	object_event 35, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TestRock1, -1
-	object_event 33, 23, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TestRock1, -1
-	object_event 32, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TestRock1, -1

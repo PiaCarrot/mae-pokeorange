@@ -688,7 +688,7 @@ GetPlayerOrMonPalettePointer:
 	jr nz, .male
     ld a, [wBattleType]
     cp BATTLETYPE_TUTORIAL
-    jr z, .ivy
+    jr z, .checkforlorelei
 	ld a, [wPlayerGender]
 	and a
 	jr z, .male
@@ -698,7 +698,14 @@ GetPlayerOrMonPalettePointer:
 .male
 	ld hl, PlayerPalette
 	ret
-	
+
+.checkforlorelei
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_49
+	jr nz, .ivy
+	ld hl, Lorelei1Palette
+	ret
+
 .ivy
 	ld hl, PokemonProfPalette
 	ret
