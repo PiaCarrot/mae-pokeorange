@@ -60,9 +60,23 @@ Route49Lorelei:
 	writetext Route49LoreleiText2
 	promptbutton
 	itemnotify
-	closetext
+	writetext Route49LoreleiText3
+	yesorno
+	iffalse .Continue
+	writetext Route49LoreleiText4
+	waitbutton
+	applymovement ROUTE_49_LORELEI, Route49LoreleiMovement3
 	loadwildmon BELLSPROUT, 5
 	catchtutorial BATTLETYPE_TUTORIAL
+	playmusic MUSIC_FOUR_ISLAND
+	applymovement ROUTE_49_LORELEI, Route49LoreleiMovement4
+	opentext
+	writetext Route49LoreleiText5
+	waitbutton
+.Continue
+	writetext Route49LoreleiText6
+	waitbutton
+	closetext
 	setscene SCENE_ROUTE_49_NOOP
 	applymovement ROUTE_49_LORELEI, Route49LoreleiMovement2
 	disappear ROUTE_49_LORELEI
@@ -139,8 +153,31 @@ Route49LoreleiText2:
 	para "You throw them at"
 	line "Wild #MON to"
 	cont "capture them."
+	done
 	
-	para "Anyway, I should"
+Route49LoreleiText3:
+	text "PRIMA: So, do you"
+	line "need a brush up on"
+	cont "how to catch"
+	cont "#MON?"
+	done
+	
+Route49LoreleiText4:
+	text "Okay…"
+	line "First, you need to"
+	cont "walk in tall grass"
+	cont "to encounter wild"
+	cont "#MON!"
+	done
+
+Route49LoreleiText5:
+	text "PRIMA: And that's"
+	line "how it's done!"
+	cont "Hope that helps!"
+	done
+
+Route49LoreleiText6:
+	text "Anyway, I should"
 	line "get going. Here,"
 	cont "let me see your"
 	cont "#PAGE so I can"
@@ -185,6 +222,14 @@ Route49LoreleiMovement2:
 	step RIGHT
 	step RIGHT
 	jump_step RIGHT
+	step_end
+	
+Route49LoreleiMovement3:
+	step UP
+	step_end
+	
+Route49LoreleiMovement4:
+	step DOWN
 	step_end
 	
 TrainerTipsRoute49Sign:
