@@ -150,7 +150,7 @@ Init::
 
 	ldh a, [hCGB]
 	and a
-	call nz, DoubleSpeed
+	call nz, NormalSpeed
 
 	xor a
 	ldh [rIF], a
