@@ -2027,31 +2027,94 @@ BattleAnim_CosmicPower:
 	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_COSMIC
 	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_COSMIC_POWER
 	anim_clearenemyhud
-	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
 	anim_bgp $1b
-
-	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
+	anim_sound 0, 0, SFX_GAME_FREAK_LOGO_GS
 	anim_obj ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
 	anim_wait 64
 	anim_sound 0, 0, SFX_METRONOME
-		anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 .loop
 	anim_obj ANIM_OBJ_COSMIC_POWER, 61, 75, $5c
-	anim_wait 2
+	anim_wait 4
 	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 81, $d8
-	anim_wait 2
+	anim_wait 4
 	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 106, $d0
-	anim_wait 2
+	anim_wait 4
 	anim_obj ANIM_OBJ_COSMIC_POWER, 56, 100, $50
-	anim_wait 2
-	anim_loop 5, .loop
+	anim_wait 4
+	anim_loop 3, .loop
 	anim_wait 32
-    anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_ret
 
 
 BattleAnim_WaterSpout:
+	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+.loop
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 52, 80, $30
+	anim_wait 2
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 46, 80, $30
+	anim_wait 2
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 54, 80, $30
+	anim_wait 2
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 32
+	anim_sound 0, 0, SFX_BUBBLEBEAM
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 108, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 156, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 116, 1, $10
+	anim_wait 2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
+.loop2
+	anim_obj ANIM_OBJ_HIT_YFIX, 108, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 150, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 156, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 124, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 140, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 150, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 132, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 108, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 156, 1, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 132, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 116, 1, $10
+	anim_wait 2
+	anim_loop 2, .loop2
+	anim_obj ANIM_OBJ_HIT_YFIX, 108, 68, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 156, 68, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
+	anim_wait 2
+	anim_wait 32
+	anim_ret
+
 BattleAnim_SignalBeam:
 BattleAnim_ShadowPunch:
 BattleAnim_Extrasensory:

@@ -68,5 +68,5 @@ AnimObjGFX:
 	anim_obj_gfx  4, AnimObjHydroCannonGFX
 	anim_obj_gfx 16, AnimObjFrenzyPlantGFX
 	anim_obj_gfx 16, AnimObjWeatherBallGFX
-	anim_obj_gfx  4, AnimObjCosmicPowerGFX
+	anim_obj_gfx  5, AnimObjCosmicPowerGFX
 	assert_table_length NUM_ANIM_GFX + 1
