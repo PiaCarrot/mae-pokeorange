@@ -2018,12 +2018,39 @@ BattleAnim_Tickle:
 	anim_obj ANIM_OBJ_FORESIGHT, 32, 88, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_SWEET_SCENT
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
 	anim_wait 32
 	anim_incbgeffect ANIM_BG_WOBBLE_MON
 	anim_jump BattleAnim_ShowMon_1_2
 
 BattleAnim_CosmicPower:
+	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_COSMIC
+	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_COSMIC_POWER
+	anim_clearenemyhud
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
+	anim_bgp $1b
+
+	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_obj ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
+	anim_wait 64
+	anim_sound 0, 0, SFX_METRONOME
+		anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+
+.loop
+	anim_obj ANIM_OBJ_COSMIC_POWER, 61, 75, $5c
+	anim_wait 2
+	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 81, $d8
+	anim_wait 2
+	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 106, $d0
+	anim_wait 2
+	anim_obj ANIM_OBJ_COSMIC_POWER, 56, 100, $50
+	anim_wait 2
+	anim_loop 5, .loop
+	anim_wait 32
+    anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_ret
+
+
 BattleAnim_WaterSpout:
 BattleAnim_SignalBeam:
 BattleAnim_ShadowPunch:

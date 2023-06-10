@@ -308,6 +308,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_OVERHEAT_SMOKE
 	const ANIM_OBJ_ICE_SPLASH
 	const ANIM_OBJ_WIND
+	const ANIM_OBJ_COSMIC_POWER_BG
+	const ANIM_OBJ_COSMIC_POWER
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -401,6 +403,7 @@ DEF NUM_ANIM_OBJS EQU const_value
 	const BATTLEANIMFUNC_RADIAL_MOVE_IN
 	const BATTLEANIMFUNC_BUBBLE_SPLASH
 	const BATTLEANIMFUNC_OBJECT_HOVER
+	const BATTLEANIMFUNC_RADIAL_MOVE_OUT_VERY_SLOW
 DEF NUM_BATTLEANIMFUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -637,6 +640,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_E5
 	const BATTLEANIMFRAMESET_E6
 	const BATTLEANIMFRAMESET_E7
+	const BATTLEANIMFRAMESET_E8
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -883,6 +887,7 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_EF
 	const BATTLEANIMOAMSET_F0
 	const BATTLEANIMOAMSET_F1
+	const BATTLEANIMOAMSET_F2
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -1005,6 +1010,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_HYDRO_CANNON
 	const ANIM_GFX_FRENZY_PLANT
 	const ANIM_GFX_WEATHER_BALL
+	const ANIM_GFX_COSMIC_POWER
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1079,6 +1085,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_BRIGHT          ; 1a
 	const PAL_BTLCUSTOM_VERY_BRIGHT     ; 1b
 	const PAL_BTLCUSTOM_CHARRED         ; 1c
+	const PAL_BTLCUSTOM_COSMIC          ; 1d
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
