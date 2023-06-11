@@ -252,6 +252,7 @@ BattleAnimOAMData:
 	battleanimoam $00, 20, .OAMData_f2 ; BATTLEANIMOAMSET_F2
 	battleanimoam $0a,  1, .OAMData_f3 ; BATTLEANIMOAMSET_F3
 	battleanimoam $0a,  1, .OAMData_60 ; BATTLEANIMOAMSET_F4
+	battleanimoam $09,  4, .OAMData_02 ; BATTLEANIMOAMSET_F5
 	assert_table_length NUM_BATTLEANIMOAMSETS
 
 .OAMData_11:

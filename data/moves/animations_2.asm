@@ -2116,8 +2116,70 @@ BattleAnim_WaterSpout:
 	anim_ret
 
 BattleAnim_SignalBeam:
+	anim_1gfx ANIM_GFX_GLOW
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_SIGNAL_BEAM_RED
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SIGNAL_BEAM_BLUE
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+.loop
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM_R, 64, 92, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM_B, 64, 92, $0
+	anim_wait 4
+
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM_R, 64, 92, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM_B, 64, 92, $0
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_wait 64
+	anim_ret
+
 BattleAnim_ShadowPunch:
+	anim_1gfx ANIM_GFX_HIT
+	anim_battlergfx_2row
+	anim_bgp $f8
+	anim_sound 6, 2, SFX_CURSE
+	anim_wait 32
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_SIDE_PUNCH, 88, 56, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 32
+	anim_jump BattleAnim_ShowMon_0_2
+
 BattleAnim_Extrasensory:
+	anim_1gfx ANIM_GFX_SHINE
+	anim_call BattleAnim_UserObj_2Row_Special
+	anim_sound 0, 1, SFX_CUT
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_obj ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_wait 40
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
+	anim_obj ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_NIGHT_SHADE
+	anim_wait 8
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_TELEPORT, $0, $0, $0
+	anim_obj ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_PSYCHIC
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_TELEPORT
+	anim_call BattleAnim_ShowMon_1_2
+	anim_ret
+
+
 BattleAnim_SkyUppercut:
 BattleAnim_SandTomb:
 BattleAnim_SheerCold:
@@ -2182,9 +2244,8 @@ BattleAnim_IronDefense:
 BattleAnim_Block:
 BattleAnim_Howl:
 BattleAnim_DragonClaw:
+
 BattleAnim_FrenzyPlant:
-
-
 	anim_3gfx ANIM_GFX_FRENZY_PLANT, ANIM_GFX_ROOTS, ANIM_GFX_PLANT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $80, $2, $0
 	anim_sound 16, 2, SFX_VINE_WHIP
