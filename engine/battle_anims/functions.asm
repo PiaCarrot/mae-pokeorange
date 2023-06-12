@@ -104,6 +104,7 @@ DoBattleAnimFrame:
 	dw BattleAnimFunction_BubbleSplash
 	dw BattleAnimFunction_ObjectHover
 	dw BattleAnimFunction_RadialMoveOut_VerySlow
+	dw BattleAnimFunction_RadialMoveOut_VeryFast_NoStop
 	assert_table_length NUM_BATTLEANIMFUNCS
 
 BattleAnimFunction_Null:
@@ -4692,3 +4693,47 @@ BattleAnimFunction_ObjectHover:
 	ret nc
 	ld a, 8
 	jmp BattleAnim_StepToTarget
+
+BattleAnimFunction_RadialMoveOut_VeryFast_NoStop:
+	call BattleAnim_AnonJumptable
+
+	dw .initialize
+	dw .step
+
+.initialize
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	xor a
+	ld [hld], a
+	ld [hl], a ; initial position = 0
+	call BattleAnim_IncAnonJumptableIndex
+.step
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	push hl
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ld hl, 15.0 ; speed
+	add hl, de
+	ld a, h
+	ld e, l
+	pop hl
+	ld [hli], a
+	ld [hl], e
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld e, [hl]
+	push de
+	ld a, e
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	ld a, e
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ret

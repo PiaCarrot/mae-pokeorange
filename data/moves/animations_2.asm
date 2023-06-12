@@ -2128,7 +2128,6 @@ BattleAnim_SignalBeam:
 	anim_sound 0, 0, SFX_SPITE
 	anim_obj ANIM_OBJ_SIGNAL_BEAM_B, 64, 92, $0
 	anim_wait 4
-
 	anim_sound 0, 0, SFX_SPITE
 	anim_obj ANIM_OBJ_SIGNAL_BEAM_R, 64, 92, $0
 	anim_wait 4
@@ -2142,7 +2141,7 @@ BattleAnim_SignalBeam:
 BattleAnim_ShadowPunch:
 	anim_1gfx ANIM_GFX_HIT
 	anim_battlergfx_2row
-	anim_bgp $f8
+	anim_bgp $1b
 	anim_sound 6, 2, SFX_CURSE
 	anim_wait 32
 	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
@@ -2181,7 +2180,41 @@ BattleAnim_Extrasensory:
 
 
 BattleAnim_SkyUppercut:
+	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SKY_UPPERCUT,  12, 36, $30
+	anim_obj ANIM_OBJ_SKY_UPPERCUT,  40, 133, $30
+	anim_obj ANIM_OBJ_SKY_UPPERCUT,  68, 67, $30
+	anim_obj ANIM_OBJ_SKY_UPPERCUT,  96, 11, $30
+	anim_obj ANIM_OBJ_SKY_UPPERCUT, 122, 109, $30
+	anim_obj ANIM_OBJ_SKY_UPPERCUT, 140, 162, $30
+	anim_wait 40
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $28, $2, $0
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_UPPERCUT_PUNCH, 136, 86, $30
+	anim_wait 6
+	anim_obj ANIM_OBJ_RISING_HIT, 136, 56, $30
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 14
+	anim_ret
+
+
 BattleAnim_SandTomb:
+	anim_1gfx ANIM_GFX_POWDER
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+.loop
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SAND_TOMB, 136, 70, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SAND_TOMB, 136, 62, $0
+	anim_wait 4
+	anim_loop 7, .loop
+	anim_wait 40
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_jump BattleAnim_ShowMon_1_2
+
 BattleAnim_SheerCold:
 	anim_ret
 

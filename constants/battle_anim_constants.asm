@@ -203,7 +203,6 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_BELLY_DRUM_HAND
 	const ANIM_OBJ_BELLY_DRUM_NOTE
 	const ANIM_OBJ_MEAN_LOOK
-	const ANIM_OBJ_BETA_PURSUIT
 	const ANIM_OBJ_SHOOTING_SPARKLE
 	const ANIM_OBJ_RAIN
 	const ANIM_OBJ_B0
@@ -315,6 +314,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SIGNAL_BEAM_R
 	const ANIM_OBJ_SIGNAL_BEAM_B
 	const ANIM_OBJ_SIDE_PUNCH
+	const ANIM_OBJ_SKY_UPPERCUT
+	const ANIM_OBJ_UPPERCUT_PUNCH
+	const ANIM_OBJ_RISING_HIT
+	const ANIM_OBJ_SAND_TOMB
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -409,6 +412,7 @@ DEF NUM_ANIM_OBJS EQU const_value
 	const BATTLEANIMFUNC_BUBBLE_SPLASH
 	const BATTLEANIMFUNC_OBJECT_HOVER
 	const BATTLEANIMFUNC_RADIAL_MOVE_OUT_VERY_SLOW
+	const BATTLEANIMFUNC_RADIAL_MOVE_OUT_VERY_FAST_NO_STOP
 DEF NUM_BATTLEANIMFUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -649,6 +653,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_E9
 	const BATTLEANIMFRAMESET_EA
 	const BATTLEANIMFRAMESET_EB
+	const BATTLEANIMFRAMESET_EC
+	const BATTLEANIMFRAMESET_ED
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -899,6 +905,7 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_F3
 	const BATTLEANIMOAMSET_F4
 	const BATTLEANIMOAMSET_F5
+	const BATTLEANIMOAMSET_F6
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
