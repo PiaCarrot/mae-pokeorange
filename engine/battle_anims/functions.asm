@@ -4551,7 +4551,7 @@ BattleAnimFunction_RadialMoveOut_VerySlow:
 	ld a, [hli]
 	ld e, [hl]
 	ld d, a
-	ld hl, 0.1 ; speed
+	ld hl, 0.08 ; speed
 	add hl, de
 	ld a, h
 	ld e, l

@@ -659,9 +659,11 @@ BattleAnim_RolePlay:
 	anim_ret
 
 BattleAnim_Wish:
-	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_STARS
+	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_COSMIC
+	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_COSMIC_POWER
 	anim_clearenemyhud
 	anim_bgp $1b
+	anim_obj ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
 	anim_wait 16
@@ -679,15 +681,11 @@ BattleAnim_Wish:
 	anim_obj ANIM_OBJ_WISH_2, 130, 64, $0
 	anim_wait 80
 	anim_clearobjs
+	anim_obj ANIM_OBJ_COSMIC_POWER_BG, 61, 60, $30
 	anim_incbgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $0, $0
 	anim_sound 0, 0, SFX_MOONLIGHT
-	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_GLIMMER, 24, 96, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
-	anim_wait 32
+	anim_wait 42
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_ret
 
@@ -2036,16 +2034,18 @@ BattleAnim_CosmicPower:
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 .loop
-	anim_obj ANIM_OBJ_COSMIC_POWER, 61, 75, $5c
+	anim_obj ANIM_OBJ_COSMIC_POWER, 56, 88, $32
 	anim_wait 4
-	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 81, $d8
+	anim_obj ANIM_OBJ_COSMIC_POWER, 40, 88, $2c
 	anim_wait 4
-	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 106, $d0
+	anim_obj ANIM_OBJ_COSMIC_POWER, 60, 104, $34
 	anim_wait 4
-	anim_obj ANIM_OBJ_COSMIC_POWER, 56, 100, $50
+	anim_obj ANIM_OBJ_COSMIC_POWER, 36, 104, $2e
 	anim_wait 4
 	anim_loop 3, .loop
 	anim_wait 32
+	anim_clearobjs
+	anim_wait 1
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_ret
 
@@ -2215,62 +2215,114 @@ BattleAnim_SandTomb:
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
 	anim_jump BattleAnim_ShowMon_1_2
 
+
 BattleAnim_SheerCold:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+	anim_1gfx ANIM_GFX_ICE
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 16, 36, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 40, 96, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 64, 26, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 80, 64, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_ICE_BUILDUP, 136, 74, $10
+	anim_bgp $90
+	anim_setbgpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_ICE
+.loop
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 108, 88, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 112, 31, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 138, 68, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 144, 110, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 154, 40, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 16, 36, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 40, 96, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 64, 26, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 80, 64, $0
+	anim_wait 2
+	anim_loop 4, .loop
+	anim_sound 0, 1, SFX_CUT
+	anim_bgp $0b
+	anim_wait 80
 	anim_ret
 
+
 BattleAnim_MuddyWater:
-; 	anim_1gfx ANIM_GFX_BUBBLE
-; 	anim_bgp $f8
-; 	anim_bgeffect ANIM_BG_SURF, $0, $0, $0
-; 	anim_obj ANIM_OBJ_MUDDY_WATER, 88, 104, $8
-; .loop
-; 	anim_sound 0, 1, SFX_SURF
-; 	anim_wait 32
-; 	anim_loop 4, .loop
-; 	anim_incobj 1
-; 	anim_wait 56
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BROWN
+	anim_1gfx ANIM_GFX_BUBBLE
+	anim_bgp $f8
+	anim_bgeffect ANIM_BG_SURF, $0, $0, $0
+	anim_obj ANIM_OBJ_SURF, 88, 104, $8
+.loop
+	anim_sound 0, 1, SFX_SURF
+	anim_wait 32
+	anim_loop 4, .loop
+	anim_incobj 1
+	anim_wait 56
 	anim_ret
 
 BattleAnim_BulletSeed:
-    anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_HIT
+	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_HIT    
+	anim_sound 0, 1, SFX_BONE_CLUB
 .loop
-    anim_obj ANIM_OBJ_SEED, 64, 92, $18
-    anim_wait 8
-    anim_obj ANIM_OBJ_SEED, 56, 84, $18
-    anim_sound 0, 1, SFX_VINE_WHIP
-    anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-    anim_wait 8
-    anim_obj ANIM_OBJ_SEED, 52, 88, $18
-    anim_sound 0, 1, SFX_VINE_WHIP
-    anim_obj ANIM_OBJ_HIT_YFIX, 128, 48, $0
-    anim_wait 8
-    anim_sound 0, 1, SFX_VINE_WHIP
-    anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
-    anim_loop 3, .loop
-    anim_wait 16
-    anim_ret
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $6
+	anim_wait 7
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $6
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 7
+	anim_obj ANIM_OBJ_BULLET_SEED, 64, 90, $6
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 7
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_loop 3, .loop
+	anim_wait 16
+	anim_ret
 
 BattleAnim_AerialAce:
-    anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
-    anim_sound 0, 0, SFX_MENU
-    anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-    anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
-    anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
-    anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
-    anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
-    anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
-    anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
-    anim_wait 12
-    anim_sound 0, 1, SFX_WING_ATTACK
-    anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 160, 40, $0
-    anim_wait 24
-    anim_sound 0, 1, SFX_CUT
-    anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
-    anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 68, $0
-    anim_wait 8
-    anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-    anim_wait 24
-    anim_ret
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
+	anim_sound 0, 0, SFX_MENU
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_sound 0, 1, SFX_WING_ATTACK
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 160, 40, $0
+	anim_wait 24
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_obj ANIM_OBJ_CUT_UP_RIGHT, 120, 68, $0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
 
 BattleAnim_IcicleSpear:
 BattleAnim_IronDefense:
