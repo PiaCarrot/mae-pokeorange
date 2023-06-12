@@ -114,7 +114,7 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	dbw 1, COSMIC_POWER
+	dbw 1, DRAGON_CLAW
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:

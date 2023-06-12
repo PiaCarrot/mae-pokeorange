@@ -1967,6 +1967,7 @@ BattleAnim_Twineedle:
 	anim_ret
 
 BattleAnim_PinMissile:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_MEDIUM_HORN, 64, 92, $28
@@ -1985,6 +1986,7 @@ BattleAnim_PinMissile:
 	anim_ret
 
 BattleAnim_SpikeCannon:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 .loop
