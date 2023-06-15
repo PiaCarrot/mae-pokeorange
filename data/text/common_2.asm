@@ -1543,7 +1543,7 @@ _OakText4::
 	prompt
 
 _OakText5::
-	text "But we don't know"
+	text "We don't know"
 	line "everything about"
 	cont "#MON yet."
 
@@ -1552,5 +1552,5 @@ _OakText5::
 	cont "solve."
 
 	para "That's why I study"
-	line "#MON every day."
+	line "#MON."
 	prompt
