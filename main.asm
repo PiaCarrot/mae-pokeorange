@@ -391,7 +391,7 @@ INCLUDE "data/battle_anims/oam.asm"
 
 SECTION "Move Assets", ROMX
 
-INCLUDE "data/battle_anims/framesets.asm"
+INCLUDE "engine/battle_anims/framesets.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
 
 
