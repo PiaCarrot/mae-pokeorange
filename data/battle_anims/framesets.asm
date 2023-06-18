@@ -1597,6 +1597,6 @@ BattleAnimFrameData:
 
 .Frameset_ef:
 	oamframe BATTLEANIMOAMSET_F7,  32
-	oamframe BATTLEANIMOAMSET_F8,  32
-	oamframe BATTLEANIMOAMSET_F8,  32
-	oamdelete
+	oamframe BATTLEANIMOAMSET_F8,  24
+	oamframe BATTLEANIMOAMSET_F8,  24
+	oamend
