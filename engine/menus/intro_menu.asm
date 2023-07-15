@@ -381,7 +381,7 @@ Continue:
 	jr z, .SpawnAfterE4
 	ld a, MAPSETUP_CONTINUE
 	ldh [hMapEntryMethod], a
-	jmp FinishContinueFunction
+	jr FinishContinueFunction
 
 .FailToLoad:
 	ret

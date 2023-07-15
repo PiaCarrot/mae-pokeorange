@@ -212,7 +212,7 @@ MACRO dict
 		; Locals can use a short jump
 		jr z, \2
 	else
-		jmp z, \2
+		jp z, \2
 	endc
 ENDM
 

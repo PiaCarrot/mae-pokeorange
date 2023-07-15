@@ -510,7 +510,7 @@ DetermineMoveOrder:
 .use_move
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
-	jmp nz, .player_first
+	jr nz, .player_first
 	call CompareMovePriority
 	jr z, .equal_priority
 	jr c, .player_first ; player goes first
@@ -4338,7 +4338,7 @@ PursuitSwitch:
 	call GetMoveEffect
 	ld a, b
 	cp EFFECT_PURSUIT
-	jr nz, .done
+	jmp nz, .done
 
 	ld a, [wCurBattleMon]
 	push af
@@ -6041,7 +6041,7 @@ ParseEnemyAction:
 .loop
 	ld a, [hl]
 	and a
-	jmp z, .struggle
+	jr z, .struggle
 	ld a, [wEnemyDisabledMove]
 	cp [hl]
 	jr z, .disabled
@@ -8041,7 +8041,7 @@ FillInExpBar:
 	pop hl
 	ld de, 7
 	add hl, de
-	jmp PlaceExpBar
+	jr PlaceExpBar
 
 CalcExpBar:
 ; Calculate the percent exp between this level and the next

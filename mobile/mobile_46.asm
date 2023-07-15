@@ -4327,7 +4327,7 @@ Function11a00e:
 	jr z, .asm_11a039
 	dec a
 	jr z, .asm_11a081
-	jmp Function11a0ca
+	jr Function11a0ca
 
 .asm_11a039
 	ld a, BANK(w3_d800)

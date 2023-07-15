@@ -3787,7 +3787,7 @@ BattleCommand_BurnTarget:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jmp nz, Defrost
+	jr nz, Defrost
 	ld b, HELD_PREVENT_BURN
 	call RunStatusTargetChecks
 	ret nz
