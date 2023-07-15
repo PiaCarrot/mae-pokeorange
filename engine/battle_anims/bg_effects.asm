@@ -549,7 +549,7 @@ BattleBGEffect_BattlerObj_2Row:
 	ret
 
 _QueueBattleAnimation:
-	callfar QueueBattleAnimation
+	farcall QueueBattleAnimation
 	ret
 
 BattleBGEffect_RemoveMon:

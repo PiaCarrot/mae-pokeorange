@@ -71,7 +71,7 @@ CheckCanLearnMoveTutorMove:
 	jr .didnt_learn
 
 .can_learn
-	callfar KnowsMove
+	farcall KnowsMove
 	jr c, .didnt_learn
 
 	predef LearnMove
@@ -80,7 +80,7 @@ CheckCanLearnMoveTutorMove:
 	jr z, .didnt_learn
 
 	ld c, HAPPINESS_LEARNMOVE
-	callfar ChangeHappiness
+	farcall ChangeHappiness
 	jr .learned
 
 .didnt_learn

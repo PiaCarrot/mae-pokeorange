@@ -858,7 +858,7 @@ BattleAnimCmd_BattlerGFX_2Row:
 	ret
 
 BattleAnimCmd_CheckPokeball:
-	callfar GetPokeBallWobble
+	farcall GetPokeBallWobble
 	ld a, c
 	ld [wBattleAnimVar], a
 	ret
@@ -1160,11 +1160,11 @@ BattleAnimCmd_DropSub:
 	and a
 	jr z, .player
 
-	callfar DropEnemySub
+	farcall DropEnemySub
 	jr .done
 
 .player
-	callfar DropPlayerSub
+	farcall DropPlayerSub
 
 .done
 	pop af
@@ -1256,7 +1256,7 @@ BattleAnimCmd_Sound:
 	call GetBattleAnimByte
 	ld e, a
 	ld d, 0
-	callfar PlayStereoSFX
+	farcall PlayStereoSFX
 
 	ret
 
@@ -1344,7 +1344,7 @@ endr
 	ld a, 1
 	ld [wStereoPanningMask], a
 
-	callfar _PlayCry
+	farcall _PlayCry
 
 .done
 	pop af
