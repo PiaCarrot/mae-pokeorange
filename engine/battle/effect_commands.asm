@@ -106,7 +106,7 @@ DoMove:
 	bit 7, h
 	res 7, h
 	ld a, BANK("Effect Commands Extra")
-	jmp nz, FarCall
+	jmp nz, FarCall_hl
 	jp hl
 
 CheckTurn:
