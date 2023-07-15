@@ -79,8 +79,7 @@ DeinitBattleAnimation:
 
 BattleAnimOAMUpdate:
 	call InitBattleAnimBuffer
-	farcall GetBattleAnimFrame
-	ld a, h
+	call GetBattleAnimFrame
 	cp oamwait_command
 	jmp z, .done
 	cp oamdelete_command
