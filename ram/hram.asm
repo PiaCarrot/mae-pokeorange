@@ -174,4 +174,9 @@ hClockResetTrigger:: db
 
 hDelayFrameLY:: db
 
-	ds 18
+hFarCallSavedA:: db
+hFarCallSavedHL::
+hFarCallSavedL:: db
+hFarCallSavedH:: db
+
+	ds 15
