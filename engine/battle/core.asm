@@ -4357,7 +4357,7 @@ PursuitSwitch:
 	ld [wCurBattleMon], a
 .do_turn
 	ld a, BANK(DoPlayerTurn) ; aka BANK(DoEnemyTurn)
-	rst FarCall
+	call FarCall_hl
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
@@ -4612,7 +4612,7 @@ UseHeldStatusHealingItem:
 .got_pointer
 	call SwitchTurnCore
 	ld a, BANK(CalcPlayerStats) ; aka BANK(CalcEnemyStats)
-	rst FarCall
+	call FarCall_hl
 	call SwitchTurnCore
 	call ItemRecoveryAnim
 	call UseOpponentItem
@@ -4711,7 +4711,7 @@ HandleStatBoostingHeldItems:
 	ld h, [hl]
 	ld l, a
 	ld a, BANK(BattleCommand_AttackUp)
-	rst FarCall
+	call FarCall_hl
 	pop bc
 	pop de
 	ld a, [wFailedMessage]
@@ -8210,7 +8210,7 @@ GetBattleMonBackpic_DoAnim:
 	xor a
 	ldh [hBattleTurn], a
 	ld a, BANK(BattleAnimCommands)
-	rst FarCall
+	call FarCall_hl
 	pop af
 	ldh [hBattleTurn], a
 	ret
@@ -8241,7 +8241,7 @@ GetEnemyMonFrontpic_DoAnim:
 	push af
 	call SetEnemyTurn
 	ld a, BANK(BattleAnimCommands)
-	rst FarCall
+	call FarCall_hl
 	pop af
 	ldh [hBattleTurn], a
 	ret

@@ -10,8 +10,7 @@ Special::
 	ld h, [hl]
 	ld l, a
 	ld a, b
-	rst FarCall
-	ret
+	jmp FarCall_hl
 
 INCLUDE "data/events/special_pointers.asm"
 
@@ -221,7 +220,7 @@ StartGameCornerGame:
 	ld h, [hl]
 	ld l, a
 	pop af
-	rst FarCall
+	call FarCall_hl
 	call ExitAllMenus
 	ret
 

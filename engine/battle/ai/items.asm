@@ -117,7 +117,7 @@ SwitchSometimes:
 	farcall CheckAbleToSwitch
 	ld a, [wEnemySwitchMonParam]
 	and $f0
-	jmp z, DontSwitch
+	jr z, DontSwitch
 
 	cp $10
 	jr nz, .not_10

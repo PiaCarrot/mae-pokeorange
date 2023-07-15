@@ -5654,11 +5654,11 @@ Function11ad1b:
 	ld hl, LoadMenuMonIcon
 	ld a, BANK(LoadMenuMonIcon)
 	ld e, MONICON_MOBILE1
-	rst FarCall
+	call FarCall_hl
 	ld hl, LoadMenuMonIcon
 	ld a, BANK(LoadMenuMonIcon)
 	ld e, MONICON_MOBILE2
-	rst FarCall
+	call FarCall_hl
 	ld hl, wPokedexOrder
 	ld bc, $0115
 	xor a

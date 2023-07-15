@@ -106,7 +106,7 @@ DoMove:
 	bit 7, h
 	res 7, h
 	ld a, BANK("Effect Commands Extra")
-	jp nz, FarCall
+	jmp nz, FarCall
 	jp hl
 
 CheckTurn:
@@ -3433,7 +3433,7 @@ BattleCommand_Sleep:
 	push hl
 	call AnimateFailedMove
 	pop hl
-	jp StdBattleTextbox
+	jmp StdBattleTextbox
 
 SetSleepStatus:
 	ld b, SLP_MASK
@@ -3790,7 +3790,7 @@ BattleCommand_BurnTarget:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jp nz, Defrost
+	jmp nz, Defrost
 	ld b, HELD_PREVENT_BURN
 	call RunStatusTargetChecks
 	ret nz
@@ -3846,7 +3846,7 @@ BattleCommand_SleepTarget:
 	call GetBattleVarAddr
 	ld d, h
 	ld e, l
-	jp SetSleepStatus
+	jmp SetSleepStatus
 
 BattleCommand_FreezeTarget:
 	ld b, HELD_PREVENT_FREEZE
@@ -6077,7 +6077,7 @@ BattleCommand_TimeBasedHealContinue:
 	ld h, [hl]
 	ld l, a
 	ld a, BANK(GetMaxHP)
-	rst FarCall
+	call FarCall_hl
 
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
@@ -6302,8 +6302,7 @@ PlayOpponentBattleAnim:
 
 CallBattleCore:
 	ld a, BANK("Battle Core")
-	rst FarCall
-	ret
+	jmp FarCall_hl
 
 AnimateFailedMove:
 	call BattleCommand_LowerSub
