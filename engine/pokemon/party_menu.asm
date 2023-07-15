@@ -8,8 +8,7 @@ SelectMonFromParty:
 	call SetPalettes
 	call DelayFrame
 	call PartyMenuSelect
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jmp ReturnToMapWithSpeechTextbox
 
 SelectTradeOrDayCareMon:
 	ld a, b
@@ -23,22 +22,19 @@ SelectTradeOrDayCareMon:
 	call SetPalettes
 	call DelayFrame
 	call PartyMenuSelect
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jmp ReturnToMapWithSpeechTextbox
 
 InitPartyMenuLayout:
 	call LoadPartyMenuGFX
 	call InitPartyMenuWithCancel
 	call InitPartyMenuGFX
 	call WritePartyMenuTilemap
-	call PrintPartyMenuText
-	ret
+	jmp PrintPartyMenuText
 
 LoadPartyMenuGFX:
 	call LoadFontsBattleExtra
-	callfar InitPartyMenuPalettes
-	callfar ClearSpriteAnims2
-	ret
+	farcall InitPartyMenuPalettes
+	farjp ClearSpriteAnims2
 
 WritePartyMenuTilemap:
 	ld hl, wOptions
@@ -106,8 +102,7 @@ PlacePartyNicknames:
 	dec hl
 	dec hl
 	ld de, .CancelString
-	call PlaceString
-	ret
+	jmp PlaceString
 
 .CancelString:
 	db "CANCEL@"
@@ -151,8 +146,7 @@ PlacePartyHPBar:
 	dec c
 	jr nz, .loop
 	ld b, SCGB_PARTY_MENU
-	call GetSGBLayout
-	ret
+	jmp GetSGBLayout
 
 PlacePartymonHPBar:
 	ld a, b
@@ -573,7 +567,7 @@ InitPartyMenuGFX:
 	ld hl, LoadMenuMonIcon
 	ld a, BANK(LoadMenuMonIcon)
 	ld e, MONICON_PARTYMENU
-	rst FarCall
+	call FarCall_hl
 	ldh a, [hObjectStructIndex]
 	inc a
 	ldh [hObjectStructIndex], a
@@ -581,8 +575,7 @@ InitPartyMenuGFX:
 	pop bc
 	dec c
 	jr nz, .loop
-	callfar PlaySpriteAnimations
-	ret
+	farjp PlaySpriteAnimations
 
 InitPartyMenuWithCancel:
 ; with cancel

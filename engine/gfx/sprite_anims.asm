@@ -196,8 +196,7 @@ AnimSeq_GSTitleTrail:
 	ret
 
 .delete
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_GSIntroHoOhLugia:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -214,16 +213,13 @@ AnimSeq_GSIntroHoOhLugia:
 	ret
 
 AnimSeq_NamingScreenCursor:
-	callfar NamingScreen_AnimateCursor
-	ret
+	farjp NamingScreen_AnimateCursor
 
 AnimSeq_MailCursor:
-	callfar ComposeMail_AnimateCursor
-	ret
+	farjp ComposeMail_AnimateCursor
 
 AnimSeq_GameFreakLogo:
-	callfar GameFreakLogoSpriteAnim
-	ret
+	farjp GameFreakLogoSpriteAnim
 
 AnimSeq_GSGameFreakLogoStar:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -273,8 +269,7 @@ AnimSeq_GSGameFreakLogoStar:
 .delete
 	ld a, 1
 	ld [wIntroSceneFrameCounter], a
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_GSGameFreakLogoSparkle:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -350,23 +345,20 @@ AnimSeq_GSGameFreakLogoSparkle:
 	ret
 
 .delete
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_SlotsGolem:
-	callfar Slots_AnimateGolem
-	ret
+	farjp Slots_AnimateGolem
 
 AnimSeq_SlotsChansey:
-	callfar Slots_AnimateChansey
+	farcall Slots_AnimateChansey
 	ld hl, wSlotsDelay
 	ld a, [hl]
 	cp $2
 	ret nz
 	ld [hl], $3
 	ld a, SPRITE_ANIM_FRAMESET_SLOTS_CHANSEY_2
-	call _ReinitSpriteAnimFrame
-	ret
+	jmp _ReinitSpriteAnimFrame
 
 AnimSeq_SlotsChanseyEgg:
 	ld hl, SPRITEANIMSTRUCT_JUMPTABLE_INDEX
@@ -386,8 +378,7 @@ AnimSeq_SlotsChanseyEgg:
 	ld a, $4
 	ld [wSlotsDelay], a
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
-	call PlaySFX
-	ret
+	jmp PlaySFX
 
 .move_right
 	inc [hl]
@@ -402,16 +393,13 @@ AnimSeq_SlotsChanseyEgg:
 	ret
 
 AnimSeq_UnusedCursor:
-	callfar UnusedCursor_InterpretJoypad_AnimateCursor
-	ret
+	farjp UnusedCursor_InterpretJoypad_AnimateCursor
 
 AnimSeq_PokegearArrow:
-	callfar AnimatePokegearModeIndicatorArrow
-	ret
+	farjp AnimatePokegearModeIndicatorArrow
 
 AnimSeq_MemoryGameCursor:
-	callfar MemoryGame_InterpretJoypad_AnimateCursor
-	ret
+	farjp MemoryGame_InterpretJoypad_AnimateCursor
 
 AnimSeq_TradePokeBall:
 	call AnimSeqs_AnonJumptable
@@ -521,8 +509,7 @@ AnimSeq_TradePokeBall:
 	sub $c
 	ld [hl], a
 	ld de, SFX_SWITCH_POKEMON
-	call PlaySFX
-	ret
+	jmp PlaySFX
 
 .done2
 	xor a
@@ -530,12 +517,10 @@ AnimSeq_TradePokeBall:
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
-	call AnimSeqs_IncAnonJumptableIndex
-	ret
+	jmp AnimSeqs_IncAnonJumptableIndex
 
 .delete
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_TradeTubeBulge:
 	ld hl, SPRITEANIMSTRUCT_XCOORD
@@ -548,16 +533,13 @@ AnimSeq_TradeTubeBulge:
 	and $3
 	ret nz
 	ld de, SFX_POKEBALLS_PLACED_ON_TABLE
-	call PlaySFX
-	ret
+	jmp PlaySFX
 
 .delete
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_TrademonInTube:
-	callfar TradeAnim_AnimateTrademonInTube
-	ret
+	farjp TradeAnim_AnimateTrademonInTube
 
 AnimSeq_RevealNewMon:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -593,12 +575,10 @@ AnimSeq_RevealNewMon:
 	ret
 
 .finish_EggShell
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_RadioTuningKnob:
-	callfar AnimateTuningKnob
-	ret
+	farjp AnimateTuningKnob
 
 AnimSeq_CutLeaves:
 	ld hl, SPRITEANIMSTRUCT_VAR2
@@ -704,8 +684,7 @@ AnimSeq_FlyLeaf:
 	ret
 
 .delete_leaf
-	call DeinitializeSprite
-	ret
+	jmp DeinitializeSprite
 
 AnimSeq_FlyTo:
 	ld hl, SPRITEANIMSTRUCT_YCOORD
@@ -740,12 +719,10 @@ AnimSeq_FlyTo:
 	ret
 
 AnimSeq_MobileTradeSentPulse:
-	farcall MobileTradeAnim_AnimateSentPulse
-	ret
+	farjp MobileTradeAnim_AnimateSentPulse
 
 AnimSeq_MobileTradeOTPulse:
-	farcall MobileTradeAnim_AnimateOTPulse
-	ret
+	farjp MobileTradeAnim_AnimateOTPulse
 
 AnimSeq_IntroSuicune:
 	ld a, [wIntroSceneTimer]
@@ -772,8 +749,7 @@ AnimSeq_IntroSuicune:
 	add hl, bc
 	ld [hl], a
 	ld a, SPRITE_ANIM_FRAMESET_INTRO_SUICUNE_2
-	call _ReinitSpriteAnimFrame
-	ret
+	jmp _ReinitSpriteAnimFrame
 
 AnimSeq_IntroPichuWooper:
 	ld hl, SPRITEANIMSTRUCT_VAR1
@@ -825,8 +801,7 @@ AnimSeq_IntroUnownF:
 	cp $40
 	ret nz
 	ld a, SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F_2
-	call _ReinitSpriteAnimFrame
-	ret
+	jmp _ReinitSpriteAnimFrame
 
 AnimSeq_IntroSuicuneAway:
 	ld hl, SPRITEANIMSTRUCT_YCOORD
@@ -837,12 +812,10 @@ AnimSeq_IntroSuicuneAway:
 	ret
 
 AnimSeq_EZChatCursor:
-	farcall AnimateEZChatCursor
-	ret
+	farjp AnimateEZChatCursor
 
 AnimSeq_Celebi:
-	farcall UpdateCelebiPosition
-	ret
+	farjp UpdateCelebiPosition
 
 AnimSeqs_AnonJumptable:
 	ld hl, sp+0

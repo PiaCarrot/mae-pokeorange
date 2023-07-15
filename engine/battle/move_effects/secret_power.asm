@@ -23,13 +23,11 @@ BattleCommand_SecretPower:
 	inc hl
 	ld h, [hl]
 	ld l, b
-	rst FarCall
-	ret
+	jmp FarCall_hl
 
 SecretPower_AttackDownHit:
 	farcall BattleCommand_AttackDown
-	farcall BattleCommand_StatDownMessage
-	ret
+	farjp BattleCommand_StatDownMessage
 
 SecretPowerEffectCommands:
 	dba BattleCommand_ParalyzeTarget ; shouldn't happen

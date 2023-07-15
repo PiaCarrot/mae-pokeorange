@@ -31,16 +31,14 @@ _BillsPC:
 	call PrintText
 	pop af
 	ld [wOptions], a
-	call LoadFontsBattleExtra
-	ret
+	jmp LoadFontsBattleExtra
 
 .PCWhatText:
 	text_far _PCWhatText
 	text_end
 
 .LogOut:
-	call CloseSubmenu
-	ret
+	jmp CloseSubmenu
 
 .UseBillsPC:
 	call .clear_current_reserved_mon
@@ -262,5 +260,4 @@ CopyBoxmonToTempMon:
 	ld a, BANK(sBoxMon1Species)
 	call OpenSRAM
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM

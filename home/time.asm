@@ -23,8 +23,7 @@ UpdateTime::
 	call GetClock
 	call FixDays
 	call FixTime
-	farcall GetTimeOfDay
-	ret
+	farjp GetTimeOfDay
 
 GetClock::
 ; store clock data in hRTCDayHi-hRTCSeconds
@@ -191,8 +190,7 @@ InitDayOfWeek::
 	jr InitTime ; useless
 
 InitTime::
-	farcall _InitTime
-	ret
+	farjp _InitTime
 
 ClearClock::
 	xor a

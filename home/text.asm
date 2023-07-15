@@ -149,8 +149,7 @@ BuenaPrintText::
 
 PrintTextboxText::
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY
-	call PlaceHLTextAtBC
-	ret
+	jmp PlaceHLTextAtBC
 
 SetUpTextbox::
 	push hl
@@ -212,7 +211,7 @@ MACRO dict
 		; Locals can use a short jump
 		jr z, \2
 	else
-		jmp z, \2
+		jp z, \2
 	endc
 ENDM
 
@@ -333,7 +332,7 @@ PlaceEnemysName::
 	ld de, String_Space
 	call PlaceString
 	push bc
-	callfar Battle_GetTrainerName
+	farcall Battle_GetTrainerName
 	pop hl
 	ld de, wStringBuffer1
 	jr PlaceCommandCharacter
@@ -576,8 +575,7 @@ TextScroll::
 	ld bc, TEXTBOX_INNERW
 	call ByteFill
 	ld c, 5
-	call DelayFrames
-	ret
+	jmp DelayFrames
 
 Text_WaitBGMap::
 	push bc

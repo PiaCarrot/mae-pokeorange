@@ -173,7 +173,7 @@ endc
 	ld [wTempSpecies], a
 	push hl
 	push de
-	callfar ConvertMon_1to2
+	farcall ConvertMon_1to2
 	pop de
 	ld a, [wTempSpecies]
 	ld l, a
@@ -558,8 +558,7 @@ LinkTimeout:
 	call ClearScreen
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call WaitBGMap2
-	ret
+	jmp WaitBGMap2
 
 .LinkTimeoutText:
 	text_far _LinkTimeoutText
@@ -723,7 +722,7 @@ Link_PrepPartyData_Gen1:
 	sbc a
 	or l
 	ld [wTempSpecies], a
-	callfar ConvertMon_2to1
+	farcall ConvertMon_2to1
 	pop de
 	pop hl
 	ld a, [wTempSpecies]
@@ -769,7 +768,7 @@ Link_PrepPartyData_Gen1:
 	sbc a
 	or l
 	ld [wTempSpecies], a
-	callfar ConvertMon_2to1
+	farcall ConvertMon_2to1
 	pop bc
 	pop de
 	ld a, [wTempSpecies]
@@ -1363,7 +1362,7 @@ Link_ConvertPartyStruct1to2:
 	push bc
 	push de
 	ld [wTempSpecies], a
-	callfar ConvertMon_1to2
+	farcall ConvertMon_1to2
 	pop de
 	pop bc
 	ld a, [wTempSpecies]
@@ -1620,7 +1619,7 @@ LinkTradeOTPartymonMenuLoop:
 	jr z, .not_a_button
 	ld a, INIT_ENEMYOT_LIST
 	ld [wInitListType], a
-	callfar InitList
+	farcall InitList
 	ld hl, wOTPartyMon1Species
 	farcall LinkMonStatsScreen
 	jmp LinkTradePartiesMenuMasterLoop
@@ -1810,7 +1809,7 @@ LinkTrade_TradeStatsMenu:
 	ld [wMenuCursorY], a
 	ld a, INIT_PLAYEROT_LIST
 	ld [wInitListType], a
-	callfar InitList
+	farcall InitList
 	farcall LinkMonStatsScreen
 	call SafeLoadTempTilemapToTilemap
 	hlcoord 6, 1
@@ -2262,7 +2261,7 @@ LinkTrade:
 
 	xor a ; REMOVE_PARTY
 	ld [wPokemonWithdrawDepositParameter], a
-	callfar RemoveMonFromPartyOrBox
+	farcall RemoveMonFromPartyOrBox
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurPartyMon], a
@@ -2312,7 +2311,7 @@ LinkTrade:
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurPartyMon], a
-	callfar EvolvePokemon
+	farcall EvolvePokemon
 	call ClearScreen
 	call LoadTradeScreenBorderGFX
 	call SetTradeRoomBGPals
@@ -2410,17 +2409,14 @@ String_TooBadTheTradeWasCanceled:
 LinkTextboxAtHL:
 	ld d, h
 	ld e, l
-	farcall LinkTextbox
-	ret
+	farjp LinkTextbox
 
 LoadTradeScreenBorderGFX:
-	farcall _LoadTradeScreenBorderGFX
-	ret
+	farjp _LoadTradeScreenBorderGFX
 
 SetTradeRoomBGPals:
 	farcall LoadTradeRoomBGPals ; just a nested farcall; so wasteful
-	call SetPalettes
-	ret
+	jmp SetPalettes
 
 PlaceTradeScreenTextbox: ; unreferenced
 	hlcoord 0, 0
@@ -2431,8 +2427,7 @@ PlaceTradeScreenTextbox: ; unreferenced
 	ld b, 6
 	ld c, 18
 	call LinkTextboxAtHL
-	farcall PlaceTradePartnerNamesAndParty
-	ret
+	farjp PlaceTradePartnerNamesAndParty
 
 INCLUDE "engine/movie/trade_animation.asm"
 
@@ -2544,8 +2539,7 @@ GetIncompatibleMonName:
 	add hl, bc
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	ret
+	jmp GetPokemonName
 
 EnterTimeCapsule:
 	vc_patch Wireless_net_delay_6
@@ -2919,7 +2913,7 @@ TimeCapsule:
 	ld a, LINK_TIMECAPSULE
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
-	callfar LinkCommunications
+	farcall LinkCommunications
 	call EnableSpriteUpdates
 	xor a
 	ldh [hVBlank], a
@@ -2930,7 +2924,7 @@ TradeCenter:
 	ld a, LINK_TRADECENTER
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
-	callfar LinkCommunications
+	farcall LinkCommunications
 	call EnableSpriteUpdates
 	xor a
 	ldh [hVBlank], a
@@ -2941,7 +2935,7 @@ Colosseum:
 	ld a, LINK_COLOSSEUM
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
-	callfar LinkCommunications
+	farcall LinkCommunications
 	call EnableSpriteUpdates
 	xor a
 	ldh [hVBlank], a

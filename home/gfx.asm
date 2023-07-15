@@ -95,25 +95,20 @@ SafeHDMATransfer: ; unreferenced
 	ret
 
 UpdatePlayerSprite::
-	farcall _UpdatePlayerSprite
-	ret
+	farjp _UpdatePlayerSprite
 
 LoadStandardFont::
-	farcall _LoadStandardFont
-	ret
+	farjp _LoadStandardFont
 
 LoadFontsBattleExtra::
-	farcall _LoadFontsBattleExtra
-	ret
+	farjp _LoadFontsBattleExtra
 
 LoadFontsExtra::
 	farcall _LoadFontsExtra1
-	farcall _LoadFontsExtra2
-	ret
+	farjp _LoadFontsExtra2
 
 LoadFontsExtra2: ; unreferenced
-	farcall _LoadFontsExtra2
-	ret
+	farjp _LoadFontsExtra2
 
 DecompressRequest2bpp::
 	push de
@@ -130,8 +125,7 @@ DecompressRequest2bpp::
 
 	ld de, sScratch
 	call Request2bpp
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 FarCopyBytes::
 ; copy bc bytes from a:hl to de
