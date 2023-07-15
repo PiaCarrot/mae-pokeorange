@@ -3773,8 +3773,7 @@ RunStatusTargetChecks:
 	jr z, .ret_nz
 	call CheckSubstituteOpp
 	ret nz
-	call SafeCheckSafeguard
-	ret
+	jmp SafeCheckSafeguard
 
 .ret_nz
 	or 1

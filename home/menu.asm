@@ -345,8 +345,7 @@ LoadStandardMenuHeader::
 	db 1 ; default option
 
 Call_ExitMenu::
-	call ExitMenu
-	ret
+	jmp ExitMenu
 
 VerticalMenu::
 	xor a

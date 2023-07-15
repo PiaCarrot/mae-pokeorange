@@ -111,8 +111,7 @@ Elevator_GoToFloor:
 	ld de, wBackupWarpNumber
 	ld a, [wElevatorPointerBank]
 	ld bc, wElevatorDataEnd - wElevatorData - 1
-	call FarCopyBytes
-	ret
+	jmp FarCopyBytes
 
 Elevator_AskWhichFloor:
 	call LoadStandardMenuHeader
@@ -172,8 +171,7 @@ Elevator_GetCurrentFloorString:
 	add hl, de
 	ld a, [hl]
 	pop de
-	call GetFloorString
-	ret
+	jr GetFloorString
 
 Elevator_MenuHeader:
 	db MENU_BACKUP_TILES ; flags

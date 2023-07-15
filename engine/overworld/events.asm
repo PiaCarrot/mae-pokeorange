@@ -134,8 +134,7 @@ EnterMap:
 
 UnusedWait30Frames: ; unreferenced
 	ld c, 30
-	call DelayFrames
-	ret
+	jmp DelayFrames
 
 HandleMap:
 	call HandleMapTimeAndJoypad
@@ -178,14 +177,12 @@ HandleMapTimeAndJoypad:
 
 	call UpdateTime
 	call GetJoypad
-	call TimeOfDayPals
-	ret
+	jmp TimeOfDayPals
 
 HandleMapObjects:
 	farcall HandleNPCStep
 	farcall _HandlePlayerStep
-	call _CheckObjectEnteringVisibleRange
-	ret
+	jr _CheckObjectEnteringVisibleRange
 
 HandleMapBackground:
 	farcall _UpdateSprites
@@ -343,8 +340,7 @@ CheckTileEvent:
 	ld h, [hl]
 	ld l, a
 	call GetMapScriptsBank
-	call CallScript
-	ret
+	jmp CallScript
 
 CheckWildEncounterCooldown::
 	ld hl, wWildEncounterCooldown
@@ -372,8 +368,7 @@ SetMinTwoStepWildEncounterCooldown:
 	ret
 
 Dummy_CheckScriptFlags2Bit5:
-	call CheckBit5_ScriptFlags2
-	ret
+	jmp CheckBit5_ScriptFlags2
 
 RunSceneScript:
 	ld a, [wCurMapSceneScriptCount]
@@ -565,8 +560,7 @@ ObjectEventTypeArray:
 	ld h, [hl]
 	ld l, a
 	call GetMapScriptsBank
-	call CallScript
-	ret
+	jmp CallScript
 
 .itemball
 	ld hl, MAPOBJECT_SCRIPT_POINTER

@@ -127,8 +127,7 @@ InitMapNameFrame:
 	ld b, 2
 	ld c, 18
 	call InitMapSignAttrmap
-	call PlaceMapNameFrame
-	ret
+	jr PlaceMapNameFrame
 
 PlaceMapNameCenterAlign:
 	ld a, [wCurLandmark]
@@ -143,8 +142,7 @@ PlaceMapNameCenterAlign:
 	hlcoord 0, 2
 	add hl, bc
 	ld de, wStringBuffer1
-	call PlaceString
-	ret
+	jmp PlaceString
 
 .GetNameLength:
 	ld c, 0

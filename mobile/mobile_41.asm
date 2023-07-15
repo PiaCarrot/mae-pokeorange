@@ -30,8 +30,7 @@ StubbedTrainerRankings_HallOfFame2::
 	call CopyBytes
 
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_MagikarpLength:
 	ret
@@ -98,8 +97,7 @@ StubbedTrainerRankings_MagikarpLength:
 
 .done
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_BugContestScore:
 	ret
@@ -127,8 +125,7 @@ StubbedTrainerRankings_BugContestScore:
 
 .done
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_AddToSlotsWinStreak:
 	ret
@@ -167,8 +164,7 @@ StubbedTrainerRankings_AddToSlotsWinStreak:
 
 .done
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_EndSlotsWinStreak:
 	ret
@@ -179,8 +175,7 @@ StubbedTrainerRankings_EndSlotsWinStreak:
 	ld [hli], a
 	ld [hl], a
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_AddToSlotsPayouts:
 	ret
@@ -207,8 +202,7 @@ StubbedTrainerRankings_AddToSlotsPayouts:
 
 .done
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_AddToBattlePayouts:
 	ret
@@ -237,8 +231,7 @@ StubbedTrainerRankings_AddToBattlePayouts:
 
 .done
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 StubbedTrainerRankings_StepCount:
 	ret
@@ -477,8 +470,7 @@ UpdateTrainerRankingsChecksum2:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
 	call UpdateTrainerRankingsChecksum
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 UpdateTrainerRankingsChecksum:
 	push de
@@ -521,8 +513,7 @@ BackupMobileEventIndex:
 	call OpenSRAM
 	pop af
 	ld [sMobileEventIndexBackup], a
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 RestoreMobileEventIndex:
 	ld a, BANK(sMobileEventIndexBackup)
@@ -533,8 +524,7 @@ RestoreMobileEventIndex:
 	call OpenSRAM
 	pop af
 	ld [sMobileEventIndex], a
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 VerifyTrainerRankingsChecksum: ; unreferenced
 	call CalculateTrainerRankingsChecksum
@@ -552,8 +542,7 @@ DeleteMobileEventIndex:
 	call OpenSRAM
 	xor a
 	ld [sMobileEventIndex], a
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 InitializeTrainerRankings: ; unreferenced
 ; Initializes Trainer Rankings data for a new save file in jmp Crystal.
@@ -572,8 +561,7 @@ InitializeTrainerRankings: ; unreferenced
 	ld hl, sTrainerRankings
 	ld de, sTrainerRankingsBackup
 	ld bc, sTrainerRankingsEnd - sTrainerRankings
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 _MobilePrintNum::
 ; Supports signed 31-bit integers (up to 10 digits)
@@ -806,8 +794,7 @@ Stubbed_Function106314:
 	call OpenSRAM
 	ld a, c
 	ld [s7_a800], a
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 Mobile_AlwaysReturnNotCarry:
 	or a
@@ -1041,8 +1028,7 @@ Function10649b: ; unreferenced
 	ld de, TextboxSpaceGFX
 	ld c, 1
 	ld b, BANK(TextboxSpaceGFX)
-	call Function1064c3
-	ret
+	jr Function1064c3
 
 Function1064c3:
 	ldh a, [rSVBK]
@@ -1097,8 +1083,7 @@ asm_1064ed:
 Function10650a: ; unreferenced
 	ld de, MobilePhoneTilesGFX
 	lb bc, BANK(MobilePhoneTilesGFX), 17
-	call Get2bpp
-	ret
+	jmp Get2bpp
 
 MobileDialingFrameGFX:
 INCBIN "gfx/mobile/dialing_frame.2bpp"

@@ -75,8 +75,7 @@ Function1176ee:
 	farcall ClearSpriteAnims
 	call ClearBGPalettes
 	call ClearScreen
-	call ClearSprites
-	ret
+	jmp ClearSprites
 
 Function117719:
 	jumptable Jumptable_117728, wcd49
@@ -503,8 +502,7 @@ MobileStudium:
 
 Function117a8d:
 	call Function117a94
-	call Function117acd
-	ret
+	jr Function117acd
 
 Function117a94:
 	xor a
@@ -535,8 +533,7 @@ Function117acd:
 
 .asm_117ae2
 	call ClearBGPalettes
-	call ClearSprites
-	ret
+	jmp ClearSprites
 
 Function117ae9:
 	jumptable .Jumptable, wJumptableIndex
@@ -775,8 +772,7 @@ Function117c89:
 	ld de, wcd69
 	ld bc, $10
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 MenuHeader_117cbc:
 	db MENU_BACKUP_TILES ; flags

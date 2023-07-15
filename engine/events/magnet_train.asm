@@ -160,8 +160,7 @@ MagnetTrain_LoadGFX_PlayMusic:
 	ld [hli], a ; wMagnetTrainWaitCounter
 
 	ld de, MUSIC_MAGNET_TRAIN
-	call PlayMusic2
-	ret
+	jmp PlayMusic2
 
 DrawMagnetTrain:
 	hlbgcoord 0, 0
@@ -382,8 +381,7 @@ MagnetTrain_Jumptable:
 	ld a, $80
 	ld [wJumptableIndex], a
 	ld de, SFX_TRAIN_ARRIVED
-	call PlaySFX
-	ret
+	jmp PlaySFX
 
 MagnetTrain_Jumptable_FirstRunThrough:
 	farcall PlaySpriteAnimations

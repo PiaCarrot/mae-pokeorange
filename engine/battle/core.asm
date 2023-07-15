@@ -256,8 +256,7 @@ Stubbed_Increments5_a89a:
 	dec [hl]
 
 .finish
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 HandleBetweenTurnEffects:
 	ldh a, [hSerialConnectionStatus]
@@ -2532,8 +2531,7 @@ WinTrainerBattle:
 	or [hl]
 	ret nz
 	call ClearTilemap
-	call ClearBGPalettes
-	ret
+	jmp ClearBGPalettes
 
 .give_money
 	ld a, [wAmuletCoin]
@@ -2954,8 +2952,7 @@ JumpToPartyMenuAndPrintText:
 	farcall PrintPartyMenuText
 	call WaitBGMap
 	call SetPalettes
-	call DelayFrame
-	ret
+	jmp DelayFrame
 
 SelectBattleMon:
 	call IsMobileBattle
@@ -3069,8 +3066,7 @@ LostBattle:
 	farcall BattleTowerText
 	call WaitPressAorB_BlinkCursor
 	call ClearTilemap
-	call ClearBGPalettes
-	ret
+	jmp ClearBGPalettes
 
 .not_canlose
 	ld a, [wLinkMode]
@@ -3240,8 +3236,7 @@ ForceEnemySwitch:
 	call ResetEnemyStatLevels
 	call ShowSetEnemyMonAndSendOutAnimation
 	call BreakAttraction
-	call ResetBattleParticipants
-	ret
+	jmp ResetBattleParticipants
 
 EnemySwitch:
 	call CheckWhetherToAskSwitch
@@ -4045,8 +4040,7 @@ InitBattleMon:
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
 	call ApplyStatusEffectOnPlayerStats
-	call BadgeStatBoosts
-	ret
+	jmp BadgeStatBoosts
 
 BattleCheckPlayerShininess:
 	call GetPartyMonDVs
@@ -5054,13 +5048,11 @@ DrawEnemyHUD:
 	ld [wWhichHPBar], a
 	hlcoord 2, 2
 	ld b, 0
-	call DrawBattleHPBar
-	ret
+	jmp DrawBattleHPBar
 
 UpdateEnemyHPPal:
 	ld hl, wEnemyHPPal
-	call UpdateHPPal
-	ret
+	jr UpdateHPPal
 
 UpdateHPPal:
 	ld b, [hl]
@@ -5344,8 +5336,7 @@ Battle_StatsScreen:
 	ld bc, $31 tiles
 	call CopyBytes
 
-	call EnableLCD
-	ret
+	jmp EnableLCD
 
 TryPlayerSwitch:
 	ld a, [wCurBattleMon]
@@ -5417,8 +5408,7 @@ PlayerSwitch:
 	jr c, .switch
 	cp BATTLEACTION_FORFEIT
 	jr nz, .dont_run
-	call WildFled_EnemyFled_LinkBattleCanceled
-	ret
+	jmp WildFled_EnemyFled_LinkBattleCanceled
 
 .dont_run
 	ldh a, [hSerialConnectionStatus]
@@ -5929,8 +5919,7 @@ MoveInfoBox:
 	inc hl
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
-	call PrintNum
-	ret
+	jmp PrintNum
 
 CheckPlayerHasUsableMoves:
 	ld hl, STRUGGLE
@@ -6643,8 +6632,7 @@ LoadEnemyMon:
 ; END EDIT
 	ld de, wEnemyStats
 	ld bc, NUM_EXP_STATS * 2
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 CheckSleepingTreeMon:
 ; Return carry if species is in the list
@@ -8547,8 +8535,7 @@ CleanUpBattleRAM:
 	ld [hli], a
 	dec b
 	jr nz, .loop
-	call WaitSFX
-	ret
+	jmp WaitSFX
 
 CheckPayDay:
 	ld hl, wPayDayMoney
@@ -8597,7 +8584,7 @@ ShowLinkBattleParticipantsAfterEnd:
 
 DisplayLinkBattleResult:
 	farcall CheckMobileBattleError
-	jmp c, .Mobile_InvalidBattle
+	jr c, .Mobile_InvalidBattle
 	call IsMobileBattle2
 	jr nz, .proceed
 
@@ -8646,14 +8633,12 @@ DisplayLinkBattleResult:
 	call IsMobileBattle2
 	jr z, .mobile
 	call WaitPressAorB_BlinkCursor
-	call ClearTilemap
-	ret
+	jmp ClearTilemap
 
 .mobile
 	ld c, 200
 	call DelayFrames
-	call ClearTilemap
-	ret
+	jmp ClearTilemap
 
 .YouWin:
 	db "YOU WIN@"
@@ -8668,8 +8653,7 @@ DisplayLinkBattleResult:
 	call PlaceString
 	ld c, 200
 	call DelayFrames
-	call ClearTilemap
-	ret
+	jmp ClearTilemap
 
 .InvalidBattle:
 	db "INVALID BATTLE@"
@@ -8696,8 +8680,7 @@ _DisplayLinkRecord:
 	call SetPalettes
 	ld c, 8
 	call DelayFrames
-	call WaitPressAorB_BlinkCursor
-	ret
+	jmp WaitPressAorB_BlinkCursor
 
 ReadAndPrintLinkBattleRecord:
 	call ClearTilemap
@@ -9106,8 +9089,7 @@ AddLastLinkBattleToLinkRecord:
 	ld hl, wLinkBattleRecordBuffer
 	ld bc, LINK_BATTLE_RECORD_LENGTH
 	pop de
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 .LoadPointer:
 	ld e, $0
@@ -9202,8 +9184,7 @@ InitBattleDisplay:
 
 .InitBackPic:
 	call GetTrainerBackpic
-	call CopyBackpic
-	ret
+	jr CopyBackpic
 
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
