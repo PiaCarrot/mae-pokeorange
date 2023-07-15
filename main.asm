@@ -387,11 +387,6 @@ INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "engine/battle_anims/functions.asm"
 INCLUDE "engine/battle_anims/helpers.asm"
 INCLUDE "data/battle_anims/oam.asm"
-
-
-SECTION "Move Assets", ROMX
-
-INCLUDE "data/battle_anims/framesets.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
 
 
@@ -471,6 +466,11 @@ INCLUDE "engine/link/mystery_gift.asm"
 INCLUDE "engine/battle/used_move_text.asm"
 INCLUDE "mobile/mobile_41.asm"
 INCLUDE "engine/gfx/load_overworld_font.asm"
+
+
+SECTION "Move Animation Framesets", ROMX
+
+INCLUDE "engine/battle_anims/framesets.asm"
 
 
 SECTION "mobile42", ROMX
