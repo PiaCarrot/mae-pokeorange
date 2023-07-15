@@ -419,8 +419,7 @@ UsedSurfScript:
 	end
 
 .stubbed_fn
-	farcall StubbedTrainerRankings_Surf
-	ret
+	farjp StubbedTrainerRankings_Surf
 
 UsedSurfText:
 	text_far _UsedSurfText
@@ -627,8 +626,7 @@ FlyFunction:
 	farcall RespawnPlayer
 	call DelayFrame
 	call UpdatePlayerSprite
-	farcall LoadOverworldFont
-	ret
+	farjp LoadOverworldFont
 
 WaterfallFunction:
 	call .TryWaterfall

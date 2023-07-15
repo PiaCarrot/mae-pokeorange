@@ -1023,8 +1023,7 @@ Function106464::
 	ld hl, vTiles2 tile $6b
 	ld b, $0f ; no graphics at 0f:40b0; jmp leftover???
 	call Get2bpp
-	farcall LoadFrame
-	ret
+	farjp LoadFrame
 
 Function10649b: ; unreferenced
 	ld a, [wTextboxFrame]

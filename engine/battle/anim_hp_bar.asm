@@ -279,8 +279,7 @@ HPBarAnim_PaletteUpdate:
 	call SetHPPal
 	ld a, [wCurHPAnimPal]
 	ld c, a
-	farcall ApplyHPBarPals
-	ret
+	farjp ApplyHPBarPals
 
 HPBarAnim_BGMapUpdate:
 	ldh a, [hCGB]

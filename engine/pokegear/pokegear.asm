@@ -1917,8 +1917,7 @@ _TownMap:
 	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
-	farcall TownMapPals
-	ret
+	farjp TownMapPals
 
 PlayRadio:
 	ld hl, wOptions
@@ -2595,8 +2594,7 @@ Pokedex_GetArea:
 	ld a, [wTownMapPlayerIconLandmark]
 	cp LANDMARK_FAST_SHIP
 	jr z, .FastShip
-	farcall GetPlayerIcon
-	ret
+	farjp GetPlayerIcon
 
 .FastShip:
 	ld de, FastShipGFX

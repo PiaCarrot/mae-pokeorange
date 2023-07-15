@@ -261,8 +261,7 @@ EvolutionAnimation:
 	call GetPartyLocation
 	ld b, h
 	ld c, l
-	farcall CheckFaintedFrzSlp
-	ret
+	farjp CheckFaintedFrzSlp
 
 .PlayEvolvedSFX:
 	ld a, [wEvolutionCanceled]

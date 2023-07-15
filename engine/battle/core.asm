@@ -2515,8 +2515,7 @@ WinTrainerBattle:
 	ld c, 40
 	call DelayFrames
 	ld c, $4 ; win
-	farcall Mobile_PrintOpponentBattleMessage
-	ret
+	farjp Mobile_PrintOpponentBattleMessage
 
 .battle_tower
 	call BattleWinSlideInEnemyTrainerFrontpic
@@ -2948,8 +2947,7 @@ SetUpBattlePartyMenu_Loop: ; switch to fullscreen menu?
 	farcall LoadPartyMenuGFX
 	farcall InitPartyMenuWithCancel
 	farcall InitPartyMenuBGPal7
-	farcall InitPartyMenuGFX
-	ret
+	farjp InitPartyMenuGFX
 
 JumpToPartyMenuAndPrintText:
 	farcall WritePartyMenuTilemap
@@ -2962,12 +2960,10 @@ JumpToPartyMenuAndPrintText:
 SelectBattleMon:
 	call IsMobileBattle
 	jr z, .mobile
-	farcall PartyMenuSelect
-	ret
+	farjp PartyMenuSelect
 
 .mobile
-	farcall Mobile_PartyMenuSelect
-	ret
+	farjp Mobile_PartyMenuSelect
 
 PickPartyMonInBattle:
 .loop
@@ -4062,8 +4058,7 @@ BattleCheckEnemyShininess:
 BattleCheckShininess:
 	ld b, h
 	ld c, l
-	farcall CheckShininess
-	ret
+	farjp CheckShininess
 
 GetPartyMonDVs:
 	ld hl, wBattleMonDVs
@@ -4723,8 +4718,7 @@ HandleStatBoostingHeldItems:
 	call GetItemName
 	ld hl, BattleText_UsersStringBuffer1Activated
 	call StdBattleTextbox
-	farcall BattleCommand_StatUpMessage
-	ret
+	farjp BattleCommand_StatUpMessage
 
 .finish
 	pop bc
@@ -5311,12 +5305,10 @@ BattleMenuPKMN_Loop:
 .GetMenu:
 	call IsMobileBattle
 	jr z, .mobile
-	farcall BattleMonMenu
-	ret
+	farjp BattleMonMenu
 
 .mobile
-	farcall MobileBattleMonMenu
-	ret
+	farjp MobileBattleMonMenu
 
 Battle_StatsScreen:
 	call DisableLCD
@@ -5534,8 +5526,7 @@ CheckAmuletCoin:
 MoveSelectionScreen:
 	call IsMobileBattle
 	jr nz, .not_mobile
-	farcall Mobile_MoveSelectionScreen
-	ret
+	farjp Mobile_MoveSelectionScreen
 
 .not_mobile
 	ld hl, wEnemyMonMoves
@@ -6162,8 +6153,7 @@ CheckEnemyLockedIn:
 	ret
 
 LinkBattleSendReceiveAction:
-	farcall _LinkBattleSendReceiveAction
-	ret
+	farjp _LinkBattleSendReceiveAction
 
 LoadEnemyMon:
 ; Initialize enemy monster parameters
@@ -7085,12 +7075,10 @@ BoostStat:
 	ret
 
 _LoadBattleFontsHPBar:
-	farcall LoadBattleFontsHPBar
-	ret
+	farjp LoadBattleFontsHPBar
 
 _LoadHPBar:
-	farcall LoadHPBar
-	ret
+	farjp LoadHPBar
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -8528,8 +8516,7 @@ ExitBattle:
 	xor a
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
-	farcall GivePokerusAndConvertBerries
-	ret
+	farjp GivePokerusAndConvertBerries
 
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
@@ -8606,8 +8593,7 @@ ShowLinkBattleParticipantsAfterEnd:
 	ld a, [wEnemyMonStatus]
 	ld [hl], a
 	call ClearTilemap
-	farcall _ShowLinkBattleParticipants
-	ret
+	farjp _ShowLinkBattleParticipants
 
 DisplayLinkBattleResult:
 	farcall CheckMobileBattleError
@@ -8873,8 +8859,7 @@ BattleEnd_HandleRoamMons:
 	ret nz
 
 .update_roam_mons
-	farcall UpdateRoamMons
-	ret
+	farjp UpdateRoamMons
 
 GetRoamMonMapGroup:
 	ld a, [wTempEnemyMonSpecies]
@@ -9239,8 +9224,7 @@ GetTrainerBackpic:
 	jr z, .Chris
 
 ; It's a girl.
-	farcall GetKrisBackpic
-	ret
+	farjp GetKrisBackpic
 
 .Chris:
 ; It's a boy.

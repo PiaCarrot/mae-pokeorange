@@ -156,14 +156,12 @@ LoadMiscTiles:
 	call CheckOutdoorMap
 	jr z, .outdoor
 	ld c, EMOTE_BOULDER_DUST
-	farcall LoadEmote
-	ret
+	farjp LoadEmote
  .outdoor
 	ld c, EMOTE_GRASS_RUSTLE
 	farcall LoadEmote
 	ld c, EMOTE_PUDDLE_SPLASH
-	farcall LoadEmote
-	ret
+	farjp LoadEmote
 
 SafeGetSprite:
 	push hl

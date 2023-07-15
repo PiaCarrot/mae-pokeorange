@@ -179,12 +179,10 @@ Function17a78f:
 	bit 7, [hl]
 	res 7, [hl]
 	jr nz, .asm_17a79f
-	farcall HDMATransferTilemapToWRAMBank3
-	ret
+	farjp HDMATransferTilemapToWRAMBank3
 
 .asm_17a79f
-	farcall ReloadMapPart
-	ret
+	farjp ReloadMapPart
 
 Function17a7a6: ; unreferenced
 	ld a, [$d087]

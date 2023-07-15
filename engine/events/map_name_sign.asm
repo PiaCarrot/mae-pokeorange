@@ -43,8 +43,7 @@ InitMapNameSign::
 	ld a, 60
 	ld [wLandmarkSignTimer], a
 	call InitMapNameFrame
-	farcall HDMATransfer_OnlyTopFourRows
-	ret
+	farjp HDMATransfer_OnlyTopFourRows
 
 .dont_do_map_sign
 	ld a, [wCurLandmark]

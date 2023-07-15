@@ -271,8 +271,7 @@ Script_special:
 	ld e, a
 	call GetScriptByte
 	ld d, a
-	farcall Special
-	ret
+	farjp Special
 
 Script_memcallasm:
 	call GetScriptByte
@@ -414,12 +413,10 @@ Script_closewindow:
 Script_pokepic:
 	call LoadScriptPokemonID
 	ld [wCurPartySpecies], a
-	farcall Pokepic
-	ret
+	farjp Pokepic
 
 Script_closepokepic:
-	farcall ClosePokepic
-	ret
+	farjp ClosePokepic
 
 Script_verticalmenu:
 	ld a, [wScriptBank]
@@ -447,8 +444,7 @@ Script_battletowertext:
 	call SetUpTextbox
 	call GetScriptByte
 	ld c, a
-	farcall BattleTowerText
-	ret
+	farjp BattleTowerText
 
 Script_verbosegiveitem:
 	call Script_giveitem
@@ -578,8 +574,7 @@ Script_pokemart:
 	ld d, a
 	ld a, [wScriptBank]
 	ld b, a
-	farcall OpenMartDialog
-	ret
+	farjp OpenMartDialog
 
 Script_elevator:
 	xor a
@@ -599,8 +594,7 @@ Script_elevator:
 Script_trade:
 	call GetScriptByte
 	ld e, a
-	farcall NPCTrade
-	ret
+	farjp NPCTrade
 
 Script_phonecall:
 	call GetScriptByte
@@ -609,12 +603,10 @@ Script_phonecall:
 	ld d, a
 	ld a, [wScriptBank]
 	ld b, a
-	farcall PhoneCall
-	ret
+	farjp PhoneCall
 
 Script_hangup:
-	farcall HangUp
-	ret
+	farjp HangUp
 
 Script_askforphonenumber:
 	call YesNoBox
@@ -657,8 +649,7 @@ Script_swarm:
 	ld d, a
 	call GetScriptByte
 	ld e, a
-	farcall StoreSwarmMapIndices
-	ret
+	farjp StoreSwarmMapIndices
 
 Script_trainertext:
 	call GetScriptByte
@@ -733,8 +724,7 @@ Script_checkjustbattled:
 Script_encountermusic:
 	ld a, [wOtherTrainerClass]
 	ld e, a
-	farcall PlayTrainerEncounterMusic
-	ret
+	farjp PlayTrainerEncounterMusic
 
 Script_playmapmusic:
 	call PlayMapMusic
@@ -829,8 +819,7 @@ ApplyMovement:
 	ret
 
 UnfreezeFollowerObject:
-	farcall _UnfreezeFollowerObject
-	ret
+	farjp _UnfreezeFollowerObject
 
 Script_applymovementlasttalked:
 ; apply movement to last talked
@@ -973,8 +962,7 @@ Script_disappear:
 	ldh a, [hMapObjectIndex]
 	ld b, 1 ; set
 	call ApplyEventActionAppearDisappear
-	farcall _UpdateSprites
-	ret
+	farjp _UpdateSprites
 
 ApplyEventActionAppearDisappear:
 	push bc
@@ -1003,12 +991,10 @@ Script_follow:
 	call GetScriptByte
 	call GetScriptObject
 	ld c, a
-	farcall StartFollow
-	ret
+	farjp StartFollow
 
 Script_stopfollow:
-	farcall StopFollow
-	ret
+	farjp StopFollow
 
 Script_moveobject:
 	call GetScriptByte
@@ -1020,8 +1006,7 @@ Script_moveobject:
 	call GetScriptByte
 	add 4
 	ld e, a
-	farcall CopyDECoordsToMapObject
-	ret
+	farjp CopyDECoordsToMapObject
 
 Script_writeobjectxy:
 	call GetScriptByte
@@ -1031,8 +1016,7 @@ Script_writeobjectxy:
 	ldh a, [hLastTalked]
 .ok
 	ld b, a
-	farcall WriteObjectXY
-	ret
+	farjp WriteObjectXY
 
 Script_follownotexact:
 	call GetScriptByte
@@ -1041,8 +1025,7 @@ Script_follownotexact:
 	call GetScriptByte
 	call GetScriptObject
 	ld c, a
-	farcall FollowNotExact
-	ret
+	farjp FollowNotExact
 
 Script_loademote:
 	call GetScriptByte
@@ -1051,8 +1034,7 @@ Script_loademote:
 	ld a, [wScriptVar]
 .not_var_emote
 	ld c, a
-	farcall LoadEmote
-	ret
+	farjp LoadEmote
 
 Script_showemote:
 	call GetScriptByte
@@ -1551,8 +1533,7 @@ Script_loadvar:
 
 GetVarAction:
 	ld c, a
-	farcall _GetVarAction
-	ret
+	farjp _GetVarAction
 
 Script_checkver:
 	ld a, [.gs_version]
@@ -1694,8 +1675,7 @@ Script_givepokemail:
 	ld a, [wScriptBank]
 	call FarCopyBytes
 	pop bc
-	farcall GivePokeMail
-	ret
+	farjp GivePokeMail
 
 Script_checkpokemail:
 	call GetScriptByte
@@ -1704,8 +1684,7 @@ Script_checkpokemail:
 	ld d, a
 	ld a, [wScriptBank]
 	ld b, a
-	farcall CheckPokeMail
-	ret
+	farjp CheckPokeMail
 
 Script_giveitem:
 	call GetScriptByte
@@ -1758,14 +1737,12 @@ Script_checkitem:
 Script_givemoney:
 	call GetMoneyAccount
 	call LoadMoneyAmountToMem
-	farcall GiveMoney
-	ret
+	farjp GiveMoney
 
 Script_takemoney:
 	call GetMoneyAccount
 	call LoadMoneyAmountToMem
-	farcall TakeMoney
-	ret
+	farjp TakeMoney
 
 Script_checkmoney:
 	call GetMoneyAccount
@@ -1810,13 +1787,11 @@ LoadMoneyAmountToMem:
 
 Script_givecoins:
 	call LoadCoinAmountToMem
-	farcall GiveCoins
-	ret
+	farjp GiveCoins
 
 Script_takecoins:
 	call LoadCoinAmountToMem
-	farcall TakeCoins
-	ret
+	farjp TakeCoins
 
 Script_checkcoins:
 	call LoadCoinAmountToMem
@@ -2015,8 +1990,7 @@ Script_checkflag:
 	ret
 
 _EngineFlagAction:
-	farcall EngineFlagAction
-	ret
+	farjp EngineFlagAction
 
 Script_wildoff:
 	ld hl, wStatusFlags
@@ -2157,12 +2131,10 @@ Script_reloadmappart::
 Script_warpcheck:
 	call WarpCheck
 	ret nc
-	farcall EnableEvents
-	ret
+	farjp EnableEvents
 
 Script_enableevents: ; unreferenced
-	farcall EnableEvents
-	ret
+	farjp EnableEvents
 
 Script_newloadmap:
 	call GetScriptByte

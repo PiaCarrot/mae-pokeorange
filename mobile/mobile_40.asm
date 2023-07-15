@@ -195,8 +195,7 @@ Function100144:
 	ret z
 	res 2, [hl]
 	res 6, [hl]
-	farcall HDMATransferTilemapToWRAMBank3
-	ret
+	farjp HDMATransferTilemapToWRAMBank3
 
 Function100163:
 	ld hl, wcd29
@@ -394,8 +393,7 @@ Function1002c9:
 	bit 0, [hl]
 	ret z
 	farcall CleanUpBattleRAM
-	farcall LoadPokemonData
-	ret
+	farjp LoadPokemonData
 
 Function1002dc:
 	ld a, MAPSETUP_LINKRETURN
@@ -426,12 +424,10 @@ Function100301:
 	ret
 
 Function100320:
-	farcall Mobile_ReloadMapPart
-	ret
+	farjp Mobile_ReloadMapPart
 
 Function100327: ; unreferenced
-	farcall HDMATransferTilemapToWRAMBank3
-	ret
+	farjp HDMATransferTilemapToWRAMBank3
 
 Function10032e:
 	call Function10034d
@@ -1748,8 +1744,7 @@ Function100b45:
 	ld a, [wMenuJoypadFilter]
 	and c
 	jr z, .loop
-	farcall Mobile_GetMenuSelection
-	ret
+	farjp Mobile_GetMenuSelection
 
 .asm_100b6b
 	ld a, [w2DMenuNumCols]
@@ -2954,8 +2949,7 @@ Function1013c0:
 	ret
 
 Function1013d6:
-	farcall HDMATransferAttrmapAndTilemapToWRAMBank3
-	ret
+	farjp HDMATransferAttrmapAndTilemapToWRAMBank3
 
 Function1013dd:
 	call CGBOnly_CopyTilemapAtOnce
@@ -3041,8 +3035,7 @@ Function101418:
 Function10142c:
 	ld a, $01
 	ld [wc305], a
-	farcall Function115e18
-	ret
+	farjp Function115e18
 
 Function101438:
 	ld hl, wcd29
@@ -3909,8 +3902,7 @@ CopyOtherPlayersBattleMonSelection:
 	ld de, wcc64
 	farcall Function100772
 	farcall Function101050
-	farcall LoadSelectedPartiesForColosseum
-	ret
+	farjp LoadSelectedPartiesForColosseum
 
 Function101a97:
 	farcall Function115d99
@@ -4515,8 +4507,7 @@ Function101ee4:
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
-	farcall Function100504
-	ret
+	farjp Function100504
 
 Unknown_101ef5:
 	dw String_101f13
@@ -6469,8 +6460,7 @@ Function102d9a:
 	hlcoord 0, 0, wAttrmap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
-	farcall HDMATransferAttrmapAndTilemapToWRAMBank3
-	ret
+	farjp HDMATransferAttrmapAndTilemapToWRAMBank3
 
 Function102db7:
 	call Function102e4f
@@ -6485,8 +6475,7 @@ Function102dc3:
 	ld c, 18
 	ld d, h
 	ld e, l
-	farcall _LinkTextbox
-	ret
+	farjp _LinkTextbox
 
 Function102dd3:
 	call DisableLCD
@@ -7575,8 +7564,7 @@ Function10378c:
 	ld a, c
 	and a
 	ret z
-	farcall MobileBattleResetTimer
-	ret
+	farjp MobileBattleResetTimer
 
 .failed_to_save
 	xor a

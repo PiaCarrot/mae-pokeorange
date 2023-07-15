@@ -79,8 +79,7 @@ LoadMapObjects:
 	ld a, MAPCALLBACK_OBJECTS
 	call RunMapCallback
 	farcall LoadObjectMasks
-	farcall InitializeVisibleSprites
-	ret
+	farjp InitializeVisibleSprites
 
 MapSetup_DummyFunction: ; unreferenced
 	ret
@@ -175,8 +174,7 @@ FadeOutMapMusic:
 	ret
 
 ApplyMapPalettes:
-	farcall _UpdateTimePals
-	ret
+	farjp _UpdateTimePals
 
 FadeMapMusicAndPalettes:
 	ld e, LOW(MUSIC_NONE)
