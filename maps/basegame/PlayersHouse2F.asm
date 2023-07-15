@@ -129,8 +129,8 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_CINNABAR
 	; test mons
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove TICKLE,        wPartyMon1, 0
-	givepokemove GROWL,       wPartyMon1, 1
+	givepokemove SUNNY_DAY,        wPartyMon1, 0
+	givepokemove SURF,       wPartyMon1, 1
 	givepokemove SANDSTORM,   wPartyMon1, 2
 	givepokemove WEATHER_BALL,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
