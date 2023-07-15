@@ -237,7 +237,11 @@ MonStatsJoypad:
 	call StatsScreen_GetJoypad
 	jr nc, .next
 	ld h, 0
+IF DEF(_DEBUG)
+	jmp StatsScreen_SetJumptableIndex
+ELSE
 	jr StatsScreen_SetJumptableIndex
+ENDC
 
 .next
 	and D_DOWN | D_UP | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON
