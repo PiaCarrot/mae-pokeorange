@@ -1491,6 +1491,10 @@ BattleAnim_PoisonFang:
 	anim_clearobjs
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_call BattleAnim_PoisonBubble_branch
+	anim_ret
+
+BattleAnim_PoisonBubble_branch:
 .loop
 	anim_sound 0, 1, SFX_TOXIC
 	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
@@ -2527,7 +2531,6 @@ BattleAnim_Bounce_branch_1:
 
 BattleAnim_MudShot:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
-	anim_obp0 $f8
 	anim_1gfx ANIM_GFX_POISON
 .loop
 	anim_sound 6, 2, SFX_BUBBLEBEAM
@@ -2556,7 +2559,6 @@ BattleAnim_MudShot:
 BattleAnim_PoisonTail:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_POISON
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
-	anim_obp0 $ef
 	anim_call BattleAnim_TargetObj_1Row_2
 	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
 	anim_wait 16
@@ -2565,19 +2567,7 @@ BattleAnim_PoisonTail:
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_0_2
-	anim_obp0 $f8
-.loop
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
-	anim_wait 8
-	anim_loop 2, .loop
-	anim_wait 48
+	anim_call BattleAnim_PoisonBubble_branch
 	anim_ret
 
 BattleAnim_Covet:
