@@ -534,9 +534,10 @@ BattleAnim_FocusPunch:
 	anim_wait 28
 .loop
 	anim_sound 0, 1, SFX_HORN_ATTACK
-	anim_obj ANIM_OBJ_PUNCH, 136, 48, $0
+	anim_obj ANIM_OBJ_LONG_PUNCH, 136, 48, $0
 	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_clearobjs
+	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_bgp $1b
@@ -546,7 +547,7 @@ BattleAnim_FocusPunch:
 	anim_obj ANIM_OBJ_LONG_PUNCH, 136, 48, $0
 	anim_wait 6
 .loop2
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
 	anim_wait 8
 	anim_loop 6, .loop2
 	anim_ret
@@ -2500,7 +2501,58 @@ BattleAnim_BulkUp:
 	anim_ret
 
 BattleAnim_Bounce:
+	anim_if_param_equal $1, BattleAnim_Bounce_branch_1
+	anim_if_param_equal $2, BattleAnim_Bounce_branch_2
+	anim_2gfx ANIM_GFX_U_TURN, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_KINESIS
+	anim_obj ANIM_OBJ_U_TURN_FALL, 136, 230, $10
+	anim_wait 16
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $10, $4, $0
+	anim_sound 0, 1, SFX_STOMP
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 16
+BattleAnim_Bounce_branch_2:
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_Bounce_branch_1:
+	anim_1gfx ANIM_GFX_U_TURN
+	anim_sound 0, 0, SFX_POTION
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_obj ANIM_OBJ_U_TURN_RISE, 48, 88, $30
+	anim_wait 32
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_MudShot:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
+	anim_obp0 $f8
+	anim_1gfx ANIM_GFX_POISON
+.loop
+	anim_sound 6, 2, SFX_BUBBLEBEAM
+	anim_obj ANIM_OBJ_MUD_SHOT, 64, 92, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_MUD_SHOT, 64, 92, $4
+	anim_wait 4
+	anim_sound 6, 2, SFX_BUBBLEBEAM
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $5c
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $e8
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $d0
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $50
+	anim_obj ANIM_OBJ_MUD_SHOT, 64, 92, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_MUD_SHOT, 64, 92, $4
+	anim_wait 4
+	anim_loop 4, .loop
+	anim_wait 4
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $5c
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $e8
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $d0
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $50
+	anim_wait 16
+	anim_ret
+
 BattleAnim_PoisonTail:
 BattleAnim_Covet:
 	anim_ret

@@ -257,8 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, SNATCH
-	dbw 6, WITHDRAW
+	dbw 6, MUD_SHOT
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
