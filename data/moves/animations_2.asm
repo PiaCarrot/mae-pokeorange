@@ -1276,16 +1276,19 @@ BattleAnim_TeeterDance:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_call BattleAnim_TargetObj_2Row_2
 	anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
-	anim_sound 0, 0, SFX_DEX_FANFARE_LESS_THAN_20
 	anim_wait 8
+	anim_sound 0, 0, SFX_SQUEAK
 	anim_obj ANIM_OBJ_TEETER_DANCE, 64, 80, $0
 	anim_wait 32
+	anim_sound 0, 0, SFX_SQUEAK
 	anim_obj ANIM_OBJ_TEETER_DANCE, 16, 80, $2
 	anim_wait 32
+	anim_sound 0, 0, SFX_SQUEAK
 	anim_obj ANIM_OBJ_TEETER_DANCE, 70, 80, $1
 	anim_wait 32
+	anim_sound 0, 0, SFX_SQUEAK
 	anim_obj ANIM_OBJ_TEETER_DANCE, 32, 80, $2
-	anim_wait 64
+	anim_wait 24
 	anim_incbgeffect ANIM_BG_FLAIL
 	anim_call BattleAnim_ShowMon_0_2
 	anim_ret
@@ -2689,9 +2692,133 @@ BattleAnim_MagicalLeaf:
 	anim_ret
 
 BattleAnim_WaterSport:
+	anim_1gfx ANIM_GFX_WATER
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_call BattleAnim_TargetObj_2Row_2
+	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
+	anim_wait 22
+	anim_call BattleAnim_WaterSport_branch
+	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+	anim_call BattleAnim_ShowMon_0_2
+	anim_clearobjs
+.loop
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj ANIM_OBJ_WATER_SPORT, 40, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj ANIM_OBJ_WATER_SPORT, 90, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj ANIM_OBJ_WATER_SPORT, 140, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj ANIM_OBJ_WATER_SPORT, 65, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj ANIM_OBJ_WATER_SPORT, 115, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
+BattleAnim_WaterSport_branch:
+.loop
+	anim_sound 0, 1, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $32
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $2e
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $31
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $2f
+	anim_wait 28
+	anim_loop 2, .loop
+	anim_ret
+
 BattleAnim_CalmMind:
+	anim_3gfx ANIM_GFX_BIG_RINGS, ANIM_GFX_RINGS, ANIM_GFX_GLOW
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_LUSTER
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_TAIL_GLOW, 48, 96, $0
+	anim_wait 32
+	anim_clearobjs
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+.loop
+	anim_obj ANIM_OBJ_SHRINKING_RING_BIG, 48, 96, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_SHRINKING_RING_SMALL, 48, 96, $0
+	anim_wait 16
+	anim_loop 4, .loop
+	anim_wait 16
+	anim_ret
+
 BattleAnim_LeafBlade:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GREEN
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_PLANT
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 150, 40, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $28
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $d0
+	anim_wait 32
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 118, 40, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $10
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $dc
+	anim_wait 32
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_obj ANIM_OBJ_CUT_LONG_UP_RIGHT, 120, 68, $0
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $5c
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 136, 40, $90
+	anim_wait 32
+	anim_ret
+
 BattleAnim_DragonDance:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_DRAGONBREATH
+	anim_1gfx ANIM_GFX_CHARGE
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+.loop
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_obj ANIM_OBJ_DRAGON_DANCE, 48, 104, $0
+	anim_wait 8
+	anim_loop 8, .loop
+	anim_wait 40
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_wait 1
+	anim_1gfx ANIM_GFX_SPEED
+	anim_call BattleAnim_TargetObj_1Row_2
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT, $0, $1, $40
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+.loop2
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obj ANIM_OBJ_FOCUS, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 36, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 52, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 28, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 20, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 68, 108, $8
+	anim_wait 2
+	anim_loop 3, .loop2
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT
+	anim_call BattleAnim_ShowMon_0_2
+	anim_ret
+
+
+
 BattleAnim_RockBlast:
 BattleAnim_ShockWave:
 BattleAnim_WaterPulse:

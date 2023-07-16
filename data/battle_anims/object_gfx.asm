@@ -25,7 +25,7 @@ AnimObjGFX:
 	anim_obj_gfx  2, AnimObjPowderGFX
 	anim_obj_gfx 11, AnimObjBeamGFX
 	anim_obj_gfx  9, AnimObjSpeedGFX
-	anim_obj_gfx  9, AnimObjChargeGFX
+	anim_obj_gfx 10, AnimObjChargeGFX
 	anim_obj_gfx 21, AnimObjWindGFX
 	anim_obj_gfx 10, AnimObjWhipGFX
 	anim_obj_gfx 12, AnimObjEggGFX
@@ -71,4 +71,6 @@ AnimObjGFX:
 	anim_obj_gfx  5, AnimObjCosmicPowerGFX
 	anim_obj_gfx 18, AnimObjBulkUpGFX
 	anim_obj_gfx 32, AnimObjUTurnGFX
+	anim_obj_gfx  6, AnimObjRingsGFX
+	anim_obj_gfx 13, AnimObjBigRingsGFX
 	assert_table_length NUM_ANIM_GFX + 1

@@ -325,6 +325,11 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_U_TURN_LAUNCH
 	const ANIM_OBJ_MUD_SHOT
 	const ANIM_OBJ_VOLT_TACKLE
+	const ANIM_OBJ_WATER_SPORT
+	const ANIM_OBJ_SHRINKING_RING_SMALL
+	const ANIM_OBJ_SHRINKING_RING_BIG
+	const ANIM_OBJ_CUT_LONG_UP_RIGHT
+	const ANIM_OBJ_DRAGON_DANCE
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -667,6 +672,10 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_F0
 	const BATTLEANIMFRAMESET_F1
 	const BATTLEANIMFRAMESET_F2
+	const BATTLEANIMFRAMESET_F3
+	const BATTLEANIMFRAMESET_F4
+	const BATTLEANIMFRAMESET_F5
+	const BATTLEANIMFRAMESET_F6
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -921,6 +930,9 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_F7
 	const BATTLEANIMOAMSET_F8
 	const BATTLEANIMOAMSET_F9
+	const BATTLEANIMOAMSET_FA
+	const BATTLEANIMOAMSET_FB
+	const BATTLEANIMOAMSET_FC
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -1046,6 +1058,8 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_COSMIC_POWER
 	const ANIM_GFX_BULK_UP
 	const ANIM_GFX_U_TURN
+	const ANIM_GFX_RINGS
+	const ANIM_GFX_BIG_RINGS
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

@@ -244,6 +244,10 @@ BattleAnimFrameData:
 	dw .Frameset_f0 ; BATTLEANIMFRAMESET_F0
 	dw .Frameset_f1 ; BATTLEANIMFRAMESET_F1
 	dw .Frameset_f2 ; BATTLEANIMFRAMESET_F2
+	dw .Frameset_f3 ; BATTLEANIMFRAMESET_F3
+	dw .Frameset_f4 ; BATTLEANIMFRAMESET_F4
+	dw .Frameset_f5 ; BATTLEANIMFRAMESET_F5
+	dw .Frameset_f6 ; BATTLEANIMFRAMESET_F6
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1615,3 +1619,34 @@ BattleAnimFrameData:
 .Frameset_f2:
 	oamframe BATTLEANIMOAMSET_F5,  8
 	oamend
+
+.Frameset_f3:
+	oamframe BATTLEANIMOAMSET_FA,  2
+	oamframe BATTLEANIMOAMSET_54,  2
+	oamdelete
+
+.Frameset_f4:
+	oamframe BATTLEANIMOAMSET_FB,  2
+	oamframe BATTLEANIMOAMSET_E8,  2
+	oamdelete
+
+.Frameset_f5:
+	oamframe BATTLEANIMOAMSET_4B,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLEANIMOAMSET_4C,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLEANIMOAMSET_4D,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLEANIMOAMSET_4F,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLEANIMOAMSET_50,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLEANIMOAMSET_51,  1, OAM_X_FLIP, OAM_Y_FLIP
+	oamframe BATTLEANIMOAMSET_52,  2, OAM_X_FLIP, OAM_Y_FLIP
+	oamwait 2
+	oamframe BATTLEANIMOAMSET_52,  2, OAM_X_FLIP, OAM_Y_FLIP
+	oamwait 2
+	oamframe BATTLEANIMOAMSET_52,  2, OAM_X_FLIP, OAM_Y_FLIP
+	oamwait 2
+	oamframe BATTLEANIMOAMSET_52,  2, OAM_X_FLIP, OAM_Y_FLIP
+	oamdelete
+
+.Frameset_f6:
+	oamframe BATTLEANIMOAMSET_54,  1
+	oamframe BATTLEANIMOAMSET_F5,  1
+	oamrestart
