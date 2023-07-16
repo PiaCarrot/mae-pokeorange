@@ -784,6 +784,7 @@ BattleAnim_LeechSeed:
 	anim_ret
 
 BattleAnim_RazorLeaf:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
 	anim_1gfx ANIM_GFX_PLANT
 	anim_sound 0, 0, SFX_VINE_WHIP
 	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $28

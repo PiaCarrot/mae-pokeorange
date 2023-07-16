@@ -2554,11 +2554,150 @@ BattleAnim_MudShot:
 	anim_ret
 
 BattleAnim_PoisonTail:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_POISON
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_obp0 $ef
+	anim_call BattleAnim_TargetObj_1Row_2
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_MEGA_KICK
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0_2
+	anim_obp0 $f8
+.loop
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 48
+	anim_ret
+
 BattleAnim_Covet:
+	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row_2
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_HEART, 64, 80, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0_2
+	anim_wait 1
+	anim_clearobjs
+	anim_wait 1
+	anim_1gfx ANIM_GFX_STATUS
+	anim_call BattleAnim_UserObj_1Row_Special
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_THIEF, 120, 76, $1
+	anim_wait 64
+	anim_call BattleAnim_ShowMon_1_Special
 	anim_ret
 
 BattleAnim_VoltTackle:
+	anim_3gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION, ANIM_GFX_SPEED
+	anim_sound 0, 1, SFX_THUNDERSHOCK
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 88, $0
+	anim_bgp $1b
+	anim_incobj 1
+	anim_wait 48
+	anim_clearobjs
+	anim_sound 0, 0, SFX_MENU
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+.loop
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_VOLT_TACKLE, 48, 88, $0
+	anim_wait 1
+	anim_loop 8, .loop
+	anim_wait 2
+.loop2
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_VOLT_TACKLE, 158, 72, $20
+	anim_wait 1
+	anim_loop 8, .loop2
+	anim_wait 2
+.loop3
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj ANIM_OBJ_VOLT_TACKLE, 0, 56, $0
+	anim_wait 1
+	anim_loop 8, .loop3
+	anim_wait 2
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
+	anim_obp0 $30
+	anim_sound 0, 1, SFX_THUNDER
+	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
+	anim_wait 16
+	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
+	anim_wait 64
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
+
 BattleAnim_MagicalLeaf:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_1gfx ANIM_GFX_PLANT
+	anim_sound 0, 0, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $28
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $5c
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $10
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $e8
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $9c
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $d0
+	anim_wait 6
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $1c
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $50
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $dc
+	anim_obj ANIM_OBJ_RAZOR_LEAF, 48, 80, $90
+	anim_wait 80
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 3
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 5
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 7
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 9
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 1
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 2
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 4
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 6
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 8
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_incobj 10
+	anim_wait 64
+	anim_ret
+
 BattleAnim_WaterSport:
 BattleAnim_CalmMind:
 BattleAnim_LeafBlade:

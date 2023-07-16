@@ -114,7 +114,7 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	dbw 1, MUD_SHOT
+	dbw 1, MAGICAL_LEAF
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
