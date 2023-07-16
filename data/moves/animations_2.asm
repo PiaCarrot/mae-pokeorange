@@ -2016,7 +2016,7 @@ BattleAnim_Tickle:
 	anim_obj ANIM_OBJ_FORESIGHT, 32, 88, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_SWEET_SCENT
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $0, $0
 	anim_wait 32
 	anim_incbgeffect ANIM_BG_WOBBLE_MON
 	anim_jump BattleAnim_ShowMon_1_2
