@@ -73,4 +73,5 @@ AnimObjGFX:
 	anim_obj_gfx 32, AnimObjUTurnGFX
 	anim_obj_gfx  6, AnimObjRingsGFX
 	anim_obj_gfx 13, AnimObjBigRingsGFX
+	anim_obj_gfx  6, AnimObjSmallExplosionGFX
 	assert_table_length NUM_ANIM_GFX + 1
