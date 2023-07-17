@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, DRAGON_DANCE
+	dbw 6, PERISH_SONG
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
