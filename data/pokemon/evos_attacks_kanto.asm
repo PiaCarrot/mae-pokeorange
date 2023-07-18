@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, PSYCHO_BOOST
+	dbw 6, TICKLE
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

@@ -2161,7 +2161,7 @@ BattleAnim_SignalBeam:
 	anim_sound 0, 0, SFX_SPITE
 	anim_obj ANIM_OBJ_SIGNAL_BEAM_B, 64, 92, $0
 	anim_wait 4
-	anim_loop 3, .loop
+	anim_loop 4, .loop
 	anim_wait 64
 	anim_ret
 
