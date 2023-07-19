@@ -3075,6 +3075,7 @@ BattleAnim_Roost:
 	anim_jump BattleAnim_Glimmer_branch
 
 BattleAnim_Gravity: ; --- NEEDS WORK
+	anim_clearenemyhud
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAVITY
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAVITY
 	anim_2gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND_BG
@@ -3092,7 +3093,7 @@ BattleAnim_Gravity: ; --- NEEDS WORK
 	anim_wait 40
 	anim_sound 0, 1, SFX_SHUT_DOWN_PC
 	anim_bgeffect ANIM_BG_WITHDRAW_ALL, $0, $1, $50
-	anim_wait 200
+	anim_wait 96
 	anim_incbgeffect ANIM_BG_WITHDRAW_ALL
 	anim_ret
 
