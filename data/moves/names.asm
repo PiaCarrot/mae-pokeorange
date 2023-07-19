@@ -358,7 +358,7 @@ MoveNames::
 	li "ROOST"
 	li "GRAVITY"
 	li "MIRACLE EYE"
-	li "WAKE UP SLAP"
+	li "WAKE-UP SLAP"
 	li "HAMMER ARM"
 	li "GYRO BALL"
 	li "HEALING WISH"

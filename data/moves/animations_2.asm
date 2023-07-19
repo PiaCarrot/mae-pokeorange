@@ -3074,7 +3074,7 @@ BattleAnim_Roost:
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_jump BattleAnim_Glimmer_branch
 
-BattleAnim_Gravity: ; --- NEEDS WORK
+BattleAnim_Gravity:
 	anim_clearenemyhud
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAVITY
@@ -3084,6 +3084,7 @@ BattleAnim_Gravity: ; --- NEEDS WORK
 	anim_sound 0, 1, SFX_WARP_TO
 	anim_obj ANIM_OBJ_VORTEX, 44, 96, $0
 	anim_wait 32
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $80, $1, $20
 	anim_sound 0, 1, SFX_GRAVITY
 	anim_obj ANIM_OBJ_SKY_UPPERCUT,  12, 36, $10
 	anim_obj ANIM_OBJ_SKY_UPPERCUT,  40, 133, $10
@@ -3091,7 +3092,10 @@ BattleAnim_Gravity: ; --- NEEDS WORK
 	anim_obj ANIM_OBJ_SKY_UPPERCUT,  96, 11, $10
 	anim_obj ANIM_OBJ_SKY_UPPERCUT, 122, 109, $10
 	anim_obj ANIM_OBJ_SKY_UPPERCUT, 140, 162, $10
-	anim_wait 40
+	anim_wait 32
+	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+	anim_wait 24
+	anim_incobj 1
 	anim_sound 0, 1, SFX_SHUT_DOWN_PC
 	anim_bgeffect ANIM_BG_WITHDRAW_ALL, $0, $1, $50
 	anim_wait 96
@@ -3126,6 +3130,28 @@ BattleAnim_MiracleEye:
 	anim_ret
 
 BattleAnim_WakeUpSlap:
+	anim_3gfx ANIM_GFX_WAKE_UP_SLAP, ANIM_GFX_HIT, ANIM_GFX_STARS
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $1, $0
+.loop
+	anim_obj ANIM_OBJ_WAKE_UP_SLAP_R, 166, 48, $20
+	anim_wait 6
+	anim_sound 0, 1, SFX_DOUBLESLAP
+	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
+	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $5c
+	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $e8
+	anim_wait 6
+	anim_obj ANIM_OBJ_WAKE_UP_SLAP_L, 94, 48, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_DOUBLESLAP
+	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
+	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $d0
+	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $50
+	anim_wait 6
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
 BattleAnim_HammerArm:
 BattleAnim_GyroBall:
 BattleAnim_HealingWish:
