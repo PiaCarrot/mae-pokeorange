@@ -3091,8 +3091,9 @@ BattleAnim_Gravity: ; --- NEEDS WORK
 	anim_obj ANIM_OBJ_SKY_UPPERCUT, 140, 162, $10
 	anim_wait 40
 	anim_sound 0, 1, SFX_SHUT_DOWN_PC
-	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_bgeffect ANIM_BG_WITHDRAW_ALL, $0, $1, $50
 	anim_wait 200
+	anim_incbgeffect ANIM_BG_WITHDRAW_ALL
 	anim_ret
 
 BattleAnim_MiracleEye:
