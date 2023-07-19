@@ -337,6 +337,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SMALL_EXPLOSION
 	const ANIM_OBJ_FAKE_OUT_L
 	const ANIM_OBJ_FAKE_OUT_R
+	const ANIM_OBJ_ROOST
+	const ANIM_OBJ_MIRACLE_EYE
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -432,6 +434,7 @@ DEF NUM_ANIM_OBJS EQU const_value
 	const BATTLEANIMFUNC_OBJECT_HOVER
 	const BATTLEANIMFUNC_RADIAL_MOVE_OUT_VERY_SLOW
 	const BATTLEANIMFUNC_RADIAL_MOVE_OUT_VERY_FAST_NO_STOP
+	const BATTLEANIMFUNC_ROOST
 DEF NUM_BATTLEANIMFUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -1071,6 +1074,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_RINGS
 	const ANIM_GFX_BIG_RINGS
 	const ANIM_GFX_SMALL_EXPLOSION
+	const ANIM_GFX_WIND_BG
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1152,6 +1156,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_GRASSWHISTLE     ; 21
 	const PAL_BTLCUSTOM_PSYCHO_BOOST_1   ; 22
 	const PAL_BTLCUSTOM_PSYCHO_BOOST_2   ; 23
+	const PAL_BTLCUSTOM_GRAVITY          ; 24
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1

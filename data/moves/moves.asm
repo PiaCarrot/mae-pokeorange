@@ -275,7 +275,11 @@ Moves1:
 ;==========================
 ;	New Moves Start Here
 ;==========================
+
 Moves2:
+
+; - Gen 3
+
 	move EFFECT_FAKE_OUT,           40, NORMAL,         PHYSICAL, 100, 10, 100 ; FAKE_OUT
 	move EFFECT_NORMAL_HIT,         50, NORMAL,         SPECIAL,  100, 10,   0 ; UPROAR
 	move EFFECT_NORMAL_HIT,          0, NORMAL,         STATUS,   100, 20,   0 ; STOCKPILE
@@ -377,6 +381,9 @@ Moves2:
 	move EFFECT_CONFUSE_HIT,        60, WATER,          SPECIAL,  100, 20,  20 ; WATER_PULSE
 	move EFFECT_NORMAL_HIT,        120, STEEL,          SPECIAL,   85,  5,   0 ; DOOM_DESIRE
 	move EFFECT_NORMAL_HIT,        140, PSYCHIC_TYPE,   SPECIAL,   90,  5,   0 ; PSYCHO_BOOST EFFECT_SELF_SPATK_DN_2_HIT
+
+; - Gen 4
+
 	move EFFECT_HEAL,                0, FLYING,         STATUS,   100, 10,   0 ; ROOST EFFECT_ROOST
 	move EFFECT_NORMAL_HIT,          0, PSYCHIC_TYPE,   STATUS,   100,  5,   0 ; GRAVITY
 	move EFFECT_NORMAL_HIT,          0, PSYCHIC_TYPE,   STATUS,   100, 40,   0 ; MIRACLE_EYE
