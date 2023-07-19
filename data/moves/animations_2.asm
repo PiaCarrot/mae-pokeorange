@@ -3076,6 +3076,7 @@ BattleAnim_Roost:
 
 BattleAnim_Gravity: ; --- NEEDS WORK
 	anim_clearenemyhud
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAVITY
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAVITY
 	anim_2gfx ANIM_GFX_VORTEX, ANIM_GFX_WIND_BG
