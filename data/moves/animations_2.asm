@@ -3211,7 +3211,81 @@ BattleAnim_GyroBall:
 
 
 BattleAnim_HealingWish:
+	anim_clearenemyhud
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
+	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_GLOW
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 1, SFX_FLASH
+	anim_obj ANIM_OBJ_TAIL_GLOW, 48, 96, $0
+	anim_wait 40
+	anim_sound 0, 1, SFX_MOONLIGHT
+	anim_obj ANIM_OBJ_HEALING_WISH_1, 48, 96, $30
+	anim_wait 18
+	anim_obj ANIM_OBJ_HEALING_WISH_2, 50, 96, $31
+	anim_wait 18
+	anim_obj ANIM_OBJ_HEALING_WISH_2, 46, 96, $2f
+	anim_wait 96
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_Brinewater:
+	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 0, SFX_SURF
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 132, 1, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 140, 1, $0f
+	anim_wait 2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $1, $0
+.loop
+	anim_obj ANIM_OBJ_HIT_YFIX, 128, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 128, 1, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 144, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 144, 1, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 124, 1, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 148, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 148, 1, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 120, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 120, 1, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 152, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 152, 1, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 132, 1, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 156, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_2, 140, 1, $0f
+	anim_wait 2
+	anim_loop 4, .loop
+	anim_obj ANIM_OBJ_HIT_YFIX, 128, 68, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 144, 68, $0
+	anim_wait 2
+	anim_sound 0, 0, SFX_TOXIC
+	anim_bgeffect ANIM_BG_START_WATER, $0, $0, $0
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_WATER, $1c, $0, $0
+	anim_wait 7
+	anim_sound 0, 0, SFX_TOXIC
+	anim_wait 8
+	anim_sound 0, 0, SFX_TOXIC
+	anim_wait 11
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_END_WATER, $0, $0, $0
+	anim_wait 8
+	anim_ret
+
 BattleAnim_NaturalGift:
 BattleAnim_Feint:
 BattleAnim_Pluck:

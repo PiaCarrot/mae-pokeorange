@@ -156,7 +156,7 @@ BattleAnimFrameData:
 	dw .Frameset_98 ; BATTLEANIMFRAMESET_98
 	dw .Frameset_99 ; BATTLEANIMFRAMESET_99
 	dw .Frameset_9a ; BATTLEANIMFRAMESET_9A
-	dw .Frameset_9b ; BATTLEANIMFRAMESET_9B
+	dw .Frameset_9b ; BATTLEANIMFRAMESET_9B     --- FREE
 	dw .Frameset_9c ; BATTLEANIMFRAMESET_9C
 	dw .Frameset_9d ; BATTLEANIMFRAMESET_9D
 	dw .Frameset_9e ; BATTLEANIMFRAMESET_9E
@@ -1172,8 +1172,8 @@ BattleAnimFrameData:
 	oamend
 
 .Frameset_9b:
-	oamframe BATTLEANIMOAMSET_1B, 32
-	oamend
+	oamframe BATTLEANIMOAMSET_0F, 24
+	oamdelete
 
 .Frameset_9c:
 	oamframe BATTLEANIMOAMSET_B8, 32
