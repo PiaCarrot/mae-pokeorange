@@ -114,7 +114,7 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	dbw 1, WAKE_UP_SLAP
+	dbw 1, GYRO_BALL
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:

@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, WAKE_UP_SLAP
+	dbw 6, GYRO_BALL
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

@@ -3153,7 +3153,63 @@ BattleAnim_WakeUpSlap:
 	anim_ret
 
 BattleAnim_HammerArm:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SMOKE_PUFF
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_HAMMER_ARM, 136, 68, $30
+	anim_wait 16
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 60, $0
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $60, $2, $20
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+	anim_wait 1
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+	anim_wait 1
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+	anim_wait 44
+	anim_ret
+
 BattleAnim_GyroBall:
+	anim_1gfx ANIM_GFX_GYRO_BALL, 
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BRIGHT
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_obj ANIM_OBJ_GYRO_BALL, 44, 96, $0
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 12
+	anim_wait 1
+	anim_incobj 1
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_clearobjs
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_WIND
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 0, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_GRAVITY
+.loop
+	anim_obj ANIM_OBJ_RAPID_SPIN, 136, 72, $0
+	anim_wait 2
+	anim_loop 5, .loop
+	anim_wait 62
+	anim_ret
+
+
 BattleAnim_HealingWish:
 BattleAnim_Brinewater:
 BattleAnim_NaturalGift:
