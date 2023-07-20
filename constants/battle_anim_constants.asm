@@ -273,7 +273,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_GRUDGE
 	const ANIM_OBJ_SNATCH
 	const ANIM_OBJ_SNATCH_2
-	const ANIM_OBJ_TAIL_GLOW
+	const ANIM_OBJ_SMALL_GLOW
 	const ANIM_OBJ_BIG_GLOW
 	const ANIM_OBJ_MIST_BALL_BG
 	const ANIM_OBJ_FEATHER_DANCE
@@ -345,6 +345,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_GYRO_BALL
 	const ANIM_OBJ_HEALING_WISH_1
 	const ANIM_OBJ_HEALING_WISH_2
+	const ANIM_OBJ_SMALL_GLOW_SLOW
+	const ANIM_OBJ_SIDE_PUNCH_NO_HIT
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -699,6 +701,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_FA
 	const BATTLEANIMFRAMESET_FB
 	const BATTLEANIMFRAMESET_FC
+	const BATTLEANIMFRAMESET_FD
+	const BATTLEANIMFRAMESET_FE
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1088,6 +1092,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_WIND_BG
 	const ANIM_GFX_WAKE_UP_SLAP
 	const ANIM_GFX_GYRO_BALL
+	const ANIM_GFX_BIG_GLOW_CLEAR
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1170,6 +1175,8 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_PSYCHO_BOOST_1   ; 22
 	const PAL_BTLCUSTOM_PSYCHO_BOOST_2   ; 23
 	const PAL_BTLCUSTOM_GRAVITY          ; 24
+	const PAL_BTLCUSTOM_GLOW_GREEN       ; 25
+	const PAL_BTLCUSTOM_HEAT_WAVE        ; 26
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1

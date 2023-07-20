@@ -133,7 +133,7 @@ BattleAnimOAMData:
 	battleanimoam $00, 12, .OAMData_7b ; BATTLEANIMOAMSET_7B
 	battleanimoam $00, 14, .OAMData_7c ; BATTLEANIMOAMSET_7C
 	battleanimoam $00, 15, .OAMData_7d ; BATTLEANIMOAMSET_7D
-	battleanimoam $04,  4, .OAMData_03 ; BATTLEANIMOAMSET_7E
+	battleanimoam $04,  4, .OAMData_03 ; BATTLEANIMOAMSET_7E  --- FREE
 	battleanimoam $08,  4, .OAMData_03 ; BATTLEANIMOAMSET_7F
 	battleanimoam $0d,  1, .OAMData_0f ; BATTLEANIMOAMSET_80
 	battleanimoam $0e,  4, .OAMData_81 ; BATTLEANIMOAMSET_81
@@ -155,7 +155,7 @@ BattleAnimOAMData:
 	battleanimoam $08,  4, .OAMData_8f ; BATTLEANIMOAMSET_91
 	battleanimoam $0c,  4, .OAMData_8f ; BATTLEANIMOAMSET_92
 	battleanimoam $00,  6, .OAMData_93 ; BATTLEANIMOAMSET_93
-	battleanimoam $04,  4, .OAMData_03 ; BATTLEANIMOAMSET_94
+	battleanimoam $04,  4, .OAMData_03 ; BATTLEANIMOAMSET_94  --- FREE
 	battleanimoam $0a,  4, .OAMData_04 ; BATTLEANIMOAMSET_95
 	battleanimoam $15,  4, .OAMData_30 ; BATTLEANIMOAMSET_96
 	battleanimoam $04,  4, .OAMData_30 ; BATTLEANIMOAMSET_97
@@ -193,7 +193,7 @@ BattleAnimOAMData:
 	battleanimoam $0a, 16, .OAMData_00 ; BATTLEANIMOAMSET_B7
 	battleanimoam $10, 16, .OAMData_1c ; BATTLEANIMOAMSET_B8
 	battleanimoam $00, 16, .OAMData_1c ; BATTLEANIMOAMSET_B9
-	battleanimoam $04,  4, .OAMData_03 ; BATTLEANIMOAMSET_BA
+	battleanimoam $04,  4, .OAMData_03 ; BATTLEANIMOAMSET_BA  --- FREE
 	battleanimoam $08,  2, .OAMData_11 ; BATTLEANIMOAMSET_BB
 	battleanimoam $20,  6, .OAMData_bc ; BATTLEANIMOAMSET_BC
 	battleanimoam $08,  1, .OAMData_0f ; BATTLEANIMOAMSET_BD
@@ -225,7 +225,7 @@ BattleAnimOAMData:
 	battleanimoam $00, 12, .OAMData_d7 ; BATTLEANIMOAMSET_D7
 	battleanimoam $10,  2, .OAMData_11 ; BATTLEANIMOAMSET_D8
 	battleanimoam $1b,  4, .OAMData_03 ; BATTLEANIMOAMSET_D9
-	battleanimoam $09,  4, .OAMData_03 ; BATTLEANIMOAMSET_DA
+	battleanimoam $09,  4, .OAMData_03 ; BATTLEANIMOAMSET_DA --- FREE
 	battleanimoam $00, 12, .OAMData_db ; BATTLEANIMOAMSET_DB
 	battleanimoam $15,  4, .OAMData_04 ; BATTLEANIMOAMSET_DC
 	battleanimoam $02,  2, .OAMData_dd ; BATTLEANIMOAMSET_DD
