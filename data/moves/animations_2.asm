@@ -3391,6 +3391,32 @@ BattleAnim_Tailwind:
 	anim_ret
 
 BattleAnim_Acupressure:
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_LIGHTNING
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
+	anim_sound 0, 1, SFX_SLOT_MACHINE_START
+	anim_obj ANIM_OBJ_ACUPRESSURE, 48, 96, $10
+	anim_wait 16
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_wait 24
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_sound 0, 1, SFX_WARP_FROM
+.loop
+	anim_obj ANIM_OBJ_ACUPRESSURE_SPARK, 48, 96, $3e
+	anim_wait 1
+	anim_obj ANIM_OBJ_ACUPRESSURE_SPARK, 48, 96, $20
+	anim_wait 1
+	anim_obj ANIM_OBJ_ACUPRESSURE_SPARK, 48, 96, $2
+	anim_wait 1
+	anim_obj ANIM_OBJ_ACUPRESSURE_SPARK, 48, 96, $22
+	anim_wait 1
+	anim_obj ANIM_OBJ_ACUPRESSURE_SPARK, 48, 96, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_ACUPRESSURE_SPARK, 48, 96, $1e
+	anim_wait 1
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
 BattleAnim_MetalBurst:
 BattleAnim_UTurn:
 BattleAnim_CloseCombat:
