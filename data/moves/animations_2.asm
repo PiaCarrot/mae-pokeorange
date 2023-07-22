@@ -112,7 +112,7 @@ MoveAnimations2:
 	dw BattleAnim_HammerArm
 	dw BattleAnim_GyroBall
 	dw BattleAnim_HealingWish
-	dw BattleAnim_Brinewater
+	dw BattleAnim_Brine
 	dw BattleAnim_NaturalGift
 	dw BattleAnim_Feint
 	dw BattleAnim_Pluck
@@ -3228,7 +3228,7 @@ BattleAnim_HealingWish:
 	anim_clearobjs
 	anim_ret
 
-BattleAnim_Brinewater:
+BattleAnim_Brine:
 	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_HIT
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
 	anim_battlergfx_2row
@@ -3340,7 +3340,56 @@ BattleAnim_Feint:
 	anim_jump BattleAnim_ShowMon_0_2
 
 BattleAnim_Pluck:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_ROCKS
+	anim_call BattleAnim_UserObj_1Row_Special
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $5c
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 140, 44, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $d0
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 124, 60, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $e8
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 140, 60, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $50
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 124, 44, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 48, $5c
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 132, 52, $0
+	anim_wait 40
+	anim_call BattleAnim_ShowMon_1_Special
+	anim_ret
+
 BattleAnim_Tailwind:
+	anim_2gfx ANIM_GFX_HAZE, ANIM_GFX_WIND_BG
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $30
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 76, $10
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 84, $2
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 92, $8
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 100, $14
+	anim_wait 4
+	anim_obj ANIM_OBJ_AGILITY, 8, 80, $6
+	anim_obj ANIM_OBJ_AGILITY, 8, 88, $c
+	anim_obj ANIM_OBJ_AGILITY, 8, 96, $4
+	anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
+.loop
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_wait 4
+	anim_loop 18, .loop
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_ret
+
 BattleAnim_Acupressure:
 BattleAnim_MetalBurst:
 BattleAnim_UTurn:
