@@ -250,13 +250,15 @@ BattleAnimFrameData:
 	dw .Frameset_f6 ; BATTLEANIMFRAMESET_F6
 	dw .Frameset_f7 ; BATTLEANIMFRAMESET_F7
 	dw .Frameset_f8 ; BATTLEANIMFRAMESET_F8
-	dw .Frameset_f9 ; BATTLEANIMFRAMESET_F9
-	dw .Frameset_fa ; BATTLEANIMFRAMESET_FA
-	dw .Frameset_fb ; BATTLEANIMFRAMESET_FB
-	dw .Frameset_fc ; BATTLEANIMFRAMESET_FC
-	dw .Frameset_fd ; BATTLEANIMFRAMESET_FD
-	dw .Frameset_fe ; BATTLEANIMFRAMESET_FE
-	dw .Frameset_ff ; BATTLEANIMFRAMESET_FF
+	dw .Frameset_f9  ; BATTLEANIMFRAMESET_F9
+	dw .Frameset_fa  ; BATTLEANIMFRAMESET_FA
+	dw .Frameset_fb  ; BATTLEANIMFRAMESET_FB
+	dw .Frameset_fc  ; BATTLEANIMFRAMESET_FC
+	dw .Frameset_fd  ; BATTLEANIMFRAMESET_FD
+	dw .Frameset_fe  ; BATTLEANIMFRAMESET_FE
+	dw .Frameset_ff  ; BATTLEANIMFRAMESET_FF
+	dw .Frameset_100 ; BATTLEANIMFRAMESET_100
+	dw .Frameset_101 ; BATTLEANIMFRAMESET_101
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1717,3 +1719,11 @@ BattleAnimFrameData:
 	oamwait 12
 	oamframe BATTLEANIMOAMSET_1B,  8, OAM_Y_FLIP
 	oamend
+
+.Frameset_100:
+	oamframe BATTLEANIMOAMSET_54, 40
+	oamend
+
+.Frameset_101:
+	oamframe BATTLEANIMOAMSET_BD, 60
+	oamdelete
