@@ -78,4 +78,6 @@ AnimObjGFX:
 	anim_obj_gfx 10, AnimObjWakeUpSlapGFX
 	anim_obj_gfx 64, AnimObjGyroBallGFX
 	anim_obj_gfx 13, AnimObjBigGlowClearGFX
+	anim_obj_gfx  6, AnimObjGlowGFXSpiked
+	anim_obj_gfx 18, AnimObjBigGlowGFXSpiked
 	assert_table_length NUM_ANIM_GFX + 1
