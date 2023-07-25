@@ -111,6 +111,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_RadialMoveOut_VeryFast_NoStop
 	dba BattleAnimFunction_Roost
 	dba BattleAnimFunction_RadialMoveOut_VerySlow
+	dba BattleAnimFunction_RadialSpin
 	assert_table_length NUM_BATTLEANIMFUNCS
 
 BattleAnimFunction_ThrowFromUserToTargetAndDisappear:
@@ -4901,4 +4902,36 @@ BattleAnimFunction_RadialMoveOut_VerySlow:
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
+	ret
+
+BattleAnimFunction_RadialSpin:
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	ld d, $10
+	push af
+	push de
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	push hl
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ld hl, 500 ; speed
+	add hl, de
+	ld a, h
+	ld e, l
+	pop hl
+	ld [hli], a
+	ld [hl], e
 	ret

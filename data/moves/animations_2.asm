@@ -3658,7 +3658,7 @@ BattleAnim_Fling:
 BattleAnim_PsychoShift:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PAYBACK
 	anim_2gfx  ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_GLOW
-	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 	anim_sound 0, 1, SFX_THIEF_2
 	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
 	anim_wait 16
@@ -3666,9 +3666,9 @@ BattleAnim_PsychoShift:
 	anim_sound 0, 1, SFX_THIEF_2
 	anim_obj ANIM_OBJ_BIG_GLOW, 48, 96, $0
 	anim_wait 64
-	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
 	anim_clearobjs
-	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $0, $20
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
 	anim_sound 0, 1, SFX_THIEF_2
 	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
 	anim_obj ANIM_OBJ_SMALL_GLOW, 136, 48, $0
@@ -3683,9 +3683,7 @@ BattleAnim_PsychoShift:
 	anim_ret
 
 BattleAnim_TrumpCard:
-	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_TRUMP_CARD_R
-	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_TRUMP_CARD_B
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_TRUMP_CARD_Y
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
 	anim_2gfx ANIM_GFX_OBJECTS_2, ANIM_GFX_CUT
 	anim_sound 63, 3, SFX_SHARPEN
 	anim_obj ANIM_OBJ_TRUMP_CARD_R, 112, 56, $0
@@ -3718,7 +3716,54 @@ BattleAnim_TrumpCard:
 	anim_ret
 
 BattleAnim_HealBlock:
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_HEAL_BLOCK, 132, 28, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_HEAL_BLOCK, 112, 60, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_HEAL_BLOCK, 144, 68, $0
+	anim_wait 21
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 5
+	anim_sound 0, 0, SFX_KINESIS
+	anim_bgp $f8
+	anim_obp0 $14
+	anim_obj ANIM_OBJ_HEAL_BLOCK_SLOW, 132, 28, $0
+	anim_wait 10
+	anim_obj ANIM_OBJ_HEAL_BLOCK_SLOWER, 112, 60, $0
+	anim_wait 20
+	anim_bgp $03
+	anim_sound 0, 0, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_HEAL_BLOCK_SLOWEST, 144, 68, $0
+	anim_wait 90
+	anim_ret
+
 BattleAnim_WringOut:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PAYBACK
+	anim_3gfx ANIM_GFX_HIT, ANIM_GFX_SWIRL, ANIM_GFX_STARS
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_sound 0, 0, SFX_SQUEAK
+	anim_obj ANIM_OBJ_SWIRL, 136, 48, $0
+	anim_obj ANIM_OBJ_WRING_OUT, 136, 48, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_WRING_OUT, 136, 48, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_WRING_OUT, 136, 48, $0
+.loop
+	anim_sound 0, 0, SFX_SLUDGE_BOMB
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $5c
+	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $e8
+	anim_wait 36
+	anim_loop 3, .loop
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_PowerTrick:
 BattleAnim_GastroAcid:
 BattleAnim_LuckyChant:

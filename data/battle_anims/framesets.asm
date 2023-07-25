@@ -260,6 +260,10 @@ BattleAnimFrameData:
 	dw .Frameset_100 ; BATTLEANIMFRAMESET_100
 	dw .Frameset_101 ; BATTLEANIMFRAMESET_101
 	dw .Frameset_102 ; BATTLEANIMFRAMESET_102
+	dw .Frameset_103 ; BATTLEANIMFRAMESET_103
+	dw .Frameset_104 ; BATTLEANIMFRAMESET_104
+	dw .Frameset_105 ; BATTLEANIMFRAMESET_105
+	dw .Frameset_106 ; BATTLEANIMFRAMESET_106
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1733,3 +1737,22 @@ BattleAnimFrameData:
 	oamframe BATTLEANIMOAMSET_DA,  1
 	oamframe BATTLEANIMOAMSET_E7,  1
 	oamrestart
+
+.Frameset_103:
+	oamframe BATTLEANIMOAMSET_BF,  8
+	oamframe BATTLEANIMOAMSET_C0,  8
+	oamframe BATTLEANIMOAMSET_C1,  8
+	oamend
+
+.Frameset_104:
+	oamframe BATTLEANIMOAMSET_BF,  16
+	oamframe BATTLEANIMOAMSET_C0,  16
+	oamend
+
+.Frameset_105:
+	oamframe BATTLEANIMOAMSET_BF,  16
+	oamend
+
+.Frameset_106:
+	oamframe BATTLEANIMOAMSET_05,  6
+	oamend
