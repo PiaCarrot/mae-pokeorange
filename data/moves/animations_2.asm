@@ -3410,19 +3410,22 @@ BattleAnim_MetalBurst:
 	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_HIT
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_sound 0, 0, SFX_METRONOME
+	anim_sound 0, 0, SFX_MEGA_KICK
 	anim_obj ANIM_OBJ_METAL_BURST, 44, 92, $0
 	anim_wait 1
 	anim_obj ANIM_OBJ_METAL_BURST, 28, 90, $0
 	anim_wait 1
+	anim_sound 0, 0, SFX_MEGA_KICK
 	anim_obj ANIM_OBJ_METAL_BURST, 38, 82, $0
 	anim_wait 1
 	anim_obj ANIM_OBJ_METAL_BURST, 46, 104, $0
 	anim_wait 1
+	anim_sound 0, 0, SFX_MEGA_KICK
 	anim_obj ANIM_OBJ_METAL_BURST, 32, 102, $0
 	anim_wait 1
 	anim_obj ANIM_OBJ_METAL_BURST, 58, 98, $0
 	anim_wait 1
+	anim_sound 0, 0, SFX_MEGA_KICK
 	anim_obj ANIM_OBJ_METAL_BURST, 54, 78, $0
 	anim_wait 1
 	anim_obj ANIM_OBJ_METAL_BURST, 62, 88, $0
@@ -3638,8 +3641,82 @@ BattleAnim_Embargo:
 	anim_ret
 
 BattleAnim_Fling:
+	anim_2gfx ANIM_GFX_STATUS, ANIM_GFX_HIT
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj ANIM_OBJ_FLING, 64, 92, $10
+	anim_wait 36
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_sound 0, 1, SFX_MEGA_KICK
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_wait 36
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
+
 BattleAnim_PsychoShift:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PAYBACK
+	anim_2gfx  ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_GLOW
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+	anim_wait 16
+	anim_clearobjs
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_BIG_GLOW, 48, 96, $0
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $0, $20
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+	anim_obj ANIM_OBJ_SMALL_GLOW, 136, 48, $0
+	anim_wait 16
+	anim_clearobjs
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj ANIM_OBJ_BIG_GLOW, 136, 48, $0
+	anim_wait 64
+	anim_clearobjs
+	anim_obj ANIM_OBJ_SMALL_GLOW, 136, 48, $0
+	anim_wait 16
+	anim_ret
+
 BattleAnim_TrumpCard:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_TRUMP_CARD_R
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_TRUMP_CARD_B
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_TRUMP_CARD_Y
+	anim_2gfx ANIM_GFX_OBJECTS_2, ANIM_GFX_CUT
+	anim_sound 63, 3, SFX_SHARPEN
+	anim_obj ANIM_OBJ_TRUMP_CARD_R, 112, 56, $0
+	anim_setobj $1, $3
+	anim_wait 12
+	anim_obj ANIM_OBJ_TRUMP_CARD_B, 112, 56, $0
+	anim_setobj $2, $3
+	anim_wait 12
+	anim_obj ANIM_OBJ_TRUMP_CARD_Y, 112, 56, $0
+	anim_setobj $3, $3
+	anim_wait 12
+	anim_obj ANIM_OBJ_TRUMP_CARD_R, 112, 56, $0
+	anim_setobj $4, $3
+	anim_wait 12
+	anim_obj ANIM_OBJ_TRUMP_CARD_B, 112, 56, $0
+	anim_setobj $5, $3
+	anim_wait 24
+	anim_clearobjs
+	anim_wait 1
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BLUE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
+	anim_2gfx ANIM_GFX_FLATTER, ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $1c
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $50
+	anim_obj ANIM_OBJ_FLATTER_1, 136, 46, $dc
+	anim_obj ANIM_OBJ_FLATTER_2, 136, 46, $90
+	anim_wait 32
+	anim_ret
+
 BattleAnim_HealBlock:
 BattleAnim_WringOut:
 BattleAnim_PowerTrick:

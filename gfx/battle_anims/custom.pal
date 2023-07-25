@@ -171,5 +171,20 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 31, 31
 	RGB 31, 15, 28
 	RGB 22, 00, 23
+; trumpcardred
+	RGB 31, 31, 31
+	RGB 31, 19, 24
+	RGB 30, 10, 06
+	RGB 25, 25, 25
+; trumpcardblue
+	RGB 31, 31, 31
+	RGB 00, 19, 28
+	RGB 08, 09, 28
+	RGB 25, 25, 25
+; trumpcardyellow
+	RGB 31, 31, 31
+	RGB 31, 31, 07
+	RGB 31, 16, 01
+	RGB 25, 25, 25
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

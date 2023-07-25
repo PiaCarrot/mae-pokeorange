@@ -356,6 +356,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_ASSURANCE
 	const ANIM_OBJ_ASSURANCE_XFLIP
 	const ANIM_OBJ_EMBARGO
+	const ANIM_OBJ_FLING
+	const ANIM_OBJ_TRUMP_CARD_R
+	const ANIM_OBJ_TRUMP_CARD_B
+	const ANIM_OBJ_TRUMP_CARD_Y
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -1108,6 +1112,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_BIG_GLOW_CLEAR
 	const ANIM_GFX_GLOW_SPIKED
 	const ANIM_GFX_BIG_GLOW_SPIKED
+	const ANIM_GFX_OBJECTS_2
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1193,6 +1198,9 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_GLOW_GREEN       ; 25
 	const PAL_BTLCUSTOM_HEAT_WAVE        ; 26
 	const PAL_BTLCUSTOM_PAYBACK          ; 27
+	const PAL_BTLCUSTOM_TRUMP_CARD_R     ; 28
+	const PAL_BTLCUSTOM_TRUMP_CARD_B     ; 29
+	const PAL_BTLCUSTOM_TRUMP_CARD_Y     ; 2a
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
