@@ -45,7 +45,7 @@ AnimObjGFX:
 	anim_obj_gfx 21, AnimObjObjectsGFX
 	anim_obj_gfx 38, AnimObjShineGFX
 	anim_obj_gfx 35, AnimObjAngelsGFX
-	anim_obj_gfx 18, AnimObjSwirlGFX
+	anim_obj_gfx 24, AnimObjSwirlGFX
 	anim_obj_gfx 24, AnimObjAeroblastGFX
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  1, NULL
@@ -64,7 +64,7 @@ AnimObjGFX:
 	anim_obj_gfx 13, AnimObjBigGlowGFX
 	anim_obj_gfx  9, AnimObjTearGFX
 	anim_obj_gfx 16, AnimObjBlastBurnGFX
-	anim_obj_gfx 64, AnimObjVortexGFX
+	anim_obj_gfx 32, AnimObjVortexGFX
 	anim_obj_gfx  4, AnimObjHydroCannonGFX
 	anim_obj_gfx 16, AnimObjFrenzyPlantGFX
 	anim_obj_gfx 16, AnimObjWeatherBallGFX
