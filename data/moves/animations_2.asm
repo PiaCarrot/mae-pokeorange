@@ -1004,6 +1004,10 @@ BattleAnim_Eruption_branch:
 
 BattleAnim_SkillSwap:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SKILL_SWAP
+	anim_jump BattleAnim_Transfer_Orbs_branch
+
+BattleAnim_Transfer_Orbs_branch:
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 	anim_1gfx ANIM_GFX_CHARGE
 .loop
 	anim_sound 6, 3, SFX_STOP_SLOT
@@ -3704,7 +3708,6 @@ BattleAnim_TrumpCard:
 	anim_clearobjs
 	anim_wait 1
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BLUE
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_YELLOW
 	anim_2gfx ANIM_GFX_FLATTER, ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
@@ -3760,18 +3763,190 @@ BattleAnim_WringOut:
 	anim_obj ANIM_OBJ_STAR_BURST, 136, 48, $e8
 	anim_wait 36
 	anim_loop 3, .loop
-	anim_clearobjs
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 1
+	anim_clearobjs
 	anim_wait 32
 	anim_ret
 
 BattleAnim_PowerTrick:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
+	anim_1gfx ANIM_GFX_BIG_GLOW_SPIKED
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 0, SFX_PSYBEAM
+	anim_bgeffect ANIM_BG_TELEPORT, $0, $1, $0
+	anim_obj ANIM_OBJ_BIG_GLOW_SPIKED, 48, 96, $0
+	anim_wait 94
+	anim_incbgeffect ANIM_BG_TELEPORT
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_clearobjs
+	anim_wait 32
+	anim_ret
+
 BattleAnim_GastroAcid:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GASTRO_ACID
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GASTRO_ACID
+	anim_1gfx ANIM_GFX_POISON
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_sound 6, 2, SFX_AEROBLAST
+	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $5c
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $e8
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $d0
+	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $50
+	anim_wait 8
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_GASTRO_ACID, 128, 32, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_GASTRO_ACID, 144, 32, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_GASTRO_ACID, 124, 32, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_GASTRO_ACID, 148, 32, $0f
+	anim_wait 2
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_GASTRO_ACID, 120, 32, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_GASTRO_ACID, 152, 32, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_GASTRO_ACID, 132, 32, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_GASTRO_ACID, 140, 32, $0f
+	anim_wait 22
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+	anim_wait 8
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_LuckyChant:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PAYBACK
+	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_STARS, ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $0
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $8
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $10
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $18
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $20
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $28
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $30
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 44, 88, $38
+	anim_wait 96
+	anim_clearobjs
+	anim_wait 1
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_sound 0, 0, SFX_GAME_FREAK_PRESENTS
+	anim_obj ANIM_OBJ_BIG_GLOW, 48, 96, $0
+	anim_wait 6
+	anim_clearobjs
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 36, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 52, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 28, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 20, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 68, 108, $6
+	anim_wait 2
+	anim_wait 48
+	anim_ret
+
 BattleAnim_MeFirst:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BUBBLE
+	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_CHARGE, ANIM_GFX_GLOW,
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $38
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $8
+	anim_wait 4
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $10
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $28
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $18
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $30
+	anim_wait 4
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_ME_FIRST_GLOW, 136, 48, $2
+	anim_wait 44
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+	anim_sound 0, 0, SFX_POTION
+	anim_obj ANIM_OBJ_BIG_GLOW, 48, 96, $0
+	anim_wait 56
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_Copycat:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_CHARGE, ANIM_GFX_GLOW,
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $38
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $8
+	anim_wait 4
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $10
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $28
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $18
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $30
+	anim_wait 4
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+	anim_wait 22
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+	anim_sound 0, 0, SFX_POTION
+	anim_obj ANIM_OBJ_BIG_GLOW, 48, 96, $0
+	anim_wait 56
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_PowerSwap:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RED
+	anim_jump BattleAnim_Transfer_Orbs_branch
+
 BattleAnim_GuardSwap:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_WATER
+	anim_jump BattleAnim_Transfer_Orbs_branch
+
 BattleAnim_Punishment:
 BattleAnim_LastResort:
 BattleAnim_WorrySeed:
