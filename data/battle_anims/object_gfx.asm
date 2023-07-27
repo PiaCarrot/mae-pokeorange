@@ -81,5 +81,5 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjGlowSpikedGFX
 	anim_obj_gfx 10, AnimObjBigGlowSpikedGFX
 	anim_obj_gfx  4, AnimObjObjects2GFX
-	anim_obj_gfx 64, AnimObjBigWhipGFX
+	anim_obj_gfx 24, AnimObjBigWhipGFX
 	assert_table_length NUM_ANIM_GFX + 1

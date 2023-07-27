@@ -3948,7 +3948,7 @@ BattleAnim_GuardSwap:
 	anim_jump BattleAnim_Transfer_Orbs_branch
 
 BattleAnim_Punishment:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PAYBACK
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_2gfx ANIM_GFX_BIG_WHIP, ANIM_GFX_HIT
 	anim_obj ANIM_OBJ_PUNISHMENT, 112, 56, $0
 	anim_wait 200
