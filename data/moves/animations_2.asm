@@ -3961,18 +3961,60 @@ BattleAnim_Punishment:
 
 BattleAnim_LastResort:
 	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $0
-	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $8
-	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $10
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $4, $0
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_sound 0, 0, SFX_FLASH
+.loop
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $00
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $0c
 	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $18
-	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $20
-	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $28
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $24
 	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $30
-	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $38
-	anim_wait 200
+	anim_wait 8
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $06
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $12
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $1e
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $2a
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $36
+	anim_wait 46
+	anim_clearobjs
+	anim_sound 0, 0, SFX_GAME_FREAK_PRESENTS
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $2, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $0
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $8
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $10
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $18
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $20
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $28
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $30
+	anim_obj ANIM_OBJ_LUCKY_CHANT, 136, 48, $38
+	anim_incobj 12
+	anim_incobj 13
+	anim_incobj 14
+	anim_incobj 15
+	anim_incobj 16
+	anim_incobj 17
+	anim_incobj 18
+	anim_incobj 19
+	anim_wait 48
 	anim_ret
 
 BattleAnim_WorrySeed:
+	anim_3gfx ANIM_GFX_PLANT, ANIM_GFX_DEPRESSION, ANIM_GFX_SMOKE
+	anim_sound 0, 0, SFX_BONE_CLUB
+	anim_obj ANIM_OBJ_WORRY_SEED, 64, 92, $10
+	anim_wait 40
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_BALL_POOF_YFIX, 136, 56, $0
+	anim_wait 16
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_GRAY
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_DEPRESSION, 116, 32, $0
+	anim_wait 64
+	anim_ret
+
 BattleAnim_SuckerPunch:
 BattleAnim_ToxicSpikes:
 BattleAnim_HeartSwap:

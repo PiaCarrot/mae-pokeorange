@@ -4943,7 +4943,7 @@ BattleAnimFunction_LastResort:
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
-	inc [hl]
+	inc [hl] ; These speed up spinning
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	ld d, [hl]
@@ -4963,15 +4963,21 @@ BattleAnimFunction_LastResort:
 	add hl, bc
 	ld a, [hl]
 	inc [hl]
+	inc [hl] ; the rest of these control the in and out.
+	inc [hl]
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
 	cp $40
 	jr nc, .shrink
 	inc [hl]
+	inc [hl] ; in and out
+	inc [hl]
 	ret
 
 .shrink
 	ld a, [hl]
+	dec [hl]
+	dec [hl] ; in and out
 	dec [hl]
 	and a
 	ret nz
