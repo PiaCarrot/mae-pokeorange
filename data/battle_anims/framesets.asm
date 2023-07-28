@@ -1218,7 +1218,7 @@ BattleAnimFrameData:
 
 .Frameset_a3:
 	battleoamframe BATTLEANIMOAMSET_20, 11
-	battleoamframe BATTLEANIMOAMSET_BA, 11
+	battleoamframe BATTLEANIMOAMSET_21, 11
 	battleoamframe BATTLEANIMOAMSET_1B, 11
 	battleoamdelete
 
@@ -1768,12 +1768,12 @@ BattleAnimFrameData:
 	battleoamdelete
 
 .Frameset_108:
-	battleoamframe BATTLEANIMOAMSET_C4,  1
-	battleoamframe BATTLEANIMOAMSET_FC,  1
-	battleoamframe BATTLEANIMOAMSET_E5,  1
 	battleoamframe BATTLEANIMOAMSET_FD,  1
 	battleoamframe BATTLEANIMOAMSET_C4,  1, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamframe BATTLEANIMOAMSET_E5,  1, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamframe BATTLEANIMOAMSET_FD,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_C4,  1
+	battleoamframe BATTLEANIMOAMSET_FC,  1
+	battleoamframe BATTLEANIMOAMSET_E5,  1
 	battleoamrestart

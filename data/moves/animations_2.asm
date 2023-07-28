@@ -3948,14 +3948,30 @@ BattleAnim_GuardSwap:
 	anim_jump BattleAnim_Transfer_Orbs_branch
 
 BattleAnim_Punishment:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PURPLE
 	anim_2gfx ANIM_GFX_BIG_WHIP, ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_PUNISHMENT, 112, 56, $0
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_PUNISHMENT, 96, 245, $0c
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
+	anim_wait 64
+	anim_ret
+
+BattleAnim_LastResort:
+	anim_2gfx ANIM_GFX_STARS, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $0
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $8
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $10
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $18
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $20
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $28
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $30
+	anim_obj ANIM_OBJ_LAST_RESORT, 136, 48, $38
 	anim_wait 200
 	anim_ret
 
-
-BattleAnim_LastResort:
 BattleAnim_WorrySeed:
 BattleAnim_SuckerPunch:
 BattleAnim_ToxicSpikes:
