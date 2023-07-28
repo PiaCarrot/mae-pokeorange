@@ -131,7 +131,7 @@ if DEF(_DEBUG)
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove FEINT,        wPartyMon1, 0
 	givepokemove GRAVITY,       wPartyMon1, 1
-	givepokemove SANDSTORM,   wPartyMon1, 2
+	givepokemove PUNISHMENT,   wPartyMon1, 2
 	givepokemove WEATHER_BALL,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
 	givepokemove CRABHAMMER,      wPartyMon2, 0
