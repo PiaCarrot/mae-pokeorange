@@ -378,6 +378,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SUCKER_PUNCH_R
 	const ANIM_OBJ_AQUA_RING
 	const ANIM_OBJ_TINY_GLOW_CLEAR
+	const ANIM_OBJ_ORBITING_ORBS
+	const ANIM_OBJ_MAGNET_RISE
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -750,6 +752,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_10A
 	const BATTLEANIMFRAMESET_10B
 	const BATTLEANIMFRAMESET_10C
+	const BATTLEANIMFRAMESET_10D
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1012,6 +1015,7 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_FF
 	const BATTLEANIMOAMSET_100
 	const BATTLEANIMOAMSET_101
+	const BATTLEANIMOAMSET_102
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -1070,6 +1074,7 @@ DEF NUM_BATTLEANIMOAMSETS EQU const_value
 	const ANIM_BG_VIBRATE_MON
 	const ANIM_BG_WOBBLE_PLAYER
 	const ANIM_BG_WOBBLE_SCREEN
+	const ANIM_BG_HOVER_DOWN
 DEF NUM_ANIM_BGS EQU const_value - 1
 
 ; wBattleAnimTileDict keys (see wram.asm)

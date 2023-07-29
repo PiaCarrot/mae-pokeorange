@@ -301,7 +301,6 @@ BattleAnim_Stockpile:
 	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $30
 	anim_wait 4
 	anim_loop 3, .loop
-	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
 	anim_call BattleAnim_ShowMon_0_2
 	anim_wait 32
 	anim_ret
@@ -4018,9 +4017,15 @@ BattleAnim_WorrySeed:
 BattleAnim_SuckerPunch:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_PAYBACK
 	anim_3gfx ANIM_GFX_OBJECTS_2, ANIM_GFX_HIT, ANIM_GFX_SPEED
-	anim_sound 0, 0, SFX_LICK
-	anim_bgeffect ANIM_BG_REMOVE_MON, $0, $1, $0
-	anim_wait 48
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_SUCKER_PUNCH_R, 182, 32, $20
 	anim_wait 32
@@ -4094,6 +4099,48 @@ BattleAnim_AquaRing:
 	anim_ret
 
 BattleAnim_MagnetRise:
+	anim_2gfx ANIM_GFX_CHARGE, ANIM_GFX_MISC_2
+	anim_battlergfx_1row
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $0
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $8
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $10
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $18
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $20
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $28
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $30
+	anim_obj ANIM_OBJ_ORBITING_ORBS, 44, 88, $38
+.loop
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_wait 32
+	anim_loop 2, .loop
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $0, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_HOVER_DOWN, $0, $1, $0
+.loop2
+	anim_sound 0, 0, SFX_WARP_FROM
+	anim_obj ANIM_OBJ_MAGNET_RISE, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_MAGNET_RISE, 36, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_MAGNET_RISE, 52, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_MAGNET_RISE, 28, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_MAGNET_RISE, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_MAGNET_RISE, 20, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_MAGNET_RISE, 68, 108, $8
+	anim_wait 2
+	anim_loop 6, .loop2
+	anim_incbgeffect ANIM_BG_HOVER_DOWN
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_FlareBlitz:
 BattleAnim_ForcePalm:
 BattleAnim_AuraSphere:

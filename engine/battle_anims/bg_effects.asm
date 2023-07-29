@@ -134,6 +134,7 @@ BattleBGEffects:
 	dw BattleBGEffect_VibrateMon
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
+	dw BattleBGEffect_HoverDown
 
 BattleBGEffect_End:
 	jmp EndBattleBGEffect
@@ -2907,3 +2908,51 @@ BattleBGEffects_CheckSGB:
 	ldh a, [hSGB]
 	and a
 	ret
+
+BattleBGEffect_HoverDown:
+	call BattleBGEffects_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	call BattleBGEffects_IncAnonJumptableIndex
+	call BattleBGEffects_ClearLYOverrides
+	ld a, LOW(rSCY)
+	call BattleBGEffect_SetLCDStatCustoms2
+	ldh a, [hLYOverrideEnd]
+	inc a
+	ldh [hLYOverrideEnd], a
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	ld [hl], $1
+	ld hl, BG_EFFECT_STRUCT_PARAM
+	add hl, bc
+	ld [hl], $20
+	ret
+
+.one
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	ld a, [hl]
+	cp $38
+	ret nc
+	push af
+	ld hl, BG_EFFECT_STRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld d, $5
+	call Cosine
+	add $5
+	ld d, a
+	pop af
+	add d
+	call BGEffect_DisplaceLYOverridesBackup
+	ld hl, BG_EFFECT_STRUCT_PARAM
+	add hl, bc
+	inc [hl]
+	ret
+
+.two
+	jmp BattleAnim_ResetLCDStatCustom

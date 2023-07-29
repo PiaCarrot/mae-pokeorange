@@ -270,6 +270,7 @@ BattleAnimFrameData:
 	dw .Frameset_10a ; BATTLEANIMFRAMESET_10A
 	dw .Frameset_10b ; BATTLEANIMFRAMESET_10B
 	dw .Frameset_10c ; BATTLEANIMFRAMESET_10C
+	dw .Frameset_10d ; BATTLEANIMFRAMESET_10D
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1802,3 +1803,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_101,  2
 	battleoamframe BATTLEANIMOAMSET_100,  2, OAM_X_FLIP
 	battleoamrestart
+
+.Frameset_10d:
+	battleoamframe BATTLEANIMOAMSET_102,  8
+	battleoamend
