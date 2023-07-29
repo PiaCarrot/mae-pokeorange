@@ -4142,8 +4142,133 @@ BattleAnim_MagnetRise:
 	anim_ret
 
 BattleAnim_FlareBlitz:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_HIT
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+.loop
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 36, 108, $6
+	anim_wait 2
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 52, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 28, 108, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 20, 108, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLARE_BLITZ, 68, 108, $8
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 16
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_wait 1
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
+	anim_sound 0, 0, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 4
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+	anim_sound 0, 0, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $0
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $28
+	anim_wait 1
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $30
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $38
+	anim_wait 1
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $20
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $18
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $4
+	anim_wait 1
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $2b
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $14
+	anim_wait 1
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $3b
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $24
+	anim_wait 1
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 136, 56, $b
+	anim_sound 0, 0, SFX_KARATE_CHOP
+	anim_wait 2
+	anim_sound 0, 0, SFX_KARATE_CHOP
+	anim_wait 32
+	anim_wait 1
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_ForcePalm:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PAYBACK
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_BIG_GLOW_SPIKED
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_obj ANIM_OBJ_PALM_STILL, 94, 48, $0
+	anim_wait 32
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_obj ANIM_OBJ_FORCE_PALM, 94, 48, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_BIG_GLOW_SPIKED, 136, 48, $0
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_wait 2
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_obj ANIM_OBJ_PALM_STILL, 166, 48, $0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
+
 BattleAnim_AuraSphere:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_YELLOW
+	anim_4gfx ANIM_GFX_VORTEX, ANIM_GFX_GLOW, ANIM_GFX_WIND_BG, ANIM_GFX_SWIRL
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
+	anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
+	anim_wait 4
+	anim_obj ANIM_OBJ_AGILITY, 8, 56, $c
+	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
+	anim_sound 0, 1, SFX_OUTRAGE
+.loop
+	anim_obj ANIM_OBJ_SWIRL_SHORT, 44, 96, $0
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_obj ANIM_OBJ_VORTEX, 44, 96, $0
+	anim_wait 64
+	anim_clearobjs
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_SHRINKING_GLOW, 44, 96, $4
+	anim_wait 10
+	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_AURA_SPHERE, ANIM_GFX_WIND_BG
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+.loop2
+	anim_obj ANIM_OBJ_AURA_SPHERE, 64, 88, $6
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 0, 1, SFX_AEROBLAST
+	anim_obj ANIM_OBJ_BIG_GLOW, 136, 48, $0
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 32
+	anim_ret
+
 BattleAnim_RockPolish:
 BattleAnim_PoisonJab:
 BattleAnim_DarkPulse:

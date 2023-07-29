@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, SUCKER_PUNCH
+	dbw 6, AURA_SPHERE
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
