@@ -4377,7 +4377,71 @@ BattleAnim_DarkPulse:
 	anim_ret
 
 BattleAnim_NightSlash:
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WIND_BG
+	anim_bgp $1b
+	anim_obp0 $c0
+	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
+	anim_obj ANIM_OBJ_AGILITY, 8, 88, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_AGILITY, 8, 32, $6
+	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_LEFT, 112, 48, $0
+	anim_wait 40
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_RIGHT, 152, 52, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_AquaTail:
+	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+	anim_1gfx ANIM_GFX_BUBBLE
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_RISING_BUBBLE, 64, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_RISING_BUBBLE, 32, 104, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_RISING_BUBBLE, 48, 104, $0
+	anim_wait 32
+	anim_clearobjs
+	anim_wait 1
+	anim_call BattleAnim_TargetObj_1Row_2
+	anim_3gfx ANIM_GFX_BUBBLE, ANIM_GFX_HIT, ANIM_GFX_SAND
+	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_BUBBLEBEAM
+	anim_obj ANIM_OBJ_DIG_SAND, 104, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 112, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 120, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 128, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 136, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 144, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 152, 60, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_DIG_SAND, 160, 60, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_MEGA_KICK
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $5c
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $e8
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $d0
+	anim_wait 8
+	anim_incbgeffect ANIM_BG_WOBBLE_MON
+	anim_wait 16
+	anim_jump BattleAnim_ShowMon_0_2
+
 BattleAnim_SeedBomb:
 BattleAnim_AirSlash:
 BattleAnim_XScissor:
