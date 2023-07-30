@@ -1494,9 +1494,7 @@ BattleAnim_PoisonFang:
 	anim_clearobjs
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
-	anim_call BattleAnim_PoisonBubble_branch
-	anim_ret
-
+;fallthrough
 BattleAnim_PoisonBubble_branch:
 .loop
 	anim_sound 0, 1, SFX_TOXIC
@@ -2583,8 +2581,7 @@ BattleAnim_PoisonTail:
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_0_2
-	anim_call BattleAnim_PoisonBubble_branch
-	anim_ret
+	anim_jump BattleAnim_PoisonBubble_branch
 
 BattleAnim_Covet:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_HIT
@@ -4059,8 +4056,7 @@ BattleAnim_ToxicSpikes:
 	anim_obj ANIM_OBJ_SPIKES, 48, 88, $28
 	anim_wait 40
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
-	anim_call BattleAnim_PoisonBubble_branch
-	anim_ret
+	anim_jump BattleAnim_PoisonBubble_branch
 
 BattleAnim_HeartSwap:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
@@ -4270,7 +4266,97 @@ BattleAnim_AuraSphere:
 	anim_ret
 
 BattleAnim_RockPolish:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_2gfx ANIM_GFX_ROCK_POLISH, ANIM_GFX_SPEED
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK, $0, $1, $40
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R_YFLIP, 52, 88, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_L_YFLIP, 40, 100, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_R, 48, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_L, 56, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L_YFLIP, 36, 84, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_R_YFLIP, 60, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_R, 52, 88, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_R, 40, 100, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_L, 48, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_85DEG_L, 56, 96, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_5DEG_R_YFLIP, 36, 84, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_L_YFLIP, 60, 96, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_SHINING_SPARKLE, 32, 72, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_SHINING_SPARKLE, 64, 104, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_SHINING_SPARKLE, 32, 104, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_SHINING_SPARKLE, 64, 72, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_SHINING_SPARKLE, 48, 88, $0
+	anim_wait 5
+	anim_wait 16
+	anim_ret
+
 BattleAnim_PoisonJab:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_PURPLE
+	anim_3gfx ANIM_GFX_OBJECTS_2, ANIM_GFX_HIT, ANIM_GFX_POISON
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
+.loop
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_DARK_PULSE_SW, 132, 56, $38
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
+	anim_obj ANIM_OBJ_DARK_PULSE_E, 132, 56, $20
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_DARK_PULSE_NW, 132, 56, $8
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+	anim_obj ANIM_OBJ_DARK_PULSE_N, 132, 56, $10
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_DARK_PULSE_SE, 132, 56, $28
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+	anim_obj ANIM_OBJ_DARK_PULSE_W, 132, 56, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_DARK_PULSE_NE, 132, 56, $18
+	anim_wait 4
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+	anim_obj ANIM_OBJ_DARK_PULSE_S, 132, 56, $30
+	anim_wait 4
+	anim_loop 2, .loop
+	anim_jump BattleAnim_PoisonBubble_branch
+
 BattleAnim_DarkPulse:
 BattleAnim_NightSlash:
 BattleAnim_AquaTail:

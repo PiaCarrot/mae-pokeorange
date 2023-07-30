@@ -80,10 +80,11 @@ AnimObjGFX:
 	anim_obj_gfx 13, AnimObjBigGlowClearGFX
 	anim_obj_gfx  6, AnimObjGlowSpikedGFX
 	anim_obj_gfx 10, AnimObjBigGlowSpikedGFX
-	anim_obj_gfx 10, AnimObjObjects2GFX
+	anim_obj_gfx 22, AnimObjObjects2GFX
 	anim_obj_gfx 24, AnimObjBigWhipGFX
 	anim_obj_gfx 12, AnimObjDepressionGFX
 	anim_obj_gfx  5, AnimObjHeartsGFX
 	anim_obj_gfx 12, AnimObjAquaRingGFX
 	anim_obj_gfx 16, AnimObjAuraSphereGFX
+	anim_obj_gfx  6, AnimObjRockPolishGFX
 	assert_table_length NUM_ANIM_GFX + 1
