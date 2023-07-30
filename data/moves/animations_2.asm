@@ -4327,37 +4327,55 @@ BattleAnim_PoisonJab:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
 .loop
 	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_DARK_PULSE_SW, 132, 56, $38
+	anim_obj ANIM_OBJ_POISON_JAB_SW, 132, 56, $38
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
-	anim_obj ANIM_OBJ_DARK_PULSE_E, 132, 56, $20
+	anim_obj ANIM_OBJ_POISON_JAB_E, 132, 56, $20
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_DARK_PULSE_NW, 132, 56, $8
+	anim_obj ANIM_OBJ_POISON_JAB_NW, 132, 56, $8
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
-	anim_obj ANIM_OBJ_DARK_PULSE_N, 132, 56, $10
+	anim_obj ANIM_OBJ_POISON_JAB_N, 132, 56, $10
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_DARK_PULSE_SE, 132, 56, $28
+	anim_obj ANIM_OBJ_POISON_JAB_SE, 132, 56, $28
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
-	anim_obj ANIM_OBJ_DARK_PULSE_W, 132, 56, $0
+	anim_obj ANIM_OBJ_POISON_JAB_W, 132, 56, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj ANIM_OBJ_DARK_PULSE_NE, 132, 56, $18
+	anim_obj ANIM_OBJ_POISON_JAB_NE, 132, 56, $18
 	anim_wait 4
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
-	anim_obj ANIM_OBJ_DARK_PULSE_S, 132, 56, $30
+	anim_obj ANIM_OBJ_POISON_JAB_S, 132, 56, $30
 	anim_wait 4
 	anim_loop 2, .loop
 	anim_jump BattleAnim_PoisonBubble_branch
 
 BattleAnim_DarkPulse:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
+	anim_1gfx ANIM_GFX_OBJECTS_2
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_SPITE
+	anim_obj ANIM_OBJ_DARK_PULSE_E, 52, 92, $0
+	anim_obj ANIM_OBJ_DARK_PULSE_SE, 48, 96, $8
+	anim_obj ANIM_OBJ_DARK_PULSE_S, 44, 96, $10
+	anim_obj ANIM_OBJ_DARK_PULSE_SW, 40, 96, $18
+	anim_obj ANIM_OBJ_DARK_PULSE_W, 36, 92, $20
+	anim_obj ANIM_OBJ_DARK_PULSE_NW, 40, 88, $28
+	anim_obj ANIM_OBJ_DARK_PULSE_N, 44, 88, $30
+	anim_obj ANIM_OBJ_DARK_PULSE_NE, 48, 88, $38
+	anim_wait 96
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_ret
+
 BattleAnim_NightSlash:
 BattleAnim_AquaTail:
 BattleAnim_SeedBomb:

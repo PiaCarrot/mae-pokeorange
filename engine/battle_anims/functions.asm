@@ -113,6 +113,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_RadialMoveOut_VerySlow
 	dba BattleAnimFunction_RadialSpin
 	dba BattleAnimFunction_LastResort
+	dba BattleAnimFunction_DarkPulse
 	assert_table_length NUM_BATTLEANIMFUNCS
 
 BattleAnimFunction_ThrowFromUserToTargetAndDisappear:
@@ -1443,6 +1444,29 @@ BattleAnimFunction_HiddenPower:
 	jr nc, .done
 	ld d, a
 	add $8
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jr .step_circle
+
+.done
+	jmp DeinitBattleAnimation
+
+.step_circle
+	jr BattleAnim_StepCircle
+
+
+BattleAnimFunction_DarkPulse:
+; Expands object out in a ring around position at 1 pixel at a time for 13 frames and then disappears
+; Obj Param: Defines starting position in circle
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $80
+	jr nc, .done
+	ld d, a
+	add $2
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc

@@ -1961,7 +1961,7 @@ BattleAnimFrameData:
 
 .Frameset_123:
 	battleoamframe BATTLEANIMOAMSET_6C,  32, OAM_X_FLIP
-	battleoamend
+	battleoamdelete
 
 .Frameset_124:
 	battleoamframe BATTLEANIMOAMSET_AD,  32, OAM_X_FLIP
