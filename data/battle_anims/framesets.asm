@@ -300,6 +300,9 @@ BattleAnimFrameData:
 	dw .Frameset_128 ; BATTLEANIMFRAMESET_128
 	dw .Frameset_129 ; BATTLEANIMFRAMESET_129
 	dw .Frameset_12a ; BATTLEANIMFRAMESET_12A
+	dw .Frameset_12b ; BATTLEANIMFRAMESET_12B
+	dw .Frameset_12c ; BATTLEANIMFRAMESET_12C
+	dw .Frameset_12d ; BATTLEANIMFRAMESET_12D
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_00:
@@ -1802,11 +1805,11 @@ BattleAnimFrameData:
 	battleoamdelete
 
 .Frameset_108:
-	battleoamframe BATTLEANIMOAMSET_FD,  1
-	battleoamframe BATTLEANIMOAMSET_C4,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_C4,  1, OAM_X_FLIP
 	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP, OAM_Y_FLIP
-	battleoamframe BATTLEANIMOAMSET_E5,  1, OAM_X_FLIP, OAM_Y_FLIP
-	battleoamframe BATTLEANIMOAMSET_FD,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_E5,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_Y_FLIP
 	battleoamframe BATTLEANIMOAMSET_C4,  1
 	battleoamframe BATTLEANIMOAMSET_FC,  1
 	battleoamframe BATTLEANIMOAMSET_E5,  1
@@ -2026,3 +2029,24 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_118,  1
 	battleoamframe BATTLEANIMOAMSET_119,  1
 	battleoamdelete
+
+.Frameset_12b:
+	battleoamframe BATTLEANIMOAMSET_1E,  3
+	battleoamframe BATTLEANIMOAMSET_55,  3
+	battleoamframe BATTLEANIMOAMSET_54,  3
+	battleoamframe BATTLEANIMOAMSET_53,  3
+	battleoamdelete
+
+.Frameset_12c:
+	battleoamwait 8
+	battleoamframe BATTLEANIMOAMSET_FC,  1
+	battleoamframe BATTLEANIMOAMSET_E5,  1
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP
+	battleoamend
+
+.Frameset_12d:
+	battleoamwait 8
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_E5,  1
+	battleoamframe BATTLEANIMOAMSET_FC,  1
+	battleoamend

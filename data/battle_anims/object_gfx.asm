@@ -81,7 +81,7 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjGlowSpikedGFX
 	anim_obj_gfx 10, AnimObjBigGlowSpikedGFX
 	anim_obj_gfx 22, AnimObjObjects2GFX
-	anim_obj_gfx 24, AnimObjBigWhipGFX
+	anim_obj_gfx 18, AnimObjBigWhipGFX
 	anim_obj_gfx 12, AnimObjDepressionGFX
 	anim_obj_gfx  5, AnimObjHeartsGFX
 	anim_obj_gfx 12, AnimObjAquaRingGFX

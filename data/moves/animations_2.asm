@@ -4539,7 +4539,51 @@ BattleAnim_BugBuzz:
 	anim_ret
 
 BattleAnim_DragonPulse:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_DRAGON_PULSE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DRAGON_PULSE
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_2gfx ANIM_GFX_GLOW, ANIM_GFX_CHARGE,
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+.loop
+	anim_sound 0, 0, SFX_AEROBLAST
+	anim_obj ANIM_OBJ_DRAGON_PULSE, 64, 88, $4
+	anim_wait 4
+	anim_loop 16, .loop
+	anim_incobj 1
+	anim_wait 16
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 4
+	anim_ret
+
 BattleAnim_DragonRush:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+	anim_3gfx ANIM_GFX_BIG_WHIP, ANIM_GFX_SMOKE_PUFF, ANIM_GFX_ROCKS
+	anim_sound 0, 1, SFX_SPARK
+	anim_obj ANIM_OBJ_DRAGON_RUSH, 144, 245, $14
+	anim_obj ANIM_OBJ_DRAGON_RUSH_XFLIP, 128, 245, $0c
+	anim_wait 16
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $60, $2, $20
+	anim_obj ANIM_OBJ_ROCK_SMASH, 123, 64, $9c
+	anim_obj ANIM_OBJ_ROCK_SMASH, 113, 64, $5c
+	anim_obj ANIM_OBJ_ROCK_SMASH, 123, 64, $10
+	anim_obj ANIM_OBJ_ROCK_SMASH, 133, 64, $e8
+	anim_obj ANIM_OBJ_ROCK_SMASH, 143, 64, $1c
+	anim_obj ANIM_OBJ_ROCK_SMASH, 153, 64, $d0
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+	anim_wait 1
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+	anim_wait 1
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+	anim_wait 64
+	anim_ret
 
 BattleAnim_PowerGem:
 	anim_1gfx ANIM_GFX_SHINE

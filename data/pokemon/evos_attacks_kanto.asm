@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, BUG_BUZZ
+	dbw 6, PUNISHMENT
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
