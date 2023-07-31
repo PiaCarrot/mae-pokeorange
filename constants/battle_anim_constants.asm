@@ -417,6 +417,9 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_CUT_LEFT
 	const ANIM_OBJ_SEED_BOMB
 	const ANIM_OBJ_AIR_SLASH
+	const ANIM_OBJ_BUG_BUZZ_L
+	const ANIM_OBJ_BUG_BUZZ_R
+	const ANIM_OBJ_MID_GLOW
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -817,6 +820,9 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_125
 	const BATTLEANIMFRAMESET_126
 	const BATTLEANIMFRAMESET_127
+	const BATTLEANIMFRAMESET_128
+	const BATTLEANIMFRAMESET_129
+	const BATTLEANIMFRAMESET_12A
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1099,6 +1105,10 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_113
 	const BATTLEANIMOAMSET_114
 	const BATTLEANIMOAMSET_115
+	const BATTLEANIMOAMSET_116
+	const BATTLEANIMOAMSET_117
+	const BATTLEANIMOAMSET_118
+	const BATTLEANIMOAMSET_119
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -1242,6 +1252,8 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_AQUA_RING
 	const ANIM_GFX_AURA_SPHERE
 	const ANIM_GFX_ROCK_POLISH
+	const ANIM_GFX_BUG_BUZZ
+	const ANIM_GFX_MID_GLOW_CLEAR
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1329,6 +1341,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_PAYBACK          ; 27
 	const PAL_BTLCUSTOM_GASTRO_ACID      ; 28
 	const PAL_BTLCUSTOM_DARK_PULSE       ; 29
+	const PAL_BTLCUSTOM_GLOW_LIME        ; 2a
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1

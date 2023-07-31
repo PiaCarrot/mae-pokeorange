@@ -3657,7 +3657,7 @@ BattleAnim_Fling:
 
 BattleAnim_PsychoShift:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PAYBACK
-	anim_2gfx  ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_GLOW
+	anim_2gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_GLOW
 	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 	anim_sound 0, 1, SFX_THIEF_2
 	anim_obj ANIM_OBJ_SMALL_GLOW, 48, 96, $0
@@ -4509,6 +4509,35 @@ BattleAnim_XScissor:
 	anim_ret
 
 BattleAnim_BugBuzz:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_LIME
+	anim_2gfx ANIM_GFX_MID_GLOW_CLEAR, ANIM_GFX_BUG_BUZZ
+	anim_battlergfx_2row
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4a, $1, $0
+.loop
+	anim_obj ANIM_OBJ_MID_GLOW, 48, 96, $0
+	anim_sound 6, 2, SFX_BIND
+	anim_obj ANIM_OBJ_BUG_BUZZ_L, 32, 84, $28
+	anim_obj ANIM_OBJ_BUG_BUZZ_R, 64, 84, $38
+	anim_wait 2
+	anim_sound 6, 2, SFX_BIND
+	anim_wait 2
+	anim_sound 6, 2, SFX_BIND
+	anim_obj ANIM_OBJ_BUG_BUZZ_L, 32, 84, $28
+	anim_obj ANIM_OBJ_BUG_BUZZ_R, 64, 84, $38
+	anim_wait 2
+	anim_sound 6, 2, SFX_BIND
+	anim_wait 2
+	anim_loop 6, .loop
+	anim_wait 2
+	anim_sound 6, 2, SFX_SUPERSONIC
+	anim_wait 6
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_wait 64
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
+
 BattleAnim_DragonPulse:
 BattleAnim_DragonRush:
 
