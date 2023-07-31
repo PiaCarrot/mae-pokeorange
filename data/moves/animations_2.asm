@@ -4443,8 +4443,71 @@ BattleAnim_AquaTail:
 	anim_jump BattleAnim_ShowMon_0_2
 
 BattleAnim_SeedBomb:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_2gfx ANIM_GFX_PLANT, ANIM_GFX_EXPLOSION
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_SEED_BOMB, 56, 72, $20
+	anim_wait 8
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_SEED_BOMB, 48, 72, $30
+	anim_wait 8
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_SEED_BOMB, 64, 72, $28
+	anim_wait 8
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_SEED_BOMB, 48, 72, $20
+	anim_wait 8
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj ANIM_OBJ_SEED_BOMB, 56, 72, $30
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $2, $0
+	anim_obj ANIM_OBJ_EXPLOSION2, 136, 56, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 130, 68, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 134, 50, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 132, 54, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 136, 62, $0
+	anim_wait 24
+	anim_ret
+
 BattleAnim_AirSlash:
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_WHIP
+	anim_resetobp0
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $0a, $2, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+	anim_obj ANIM_OBJ_AIR_SLASH, 144, 40, $28
+	anim_obj ANIM_OBJ_AIR_SLASH, 152, 48, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_AIR_SLASH, 136, 48, $28
+	anim_obj ANIM_OBJ_AIR_SLASH, 144, 56, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_AIR_SLASH, 128, 56, $28
+	anim_obj ANIM_OBJ_AIR_SLASH, 136, 64, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_AIR_SLASH, 120, 64, $28
+	anim_obj ANIM_OBJ_AIR_SLASH, 128, 72, $8
+	anim_wait 32
+	anim_ret
+
 BattleAnim_XScissor:
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_CUT
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 150, 40, $0
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_RIGHT, 118, 40, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_BugBuzz:
 BattleAnim_DragonPulse:
 BattleAnim_DragonRush:
