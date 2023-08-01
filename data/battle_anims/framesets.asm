@@ -1769,7 +1769,8 @@ BattleAnimFrameData:
 	battleoamend
 
 .Frameset_100:
-	battleoamframe BATTLEANIMOAMSET_54, 40
+	battleoamframe BATTLEANIMOAMSET_20, 8
+	battleoamframe BATTLEANIMOAMSET_54, 8
 	battleoamend
 
 .Frameset_101:
