@@ -591,7 +591,7 @@ BattleAnim_Charge:
 	anim_wait 40
 	anim_clearobjs
 	anim_sound 0, 0, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 44, 88, $0
+	anim_obj ANIM_OBJ_THUNDERBOLT_SPARKS, 44, 88, $0
 	anim_wait 40
 	anim_ret
 
@@ -2645,9 +2645,9 @@ BattleAnim_VoltTackle:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
 	anim_obp0 $30
 	anim_sound 0, 1, SFX_THUNDER
-	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
+	anim_obj ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
 	anim_wait 16
-	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
+	anim_obj ANIM_OBJ_THUNDERBOLT_SPARKS, 136, 56, $0
 	anim_wait 64
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_ret
@@ -2894,7 +2894,7 @@ BattleAnim_ShockWave:
 	anim_sound 0, 1, SFX_THUNDER
 	anim_obj ANIM_OBJ_SHOCK_WAVE_STRIKE, 136, 0, $0
 	anim_wait 6
-	anim_obj ANIM_OBJ_THUNDER1, 136, 68, $0
+	anim_obj ANIM_OBJ_THUNDER_CENTER, 136, 68, $0
 	anim_wait 48
 	anim_ret
 
@@ -3400,9 +3400,9 @@ BattleAnim_Acupressure:
 	anim_wait 24
 	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 	anim_sound 0, 1, SFX_WARP_FROM
-	anim_obj ANIM_OBJ_SPARKS_CIRCLE, 48, 96, $0
+	anim_obj ANIM_OBJ_THUNDERSHOCK_SPARKS, 48, 96, $0
 	anim_wait 6
-	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 48, 96, $0
+	anim_obj ANIM_OBJ_THUNDERBOLT_SPARKS, 48, 96, $0
 	anim_wait 48
 	anim_ret
 

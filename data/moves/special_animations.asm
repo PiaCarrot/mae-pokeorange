@@ -243,10 +243,10 @@ BattleAnim_Brn:
 BattleAnim_Psn:
 	anim_1gfx ANIM_GFX_POISON
 	anim_sound 0, 0, SFX_POISON
-	anim_obj ANIM_OBJ_SKULL, 64, 56, $0
+	anim_obj ANIM_OBJ_SKULL_CROSSBONE, 64, 56, $0
 	anim_wait 8
 	anim_sound 0, 0, SFX_POISON
-	anim_obj ANIM_OBJ_SKULL, 48, 56, $0
+	anim_obj ANIM_OBJ_SKULL_CROSSBONE, 48, 56, $0
 	anim_wait 8
 	anim_ret
 
