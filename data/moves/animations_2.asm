@@ -499,24 +499,24 @@ BattleAnim_Facade:
 	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_RED
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 102, $24
 	anim_wait 24
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_WATER
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 82, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 82, $24
 	anim_wait 24
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_YELLOW
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 102, $24
 	anim_wait 24
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 82, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 82, $24
 	anim_wait 24
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
 	anim_call BattleAnim_ShowMon_0_2
@@ -916,16 +916,16 @@ BattleAnim_Endeavor:
 	anim_call BattleAnim_TargetObj_2Row_2
 	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 102, $24
 	anim_wait 21
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 82, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 82, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 82, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 82, $24
 	anim_wait 21
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 102, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 102, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 102, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 102, $24
 	anim_wait 21
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
@@ -1126,8 +1126,8 @@ BattleAnim_Dive:
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 92, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 92, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 92, $24
 	anim_call BattleAnim_ShowMon_0_2
 	anim_wait 40
 	anim_ret
@@ -1160,8 +1160,8 @@ BattleAnim_Dive:
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
-	anim_obj ANIM_OBJ_DROPLET_1, 64, 92, $3b
-	anim_obj ANIM_OBJ_DROPLET_2, 44, 92, $24
+	anim_obj ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_obj ANIM_OBJ_DROPLET_L, 44, 92, $24
 	anim_wait 16
 	anim_ret
 
@@ -1678,8 +1678,8 @@ BattleAnim_Astonish:
 	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
 	anim_sound 0, 0, SFX_RAGE
 	anim_obj ANIM_OBJ_FORESIGHT, 136, 48, $0
-	anim_obj ANIM_OBJ_DROPLET_1, 146, 52, $38
-	anim_obj ANIM_OBJ_DROPLET_2, 126, 52, $28
+	anim_obj ANIM_OBJ_DROPLET_R, 146, 52, $38
+	anim_obj ANIM_OBJ_DROPLET_L, 126, 52, $28
 	anim_wait 32
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 4
@@ -2079,54 +2079,54 @@ BattleAnim_WaterSpout:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
 .loop
 	anim_sound 0, 0, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $30
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 52, 80, $30
-	anim_wait 2
-	anim_sound 0, 0, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
-	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 46, 80, $30
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 52, 80, $30
 	anim_wait 2
 	anim_sound 0, 0, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $30
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 54, 80, $30
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 46, 80, $30
 	anim_wait 2
 	anim_sound 0, 0, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $30
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 54, 80, $30
+	anim_wait 2
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $30
 	anim_wait 2
 	anim_loop 3, .loop
 	anim_wait 32
 	anim_sound 0, 0, SFX_BUBBLEBEAM
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 108, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 108, 1, $10
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 156, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 156, 1, $10
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 116, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 116, 1, $10
 	anim_wait 2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
 .loop2
 	anim_obj ANIM_OBJ_HIT_YFIX, 108, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 150, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 150, 1, $10
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 156, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 124, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 124, 1, $10
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 140, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $10
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 150, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 132, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 132, 1, $10
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 124, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 108, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 108, 1, $10
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 140, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 156, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 156, 1, $10
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 132, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 116, 1, $10
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 116, 1, $10
 	anim_wait 2
 	anim_loop 2, .loop2
 	anim_obj ANIM_OBJ_HIT_YFIX, 108, 68, $0
@@ -2735,13 +2735,13 @@ BattleAnim_WaterSport:
 BattleAnim_WaterSport_branch:
 .loop
 	anim_sound 0, 1, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $32
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $32
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $2e
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $2e
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $31
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $31
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_1, 48, 80, $2f
+	anim_obj ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $2f
 	anim_wait 28
 	anim_loop 2, .loop
 	anim_ret
@@ -3234,35 +3234,35 @@ BattleAnim_Brine:
 	anim_battlergfx_2row
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 	anim_sound 0, 0, SFX_SURF
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 132, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 132, 1, $11
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 140, 1, $0f
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $0f
 	anim_wait 2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $1, $0
 .loop
 	anim_obj ANIM_OBJ_HIT_YFIX, 128, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 128, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 128, 1, $11
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 144, 1, $0f
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 144, 1, $0f
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 124, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 124, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 124, 1, $11
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 148, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 148, 1, $0f
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 148, 1, $0f
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 120, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 120, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 120, 1, $11
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 152, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 152, 1, $0f
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 152, 1, $0f
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 132, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 132, 1, $11
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 156, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_2, 140, 1, $0f
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $0f
 	anim_wait 2
 	anim_loop 4, .loop
 	anim_obj ANIM_OBJ_HIT_YFIX, 128, 68, $0
@@ -4307,15 +4307,15 @@ BattleAnim_RockPolish:
 	anim_obj ANIM_OBJ_ROCK_POLISH_45DEG_L_YFLIP, 60, 96, $0
 	anim_wait 8
 	anim_sound 0, 0, SFX_METRONOME
-	anim_obj ANIM_OBJ_SHINING_SPARKLE, 32, 72, $0
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 32, 72, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_SHINING_SPARKLE, 64, 104, $0
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 64, 104, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_SHINING_SPARKLE, 32, 104, $0
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 32, 104, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_SHINING_SPARKLE, 64, 72, $0
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 64, 72, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_SHINING_SPARKLE, 48, 88, $0
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 48, 88, $0
 	anim_wait 5
 	anim_wait 16
 	anim_ret

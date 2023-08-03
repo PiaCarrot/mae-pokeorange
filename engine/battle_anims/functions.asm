@@ -645,7 +645,7 @@ BattleAnimFunction_BubbleSplash:
 BattleAnimFunction_RockSmash:
 ; Object moves at an arc
 ; Obj Param: Bit 7 makes arc flip horizontally
-;            Bit 6 defines offset from base frameset BATTLEANIMFRAMESET_BIG_ROCK
+;            Bit 6 defines offset from base frameset BATTLEANIMFRAMESET_BIG_ROCK_STAR_HEART
 ;            Rest defines arc radius
 	call BattleAnim_AnonJumptable
 .anon_dw
@@ -658,7 +658,7 @@ BattleAnimFunction_RockSmash:
 	and $40
 	rlca
 	rlca
-	add BATTLEANIMFRAMESET_BIG_ROCK
+	add BATTLEANIMFRAMESET_BIG_ROCK_STAR_HEART
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
@@ -2518,7 +2518,7 @@ BattleAnimFunction_ThunderWave:
 
 .one
 	call BattleAnim_IncAnonJumptableIndex
-	ld a, BATTLEANIMFRAMESET_35
+	ld a, BATTLEANIMFRAMESET_THUNDER_WAVE_EXTRA
 	call ReinitBattleAnimFrameset
 .zero
 .two
