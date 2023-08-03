@@ -208,5 +208,7 @@
 	const SFX_TWO_PC_BEEPS                ; cc
 	const SFX_4_NOTE_DITTY                ; cd
 	const SFX_TWINKLE                     ; ce
-	const SFX_PUDDLE
+	const SFX_PUDDLE                      ; cf
+	const SFX_GRASS_WHISTLE               ; d0
+	const SFX_GRAVITY                     ; d1
 DEF NUM_SFX EQU const_value

@@ -131,8 +131,7 @@ CheckPhoneCall::
 	ret
 
 .timecheck
-	farcall CheckReceiveCallTimer
-	ret
+	farjp CheckReceiveCallTimer
 
 CheckPhoneContactTimeOfDay:
 	push hl
@@ -280,8 +279,7 @@ CheckSpecialPhoneCall::
 	ld b, 0
 	ld hl, SpecialPhoneCallList
 	ld a, SPECIALCALL_SIZE
-	call AddNTimes
-	ret
+	jmp AddNTimes
 
 SpecialCallOnlyWhenOutside:
 	ld a, [wEnvironment]
@@ -352,8 +350,7 @@ MakePhoneCallFromPokegear:
 .OutOfArea:
 	ld b, BANK(LoadOutOfAreaScript)
 	ld de, LoadOutOfAreaScript
-	call ExecuteCallbackScript
-	ret
+	jmp ExecuteCallbackScript
 
 .DoPhoneCall:
 	ld a, b
@@ -364,8 +361,7 @@ MakePhoneCallFromPokegear:
 	ld [wPhoneCaller + 1], a
 	ld b, BANK(LoadPhoneScriptBank)
 	ld de, LoadPhoneScriptBank
-	call ExecuteCallbackScript
-	ret
+	jmp ExecuteCallbackScript
 
 LoadPhoneScriptBank:
 	memcall wPhoneScriptBank
@@ -395,8 +391,7 @@ LoadCallerScript:
 .proceed
 	ld de, wCallerContact
 	ld bc, PHONE_CONTACT_SIZE
-	call FarCopyBytes
-	ret
+	jmp FarCopyBytes
 
 WrongNumber:
 	db TRAINER_NONE, PHONE_00
@@ -438,8 +433,7 @@ Script_SpecialElmCall: ; unreferenced
 RingTwice_StartCall:
 	call .Ring
 	call .Ring
-	farcall StubbedTrainerRankings_PhoneCalls
-	ret
+	farjp StubbedTrainerRankings_PhoneCalls
 
 .Ring:
 	call Phone_StartRinging
@@ -454,8 +448,7 @@ RingTwice_StartCall:
 .CallerTextboxWithName:
 	ld a, [wCurCaller]
 	ld b, a
-	call Phone_TextboxWithName
-	ret
+	jmp Phone_TextboxWithName
 
 PhoneCall::
 	ld a, b
@@ -466,8 +459,7 @@ PhoneCall::
 	ld [wPhoneCaller + 1], a
 	call .Ring
 	call .Ring
-	farcall StubbedTrainerRankings_PhoneCalls
-	ret
+	farjp StubbedTrainerRankings_PhoneCalls
 
 .Ring:
 	call Phone_StartRinging
@@ -512,20 +504,17 @@ Phone_CallEnd:
 	call HangUp_BoopOn
 	call HangUp_Wait20Frames
 	call HangUp_BoopOff
-	call HangUp_Wait20Frames
-	ret
+	jr HangUp_Wait20Frames
 
 HangUp_ShutDown: ; unreferenced
 	ld de, SFX_SHUT_DOWN_PC
-	call PlaySFX
-	ret
+	jmp PlaySFX
 
 HangUp_Beep:
 	ld hl, PhoneClickText
 	call PrintText
 	ld de, SFX_HANG_UP
-	call PlaySFX
-	ret
+	jmp PlaySFX
 
 PhoneClickText:
 	text_far _PhoneClickText
@@ -533,16 +522,14 @@ PhoneClickText:
 
 HangUp_BoopOn:
 	ld hl, PhoneEllipseText
-	call PrintText
-	ret
+	jmp PrintText
 
 PhoneEllipseText:
 	text_far _PhoneEllipseText
 	text_end
 
 HangUp_BoopOff:
-	call SpeechTextbox
-	ret
+	jmp SpeechTextbox
 
 Phone_StartRinging:
 	call WaitSFX
@@ -550,8 +537,7 @@ Phone_StartRinging:
 	call PlaySFX
 	call Phone_CallerTextbox
 	call UpdateSprites
-	farcall PhoneRing_CopyTilemapAtOnce
-	ret
+	farjp PhoneRing_CopyTilemapAtOnce
 
 HangUp_Wait20Frames:
 	jr Phone_Wait20Frames
@@ -559,8 +545,7 @@ HangUp_Wait20Frames:
 Phone_Wait20Frames:
 	ld c, 20
 	call DelayFrames
-	farcall PhoneRing_CopyTilemapAtOnce
-	ret
+	farjp PhoneRing_CopyTilemapAtOnce
 
 Phone_TextboxWithName:
 	push bc
@@ -572,23 +557,20 @@ Phone_TextboxWithName:
 	ld d, h
 	ld e, l
 	pop bc
-	call GetCallerClassAndName
-	ret
+	jr GetCallerClassAndName
 
 Phone_CallerTextbox:
 	hlcoord 0, 0
 	ld b, 2
 	ld c, SCREEN_WIDTH - 2
-	call Textbox
-	ret
+	jmp Textbox
 
 GetCallerClassAndName:
 	ld h, d
 	ld l, e
 	ld a, b
 	call GetCallerTrainerClass
-	call GetCallerName
-	ret
+	jr GetCallerName
 
 CheckCanDeletePhoneNumber:
 	ld a, c
@@ -631,8 +613,7 @@ GetCallerName:
 	ld de, SCREEN_WIDTH + 3
 	add hl, de
 	call Phone_GetTrainerClassName
-	call PlaceString
-	ret
+	jmp PlaceString
 
 .NotTrainer:
 	push hl
@@ -645,8 +626,7 @@ GetCallerName:
 	ld e, a
 	ld d, [hl]
 	pop hl
-	call PlaceString
-	ret
+	jmp PlaceString
 
 INCLUDE "data/phone/non_trainer_names.asm"
 

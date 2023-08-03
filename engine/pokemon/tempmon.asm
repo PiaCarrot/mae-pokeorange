@@ -19,7 +19,7 @@ CopyMonToTempMon:
 	cp OTPARTYMON
 	jr z, .copywholestruct
 	ld bc, BOXMON_STRUCT_LENGTH
-	callfar CopyBoxmonToTempMon
+	farcall CopyBoxmonToTempMon
 	jr .done
 
 .copywholestruct
@@ -110,8 +110,7 @@ GetMonSpecies:
 	call OpenSRAM
 	ld hl, sBoxSpecies
 	call .done
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 .breedmon
 	ld a, [wBreedMon1Species]

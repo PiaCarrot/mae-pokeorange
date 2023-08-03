@@ -88,8 +88,7 @@ NPCTrade::
 	ld [wTradeDialog], a
 	pop af
 	ld [wJumptableIndex], a
-	call ReturnToMapWithSpeechTextbox
-	ret
+	jmp ReturnToMapWithSpeechTextbox
 
 CheckTradeGender:
 	xor a
@@ -209,7 +208,7 @@ DoNPCTrade:
 	xor a
 	ld [wMonType], a ; PARTYMON
 	ld [wPokemonWithdrawDepositParameter], a ; REMOVE_PARTY
-	callfar RemoveMonFromPartyOrBox
+	farcall RemoveMonFromPartyOrBox
 	predef TryAddMonToParty
 
 	ld e, NPCTRADE_DIALOG
@@ -320,8 +319,7 @@ GetTradeAttr:
 
 Trade_GetAttributeOfCurrentPartymon:
 	ld a, [wCurPartyMon]
-	call AddNTimes
-	ret
+	jmp AddNTimes
 
 Trade_GetAttributeOfLastPartymon:
 	ld a, [wPartyCount]
@@ -426,8 +424,7 @@ PrintTradeText:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	call PrintText
-	ret
+	jmp PrintText
 
 TradeTexts:
 ; entries correspond to TRADE_DIALOG_* × TRADE_DIALOGSET_* constants

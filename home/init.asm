@@ -180,8 +180,7 @@ ClearVRAM::
 	ld hl, VRAM_Begin
 	ld bc, VRAM_End - VRAM_Begin
 	xor a
-	call ByteFill
-	ret
+	jmp ByteFill
 
 ClearWRAM::
 ; Wipe swappable WRAM banks (1-7)
@@ -210,5 +209,4 @@ ClearsScratch::
 	ld bc, $20
 	xor a
 	call ByteFill
-	call CloseSRAM
-	ret
+	jmp CloseSRAM

@@ -49,8 +49,7 @@ HealPartyMon:
 	ld a, [hl]
 	ld [bc], a
 
-	farcall RestoreAllPP
-	ret
+	farjp RestoreAllPP
 
 ComputeHPBarPixels:
 ; e = bc * (6 * 8) / de
@@ -106,5 +105,4 @@ ComputeHPBarPixels:
 AnimateHPBar:
 	call WaitBGMap
 	call _AnimateHPBar
-	call WaitBGMap
-	ret
+	jmp WaitBGMap

@@ -77,8 +77,7 @@ Function17c000:
 	ldh [rVBK], a
 
 	call EnableLCD
-	farcall ReloadMapPart
-	ret
+	farjp ReloadMapPart
 
 HaveWantGFX:
 INCBIN "gfx/mobile/havewant.2bpp"
@@ -319,15 +318,13 @@ Function17d0f3:
 
 .asm_17d180
 	call CloseSubmenu
-	call RestartMapMusic
-	ret
+	jmp RestartMapMusic
 
 Mobile_CopyDefaultOTName:
 	ld hl, Mobile5F_PlayersName
 	ld de, wMobileMonOT
 	ld bc, NAME_LENGTH_JAPANESE - 1
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 Mobile5F_PlayersName:
 	db "クりス@@"
@@ -336,8 +333,7 @@ Mobile_CopyDefaultNickname:
 	ld hl, .DefaultNickname
 	ld de, wMobileMonNick
 	ld bc, NAME_LENGTH_JAPANESE - 1
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 .DefaultNickname:
 	db "？？？？？"
@@ -350,8 +346,7 @@ Mobile_CopyDefaultMail:
 	ld hl, .DefaultMessage
 	ld de, wMobileMonMail
 	ld bc, .DefaultMessageEnd - .DefaultMessage
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 .DefaultMessage:
 	db "こんにちは@"
@@ -365,8 +360,7 @@ Mobile_CopyDefaultMailAuthor:
 	ld hl, Mobile5F_PlayersName
 	ld de, wMobileMonMailAuthor
 	ld bc, NAME_LENGTH_JAPANESE - 1
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 CheckStringContainsLessThanBNextCharacters:
 .loop
@@ -413,7 +407,7 @@ Function17d1f1:
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	predef GetUnownLetter
-	callfar UpdateUnownDex
+	farcall UpdateUnownDex
 	ld a, [wFirstUnownSeen]
 	and a
 	ret nz
@@ -448,8 +442,7 @@ Menu_ChallengeExplanationCancel:
 .Load_Interpret:
 	call LoadMenuHeader
 	call Function17d246
-	call CloseWindow
-	ret
+	jmp CloseWindow
 
 Function17d246:
 	call VerticalMenu
@@ -505,8 +498,7 @@ MenuData_ChallengeExplanationCancel:
 
 Function17d2b6:
 	call Function17d2c0
-	farcall Function1181da
-	ret
+	farjp Function1181da
 
 Function17d2c0:
 	xor a
@@ -548,8 +540,7 @@ Function17d2ce:
 	ld [wMusicFadeID + 1], a
 	call PlayMusic
 	call ReturnToMapFromSubmenu
-	call CloseSubmenu
-	ret
+	jmp CloseSubmenu
 
 Function17d314:
 	ld a, BANK(s5_b1b1)
@@ -651,8 +642,7 @@ Function17d370:
 	ld de, w4_d000
 	ld bc, $1000
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 Function17d3f6:
 	call ClearBGPalettes
@@ -1041,8 +1031,7 @@ Function17d60b:
 	ld a, [$b1b2]
 	ld b, a
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 Function17d6a1:
 	push hl
@@ -1196,8 +1185,7 @@ Function17d78d:
 	call CloseSRAM
 	xor a
 	ld [wcd77], a
-	call ClearBGPalettes
-	ret
+	jmp ClearBGPalettes
 
 Function17d7b4:
 	call IncCrashCheckPointer
@@ -1205,8 +1193,7 @@ Function17d7b4:
 	ld e, a
 	ld d, 0
 	call PlayMusic2
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17d7c2:
 	call IncCrashCheckPointer
@@ -1215,8 +1202,7 @@ Function17d7c2:
 	ld d, 0
 	call PlaySFX
 	call WaitSFX
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17d7d3:
 	call IncCrashCheckPointer
@@ -1228,8 +1214,7 @@ Function17d7d3:
 	pop bc
 	call nc, PlayCry
 	call WaitSFX
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17d7e5:
 	call IncCrashCheckPointer
@@ -1253,8 +1238,7 @@ Function17d7e5:
 	ld [wcd53], a
 	ld de, wcd4f
 	call Function17e691
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17d818:
 	call IncCrashCheckPointer
@@ -1272,8 +1256,7 @@ Function17d818:
 	ld d, h
 	hlcoord 0, 0
 	add hl, bc
-	call PlaceString
-	ret
+	jmp PlaceString
 
 Function17d833:
 	call IncCrashCheckPointer
@@ -1299,8 +1282,7 @@ Function17d833:
 	ld e, l
 	ld d, h
 	farcall Function11c08f
-	call Function17e349
-	ret
+	jmp Function17e349
 
 Function17d85d:
 	call IncCrashCheckPointer
@@ -1395,12 +1377,10 @@ Function17d85d:
 	jr z, .asm_17d8fe
 	cp $a
 	jr z, .asm_17d8fe
-	call Function17e309
-	ret
+	jmp Function17e309
 
 .asm_17d8fe
-	call Function17e349
-	ret
+	jmp Function17e349
 
 Function17d902:
 	call IncCrashCheckPointer
@@ -1429,12 +1409,10 @@ Function17d902:
 	jr z, .asm_17d936
 	cp $a
 	jr z, .asm_17d936
-	call Function17e309
-	ret
+	jmp Function17e309
 
 .asm_17d936
-	call Function17e349
-	ret
+	jmp Function17e349
 
 Function17d93a:
 	call IncCrashCheckPointer
@@ -1468,8 +1446,7 @@ Function17d93a:
 	farcall HOF_AnimateFrontpic
 	pop af
 	ldh [rSVBK], a
-	call Function17e349
-	ret
+	jmp Function17e349
 
 Function17d98b:
 	call IncCrashCheckPointer
@@ -1504,8 +1481,7 @@ Function17d98b:
 	predef PlaceGraphic
 	pop af
 	ldh [rSVBK], a
-	call Function17e349
-	ret
+	jmp Function17e349
 
 Function17d9e3:
 	call IncCrashCheckPointer
@@ -1887,8 +1863,7 @@ Function17dc1f:
 	push hl
 	call Function17e349
 	pop hl
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 MenuData_17dc96: ; unreferenced
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING | STATICMENU_WRAP ; flags
@@ -1899,8 +1874,7 @@ MenuData_17dc96: ; unreferenced
 Function17dc9f:
 	call IncCrashCheckPointer
 	call HlToCrashCheckPointer
-	call RotateFourPalettesLeft
-	ret
+	jmp RotateFourPalettesLeft
 
 Function17dca9:
 	call IncCrashCheckPointer
@@ -1990,8 +1964,7 @@ Function17dd13:
 	push hl
 	pop bc
 	pop hl
-	call PlaceHLTextAtBC
-	ret
+	jmp PlaceHLTextAtBC
 
 Function17dd30:
 	call IncCrashCheckPointer
@@ -2008,8 +1981,7 @@ Function17dd30:
 	pop af
 	hlcoord 0, 0
 	add hl, de
-	call Function17e600
-	ret
+	jmp Function17e600
 
 Function17dd49:
 	call IncCrashCheckPointer
@@ -2088,8 +2060,7 @@ Function17dd49:
 	ld h, a
 
 .done
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17ddcd:
 	call IncCrashCheckPointer
@@ -2149,8 +2120,7 @@ Function17ddcd:
 	ld h, a
 
 .asm_17de2e
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17de32:
 	call IncCrashCheckPointer
@@ -2207,8 +2177,7 @@ Function17de32:
 
 .asm_17de8a
 	call CloseSRAM
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17de91:
 	call IncCrashCheckPointer
@@ -2249,8 +2218,7 @@ Function17de91:
 
 .asm_17ded2
 	call CloseSRAM
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17ded9:
 	call IncCrashCheckPointer
@@ -2588,8 +2556,7 @@ asm_17e0ee:
 	push hl
 	call Function17e349
 	pop hl
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17e0fd:
 	call IncCrashCheckPointer
@@ -2621,8 +2588,7 @@ Function17e0fd:
 	ld l, b
 	pop af
 	ldh [rSVBK], a
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17e133:
 	call IncCrashCheckPointer
@@ -2651,8 +2617,7 @@ Function17e133:
 	ld l, b
 	pop af
 	ldh [rSVBK], a
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17e165:
 	call IncCrashCheckPointer
@@ -2687,8 +2652,7 @@ Function17e165:
 	ld l, b
 	pop af
 	ldh [rSVBK], a
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17e1a1:
 	call IncCrashCheckPointer
@@ -2795,8 +2759,7 @@ Function17e1a1:
 	ld h, a
 
 .asm_17e250
-	call Function17e40f
-	ret
+	jmp Function17e40f
 
 Function17e254:
 	call IncCrashCheckPointer
@@ -2806,8 +2769,7 @@ Function17e254:
 	ld d, a
 	ld a, [hli]
 	ld [de], a
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17e261:
 	call IncCrashCheckPointer
@@ -2819,8 +2781,7 @@ Function17e261:
 	add [hl]
 	ld [de], a
 	inc hl
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17e270:
 	call IncCrashCheckPointer
@@ -2832,8 +2793,7 @@ Function17e270:
 	sub [hl]
 	ld [de], a
 	inc hl
-	call HlToCrashCheckPointer
-	ret
+	jmp HlToCrashCheckPointer
 
 Function17e27f:
 	call IncCrashCheckPointer
@@ -2889,8 +2849,7 @@ Function17e2a7:
 	jr z, .asm_17e2f7
 	cp $b
 	jr z, .asm_17e300
-	call Function17e309
-	ret
+	jr Function17e309
 
 .asm_17e2d8
 	call Function17d60b
@@ -2903,8 +2862,7 @@ Function17e2a7:
 	ld de, $aa7f
 	ld bc, $c
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 .asm_17e2f7
 	call Function17e349
@@ -2942,8 +2900,7 @@ Function17e32b:
 	ld hl, wBGMapBuffer
 	ld bc, $5b
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 Function17e349:
 	ld a, $5
@@ -2955,8 +2912,7 @@ Function17e349:
 	ld de, wBGMapBuffer
 	ld bc, $5b
 	call CopyBytes
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 MACRO inc_crash_check_pointer_farcall
 	call IncCrashCheckPointer
@@ -2996,8 +2952,7 @@ Function17e3e0:
 	call HlToCrashCheckPointer
 	ld a, $1
 	ldh [hBGMapMode], a
-	call DelayFrames
-	ret
+	jmp DelayFrames
 
 Function17e3f0:
 	call IncCrashCheckPointer
@@ -3238,16 +3193,14 @@ Function17e55b:
 	and a
 	ret z
 	ld a, $ed
-	call Function17e571
-	ret
+	jr Function17e571
 
 Function17e566:
 	ld a, [wcd42]
 	and a
 	ret z
 	ld a, $7f
-	call Function17e571
-	ret
+	jr Function17e571
 
 Function17e571:
 	push af
@@ -3327,8 +3280,7 @@ Function17e5af:
 	ld h, a
 	bccoord 0, 0
 	add hl, bc
-	call PlaceString
-	ret
+	jmp PlaceString
 
 Function17e600:
 .asm_17e600
@@ -3557,8 +3509,7 @@ RunMobileScript::
 	jr .loop
 
 .finished
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 _RunMobileScript:
 	ld a, [de]
@@ -4447,8 +4398,7 @@ BattleTowerMobileError:
 
 	pop af
 	ldh [rSVBK], a
-	call ExitAllMenus
-	ret
+	jmp ExitAllMenus
 
 DisplayMobileError:
 .loop
@@ -4502,8 +4452,7 @@ DisplayMobileError:
 	call OpenSRAM
 	xor a
 	ld [sMobileLoginPassword], a
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 .RunJumptable:
 	jumptable .Jumptable, wc303
@@ -4622,8 +4571,7 @@ Function17f5e4:
 
 .asm_17f67d
 	hlcoord 2, 6
-	call PlaceString
-	ret
+	jmp PlaceString
 
 .asm_17f684
 	sub $d0
@@ -4637,8 +4585,7 @@ Function17f5e4:
 	ld a, [hl]
 	ld d, a
 	hlcoord 2, 6
-	call PlaceString
-	ret
+	jmp PlaceString
 
 Table_17f699:
 	dw MobileErrorCode_101_000_Text

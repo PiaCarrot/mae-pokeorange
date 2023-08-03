@@ -1,7 +1,6 @@
 Kurt_PrintTextWhichApricorn:
 	ld hl, .WhichApricornText
-	call PrintText
-	ret
+	jmp PrintText
 
 .WhichApricornText:
 	text_far _WhichApricornText
@@ -9,8 +8,7 @@ Kurt_PrintTextWhichApricorn:
 
 Kurt_PrintTextHowMany:
 	ld hl, .HowManyShouldIMakeText
-	call PrintText
-	ret
+	jmp PrintText
 
 .HowManyShouldIMakeText:
 	text_far _HowManyShouldIMakeText
@@ -46,8 +44,7 @@ SelectApricornForKurt:
 	call Kurt_GiveUpSelectedQuantityOfSelectedApricorn
 
 .done
-	call ExitMenu
-	ret
+	jmp ExitMenu
 
 Kurt_SelectApricorn:
 	farcall FindApricornsInBag
@@ -96,8 +93,7 @@ Kurt_SelectApricorn:
 	ld a, [wMenuSelection]
 	and a
 	ret z
-	farcall PlaceMenuItemName
-	ret
+	farjp PlaceMenuItemName
 
 .Quantity:
 	ld a, [wMenuSelection]
@@ -106,8 +102,7 @@ Kurt_SelectApricorn:
 	ret z
 	ld a, [wItemQuantityChange]
 	ld [wMenuSelectionQuantity], a
-	farcall PlaceMenuItemQuantity
-	ret
+	farjp PlaceMenuItemQuantity
 
 Kurt_SelectQuantity:
 	ld a, [wCurItem]
@@ -142,8 +137,7 @@ Kurt_SelectQuantity:
 	scf
 
 .done
-	call CloseWindow
-	ret
+	jmp CloseWindow
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -158,8 +152,7 @@ Kurt_SelectQuantity:
 	add hl, de
 	ld d, h
 	ld e, l
-	farcall PlaceMenuItemName
-	ret
+	farjp PlaceMenuItemName
 
 PlaceApricornQuantity:
 	call MenuBoxCoord2Tile

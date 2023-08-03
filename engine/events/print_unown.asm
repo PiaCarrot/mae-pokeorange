@@ -102,8 +102,7 @@ endc
 	ld [wOptions], a
 	pop af
 	ldh [hInMenu], a
-	call ReturnToMapFromSubmenu
-	ret
+	jmp ReturnToMapFromSubmenu
 
 .LeftRight:
 	ldh a, [hJoyLast]
@@ -157,8 +156,7 @@ endc
 	lb bc, 7, 7
 	predef PlaceGraphic
 	ld de, vTiles2 tile $31
-	farcall RotateUnownFrontpic
-	ret
+	farjp RotateUnownFrontpic
 
 .Load2bppToSRAM:
 	ldh a, [rSVBK]
@@ -201,8 +199,7 @@ endc
 	call Get2bpp
 	call CloseSRAM
 	ld c, 20
-	call DelayFrames
-	ret
+	jmp DelayFrames
 
 AlphRuinsStampString:
 	db " ALPH RUINS STAMP@"

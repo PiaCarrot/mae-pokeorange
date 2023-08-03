@@ -45,6 +45,9 @@ endr
 	ld [hli], a ; BATTLEANIMSTRUCT_FRAMESET_ID
 	ld a, [de]
 	inc de
+	ld [hli], a ; BATTLEANIMSTRUCT_FRAMESET_ID + 1
+	ld a, [de]
+	inc de
 	ld [hli], a ; BATTLEANIMSTRUCT_FUNCTION
 	ld a, [de]
 	inc de
@@ -71,28 +74,23 @@ endr
 	ld [hl], a  ; BATTLEANIMSTRUCT_VAR2
 	ret
 
-DeinitBattleAnimation:
-	ld hl, BATTLEANIMSTRUCT_INDEX
-	add hl, bc
-	ld [hl], $0
-	ret
-
 BattleAnimOAMUpdate:
 	call InitBattleAnimBuffer
 	farcall GetBattleAnimFrame
 	ld a, h
-	cp oamwait_command
+	cp HIGH(battleoamwait_command)
 	jmp z, .done
-	cp oamdelete_command
+	cp HIGH(battleoamdelete_command)
 	jmp z, .delete
 
-	push af
+	ld d, h
+	ld e, l
+
 	ld hl, wBattleAnimTempOAMFlags
 	ld a, [wBattleAnimTempFrameOAMFlags]
 	xor [hl]
 	and PRIORITY | Y_FLIP | X_FLIP
 	ld [hl], a
-	pop af
 
 	push bc
 	call GetBattleAnimOAMPointer
@@ -311,11 +309,9 @@ GetBattleAnimTileOffset:
 	ret
 
 _ExecuteBGEffects:
-	callfar ExecuteBGEffects
-	ret
+	farjp ExecuteBGEffects
 
 _QueueBGEffect:
-	callfar QueueBGEffect
-	ret
+	farjp QueueBGEffect
 
 INCLUDE "data/battle_anims/objects.asm"
