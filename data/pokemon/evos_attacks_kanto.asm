@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, VOLT_TACKLE
+	dbw 6, ENERGY_BALL
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
