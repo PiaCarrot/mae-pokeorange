@@ -2608,7 +2608,7 @@ BattleAnim_VoltTackle:
 	anim_3gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION, ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 88, $0
+	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
 	anim_bgp $1b
 	anim_incobj 1
 	anim_wait 48
@@ -4514,7 +4514,7 @@ BattleAnim_BugBuzz:
 	anim_battlergfx_2row
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $4a, $1, $0
 .loop
-	anim_obj ANIM_OBJ_MID_GLOW, 48, 96, $0
+	anim_obj ANIM_OBJ_MID_GLOW_SHRINKING, 48, 96, $0
 	anim_sound 6, 2, SFX_BIND
 	anim_obj ANIM_OBJ_BUG_BUZZ_L, 32, 84, $28
 	anim_obj ANIM_OBJ_BUG_BUZZ_R, 64, 84, $38
@@ -4633,7 +4633,6 @@ BattleAnim_PowerGem:
 BattleAnim_DrainPunch:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $16, $2, $0
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_LONG_PUNCH, 136, 52, $0
 	anim_wait 16
@@ -4653,6 +4652,20 @@ BattleAnim_DrainPunch:
 	anim_ret
 
 BattleAnim_VacuumWave:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_BIG_GLOW_CLEAR
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_PUNCH, 136, 52, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_VACUUM_SHRINKING, 136, 52, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT, 136, 52, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_FocusBlast:
 BattleAnim_EnergyBall:
 BattleAnim_BraveBird:

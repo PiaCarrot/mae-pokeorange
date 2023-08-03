@@ -266,43 +266,44 @@ BattleAnimFrameData:
 	dw .Frameset_WringOut                ; BATTLEANIMFRAMESET_WRING_OUT
 	dw .Frameset_GastroAcid              ; BATTLEANIMFRAMESET_GASTRO_ACID
 	dw .Frameset_BigWhip                 ; BATTLEANIMFRAMESET_BIG_WHIP
-	dw .Frameset_Depression ; BATTLEANIMFRAMESET_DEPRESSION
-	dw .Frameset_SuckerPunchL ; BATTLEANIMFRAMESET_SUCKER_PUNCH_L
-	dw .Frameset_SuckerPunchR ; BATTLEANIMFRAMESET_SUCKER_PUNCH_R
-	dw .Frameset_AquaRing ; BATTLEANIMFRAMESET_AQUA_RING
-	dw .Frameset_MagnetRise ; BATTLEANIMFRAMESET_MAGNET_RISE
-	dw .Frameset_PalmStill ; BATTLEANIMFRAMESET_PALM_STILL
-	dw .Frameset_SwirlShort ; BATTLEANIMFRAMESET_SWIRL_SHORT
-	dw .Frameset_RockPolish5DegR ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_R
-	dw .Frameset_RockPolish45DegR ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_R
-	dw .Frameset_RockPolish85DegR ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_R
-	dw .Frameset_RockPolish5DegL ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_L
-	dw .Frameset_RockPolish45DegL ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_L
-	dw .Frameset_RockPolish85DegL ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_L
-	dw .Frameset_RockPolish5DegRYFlip ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_R_Y_FLIP
-	dw .Frameset_RockPolish45DegRYFlip ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_R_Y_FLIP
-	dw .Frameset_RockPolish85DegRYFlip ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_R_Y_FLIP
-	dw .Frameset_RockPolish5DegLYFlip ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_L_Y_FLIP
-	dw .Frameset_RockPolish45DegLYFlip ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_L_Y_FLIP
-	dw .Frameset_RockPolish85DegLYFlip ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_L_Y_FLIP
-	dw .Frameset_PulsingGlow ; BATTLEANIMFRAMESET_PULSING_SPARKLE
-	dw .Frameset_PoisonJabN ; BATTLEANIMFRAMESET_POISON_JAB_N
-	dw .Frameset_PoisonJabNE ; BATTLEANIMFRAMESET_POISON_JAB_NE
-	dw .Frameset_PoisonJabE ; BATTLEANIMFRAMESET_POISON_JAB_E
-	dw .Frameset_PoisonJabSE ; BATTLEANIMFRAMESET_POISON_JAB_SE
-	dw .Frameset_PoisonJabS ; BATTLEANIMFRAMESET_POISON_JAB_S
-	dw .Frameset_PoisonJabSW ; BATTLEANIMFRAMESET_POISON_JAB_SW
-	dw .Frameset_PoisonJabW ; BATTLEANIMFRAMESET_POISON_JAB_W
-	dw .Frameset_PoisonJabNW ; BATTLEANIMFRAMESET_POISON_JAB_NW
-	dw .Frameset_CutRight ; BATTLEANIMFRAMESET_CUT_RIGHT
-	dw .Frameset_CutLeft ; BATTLEANIMFRAMESET_CUT_LEFT
-	dw .Frameset_SeedBomb ; BATTLEANIMFRAMESET_SEED_BOMB
-	dw .Frameset_BugBuzzR ; BATTLEANIMFRAMESET_BUG_BUZZ_L
-	dw .Frameset_BugBuzzL ; BATTLEANIMFRAMESET_BUG_BUZZ_R
-	dw .Frameset_MidGlow ; BATTLEANIMFRAMESET_MID_GLOW
-	dw .Frameset_DragonPulse ; BATTLEANIMFRAMESET_DRAGON_PULSE
-	dw .Frameset_DragonRush ; BATTLEANIMFRAMESET_DRAGON_RUSH
-	dw .Frameset_DragonRushFlipped ; BATTLEANIMFRAMESET_DRAGON_RUSH_FLIPPED
+	dw .Frameset_Depression              ; BATTLEANIMFRAMESET_DEPRESSION
+	dw .Frameset_SuckerPunchL            ; BATTLEANIMFRAMESET_SUCKER_PUNCH_L
+	dw .Frameset_SuckerPunchR            ; BATTLEANIMFRAMESET_SUCKER_PUNCH_R
+	dw .Frameset_AquaRing                ; BATTLEANIMFRAMESET_AQUA_RING
+	dw .Frameset_MagnetRise              ; BATTLEANIMFRAMESET_MAGNET_RISE
+	dw .Frameset_PalmStill               ; BATTLEANIMFRAMESET_PALM_STILL
+	dw .Frameset_SwirlShort              ; BATTLEANIMFRAMESET_SWIRL_SHORT
+	dw .Frameset_RockPolish5DegR         ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_R
+	dw .Frameset_RockPolish45DegR        ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_R
+	dw .Frameset_RockPolish85DegR        ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_R
+	dw .Frameset_RockPolish5DegL         ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_L
+	dw .Frameset_RockPolish45DegL        ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_L
+	dw .Frameset_RockPolish85DegL        ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_L
+	dw .Frameset_RockPolish5DegRYFlip    ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_R_Y_FLIP
+	dw .Frameset_RockPolish45DegRYFlip   ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_R_Y_FLIP
+	dw .Frameset_RockPolish85DegRYFlip   ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_R_Y_FLIP
+	dw .Frameset_RockPolish5DegLYFlip    ; BATTLEANIMFRAMESET_ROCK_POLISH_5DEG_L_Y_FLIP
+	dw .Frameset_RockPolish45DegLYFlip   ; BATTLEANIMFRAMESET_ROCK_POLISH_45DEG_L_Y_FLIP
+	dw .Frameset_RockPolish85DegLYFlip   ; BATTLEANIMFRAMESET_ROCK_POLISH_85DEG_L_Y_FLIP
+	dw .Frameset_PulsingGlow             ; BATTLEANIMFRAMESET_PULSING_SPARKLE
+	dw .Frameset_PoisonJabN              ; BATTLEANIMFRAMESET_POISON_JAB_N
+	dw .Frameset_PoisonJabNE             ; BATTLEANIMFRAMESET_POISON_JAB_NE
+	dw .Frameset_PoisonJabE              ; BATTLEANIMFRAMESET_POISON_JAB_E
+	dw .Frameset_PoisonJabSE             ; BATTLEANIMFRAMESET_POISON_JAB_SE
+	dw .Frameset_PoisonJabS              ; BATTLEANIMFRAMESET_POISON_JAB_S
+	dw .Frameset_PoisonJabSW             ; BATTLEANIMFRAMESET_POISON_JAB_SW
+	dw .Frameset_PoisonJabW              ; BATTLEANIMFRAMESET_POISON_JAB_W
+	dw .Frameset_PoisonJabNW             ; BATTLEANIMFRAMESET_POISON_JAB_NW
+	dw .Frameset_CutRight                ; BATTLEANIMFRAMESET_CUT_RIGHT
+	dw .Frameset_CutLeft                 ; BATTLEANIMFRAMESET_CUT_LEFT
+	dw .Frameset_SeedBomb                ; BATTLEANIMFRAMESET_SEED_BOMB
+	dw .Frameset_BugBuzzR                ; BATTLEANIMFRAMESET_BUG_BUZZ_L
+	dw .Frameset_BugBuzzL                ; BATTLEANIMFRAMESET_BUG_BUZZ_R
+	dw .Frameset_MidGlowShrinking        ; BATTLEANIMFRAMESET_MID_GLOW_SHRINKING
+	dw .Frameset_DragonPulse             ; BATTLEANIMFRAMESET_DRAGON_PULSE
+	dw .Frameset_DragonRush              ; BATTLEANIMFRAMESET_DRAGON_RUSH
+	dw .Frameset_DragonRushFlipped       ; BATTLEANIMFRAMESET_DRAGON_RUSH_FLIPPED
+	dw .Frameset_VacuumShrinking         ; BATTLEANIMFRAMESET_VACUUM_SHRINKING
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2026,7 +2027,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_116,  4, OAM_X_FLIP
 	battleoamdelete
 
-.Frameset_MidGlow:
+.Frameset_MidGlowShrinking:
 	battleoamframe BATTLEANIMOAMSET_118,  1
 	battleoamframe BATTLEANIMOAMSET_119,  1
 	battleoamdelete
@@ -2051,3 +2052,8 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_E5,  1
 	battleoamframe BATTLEANIMOAMSET_FC,  1
 	battleoamend
+
+.Frameset_VacuumShrinking:
+	battleoamframe BATTLEANIMOAMSET_E7,  1
+	battleoamframe BATTLEANIMOAMSET_E8,  1
+	battleoamdelete
