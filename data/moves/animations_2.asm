@@ -4847,7 +4847,72 @@ BattleAnim_NastyPlot:
 	anim_ret
 
 BattleAnim_BulletPunch:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_UserObj_1Row_2
+	anim_resetobp0
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_obj ANIM_OBJ_BULLET_PUNCH, 140, 44, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 3
+	anim_obj ANIM_OBJ_BULLET_PUNCH, 112, 46, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 3
+	anim_obj ANIM_OBJ_BULLET_PUNCH, 150, 60, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 3
+	anim_obj ANIM_OBJ_BULLET_PUNCH, 120, 30, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 3
+	anim_obj ANIM_OBJ_BULLET_PUNCH, 116, 64, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 3
+	anim_obj ANIM_OBJ_BULLET_PUNCH, 132, 68, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
+
 BattleAnim_Avalanche:
+	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_SNOW
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SNOW
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_SMOKE_PUFF
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $c0, $1, $0
+	anim_bgp $90
+	anim_obj ANIM_OBJ_AVALANCHE_SMALL, 134, 250, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_SNOW_FALL, 110, 20, $12
+	anim_wait 2
+.loop
+	anim_obj ANIM_OBJ_AVALANCHE_SMALL, 122, 250, $12
+	anim_wait 2
+	anim_obj ANIM_OBJ_SNOW_FALL, 142, 20, $0e
+	anim_wait 2
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_AVALANCHE_BIG, 144, 250, $0e
+	anim_wait 2
+	anim_obj ANIM_OBJ_SNOW_FALL, 118, 20, $11
+	anim_wait 2
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_AVALANCHE_SMALL, 154, 250, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_SNOW_FALL, 130, 20, $10
+	anim_wait 2
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_AVALANCHE_BIG, 118, 250, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_SNOW_FALL, 154, 20, $0f
+	anim_wait 2
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_AVALANCHE_SMALL, 134, 250, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_SNOW_FALL, 110, 20, $12
+	anim_wait 2
+	anim_sound 0, 1, SFX_TACKLE
+	anim_loop 4, .loop
+	anim_wait 32
+	anim_ret
+
 BattleAnim_IceShard:
 BattleAnim_ShadowClaw:
 BattleAnim_ThunderFang:
