@@ -254,7 +254,7 @@ BattleAnimFrameData:
 	dw .Frameset_WakeUpSlapR             ; BATTLEANIMFRAMESET_WAKE_UP_SLAP_R
 	dw .Frameset_WakeUpSlapL             ; BATTLEANIMFRAMESET_WAKE_UP_SLAP_L
 	dw .Frameset_GyroBall                ; BATTLEANIMFRAMESET_GYRO_BALL
-	dw .Frameset_fd                      ; BATTLEANIMFRAMESET_FD            -- FREE
+	dw .Frameset_ShadowSneak             ; BATTLEANIMFRAMESET_SHADOW_SNEAK
 	dw .Frameset_LongPunchNoHit          ; BATTLEANIMFRAMESET_LONG_PUNCH_NOT_HIT
 	dw .Frameset_AcupressureHand         ; BATTLEANIMFRAMESET_ACUPRESSURE_HAND
 	dw .Frameset_PowerGem                ; BATTLEANIMFRAMESET_POWER_GEM
@@ -308,6 +308,7 @@ BattleAnimFrameData:
 	dw .Frameset_BulletPunch             ; BATTLEANIMFRAMESET_BULLET_PUNCH
 	dw .Frameset_SnowFall                ; BATTLEANIMFRAMESET_SNOW_FALL
 	dw .Frameset_IceLong                 ; BATTLEANIMFRAMESET_ICE_LONG
+	dw .Frameset_MudBomb                 ; BATTLEANIMFRAMESET_MUD_BOMB
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2088,4 +2089,15 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_10,  3
 	battleoamframe BATTLEANIMOAMSET_0F,  3
 	battleoamframe BATTLEANIMOAMSET_12,  1
+	battleoamend
+
+.Frameset_ShadowSneak:
+	battleoamwait 8
+	battleoamframe BATTLEANIMOAMSET_11A,10
+	battleoamframe BATTLEANIMOAMSET_11B,10
+	battleoamframe BATTLEANIMOAMSET_BC, 32
+	battleoamend
+	
+.Frameset_MudBomb:
+	battleoamframe BATTLEANIMOAMSET_11C,  1
 	battleoamend

@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, FIRE_FANG
+	dbw 6, OCTAZOOKA
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
