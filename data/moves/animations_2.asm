@@ -4914,10 +4914,146 @@ BattleAnim_Avalanche:
 	anim_ret
 
 BattleAnim_IceShard:
+	anim_4gfx ANIM_GFX_ICE, ANIM_GFX_HAZE, ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
+	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obp0 $54
+.loop
+	anim_obj ANIM_OBJ_ICE_SHARD_MIST, 48, 80, $0
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_obj ANIM_OBJ_ICE, 40, 78, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_ICE, 56, 106, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_ICE, 32, 92, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_ICE, 64, 92, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_ICE, 56, 78, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_ICE, 40, 106, $0
+	anim_wait 6
+	anim_resetobp0
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+	anim_sound 0, 0, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_ICE_SHARD, 48, 84, $18
+	anim_wait 6
+	anim_obj ANIM_OBJ_ICE_SHARD, 48, 116, $18
+	anim_wait 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE_SHARD, 48, 108, $18
+	anim_wait 4
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 2
+	anim_obj ANIM_OBJ_ICE_SHARD, 48, 92, $18
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 4
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+	anim_sound 6, 2, SFX_SHINE
+	anim_wait 4
+	anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 148, 32, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 116, 64, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 148, 64, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 116, 32, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_PULSING_SPARKLE, 132, 48, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_ShadowClaw:
+	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_SPEED
+	anim_obp0 $ef
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_RED_STAR, 136, 56, $5c
+	anim_obj ANIM_OBJ_RED_STAR, 136, 56, $e8
+	anim_obj ANIM_OBJ_RED_STAR, 136, 56, $d0
+	anim_obj ANIM_OBJ_RED_STAR, 136, 56, $50
+	anim_wait 32
+	anim_ret
+
 BattleAnim_ThunderFang:
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_LIGHTNING
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 1, SFX_THUNDER
+	anim_obj ANIM_OBJ_THUNDER_RIGHT, 152, 68, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_IceFang:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_ICE
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 128, 42, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 144, 70, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 120, 56, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 152, 56, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 144, 42, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_ICE, 128, 70, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_FireFang:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
+	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj ANIM_OBJ_HIT, 144, 48, $18
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+	anim_wait 4
+	anim_clearobjs
+	anim_sound 0, 1, SFX_EMBER
+.loop
+	anim_obj ANIM_OBJ_BURNED, 136, 56, $10
+	anim_obj ANIM_OBJ_BURNED, 136, 56, $90
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_wait 32
 	anim_ret
 
 BattleAnim_ShadowSneak:
