@@ -309,6 +309,10 @@ BattleAnimFrameData:
 	dw .Frameset_SnowFall                ; BATTLEANIMFRAMESET_SNOW_FALL
 	dw .Frameset_IceLong                 ; BATTLEANIMFRAMESET_ICE_LONG
 	dw .Frameset_MudBomb                 ; BATTLEANIMFRAMESET_MUD_BOMB
+	dw .Frameset_PsychoCut               ; BATTLEANIMFRAMESET_PSYCHO_CUT
+	dw .Frameset_FlashCannonChargeOrb    ; BATTLEANIMFRAMESET_FLASH_CANNON_CHARGE_ORB
+	dw .Frameset_SlowGrowingGlow         ; BATTLEANIMFRAMESET_SLOW_GROWING_GLOW
+	dw .Frameset_FlashCannonSparks       ; BATTLEANIMFRAMESET_FLASH_CANNON_SPARKS
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2097,7 +2101,30 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_11B,10
 	battleoamframe BATTLEANIMOAMSET_BC, 32
 	battleoamend
-	
+
 .Frameset_MudBomb:
 	battleoamframe BATTLEANIMOAMSET_11C,  1
 	battleoamend
+
+.Frameset_PsychoCut:
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_Y_FLIP
+	battleoamend
+
+.Frameset_FlashCannonChargeOrb:
+	battleoamwait 24
+	battleoamframe BATTLEANIMOAMSET_20,  4
+	battleoamframe BATTLEANIMOAMSET_1F,  4
+	battleoamframe BATTLEANIMOAMSET_1E,  4
+	battleoamend
+
+.Frameset_SlowGrowingGlow:
+	battleoamframe BATTLEANIMOAMSET_55,  24
+	battleoamframe BATTLEANIMOAMSET_54,  24
+	battleoamframe BATTLEANIMOAMSET_53,  24
+	battleoamend
+
+.Frameset_FlashCannonSparks:
+	battleoamframe BATTLEANIMOAMSET_20,  4
+	battleoamframe BATTLEANIMOAMSET_1F,  4
+	battleoamframe BATTLEANIMOAMSET_1E,  8
+	battleoamdelete
