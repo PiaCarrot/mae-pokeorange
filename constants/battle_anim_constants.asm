@@ -226,7 +226,6 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_STAR_BURST
 	const ANIM_OBJ_AIR_CUTTER
 	const ANIM_OBJ_ROCK_TOMB
-	const ANIM_OBJ_METEOR
 	const ANIM_OBJ_BULLET_SEED
 	const ANIM_OBJ_ROCK_BLAST
 	const ANIM_OBJ_BIG_WAVE
@@ -234,7 +233,6 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_ENERGY_ORB
 	const ANIM_OBJ_ENERGY_ORB_OUT
 	const ANIM_OBJ_ENERGY_ORB_OUT_YFIX
-	const ANIM_OBJ_HEAT_WAVE
 	const ANIM_OBJ_HAIL
 	const ANIM_OBJ_TORMENT
 	const ANIM_OBJ_FLATTER_1
@@ -451,6 +449,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_FLASH_CANNON
 	const ANIM_OBJ_ROCK_CLIMB
 	const ANIM_OBJ_TRICK_ROOM
+	const ANIM_OBJ_METEOR_BIG
+	const ANIM_OBJ_METEOR_SMALL
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -870,6 +870,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_SLOW_GROWING_GLOW
 	const BATTLEANIMFRAMESET_FLASH_CANNON_SPARKS
 	const BATTLEANIMFRAMESET_TRICK_ROOM
+	const BATTLEANIMFRAMESET_METEOR_BIG
+	const BATTLEANIMFRAMESET_METEOR_SMALL
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1161,6 +1163,7 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_11C
 	const BATTLEANIMOAMSET_11D
 	const BATTLEANIMOAMSET_11E
+	const BATTLEANIMOAMSET_11F
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)

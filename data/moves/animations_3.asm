@@ -45,48 +45,67 @@ MoveAnimations3:
 ;==========================
 
 BattleAnim_DracoMeteor:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
-	anim_1gfx ANIM_GFX_TRICK_ROOM
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
-	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
-	anim_sound 0, 0, SFX_PSYBEAM
-.loop
-	anim_obj ANIM_OBJ_TRICK_ROOM, 80, 72, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 156, 36, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 40, 24, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 140, 100, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 164, 64, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 48, 66, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 96, 24, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 60, 96, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 102, 86, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 150, 14, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 26, 80, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 12, 50, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 72, 30, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 110, 62, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 170, 94, $0
-	anim_wait 3
-	anim_obj ANIM_OBJ_TRICK_ROOM, 80, 104, $0
-	anim_wait 3
-	anim_loop 2, .loop
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DRAGON_PULSE
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_DRAGON_PULSE
+	anim_4gfx ANIM_GFX_METEOR, ANIM_GFX_SMOKE_PUFF, ANIM_GFX_WATER, ANIM_GFX_EXPLOSION
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $8, $0
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_MORNING_SUN
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
 	anim_wait 32
-	anim_incbgeffect ANIM_BG_PSYCHIC
+	anim_clearobjs
+	anim_obj ANIM_OBJ_METEOR_SMALL, 88, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_METEOR_SMALL, 238, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_METEOR_SMALL, 138, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_METEOR_SMALL, 188, 0, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_METEOR_SMALL, 38, 0, $2
+	anim_obj ANIM_OBJ_METEOR_BIG, 88, 0, $2
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $3, $0
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 150, 64, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_METEOR_BIG, 72, 0, $2
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $3, $0
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 134, 64, $0
 	anim_wait 4
+	anim_obj ANIM_OBJ_METEOR_BIG, 96, 0, $2
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $3, $0
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 158, 64, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_METEOR_BIG, 76, 0, $2
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 138, 64, $0
+	anim_obj ANIM_OBJ_METEOR_BIG, 84, 0, $2
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 146, 64, $0
+	anim_obj ANIM_OBJ_METEOR_BIG, 96, 0, $2
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 158, 64, $0
+	anim_obj ANIM_OBJ_METEOR_BIG, 76, 0, $2
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 138, 64, $0
+	anim_obj ANIM_OBJ_METEOR_BIG, 84, 0, $2
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 146, 64, $0
+	anim_wait 32
 	anim_ret
 	
 BattleAnim_Discharge:
