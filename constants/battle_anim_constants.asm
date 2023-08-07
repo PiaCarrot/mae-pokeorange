@@ -449,6 +449,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_FLASH_CANNON_SPARKS_WHITE
 	const ANIM_OBJ_FLASH_CANNON_SPARKS_RED
 	const ANIM_OBJ_FLASH_CANNON
+	const ANIM_OBJ_ROCK_CLIMB
+	const ANIM_OBJ_TRICK_ROOM
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -867,6 +869,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_FLASH_CANNON_CHARGE_ORB
 	const BATTLEANIMFRAMESET_SLOW_GROWING_GLOW
 	const BATTLEANIMFRAMESET_FLASH_CANNON_SPARKS
+	const BATTLEANIMFRAMESET_TRICK_ROOM
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1156,6 +1159,8 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_11A
 	const BATTLEANIMOAMSET_11B
 	const BATTLEANIMOAMSET_11C
+	const BATTLEANIMOAMSET_11D
+	const BATTLEANIMOAMSET_11E
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
@@ -1302,6 +1307,8 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_BUG_BUZZ
 	const ANIM_GFX_MID_GLOW_CLEAR
 	const ANIM_GFX_FOCUS_BLAST
+	const ANIM_GFX_ENERGY_BALL
+	const ANIM_GFX_TRICK_ROOM
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

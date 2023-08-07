@@ -4309,6 +4309,7 @@ BattleAnim_ShadowBall:
 	anim_obj ANIM_OBJ_SIGNAL_BEAM_R, 64, 92, $2
 	anim_wait 32
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $6, $1, $0
 	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
 	anim_wait 24
 	anim_ret
