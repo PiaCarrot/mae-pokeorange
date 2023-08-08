@@ -67,44 +67,44 @@ BattleAnim_DracoMeteor:
 	anim_obj ANIM_OBJ_METEOR_SMALL, 188, 0, $2
 	anim_wait 8
 	anim_obj ANIM_OBJ_METEOR_SMALL, 38, 0, $2
-	anim_obj ANIM_OBJ_METEOR_BIG, 88, 0, $2
+	anim_obj ANIM_OBJ_METEOR_BIG, 80, 0, $2
 	anim_wait 12
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $3, $0
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 150, 64, $0
+	anim_obj ANIM_OBJ_EXPLOSION2, 142, 64, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_METEOR_BIG, 72, 0, $2
+	anim_obj ANIM_OBJ_METEOR_BIG, 64, 0, $2
 	anim_wait 12
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $8, $3, $0
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 134, 64, $0
+	anim_obj ANIM_OBJ_EXPLOSION2, 136, 64, $0
 	anim_wait 4
-	anim_obj ANIM_OBJ_METEOR_BIG, 96, 0, $2
+	anim_obj ANIM_OBJ_METEOR_BIG, 88, 0, $2
 	anim_wait 12
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $3, $0
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 158, 64, $0
+	anim_obj ANIM_OBJ_EXPLOSION2, 150, 64, $0
 	anim_wait 4
+	anim_obj ANIM_OBJ_METEOR_BIG, 68, 0, $2
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_EXPLOSION2, 130, 64, $0
 	anim_obj ANIM_OBJ_METEOR_BIG, 76, 0, $2
 	anim_wait 12
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_EXPLOSION2, 138, 64, $0
-	anim_obj ANIM_OBJ_METEOR_BIG, 84, 0, $2
+	anim_obj ANIM_OBJ_METEOR_BIG, 88, 0, $2
 	anim_wait 12
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 146, 64, $0
-	anim_obj ANIM_OBJ_METEOR_BIG, 96, 0, $2
+	anim_obj ANIM_OBJ_EXPLOSION2, 142, 64, $0
+	anim_obj ANIM_OBJ_METEOR_BIG, 68, 0, $2
 	anim_wait 12
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 158, 64, $0
+	anim_obj ANIM_OBJ_EXPLOSION2, 130, 64, $0
 	anim_obj ANIM_OBJ_METEOR_BIG, 76, 0, $2
 	anim_wait 12
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_EXPLOSION2, 138, 64, $0
-	anim_obj ANIM_OBJ_METEOR_BIG, 84, 0, $2
-	anim_wait 12
-	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 146, 64, $0
 	anim_wait 32
 	anim_ret
 	
