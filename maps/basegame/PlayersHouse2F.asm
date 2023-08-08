@@ -129,7 +129,7 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_CINNABAR
 	; test mons
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove TRICK_ROOM,        wPartyMon1, 0
+	givepokemove ROLLOUT,        wPartyMon1, 0
 	givepokemove DRACO_METEOR,       wPartyMon1, 1
 	givepokemove PUNISHMENT,   wPartyMon1, 2
 	givepokemove WEATHER_BALL,        wPartyMon1, 3
