@@ -129,15 +129,35 @@ if DEF(_DEBUG)
 	; setflag ENGINE_FLYPOINT_CINNABAR
 	; test mons
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove ROLLOUT,        wPartyMon1, 0
-	givepokemove DRACO_METEOR,       wPartyMon1, 1
-	givepokemove PUNISHMENT,   wPartyMon1, 2
-	givepokemove WEATHER_BALL,        wPartyMon1, 3
 	givepoke MEW, 100, LEFTOVERS
-	givepokemove CRABHAMMER,      wPartyMon2, 0
-	givepokemove WATERFALL, wPartyMon2, 1
-	givepokemove FLAME_WHEEL,   wPartyMon2, 2
-	givepokemove SLUDGE_BOMB,  wPartyMon2, 3
+	givepoke MEW, 100, LEFTOVERS
+	givepoke MEW, 100, LEFTOVERS
+	givepoke MEW, 100, LEFTOVERS
+	givepoke MEW, 100, LEFTOVERS
+	givepokemove POISON_GAS,        wPartyMon1, 0
+	givepokemove FLAME_WHEEL,       wPartyMon1, 1
+	givepokemove BONE_CLUB,   wPartyMon1, 2
+	givepokemove FIRE_BLAST,        wPartyMon1, 3
+	givepokemove WATERFALL,      wPartyMon2, 0
+	givepokemove CLAMP, wPartyMon2, 1
+	givepokemove SWIFT,   wPartyMon2, 2
+	givepokemove SKULL_BASH,  wPartyMon2, 3
+	givepokemove SPIKE_CANNON,        wPartyMon3, 0
+	givepokemove CONSTRICT,       wPartyMon3, 1
+	givepokemove AMNESIA,   wPartyMon3, 2
+	givepokemove KINESIS,        wPartyMon3, 3
+	givepokemove SOFTBOILED,      wPartyMon4, 0
+	givepokemove HI_JUMP_KICK, wPartyMon4, 1
+	givepokemove GLARE,   wPartyMon4, 2
+	givepokemove DREAM_EATER,  wPartyMon4, 3
+	givepokemove POISON_GAS,        wPartyMon5, 0
+	givepokemove BARRAGE,       wPartyMon5, 1
+	givepokemove LEECH_LIFE,   wPartyMon5, 2
+	givepokemove LOVELY_KISS,        wPartyMon5, 3
+	givepokemove SKY_ATTACK,      wPartyMon6, 0
+	givepokemove TRANSFORM, wPartyMon6, 1
+	givepokemove BUBBLE,   wPartyMon6, 2
+	givepokemove DIZZY_PUNCH,  wPartyMon6, 3
 	closetext
 	end
 else
@@ -173,8 +193,8 @@ endc
 
 PlayersHouseBookshelfScript:
 if DEF(_DEBUG)
-	; loadwildmon SQUIRTLE, 100
-	loadtrainer LORELEI1, LORELEI_1
+	loadwildmon SNORLAX, 100
+	; loadtrainer LORELEI1, LORELEI_1
 	startbattle
 	reloadmapafterbattle
 	end
