@@ -257,7 +257,8 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, DRACO_METEOR
+	dbw 6, PIN_MISSILE
+	dbw 6, SPIKE_CANNON
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
