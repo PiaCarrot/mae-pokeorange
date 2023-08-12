@@ -3738,7 +3738,7 @@ BattleAnim_Return:
 	anim_wait 64
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
 	anim_wait 32
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_BODY_SLAM, $0, $1, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG, 136, 40, $0
@@ -3812,7 +3812,7 @@ BattleAnim_Safeguard:
 BattleAnim_PainSplit:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
 	anim_call BattleAnim_TargetObj_2Row_1
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_BODY_SLAM, $0, $1, $0
 	anim_wait 4
 	anim_sound 0, 1, SFX_TACKLE
 	anim_obj ANIM_OBJ_HIT, 112, 48, $0
@@ -3936,7 +3936,7 @@ BattleAnim_RapidSpin:
 	anim_loop 5, .loop
 	anim_wait 24
 	anim_call BattleAnim_TargetObj_2Row_1
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+	anim_bgeffect ANIM_BG_BODY_SLAM, $0, $1, $0
 	anim_wait 4
 	anim_resetobp0
 	anim_sound 0, 1, SFX_MEGA_KICK

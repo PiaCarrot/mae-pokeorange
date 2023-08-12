@@ -67,7 +67,7 @@ AnimObjGFX:
 	anim_obj_gfx 32, AnimObjVortexGFX
 	anim_obj_gfx  4, AnimObjHydroCannonGFX
 	anim_obj_gfx 16, AnimObjFrenzyPlantGFX
-	anim_obj_gfx 16, AnimObjWeatherBallGFX
+	anim_obj_gfx  8, AnimObjWeatherBallGFX
 	anim_obj_gfx  5, AnimObjCosmicPowerGFX
 	anim_obj_gfx 18, AnimObjBulkUpGFX
 	anim_obj_gfx 32, AnimObjUTurnGFX
@@ -93,4 +93,5 @@ AnimObjGFX:
 	anim_obj_gfx 10, AnimObjEnergyBallGFX
 	anim_obj_gfx 14, AnimObjTrickRoomGFX
 	anim_obj_gfx 14, AnimObjSmokePuffBigGFX
+	anim_obj_gfx  6, AnimObjLeafStormGFX
 	assert_table_length NUM_ANIM_GFX + 1

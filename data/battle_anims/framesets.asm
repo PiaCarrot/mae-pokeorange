@@ -326,6 +326,9 @@ BattleAnimFrameData:
 	dw .Frameset_DischargeSparksNW       ; BATTLEANIMFRAMESET_DISCHARGE_SPARKS_NW
 	dw .Frameset_DischargeSparksSmall    ; BATTLEANIMFRAMESET_DISCHARGE_SPARKS_SMALL
 	dw .Frameset_LavaPlumeSmoke          ; BATTLEANIMFRAMESET_LAVA_PLUME_SMOKE
+	dw .Frameset_WeatherBall             ; BATTLEANIMFRAMESET_WEATHER_BALL
+	dw .Frameset_LeafStormBigLeaf        ; BATTLEANIMFRAMESET_LEAF_STORM_BIG_LEAF
+	dw .Frameset_LeafStormSmallLeaf      ; BATTLEANIMFRAMESET_LEAF_STORM_SMALL_LEAF
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -1518,10 +1521,10 @@ BattleAnimFrameData:
 	battleoamdelete
 
 .Frameset_Recycle:
-	battleoamframe BATTLEANIMOAMSET_E1,  6
-	battleoamframe BATTLEANIMOAMSET_E2,  6
-	battleoamframe BATTLEANIMOAMSET_E3,  6
-	battleoamframe BATTLEANIMOAMSET_E4,  6
+	battleoamframe BATTLEANIMOAMSET_121,  6
+	battleoamframe BATTLEANIMOAMSET_122,  6
+	battleoamframe BATTLEANIMOAMSET_123,  6
+	battleoamframe BATTLEANIMOAMSET_124,  6
 	battleoamrestart
 
 .Frameset_VerticalChop:
@@ -2226,3 +2229,21 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_11F , 2
 	battleoamframe BATTLEANIMOAMSET_03, 2
 	battleoamdelete
+
+.Frameset_WeatherBall:
+	battleoamframe BATTLEANIMOAMSET_125,  8
+	battleoamend
+
+.Frameset_LeafStormBigLeaf:
+	battleoamframe BATTLEANIMOAMSET_1B,  1
+	battleoamframe BATTLEANIMOAMSET_1B,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_1B,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_1B,  1, OAM_Y_FLIP
+	battleoamrestart
+
+.Frameset_LeafStormSmallLeaf:
+	battleoamframe BATTLEANIMOAMSET_0F,  1
+	battleoamframe BATTLEANIMOAMSET_0F,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_0F,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_0F,  1, OAM_Y_FLIP
+	battleoamrestart

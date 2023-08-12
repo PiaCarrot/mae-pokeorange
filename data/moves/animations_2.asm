@@ -873,7 +873,6 @@ BattleAnim_KnockOff:
 	anim_obj ANIM_OBJ_PALM, 136, 72, $0
 	anim_wait 8
 	anim_ret
-	anim_ret
 
 BattleAnim_Endeavor:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
