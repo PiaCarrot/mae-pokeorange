@@ -183,21 +183,54 @@ BattleAnim_Discharge:
 	anim_wait 4
 	anim_ret
 
-
-;.loop
-;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-;	anim_wait 16
-;	anim_loop 6, .loop
-;	anim_clearobjs
-;	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
-;	anim_sound 0, 0, SFX_ZAP_CANNON
-;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-;	anim_obj ANIM_OBJ_SPARKS_CIRCLE, 136, 56, $0
-;	anim_wait 32
-;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-;	anim_ret
-
 BattleAnim_LavaPlume:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_LAVA_PLUME
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_SMOKE_PUFF_BIG
+	anim_sound 6, 2, SFX_EMBER
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+.loop
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $38
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $10
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 58, 88, $5c
+	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 52, 96, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $2a
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $4
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $e8
+	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 40, 100, $28
+	anim_wait 2
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $18
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $3b
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $d0
+	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 48, 84, $38
+	anim_wait 2
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $1a
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $0a
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 58, 88, $50
+	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 56, 100, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $1e
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $e8
+	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 44, 88, $30
+	anim_wait 2
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $0
+	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 96, $24
+	anim_wait 2
+	anim_obj ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $d0
+	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 48, 108, $18
+	anim_wait 2
+	anim_loop 2, .loop
+	anim_wait 20
+	anim_ret
+
+
 BattleAnim_LeafStorm:
 BattleAnim_PowerWhip:
 BattleAnim_RockWrecker:

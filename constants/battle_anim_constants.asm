@@ -460,6 +460,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_DISCHARGE_SPARKS_W
 	const ANIM_OBJ_DISCHARGE_SPARKS_NW
 	const ANIM_OBJ_DISCHARGE_SPARKS_SMALL
+	const ANIM_OBJ_LAVA_PLUME_SMOKE
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -891,6 +892,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_DISCHARGE_SPARKS_W
 	const BATTLEANIMFRAMESET_DISCHARGE_SPARKS_NW
 	const BATTLEANIMFRAMESET_DISCHARGE_SPARKS_SMALL
+	const BATTLEANIMFRAMESET_LAVA_PLUME_SMOKE
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1332,6 +1334,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_FOCUS_BLAST
 	const ANIM_GFX_ENERGY_BALL
 	const ANIM_GFX_TRICK_ROOM
+	const ANIM_GFX_SMOKE_PUFF_BIG
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1422,6 +1425,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_GLOW_LIME        ; 2a
 	const PAL_BTLCUSTOM_DRAGON_PULSE     ; 2b
 	const PAL_BTLCUSTOM_SNOW             ; 2c
+	const PAL_BTLCUSTOM_LAVA_PLUME       ; 2d
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
