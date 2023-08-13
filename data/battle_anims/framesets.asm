@@ -157,7 +157,7 @@ BattleAnimFrameData:
 	dw .Frameset_ItemBagSidewaysPunch    ; BATTLEANIMFRAMESET_ITEM_BAG_SIDEWAYS_PUNCH
 	dw .Frameset_SpiderWeb               ; BATTLEANIMFRAMESET_SPIDER_WEB
 	dw .Frameset_SmallGlowSlow           ; BATTLEANIMFRAMESET_SMALL_GLOW_SLOW
-	dw .Frameset_ImpUTurnRising          ; BATTLEANIMFRAMESET_IMP_U_TURN_RISING
+	dw .Frameset_Imp                     ; BATTLEANIMFRAMESET_IMP
 	dw .Frameset_ImpFlipped              ; BATTLEANIMFRAMESET_IMP_FLIPPED
 	dw .Frameset_Cherub                  ; BATTLEANIMFRAMESET_CHERUB
 	dw .Frameset_Pencil                  ; BATTLEANIMFRAMESET_PENCIL
@@ -241,7 +241,6 @@ BattleAnimFrameData:
 	dw .Frameset_LongHit                 ; BATTLEANIMFRAMESET_LONG_HIT
 	dw .Frameset_BigRedX                 ; BATTLEANIMFRAMESET_BIG_RED_X
 	dw .Frameset_BulkUp                  ; BATTLEANIMFRAMESET_BULK_UP
-	dw .Frameset_UTurnFalling            ; BATTLEANIMFRAMESET_U_TURN_FALLING
 	dw .Frameset_VoltTackleSparks        ; BATTLEANIMFRAMESET_VOLT_TACKLE_SPARKS
 	dw .Frameset_MudShot                 ; BATTLEANIMFRAMESET_MUD_SHOT
 	dw .Frameset_ShrinkingRingSmall      ; BATTLEANIMFRAMESET_SHRINKING_RING_SMALL
@@ -331,6 +330,9 @@ BattleAnimFrameData:
 	dw .Frameset_LeafStormBigLeaf        ; BATTLEANIMFRAMESET_LEAF_STORM_BIG_LEAF
 	dw .Frameset_LeafStormSmallLeaf      ; BATTLEANIMFRAMESET_LEAF_STORM_SMALL_LEAF
 	dw .Frameset_RockWreckerGrow         ; BATTLEANIMFRAMESET_ROCK_WRECKER_GROW
+	dw .Frameset_BlurLaunch              ; BATTLEANIMFRAMESET_BLUR_LAUNCH
+	dw .Frameset_BlurRising              ; BATTLEANIMFRAMESET_BLUR_RISING
+	dw .Frameset_BlurFalling             ; BATTLEANIMFRAMESET_BLUR_FALLING
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -1253,7 +1255,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_53,  8
 	battleoamrestart
 
-.Frameset_ImpUTurnRising:
+.Frameset_Imp:
 	battleoamframe BATTLEANIMOAMSET_B8, 32
 	battleoamend
 
@@ -1694,10 +1696,6 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_F7,  32
 	battleoamframe BATTLEANIMOAMSET_F8,  24
 	battleoamframe BATTLEANIMOAMSET_F8,  24
-	battleoamend
-
-.Frameset_UTurnFalling:
-	battleoamframe BATTLEANIMOAMSET_B8,  32, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamend
 
 .Frameset_VoltTackleSparks:
@@ -2272,3 +2270,15 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_1B, 30
 	battleoamframe BATTLEANIMOAMSET_1C, 43
 	battleoamdelete
+
+.Frameset_BlurLaunch:
+	battleoamframe BATTLEANIMOAMSET_126, 13
+	battleoamend
+
+.Frameset_BlurRising:
+	battleoamframe BATTLEANIMOAMSET_127, 24
+	battleoamend
+
+.Frameset_BlurFalling:
+	battleoamframe BATTLEANIMOAMSET_127, 24, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamend
