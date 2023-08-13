@@ -70,7 +70,6 @@ AnimObjGFX:
 	anim_obj_gfx  8, AnimObjWeatherBallGFX
 	anim_obj_gfx  5, AnimObjCosmicPowerGFX
 	anim_obj_gfx 18, AnimObjBulkUpGFX
-	anim_obj_gfx 32, AnimObjUTurnGFX
 	anim_obj_gfx  6, AnimObjRingsGFX
 	anim_obj_gfx 13, AnimObjBigRingsGFX
 	anim_obj_gfx  6, AnimObjSmallExplosionGFX
@@ -95,4 +94,5 @@ AnimObjGFX:
 	anim_obj_gfx 14, AnimObjSmokePuffBigGFX
 	anim_obj_gfx  6, AnimObjLeafStormGFX
 	anim_obj_gfx 16, AnimObjHugeRockGFX
+	anim_obj_gfx 24, AnimObjBlurGFX
 	assert_table_length NUM_ANIM_GFX + 1
