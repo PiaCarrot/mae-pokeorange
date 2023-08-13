@@ -292,7 +292,7 @@ BattleAnim_PowerWhip:
 	anim_wait 2
 	anim_obj ANIM_OBJ_PUNISHMENT, 96, 245, $0c
 	anim_wait 12
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $08
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $08
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $28, $2, $0
 	anim_sound 0, 1, SFX_THUNDER
 	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
