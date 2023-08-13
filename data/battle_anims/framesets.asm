@@ -333,6 +333,7 @@ BattleAnimFrameData:
 	dw .Frameset_BlurDiagonal            ; BATTLEANIMFRAMESET_BLUR_DIAGONAL
 	dw .Frameset_BlurVerticalUp          ; BATTLEANIMFRAMESET_BLUR_VERTICAL_UP
 	dw .Frameset_BlurVerticalDown        ; BATTLEANIMFRAMESET_BLUR_VERTICAL_DOWN
+	dw .Frameset_GunkShot                ; BATTLEANIMFRAMESET_GUNK_SHOT
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2282,3 +2283,17 @@ BattleAnimFrameData:
 .Frameset_BlurVerticalDown:
 	battleoamframe BATTLEANIMOAMSET_127, 32, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamend
+
+.Frameset_GunkShot:
+	battleoamwait 20
+	battleoamframe BATTLEANIMOAMSET_1F,  20
+	battleoamframe BATTLEANIMOAMSET_F5,  20
+	battleoamframe BATTLEANIMOAMSET_11C, 10
+	battleoamwait 4
+	battleoamframe BATTLEANIMOAMSET_11C, 4
+	battleoamwait 4
+	battleoamframe BATTLEANIMOAMSET_11C, 4
+	battleoamwait 4
+	battleoamframe BATTLEANIMOAMSET_11C, 4
+	battleoamdelete
+
