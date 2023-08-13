@@ -2268,7 +2268,7 @@ BattleAnimFrameData:
 
 .Frameset_RockWreckerGrow:
 	battleoamwait 20
-	battleoamframe BATTLEANIMOAMSET_0F, 40
-	battleoamframe BATTLEANIMOAMSET_1B, 40
-	battleoamframe BATTLEANIMOAMSET_1C, 58
+	battleoamframe BATTLEANIMOAMSET_0F, 30
+	battleoamframe BATTLEANIMOAMSET_1B, 30
+	battleoamframe BATTLEANIMOAMSET_1C, 43
 	battleoamdelete

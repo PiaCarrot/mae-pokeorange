@@ -334,12 +334,12 @@ BattleAnim_RockWrecker:
 	anim_sound 0, 0, SFX_OUTRAGE
 	anim_obj ANIM_OBJ_ROCK_WRECKER_CHARGE, 48, 96, $30
 	anim_wait 4
-	anim_loop 4, .loop
+	anim_loop 3, .loop
+	anim_wait 6
 	anim_sound 0, 0, SFX_OUTRAGE
-	anim_obj ANIM_OBJ_ROCK_WRECKER, 48, 94, $1
+	anim_obj ANIM_OBJ_ROCK_WRECKER, 48, 91, $1
 	anim_wait 80
-	anim_sound 0, 0, SFX_OUTRAGE
-	anim_incobj 39
+	anim_incobj 31
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 10
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
@@ -367,12 +367,8 @@ BattleAnim_CrossPoison:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
 	anim_obj ANIM_OBJ_CUT_LONG_UP_LEFT, 150, 68, $0
 	anim_obj ANIM_OBJ_CUT_LONG_UP_RIGHT, 118, 68, $0
-	anim_wait 12
 	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
-	anim_wait 16
-;fallthrough
-BattleAnim_PoisonBubble_branch_2:
-.loop
+	anim_wait 24
 	anim_sound 0, 1, SFX_TOXIC
 	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
 	anim_wait 8
@@ -381,9 +377,7 @@ BattleAnim_PoisonBubble_branch_2:
 	anim_wait 8
 	anim_sound 0, 1, SFX_TOXIC
 	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
-	anim_wait 8
-	anim_loop 2, .loop
-	anim_wait 48
+	anim_wait 32
 	anim_ret
 
 BattleAnim_GunkShot:
