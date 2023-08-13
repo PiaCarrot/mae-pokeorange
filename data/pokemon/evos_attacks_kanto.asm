@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, LEAF_STORM
+	dbw 6, CROSS_POISON
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

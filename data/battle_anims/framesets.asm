@@ -247,6 +247,7 @@ BattleAnimFrameData:
 	dw .Frameset_ShrinkingRingSmall      ; BATTLEANIMFRAMESET_SHRINKING_RING_SMALL
 	dw .Frameset_ShrinkingRingBig        ; BATTLEANIMFRAMESET_SHRINKING_RING_BIG
 	dw .Frameset_CutLongUpRight          ; BATTLEANIMFRAMESET_CUT_LONG_UP_RIGHT
+	dw .Frameset_CutLongUpLeft          ; BATTLEANIMFRAMESET_CUT_LONG_UP_LEFT
 	dw .Frameset_PulsingEnergyOrbBig     ; BATTLEANIMFRAMESET_PULSING_ENERGY_ORB_BIG
 	dw .Frameset_GrassWhistleLeaf        ; BATTLEANIMFRAMESET_GRASS_WHISTLE_LEAF
 	dw .Frameset_ShockWaveSparks         ; BATTLEANIMFRAMESET_SHOCK_WAVE_SPARKS
@@ -329,6 +330,7 @@ BattleAnimFrameData:
 	dw .Frameset_WeatherBall             ; BATTLEANIMFRAMESET_WEATHER_BALL
 	dw .Frameset_LeafStormBigLeaf        ; BATTLEANIMFRAMESET_LEAF_STORM_BIG_LEAF
 	dw .Frameset_LeafStormSmallLeaf      ; BATTLEANIMFRAMESET_LEAF_STORM_SMALL_LEAF
+	dw .Frameset_RockWreckerGrow         ; BATTLEANIMFRAMESET_ROCK_WRECKER_GROW
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -1732,6 +1734,22 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_52,  2, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamdelete
 
+.Frameset_CutLongUpLeft:
+	battleoamframe BATTLEANIMOAMSET_4B,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_4C,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_4D,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_4F,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_50,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_51,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_52,  2, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLEANIMOAMSET_52,  2, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLEANIMOAMSET_52,  2, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLEANIMOAMSET_52,  2, OAM_Y_FLIP
+	battleoamdelete
+
 .Frameset_PulsingEnergyOrbBig:
 	battleoamframe BATTLEANIMOAMSET_54,  1
 	battleoamframe BATTLEANIMOAMSET_F5,  1
@@ -2247,3 +2265,10 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_0F,  1, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamframe BATTLEANIMOAMSET_0F,  1, OAM_Y_FLIP
 	battleoamrestart
+
+.Frameset_RockWreckerGrow:
+	battleoamwait 20
+	battleoamframe BATTLEANIMOAMSET_0F, 40
+	battleoamframe BATTLEANIMOAMSET_1B, 40
+	battleoamframe BATTLEANIMOAMSET_1C, 58
+	battleoamdelete
