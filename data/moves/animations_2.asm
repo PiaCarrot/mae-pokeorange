@@ -2488,7 +2488,7 @@ BattleAnim_Bounce:
 	anim_if_param_equal $2, BattleAnim_Bounce_branch_2
 	anim_2gfx ANIM_GFX_BLUR, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_KINESIS
-	anim_obj ANIM_OBJ_BLUR_FALLING, 136, 230, $10
+	anim_obj ANIM_OBJ_BLUR_VERTICAL_DOWN, 136, 230, $10
 	anim_wait 16
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $10, $4, $0
 	anim_sound 0, 1, SFX_STOMP
@@ -2503,7 +2503,7 @@ BattleAnim_Bounce_branch_1:
 	anim_1gfx ANIM_GFX_BLUR
 	anim_sound 0, 0, SFX_POTION
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_obj ANIM_OBJ_BLUR_RISING, 48, 88, $30
+	anim_obj ANIM_OBJ_BLUR_VERTICAL_UP, 48, 88, $30
 	anim_wait 32
 	anim_clearobjs
 	anim_ret
@@ -3448,7 +3448,7 @@ BattleAnim_UTurn:
 	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
 	anim_wait 12
 	anim_2gfx ANIM_GFX_BLUR, ANIM_GFX_HIT
-	anim_obj ANIM_OBJ_BLUR_LAUNCH, 64, 92, $18
+	anim_obj ANIM_OBJ_BLUR_DIAGONAL, 64, 92, $18
 	anim_wait 8
 	anim_clearobjs
 	anim_wait 1
@@ -3460,10 +3460,10 @@ BattleAnim_UTurn:
 	anim_1gfx ANIM_GFX_BLUR
 	anim_wait 1
 	anim_sound 0, 0, SFX_RETURN
-	anim_obj ANIM_OBJ_BLUR_RISING, 132, 38, $30
+	anim_obj ANIM_OBJ_BLUR_VERTICAL_UP, 132, 38, $30
 	anim_wait 32
 	anim_clearobjs
-	anim_obj ANIM_OBJ_BLUR_FALLING, 48, 16, $10
+	anim_obj ANIM_OBJ_BLUR_VERTICAL_DOWN, 48, 16, $10
 	anim_wait 16
 	anim_clearobjs
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0

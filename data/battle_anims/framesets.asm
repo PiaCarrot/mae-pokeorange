@@ -330,9 +330,9 @@ BattleAnimFrameData:
 	dw .Frameset_LeafStormBigLeaf        ; BATTLEANIMFRAMESET_LEAF_STORM_BIG_LEAF
 	dw .Frameset_LeafStormSmallLeaf      ; BATTLEANIMFRAMESET_LEAF_STORM_SMALL_LEAF
 	dw .Frameset_RockWreckerGrow         ; BATTLEANIMFRAMESET_ROCK_WRECKER_GROW
-	dw .Frameset_BlurLaunch              ; BATTLEANIMFRAMESET_BLUR_LAUNCH
-	dw .Frameset_BlurRising              ; BATTLEANIMFRAMESET_BLUR_RISING
-	dw .Frameset_BlurFalling             ; BATTLEANIMFRAMESET_BLUR_FALLING
+	dw .Frameset_BlurDiagonal              ; BATTLEANIMFRAMESET_BLUR_DIAGONAL
+	dw .Frameset_BlurVerticalUp              ; BATTLEANIMFRAMESET_BLUR_VERTICAL_UP
+	dw .Frameset_BlurVerticalDown             ; BATTLEANIMFRAMESET_BLUR_VERTICAL_DOWN
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2271,14 +2271,14 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_1C, 43
 	battleoamdelete
 
-.Frameset_BlurLaunch:
+.Frameset_BlurDiagonal:
 	battleoamframe BATTLEANIMOAMSET_126, 13
 	battleoamend
 
-.Frameset_BlurRising:
+.Frameset_BlurVerticalUp:
 	battleoamframe BATTLEANIMOAMSET_127, 24
 	battleoamend
 
-.Frameset_BlurFalling:
+.Frameset_BlurVerticalDown:
 	battleoamframe BATTLEANIMOAMSET_127, 24, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamend
