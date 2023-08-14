@@ -334,6 +334,8 @@ BattleAnimFrameData:
 	dw .Frameset_BlurVerticalUp          ; BATTLEANIMFRAMESET_BLUR_VERTICAL_UP
 	dw .Frameset_BlurVerticalDown        ; BATTLEANIMFRAMESET_BLUR_VERTICAL_DOWN
 	dw .Frameset_GunkShot                ; BATTLEANIMFRAMESET_GUNK_SHOT
+	dw .Frameset_MagnetBomb              ; BATTLEANIMFRAMESET_MAGNET_BOMB
+	dw .Frameset_StoneEdge               ; BATTLEANIMFRAMESET_STONE_EDGE
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2297,3 +2299,11 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_11C, 4
 	battleoamdelete
 
+.Frameset_MagnetBomb:
+	battleoamwait 4
+	battleoamframe BATTLEANIMOAMSET_0F,  54
+	battleoamdelete
+
+.Frameset_StoneEdge:
+	battleoamframe BATTLEANIMOAMSET_128,  50
+	battleoamdelete

@@ -475,7 +475,129 @@ BattleAnim_IronHead:
 	anim_ret
 
 BattleAnim_MagnetBomb:
+	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_BRIGHT
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_ICE
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_SMALL_EXPLOSION
+	anim_battlergfx_2row
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 36, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 62, $18
+	anim_wait 8
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 54, $30
+	anim_wait 8
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 48, $8
+	anim_wait 8
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 64, $20
+	anim_wait 8
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 36, $10
+	anim_wait 8
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 38, $8
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $38
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $1, $0
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 62, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 64, $28
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $16
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 140, 62, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $39
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 42, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $10
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 132, 52, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 62, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $38
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 140, 42, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 42, $0
+	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $1d
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 132, 52, $0
+	anim_wait 32
+	anim_call BattleAnim_ShowMon_1_3
+	anim_ret
+
 BattleAnim_StoneEdge:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_ROCKS
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 156, 64, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 152, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 128, 64, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 108, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 112, 64, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 148, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 118, 64, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 136, 64, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_SPARK
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 116, 64, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_STONE_EDGE_STILL, 144, 64, $8
+	anim_wait 32
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_STONE_EDGE, 156, 64, $8
+	anim_wait 2
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
+	anim_obj ANIM_OBJ_STONE_EDGE, 152, 64, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_STONE_EDGE, 128, 64, $8
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 120, 40, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_STONE_EDGE, 108, 64, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_STONE_EDGE, 112, 64, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_STONE_EDGE, 148, 64, $8
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 152, 48, $0
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_STONE_EDGE, 118, 64, $8
+	anim_wait 2
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_obj ANIM_OBJ_STONE_EDGE, 136, 64, $8
+	anim_wait 2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_STONE_EDGE, 116, 64, $8
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 136, 56, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_STONE_EDGE, 144, 64, $8
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Captivate:
 BattleAnim_StealthRock:
 BattleAnim_GrassKnot:
