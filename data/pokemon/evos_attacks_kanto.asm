@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, PAYBACK
+	dbw 6, GRASS_KNOT
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

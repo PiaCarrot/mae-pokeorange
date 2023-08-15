@@ -668,9 +668,16 @@ BattleAnim_GrassKnot:
 	anim_wait 2
 	anim_obj ANIM_OBJ_RAZOR_LEAF, 144, 40, $50
 	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_wait 8
-	anim_wait 32
+	anim_wait 40
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 1
+	anim_clearobjs
+	anim_wait 1
+	anim_1gfx ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_HEADBUTT
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Chatter:
