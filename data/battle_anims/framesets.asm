@@ -340,6 +340,8 @@ BattleAnimFrameData:
 	dw .Frameset_SteathRock              ; BATTLEANIMFRAMESET_STEALTH_ROCK
 	dw .Frameset_Grassknot               ; BATTLEANIMFRAMESET_GRASS_KNOT
 	dw .Frameset_Chatter                 ; BATTLEANIMFRAMESET_CHATTER
+	dw .Frameset_ChargeBeam              ; BATTLEANIMFRAMESET_CHARGE_BEAM
+	dw .Frameset_WoodHammer              ; BATTLEANIMFRAMESET_WOOD_HAMMER
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2333,7 +2335,18 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_11F,  2
 	battleoamend
 
-.Frameset_Chatter
+.Frameset_Chatter:
 	battleoamwait 4
 	battleoamframe BATTLEANIMOAMSET_0F,  25
 	battleoamdelete
+
+.Frameset_ChargeBeam:
+	battleoamframe  BATTLEANIMOAMSET_120,  8
+	battleoamend
+
+.Frameset_WoodHammer:
+	battleoamframe BATTLEANIMOAMSET_11F,  2
+	battleoamframe BATTLEANIMOAMSET_11F,  2, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_11F,  2, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_11F,  2, OAM_Y_FLIP
+	battleoamrestart

@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, GRASS_KNOT
+	dbw 6, WOOD_HAMMER
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
