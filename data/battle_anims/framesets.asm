@@ -216,6 +216,7 @@ BattleAnimFrameData:
 	dw .Frameset_PalmXFlip               ; BATTLEANIMFRAMESET_PALM_XFLIP
 	dw .Frameset_SmallGlow               ; BATTLEANIMFRAMESET_SMALL_GLOW
 	dw .Frameset_BigGlow                 ; BATTLEANIMFRAMESET_BIG_GLOW
+	dw .Frameset_BigGlowClear            ; BATTLEANIMFRAMESET_BIG_GLOW_CLEAR
 	dw .Frameset_TeeterDance             ; BATTLEANIMFRAMESET_TEETER_DANCE
 	dw .Frameset_BurnedShort             ; BATTLEANIMFRAMESET_BURNED_SHORT
 	dw .Frameset_IceBall                 ; BATTLEANIMFRAMESET_ICE_BALL
@@ -338,6 +339,7 @@ BattleAnimFrameData:
 	dw .Frameset_StoneEdge               ; BATTLEANIMFRAMESET_STONE_EDGE
 	dw .Frameset_SteathRock              ; BATTLEANIMFRAMESET_STEALTH_ROCK
 	dw .Frameset_Grassknot               ; BATTLEANIMFRAMESET_GRASS_KNOT
+	dw .Frameset_Chatter                 ; BATTLEANIMFRAMESET_CHATTER
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -1572,6 +1574,11 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_E8,  1
 	battleoamrestart
 
+.Frameset_BigGlowClear:
+	battleoamframe BATTLEANIMOAMSET_12B, 1
+	battleoamframe BATTLEANIMOAMSET_E8,  1
+	battleoamrestart
+
 .Frameset_TeeterDance:
 	battleoamframe BATTLEANIMOAMSET_1B,  40
 	battleoamdelete
@@ -2100,7 +2107,7 @@ BattleAnimFrameData:
 	battleoamend
 
 .Frameset_VacuumShrinking:
-	battleoamframe BATTLEANIMOAMSET_E7,  1
+	battleoamframe BATTLEANIMOAMSET_12B, 1
 	battleoamframe BATTLEANIMOAMSET_E8,  1
 	battleoamdelete
 
@@ -2325,3 +2332,8 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_129,  2
 	battleoamframe BATTLEANIMOAMSET_11F,  2
 	battleoamend
+
+.Frameset_Chatter
+	battleoamwait 4
+	battleoamframe BATTLEANIMOAMSET_0F,  25
+	battleoamdelete

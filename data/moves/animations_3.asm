@@ -674,7 +674,129 @@ BattleAnim_GrassKnot:
 	anim_ret
 
 BattleAnim_Chatter:
+	anim_2gfx ANIM_GFX_NOISE, ANIM_GFX_MISC_2
+	anim_call BattleAnim_TargetObj_1Row_3
+	anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
+	anim_cry $0
+.loop
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_RED
+	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj ANIM_OBJ_SOUND, 64, 100, $2
+	anim_obj ANIM_OBJ_CHATTER_NOTE, 56, 84, $36
+	anim_wait 9
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_obj ANIM_OBJ_CHATTER_NOTE, 46, 84, $2e
+	anim_wait 9
+	anim_obj ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj ANIM_OBJ_SOUND, 64, 100, $2
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_obj ANIM_OBJ_CHATTER_NOTE, 38, 84, $2a
+	anim_wait 9
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_obj ANIM_OBJ_CHATTER_NOTE, 50, 84, $32
+	anim_wait 9
+	anim_loop 2, .loop
+	anim_wait 20
+	anim_incbgeffect ANIM_BG_FLAIL
+	anim_jump BattleAnim_ShowMon_0_3
+
 BattleAnim_Judgment:
+	anim_5gfx ANIM_GFX_GLOW, ANIM_GFX_SPEED, ANIM_GFX_OBJECTS_2, ANIM_GFX_ROCK_POLISH, ANIM_GFX_BIG_GLOW_SPIKED
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_INVERT_BLACK
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
+	anim_obj ANIM_OBJ_TINY_GLOW_CLEAR, 136, 48, $0
+	anim_sound 0, 0, SFX_FORESIGHT
+.loop
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $38
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $20
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $28
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $8
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $10
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $38
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $28
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $0
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $18
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ENERGY_ORB, 136, 48, $30
+	anim_obj ANIM_OBJ_WIND_SPARKLE_SHORT, 136, 48, $18
+	anim_wait 4
+	anim_loop 2, .loop
+	anim_clearobjs
+	anim_obj ANIM_OBJ_SMALL_GLOW, 136, 48, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $90, $4, $0
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BRIGHT
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_VERY_BRIGHT
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $6, $0
+.loop2
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_R, 154, 30, $0
+	anim_obj ANIM_OBJ_JUDGMENT_SW, 136, 48, $18
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_85DEG_L_YFLIP, 130, 64, $0
+	anim_obj ANIM_OBJ_JUDGMENT_E, 136, 48, $0
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_5DEG_R_YFLIP, 164, 56, $0
+	anim_obj ANIM_OBJ_JUDGMENT_NW, 136, 48, $28
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_L, 118, 30, $0
+	anim_obj ANIM_OBJ_JUDGMENT_N, 136, 48, $30
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_85DEG_R_YFLIP, 142, 64, $0
+	anim_obj ANIM_OBJ_JUDGMENT_SE, 136, 48, $8
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_L_YFLIP, 118, 66, $0
+	anim_obj ANIM_OBJ_JUDGMENT_W, 136, 48, $20
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_85DEG_L, 130, 32, $0
+	anim_obj ANIM_OBJ_JUDGMENT_NE, 136, 48, $38
+	anim_wait 3
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_R_YFLIP, 154, 66, $0
+	anim_obj ANIM_OBJ_JUDGMENT_S, 136, 48, $10
+	anim_wait 3
+	anim_loop 3, .loop2
+	anim_clearobjs
+	anim_obj ANIM_OBJ_BIG_GLOW_SPIKED, 136, 48, $0
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_R, 154, 30, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_85DEG_L_YFLIP, 130, 64, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_5DEG_R_YFLIP, 164, 56, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_L, 118, 30, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_85DEG_R_YFLIP, 142, 64, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_L_YFLIP, 118, 66, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_85DEG_L, 130, 32, $0
+	anim_wait 3
+	anim_obj ANIM_OBJ_JUDGMENT_STREAK_45DEG_R_YFLIP, 154, 66, $0
+	anim_wait 11
+	anim_ret
+
+
 BattleAnim_BugBite:
 BattleAnim_ChargeBeam:
 BattleAnim_WoodHammer:

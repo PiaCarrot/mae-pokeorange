@@ -53,7 +53,7 @@ AnimObjGFX:
 	anim_obj_gfx  7, AnimObjStarsGFX
 	anim_obj_gfx 13, AnimObjMeteorGFX
 	anim_obj_gfx  4, AnimObjFlatterGFX
-	anim_obj_gfx  4, AnimObjMisc2GFX
+	anim_obj_gfx  5, AnimObjMisc2GFX
 	anim_obj_gfx 10, AnimObjBeamLightGFX
 	anim_obj_gfx  9, AnimObjSmokePuffGFX
 	anim_obj_gfx 16, AnimObjRootsGFX
