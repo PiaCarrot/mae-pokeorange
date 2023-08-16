@@ -2353,9 +2353,9 @@ BattleAnimFrameData:
 	battleoamrestart
 
 .Frameset_AquaJet:
-	battleoamframe BATTLEANIMOAMSET_12C,  20
-	battleoamframe BATTLEANIMOAMSET_12D,  20
-	battleoamframe BATTLEANIMOAMSET_12E,  20
-	battleoamframe BATTLEANIMOAMSET_12F,  20
+	battleoamframe BATTLEANIMOAMSET_12C,  1
+	battleoamframe BATTLEANIMOAMSET_12D,  1
+	battleoamframe BATTLEANIMOAMSET_12E,  1
+	battleoamframe BATTLEANIMOAMSET_12F,  1
 	battleoamdelete
 
