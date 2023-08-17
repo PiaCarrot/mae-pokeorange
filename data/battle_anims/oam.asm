@@ -1156,16 +1156,16 @@ BattleAnimOAMData:
 	dbsprite   2,  -1, 0, 4, $00, X_FLIP
 
 .OAMData_be:
-	dbsprite  -3, 0,   0, 0, $00, $0
-	dbsprite  -2, 0,   0, 0, $01, $0
-	dbsprite  -1, 0,   0, 0, $06, $0
-	dbsprite  -3, 0,   1, 0, $00, X_FLIP
-	dbsprite  -2, 0,   1, 0, $01, X_FLIP
-	dbsprite  -1, 0,   1, 0, $06, X_FLIP
-	dbsprite   0, 0,   0, 0, $01, Y_FLIP
-	dbsprite   1, 0,   0, 0, $00, Y_FLIP
-	dbsprite   0, 0,   1, 0, $01, X_FLIP | Y_FLIP
-	dbsprite   1, 0,   1, 0, $00, X_FLIP | Y_FLIP
+	dsprite  -3, 0,   0, 0, $00, $0
+	dsprite  -2, 0,   0, 0, $01, $0
+	dsprite  -1, 0,   0, 0, $06, $0
+	dsprite  -3, 0,   1, 0, $00, X_FLIP
+	dsprite  -2, 0,   1, 0, $01, X_FLIP
+	dsprite  -1, 0,   1, 0, $06, X_FLIP
+	dsprite   0, 0,   0, 0, $01, Y_FLIP
+	dsprite   1, 0,   0, 0, $00, Y_FLIP
+	dsprite   0, 0,   1, 0, $01, X_FLIP | Y_FLIP
+	dsprite   1, 0,   1, 0, $00, X_FLIP | Y_FLIP
 
 .OAMData_c1:
 	dbsprite  -2,  -2, 0, 0, $00, $0
