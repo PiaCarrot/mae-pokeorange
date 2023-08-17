@@ -2,7 +2,3 @@
 
 _hl_::
 	jp hl
-
-_de_::
-	push de
-	ret
