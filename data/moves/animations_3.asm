@@ -956,8 +956,114 @@ BattleAnim_AquaJet:
 	anim_ret
 
 BattleAnim_AttackOrder:
+	anim_2gfx ANIM_GFX_OBJECTS_3, ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_LIME
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BEE
+	anim_call BattleAnim_UserObj_1Row_3
+.loop
+	anim_obj ANIM_OBJ_BEE_SW, 136, 48, $38
+	anim_wait 4
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 144, 40, $0
+	anim_obj ANIM_OBJ_BEE_E, 136, 48, $20
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 128, 56, $0
+	anim_obj ANIM_OBJ_BEE_SE, 136, 48, $8
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 144, 56, $0
+	anim_obj ANIM_OBJ_BEE_N, 136, 48, $10
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 128, 40, $0
+	anim_obj ANIM_OBJ_BEE_SE, 136, 48, $28
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 136, 48, $0
+	anim_obj ANIM_OBJ_BEE_W, 136, 48, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 144, 56, $0
+	anim_obj ANIM_OBJ_BEE_NE, 136, 48, $18
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 128, 56, $0
+	anim_obj ANIM_OBJ_BEE_S, 136, 48, $30
+	anim_wait 4
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 136, 48, $0
+	anim_loop 3, .loop
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 1
+	anim_wait 23
+	anim_ret
+
 BattleAnim_DefendOrder:
+	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_OBJECTS_3, ANIM_GFX_SMOKE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PEACH
+	anim_call BattleAnim_Self_Bees_branch
+	anim_wait 20
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SIGNAL_BEAM_RED
+	anim_obj ANIM_OBJ_BIG_GLOW_CLEAR, 48, 96, $0
+	anim_wait 6
+	anim_clearobjs
+	anim_wait 14
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_ret
+
 BattleAnim_HealOrder:
+	anim_3gfx ANIM_GFX_SHINE, ANIM_GFX_OBJECTS_3, ANIM_GFX_SMOKE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_LIGHT_SCREEN
+	anim_call BattleAnim_Self_Bees_branch
+	anim_wait 20
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRAY
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER, 24, 96, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
+	anim_wait 21
+	anim_ret
+	anim_wait 20
+	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+	anim_ret
+
+BattleAnim_Self_Bees_branch:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BEE
+	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+.loop
+	anim_obj ANIM_OBJ_BEE_SW, 48, 96, $38
+	anim_wait 4
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obj ANIM_OBJ_BEE_E, 48, 96, $20
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_POOF, 56, 88, $0
+	anim_obj ANIM_OBJ_BEE_SE, 48, 96, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_N, 48, 96, $10
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_POOF, 40, 104, $0
+	anim_obj ANIM_OBJ_BEE_SE, 48, 96, $28
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_W, 48, 96, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_POOF, 56, 104, $0
+	anim_obj ANIM_OBJ_BEE_NE, 48, 96, $18
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_S, 48, 96, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_BEE_POOF, 40, 88, $0
+	anim_loop 3, .loop
+	anim_ret
+
+
 BattleAnim_HeadSmash:
 BattleAnim_DoubleHit:
 BattleAnim_RoarOfTime:

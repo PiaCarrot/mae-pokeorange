@@ -98,4 +98,5 @@ AnimObjGFX:
 	anim_obj_gfx 27, AnimObjGrassKnotGFX
 	anim_obj_gfx  9, AnimObjWoodHammerGFX
 	anim_obj_gfx 28, AnimObjAquaJetGFX
+	anim_obj_gfx 22, AnimObjObjects3GFX
 	assert_table_length NUM_ANIM_GFX + 1
