@@ -485,7 +485,7 @@ Moves2:
 	move EFFECT_PRIORITY_HIT,       40, WATER,          PHYSICAL, 100, 20,   0 ; AQUA_JET
 	move EFFECT_NORMAL_HIT,         90, BUG,            PHYSICAL, 100, 15,   0 ; ATTACK_ORDER
 	move EFFECT_DEFENSE_UP,          0, BUG,            STATUS,   100, 10,   0 ; DEFEND_ORDER EFFECT_DEF_SP_DEF_UP
-	move EFFECT_NORMAL_HIT,                0, BUG,            STATUS,   100, 10,   0 ; HEAL_ORDER
+	move EFFECT_HEAL,                0, BUG,            STATUS,   100, 10,   0 ; HEAL_ORDER
 	move EFFECT_RECOIL_HIT,        150, ROCK,           PHYSICAL,  80,  5,   0 ; HEAD_SMASH EFFECT_HEAVY_RECOIL
 	move EFFECT_DOUBLE_HIT,         35, NORMAL,         PHYSICAL,  90, 10,   0 ; DOUBLE_HIT
 	move EFFECT_HYPER_BEAM,        150, DRAGON,         SPECIAL,   90,  5,   0 ; ROAR_OF_TIME
