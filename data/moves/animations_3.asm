@@ -568,7 +568,6 @@ BattleAnim_StoneEdge:
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_STONE_EDGE, 156, 64, $8
 	anim_wait 2
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
 	anim_obj ANIM_OBJ_STONE_EDGE, 152, 64, $8
 	anim_wait 2
