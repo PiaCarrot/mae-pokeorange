@@ -334,3 +334,42 @@ Sfx_Gravity_Ch8:
 	noise_note 11, 14, -2, 107
 	noise_note 11, 14, 1, 108
 	sound_ret
+
+Sfx_RoarOfTime:
+	channel_count 2
+	channel 5, Sfx_RoarOfTime_Ch5
+	channel 6, Sfx_RoarOfTime_Ch6
+
+Sfx_RoarOfTime_Ch5:
+	vibrato 1, 7, 3
+	duty_cycle 2
+	pitch_sweep 3, -4
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 0, 1280
+	square_note 15, 15, 2, 1280
+	sound_ret
+
+Sfx_RoarOfTime_Ch6:
+	vibrato 1, 7, 3
+	duty_cycle 3
+	pitch_sweep 3, -4
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 0, 1154
+	square_note 15, 15, 2, 1154
+	sound_ret

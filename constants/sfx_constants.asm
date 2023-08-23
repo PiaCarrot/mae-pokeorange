@@ -211,4 +211,5 @@
 	const SFX_PUDDLE                      ; cf
 	const SFX_GRASS_WHISTLE               ; d0
 	const SFX_GRAVITY                     ; d1
+	const SFX_ROAR_OF_TIME                ; d2
 DEF NUM_SFX EQU const_value
