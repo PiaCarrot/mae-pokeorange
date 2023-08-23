@@ -99,5 +99,5 @@ AnimObjGFX:
 	anim_obj_gfx  9, AnimObjWoodHammerGFX
 	anim_obj_gfx 28, AnimObjAquaJetGFX
 	anim_obj_gfx 22, AnimObjObjects3GFX
-	anim_obj_gfx  8, AnimObjRoarOfTimeGFX
+	anim_obj_gfx 40, AnimObjRoarOfTimeGFX
 	assert_table_length NUM_ANIM_GFX + 1

@@ -1156,6 +1156,8 @@ BattleAnim_RoarOfTime:
 	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_VERY_BRIGHT
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_VERY_BRIGHT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
+;	anim_sound 0, 1, SFX_GS_INTRO_CHARIZARD_FIREBALL
+	anim_obj ANIM_OBJ_ROT_CLOCK, 132, 48, $0
 .loop3
 	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 144, 64, $0
 	anim_wait 2
@@ -1177,6 +1179,8 @@ BattleAnim_RoarOfTime:
 	anim_wait 48
 	anim_sound 0, 1, SFX_RAGE
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $20, $0
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
 	anim_wait 32
 	anim_ret
 

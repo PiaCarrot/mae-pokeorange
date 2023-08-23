@@ -336,9 +336,10 @@ Sfx_Gravity_Ch8:
 	sound_ret
 
 Sfx_RoarOfTime:
-	channel_count 2
+	channel_count 3
 	channel 5, Sfx_RoarOfTime_Ch5
 	channel 6, Sfx_RoarOfTime_Ch6
+	channel 8, Sfx_RoarOfTime_Ch8
 
 Sfx_RoarOfTime_Ch5:
 	vibrato 1, 7, 3
@@ -372,4 +373,22 @@ Sfx_RoarOfTime_Ch6:
 	square_note 15, 15, 0, 1154
 	square_note 15, 15, 0, 1154
 	square_note 15, 15, 2, 1154
+	sound_ret
+
+Sfx_RoarOfTime_Ch8:
+.loop1
+	noise_note 0, 0, 0, 0
+	sound_loop 48, .loop1
+	noise_note 8, 12, -7, 77
+	noise_note 8, 15, 1, 55
+.loop2:
+	noise_note 1, 15, 8, 79
+	noise_note 0, 12, 8, 38
+	noise_note 1, 13, 8, 95
+	noise_note 0, 10, 8, 55
+	sound_loop 12, .loop2
+	noise_note 3, 15, 8, 111
+	noise_note 4, 13, 8, 95
+	noise_note 12, 13, 8, 92
+	noise_note 40, 13, 3, 79
 	sound_ret

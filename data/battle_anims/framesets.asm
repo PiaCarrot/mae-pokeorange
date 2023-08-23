@@ -352,6 +352,7 @@ BattleAnimFrameData:
 	dw .Frameset_ROT_SW                  ; BATTLEANIMFRAMESET_ROT_SW
 	dw .Frameset_ROT_W                   ; BATTLEANIMFRAMESET_ROT_W
 	dw .Frameset_ROT_NW                  ; BATTLEANIMFRAMESET_ROT_NW
+	dw .Frameset_Clock                   ; BATTLEANIMFRAMESET_CLOCK
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2403,4 +2404,10 @@ BattleAnimFrameData:
 .Frameset_ROT_NW:
 	battleoamframe BATTLEANIMOAMSET_0B, 8, OAM_X_FLIP
 	battleoamdelete
+
+.Frameset_Clock:
+	battleoamframe BATTLEANIMOAMSET_130, 60
+	battleoamframe BATTLEANIMOAMSET_130, 60
+	battleoamframe BATTLEANIMOAMSET_131, 60
+	battleoamend
 
