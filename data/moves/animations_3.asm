@@ -1157,21 +1157,21 @@ BattleAnim_RoarOfTime:
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_VERY_BRIGHT
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
 .loop3
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 144, 64, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 144, 64, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 104, 72, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 104, 72, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 120, 68, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 120, 68, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 144, 64, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 144, 64, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 160, 72, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 160, 72, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 112, 68, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 112, 68, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 136, 64, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 136, 64, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_ROT_EXPLOSION, 128, 72, $0
+	anim_obj ANIM_OBJ_SMALL_EXPLOSION_YFIX, 128, 72, $0
 	anim_wait 2
 	anim_loop 3, .loop3
 	anim_wait 48
