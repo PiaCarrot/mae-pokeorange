@@ -100,4 +100,5 @@ AnimObjGFX:
 	anim_obj_gfx 28, AnimObjAquaJetGFX
 	anim_obj_gfx 22, AnimObjObjects3GFX
 	anim_obj_gfx 40, AnimObjRoarOfTimeGFX
+	anim_obj_gfx 12, AnimObjSpacialRendGFX
 	assert_table_length NUM_ANIM_GFX + 1
