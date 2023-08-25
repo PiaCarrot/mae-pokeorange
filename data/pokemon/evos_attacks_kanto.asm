@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, ROAR_OF_TIME
+	dbw 6, CRUSH_GRIP
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

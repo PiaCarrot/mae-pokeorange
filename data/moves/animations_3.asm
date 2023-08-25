@@ -1187,8 +1187,6 @@ BattleAnim_SpacialRend:
 	anim_2gfx ANIM_GFX_GLOW, ANIM_GFX_SPACIAL_REND
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
-	anim_clearenemyhud
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $8, $0
 	anim_bgp $90
 	anim_sound 0, 1, SFX_SUPERSONIC
@@ -1245,7 +1243,70 @@ BattleAnim_SpacialRend:
 	anim_ret
 
 BattleAnim_LunarDance:
+	anim_3gfx ANIM_GFX_LUNAR_DANCE, ANIM_GFX_WIND, ANIM_GFX_SPEED
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_MOON
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_AURORA
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_clearenemyhud
+	anim_bgp $1b
+	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_obj ANIM_OBJ_LUNAR_DANCE, 90, 84, $30
+	anim_wait 80
+	anim_sound 0, 0, SFX_METRONOME
+.loop
+	anim_obj ANIM_OBJ_RAPID_SPIN, 44, 112, $0
+	anim_wait 2
+	anim_loop 10, .loop
+	anim_wait 8
+	anim_sound 0, 0, SFX_GAME_FREAK_PRESENTS
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 44, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 36, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 52, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 28, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 60, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 20, 108, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_RISING_SPARKLE, 68, 108, $6
+	anim_wait 2
+	anim_wait 48
+	anim_ret
+
 BattleAnim_CrushGrip:
+	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_ROCKS, ANIM_GFX_CRUSH_GRIP
+	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_BRIGHT
+	anim_sound 6, 2, SFX_SPARK
+	anim_obj ANIM_OBJ_CRUSH_GRIP, 64, 88, $4
+	anim_wait 28
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $50, $2, $0
+	anim_wait 16
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+	anim_sound 6, 2, SFX_BIND
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $5c
+	anim_wait 4
+	anim_sound 6, 2, SFX_BIND
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $d0
+	anim_wait 4
+	anim_sound 6, 2, SFX_BIND
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $e8
+	anim_wait 4
+	anim_sound 6, 2, SFX_BIND
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $50
+	anim_wait 32
+	anim_ret
+
+
+
 BattleAnim_MagmaStorm:
 BattleAnim_DarkVoid:
 BattleAnim_SeedFlare:
