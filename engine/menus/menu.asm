@@ -1,30 +1,28 @@
 _2DMenu_::
 	ld hl, CopyMenuData
 	ld a, [wMenuData_2DMenuItemStringsBank]
-	rst FarCall
+	call FarCall_hl
 
 	call Draw2DMenu
 	call UpdateSprites
 	call ApplyTilemap
-	call Get2DMenuSelection
-	ret
+	jr Get2DMenuSelection
 
 _InterpretBattleMenu::
 	ld hl, CopyMenuData
 	ld a, [wMenuData_2DMenuItemStringsBank]
-	rst FarCall
+	call FarCall_hl
 
 	call Draw2DMenu
 	farcall MobileTextBorder
 	call UpdateSprites
 	call ApplyTilemap
-	call Get2DMenuSelection
-	ret
+	jr Get2DMenuSelection
 
 _InterpretMobileMenu::
 	ld hl, CopyMenuData
 	ld a, [wMenuData_2DMenuItemStringsBank]
-	rst FarCall
+	call FarCall_hl
 
 	call Draw2DMenu
 	farcall MobileTextBorder
@@ -43,8 +41,7 @@ _InterpretMobileMenu::
 	ld a, [wMenuJoypadFilter]
 	and c
 	jr z, .loop
-	call Mobile_GetMenuSelection
-	ret
+	jr Mobile_GetMenuSelection
 
 .quit
 	ld a, [w2DMenuNumCols]
@@ -59,8 +56,7 @@ Draw2DMenu:
 	xor a
 	ldh [hBGMapMode], a
 	call MenuBox
-	call Place2DMenuItemStrings
-	ret
+	jr Place2DMenuItemStrings
 
 Get2DMenuSelection:
 	call Init2DMenuCursorPosition
@@ -153,8 +149,7 @@ Place2DMenuItemStrings:
 	or h
 	ret z
 	ld a, [wMenuData_2DMenuFunctionBank]
-	rst FarCall
-	ret
+	jmp FarCall_hl
 
 Init2DMenuCursorPosition:
 	call GetMenuTextStartCoord
@@ -357,7 +352,7 @@ Menu_WasButtonPressed:
 	ld a, [w2DMenuFlags1]
 	bit 6, a
 	jr z, .skip_to_joypad
-	callfar PlaySpriteAnimationsAndDelayFrame
+	farcall PlaySpriteAnimationsAndDelayFrame
 
 .skip_to_joypad
 	call JoyTextDelay
@@ -723,8 +718,7 @@ RestoreOverworldMapTiles: ; unreferenced
 	ld a, c
 	or b
 	jr nz, .loop
-	call CloseSRAM
-	ret
+	jmp CloseSRAM
 
 Error_Cant_ExitMenu:
 	ld hl, .WindowPoppingErrorText

@@ -134,8 +134,7 @@ EnterMap:
 
 UnusedWait30Frames: ; unreferenced
 	ld c, 30
-	call DelayFrames
-	ret
+	jmp DelayFrames
 
 HandleMap:
 	call HandleMapTimeAndJoypad
@@ -159,8 +158,7 @@ MapEvents:
 	ret nz
 	call PlayerEvents
 	call DisableEvents
-	farcall ScriptEvents
-	ret
+	farjp ScriptEvents
 
 NextOverworldFrame:
 	; If we haven't already performed a delay outside DelayFrame as a result
@@ -179,20 +177,17 @@ HandleMapTimeAndJoypad:
 
 	call UpdateTime
 	call GetJoypad
-	call TimeOfDayPals
-	ret
+	jmp TimeOfDayPals
 
 HandleMapObjects:
 	farcall HandleNPCStep
 	farcall _HandlePlayerStep
-	call _CheckObjectEnteringVisibleRange
-	ret
+	jr _CheckObjectEnteringVisibleRange
 
 HandleMapBackground:
 	farcall _UpdateSprites
 	farcall ScrollScreen
-	farcall PlaceMapNameSign
-	ret
+	farjp PlaceMapNameSign
 
 CheckPlayerState:
 	ld a, [wPlayerStepFlags]
@@ -217,8 +212,7 @@ _CheckObjectEnteringVisibleRange:
 	ld hl, wPlayerStepFlags
 	bit PLAYERSTEP_STOP_F, [hl]
 	ret z
-	farcall CheckObjectEnteringVisibleRange
-	ret
+	farjp CheckObjectEnteringVisibleRange
 
 PlayerEvents:
 	xor a
@@ -346,8 +340,7 @@ CheckTileEvent:
 	ld h, [hl]
 	ld l, a
 	call GetMapScriptsBank
-	call CallScript
-	ret
+	jmp CallScript
 
 CheckWildEncounterCooldown::
 	ld hl, wWildEncounterCooldown
@@ -375,8 +368,7 @@ SetMinTwoStepWildEncounterCooldown:
 	ret
 
 Dummy_CheckScriptFlags2Bit5:
-	call CheckBit5_ScriptFlags2
-	ret
+	jmp CheckBit5_ScriptFlags2
 
 RunSceneScript:
 	ld a, [wCurMapSceneScriptCount]
@@ -568,8 +560,7 @@ ObjectEventTypeArray:
 	ld h, [hl]
 	ld l, a
 	call GetMapScriptsBank
-	call CallScript
-	ret
+	jmp CallScript
 
 .itemball
 	ld hl, MAPOBJECT_SCRIPT_POINTER
@@ -1063,6 +1054,7 @@ TryTileCollisionEvent::
 	; CheckFacingTileForStdScript preserves c, and
 	; farcall copies c back into a.
 	farcall CheckFacingTileForStdScript
+	ld a, c
 	jr c, .done
 
 	; CheckCutTreeTile expects a == [wFacingTileID], which
@@ -1181,8 +1173,7 @@ _TryWildEncounter_BugContest:
 	call TryWildEncounter_BugContest
 	ret nc
 	call ChooseWildEncounter_BugContest
-	farcall CheckRepelEffect
-	ret
+	farjp CheckRepelEffect
 
 ChooseWildEncounter_BugContest::
 ; Pick a random mon out of ContestMons.

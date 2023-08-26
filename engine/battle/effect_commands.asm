@@ -106,7 +106,7 @@ DoMove:
 	bit 7, h
 	res 7, h
 	ld a, BANK("Effect Commands Extra")
-	jp nz, FarCall
+	jmp nz, FarCall_hl
 	jp hl
 
 CheckTurn:
@@ -1189,9 +1189,7 @@ BattleCommand_Stab:
 	ld e, [hl]
 
 .go
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	and TYPE_MASK
+	call GetCurrentMoveType
 	ld [wCurType], a
 
 	push hl
@@ -1235,8 +1233,7 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
+	call GetCurrentMoveType_hl
 	ld b, a
 	ld hl, TypeMatchups
 
@@ -1346,9 +1343,7 @@ BattleCheckTypeMatchup:
 	jr z, .get_type
 	ld hl, wBattleMonType1
 .get_type
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar ; preserves hl, de, and bc
-	and TYPE_MASK
+	call GetCurrentMoveType_hl
 	; fallthrough
 CheckTypeMatchup:
 	push hl
@@ -1854,7 +1849,13 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_TRIPLE_KICK
 	jr z, .triplekick
+	cp EFFECT_WEATHER_BALL
+	jr z, .weather_anim
 	xor a
+	jr .got_anim
+.weather_anim
+	ld a, [wBattleWeather]
+.got_anim
 	ld [wBattleAnimParam], a
 
 .triplekick
@@ -2870,8 +2871,7 @@ ConfusionDamageCalc:
 
 ; Type
 	ld b, a
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
+	call GetCurrentMoveType_hl
 	cp b
 	jr nz, .DoneItem
 
@@ -3196,8 +3196,7 @@ PlayFXAnimID:
 PlaySelectedFXAnim:
 	ld c, 3
 	call DelayFrames
-	callfar PlayBattleAnim
-	ret
+	farjp PlayBattleAnim
 
 DoEnemyDamage:
 	ld hl, wCurDamage
@@ -3433,7 +3432,7 @@ BattleCommand_Sleep:
 	push hl
 	call AnimateFailedMove
 	pop hl
-	jp StdBattleTextbox
+	jmp StdBattleTextbox
 
 SetSleepStatus:
 	ld b, SLP_MASK
@@ -3519,8 +3518,7 @@ BattleCommand_PoisonTarget:
 	ld hl, WasPoisonedText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
-	ret
+	farjp UseHeldStatusHealingItem
 
 BattleCommand_Poison:
 	ld hl, DoesntAffectText
@@ -3599,8 +3597,7 @@ BattleCommand_Poison:
 	call StdBattleTextbox
 
 .finished
-	farcall UseHeldStatusHealingItem
-	ret
+	farjp UseHeldStatusHealingItem
 
 .failed
 	push hl
@@ -3776,8 +3773,7 @@ RunStatusTargetChecks:
 	jr z, .ret_nz
 	call CheckSubstituteOpp
 	ret nz
-	call SafeCheckSafeguard
-	ret
+	jmp SafeCheckSafeguard
 
 .ret_nz
 	or 1
@@ -3790,7 +3786,7 @@ BattleCommand_BurnTarget:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jp nz, Defrost
+	jr nz, Defrost
 	ld b, HELD_PREVENT_BURN
 	call RunStatusTargetChecks
 	ret nz
@@ -3810,8 +3806,7 @@ BattleCommand_BurnTarget:
 	ld hl, WasBurnedText
 	call StdBattleTextbox
 
-	farcall UseHeldStatusHealingItem
-	ret
+	farjp UseHeldStatusHealingItem
 
 Defrost:
 	ld a, [hl]
@@ -3846,7 +3841,7 @@ BattleCommand_SleepTarget:
 	call GetBattleVarAddr
 	ld d, h
 	ld e, l
-	jp SetSleepStatus
+	jmp SetSleepStatus
 
 BattleCommand_FreezeTarget:
 	ld b, HELD_PREVENT_FREEZE
@@ -4854,7 +4849,7 @@ BattleCommand_ForceSwitch:
 	ld a, d
 	inc a
 	ld [wEnemySwitchMonIndex], a
-	callfar ForceEnemySwitch
+	farcall ForceEnemySwitch
 
 	ld hl, DraggedOutText
 	call StdBattleTextbox
@@ -5626,9 +5621,7 @@ CheckMoveTypeMatchesTarget:
 	ld hl, wBattleMonType1
 .ok
 
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetCurrentMoveType_hl
 	cp NORMAL
 	jr z, .normal
 
@@ -6079,12 +6072,12 @@ BattleCommand_TimeBasedHealContinue:
 	ld h, [hl]
 	ld l, a
 	ld a, BANK(GetMaxHP)
-	rst FarCall
+	call FarCall_hl
 
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 
-	callfar RestoreHP
+	farcall RestoreHP
 
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
@@ -6230,7 +6223,7 @@ PlayUserBattleAnim:
 	push hl
 	push de
 	push bc
-	callfar PlayBattleAnim
+	farcall PlayBattleAnim
 	pop bc
 	pop de
 	pop hl
@@ -6294,7 +6287,7 @@ PlayOpponentBattleAnim:
 	push bc
 	call BattleCommand_SwitchTurn
 
-	callfar PlayBattleAnim
+	farcall PlayBattleAnim
 
 	call BattleCommand_SwitchTurn
 	pop bc
@@ -6304,8 +6297,7 @@ PlayOpponentBattleAnim:
 
 CallBattleCore:
 	ld a, BANK("Battle Core")
-	rst FarCall
-	ret
+	jmp FarCall_hl
 
 AnimateFailedMove:
 	call BattleCommand_LowerSub
@@ -6343,16 +6335,13 @@ SkipToBattleCommand:
 	ret
 
 DisappearUser:
-	farcall _DisappearUser
-	ret
+	farjp _DisappearUser
 
 AppearUserLowerSub:
-	farcall _AppearUserLowerSub
-	ret
+	farjp _AppearUserLowerSub
 
 AppearUserRaiseSub:
-	farcall _AppearUserRaiseSub
-	ret
+	farjp _AppearUserRaiseSub
 
 _CheckBattleScene:
 ; Checks the options.  Returns carry if battle animations are disabled.
@@ -6389,5 +6378,56 @@ CheckMoveInList:
 	ld de, 2
 	call IsInWordArray
 	pop de
+	pop bc
+	ret
+
+GetCurrentMoveType_hl:
+	push hl
+	call GetCurrentMoveType
+	pop hl
+	ret
+
+GetCurrentMoveType:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_WEATHER_BALL
+	jr z, .weather_ball_type
+
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	and TYPE_MASK
+	ret
+
+.weather_ball_type
+	push bc
+	ld a, [wBattleWeather]
+	cp WEATHER_NONE
+	jr z, .set_normal_type
+	cp WEATHER_RAIN
+	jr z, .set_water_type
+	cp WEATHER_SUN
+	jr z, .set_fire_type
+	cp WEATHER_HAIL
+	jr z, .set_ice_type
+; sandstorm
+	ld a, WEATHER_SANDSTORM
+	ld b, ROCK
+	jr .got_weather_type
+
+.set_normal_type
+	ld b, NORMAL
+	jr .got_weather_type
+.set_water_type
+	ld b, WATER
+	jr .got_weather_type
+.set_fire_type
+	ld b, FIRE
+	jr .got_weather_type
+.set_ice_type
+	ld b, ICE
+	;fallthrough
+
+.got_weather_type
+	ld a, b
 	pop bc
 	ret

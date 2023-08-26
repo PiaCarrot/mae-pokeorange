@@ -43,8 +43,7 @@ InitMapNameSign::
 	ld a, 60
 	ld [wLandmarkSignTimer], a
 	call InitMapNameFrame
-	farcall HDMATransfer_OnlyTopFourRows
-	ret
+	farjp HDMATransfer_OnlyTopFourRows
 
 .dont_do_map_sign
 	ld a, [wCurLandmark]
@@ -128,8 +127,7 @@ InitMapNameFrame:
 	ld b, 2
 	ld c, 18
 	call InitMapSignAttrmap
-	call PlaceMapNameFrame
-	ret
+	jr PlaceMapNameFrame
 
 PlaceMapNameCenterAlign:
 	ld a, [wCurLandmark]
@@ -144,8 +142,7 @@ PlaceMapNameCenterAlign:
 	hlcoord 0, 2
 	add hl, bc
 	ld de, wStringBuffer1
-	call PlaceString
-	ret
+	jmp PlaceString
 
 .GetNameLength:
 	ld c, 0

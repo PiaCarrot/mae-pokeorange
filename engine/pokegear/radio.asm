@@ -583,7 +583,7 @@ OaksPKMNTalk14:
 	dec [hl]
 	ret nz
 	ld de, MUSIC_POKEMON_TALK
-	callfar RadioMusicRestartDE
+	farcall RadioMusicRestartDE
 	ld hl, .terminator
 	call PrintText
 	ld a, OAKS_POKEMON_TALK_4
@@ -731,8 +731,7 @@ CopyDexEntry:
 	call CopyRadioTextToRAM
 	pop hl
 	pop af
-	call CopyDexEntryPart2
-	ret
+	jr CopyDexEntryPart2
 
 CopyDexEntryPart1:
 	ld de, wPokedexShowPointerBank
@@ -842,8 +841,7 @@ StartPokemonMusicChannel:
 	jr z, .SunTueThurSun
 	ld de, MUSIC_POKEMON_LULLABY
 .SunTueThurSun:
-	callfar RadioMusicRestartDE
-	ret
+	farjp RadioMusicRestartDE
 
 BenIntroText1:
 	text_far _BenIntroText1
@@ -887,9 +885,9 @@ BenFernText3B:
 
 LuckyNumberShow1:
 	call StartRadioStation
-	callfar CheckLuckyNumberShowFlag
+	farcall CheckLuckyNumberShowFlag
 	jr nc, .dontreset
-	callfar ResetLuckyNumberShowFlag
+	farcall ResetLuckyNumberShowFlag
 .dontreset
 	ld hl, LC_Text1
 	ld a, LUCKY_NUMBER_SHOW_2
@@ -1086,12 +1084,12 @@ PeoplePlaces4: ; People
 	pop bc
 	jr c, PeoplePlaces4
 	push bc
-	callfar GetTrainerClassName
+	farcall GetTrainerClassName
 	ld de, wStringBuffer1
 	call CopyName1
 	pop bc
 	ld b, 1
-	callfar GetTrainerName
+	farcall GetTrainerName
 	ld hl, PnP_Text4
 	ld a, PLACES_AND_PEOPLE_5
 	jmp NextRadioLine
@@ -1530,8 +1528,7 @@ GetBuenasPassword:
 	add hl, de
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
-	call GetItemName
-	ret
+	jmp GetItemName
 
 .Move:
 	ld h, 0
@@ -1791,8 +1788,7 @@ StartRadioStation:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	callfar RadioMusicRestartDE
-	ret
+	farjp RadioMusicRestartDE
 
 INCLUDE "data/radio/channel_music.asm"
 

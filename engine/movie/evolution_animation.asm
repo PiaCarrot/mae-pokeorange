@@ -154,8 +154,7 @@ EvolutionAnimation:
 	ret c
 
 	ld a, [wPlayerHPPal]
-	call PlayMonCry
-	ret
+	jmp PlayMonCry
 
 .GetSGBLayout:
 	ld b, SCGB_EVOLUTION
@@ -261,8 +260,7 @@ EvolutionAnimation:
 	call GetPartyLocation
 	ld b, h
 	ld c, l
-	farcall CheckFaintedFrzSlp
-	ret
+	farjp CheckFaintedFrzSlp
 
 .PlayEvolvedSFX:
 	ld a, [wEvolutionCanceled]
@@ -331,7 +329,7 @@ EvolutionAnimation:
 
 .AnimateBallsOfLight:
 	push bc
-	callfar PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	; a = (([hVBlankCounter] + 4) / 2) % NUM_PALETTES
 	ldh a, [hVBlankCounter]
 	and %1110
@@ -352,8 +350,7 @@ endr
 	dec c
 	jr nz, .loop6
 	pop bc
-	call DelayFrame
-	ret
+	jmp DelayFrame
 
 .GFX:
 INCBIN "gfx/evo/bubble_large.2bpp"

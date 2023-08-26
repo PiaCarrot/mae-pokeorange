@@ -48,7 +48,7 @@ CatchTutorial::
 	ld hl, .AutoInput
 	ld a, BANK(.AutoInput)
 	call StartAutoInput
-	callfar StartBattle
+	farcall StartBattle
 	call StopAutoInput
 	pop af
 
@@ -56,8 +56,7 @@ CatchTutorial::
 	ld hl, wMomsName
 	ld de, wPlayerName
 	ld bc, NAME_LENGTH
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 .LoadDudeData:
 	ld hl, wDudeNumItems

@@ -26,8 +26,7 @@ _InitString::
 	pop de
 	ld b, 0
 	inc c
-	call CopyBytes
-	ret
+	jmp CopyBytes
 
 .notblank
 	pop bc

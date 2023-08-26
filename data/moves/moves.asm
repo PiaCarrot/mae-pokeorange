@@ -275,7 +275,11 @@ Moves1:
 ;==========================
 ;	New Moves Start Here
 ;==========================
+
 Moves2:
+
+; - Gen 3
+
 	move EFFECT_FAKE_OUT,           40, NORMAL,         PHYSICAL, 100, 10, 100 ; FAKE_OUT
 	move EFFECT_NORMAL_HIT,         50, NORMAL,         SPECIAL,  100, 10,   0 ; UPROAR
 	move EFFECT_NORMAL_HIT,          0, NORMAL,         STATUS,   100, 20,   0 ; STOCKPILE
@@ -333,7 +337,7 @@ Moves2:
 	move EFFECT_HYPER_BEAM,        150, WATER,          SPECIAL,   90,  5,   0 ; HYDRO_CANNON
 	move EFFECT_ATTACK_UP_HIT,     100, STEEL,          PHYSICAL,  85, 10,  20 ; METEOR_MASH
 	move EFFECT_FLINCH_HIT,         30, GHOST,          PHYSICAL, 100, 15,  30 ; ASTONISH
-	move EFFECT_NORMAL_HIT,         50, NORMAL,         SPECIAL,  100, 10,   0 ; WEATHER_BALL
+	move EFFECT_WEATHER_BALL,       50, NORMAL,         SPECIAL,  100, 10,   0 ; WEATHER_BALL
 	move EFFECT_HEAL_BELL,           0, GRASS,          STATUS,   100,  5,   0 ; AROMATHERAPY
 	move EFFECT_SP_DEF_DOWN,         0, DARK,           STATUS,   100, 20,   0 ; FAKE_TEARS EFFECT_SP_DEF_DOWN_2
 	move EFFECT_NORMAL_HIT,         55, FLYING,         SPECIAL,   95, 25,   0 ; AIR_CUTTER
@@ -350,7 +354,7 @@ Moves2:
 	move EFFECT_ALWAYS_HIT,         60, GHOST,          PHYSICAL, 100, 20,   0 ; SHADOW_PUNCH
 	move EFFECT_FLINCH_HIT,         80, PSYCHIC_TYPE,   SPECIAL,  100, 30,  10 ; EXTRASENSORY
 	move EFFECT_NORMAL_HIT,         85, FIGHTING,       PHYSICAL,  90, 15,   0 ; SKY_UPPERCUT
-	move EFFECT_TRAP_TARGET,        15, GROUND,         PHYSICAL,  70, 15,   0 ; SAND_TOMB
+	move EFFECT_NORMAL_HIT,         15, GROUND,         PHYSICAL,  70, 15,   0 ; SAND_TOMB
 	move EFFECT_OHKO,                1, ICE,            SPECIAL,   30,  5,   0 ; SHEER_COLD
 	move EFFECT_ACCURACY_DOWN_HIT,  95, WATER,          SPECIAL,   85, 10,  30 ; MUDDY_WATER
 	move EFFECT_MULTI_HIT,          10, GRASS,          PHYSICAL, 100, 30,   0 ; BULLET_SEED
@@ -377,6 +381,9 @@ Moves2:
 	move EFFECT_CONFUSE_HIT,        60, WATER,          SPECIAL,  100, 20,  20 ; WATER_PULSE
 	move EFFECT_NORMAL_HIT,        120, STEEL,          SPECIAL,   85,  5,   0 ; DOOM_DESIRE
 	move EFFECT_NORMAL_HIT,        140, PSYCHIC_TYPE,   SPECIAL,   90,  5,   0 ; PSYCHO_BOOST EFFECT_SELF_SPATK_DN_2_HIT
+
+; - Gen 4
+
 	move EFFECT_HEAL,                0, FLYING,         STATUS,   100, 10,   0 ; ROOST EFFECT_ROOST
 	move EFFECT_NORMAL_HIT,          0, PSYCHIC_TYPE,   STATUS,   100,  5,   0 ; GRAVITY
 	move EFFECT_NORMAL_HIT,          0, PSYCHIC_TYPE,   STATUS,   100, 40,   0 ; MIRACLE_EYE

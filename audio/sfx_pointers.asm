@@ -210,4 +210,6 @@ SFX:
 	dba Sfx_4NoteDitty
 	dba Sfx_Twinkle
 	dba Sfx_Puddle
+	dba Sfx_GrassWhistle
+	dba Sfx_Gravity
 	assert_table_length NUM_SFX

@@ -9,8 +9,7 @@ ShowLinkBattleParticipants:
 	ld c, 150
 	call DelayFrames
 	call ClearTilemap
-	call ClearSprites
-	ret
+	jmp ClearSprites
 
 FindFirstAliveMonAndStartBattle:
 	xor a
@@ -176,7 +175,7 @@ ClearBattleRAM:
 	xor a
 	call ByteFill
 
-	callfar ResetEnemyStatLevels
+	farcall ResetEnemyStatLevels
 
 	call ClearWindowData
 

@@ -46,8 +46,7 @@ LoadMenuMonIcon:
 Unused_GetPartyMenuMonIcon:
 	call InitPartyMenuIcon
 	call .GetPartyMonItemGFX
-	call SetPartyMonIconAnimSpeed
-	ret
+	jmp SetPartyMonIconAnimSpeed
 
 .GetPartyMonItemGFX:
 	push bc
@@ -62,7 +61,7 @@ Unused_GetPartyMenuMonIcon:
 	push hl
 	push bc
 	ld d, a
-	callfar ItemIsMail
+	farcall ItemIsMail
 	pop bc
 	pop hl
 	jr c, .not_mail
@@ -120,8 +119,7 @@ Mobile_InitPartyMenuBGPal71:
 PartyMenu_InitAnimatedMonIcon:
 	call InitPartyMenuIcon
 	call .SpawnItemIcon
-	call SetPartyMonIconAnimSpeed
-	ret
+	jr SetPartyMonIconAnimSpeed
 
 .SpawnItemIcon:
 	push bc
@@ -136,7 +134,7 @@ PartyMenu_InitAnimatedMonIcon:
 	push hl
 	push bc
 	ld d, a
-	callfar ItemIsMail
+	farcall ItemIsMail
 	pop bc
 	pop hl
 	jr c, .mail
@@ -249,8 +247,7 @@ Trade_LoadMonIconGFX:
 	ld [wCurIcon], a
 	ld a, $62
 	ld [wCurIconTile], a
-	call GetMemIconGFX
-	ret
+	jr GetMemIconGFX
 
 GetSpeciesIcon:
 ; Load species icon into VRAM at tile a
@@ -260,8 +257,7 @@ GetSpeciesIcon:
 	ld [wCurIcon], a
 	pop de
 	ld a, e
-	call GetIconGFX
-	ret
+	jr GetIconGFX
 
 FlyFunction_GetMonIcon:
 	push de
@@ -270,8 +266,7 @@ FlyFunction_GetMonIcon:
 	ld [wCurIcon], a
 	pop de
 	ld a, e
-	call GetIcon_a
-	ret
+	jr GetIcon_a
 
 GetMonIconDE: ; unreferenced
 	push de
@@ -279,8 +274,7 @@ GetMonIconDE: ; unreferenced
 	call ReadMonMenuIcon
 	ld [wCurIcon], a
 	pop de
-	call GetIcon_de
-	ret
+	jr GetIcon_de
 
 GetMemIconGFX:
 	ld a, [wCurIconTile]
