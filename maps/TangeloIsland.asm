@@ -92,6 +92,46 @@ TangeloRocketScript2:
 	writetext TangeloRocketText2
 	waitbutton
 	closetext
+	winlosstext TangeloRocketWinText, TangeloRocketLossText
+	setlasttalked TANGELO_ISLAND_ROCKET_2
+	loadtrainer GRUNTM, GRUNTM_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .AfterBattle
+	
+.AfterBattle:	
+	playmusic MUSIC_ROCKET_OVERTURE
+	opentext
+	writetext TangeloRocketText3
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TANGELO_ISLAND_ROCKET_1
+	disappear TANGELO_ISLAND_ROCKET_2
+	disappear TANGELO_ISLAND_ROCKET_3
+	pause 15
+	special FadeInQuickly
+	playmapmusic
+	applymovement TANGELO_ISLAND_TRACEY_1, TangeloTraceyMovement1
+	opentext
+	writetext TangeloTraceyText1
+	waitbutton
+	closetext
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement TANGELO_ISLAND_MARILL_3, MarillHopMovement4
+	cry MARILL
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TANGELO_ISLAND_TRACEY_1
+	disappear TANGELO_ISLAND_LAPRAS_1
+	disappear TANGELO_ISLAND_MARILL_3
+	pause 15
+	special FadeInQuickly
+	setevent EVENT_TANGELO_ROCKETS_DEFEATED
+	setscene SCENE_TANGELO_ISLAND_NOOP
 	end
 	
 TangeloMarillScript:
@@ -140,6 +180,31 @@ TangeloRocketText2:
 	cont "it!"
 	done
 	
+TangeloRocketWinText:
+	text "I'll remember this"
+	line "incident!"
+	done
+	
+TangeloRocketLossText:
+	text "TEAM ROCKET lives"
+	line "forever, baby!"
+	done
+	
+TangeloRocketText3:
+	text "Let's get out of"
+	line "here!"
+	done
+	
+TangeloTraceyText1:
+	text "???: Thanks for"
+	line "the help! I need"
+	cont "to get this LAPRAS"
+	cont "to the #MON"
+	cont "CENTER. Please"
+	cont "meet me there in a"
+	cont "a bit."
+	done
+	
 MarillHopMovement:
 	jump_in_place
 	turn_head UP
@@ -183,6 +248,21 @@ TangeloPlayerMovement1:
 	step DOWN
 	turn_head LEFT
 	step_end
+	
+TangeloTraceyMovement1:
+	step RIGHT
+	step RIGHT
+	step_end
+	
+MarillHopMovement4:
+	jump_in_place
+	step_sleep 16
+	run_step UP
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	turn_head DOWN
+	step_end
 
 TangeloIsland_MapEvents:
 	db 0, 0 ; filler
@@ -205,9 +285,9 @@ TangeloIsland_MapEvents:
 	def_object_events
 	object_event 28, 10, SPRITE_MARILL_WALK, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MARILL_TANGELO_1
 	object_event 19, 17, SPRITE_MARILL_WALK, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MARILL_TANGELO_2
-	object_event 17, 25, SPRITE_MARILL_WALK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloMarillScript, EVENT_MARILL_TANGELO_3
+	object_event 17, 25, SPRITE_MARILL_WALK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TangeloMarillScript, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 12, 24, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 13, 25, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 12, 26, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
-	object_event 12, 25, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MARILL_TANGELO_3
-	object_event 11, 25, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MARILL_TANGELO_3
+	object_event 12, 25, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
+	object_event 11, 25, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED

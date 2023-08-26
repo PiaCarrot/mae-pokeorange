@@ -260,9 +260,9 @@ PokemaniacGroup:
 
 GruntMGroup:
 	next_list_item ; GRUNTM (1)
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	db "GRUNT@", TRAINERTYPE_MOVES
 	db 5
-	dw PIKACHU
+	dw SPEAROW, LEER, GROWL, NO_MOVE, NO_MOVE
 	db -1 ; end
 
 	end_list_items
