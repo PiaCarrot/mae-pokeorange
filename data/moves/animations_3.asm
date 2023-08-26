@@ -1332,7 +1332,6 @@ BattleAnim_DarkVoid:
 	anim_sound 0, 0, SFX_WARP_TO
 	anim_bgeffect ANIM_BG_RETURN_MON, $0, $1, $0
 	anim_wait 16
-	anim_bgp $f8
 	anim_obp0 $fc
 	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_DARK_VOID
 	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_DARK_VOID
@@ -1372,10 +1371,7 @@ BattleAnim_DarkVoid:
 	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_GRAY
 	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_GRAY
 	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_GRAY
-	anim_clearobjs
-	anim_wait 1
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 1
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_ret
 
