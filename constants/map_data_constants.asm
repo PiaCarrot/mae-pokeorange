@@ -77,6 +77,7 @@ DEF NUM_FISHGROUPS EQU const_value - 1
 	const SPAWN_INDIGO
 ; johto
 	const SPAWN_NEW_BARK
+	const SPAWN_TANGELO
 	const SPAWN_BATTLE_TOWER
 	const SPAWN_FAST_SHIP
 DEF NUM_SPAWNS EQU const_value

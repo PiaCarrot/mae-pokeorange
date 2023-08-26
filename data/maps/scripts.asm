@@ -43,6 +43,8 @@ INCLUDE "maps/ValenciaNeighborHouse.asm"
 
 SECTION "Map Scripts 6", ROMX
 
+INCLUDE "maps/TangeloIsland.asm"
+
 
 SECTION "Map Scripts 7", ROMX
 

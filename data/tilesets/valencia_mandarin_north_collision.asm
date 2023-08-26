@@ -224,8 +224,8 @@
 	tilecoll WATER, WALL, WATER, WATER ; df
 	tilecoll WALL, WALL, WALL, WALL ; e0
 	tilecoll FLOOR, WALL, FLOOR, WALL ; e1
-	tilecoll FLOOR, FLOOR, FLOOR, HOP_DOWN ; e2
-	tilecoll FLOOR, FLOOR, HOP_DOWN, HOP_DOWN ; e3
+	tilecoll FLOOR, HOP_DOWN, FLOOR, WALL ; e2
+	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; e3
 	tilecoll WALL, WALL, WALL, WALL ; e4
 	tilecoll WALL, WALL, DOOR, DOOR ; e5
 	tilecoll WALL, WALL, WALL, WALL ; e6

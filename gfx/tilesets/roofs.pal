@@ -13,6 +13,10 @@
 ; group 24 (New Bark)
 	RGB 20,31,14, 11,23,05 ; morn/day
 	RGB 09,13,08, 06,09,04 ; nite
+	
+; group 24 (tangelo)
+	RGB 28,11,11, 22,05,05 ; morn/day
+	RGB 09,13,08, 06,09,04 ; nite
 
 ; group 16 (Pokémon League)
 	RGB 21,21,21, 13,13,13 ; morn/day

@@ -105,8 +105,12 @@ ENDM
 	connection north, Route49North, ROUTE_49_NORTH, -1
 	connection east, ValenciaIsland, VALENCIA_ISLAND, 2
 
-	map_attributes Route49North, ROUTE_49_NORTH, $10, SOUTH
+	map_attributes Route49North, ROUTE_49_NORTH, $10, SOUTH | WEST
 	connection south, Route49, ROUTE_49, 1
+	connection west, TangeloIsland, TANGELO_ISLAND, -1
+
+	map_attributes TangeloIsland, TANGELO_ISLAND, $10, EAST
+	connection east, Route49North, ROUTE_49_NORTH, 1
 
 	map_attributes BattleTowerOutside, BATTLE_TOWER_OUTSIDE, $05, 0
 

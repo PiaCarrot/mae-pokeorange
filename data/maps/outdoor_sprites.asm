@@ -7,6 +7,7 @@ OutdoorSprites:
 	dw CableClubGroupSprites
 	dw BattleTowerGroupSprites
 	dw NewBarkGroupSprites
+	dw TangeloGroupSprites
 	dw IndigoGroupSprites
 	assert_table_length NUM_MAP_GROUPS
 
@@ -72,6 +73,10 @@ NewBarkGroupSprites:
 	db SPRITE_POKE_BALL
 	db SPRITE_SHADOW
 	db SPRITE_ROCK
+	
+TangeloGroupSprites:
+	db SPRITE_TRACEY
+	db SPRITE_ROCKET
 
 IndigoGroupSprites:
 	db SPRITE_SUICUNE

@@ -111,3 +111,5 @@ SECTION "Sprites 3", ROMX
 
 LoreleiSpriteGFX::   		   INCBIN "gfx/sprites/lorelei.2bpp"
 ShadowSpriteGFX::   		   INCBIN "gfx/sprites/shadow.2bpp"
+TraceySpriteGFX::   		   INCBIN "gfx/sprites/tracey.2bpp"
+MarillWalkSpriteGFX::   	   INCBIN "gfx/sprites/marill_walk.2bpp"

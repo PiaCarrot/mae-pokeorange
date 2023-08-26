@@ -60,6 +60,10 @@ ENDM
 	map_const ROUTE_49_NORTH,							    16, 28
 	map_const VALENCIA_NEIGHBOR_HOUSE,					    4,  4
 	endgroup
+	
+	newgroup TANGELO
+	map_const TANGELO_ISLAND,							   20, 20
+	endgroup
 
 	newgroup INDIGO                                               ;  4
 	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  1

@@ -20,7 +20,8 @@ MapGroupPointers::
 	dw MapGroup_CableClub     ;  1
 	dw MapGroup_BattleTower   ;  2
 	dw MapGroup_NewBark       ;  3
-	dw MapGroup_Indigo        ;  4
+	dw MapGroup_Tangelo       ;  4
+	dw MapGroup_Indigo        ;  5
 	assert_table_length NUM_MAP_GROUPS
 
 MapGroup_CableClub:
@@ -51,6 +52,11 @@ MapGroup_NewBark:
 	map Route49North, TILESET_VALENCIA_MANDARIN_NORTH, ROUTE, LANDMARK_ROUTE_29, MUSIC_STARTER_ORANGE_ROUTE, FALSE, PALETTE_AUTO, FISHGROUP_SHORE
 	map ValenciaNeighborHouse, TILESET_PLAYERS_HOUSE, INDOOR, LANDMARK_NEW_BARK_TOWN, MUSIC_VALENCIA_TOWN, FALSE, PALETTE_DAY, FISHGROUP_SHORE
 	assert_table_length NUM_NEW_BARK_MAPS
+
+MapGroup_Tangelo:
+	table_width MAP_LENGTH, MapGroup_Tangelo
+	map TangeloIsland, TILESET_VALENCIA_MANDARIN_NORTH, TOWN, LANDMARK_CHERRYGROVE_CITY, MUSIC_CHERRYGROVE_CITY, FALSE, PALETTE_AUTO, FISHGROUP_OCEAN
+	assert_table_length NUM_TANGELO_MAPS
 
 MapGroup_Indigo:
 	table_width MAP_LENGTH, MapGroup_Indigo

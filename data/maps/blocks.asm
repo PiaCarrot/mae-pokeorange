@@ -72,6 +72,9 @@ Route49_Blocks:
 	
 Route49North_Blocks:
 	INCBIN "maps/Route49North.blk"
+
+TangeloIsland_Blocks:
+	INCBIN "maps/TangeloIsland.blk"
 	
 IslandHouse_Blocks:
 ValenciaNeighborHouse_Blocks:
