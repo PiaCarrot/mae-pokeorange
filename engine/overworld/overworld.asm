@@ -86,6 +86,7 @@ RefreshSprites::
 	pop bc
 	pop de
 	pop hl
+	ret
 
 ReloadSpriteIndex::
 ; Reloads sprites using hUsedSpriteIndex.
