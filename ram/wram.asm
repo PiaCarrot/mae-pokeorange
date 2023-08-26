@@ -3011,6 +3011,7 @@ wPlayersHouse1FSceneID::            db
 wIvysLabSceneID::                   db
 wValenciaIslandSceneID::            db
 wRoute49SceneID::                   db
+wTangeloIslandSceneID::             db
 wIndigoPlateauPokecenter1FSceneID:: db
 wWillsRoomSceneID::                 db
 wKogasRoomSceneID::                 db

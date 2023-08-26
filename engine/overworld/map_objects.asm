@@ -1176,6 +1176,7 @@ StepTypesJumptable:
 	dw StepFunction_17              ; 17
 	dw StepFunction_Delete          ; 18
 	dw StepFunction_SkyfallTop      ; 19
+	dw StepFunction_NPCJumpInPlace  ; 20
 	assert_table_length NUM_STEP_TYPES
 
 WaitStep_InPlace:
@@ -1186,6 +1187,46 @@ WaitStep_InPlace:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	ret
+
+StepFunction_NPCJumpInPlace:
+	call ObjectStep_AnonJumptable
+.anon_dw
+	dw .Jump
+	dw .Land
+
+.Jump:
+	ld h, 4
+	call UpdateJumpPositionInPlace
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OVERHEAD_F, [hl]
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld [hl], 4
+	jmp ObjectStep_IncAnonJumptableIndex
+
+.Land:
+	ld h, 4
+	call UpdateJumpPositionInPlace
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	xor a
+	ld hl, OBJECT_SPRITE_Y_OFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res HIGH_PRIORITY_F, [hl]
 	ret
 
 StepFunction_NPCJump:
@@ -1881,6 +1922,7 @@ Stubbed_UpdateYOffset:
 
 UpdateJumpPosition:
 	call GetStepVector
+UpdateJumpPositionInPlace:
 	ld a, h
 	ld hl, OBJECT_JUMP_HEIGHT
 	add hl, bc

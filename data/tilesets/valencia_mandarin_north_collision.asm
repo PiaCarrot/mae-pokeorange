@@ -197,7 +197,7 @@
 	tilecoll WALL, WALL, WALL, DOOR ; c4
 	tilecoll WALL, WALL, WALL, DOOR ; c5
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c6
-	tilecoll WALL, WALL, WALL, WALL ; c7
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c7
 	tilecoll WALL, WALL, WALL, WALL ; c8
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; c9
 	tilecoll WATER, WATER, WATER, WATER ; ca
