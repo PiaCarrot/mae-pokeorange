@@ -532,6 +532,9 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SR_CUT_S
 	const ANIM_OBJ_LUNAR_DANCE
 	const ANIM_OBJ_CRUSH_GRIP
+	const ANIM_OBJ_MAGMA_STORM
+	const ANIM_OBJ_FIRE_BG
+	const ANIM_OBJ_DARK_VOID_BG
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -1003,6 +1006,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_SR_CUT_N
 	const BATTLEANIMFRAMESET_SR_CUT_S
 	const BATTLEANIMFRAMESET_CRUSH_GRIP
+	const BATTLEANIMFRAMESET_MAGMA_STORM
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1574,6 +1578,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_BEE              ; 30
 	const PAL_BTLCUSTOM_ROAR_OF_TIME     ; 31
 	const PAL_BTLCUSTOM_MOON             ; 32
+	const PAL_BTLCUSTOM_DARK_VOID        ; 33
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1

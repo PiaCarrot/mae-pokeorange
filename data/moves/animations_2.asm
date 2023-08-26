@@ -3917,7 +3917,7 @@ BattleAnim_Punishment:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_HIT_BIG, 136, 48, $0
-	anim_wait 64
+	anim_wait 16
 	anim_ret
 
 BattleAnim_LastResort:

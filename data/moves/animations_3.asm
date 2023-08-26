@@ -1305,10 +1305,80 @@ BattleAnim_CrushGrip:
 	anim_wait 32
 	anim_ret
 
-
-
 BattleAnim_MagmaStorm:
+	anim_2gfx ANIM_GFX_BLAST_BURN, ANIM_GFX_FIRE
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $6, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $a0, $1, $0
+	anim_obj ANIM_OBJ_FIRE_BG,  24, 36, $30
+	anim_obj ANIM_OBJ_FIRE_BG,  52, 133, $30
+	anim_obj ANIM_OBJ_FIRE_BG,  80, 67, $30
+	anim_obj ANIM_OBJ_FIRE_BG, 108, 11, $30
+	anim_obj ANIM_OBJ_FIRE_BG, 134, 109, $30
+	anim_obj ANIM_OBJ_FIRE_BG, 152, 162, $30
+.loop
+	anim_sound 0, 1, SFX_EMBER
+	anim_obj ANIM_OBJ_MAGMA_STORM, 132, 56, $18
+	anim_wait 20
+	anim_loop 3, .loop
+	anim_wait 96
+	anim_ret
+
 BattleAnim_DarkVoid:
+	anim_2gfx ANIM_GFX_ANGELS, ANIM_GFX_SPEED
+	anim_clearenemyhud
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_bgeffect ANIM_BG_RETURN_MON, $0, $1, $0
+	anim_wait 16
+	anim_bgp $f8
+	anim_obp0 $fc
+	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_DARK_VOID
+	anim_sound 6, 2, SFX_CURSE
+	anim_obj ANIM_OBJ_DESTINY_BOND, 44, 120, $2
+	anim_wait 48
+	anim_bgeffect ANIM_BG_DIG, $0, $0, $1
+.loop
+	anim_sound 0, 0, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_FOCUS, 132, 68, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 124, 68, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 140, 68, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 116, 68, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 148, 68, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 108, 68, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_FOCUS, 156, 68, $8
+	anim_wait 2
+	anim_loop 6, .loop
+	anim_wait 40
+	anim_incbgeffect ANIM_BG_DIG
+	anim_wait 1
+	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_GRAY
+	anim_clearobjs
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_ret
+
 BattleAnim_SeedFlare:
 BattleAnim_OminousWind:
 BattleAnim_ShadowForce:
