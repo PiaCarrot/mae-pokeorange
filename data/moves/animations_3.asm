@@ -1422,10 +1422,16 @@ BattleAnim_CrushGrip:
 BattleAnim_MagmaStorm:
 	anim_2gfx ANIM_GFX_BLAST_BURN, ANIM_GFX_FIRE
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
-	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
-	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_HEAT_BG
+	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_HEAT_BG
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $6, $0
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $a0, $1, $0
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
 	anim_obj ANIM_OBJ_FIRE_BG,  24, 36, $30
 	anim_obj ANIM_OBJ_FIRE_BG,  52, 133, $30
 	anim_obj ANIM_OBJ_FIRE_BG,  80, 67, $30
@@ -1438,6 +1444,7 @@ BattleAnim_MagmaStorm:
 	anim_wait 20
 	anim_loop 3, .loop
 	anim_wait 96
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
 	anim_ret
 
 BattleAnim_DarkVoid:
@@ -1454,6 +1461,7 @@ BattleAnim_DarkVoid:
 	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_DARK_VOID
 	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_DARK_VOID
 	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_DARK_VOID
+	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_DARK_VOID
 	anim_sound 6, 2, SFX_CURSE
 	anim_obj ANIM_OBJ_DESTINY_BOND, 44, 120, $2
 	anim_wait 48
@@ -1485,6 +1493,7 @@ BattleAnim_DarkVoid:
 	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_GRAY
 	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_GRAY
 	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_GRAY
+	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_GRAY
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 	anim_ret
@@ -1595,7 +1604,6 @@ BattleAnim_ShadowForce:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_INVERT_BLACK
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $4, $0
-
 	anim_bgp $1b
 	anim_sound 0, 0, SFX_EGG_BOMB
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0

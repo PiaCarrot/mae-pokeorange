@@ -114,8 +114,7 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	dbw 1, SHADOW_FORCE
-	dbw 1, ENDURE
+	dbw 1, DARK_VOID
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:

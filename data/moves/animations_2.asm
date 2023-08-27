@@ -1926,39 +1926,23 @@ BattleAnim_SilverWind:
 	anim_bgp $90
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
-	anim_obj ANIM_OBJ_WIND, 88, 32, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 56, 48, $1
-	anim_wait 8
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 24, $10
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 48, $2
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 88, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 56, $c
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 80, $4
+	anim_wait 16
 	anim_obj ANIM_OBJ_WIND_SPARKLE, 96, 80, $1
-	anim_obj ANIM_OBJ_WIND, 72, 64, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 24, 80, $1
-	anim_wait 8
+	anim_wait 16
 	anim_obj ANIM_OBJ_WIND_SPARKLE, 80, 56, $1
-	anim_obj ANIM_OBJ_WIND, 40, 96, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 88, 64, $1
-	anim_wait 8
+	anim_wait 16
 	anim_obj ANIM_OBJ_WIND_SPARKLE, 48, 64, $1
-	anim_obj ANIM_OBJ_WIND, 56, 48, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 72, 64, $1
-	anim_wait 8
+	anim_wait 16
 	anim_obj ANIM_OBJ_WIND_SPARKLE, 64, 32, $1
-	anim_obj ANIM_OBJ_WIND, 24, 80, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 40, 96, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND_SPARKLE, 32, 96, $1
-	anim_obj ANIM_OBJ_WIND, 88, 32, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 56, 48, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 72, 64, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_WIND, 24, 80, $1
-	anim_wait 8
+	anim_wait 16
+	anim_obj ANIM_OBJ_WIND_SPARKLE, 32, 72, $1
+	anim_wait 32
 	anim_ret
 
 BattleAnim_MetalSound:
