@@ -802,7 +802,6 @@ BattleAnim_Judgment:
 	anim_wait 11
 	anim_ret
 
-
 BattleAnim_BugBite:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
 	anim_call BattleAnim_UserObj_1Row_3
@@ -1018,7 +1017,7 @@ BattleAnim_DefendOrder:
 
 BattleAnim_HealOrder:
 	anim_3gfx ANIM_GFX_SHINE, ANIM_GFX_OBJECTS_3, ANIM_GFX_SMOKE
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_LIGHT_SCREEN
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_REFRESH
 	anim_call BattleAnim_Self_Bees_branch
 	anim_wait 20
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
@@ -1376,6 +1375,66 @@ BattleAnim_DarkVoid:
 	anim_ret
 
 BattleAnim_SeedFlare:
+	anim_3gfx ANIM_GFX_PLANT, ANIM_GFX_BIG_WHIP, ANIM_GFX_CHARGE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_LIGHT_SCREEN
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+.loop
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $38
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $20
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $10
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $28
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $18
+	anim_wait 1
+	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $30
+	anim_wait 1
+	anim_loop 3, .loop
+.loop2
+	anim_obj ANIM_OBJ_SEED_FLARE_E, 48, 96, $0
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $20
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_FLARE_NW, 48, 96, $28
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_FLARE_S, 48, 96, $10
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $18
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_FLARE_NE, 48, 96, $38
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $30
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_FLARE_W, 48, 96, $20
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $0
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_FLARE_SE, 48, 96, $8
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $28
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_FLARE_SW, 48, 96, $18
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $10
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_FLARE_N, 48, 96, $30
+	anim_wait 1
+;	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $38
+	anim_wait 1
+
+
+	anim_loop 4, .loop2
+	anim_wait 32
+	anim_ret
+
 BattleAnim_OminousWind:
 BattleAnim_ShadowForce:
 	anim_ret
