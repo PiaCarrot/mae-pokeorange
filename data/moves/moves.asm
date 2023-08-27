@@ -494,7 +494,7 @@ Moves2:
 	move EFFECT_NORMAL_HIT,          1, NORMAL,         PHYSICAL, 100,  5,   0 ; CRUSH_GRIP
 	move EFFECT_NORMAL_HIT,        120, FIRE,           SPECIAL,   70,  5,   0 ; MAGMA_STORM
 	move EFFECT_SLEEP,               0, DARK,           STATUS,    80, 10,   0 ; DARK_VOID
-	move EFFECT_SP_DEF_DOWN_HIT,   10, GRASS,          SPECIAL,   100,  5,  0 ; SEED_FLARE EFFECT_SP_DEF_DOWN_2_HIT
+	move EFFECT_SP_DEF_DOWN_HIT,   120, GRASS,          SPECIAL,   85,  5,  40 ; SEED_FLARE EFFECT_SP_DEF_DOWN_2_HIT
 	move EFFECT_ALL_UP_HIT,         60, GHOST,          SPECIAL,  100,  5,  10 ; OMINOUS_WIND
 	move EFFECT_FLY,               120, GHOST,          PHYSICAL, 100,  5,   0 ; SHADOW_FORCE EFFECT_SHADOW_FORCE
 .IndirectEnd::

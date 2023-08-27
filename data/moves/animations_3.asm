@@ -1492,7 +1492,9 @@ BattleAnim_DarkVoid:
 BattleAnim_SeedFlare:
 	anim_3gfx ANIM_GFX_PLANT, ANIM_GFX_BIG_WHIP, ANIM_GFX_CHARGE
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_LIGHT_SCREEN
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GREEN
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+	anim_sound 0, 0, SFX_SWORDS_DANCE
 .loop
 	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $38
 	anim_wait 1
@@ -1511,47 +1513,124 @@ BattleAnim_SeedFlare:
 	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $30
 	anim_wait 1
 	anim_loop 3, .loop
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $4, $10
+	anim_sound 0, 0, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $6, $0
 .loop2
 	anim_obj ANIM_OBJ_SEED_FLARE_E, 48, 96, $0
 	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $20
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $18
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $4
 	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_SEED_FLARE_NW, 48, 96, $28
 	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $8
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $2b
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $14
 	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_SEED_FLARE_S, 48, 96, $10
 	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $18
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $3b
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $24
 	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_SEED_FLARE_NE, 48, 96, $38
 	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $30
-	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_FLARE_W, 48, 96, $20
-	anim_wait 1
 	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $0
-	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_FLARE_SE, 48, 96, $8
-	anim_wait 1
 	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $28
 	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SEED_FLARE_W, 48, 96, $20
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $30
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $38
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SEED_FLARE_SE, 48, 96, $8
+	anim_wait 1
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $20
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $8
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_SEED_FLARE_SW, 48, 96, $18
 	anim_wait 1
 	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $10
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $2b
 	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_SEED_FLARE_N, 48, 96, $30
 	anim_wait 1
-	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $38
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $34
+	anim_obj ANIM_OBJ_SEED_OUT, 48, 96, $1b
 	anim_wait 1
-
-
-	anim_loop 4, .loop2
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_loop 3, .loop2
 	anim_wait 32
 	anim_ret
 
 BattleAnim_OminousWind:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PURPLE
+	anim_1gfx ANIM_GFX_HAZE
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_sound 0, 0, SFX_SPITE
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 24, $10
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 48, $2
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 88, $8
+	anim_wait 4
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 32, $6
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 56, $c
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 80, $4
+	anim_obj ANIM_OBJ_MIST_BALL_BG, 8, 104, $e
+	anim_wait 120
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_ret
+
 BattleAnim_ShadowForce:
+	anim_if_param_equal $1, BattleAnim_ShadowForce_branch_2
+	anim_if_param_equal $2, BattleAnim_ShadowForce_branch_1
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_GLOW
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_INVERT_BLACK
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $4, $0
+
+	anim_bgp $1b
+	anim_sound 0, 0, SFX_EGG_BOMB
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 4
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $38
+	anim_wait 2
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $28
+	anim_wait 2
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $2b
+	anim_wait 2
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $3b
+	anim_wait 2
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $24
+	anim_wait 2
+	anim_obj ANIM_OBJ_SMALL_GLOW_OUT, 132, 56, $b
+	anim_wait 32
+BattleAnim_ShadowForce_branch_1:
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_ShadowForce_branch_2:
+	anim_1gfx ANIM_GFX_HIT
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+.loop
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_wait 4
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_wait 12
 	anim_ret
 
 ;==========================

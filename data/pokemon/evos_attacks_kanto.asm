@@ -257,7 +257,8 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, SEED_FLARE
+	dbw 6, SHADOW_FORCE
+	dbw 6, ENDURE
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:

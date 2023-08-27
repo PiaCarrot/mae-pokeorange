@@ -364,14 +364,16 @@ BattleAnimFrameData:
 	dw .Frameset_SR_Cut_S                ; BATTLEANIMFRAMESET_SR_CUT_S
 	dw .Frameset_CrushGrip               ; BATTLEANIMFRAMESET_CRUSH_GRIP
 	dw .Frameset_MagmaStorm              ; BATTLEANIMFRAMESET_MAGMA_STORM
-	dw .Frameset_BigWhip_N              ; BATTLEANIMFRAMESET_BIG_WHIP_N
+	dw .Frameset_BigWhip_N               ; BATTLEANIMFRAMESET_BIG_WHIP_N
 	dw .Frameset_BigWhip_NE              ; BATTLEANIMFRAMESET_BIG_WHIP_NE
-	dw .Frameset_BigWhip_E              ; BATTLEANIMFRAMESET_BIG_WHIP_E
+	dw .Frameset_BigWhip_E               ; BATTLEANIMFRAMESET_BIG_WHIP_E
 	dw .Frameset_BigWhip_SE              ; BATTLEANIMFRAMESET_BIG_WHIP_SE
-	dw .Frameset_BigWhip_S              ; BATTLEANIMFRAMESET_BIG_WHIP_S
+	dw .Frameset_BigWhip_S               ; BATTLEANIMFRAMESET_BIG_WHIP_S
 	dw .Frameset_BigWhip_SW              ; BATTLEANIMFRAMESET_BIG_WHIP_SW
-	dw .Frameset_BigWhip_W              ; BATTLEANIMFRAMESET_BIG_WHIP_W
+	dw .Frameset_BigWhip_W               ; BATTLEANIMFRAMESET_BIG_WHIP_W
 	dw .Frameset_BigWhip_NW              ; BATTLEANIMFRAMESET_BIG_WHIP_NW
+	dw .Frameset_SeedOut                 ; BATTLEANIMFRAMESET_SEED_OUT
+	dw .Frameset_SmallGlowShort          ; BATTLEANIMFRAMESET_SMALL_GLOW_SHORT
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2563,3 +2565,24 @@ BattleAnimFrameData:
 .Frameset_BigWhip_NW:
 	battleoamframe BATTLEANIMOAMSET_FC,  8, OAM_X_FLIP, OAM_Y_FLIP
 	battleoamend
+
+.Frameset_SeedOut:
+	battleoamwait 1
+	battleoamframe BATTLEANIMOAMSET_69,  8
+	battleoamend
+
+.Frameset_SmallGlowShort:
+	battleoamwait 2
+	battleoamframe BATTLEANIMOAMSET_54,  1
+	battleoamframe BATTLEANIMOAMSET_53,  1
+	battleoamframe BATTLEANIMOAMSET_54,  1
+	battleoamframe BATTLEANIMOAMSET_53,  1
+	battleoamframe BATTLEANIMOAMSET_54,  1
+	battleoamframe BATTLEANIMOAMSET_53,  1
+	battleoamframe BATTLEANIMOAMSET_54,  1
+	battleoamframe BATTLEANIMOAMSET_53,  1
+	battleoamframe BATTLEANIMOAMSET_54,  1
+	battleoamframe BATTLEANIMOAMSET_53,  1
+	battleoamframe BATTLEANIMOAMSET_54,  1
+	battleoamframe BATTLEANIMOAMSET_53,  1
+	battleoamdelete
