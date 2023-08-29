@@ -89,6 +89,7 @@ SetDefaultBattlePalette:
 	ret
 
 .do_it
+	ld a, b
 	and a ; PAL_BATTLE_BG_PLAYER
 	jr z, SetBattlePal_Player
 	dec a ; PAL_BATTLE_BG_ENEMY

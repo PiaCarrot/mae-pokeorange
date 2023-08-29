@@ -3145,6 +3145,7 @@ BattleAnim_GyroBall:
 	anim_sound 0, 0, SFX_KARATE_CHOP
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
 	anim_wait 8
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
 	anim_sound 0, 0, SFX_GRAVITY
 .loop
 	anim_obj ANIM_OBJ_RAPID_SPIN, 136, 72, $0
