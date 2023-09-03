@@ -170,6 +170,7 @@ ProfessorIvyScript:
 	setevent EVENT_GS_BALL_IVY
 	setevent EVENT_GS_BALL_ENCOUNTER
 	clearevent EVENT_TRACEY_BATTLE_TANGELO
+	clearevent EVENT_LAPRAS_OBTAINED
 	end
 	
 .IvyAfterGSBall:
