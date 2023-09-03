@@ -1450,7 +1450,7 @@ BattleAnim_PoisonFang:
 	anim_obj ANIM_OBJ_BITE, 136, 56, $18
 	anim_wait 8
 	anim_sound 0, 1, SFX_BITE
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $18
+	anim_obj ANIM_OBJ_HIT, 136, 56, $0
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 4
 	anim_clearobjs
@@ -4994,7 +4994,7 @@ BattleAnim_FireFang:
 	anim_obj ANIM_OBJ_BITE, 136, 56, $18
 	anim_wait 8
 	anim_sound 0, 1, SFX_BITE
-	anim_obj ANIM_OBJ_HIT, 144, 48, $18
+	anim_obj ANIM_OBJ_HIT, 136, 56, $0
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 4
 	anim_clearobjs

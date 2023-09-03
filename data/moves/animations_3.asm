@@ -1645,6 +1645,35 @@ BattleAnim_ShadowForce_branch_2:
 ;	New Moves End Here
 ;==========================
 
+;==========================
+;	Possible Additions 
+;==========================
+
+;BattleAnim_PsychicFangs:
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
+;	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
+;	anim_battlergfx_1row
+;	anim_obj ANIM_OBJ_BITE, 136, 56, $98
+;	anim_obj ANIM_OBJ_BITE, 136, 56, $18
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_BITE
+;	anim_obj ANIM_OBJ_HIT_BIG, 136, 56, $18
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+;	anim_wait 4
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $1, $0
+;	anim_sound 0, 1, SFX_BIND
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+;	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
+;	anim_wait 64
+;	anim_incbgeffect ANIM_BG_NIGHT_SHADE
+;	anim_call BattleAnim_ShowMon_1_1
+;	anim_ret
+
+;==========================
+;	New Moves End Here
+;==========================
+
 BattleAnim_TargetObj_1Row_3:
 	anim_battlergfx_2row
 	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0

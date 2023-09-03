@@ -257,7 +257,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 6, DARK_VOID
+	dbw 6, POISON_FANG
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
