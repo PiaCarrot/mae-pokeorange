@@ -414,7 +414,7 @@ IvyGSBallText:
 	para "There's not many"
 	line "#BALL crafters"
 	cont "left in the world,"
-	cont "and the masters,
+	cont "and the masters,"
 	cont "even fewer."
 	
 	para "Why don't you hold"

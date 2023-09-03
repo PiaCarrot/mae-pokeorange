@@ -191,8 +191,25 @@ TraceyTangeloScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
-	sjump .AfterBattle	
+	sjump .AfterBattle
 	
+.AfterBattle:
+	playmusic MUSIC_TRACEY_ENCOUNTER
+	opentext
+	writetext TraceyTangeloText3
+	waitbutton
+	closetext
+	applymovement PLAYER, TraceyBattlePlayerMovement
+	applymovement TANGELO_ISLAND_TRACEY_2, TraceyTangeloMovement
+	pause 15
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	disappear TANGELO_ISLAND_TRACEY_2
+	pause 15
+	special FadeInQuickly
+	playmapmusic
+	setevent EVENT_TRACEY_BATTLE_TANGELO
+	end
 	
 TangeloIslandSign:
 	jumptext TangeloIslandSignText
@@ -230,6 +247,27 @@ TraceyTangeloText2:
 	line "handled those guys"
 	cont "earlier. I want to"
 	cont "battle you!"
+	done
+	
+TraceyTangeloText3:
+	text "TRACEY: Not bad!"
+	line "By the way, I"
+	cont "didn't catch your"
+	cont "name."
+	
+	para "… … …"
+	
+	para "TRACEY: So your"
+	line "name is <PLAYER>!"
+	cont "Well, hopefully I"
+	cont "will seeya around!"
+	
+	para "By the way, LAPRAS"
+	line "has been staring"
+	cont "at you this whole"
+	cont "time!"
+	
+	para "Later, <PLAYER>!"
 	done
 	
 TangeloMarillScriptText:
@@ -296,6 +334,19 @@ LaprasPartyFullText:
 	line "full."
 	done
 	
+ReceivedLaprasText:
+	text "<PLAYER> received"
+	line "LAPRAS!"
+	done
+	
+TangeloTraceyWinText:
+	text "That was fun!"
+	done
+	
+TangeloTraceyLossText:
+	text "Are you ok?"
+	done
+	
 MarillHopMovement:
 	jump_in_place
 	turn_head UP
@@ -353,6 +404,26 @@ MarillHopMovement4:
 	run_step LEFT
 	run_step LEFT
 	turn_head DOWN
+	step_end
+	
+TraceyBattlePlayerMovement:
+	step RIGHT
+	turn_head LEFT
+	step_end
+	
+TraceyTangeloMovement:
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
 	step_end
 
 TangeloIsland_MapEvents:
