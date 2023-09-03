@@ -1649,6 +1649,43 @@ BattleAnim_ShadowForce_branch_2:
 ;	Possible Additions 
 ;==========================
 
+
+;BattleAnim_Boomburst:
+;	anim_1gfx ANIM_GFX_BIG_WHIP
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+;	anim_bgp $f8
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $F0, $4, $0
+;.loop
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+;	anim_sound 0, 1, SFX_BOAT
+;	anim_obj ANIM_OBJ_SEED_FLARE_NW, 48, 96, $28
+;	anim_obj ANIM_OBJ_SEED_FLARE_NE, 48, 96, $38
+;	anim_obj ANIM_OBJ_SEED_FLARE_SE, 48, 96, $8
+;	anim_obj ANIM_OBJ_SEED_FLARE_SW, 48, 96, $18
+;	anim_wait 10
+;	anim_sound 0, 1, SFX_BOAT
+;	anim_obj ANIM_OBJ_SEED_FLARE_NW, 48, 96, $2c
+;	anim_obj ANIM_OBJ_SEED_FLARE_NE, 48, 96, $3c
+;	anim_obj ANIM_OBJ_SEED_FLARE_SE, 48, 96, $c
+;	anim_obj ANIM_OBJ_SEED_FLARE_SW, 48, 96, $1c
+;	anim_wait 10
+;	anim_sound 0, 1, SFX_BOAT
+;	anim_obj ANIM_OBJ_SEED_FLARE_E, 48, 96, $0
+;	anim_obj ANIM_OBJ_SEED_FLARE_S, 48, 96, $10
+;	anim_obj ANIM_OBJ_SEED_FLARE_W, 48, 96, $20
+;	anim_obj ANIM_OBJ_SEED_FLARE_N, 48, 96, $30
+;	anim_wait 10
+;	anim_sound 0, 1, SFX_BOAT
+;	anim_obj ANIM_OBJ_SEED_FLARE_E, 48, 96, $4
+;	anim_obj ANIM_OBJ_SEED_FLARE_S, 48, 96, $14
+;	anim_obj ANIM_OBJ_SEED_FLARE_W, 48, 96, $24
+;	anim_obj ANIM_OBJ_SEED_FLARE_N, 48, 96, $34
+;	anim_wait 10
+;	anim_loop 2, .loop
+;	anim_wait 64
+;	anim_ret
+
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
 ;	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
