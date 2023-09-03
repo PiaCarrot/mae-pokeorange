@@ -261,7 +261,9 @@ PokemaniacGroup:
 GruntMGroup:
 	next_list_item ; GRUNTM (1)
 	db "GRUNT@", TRAINERTYPE_MOVES
-	db 5
+	db 4
+	dw RATTATA, TACKLE, NO_MOVE, NO_MOVE, NO_MOVE
+	db 3
 	dw SPEAROW, LEER, GROWL, NO_MOVE, NO_MOVE
 	db -1 ; end
 
@@ -633,4 +635,15 @@ Lorelei3Group:
 	db 40
 	dw CLOYSTER, SPIKE_CANNON, BRINE, PROTECT, HAIL
 	db -1 ; end
+	end_list_items
+	
+Tracey1Group:
+	next_list_item ; TRACEY1 (1)
+	db "TRACEY@", TRAINERTYPE_MOVES
+	db 5
+	dw MARILL, TACKLE, DEFENSE_CURL, NO_MOVE, NO_MOVE
+	db 3
+	dw VENONAT, TACKLE, DISABLE, FORESIGHT, NO_MOVE
+	db -1 ; end
+
 	end_list_items

@@ -72,4 +72,5 @@ TrainerClassDVs:
 	dn  7, 15, 13, 15 ; LORELEI1
 	dn  7, 15, 13, 15 ; LORELEI2
 	dn  7, 15, 13, 15 ; LORELEI3
+	dn  9,  8,  8,  8 ; TRACEY1
 	assert_table_length NUM_TRAINER_CLASSES

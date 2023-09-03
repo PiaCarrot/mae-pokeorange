@@ -72,5 +72,6 @@ TrainerClassPVs:
         db 0, 0 ; LORELEI1
         db 0, 0 ; LORELEI2
         db 0, 0 ; LORELEI3
+        db 0, 0 ; TRACEY1
         assert_table_length NUM_TRAINER_CLASSES
     

@@ -147,6 +147,10 @@ LabTryToLeaveScript2:
 ProfessorIvyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GS_BALL_IVY
+	iftrue .IvyAfterGSBall
+	checkevent EVENT_GS_BALL_ENCOUNTER
+	iffalse .ShowGSBallToIvy
 	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iftrue .GotPokemonAlreadyIvy
 	writetext IvyText_ChooseAPokemon
@@ -158,6 +162,21 @@ ProfessorIvyScript:
 .GotPokemonAlreadyIvy:
 	writetext IvyAfterGettingStarterText2
 	sjump .FinishIvyScript
+	
+.ShowGSBallToIvy:
+	writetext IvyGSBallText
+	waitbutton
+	closetext
+	setevent EVENT_GS_BALL_IVY
+	setevent EVENT_GS_BALL_ENCOUNTER
+	clearevent EVENT_TRACEY_BATTLE_TANGELO
+	end
+	
+.IvyAfterGSBall:
+	writetext IvyGSBallText2
+	waitbutton
+	closetext
+	end
 	
 CharmanderPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
@@ -362,6 +381,62 @@ IvysLabPoster2Text4:
 	
 IvysLabPoster2Continue:
 	text "Continue reading?"
+	done
+	
+IvyGSBallText:
+	text "IVY: Back so soon,"
+	line "<PLAYER>?"
+	
+	para "Oh, what's this,"
+	line "then?"
+	
+	para "… … …"
+	
+	para "IVY: It appears"
+	line "to be what PROF."
+	cont "OAK mentioned to"
+	cont "me over email."
+	
+	para "He was supposed"
+	line "to be sending it"
+	cont "to me, but it"
+	cont "seems to have"
+	cont "made its way in"
+	cont "your hands,"
+	cont "<PLAYER>."
+	
+	para "Apparently, that"
+	line "#BALL will not"
+	cont "open up. That's"
+	cont "because it's"
+	cont "broken."
+	
+	para "There's not many"
+	line "#BALL crafters"
+	cont "left in the world,"
+	cont "and the masters,
+	cont "even fewer."
+	
+	para "Why don't you hold"
+	line "onto it for now,"
+	cont "<PLAYER>?"
+	
+	para "I'm far too busy"
+	line "with my regional"
+	cont "species research"
+	cont "to look into some"
+	cont "old #BALL."
+	
+	para "And who knows? It"
+	line "might bring you"
+	cont "good luck."
+	done
+	
+IvyGSBallText2:
+	text "IVY: If I hear"
+	line "anything about the"
+	cont "GS BALL, I'll page"
+	cont "you."
 	done
 
 IvysLabTrashcan:

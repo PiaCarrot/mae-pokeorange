@@ -71,4 +71,5 @@ BTTrainerClassSprites:
 	db SPRITE_LORELEI
 	db SPRITE_LORELEI
 	db SPRITE_LORELEI
+	db SPRITE_TRACEY
 	assert_table_length NUM_TRAINER_CLASSES

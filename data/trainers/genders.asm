@@ -73,4 +73,5 @@ BTTrainerClassGenders:
 	db FEMALE ; LORELEI1
 	db FEMALE ; LORELEI2
 	db FEMALE ; LORELEI3
+	db MALE   ; TRACEY1
 	assert_table_length NUM_TRAINER_CLASSES

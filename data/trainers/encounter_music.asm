@@ -74,6 +74,7 @@ TrainerEncounterMusic::
 	db MUSIC_ORANGE_ENCOUNTER       ; lorelei1
 	db MUSIC_ORANGE_ENCOUNTER       ; lorelei2
 	db MUSIC_ORANGE_ENCOUNTER       ; lorelei3
+	db MUSIC_TRACEY_ENCOUNTER       ; tracey1
 	assert_table_length NUM_TRAINER_CLASSES + 1
 	db MUSIC_ORANGE_ENCOUNTER       ; unused
 	db MUSIC_ORANGE_ENCOUNTER       ; unused

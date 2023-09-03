@@ -236,5 +236,8 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	trainerclass LORELEI3 ; 46
 	const LORELEI_3
 
+	trainerclass TRACEY1 ; 46
+	const TRACEY_1
+
 DEF KRIS EQU __trainer_class__
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

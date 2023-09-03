@@ -73,4 +73,5 @@ TrainerPicPointers::
 	dba Lorelei1Pic
 	dba Lorelei2Pic
 	dba Lorelei3Pic
+	dba Tracey1Pic
 	assert_table_length NUM_TRAINER_CLASSES

@@ -71,4 +71,5 @@ TrainerClassNames::
 	li "AUNT"
 	li "ELITE FOUR"
 	li "ELITE FOUR"
+	li "#WATCHER"
 	assert_list_length NUM_TRAINER_CLASSES

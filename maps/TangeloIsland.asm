@@ -7,6 +7,8 @@
 	const TANGELO_ISLAND_ROCKET_3
 	const TANGELO_ISLAND_TRACEY_1
 	const TANGELO_ISLAND_LAPRAS_1
+	const TANGELO_ISLAND_TRACEY_2
+	const TANGELO_ISLAND_LAPRAS_2
 
 TangeloIsland_MapScripts:
 	def_scene_scripts
@@ -52,6 +54,7 @@ TangeloMarillKeepFollowingScript:
 	turnobject TANGELO_ISLAND_MARILL_2, LEFT
 	playsound SFX_JUMP_OVER_LEDGE
 	applymovement TANGELO_ISLAND_MARILL_2, MarillHopMovement
+	turnobject TANGELO_ISLAND_MARILL_2, LEFT
 	cry MARILL
 	pause 15
 	playsound SFX_JUMP_OVER_LEDGE
@@ -132,6 +135,7 @@ TangeloRocketScript2:
 	special FadeInQuickly
 	setevent EVENT_TANGELO_ROCKETS_DEFEATED
 	setscene SCENE_TANGELO_ISLAND_NOOP
+	clearevent EVENT_TRACEY_TANGELO_CENTER_INSIDE
 	end
 	
 TangeloMarillScript:
@@ -143,8 +147,58 @@ TangeloMarillScript:
 	closetext
 	end
 	
+LaprasScript:
+	opentext
+	cry LAPRAS
+	writetext LaprasText
+	yesorno
+	iftrue .ObtainedLapras
+	closetext
+	end
+	
+.ObtainedLapras:
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext ReceivedLaprasText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	givepoke LAPRAS, 5, BERRY
+	closetext
+	setevent EVENT_LAPRAS_OBTAINED
+	disappear TANGELO_ISLAND_LAPRAS_2
+	end
+	
+.NoRoom:
+	writetext LaprasPartyFullText
+	waitbutton
+	closetext
+	end
+	
+TraceyTangeloScript:
+	faceplayer
+	showemote EMOTE_SHOCK, TANGELO_ISLAND_TRACEY_2, 15
+	opentext
+	writetext TraceyTangeloText1
+	waitbutton
+	playmusic MUSIC_TRACEY_ENCOUNTER
+	writetext TraceyTangeloText2
+	waitbutton
+	closetext
+	winlosstext TangeloTraceyWinText, TangeloTraceyLossText
+	setlasttalked TANGELO_ISLAND_TRACEY_2
+	loadtrainer TRACEY1, TRACEY_1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .AfterBattle	
+	
+	
 TangeloIslandSign:
 	jumptext TangeloIslandSignText
+	
+TangeloCenterSign:
+	jumptext TangeloCenterSignText
 	
 TangeloIslandSignText:
 	text "TANGELO ISLAND"
@@ -152,6 +206,30 @@ TangeloIslandSignText:
 	para "Where all walks of"
 	line "life meet on soft"
 	cont "sands."
+	done
+	
+TangeloCenterSignText:
+	text "TANGELO ISLAND"
+	line "#MON CENTER"
+	done
+	
+TraceyTangeloText1:
+	text "TRACEY: Yo!"
+	line "LAPRAS is fully"
+	cont "healed! I was able"
+	cont "to make a great"
+	cont "sketch."
+	
+	para "But the reason I"
+	line "waited up for you"
+	cont "was because…"
+	done
+	
+TraceyTangeloText2:
+	text "I saw how you"
+	line "handled those guys"
+	cont "earlier. I want to"
+	cont "battle you!"
 	done
 	
 TangeloMarillScriptText:
@@ -203,6 +281,19 @@ TangeloTraceyText1:
 	cont "CENTER. Please"
 	cont "meet me there in a"
 	cont "a bit."
+	done
+	
+LaprasText:
+	text "LAPRAS: Gyuuoh!"
+	
+	para "LAPRAS seems to"
+	line "be ready to join"
+	cont "you. Take LAPRAS?"
+	done
+	
+LaprasPartyFullText:
+	text "Your party is"
+	line "full."
 	done
 	
 MarillHopMovement:
@@ -281,6 +372,7 @@ TangeloIsland_MapEvents:
 
 	def_bg_events
 	bg_event 24, 10, BGEVENT_READ, TangeloIslandSign
+	bg_event 21,  7, BGEVENT_READ, TangeloCenterSign
 
 	def_object_events
 	object_event 28, 10, SPRITE_MARILL_WALK, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MARILL_TANGELO_1
@@ -291,3 +383,5 @@ TangeloIsland_MapEvents:
 	object_event 12, 26, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 12, 25, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 11, 25, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
+	object_event 20,  7, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TraceyTangeloScript, EVENT_TRACEY_BATTLE_TANGELO
+	object_event 20,  5, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LaprasScript, EVENT_LAPRAS_OBTAINED
