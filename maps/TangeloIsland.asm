@@ -95,45 +95,50 @@ TangeloGSBallScript:
 	ifequal  6, .Position6
 	
 .Position1:
+	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_WARP_TO
 	disappear TANGELO_GS_BALL
-	moveobject TANGELO_GS_BALL, 15, 25
+	moveobject TANGELO_GS_BALL, 12, 17
 	appear TANGELO_GS_BALL
 	waitsfx
 	loadmem wGSBallPosition, 2
 	end
 	
 .Position2:
+	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_WARP_TO
 	disappear TANGELO_GS_BALL
-	moveobject TANGELO_GS_BALL, 15, 25
+	moveobject TANGELO_GS_BALL, 27, 4
 	appear TANGELO_GS_BALL
 	waitsfx
 	loadmem wGSBallPosition, 3
 	end
 	
 .Position3:
+	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_WARP_TO
 	disappear TANGELO_GS_BALL
-	moveobject TANGELO_GS_BALL, 15, 25
+	moveobject TANGELO_GS_BALL, 29, 17
 	appear TANGELO_GS_BALL
 	waitsfx
 	loadmem wGSBallPosition, 4
 	end
 	
 .Position4:
+	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_WARP_TO
 	disappear TANGELO_GS_BALL
-	moveobject TANGELO_GS_BALL, 15, 25
+	moveobject TANGELO_GS_BALL, 17, 11
 	appear TANGELO_GS_BALL
 	waitsfx
 	loadmem wGSBallPosition, 5
 	end
 	
 .Position5:
+	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_WARP_TO
 	disappear TANGELO_GS_BALL
-	moveobject TANGELO_GS_BALL, 15, 25
+	moveobject TANGELO_GS_BALL, 25, 27
 	appear TANGELO_GS_BALL
 	waitsfx
 	loadmem wGSBallPosition, 6
@@ -142,7 +147,7 @@ TangeloGSBallScript:
 .Position6:
 	opentext
 	verbosegiveitem GS_BALL
-	waitbutton
+	closetext
 	setevent EVENT_OBTAINED_GS_BALL
 	disappear TANGELO_GS_BALL
 	clearevent EVENT_GS_BALL_ENCOUNTER
@@ -156,7 +161,7 @@ TangeloGSBallEventScript:
 	moveobject TANGELO_GS_BALL, 12, 17
 	appear TANGELO_GS_BALL
 	waitsfx
-	showemote EMOTE_QUESTION, PLAYER, 15
+	showemote EMOTE_SHOCK, PLAYER, 15
 	setscene SCENE_TANGELO_ISLAND_NOOP
 	loadmem wGSBallPosition, 2
 	end
@@ -589,4 +594,4 @@ TangeloIsland_MapEvents:
 	object_event 11, 25, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 20,  7, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TraceyTangeloScript, EVENT_TRACEY_BATTLE_TANGELO
 	object_event 20,  5, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LaprasScript, EVENT_LAPRAS_OBTAINED
-	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TangeloGSBallScript, EVENT_OBTAINED_GS_BALL
+	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloGSBallScript, EVENT_OBTAINED_GS_BALL
