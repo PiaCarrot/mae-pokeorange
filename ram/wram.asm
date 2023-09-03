@@ -2994,7 +2994,7 @@ wTradeFlags:: flag_array NUM_NPC_TRADES
 	ds 1
 wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
-wFarfetchdPosition:: db
+wGSBallPosition:: db
 
 	ds 13
 

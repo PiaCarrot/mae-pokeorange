@@ -9,6 +9,7 @@
 	const TANGELO_ISLAND_LAPRAS_1
 	const TANGELO_ISLAND_TRACEY_2
 	const TANGELO_ISLAND_LAPRAS_2
+	const TANGELO_GS_BALL
 
 TangeloIsland_MapScripts:
 	def_scene_scripts
@@ -16,9 +17,11 @@ TangeloIsland_MapScripts:
 	scene_script TangeloMarillNeedsHelpScene, SCENE_TANGELO_ISLAND_MARILL_1
 	scene_script TangeloMarillKeepFollowingScene, SCENE_TANGELO_ISLAND_MARILL_2
 	scene_script TangeloRocketEventScene, SCENE_TANGELO_ISLAND_MARILL_3
+	scene_script TangeloGSBallEventScene, SCENE_TANGELO_GS_BALL
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, TangeloIslandFlypointCallback
+	callback MAPCALLBACK_OBJECTS, TangeloIslandGSBallCallback
 	
 TangeloIslandFlypointCallback:
 	setflag ENGINE_FLYPOINT_TANGELO
@@ -34,6 +37,128 @@ TangeloMarillKeepFollowingScene:
 	end
 	
 TangeloRocketEventScene:
+	end
+	
+TangeloGSBallEventScene:
+	end
+	
+TangeloIslandGSBallCallback:
+	checkevent EVENT_OBTAINED_GS_BALL
+	iftrue .Static
+	readmem wGSBallPosition
+	ifequal  1, .PositionOne
+	ifequal  2, .PositionTwo
+	ifequal  3, .PositionThree
+	ifequal  4, .PositionFour
+	ifequal  5, .PositionFive
+	ifequal  6, .PositionSix
+.Static:
+	endcallback
+	
+.PositionOne:
+	moveobject TANGELO_GS_BALL, 15, 10
+	appear TANGELO_GS_BALL
+	endcallback
+
+.PositionTwo:
+	moveobject TANGELO_GS_BALL, 12, 17
+	appear TANGELO_GS_BALL
+	endcallback
+
+.PositionThree:
+	moveobject TANGELO_GS_BALL, 27, 4
+	appear TANGELO_GS_BALL
+	endcallback
+
+.PositionFour:
+	moveobject TANGELO_GS_BALL, 29, 17
+	appear TANGELO_GS_BALL
+	endcallback
+
+.PositionFive:
+	moveobject TANGELO_GS_BALL, 17, 11
+	appear TANGELO_GS_BALL
+	endcallback
+
+.PositionSix:
+	moveobject TANGELO_GS_BALL, 25, 27
+	appear TANGELO_GS_BALL
+	endcallback
+	
+TangeloGSBallScript:
+	readmem wGSBallPosition
+	ifequal  1, .Position1
+	ifequal  2, .Position2
+	ifequal  3, .Position3
+	ifequal  4, .Position4
+	ifequal  5, .Position5
+	ifequal  6, .Position6
+	
+.Position1:
+	playsound SFX_WARP_TO
+	disappear TANGELO_GS_BALL
+	moveobject TANGELO_GS_BALL, 15, 25
+	appear TANGELO_GS_BALL
+	waitsfx
+	loadmem wGSBallPosition, 2
+	end
+	
+.Position2:
+	playsound SFX_WARP_TO
+	disappear TANGELO_GS_BALL
+	moveobject TANGELO_GS_BALL, 15, 25
+	appear TANGELO_GS_BALL
+	waitsfx
+	loadmem wGSBallPosition, 3
+	end
+	
+.Position3:
+	playsound SFX_WARP_TO
+	disappear TANGELO_GS_BALL
+	moveobject TANGELO_GS_BALL, 15, 25
+	appear TANGELO_GS_BALL
+	waitsfx
+	loadmem wGSBallPosition, 4
+	end
+	
+.Position4:
+	playsound SFX_WARP_TO
+	disappear TANGELO_GS_BALL
+	moveobject TANGELO_GS_BALL, 15, 25
+	appear TANGELO_GS_BALL
+	waitsfx
+	loadmem wGSBallPosition, 5
+	end
+	
+.Position5:
+	playsound SFX_WARP_TO
+	disappear TANGELO_GS_BALL
+	moveobject TANGELO_GS_BALL, 15, 25
+	appear TANGELO_GS_BALL
+	waitsfx
+	loadmem wGSBallPosition, 6
+	end
+	
+.Position6:
+	opentext
+	verbosegiveitem GS_BALL
+	waitbutton
+	setevent EVENT_OBTAINED_GS_BALL
+	disappear TANGELO_GS_BALL
+	clearevent EVENT_GS_BALL_ENCOUNTER
+	end
+
+TangeloGSBallEventScript:
+	showemote EMOTE_QUESTION, PLAYER, 15
+	applymovement PLAYER, TangeloPlayerMovement2
+	playsound SFX_WARP_TO
+	disappear TANGELO_GS_BALL
+	moveobject TANGELO_GS_BALL, 12, 17
+	appear TANGELO_GS_BALL
+	waitsfx
+	showemote EMOTE_QUESTION, PLAYER, 15
+	setscene SCENE_TANGELO_ISLAND_NOOP
+	loadmem wGSBallPosition, 2
 	end
 	
 TangeloMarillNeedsHelpScript:
@@ -212,7 +337,10 @@ TraceyTangeloScript:
 	end
 	
 TangeloIslandSign:
-	jumptext TangeloIslandSignText
+;	jumptext TangeloIslandSignText
+	clearevent EVENT_OBTAINED_GS_BALL
+	setscene SCENE_TANGELO_GS_BALL
+	end
 	
 TangeloCenterSign:
 	jumptext TangeloCenterSignText
@@ -425,6 +553,10 @@ TraceyTangeloMovement:
 	step UP
 	step UP
 	step_end
+	
+TangeloPlayerMovement2:
+	step DOWN
+	step_end
 
 TangeloIsland_MapEvents:
 	db 0, 0 ; filler
@@ -440,6 +572,7 @@ TangeloIsland_MapEvents:
 	coord_event 21, 17, SCENE_TANGELO_ISLAND_MARILL_2, TangeloMarillKeepFollowingScript2
 	coord_event 15, 24, SCENE_TANGELO_ISLAND_MARILL_3, TangeloRocketScript
 	coord_event 15, 25, SCENE_TANGELO_ISLAND_MARILL_3, TangeloRocketScript2
+	coord_event 15,  8, SCENE_TANGELO_GS_BALL, TangeloGSBallEventScript
 
 	def_bg_events
 	bg_event 24, 10, BGEVENT_READ, TangeloIslandSign
@@ -456,3 +589,4 @@ TangeloIsland_MapEvents:
 	object_event 11, 25, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TANGELO_ROCKETS_DEFEATED
 	object_event 20,  7, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TraceyTangeloScript, EVENT_TRACEY_BATTLE_TANGELO
 	object_event 20,  5, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LaprasScript, EVENT_LAPRAS_OBTAINED
+	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TangeloGSBallScript, EVENT_OBTAINED_GS_BALL
