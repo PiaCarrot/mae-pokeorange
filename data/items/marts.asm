@@ -35,6 +35,8 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartBerrySeller
+	dw MartBerrySellerPinkan
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -404,4 +406,19 @@ DefaultMart:
 	db 2 ; # items
 	db POKE_BALL
 	db POTION
+	db -1 ; end
+	
+MartBerrySeller:
+	db 3 ; # items
+	db ORAN_BERRY
+	db PECHA_BERRY
+	db CHERI_BERRY
+	db -1 ; end
+
+MartBerrySellerPinkan:
+	db 4 ; # items
+	db ORAN_BERRY
+	db PECHA_BERRY
+	db CHERI_BERRY
+	db PINKAN_BERRY
 	db -1 ; end

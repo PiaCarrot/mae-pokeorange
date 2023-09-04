@@ -293,7 +293,7 @@ LaprasScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke LAPRAS, 5, BERRY
+	givepoke LAPRAS, 5, ORAN_BERRY
 	closetext
 	setevent EVENT_LAPRAS_OBTAINED
 	disappear TANGELO_ISLAND_LAPRAS_2
@@ -345,11 +345,61 @@ TangeloIslandSign:
 ;	jumptext TangeloIslandSignText
 	clearevent EVENT_OBTAINED_GS_BALL
 	setscene SCENE_TANGELO_GS_BALL
+	giveitem PINKAN_BERRY
 	end
 	
 TangeloCenterSign:
 	jumptext TangeloCenterSignText
 	
+TangeloBerrySellerScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BERRY_SELLER_PINKAN
+	iftrue .PinkanBerryShop
+	checkitem PINKAN_BERRY
+	iftrue .GivePinkanBerry
+.RefusedPinkanBerry
+	pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER
+	closetext
+	end
+	
+.GivePinkanBerry
+	writetext BerrySellerGotPinkText
+	yesorno
+	iftrue .GavePinkanBerry
+	sjump .RefusedPinkanBerry
+.GavePinkanBerry
+	writetext BerrySellerGavePinkText
+	waitbutton
+	closetext
+	takeitem PINKAN_BERRY
+	setevent EVENT_BERRY_SELLER_PINKAN
+	end
+.PinkanBerryShop
+	pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER_PINKAN
+	closetext
+	end
+
+BerrySellerGotPinkText:
+	text "Oh, is that what I"
+	line "think it is?"
+	
+	para "That's a PINKAN"
+	line "BERRY!"
+	
+	para "Why don't you give"
+	line "me one? I can grow"
+	cont "them and offer it"
+	cont "as a new product!"
+	done
+	
+BerrySellerGavePinkText:
+	text "Thanks! Talk to me"
+	line "in a bit and I'll"
+	cont "have PINKAN BERRY"
+	cont "in my shop!"
+	done
+
 TangeloIslandSignText:
 	text "TANGELO ISLAND"
 	
@@ -595,3 +645,4 @@ TangeloIsland_MapEvents:
 	object_event 20,  7, SPRITE_TRACEY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TraceyTangeloScript, EVENT_TRACEY_BATTLE_TANGELO
 	object_event 20,  5, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LaprasScript, EVENT_LAPRAS_OBTAINED
 	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloGSBallScript, EVENT_OBTAINED_GS_BALL
+	object_event 21, 11, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBerrySellerScript, -1

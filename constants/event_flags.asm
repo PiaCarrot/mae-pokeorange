@@ -509,7 +509,7 @@
 	const EVENT_BUENA_OFFERED_HER_PHONE_NUMBER
 	const EVENT_MET_BUENA
 	const EVENT_GOT_ODD_EGG
-	const_skip ; unused
+	const EVENT_BERRY_SELLER_PINKAN
 	const EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
 ; Trainer flags
 ; Swimmer F
