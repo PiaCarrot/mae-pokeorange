@@ -377,6 +377,7 @@ BattleAnimFrameData:
 	dw .Frameset_CoinBuildup             ; BATTLEANIMFRAMESET_COIN_BUILDUP
 	dw .Frameset_ClearSmog               ; BATTLEANIMFRAMESET_CLEAR_SMOG
 	dw .Frameset_DrillRun                ; BATTLEANIMFRAMESET_DRILL_RUN
+	dw .Frameset_StruggleBug             ; BATTLEANIMFRAMESET_STRUGGLE_BUG
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2608,4 +2609,9 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_13B,  1
 	battleoamframe BATTLEANIMOAMSET_13C,  1
 	battleoamframe BATTLEANIMOAMSET_13D,  1
+	battleoamrestart
+
+.Frameset_StruggleBug:
+	battleoamframe BATTLEANIMOAMSET_20, 3
+	battleoamframe BATTLEANIMOAMSET_20, 3, OAM_Y_FLIP
 	battleoamrestart

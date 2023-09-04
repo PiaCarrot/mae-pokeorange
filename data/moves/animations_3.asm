@@ -1733,6 +1733,46 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 24
 ;	anim_ret
 
+;BattleAnim_StruggleBug:
+;	anim_2gfx ANIM_GFX_HIT_2, ANIM_GFX_OBJECTS_3,
+;	anim_call BattleAnim_TargetObj_1Row_1
+;	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_STRUGGLE_BUG
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;.loop
+;	anim_sound 0, 0, SFX_SQUEAK
+;	anim_obj ANIM_OBJ_STRUGGLE_BUG, 48, 104, $0
+;	anim_wait 8
+;	anim_loop 6, .loop
+;	anim_wait 28
+;	anim_incbgeffect ANIM_BG_WOBBLE_MON
+;	anim_call BattleAnim_ShowMon_0_1
+;	anim_wait 1
+;	anim_clearobjs
+;	anim_wait 1
+;.loop2
+;	anim_sound 0, 0, SFX_SQUEAK
+;	anim_obj ANIM_OBJ_STRUGGLE_BUG_DOWN, 132, 24, $0
+;	anim_wait 8
+;	anim_loop 6, .loop2
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_POISON_STING
+;	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 140, 44, $0
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_POISON_STING
+;	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 124, 60, $0
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_POISON_STING
+;	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 140, 60, $0
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_POISON_STING
+;	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 124, 44, $0
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_POISON_STING
+;	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 132, 52, $0
+;	anim_wait 16
+;	anim_ret
+
 ;BattleAnim_WildCharge:
 ;	anim_3gfx ANIM_GFX_CHARGE, ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 ;	anim_battlergfx_1row
@@ -1865,6 +1905,30 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 64
 ;	anim_incbgeffect ANIM_BG_NIGHT_SHADE
 ;	anim_call BattleAnim_ShowMon_1_1
+;	anim_ret
+
+;BattleAnim_Accelerock:
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_SPEED, ANIM_GFX_ROCKS
+;	anim_sound 0, 0, SFX_MENU
+;	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+;	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+;	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+;	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+;	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $6, $1, $0
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $5c
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $e8
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $d0
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $50
+;	anim_wait 32
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 16
 ;	anim_ret
 
 
