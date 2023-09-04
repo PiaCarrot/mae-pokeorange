@@ -118,6 +118,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_BallSparkle
 	dba BattleAnimFunction_SpacialRend
 	dba BattleAnimFunction_SpacialRendCutter
+	dba BattleAnimFunction_CoinBurst
 	assert_table_length NUM_BATTLEANIMFUNCS
 
 
@@ -507,7 +508,67 @@ BattleAnimFunction_RockSmash:
 	ld [hl], e
 	ret
 
+SECTION "BattleAnimFunction_CoinBurst", ROMX
 
+BattleAnimFunction_CoinBurst:
+	call BattleAnim_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+.zero
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	and $40
+	rlca
+	rlca
+	add BATTLEANIMFRAMESET_LEAF_STORM_BIG_LEAF
+	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
+	add hl, bc
+	ld [hl], a
+.after_frameset
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], $40
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $30
+	jmp c, DeinitBattleAnimation
+
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	and $3f
+	ld d, a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	dec [hl]
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	call BattleAnim_ScatterHorizontal
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld h, [hl]
+	ld l, a
+	add hl, de
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld [hl], d
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld [hl], e
+	ret
 ; The functions in the following section require the
 ; BattleAnimFunction_SpiralDescent Function as a dependency,
 ; so please keep them in the same section.

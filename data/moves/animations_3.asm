@@ -1650,6 +1650,163 @@ BattleAnim_ShadowForce_branch_2:
 ;==========================
 
 
+; - Gen 5 Anims
+
+;BattleAnim_Coil:
+;	anim_2gfx ANIM_GFX_ROPE, ANIM_GFX_CHARGE
+;	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_PURPLE
+;	anim_sound 0, 1, SFX_SQUEAK
+;	anim_obj ANIM_OBJ_COIL, 48, 104, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SQUEAK
+;	anim_obj ANIM_OBJ_COIL, 48, 96, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SQUEAK
+;	anim_obj ANIM_OBJ_COIL, 48, 88, $0
+;	anim_wait 32
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_sound 0, 1, SFX_POTION
+;	anim_incobj 1
+;	anim_wait 2
+;	anim_incobj 2
+;	anim_wait 2
+;	anim_incobj 3
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $0
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $8
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $10
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $18
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $20
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $28
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $30
+;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $38
+;	anim_wait 64
+;	anim_ret
+
+;BattleAnim_EchoedVoice:
+;	anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_NOISE
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+;	anim_battlergfx_1row
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 6, 2, SFX_SUPERSONIC
+;.loop
+;	anim_call BattleAnim_Growl_branch_cbbbc
+;	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_BIG_WAVE, 64, 88, $2
+;	anim_wait 4
+;	anim_loop 4, .loop
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $1, $0
+;	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
+;	anim_wait 32
+;	anim_incbgeffect ANIM_BG_NIGHT_SHADE
+;	anim_jump BattleAnim_ShowMon_1_1
+
+;BattleAnim_ClearSmog:
+;	anim_3gfx ANIM_GFX_SMOKE_PUFF, ANIM_GFX_HAZE, ANIM_GFX_SPEED
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+;	anim_obp0 $54
+;	anim_sound 0, 1, SFX_MEGA_PUNCH
+;.loop
+;	anim_obj ANIM_OBJ_CLEAR_SMOG, 64, 92, $0
+;	anim_wait 2
+;	anim_loop 3, .loop
+;	anim_wait 24
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_sound 0, 1, SFX_SWORDS_DANCE
+;.loop2
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_loop 5, .loop2
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 148, 32, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 116, 64, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 148, 64, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 116, 32, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 132, 48, $0
+;	anim_wait 24
+;	anim_ret
+
+;BattleAnim_WildCharge:
+;	anim_3gfx ANIM_GFX_CHARGE, ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+;	anim_battlergfx_1row
+;	anim_bgp $1b
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $38
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $20
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $8
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $10
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $28
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $0
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $18
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $30
+;	anim_wait 16
+;	anim_sound 0, 0, SFX_ZAP_CANNON
+;	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
+;	anim_wait 24
+;	anim_setobj $9, $3
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $0, $0
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_sound 0, 0, SFX_SPARK
+;	anim_wait 6
+;	anim_sound 0, 0, SFX_SPARK
+;	anim_wait 6
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $50
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 1
+;	anim_sound 0, 1, SFX_THUNDERSHOCK
+;	anim_obj ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
+;	anim_obj ANIM_OBJ_THUNDERBOLT_SPARKS, 136, 56, $0
+;	anim_wait 32
+;	anim_ret
+
+;BattleAnim_DrillRun:
+;	anim_2gfx ANIM_GFX_DRILL, ANIM_GFX_HIT
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_DRILL_RUN, 72, 80, $4
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $50, $1, $0
+;.loop
+	;anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_SMALL, 128, 48, $0
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_SMALL, 132, 44, $0
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_SMALL, 136, 48, $0
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_SMALL, 132, 52, $0
+;	anim_wait 2
+;	anim_loop 6, .loop
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_wait 16
+;	anim_ret
+
+
+
+; - Gen 6 Anims
+
 ;BattleAnim_Boomburst:
 ;	anim_1gfx ANIM_GFX_BIG_WHIP
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
@@ -1686,6 +1843,9 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 64
 ;	anim_ret
 
+
+; - Gen 7 Anims
+
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
 ;	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
@@ -1705,6 +1865,81 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 64
 ;	anim_incbgeffect ANIM_BG_NIGHT_SHADE
 ;	anim_call BattleAnim_ShowMon_1_1
+;	anim_ret
+
+
+; - Gen 9 Anims
+
+;BattleAnim_MakeitRain:
+;	anim_4gfx ANIM_GFX_CHARGE, ANIM_GFX_COINS, ANIM_GFX_SPEED, ANIM_GFX_HIT_2
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 0, 1, SFX_SWORDS_DANCE
+;	anim_obj ANIM_OBJ_FLASH_CANNON_CHARGE, 48, 96, $00
+;	anim_obj ANIM_OBJ_FLASH_CANNON_CHARGE, 48, 96, $0c
+;	anim_obj ANIM_OBJ_FLASH_CANNON_CHARGE, 48, 96, $18
+;	anim_obj ANIM_OBJ_FLASH_CANNON_CHARGE, 48, 96, $24
+;	anim_obj ANIM_OBJ_FLASH_CANNON_CHARGE, 48, 96, $30
+;	anim_wait 40
+;	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $4, $0
+;	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_GOLD_BG
+;	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_GOLD_BG
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $10, $2, $0
+;	anim_sound 0, 1, SFX_PAY_DAY
+;	anim_obj ANIM_OBJ_COIN_BURST, 56, 104, $28
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $5c ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 56, 96, $10
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $e8 ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 40, 96, $9c
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_PAY_DAY
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $d0 ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 40, 104, $dc
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $50 ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $1c
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $90
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BUILDUP, 136, 72, $10
+;.loop
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $10, $2, $0
+;	anim_sound 0, 1, SFX_PAY_DAY
+;	anim_obj ANIM_OBJ_COIN_BURST, 56, 104, $28
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $5c ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 56, 96, $10
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $e8 ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 40, 96, $9c
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_PAY_DAY
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $d0 ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 40, 104, $dc
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $50 ;
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $1c
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_COIN_BURST, 48, 96, $90
+;	anim_wait 2
+;	anim_loop 5, .loop
+;	anim_wait 32
 ;	anim_ret
 
 ;==========================

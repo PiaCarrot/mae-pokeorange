@@ -104,4 +104,6 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjLunarDanceGFX
 	anim_obj_gfx 41, AnimObjCrushGripGFX
 	anim_obj_gfx  9, AnimObjHit2GFX
+	anim_obj_gfx  8, AnimObjCoinsGFX
+	anim_obj_gfx 18, AnimObjDrillGFX
 	assert_table_length NUM_ANIM_GFX + 1

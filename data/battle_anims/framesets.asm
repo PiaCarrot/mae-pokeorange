@@ -374,6 +374,9 @@ BattleAnimFrameData:
 	dw .Frameset_BigWhip_NW              ; BATTLEANIMFRAMESET_BIG_WHIP_NW
 	dw .Frameset_SeedOut                 ; BATTLEANIMFRAMESET_SEED_OUT
 	dw .Frameset_SmallGlowShort          ; BATTLEANIMFRAMESET_SMALL_GLOW_SHORT
+	dw .Frameset_CoinBuildup             ; BATTLEANIMFRAMESET_COIN_BUILDUP
+	dw .Frameset_ClearSmog               ; BATTLEANIMFRAMESET_CLEAR_SMOG
+	dw .Frameset_DrillRun                ; BATTLEANIMFRAMESET_DRILL_RUN
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2586,3 +2589,23 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_54,  1
 	battleoamframe BATTLEANIMOAMSET_53,  1
 	battleoamdelete
+
+.Frameset_CoinBuildup:
+	battleoamframe BATTLEANIMOAMSET_136, 32
+	battleoamframe BATTLEANIMOAMSET_137, 32
+	battleoamframe BATTLEANIMOAMSET_138, 32
+	battleoamframe BATTLEANIMOAMSET_139, 32
+	battleoamframe BATTLEANIMOAMSET_13A, 32
+	battleoamend
+
+.Frameset_ClearSmog:
+	battleoamframe BATTLEANIMOAMSET_20,  2
+	battleoamframe BATTLEANIMOAMSET_21,  2
+	battleoamframe BATTLEANIMOAMSET_1B,  2
+	battleoamend
+
+.Frameset_DrillRun:
+	battleoamframe BATTLEANIMOAMSET_13B,  1
+	battleoamframe BATTLEANIMOAMSET_13C,  1
+	battleoamframe BATTLEANIMOAMSET_13D,  1
+	battleoamrestart
