@@ -379,6 +379,68 @@ TangeloBerrySellerScript:
 	pokemart MARTTYPE_STANDARD, MART_BERRY_SELLER_PINKAN
 	closetext
 	end
+	
+TangeloBallGuyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_BALL_FROM_GUY_TANGELO
+	iftrue .alreadygotaball
+	checktime DAY
+	iftrue .day_morn
+	checktime NITE
+	iftrue .nite
+.day_morn
+	writetext TangeloBallGuyDayText
+	waitbutton
+	verbosegiveitem POKE_BALL ;HEAL_BALL
+	writetext TangeloBallGuyAlreadyGotText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_BALL_FROM_GUY_TANGELO
+	end
+.nite
+	writetext TangeloBallGuyNightText
+	waitbutton
+	verbosegiveitem POKE_BALL ;DUSK_BALL
+	writetext TangeloBallGuyAlreadyGotText
+	waitbutton
+	closetext
+	setevent EVENT_GOT_BALL_FROM_GUY_TANGELO
+	end
+.alreadygotaball
+	writetext TangeloBallGuyAlreadyGotText
+	waitbutton
+	closetext
+	end
+	
+TangeloBallGuyDayText:
+	text "What a splendid"
+	line "day it is!"
+	
+	para "Hey, you're a"
+	line "trainer, right?"
+	
+	para "Here's something"
+	line "for you."
+	done
+
+TangeloBallGuyNightText:
+	text "What a beautiful"
+	line "night it is!"
+	
+	para "Hey, you're a"
+	line "trainer, right?"
+	
+	para "Here's something"
+	line "for you."
+	done
+
+TangeloBallGuyAlreadyGotText:
+	text "Y'know, just like"
+	line "#MON, people"
+	cont "can change with"
+	cont "time of day too!"
+	done
 
 BerrySellerGotPinkText:
 	text "Oh, is that what I"
@@ -646,3 +708,4 @@ TangeloIsland_MapEvents:
 	object_event 20,  5, SPRITE_SURF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LaprasScript, EVENT_LAPRAS_OBTAINED
 	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloGSBallScript, EVENT_OBTAINED_GS_BALL
 	object_event 21, 11, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBerrySellerScript, -1
+	object_event 26,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBallGuyScript, -1
