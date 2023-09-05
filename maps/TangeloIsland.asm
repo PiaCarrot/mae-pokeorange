@@ -412,6 +412,12 @@ TangeloBallGuyScript:
 	waitbutton
 	closetext
 	end
+
+TangeloHiddenBigMushroom:
+	hiddenitem BIG_MUSHROOM, EVENT_TANGELO_HIDDEN_BIG_MUSHROOM
+	
+TangeloHiddenTinyMushroom:
+	hiddenitem TINYMUSHROOM, EVENT_TANGELO_HIDDEN_TINY_MUSHROOM
 	
 TangeloBallGuyDayText:
 	text "What a splendid"
@@ -694,6 +700,8 @@ TangeloIsland_MapEvents:
 	def_bg_events
 	bg_event 24, 10, BGEVENT_READ, TangeloIslandSign
 	bg_event 21,  7, BGEVENT_READ, TangeloCenterSign
+	bg_event 20, 34, BGEVENT_ITEM, TangeloHiddenBigMushroom
+	bg_event  4, 14, BGEVENT_ITEM, TangeloHiddenTinyMushroom
 
 	def_object_events
 	object_event 28, 10, SPRITE_MARILL_WALK, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MARILL_TANGELO_1

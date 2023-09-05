@@ -141,8 +141,8 @@
 ; Johto hidden items
 	const EVENT_ROUTE_49_HIDDEN_POTION
 	const EVENT_ROUTE_49_HIDDEN_STAR_PIECE
-	const EVENT_BURNED_TOWER_1F_HIDDEN_ETHER
-	const_skip ; unused in Crystal
+	const EVENT_TANGELO_HIDDEN_BIG_MUSHROOM
+	const EVENT_TANGELO_HIDDEN_TINY_MUSHROOM
 	const_skip ; unused in Crystal
 	const_skip ; unused in Crystal
 	const_skip ; unused in Crystal
