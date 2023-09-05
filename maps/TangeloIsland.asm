@@ -331,12 +331,7 @@ TraceyTangeloScript:
 	closetext
 	applymovement PLAYER, TraceyBattlePlayerMovement
 	applymovement TANGELO_ISLAND_TRACEY_2, TraceyTangeloMovement
-	pause 15
-	special FadeBlackQuickly
-	special ReloadSpritesNoPalettes
 	disappear TANGELO_ISLAND_TRACEY_2
-	pause 15
-	special FadeInQuickly
 	playmapmusic
 	setevent EVENT_TRACEY_BATTLE_TANGELO
 	end
