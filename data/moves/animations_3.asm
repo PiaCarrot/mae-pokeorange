@@ -1652,6 +1652,33 @@ BattleAnim_ShadowForce_branch_2:
 
 ; - Gen 5 Anims
 
+
+;BattleAnim_QuiverDance:
+;	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
+;	anim_call BattleAnim_TargetObj_1Row_1
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+;.loop
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 56, 90, $30
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 40, 90, $20
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 60, 106, $10
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 36, 106, $0
+;	anim_wait 4
+;	anim_loop 4, .loop
+;	anim_wait 18
+;	anim_incbgeffect ANIM_BG_WOBBLE_MON
+;	anim_call BattleAnim_ShowMon_0_1
+;	anim_wait 16
+;	anim_clearobjs
+;	anim_wait 1
+;	anim_ret
+
 ;BattleAnim_Coil:
 ;	anim_2gfx ANIM_GFX_ROPE, ANIM_GFX_CHARGE
 ;	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_PURPLE
@@ -1680,6 +1707,30 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $30
 ;	anim_obj ANIM_OBJ_GROWTH, 48, 108, $38
 ;	anim_wait 64
+;	anim_ret
+
+;BattleAnim_FoulPlay:
+;	anim_2gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_HIT
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
+;	anim_call BattleAnim_TargetObj_1Row_1
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_wait 3
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 56, $0
+;	anim_wait 6
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $6, $1, $0
+;	anim_sound 0, 1, SFX_BEAT_UP
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
+;	anim_wait 3
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 2
+;	anim_clearobjs
+;	anim_obj ANIM_OBJ_BIG_GLOW_CLEAR, 136, 48, $0
+;	anim_wait 6
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 32
 ;	anim_ret
 
 ;BattleAnim_EchoedVoice:
