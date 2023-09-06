@@ -1958,6 +1958,25 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_call BattleAnim_ShowMon_1_1
 ;	anim_ret
 
+;BattleAnim_ShadowBone:
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_MISC, ANIM_GFX_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
+;	anim_bgp $1b
+;	anim_sound 6, 2, SFX_HYDRO_PUMP
+;	anim_obj ANIM_OBJ_SHADOW_BONE, 64, 88, $2
+;	anim_wait 32
+;	anim_sound 0, 1, SFX_CURSE
+;	anim_obj ANIM_OBJ_HIT_YFIX, 120, 48, $0
+;.loop
+;	anim_obj ANIM_OBJ_BURNED, 116, 52, $10
+;	anim_obj ANIM_OBJ_BURNED, 148, 52, $90
+;	anim_wait 6
+;	anim_loop 6, .loop
+;	anim_sound 0, 1, SFX_STOMP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 144, 64, $0
+;	anim_wait 32
+;	anim_ret
+
 ;BattleAnim_Accelerock:
 ;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_SPEED, ANIM_GFX_ROCKS
 ;	anim_sound 0, 0, SFX_MENU
@@ -1982,6 +2001,64 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 16
 ;	anim_ret
 
+;BattleAnim_Liquidation:
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_CHARGE, ANIM_GFX_BUBBLE
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_call BattleAnim_TargetObj_2Row_1
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_sound 0, 1, SFX_TACKLE
+;	anim_wait 16
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $24, $2, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_sound 0, 0, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 148, 36, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $5c
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $e8
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 148, 68, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $d0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 116, 36, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $50
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $5c
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_HIT_YFIX, 148, 36, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $5c
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $e8
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_TOXIC
+;	anim_bgeffect ANIM_BG_START_WATER, $0, $0, $0
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $1, $0
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_WATER, $1c, $0, $0
+;	anim_wait 7
+;	anim_sound 0, 0, SFX_TOXIC
+;	anim_wait 8
+;	anim_sound 0, 0, SFX_TOXIC
+;	anim_wait 11
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_bgeffect ANIM_BG_END_WATER, $0, $0, $0
+;	anim_wait 16
+;	anim_ret
 
 ; - Gen 9 Anims
 
