@@ -3181,40 +3181,40 @@ BattleAnim_Brine:
 	anim_battlergfx_2row
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 	anim_sound 0, 0, SFX_SURF
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 132, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 128, 1, $11
 	anim_wait 2
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $0f
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 136, 1, $0f
 	anim_wait 2
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $1, $0
 .loop
-	anim_obj ANIM_OBJ_HIT_YFIX, 128, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 128, 1, $11
-	anim_wait 2
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 144, 1, $0f
-	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 124, 68, $0
 	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 124, 1, $11
 	anim_wait 2
-	anim_obj ANIM_OBJ_HIT_YFIX, 148, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 148, 1, $0f
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $0f
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 120, 68, $0
 	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 120, 1, $11
 	anim_wait 2
-	anim_obj ANIM_OBJ_HIT_YFIX, 152, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 152, 1, $0f
+	anim_obj ANIM_OBJ_HIT_YFIX, 144, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 144, 1, $0f
 	anim_wait 2
 	anim_obj ANIM_OBJ_HIT_YFIX, 116, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 132, 1, $11
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 116, 1, $11
 	anim_wait 2
-	anim_obj ANIM_OBJ_HIT_YFIX, 156, 68, $0
-	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $0f
+	anim_obj ANIM_OBJ_HIT_YFIX, 148, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 148, 1, $0f
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 112, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 128, 1, $11
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 152, 68, $0
+	anim_obj ANIM_OBJ_WATER_SPOUT_FALLING, 136, 1, $0f
 	anim_wait 2
 	anim_loop 4, .loop
-	anim_obj ANIM_OBJ_HIT_YFIX, 128, 68, $0
+	anim_obj ANIM_OBJ_HIT_YFIX, 124, 68, $0
 	anim_wait 2
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 68, $0
+	anim_obj ANIM_OBJ_HIT_YFIX, 140, 68, $0
 	anim_wait 2
 	anim_sound 0, 0, SFX_TOXIC
 	anim_bgeffect ANIM_BG_START_WATER, $0, $0, $0

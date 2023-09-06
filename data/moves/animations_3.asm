@@ -2062,6 +2062,61 @@ BattleAnim_ShadowForce_branch_2:
 
 ; - Gen 9 Anims
 
+;BattleAnim_WaveCrash:
+;	anim_2gfx ANIM_GFX_CHARGE, ANIM_GFX_MISC_2
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+;	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_WATER
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_sound 0, 1, SFX_SURF
+;	anim_obj ANIM_OBJ_DROPLET_R_YFIX, 56, 102, $3b
+;	anim_obj ANIM_OBJ_DROPLET_L_YFIX, 36, 102, $24
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 56, 90, $30
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 40, 90, $20
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 60, 106, $10
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 36, 106, $0
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_DROPLET_R_YFIX, 56, 102, $3b
+;	anim_obj ANIM_OBJ_DROPLET_L_YFIX, 36, 102, $24
+;	anim_wait 48
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_BUBBLE, ANIM_GFX_AQUA_JET
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_wait 1
+;	anim_call BattleAnim_TargetObj_2Row_1
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_sound 0, 1, SFX_TACKLE
+;	anim_wait 16
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 1
+;	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $44, $2, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $08
+;.loop
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 132, 64, $5c
+;	anim_obj ANIM_OBJ_AQUA_JET, 120, 56, $0
+;	anim_obj ANIM_OBJ_AQUA_JET, 144, 56, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $e8
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 132, 64, $d0
+;	anim_obj ANIM_OBJ_AQUA_JET, 120, 56, $0
+;	anim_obj ANIM_OBJ_AQUA_JET, 144, 56, $0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $50
+;	anim_wait 6
+;	anim_loop 3, .loop
+;	anim_wait 32
+;	anim_ret
+
 ;BattleAnim_MakeitRain:
 ;	anim_4gfx ANIM_GFX_CHARGE, ANIM_GFX_COINS, ANIM_GFX_SPEED, ANIM_GFX_HIT_2
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
