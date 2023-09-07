@@ -379,6 +379,7 @@ BattleAnimFrameData:
 	dw .Frameset_DrillRun                ; BATTLEANIMFRAMESET_DRILL_RUN
 	dw .Frameset_StruggleBug             ; BATTLEANIMFRAMESET_STRUGGLE_BUG
 	dw .Frameset_EnergyOrbTinyLong       ; BATTLEANIMFRAMESET_ENERGY_ORB_TINY_LONG
+	dw .Frameset_DragonTail              ; BATTLEANIMFRAMESET_DRAGON_TAIL
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2620,3 +2621,10 @@ BattleAnimFrameData:
 .Frameset_EnergyOrbTinyLong:
 	battleoamframe BATTLEANIMOAMSET_20,  8
 	battleoamrestart
+
+.Frameset_DragonTail:
+	battleoamframe BATTLEANIMOAMSET_13E, 2
+	battleoamframe BATTLEANIMOAMSET_13F, 2
+	battleoamframe BATTLEANIMOAMSET_140, 2
+	battleoamframe BATTLEANIMOAMSET_141, 4
+	battleoamdelete
