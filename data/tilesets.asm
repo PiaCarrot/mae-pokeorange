@@ -29,4 +29,5 @@ Tilesets::
 	tileset TilesetValenciaMandarinNorth
 	tileset TilesetLab
 	tileset TilesetHouses
+	tileset TilesetCave1
 	assert_table_length NUM_TILESETS + 1

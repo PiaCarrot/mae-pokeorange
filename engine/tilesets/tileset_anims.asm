@@ -114,6 +114,28 @@ TilesetValenciaMandarinNorthAnim:
 	dw vTiles2 tile $7e, WriteTileFromBuffer
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
+	
+TilesetCave1Anim:
+	dw vTiles2 tile $7e, WriteTileToBuffer
+	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw ShoreWaterFrames, AnimateShoreWaterTiles
+	dw DiveWaterFrames, AnimateDiveWaterTiles
+	dw RockTopsFrames, AnimateRockTopsTiles
+	dw RockLeftFrames, AnimateRockLeftTiles
+	dw RockBotLeftFrames, AnimateRockBotLeftTiles
+	dw RockBotRightFrames, AnimateRockBotRightTiles
+	dw RockRightFrames, AnimateRockRightTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw WhirlpoolFramesTop, AnimateWhirlpoolTiles
+	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $7e, WriteTileFromBuffer
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 
 TilesetBattleTowerOutsideAnim:
 TilesetPlayersHouseAnim:

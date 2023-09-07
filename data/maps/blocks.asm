@@ -82,3 +82,6 @@ ValenciaNeighborHouse_Blocks:
 	
 TraditionalHouse_Blocks:
 	INCBIN "maps/TraditionalHouse.blk"
+	
+AlteringCave_Blocks:
+	INCBIN "maps/AlteringCave.blk"

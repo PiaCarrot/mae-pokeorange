@@ -161,3 +161,12 @@ INCBIN "data/tilesets/houses_metatiles.bin"
 
 TilesetHousesColl::
 INCLUDE "data/tilesets/houses_collision.asm"
+
+TilesetCave1GFX::
+INCBIN "gfx/tilesets/cave_1.2bpp.lz"
+
+TilesetCave1Meta::
+INCBIN "data/tilesets/cave_1_metatiles.bin"
+
+TilesetCave1Coll::
+INCLUDE "data/tilesets/cave_1_collision.asm"

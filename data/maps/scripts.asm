@@ -44,6 +44,7 @@ INCLUDE "maps/ValenciaNeighborHouse.asm"
 SECTION "Map Scripts 6", ROMX
 
 INCLUDE "maps/TangeloIsland.asm"
+INCLUDE "maps/AlteringCave.asm"
 
 
 SECTION "Map Scripts 7", ROMX

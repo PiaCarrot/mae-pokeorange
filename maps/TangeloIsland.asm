@@ -680,6 +680,7 @@ TangeloIsland_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  6,  7, ALTERING_CAVE, 1
 
 	def_coord_events
 	coord_event 31, 10, SCENE_TANGELO_ISLAND_MARILL_1, TangeloMarillNeedsHelpScript

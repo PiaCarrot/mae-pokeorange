@@ -135,4 +135,5 @@ ENDM
 	map_attributes LancesRoom, LANCES_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes IvysLab, IVYS_LAB, $00, 0
+	map_attributes AlteringCave, ALTERING_CAVE, $03, 0
 	map_attributes ValenciaNeighborHouse, VALENCIA_NEIGHBOR_HOUSE, $00, 0

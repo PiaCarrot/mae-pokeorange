@@ -173,5 +173,48 @@ JohtoGrassWildMons:
 	dbw 3, PARAS
 	dbw 3, HOOTHOOT
 	end_grass_wildmons
+	
+	def_grass_wildmons ALTERING_CAVE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 12, ZUBAT
+	dbw 13, ZUBAT
+	dbw 14, ZUBAT
+	dbw 15, ZUBAT
+	dbw 16, ZUBAT
+	dbw 17, ZUBAT
+	dbw 18, ZUBAT
+	dbw 12, ZUBAT
+	dbw 13, ZUBAT
+	dbw 14, ZUBAT
+	dbw 15, ZUBAT
+	dbw 16, ZUBAT
+	; day
+	dbw 12, ZUBAT
+	dbw 13, ZUBAT
+	dbw 14, ZUBAT
+	dbw 15, ZUBAT
+	dbw 16, ZUBAT
+	dbw 17, ZUBAT
+	dbw 18, ZUBAT
+	dbw 12, ZUBAT
+	dbw 13, ZUBAT
+	dbw 14, ZUBAT
+	dbw 15, ZUBAT
+	dbw 16, ZUBAT
+	; nite
+	dbw 12, ZUBAT
+	dbw 13, ZUBAT
+	dbw 14, ZUBAT
+	dbw 15, ZUBAT
+	dbw 16, ZUBAT
+	dbw 17, ZUBAT
+	dbw 18, ZUBAT
+	dbw 12, ZUBAT
+	dbw 13, ZUBAT
+	dbw 14, ZUBAT
+	dbw 15, ZUBAT
+	dbw 16, ZUBAT
+	end_grass_wildmons
 
 	db -1 ; end

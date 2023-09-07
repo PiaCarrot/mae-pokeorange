@@ -63,6 +63,7 @@ ENDM
 	
 	newgroup TANGELO
 	map_const TANGELO_ISLAND,							   20, 20
+	map_const ALTERING_CAVE,							   15, 14
 	endgroup
 
 	newgroup INDIGO                                               ;  4
