@@ -83,8 +83,8 @@ CheckForHiddenItems:
 	ret
 	
 RockItemEncounter:
-	ld a, [wMapTileset]
-	cp TILESET_VALENCIA_MANDARIN_NORTH
+	ld a, [wMapNumber]
+	cp MAP_ALTERING_CAVE
 	jr z, .SpecialRockItems
 	ld hl, .RockItems
 .continue
