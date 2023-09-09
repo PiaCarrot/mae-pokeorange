@@ -1830,6 +1830,56 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 24
 ;	anim_ret
 
+;BattleAnim_Scald:
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_MISC, ANIM_GFX_SMOKE_PUFF
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_VERY_BRIGHT
+;	anim_bgp $90
+;	anim_sound 0, 1, SFX_SURF
+;	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+;	anim_wait 4
+;.loop
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+;	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+;	anim_obj ANIM_OBJ_SCALD, 64, 88, $4
+;	anim_wait 4
+;	anim_loop 7, .loop
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 52, $0
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+;	anim_wait 7
+;	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+;	anim_sound 0, 1, SFX_POISON_STING
+;.loop2
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 120, 46, $30
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 144, 34, $30
+;	anim_wait 8
+;	anim_loop 6, .loop2
+;	anim_wait 8
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
+;	anim_ret
+
 ;BattleAnim_StruggleBug:
 ;	anim_2gfx ANIM_GFX_HIT_2, ANIM_GFX_OBJECTS_3,
 ;	anim_call BattleAnim_TargetObj_1Row_1
@@ -1870,7 +1920,7 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 16
 ;	anim_ret
 
-;BattleAnim_DragonRush:
+;BattleAnim_DragonTail:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_DRAGONBREATH
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
 ;	anim_3gfx ANIM_GFX_DRAGON_TAIL, ANIM_GFX_SMOKE_PUFF, ANIM_GFX_ROCKS
@@ -1995,8 +2045,112 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 32
 ;	anim_ret
 
+;BattleAnim_VCreate:
+;	anim_3gfx ANIM_GFX_V_CREATE, ANIM_GFX_FIRE, ANIM_GFX_CHARGE
+;	anim_battlergfx_1row
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
+;	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;.loop
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $38
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $20
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $8
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $10
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $28
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $18
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 48, 96, $30
+;	anim_wait 1
+;	anim_loop 3, .loop
+;.loop2
+;	anim_sound 0, 0, SFX_BURN
+;	anim_obj ANIM_OBJ_V_CREATE_FLAME_SMALL, 52, 104, $33
+;	anim_obj ANIM_OBJ_V_CREATE_FLAME_SMALL, 44, 104, $2d
+;	anim_wait 3
+;	anim_loop 16, .loop2
+;	anim_obj ANIM_OBJ_V_CREATE_V, 48, 92, $0
+;	anim_wait 32
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $0, $0
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_wait 16
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_clearobjs
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $60, $0
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $1, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $28
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $30
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $38
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $20
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $8
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_V_CREATE_FLAME_BIG, 136, 56, $36
+;	anim_obj ANIM_OBJ_V_CREATE_FLAME_BIG, 136, 56, $2a
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $18
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $4
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2b
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $14
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $3b
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $24
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $b
+;	anim_sound 0, 0, SFX_EMBER
+;	anim_bgp $1b
+;	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+;	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+;.loop3
+;	anim_obj ANIM_OBJ_V_CREATE_FLAME_BIG, 136, 60, $36
+;	anim_obj ANIM_OBJ_V_CREATE_FLAME_BIG, 136, 60, $2a
+;	anim_wait 3
+;	anim_loop 24, .loop3
+;	anim_call BattleAnim_ShowMon_0_1
+;	anim_ret
 
 ; - Gen 6 Anims
+
+;BattleAnim_FairyWind:
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PINK
+;	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HAZE
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+;.loop
+;	anim_obj ANIM_OBJ_SHOOTING_MIST, 64, 80, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_MIST, 64, 96, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_MIST, 64, 88, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+;	anim_wait 4
+;	anim_loop 2, .loop
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+;	anim_wait 64
+;	anim_ret
 
 ;BattleAnim_Boomburst:
 ;	anim_1gfx ANIM_GFX_BIG_WHIP

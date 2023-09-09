@@ -380,6 +380,9 @@ BattleAnimFrameData:
 	dw .Frameset_StruggleBug             ; BATTLEANIMFRAMESET_STRUGGLE_BUG
 	dw .Frameset_EnergyOrbTinyLong       ; BATTLEANIMFRAMESET_ENERGY_ORB_TINY_LONG
 	dw .Frameset_DragonTail              ; BATTLEANIMFRAMESET_DRAGON_TAIL
+	dw .Frameset_FlameSmallShort         ; BATTLEANIMFRAMESET_FLAME_SMALL_SHORT
+	dw .Frameset_FlameBigShort           ; BATTLEANIMFRAMESET_FLAME_BIG_SHORT
+	dw .Frameset_VCreateV                ; BATTLEANIMFRAMESET_V_CREATE_V
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2627,4 +2630,24 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_13F, 2
 	battleoamframe BATTLEANIMOAMSET_140, 2
 	battleoamframe BATTLEANIMOAMSET_141, 4
+	battleoamdelete
+
+.Frameset_FlameSmallShort:
+	battleoamframe BATTLEANIMOAMSET_0F,  1
+	battleoamframe BATTLEANIMOAMSET_10,  1
+	battleoamframe BATTLEANIMOAMSET_0F,  1
+	battleoamframe BATTLEANIMOAMSET_10,  1
+	battleoamdelete
+
+.Frameset_FlameBigShort:
+	battleoamframe BATTLEANIMOAMSET_0A,  1
+	battleoamframe BATTLEANIMOAMSET_0E,  1
+	battleoamframe BATTLEANIMOAMSET_0A,  1
+	battleoamframe BATTLEANIMOAMSET_0E,  1
+	battleoamframe BATTLEANIMOAMSET_0A,  1
+	battleoamframe BATTLEANIMOAMSET_0E,  1
+	battleoamdelete
+
+.Frameset_VCreateV:
+	battleoamframe BATTLEANIMOAMSET_142,  32
 	battleoamdelete

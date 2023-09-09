@@ -107,4 +107,5 @@ AnimObjGFX:
 	anim_obj_gfx  8, AnimObjCoinsGFX
 	anim_obj_gfx 18, AnimObjDrillGFX
 	anim_obj_gfx 15, AnimObjDragonTailGFX
+	anim_obj_gfx  8, AnimObjVCreateGFX
 	assert_table_length NUM_ANIM_GFX + 1
