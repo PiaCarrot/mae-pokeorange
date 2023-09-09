@@ -413,7 +413,14 @@ LoadWildMonDataPointer:
 	jr z, _WaterWildmonLookup
 
 _GrassWildmonLookup:
+	ld hl, AlteringCaveWildMons
+	push hl
+	ld hl, wSwarmFlags
+	bit SWARMFLAGS_ALTERING_CAVE_SWARM_F, [hl]
+	pop hl
+	jr nz, .nextgrass
 	ld hl, SwarmGrassWildMons
+.nextgrass
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
@@ -444,32 +451,10 @@ _JohtoWildmonCheck:
 
 _SwarmWildmonCheck:
 	call CopyCurrMapDE
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_DUNSPARCE_SWARM_F, [hl]
-	pop hl
-	jr z, .CheckYanma
-	ld a, [wDunsparceMapGroup]
-	cp d
-	jr nz, .CheckYanma
-	ld a, [wDunsparceMapNumber]
-	cp e
-	jr nz, .CheckYanma
-	call LookUpWildmonsForMapDE
-	jr nc, _NoSwarmWildmon
-	scf
-	ret
-
-.CheckYanma:
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_YANMA_SWARM_F, [hl]
-	pop hl
-	jr z, _NoSwarmWildmon
-	ld a, [wYanmaMapGroup]
+    ld a, [wSwarmMapGroup]
 	cp d
 	jr nz, _NoSwarmWildmon
-	ld a, [wYanmaMapNumber]
+	ld a, [wSwarmMapNumber]
 	cp e
 	jr nz, _NoSwarmWildmon
 	call LookUpWildmonsForMapDE
@@ -1007,4 +992,5 @@ INCLUDE "data/wild/johto_water.asm"
 INCLUDE "data/wild/kanto_grass.asm"
 INCLUDE "data/wild/kanto_water.asm"
 INCLUDE "data/wild/swarm_grass.asm"
+INCLUDE "data/wild/altering_cave.asm"
 INCLUDE "data/wild/swarm_water.asm"

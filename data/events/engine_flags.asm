@@ -85,7 +85,7 @@ EngineFlags:
 
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F
-	engine_flag wDailyFlags1, DAILYFLAGS1_FISH_SWARM_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_SWARM_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_TIME_CAPSULE_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_ALL_FRUIT_TREES_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_GOT_SHUCKIE_TODAY_F
@@ -174,7 +174,7 @@ EngineFlags:
 
 	engine_flag wPlayerSpriteSetupFlags, PLAYERSPRITESETUP_FEMALE_TO_MALE_F
 
-	engine_flag wSwarmFlags, SWARMFLAGS_DUNSPARCE_SWARM_F
+	engine_flag wSwarmFlags, SWARMFLAGS_ALTERING_CAVE_SWARM_F
 	engine_flag wSwarmFlags, SWARMFLAGS_YANMA_SWARM_F
 
 	assert_table_length NUM_ENGINE_FLAGS
