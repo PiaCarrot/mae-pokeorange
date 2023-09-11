@@ -2312,6 +2312,27 @@ BattleAnim_ShadowForce_branch_2:
 
 ; - Gen 7 Anims
 
+;BattleAnim_Leafage:
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+;	anim_1gfx ANIM_GFX_PLANT
+;	anim_sound 0, 0, SFX_VINE_WHIP
+;.loop
+;	anim_sound 3, 0, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_LEAFAGE, 64, 80, $18
+;	anim_wait 8
+;	anim_sound 3, 0, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_LEAFAGE, 64, 96, $18
+;	anim_wait 8
+;	anim_sound 3, 0, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_LEAFAGE, 64, 88, $18
+;	anim_wait 8
+;	anim_sound 3, 0, SFX_VINE_WHIP
+;	anim_obj ANIM_OBJ_LEAFAGE, 64, 104, $18
+;	anim_wait 8
+;	anim_loop 2, .loop
+;	anim_wait 32
+;	anim_ret
+
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
 ;	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
