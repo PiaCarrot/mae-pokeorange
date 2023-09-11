@@ -1880,6 +1880,59 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
 ;	anim_ret
 
+;BattleAnim_VoltSwitch:
+;	anim_3gfx ANIM_GFX_CHARGE, ANIM_GFX_VOLT_SWITCH, ANIM_GFX_LIGHTNING
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_battlergfx_2row
+;	anim_sound 0, 0, SFX_WARP_TO
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $38
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $20
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $8
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $10
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $28
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $0
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $18
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $30
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_ZAP_CANNON
+;	anim_obj ANIM_OBJ_VOLT_SWITCH, 64, 92, $4
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 64, 92, $5c
+;	anim_wait 2
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 76, 84, $d0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 108, 76, $e8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 112, 68, $50
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 100, 60, $5c
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_THUNDERSHOCK
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $10, $FF
+;.loop
+;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 132, 56, $5c
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 132, 56, $e8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 128, 56, $d0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 156, 56, $50
+;	anim_wait 2
+;	anim_loop 8, .loop
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 4
+;	anim_ret
+
 ;BattleAnim_StruggleBug:
 ;	anim_2gfx ANIM_GFX_HIT_2, ANIM_GFX_OBJECTS_3,
 ;	anim_call BattleAnim_TargetObj_1Row_1
@@ -2128,6 +2181,44 @@ BattleAnim_ShadowForce_branch_2:
 
 ; - Gen 6 Anims
 
+
+;BattleAnim_FreezeDry:
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+;	anim_2gfx ANIM_GFX_ICE, ANIM_GFX_HAZE
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+;	anim_clearenemyhud
+;	anim_sound 0, 0, SFX_SURF
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_ICE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT, $0, $0, $40
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_ICE_BUILDUP, 136, 74, $10
+;.loop
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
+;	anim_wait 8
+;	anim_loop 2, .loop
+;	anim_wait 64
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_wait 16
+;	anim_ret
+
 ;BattleAnim_FairyWind:
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PINK
@@ -2186,6 +2277,36 @@ BattleAnim_ShadowForce_branch_2:
 ;	anim_wait 10
 ;	anim_loop 2, .loop
 ;	anim_wait 64
+;	anim_ret
+
+;BattleAnim_Nuzzle:
+;	anim_2gfx ANIM_GFX_HIT_2, ANIM_GFX_LIGHTNING 
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 0, 0, SFX_ZAP_CANNON
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+;	anim_obj ANIM_OBJ_THUNDER_WAVE, 48, 92, $0
+;	anim_wait 24
+;	anim_setobj $1, $3
+;	anim_wait 1
+;	anim_call BattleAnim_TargetObj_2Row_1
+;	anim_sound 0, 0, SFX_SQUEAK
+;	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, $1, $0
+;	anim_wait 16
+;	anim_sound 0, 0, SFX_SQUEAK
+;	anim_wait 16
+;	anim_incbgeffect ANIM_BG_WOBBLE_MON
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 1
+;	anim_sound 0, 0, SFX_POUND
+;	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_ZAP_CANNON
+;	anim_obj ANIM_OBJ_THUNDERSHOCK_SPARKS, 136, 56, $0
+;	anim_wait 32
 ;	anim_ret
 
 
