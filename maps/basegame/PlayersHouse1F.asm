@@ -29,7 +29,7 @@ MeetMomRightScript:
 .OnRight:
 	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
 MeetMomScript:
-;	blackoutmod PLAYERS_HOUSE_2F
+	blackoutmod PLAYERS_HOUSE_2F
 	opentext
 	writetext ElmsLookingForYouText
 	loadmenu .AltStarterMenuHeader
