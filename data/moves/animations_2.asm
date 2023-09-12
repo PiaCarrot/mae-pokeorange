@@ -331,7 +331,7 @@ BattleAnim_Swallow:
 	anim_obj ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 68, 30, $10
 	anim_wait 2
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_jump BattleAnim_Glimmer_branch
+	anim_jump BattleAnim_Glimmer_branch2
 
 BattleAnim_HeatWave:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_HEAT_WAVE
@@ -1036,7 +1036,7 @@ BattleAnim_Refresh:
 	anim_wait 11
 	anim_loop 8, .loop
 	anim_wait 128
-	anim_jump BattleAnim_Glimmer_branch
+	anim_jump BattleAnim_Glimmer_branch2
 
 BattleAnim_Grudge:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
@@ -1413,7 +1413,7 @@ BattleAnim_SlackOff:
 	anim_wait 1
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 ; fallthrough
-BattleAnim_Glimmer_branch:
+BattleAnim_Glimmer_branch2:
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
 	anim_wait 5
@@ -1784,7 +1784,7 @@ BattleAnim_Aromatherapy:
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 64
-	anim_jump BattleAnim_Glimmer_branch
+	anim_jump BattleAnim_Glimmer_branch2
 
 BattleAnim_FakeTears:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
@@ -3016,7 +3016,7 @@ BattleAnim_Roost:
 	anim_wait 130
 	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_jump BattleAnim_Glimmer_branch
+	anim_jump BattleAnim_Glimmer_branch2
 
 BattleAnim_Gravity:
 	anim_clearenemyhud

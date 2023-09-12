@@ -1141,8 +1141,8 @@ BattleAnimFrameData:
 	battleoamend
 
 .Frameset_Heart:
-	battleoamframe BATTLEANIMOAMSET_86,  8
-	battleoamend
+	battleoamframe BATTLEANIMOAMSET_86,  60
+	battleoamdelete
 
 .Frameset_SprinningBone:
 	battleoamframe BATTLEANIMOAMSET_97,  1
