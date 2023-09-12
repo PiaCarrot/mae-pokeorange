@@ -1710,6 +1710,31 @@ BattleAnim_Glimmer_branch3:
 ;	anim_clearobjs
 ;	anim_ret
 
+;BattleAnim_LeafTornado:
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_PLANT, ANIM_GFX_WIND
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+;.loop
+;	anim_sound 0, 0, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_LEAF_TORNADO, 48, 104, $0
+;	anim_wait 6
+;	anim_loop 8, .loop
+;	anim_wait 32
+;.loop2
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_LEAF_TORNADO, 136, 62, $0
+;	anim_wait 6
+;	anim_loop 8, .loop2
+;.loop3
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_GUST, 136, 72, $0
+;	anim_wait 6
+;	anim_loop 9, .loop3
+;	anim_obj ANIM_OBJ_HIT_YFIX, 144, 64, $18
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 32, $18
+;	anim_wait 16
+;	anim_ret
+
 ;BattleAnim_Psystrike:
 ;	anim_4gfx ANIM_GFX_PSYSTRIKE, ANIM_GFX_CHARGE, ANIM_GFX_GLOW, ANIM_GFX_SPEED
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
@@ -1794,6 +1819,37 @@ BattleAnim_Glimmer_branch3:
 ;	anim_wait 16
 ;	anim_clearobjs
 ;	anim_wait 1
+;	anim_ret
+
+;BattleAnim_FlameCharge:
+;	anim_1gfx ANIM_GFX_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;.loop
+;	anim_sound 6, 2, SFX_EMBER
+;	anim_obj ANIM_OBJ_FLAME_CHARGE, 40, 86, $10
+;	anim_wait 6
+;	anim_sound 6, 2, SFX_EMBER
+;	anim_obj ANIM_OBJ_FLAME_CHARGE, 56, 86, $90
+;	anim_wait 6
+;	anim_loop 5, .loop
+;	anim_wait 80
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_wait 1
+;	anim_clearobjs
+;	anim_call BattleAnim_TargetObj_1Row_1
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_wait 4
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+;	anim_sound 0, 1, SFX_EMBER
+;	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $1
+;	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $4
+;	anim_obj ANIM_OBJ_FIRE_BLAST, 136, 48, $5
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_wait 4
+;	anim_incobj 11
+;	anim_wait 8
 ;	anim_ret
 
 ;BattleAnim_Coil:
