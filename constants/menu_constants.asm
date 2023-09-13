@@ -111,4 +111,5 @@ DEF NUM_PARTYMENUACTIONS EQU const_value
 	const NAME_FRIEND
 	const NAME_6 ; duplicate of NAME_MON
 	const NAME_7 ; duplicate of NAME_MON
+	const NAME_MYSTERY_GIFT
 DEF NUM_NAME_TYPES EQU const_value

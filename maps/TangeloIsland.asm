@@ -338,10 +338,85 @@ TraceyTangeloScript:
 	
 TangeloIslandSign:
 ;	jumptext TangeloIslandSignText
-	clearevent EVENT_OBTAINED_GS_BALL
-	setscene SCENE_TANGELO_GS_BALL
-	giveitem PINKAN_BERRY
+;	clearevent EVENT_OBTAINED_GS_BALL
+;	setscene SCENE_TANGELO_GS_BALL
+;	giveitem PINKAN_BERRY
+	opentext
+	writetext BootedTerminalText
+	playsound SFX_BOOT_PC
+	waitsfx
+	writetext MysteryGiftTerminalText
+	yesorno
+	iftrue .TerminalAccept
+	playsound SFX_SHUT_DOWN_PC
+	waitsfx
+	closetext
 	end
+	
+.TerminalAccept:
+	special NameMysteryGift
+	scall MysteryGiftCheckPassword
+	end
+	
+MysteryGiftCheckPassword:
+	callasm .eventmeltan1
+	iftrue .eventmeltan2
+	; you can continue to call event checks for more passwords
+	playsound SFX_WRONG
+	opentext
+	writetext TerminalIncorrectCode
+	waitbutton
+	closetext
+	end
+
+.eventmeltan1
+	xor a
+	ld [wScriptVar], a
+	ld de, MeltanCode
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.eventmeltan2
+	setevent EVENT_MELTAN_CODE
+	playsound SFX_ELEVATOR_END
+	opentext
+	writetext TerminalCodeAccepted
+	waitbutton
+	closetext
+	end
+	
+MeltanCode:
+    db "melonCRT!"
+	
+BootedTerminalText:
+	text "<PLAYER> booted up"
+	line "the terminal."
+	done
+	
+MysteryGiftTerminalText:
+	text "Welcome to the"
+	line "MYSTERY GIFT"
+	cont "TERMINAL. Would"
+	cont "you like to input"
+	cont "a code?"
+	done
+	
+TerminalIncorrectCode:
+	text "The code was not"
+	line "recognized. Try"
+	cont "again later."
+	done
+	
+TerminalCodeAccepted:
+	text "Code accepted."
+	line "Thank you for your"
+	cont "usage."
+	done
 	
 TangeloCenterSign:
 	jumptext TangeloCenterSignText

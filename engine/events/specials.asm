@@ -410,3 +410,15 @@ TrainerHouse:
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	ld [wScriptVar], a
 	jmp CloseSRAM
+	
+NameMysteryGift:
+	ld b, NAME_MYSTERY_GIFT
+	ld de, wGreensName
+	farcall _NamingScreen
+	ld hl, wGreensName
+	ld de, .DefaultName
+	call InitName
+	ret
+	
+.DefaultName:
+	db "@"
