@@ -359,8 +359,8 @@ TangeloIslandSign:
 	end
 	
 MysteryGiftCheckPassword:
-	callasm .eventmeltan1
-	iftrue .eventmeltan2
+	callasm .eventzigzagoon1
+	iftrue .eventzigzagoon2
 	; you can continue to call event checks for more passwords
 	playsound SFX_WRONG
 	opentext
@@ -369,10 +369,10 @@ MysteryGiftCheckPassword:
 	closetext
 	end
 
-.eventmeltan1
+.eventzigzagoon1
 	xor a
 	ld [wScriptVar], a
-	ld de, MeltanCode
+	ld de, ZigzagoonCode
 	ld hl, wGreensName ; check inputted password
 	ld c, 4
 	call CompareBytes
@@ -381,8 +381,8 @@ MysteryGiftCheckPassword:
 	ld [wScriptVar], a
 	ret
 
-.eventmeltan2
-	setevent EVENT_MELTAN_CODE
+.eventzigzagoon2
+	setevent EVENT_LUNA_ZIGZAGOON_CODE
 	playsound SFX_ELEVATOR_END
 	opentext
 	writetext TerminalCodeAccepted
@@ -390,8 +390,8 @@ MysteryGiftCheckPassword:
 	closetext
 	end
 	
-MeltanCode:
-    db "melonCRT!"
+ZigzagoonCode:
+    db "Rosebud"
 	
 BootedTerminalText:
 	text "<PLAYER> booted up"
@@ -416,6 +416,72 @@ TerminalCodeAccepted:
 	text "Code accepted."
 	line "Thank you for your"
 	cont "usage."
+	done
+	
+TestNpcScript:
+	faceplayer
+	opentext
+	writetext MysteryGiftGiverText1
+	waitbutton
+.CheckCodes:
+	checkevent EVENT_LUNA_ZIGZAGOON_CODE
+   iftrue .ZigzagoonGiftCheck
+;.ExampleCode
+;	checkevent EVENT_MELTAN_CODE
+;	iftrue .MeltanGiftCheck
+.NoCodes:
+	writetext MysteryGiftGiverNoCodeText
+	waitbutton
+	closetext
+	end
+	
+.ZigzagoonGiftCheck:
+	checkevent EVENT_RECEIVED_ZIGZAGOON_GIFT
+	iftrue .NoCodes ;this would point to the next code check if there is one
+	writetext MysteryGiftGiverText2
+	waitbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	writetext MysteryGiftReceivedZigzagoonText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	special GiveMysteryGiftZigzagoon
+	setevent EVENT_RECEIVED_ZIGZAGOON_GIFT
+	sjump .NoCodes ;this would point to the next code check if there is one
+	
+.PartyFull:
+	writetext MysteryGiftPartyFullText
+	waitbutton
+	closetext
+	end
+	
+MysteryGiftGiverText1:
+	text "Oh, hi!"
+	line "You're <PLAYER>?"
+	
+	para "Let's see."
+	done
+	
+MysteryGiftGiverNoCodeText:
+	text "Sorry, I've got"
+	line "nothing for you."
+	done
+	
+MysteryGiftGiverText2:
+	text "Ah, I do have"
+	line "something for you!"
+	done
+	
+MysteryGiftReceivedZigzagoonText:
+	text "<PLAYER> received"
+	line "ZIGZAGOON!"
+	done
+	
+MysteryGiftPartyFullText:
+	text "Your party is"
+	line "full. Please make"
+	cont "room and try"
+	cont "again."
 	done
 	
 TangeloCenterSign:
@@ -788,3 +854,4 @@ TangeloIsland_MapEvents:
 	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloGSBallScript, EVENT_OBTAINED_GS_BALL
 	object_event 21, 11, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBerrySellerScript, -1
 	object_event 26,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloBallGuyScript, -1
+	object_event 25, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TestNpcScript, -1

@@ -1,8 +1,75 @@
 GiveDratini:
-; if wScriptVar is 0 or 1, change the moveset of the last Dratini in the party.
-;  0: give it a special moveset with Extremespeed.
-;  1: give it the normal moveset of a level 15 Dratini.
+	ret
+	
+DEF LUNA_OT_ID EQU 01999
 
+GiveMysteryGiftZigzagoon:
+; Adding to the party.
+	xor a ; PARTYMON
+	ld [wMonType], a
+
+; Level 5 ZIGZAGOON.
+	ld hl, ZIGZAGOON
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	ld a, 5
+	ld [wCurPartyLevel], a
+
+	predef TryAddMonToParty
+	jr nc, .NotGiven
+
+; Caught data.
+	ld b, CAUGHT_BY_GIRL
+	farcall SetGiftPartyMonCaughtData
+
+; Holding a Sitrus Berry.
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	dec a
+	push af
+	push bc
+	ld hl, wPartyMon1Item
+	call AddNTimes
+	ld [hl], SITRUS_BERRY
+	pop bc
+	pop af
+
+; OT ID.
+	ld hl, wPartyMon1ID
+	call AddNTimes
+	ld a, HIGH(LUNA_OT_ID)
+	ld [hli], a
+	ld [hl], LOW(LUNA_OT_ID)
+
+; Nickname.
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonNicknames
+	call SkipNames
+	ld de, SpecialZigzagoonNickname
+	call CopyName2
+
+; OT.
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonOTs
+	call SkipNames
+	ld de, SpecialZigzagoonOT
+	call CopyName2
+	call EventZigzagoonMoveset
+
+.NotGiven:
+	xor a
+	ld [wScriptVar], a
+	ret
+
+SpecialZigzagoonOT:
+	db "LUNA@"
+
+SpecialZigzagoonNickname:
+	db "ROSEBUD@"
+	
+EventZigzagoonMoveset: ; 0x8b1ce
 	ld a, [wScriptVar]
 	cp $2
 	ret nc
@@ -13,12 +80,12 @@ GiveDratini:
 	ld a, [bc]
 	ld c, a
 	push hl
-	ld hl, DRATINI
+	ld hl, ZIGZAGOON
 	call GetPokemonIDFromIndex
 	pop hl
 	ld b, a
 	ld de, PARTYMON_STRUCT_LENGTH
-.CheckForDratini:
+.CheckForZigzagoon:
 ; start at the end of the party and search backwards for a Dratini
 	ld a, [hl]
 	cp b
@@ -30,7 +97,7 @@ GiveDratini:
 	sbc d
 	ld h, a
 	dec c
-	jr nz, .CheckForDratini
+	jr nz, .CheckForZigzagoon
 	ret
 
 .GiveMoveset:
@@ -77,17 +144,17 @@ GiveDratini:
 .Movesets:
 .Moveset0:
 ; Dratini does not normally learn Extremespeed. This is a special gift.
-	dw WRAP
-	dw THUNDER_WAVE
-	dw TWISTER
-	dw EXTREMESPEED
+	dw TACKLE
+	dw GROWL
+	dw TAIL_WHIP
+	dw KNOCK_OFF
 	dw 0
 .Moveset1:
 ; This is the normal moveset of a level 15 Dratini
-	dw WRAP
-	dw LEER
-	dw THUNDER_WAVE
-	dw TWISTER
+	dw TACKLE
+	dw GROWL
+	dw TAIL_WHIP
+	dw KNOCK_OFF
 	dw 0
 
 .GetNthPartyMon:

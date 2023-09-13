@@ -3,7 +3,7 @@ MomPhoneCalleeScript:
 	iftrue .started_quest
 	checkevent EVENT_DUDE_TALKED_TO_YOU
 	iftrue MomPhoneLectureScript
-	checkevent EVENT_MELTAN_CODE
+	checkevent EVENT_LUNA_ZIGZAGOON_CODE
 	iftrue MomPhoneNoGymQuestScript
 	checkevent EVENT_GOT_A_POKEMON_FROM_IVY
 	iftrue MomPhoneNoPokedexScript

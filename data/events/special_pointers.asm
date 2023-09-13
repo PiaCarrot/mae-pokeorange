@@ -189,3 +189,4 @@ SpecialsPointers::
 ; Orange
 
 	add_special NameMysteryGift
+	add_special GiveMysteryGiftZigzagoon
