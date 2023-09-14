@@ -2314,7 +2314,6 @@ BattleAnim_Glimmer_branch3:
 ;	anim_2gfx ANIM_GFX_ICE, ANIM_GFX_HAZE
 ;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 ;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
-;	anim_clearenemyhud
 ;	anim_sound 0, 0, SFX_SURF
 ;	anim_obj ANIM_OBJ_CLEAR_SMOG_RISE, 132, 60, $20
 ;	anim_wait 8

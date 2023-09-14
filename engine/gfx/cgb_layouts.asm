@@ -176,19 +176,19 @@ _CGB_FinishBattleScreenLayout:
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call ByteFill
 	hlcoord 0, 4, wAttrmap
-	lb bc, 8, 10
+	lb bc, 8, 9
 	ld a, PAL_BATTLE_BG_PLAYER
 	call FillBoxCGB
-	hlcoord 10, 0, wAttrmap
-	lb bc, 7, 10
+	hlcoord 11, 0, wAttrmap
+	lb bc, 7, 9
 	ld a, PAL_BATTLE_BG_ENEMY
 	call FillBoxCGB
 	hlcoord 0, 0, wAttrmap
-	lb bc, 4, 10
+	lb bc, 4, 11
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call FillBoxCGB
-	hlcoord 10, 7, wAttrmap
-	lb bc, 5, 10
+	hlcoord 11, 7, wAttrmap
+	lb bc, 5, 9
 	ld a, PAL_BATTLE_BG_PLAYER_HP
 	call FillBoxCGB
 	hlcoord 10, 11, wAttrmap
