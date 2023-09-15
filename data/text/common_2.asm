@@ -317,7 +317,11 @@ _BlindingFlashText::
 	text_promptbutton
 	text_end
 
-	text_end ; unreferenced
+_UseDefogText::
+	text_ram wStringBuffer2
+	text " used"
+	line "DEFOG!"
+	prompt
 
 _UsedSurfText::
 	text_ram wStringBuffer2

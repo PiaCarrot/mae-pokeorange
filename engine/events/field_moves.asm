@@ -18,6 +18,17 @@ BlindingFlash:
 	call GetSGBLayout
 	farcall LoadOW_BGPal7
 	farjp FadeInPalettes
+	
+Deepfog:
+	farcall FadeOutPalettes
+	ld hl, wStatusFlags
+	set STATUSFLAGS2_DEFOG_F, [hl]
+	farcall ReplaceTimeOfDayPals
+	farcall UpdateTimeOfDayPal
+	ld b, SCGB_MAPPALS
+	call GetSGBLayout
+	farcall LoadOW_BGPal7
+	farjp FadeInPalettes
 
 ShakeHeadbuttTree:
 	farcall ClearSpriteAnims

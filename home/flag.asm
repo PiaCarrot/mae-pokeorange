@@ -22,6 +22,8 @@ ResetFlashIfOutOfCave::
 .outdoors
 	ld hl, wStatusFlags
 	res STATUSFLAGS_FLASH_F, [hl]
+	ld hl, wStatusFlags2
+	res STATUSFLAGS2_DEFOG_F, [hl]
 	ret
 
 EventFlagAction::

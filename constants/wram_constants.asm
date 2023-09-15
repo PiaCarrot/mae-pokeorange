@@ -118,18 +118,20 @@ DEF INIT_MON_LIST        EQU 5
 	const MORN_F     ; 0
 	const DAY_F      ; 1
 	const NITE_F     ; 2
-	const DARKNESS_F ; 3
+	const EVE_F      ; 3
 DEF NUM_DAYTIMES EQU const_value
 
 DEF MORN     EQU 1 << MORN_F
 DEF DAY      EQU 1 << DAY_F
 DEF NITE     EQU 1 << NITE_F
-DEF DARKNESS EQU 1 << DARKNESS_F
+DEF EVE      EQU 1 << EVE_F
 
-DEF ANYTIME EQU MORN | DAY | NITE
+DEF ANYTIME EQU MORN | DAY | EVE | NITE
 
 ; wTimeOfDayPalset::
-DEF DARKNESS_PALSET EQU (DARKNESS_F << 6) | (DARKNESS_F << 4) | (DARKNESS_F << 2) | DARKNESS_F
+; Must be different from any in ReplaceTimeOfDayPals.BrightnessLevels
+DEF DARKNESS_PALSET EQU (MORN_F << 6) | (DAY_F << 4) | (EVE_F << 2) | NITE_F
+DEF FOGGY_PALSET    EQU (MORN_F << 6) | (DAY_F << 4) | (EVE_F << 2) | NITE_F
 
 ; wBattleAnimFlags::
 	const_def
@@ -200,7 +202,7 @@ DEF SPAWN_RED   EQU 2
 	const STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F ; 0
 	const STATUSFLAGS2_SAFARI_GAME_F            ; 1
 	const STATUSFLAGS2_BUG_CONTEST_TIMER_F      ; 2
-	const STATUSFLAGS2_UNUSED_3_F               ; 3
+	const STATUSFLAGS2_DEFOG_F                  ; 3
 	const STATUSFLAGS2_BIKE_SHOP_CALL_F         ; 4
 	const STATUSFLAGS2_UNUSED_5_F               ; 5
 	const STATUSFLAGS2_REACHED_GOLDENROD_F      ; 6

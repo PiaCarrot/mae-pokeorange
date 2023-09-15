@@ -1855,3 +1855,49 @@ CantCutScript:
 CanCutText:
 	text_far _CanCutText
 	text_end
+	
+DefogFunction:
+	call .CheckUseDefog
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.CheckUseDefog:
+	ld a, [wTimeOfDayPalset]
+	cp FOGGY_PALSET
+	jr nz, .notafoggyplace
+.useflash
+	call UseDefog
+	ld a, $81
+	ret
+
+.notafoggyplace
+	call FieldMoveFailed
+	ld a, $80
+	ret
+
+UseDefog:
+	ld hl, Script_UseDefog
+	jmp QueueScript
+
+Script_UseDefog:
+	reloadmappart
+	special UpdateTimePals
+	writetext UseDefogTextScript
+	callasm Deepfog
+	closetext
+	end
+
+UseDefogTextScript:
+	callasm GetPartyNickname
+	text_far _UseDefogText
+	text_asm
+	call WaitSFX
+	ld de, SFX_FLY
+	call PlaySFX
+	call WaitSFX
+	ld hl, .BlankText
+	ret
+
+.BlankText:
+	text_end

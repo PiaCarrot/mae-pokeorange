@@ -192,13 +192,13 @@ EvolveAfterBattle_MasterLoop:
 ; TR_NITE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jmp nz, .skip_evolution_species
+	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
 	jmp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jmp z, .skip_evolution_species
+	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
 	jmp .proceed
 
 .happiness_move_type

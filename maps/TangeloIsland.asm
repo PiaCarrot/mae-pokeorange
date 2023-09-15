@@ -521,9 +521,9 @@ TangeloBallGuyScript:
 	opentext
 	checkevent EVENT_GOT_BALL_FROM_GUY_TANGELO
 	iftrue .alreadygotaball
-	checktime DAY
+	checktime MORN | DAY
 	iftrue .day_morn
-	checktime NITE
+	checktime EVE | NITE
 	iftrue .nite
 .day_morn
 	writetext TangeloBallGuyDayText
