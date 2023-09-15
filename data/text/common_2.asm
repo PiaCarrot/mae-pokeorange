@@ -318,10 +318,10 @@ _BlindingFlashText::
 	text_end
 
 _UseDefogText::
-	text_ram wStringBuffer2
-	text " used"
-	line "DEFOG!"
-	prompt
+	text "The thick fog"
+	line "dissipates!@"
+	text_promptbutton
+	text_end
 
 _UsedSurfText::
 	text_ram wStringBuffer2

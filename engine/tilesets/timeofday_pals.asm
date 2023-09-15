@@ -182,14 +182,6 @@ endr
 
 ReplaceTimeOfDayPals:
 	ld a, [wMapTimeOfDay]
-	bit IN_FOGGY_F, a
-	jr z, .not_foggy
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_DEFOG_F, a
-	jr nz, .not_foggy
-	ld a, FOGGY_PALSET
-	jr .done
-.not_foggy
 	bit IN_DARKNESS_F, a
 	jr z, .not_dark
 	ld a, [wStatusFlags]
@@ -199,6 +191,15 @@ ReplaceTimeOfDayPals:
 	jr .done
 
 .not_dark:
+	ld a, [wMapTimeOfDay]
+	bit IN_FOGGY_F, a
+	jr z, .not_foggy
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_DEFOG_F, a
+	jr nz, .not_foggy
+	ld a, FOGGY_PALSET
+	jr .done
+.not_foggy
 	ld hl, .BrightnessLevels
 	ld a, [wMapTimeOfDay]
 	maskbits NUM_MAP_PALETTES

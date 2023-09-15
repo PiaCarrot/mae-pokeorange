@@ -146,15 +146,15 @@ EventZigzagoonMoveset: ; 0x8b1ce
 ; Dratini does not normally learn Extremespeed. This is a special gift.
 	dw TACKLE
 	dw GROWL
-	dw TAIL_WHIP
-	dw KNOCK_OFF
+	dw DEFOG
+	dw FLASH
 	dw 0
 .Moveset1:
 ; This is the normal moveset of a level 15 Dratini
 	dw TACKLE
 	dw GROWL
-	dw TAIL_WHIP
-	dw KNOCK_OFF
+	dw DEFOG
+	dw FLASH
 	dw 0
 
 .GetNthPartyMon:
