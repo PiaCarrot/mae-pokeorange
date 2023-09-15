@@ -21,7 +21,7 @@ BlindingFlash:
 	
 Deepfog:
 	farcall FadeOutPalettes
-	ld hl, wStatusFlags
+	ld hl, wStatusFlags2
 	set STATUSFLAGS2_DEFOG_F, [hl]
 	farcall ReplaceTimeOfDayPals
 	farcall UpdateTimeOfDayPal

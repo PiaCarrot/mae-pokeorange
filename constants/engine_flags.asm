@@ -70,8 +70,6 @@
 	const ENGINE_FLYPOINT_BATTLE_TOWER
 ; wLuckyNumberShowFlag
 	const ENGINE_LUCKY_NUMBER_SHOW
-; wStatusFlags2
-	const ENGINE_4F
 ; wDailyFlags1
 	const ENGINE_KURT_MAKING_BALLS
 	const ENGINE_DAILY_BUG_CONTEST

@@ -81,8 +81,6 @@ EngineFlags:
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_DEFOG_F
-
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_SWARM_F
