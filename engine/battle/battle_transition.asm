@@ -677,6 +677,11 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr nz, .not_dark
 	ld hl, .darkpals
 .not_dark
+	ld a, [wTimeOfDayPalset]
+	cp FOGGY_PALSET
+	jr nz, .not_foggy
+	ld hl, .foggypals
+.not_foggy
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
@@ -725,6 +730,9 @@ INCLUDE "gfx/overworld/trainer_battle.pal"
 
 .darkpals:
 INCLUDE "gfx/overworld/trainer_battle_dark.pal"
+
+.foggypals:
+INCLUDE "gfx/overworld/trainer_battle_fog.pal"
 
 .loadpokeballgfx:
 	ld a, [wOtherTrainerClass]

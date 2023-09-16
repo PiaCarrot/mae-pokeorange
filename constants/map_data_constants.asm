@@ -40,7 +40,7 @@ DEF NUM_MAP_PALETTES EQU const_value
 
 IN_DARKNESS_F EQU 3
 IN_DARKNESS   EQU 1 << IN_DARKNESS_F ; masked with a PALETTE_* constant
-IN_FOGGY_F    EQU 3
+IN_FOGGY_F    EQU 4
 IN_FOGGY      EQU 1 << IN_FOGGY_F ; masked with a PALETTE_* constant
 
 ; FishGroups indexes (see data/wild/fish.asm)
