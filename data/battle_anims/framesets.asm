@@ -384,6 +384,7 @@ BattleAnimFrameData:
 	dw .Frameset_FlameBigShort           ; BATTLEANIMFRAMESET_FLAME_BIG_SHORT
 	dw .Frameset_VCreateV                ; BATTLEANIMFRAMESET_V_CREATE_V
 	dw .Frameset_VoltSwitch              ; BATTLEANIMFRAMESET_VOLT_SWITCH
+	dw .Frameset_BigWhip2                ; BATTLEANIMFRAMESET_BIG_WHIP_2
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2660,4 +2661,15 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_146,  1
 	battleoamframe BATTLEANIMOAMSET_147,  1
 	battleoamframe BATTLEANIMOAMSET_148,  1
+	battleoamrestart
+
+.Frameset_BigWhip2:
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_E5,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_Y_FLIP
+	battleoamframe BATTLEANIMOAMSET_C4,  1
+	battleoamframe BATTLEANIMOAMSET_FC,  1
+	battleoamframe BATTLEANIMOAMSET_E5,  1
+	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_C4,  1, OAM_X_FLIP
 	battleoamrestart

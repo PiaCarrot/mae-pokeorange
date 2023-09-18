@@ -1710,6 +1710,19 @@ BattleAnim_Glimmer_branch3:
 ;	anim_clearobjs
 ;	anim_ret
 
+;BattleAnim_SacredSword:
+;	anim_2gfx ANIM_GFX_BIG_WHIP, ANIM_GFX_CUT
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $8, $0
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_SACRED_SWORD_CRESCENT, 164, 8, $18
+;	anim_wait 12
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_sound 0, 1, SFX_CUT
+;	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+;	anim_wait 36
+;	anim_ret
+
 ;BattleAnim_LeafTornado:
 ;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_PLANT, ANIM_GFX_WIND
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
@@ -1733,6 +1746,58 @@ BattleAnim_Glimmer_branch3:
 ;	anim_wait 8
 ;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 32, $18
 ;	anim_wait 16
+;	anim_ret
+
+;BattleAnim_NightDaze:
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_DARK_PULSE
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_OBJECTS_4, ANIM_GFX_SMOKE_PUFF_BIG
+;	anim_bgp $1b
+;	anim_sound 0, 1, SFX_SLUDGE_BOMB
+;.loop
+;	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 52, 96, $2
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 40, 100, $28
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 48, 84, $38
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 56, 100, $8
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 44, 88, $30
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_LAVA_PLUME_SMOKE, 48, 108, $18
+;	anim_wait 4
+;	anim_loop 2, .loop
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $FF, $2, $0
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $8, $0
+;	anim_sound 0, 1, SFX_GIGA_DRAIN
+;.loop2
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_E, 52, 92, $0
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_SE, 48, 96, $8
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_S, 44, 96, $10
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_SW, 40, 96, $18
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_W, 36, 92, $20
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_NW, 40, 88, $28
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_N, 44, 88, $30
+;	anim_obj ANIM_OBJ_NIGHT_DAZE_NE, 48, 88, $38
+;	anim_wait 24
+;	anim_loop 4, .loop2
+;	anim_sound 0, 0, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
+;	anim_wait 32
 ;	anim_ret
 
 ;BattleAnim_Psystrike:

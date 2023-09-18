@@ -571,6 +571,15 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_PSYSTRIKE_BALL
 	const ANIM_OBJ_LEAF_TORNADO
 	const ANIM_OBJ_FLAME_CHARGE
+	const ANIM_OBJ_SACRED_SWORD_CRESCENT
+	const ANIM_OBJ_NIGHT_DAZE_N
+	const ANIM_OBJ_NIGHT_DAZE_NE
+	const ANIM_OBJ_NIGHT_DAZE_E
+	const ANIM_OBJ_NIGHT_DAZE_SE
+	const ANIM_OBJ_NIGHT_DAZE_S
+	const ANIM_OBJ_NIGHT_DAZE_SW
+	const ANIM_OBJ_NIGHT_DAZE_W
+	const ANIM_OBJ_NIGHT_DAZE_NW
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -676,6 +685,7 @@ DEF NUM_ANIM_OBJS EQU const_value
 	const BATTLEANIMFUNC_SPACIAL_REND
 	const BATTLEANIMFUNC_SPACIAL_REND_CUTTER
 	const BATTLEANIMFUNC_COIN_BURST
+	const BATTLEANIMFUNC_NIGHT_DAZE
 DEF NUM_BATTLEANIMFUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -1063,6 +1073,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_FLAME_BIG_SHORT
 	const BATTLEANIMFRAMESET_V_CREATE_V
 	const BATTLEANIMFRAMESET_VOLT_SWITCH
+	const BATTLEANIMFRAMESET_BIG_WHIP_2
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1563,6 +1574,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_V_CREATE
 	const ANIM_GFX_VOLT_SWITCH
 	const ANIM_GFX_PSYSTRIKE
+	const ANIM_GFX_OBJECTS_4
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

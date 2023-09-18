@@ -119,6 +119,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_SpacialRend
 	dba BattleAnimFunction_SpacialRendCutter
 	dba BattleAnimFunction_CoinBurst
+	dba BattleAnimFunction_NightDaze
 	assert_table_length NUM_BATTLEANIMFUNCS
 
 
@@ -4016,6 +4017,24 @@ BattleAnimFunction_DarkPulse:
 	jmp nc, DeinitBattleAnimation
 	ld d, a
 	add $2
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jmp BattleAnim_StepCircle
+
+SECTION "BattleAnimFunction_NightDaze", ROMX
+
+BattleAnimFunction_NightDaze:
+; Expands object out in a ring around position at 1 pixel at a time for 13 frames and then disappears
+; Obj Param: Defines starting position in circle
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $80
+	jmp nc, DeinitBattleAnimation
+	ld d, a
+	add $6
 	ld [hl], a
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
