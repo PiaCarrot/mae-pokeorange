@@ -111,4 +111,5 @@ AnimObjGFX:
 	anim_obj_gfx 28, AnimObjVoltSwitchGFX
 	anim_obj_gfx 16, AnimObjPsystrikeGFX
 	anim_obj_gfx 22, AnimObjObjects4GFX
+	anim_obj_gfx 16, AnimObjMoonGFX
 	assert_table_length NUM_ANIM_GFX + 1

@@ -330,13 +330,13 @@ BattleAnimOAMData:
 	battleanimoam $00,  9, .OAMData_140 ; BATTLEANIMOAMSET_140
 	battleanimoam $00, 12, .OAMData_141 ; BATTLEANIMOAMSET_141
 	battleanimoam $00, 16, .OAMData_142 ; BATTLEANIMOAMSET_142
-
 	battleanimoam $00, 16, .OAMData_143 ; BATTLEANIMOAMSET_143
 	battleanimoam $00, 16, .OAMData_144 ; BATTLEANIMOAMSET_144
 	battleanimoam $00, 16, .OAMData_145 ; BATTLEANIMOAMSET_145
 	battleanimoam $00, 16, .OAMData_146 ; BATTLEANIMOAMSET_146
 	battleanimoam $00, 16, .OAMData_147 ; BATTLEANIMOAMSET_147
 	battleanimoam $00, 16, .OAMData_148 ; BATTLEANIMOAMSET_148
+	battleanimoam $04,  4, .OAMData_04  ; BATTLEANIMOAMSET_149
 
 	assert_table_length NUM_BATTLEANIMOAMSETS
 

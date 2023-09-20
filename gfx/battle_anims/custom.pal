@@ -256,5 +256,10 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 31, 31
 	RGB 28, 28, 28
 	RGB 29, 22, 26
+; moonblast
+	RGB 31, 13, 22
+	RGB 31, 31, 31
+	RGB 10, 31, 31
+	RGB 16, 17, 29
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

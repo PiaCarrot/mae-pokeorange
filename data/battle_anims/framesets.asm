@@ -385,6 +385,8 @@ BattleAnimFrameData:
 	dw .Frameset_VCreateV                ; BATTLEANIMFRAMESET_V_CREATE_V
 	dw .Frameset_VoltSwitch              ; BATTLEANIMFRAMESET_VOLT_SWITCH
 	dw .Frameset_BigWhip2                ; BATTLEANIMFRAMESET_BIG_WHIP_2
+	dw .Frameset_PartingShot_Exclamation ; BATTLEANIMFRAMESET_PARTING_SHOT_EXCLAMATION
+	dw .Frameset_PartingShot_Star        ; BATTLEANIMFRAMESET_PARTING_SHOT_STAR
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2673,3 +2675,11 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_FC,  1, OAM_X_FLIP
 	battleoamframe BATTLEANIMOAMSET_C4,  1, OAM_X_FLIP
 	battleoamrestart
+
+.Frameset_PartingShot_Exclamation:
+	battleoamframe BATTLEANIMOAMSET_0E,  8
+	battleoamend
+
+.Frameset_PartingShot_Star:
+	battleoamframe BATTLEANIMOAMSET_149,  8
+	battleoamend

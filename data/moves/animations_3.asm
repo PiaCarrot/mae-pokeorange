@@ -1861,7 +1861,7 @@ BattleAnim_Glimmer_branch3:
 ;	anim_ret
 
 ;BattleAnim_QuiverDance:
-;	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
+;	anim_1gfx ANIM_GFX_CHARGE
 ;	anim_call BattleAnim_TargetObj_1Row_1
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
 ;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
@@ -2262,6 +2262,60 @@ BattleAnim_Glimmer_branch3:
 ;	anim_wait 16
 ;	anim_ret
 
+;BattleAnim_FieryDance:
+;	anim_2gfx ANIM_GFX_CHARGE, ANIM_GFX_FIRE
+;	anim_call BattleAnim_TargetObj_1Row_1
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
+;	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_sound 0, 1, SFX_SWORDS_DANCE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_bgeffect ANIM_BG_FLAIL, $0, $1, $0
+;.loop
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 56, 90, $30
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 40, 90, $20
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 60, 106, $10
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_TINY_RISING_ORB, 36, 106, $0
+;	anim_wait 4
+;	anim_loop 2, .loop
+;	anim_wait 32
+;	anim_incbgeffect ANIM_BG_FLAIL
+;	anim_call BattleAnim_ShowMon_0_1
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_wait 1
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_YELLOW
+;	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_HEAT_BG
+;	anim_sound 0, 1, SFX_EMBER
+;	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $6, $0
+;	anim_obj ANIM_OBJ_GRUDGE, 132, 36, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 62, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_GRUDGE, 132, 54, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 48, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_GRUDGE, 132, 64, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 36, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_GRUDGE, 132, 38, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_FIERY_DANCE_FLAME, 132, 64, $0
+;	anim_wait 32
+;	anim_ret
+
 ;BattleAnim_Snarl:
 ;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_NOISE, ANIM_GFX_BIG_GLOW_CLEAR
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
@@ -2410,6 +2464,26 @@ BattleAnim_Glimmer_branch3:
 ;	anim_wait 16
 ;	anim_ret
 
+;BattleAnim_PartingShot:
+;	anim_2gfx ANIM_GFX_STATUS, ANIM_GFX_OBJECTS_3
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_PARTING_SHOT_HASH, 26, 84, $2
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_TORMENT, 68, 100, $2
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_PARTING_SHOT_EXCLAMATION, 40, 104, $2
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_PARTING_SHOT_STAR, 54, 76, $2
+;	anim_wait 48
+;	anim_clearobjs
+;	anim_sound 0, 0, SFX_BALL_POOF
+;	anim_bgeffect ANIM_BG_RETURN_MON, $0, $1, $0
+;	anim_wait 16
+;	anim_ret
+
 ;BattleAnim_DrainingKiss:
 ;	anim_3gfx ANIM_GFX_OBJECTS, ANIM_GFX_CHARGE, ANIM_GFX_SHINE
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PINK
@@ -2430,6 +2504,53 @@ BattleAnim_Glimmer_branch3:
 ;	anim_wait 32
 ;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 ;	anim_jump BattleAnim_Glimmer_branch3
+
+;BattleAnim_PlayRough:
+;	anim_1gfx ANIM_GFX_SPEED
+;	anim_sound 6, 2, SFX_THROW_BALL
+;	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+;	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+;	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+;	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+;	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+;	anim_wait 12
+;	anim_3gfx ANIM_GFX_STARS, ANIM_GFX_HIT, ANIM_GFX_HEARTS
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $2, $0
+;.loop
+;	anim_sound 0, 1, SFX_BONE_CLUB
+;	anim_obj ANIM_OBJ_STAR_BURST, 128, 48, $28
+;	anim_obj ANIM_OBJ_HIT, 128, 48, $0
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_HEART_BURST, 144, 64, $5c
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_STAR_BURST, 144, 64, $10
+;	anim_obj ANIM_OBJ_HIT, 144, 64, $0
+;	anim_wait 3
+;	anim_sound 0, 1, SFX_DOUBLESLAP
+;	anim_obj ANIM_OBJ_HEART_BURST, 120, 52, $e8
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_STAR_BURST, 120, 52, $9c
+;	anim_obj ANIM_OBJ_HIT, 120, 52, $0
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_STAR_BURST, 152, 48, $d0
+;	anim_wait 3
+;	anim_sound 6, 2, SFX_SLUDGE_BOMB
+;	anim_obj ANIM_OBJ_HEART_BURST, 152, 48, $1c
+;	anim_obj ANIM_OBJ_HIT, 152, 48, $0
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_STAR_BURST, 136, 56, $50
+;	anim_wait 3
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HEART_BURST, 136, 56, $dc
+;	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+;	anim_wait 3
+;	anim_obj ANIM_OBJ_STAR_BURST, 128, 48, $90
+;	anim_loop 2, .loop
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 1
+;	anim_ret
 
 ;BattleAnim_FairyWind:
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
@@ -2453,6 +2574,61 @@ BattleAnim_Glimmer_branch3:
 ;	anim_loop 2, .loop
 ;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
 ;	anim_wait 64
+;	anim_ret
+
+;BattleAnim_Moonblast:
+;	anim_4gfx ANIM_GFX_MOON, ANIM_GFX_SPEED, ANIM_GFX_GLOW, ANIM_GFX_SHINE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_MOON
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_MOON
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_MOONBLAST
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+;	anim_clearenemyhud
+;	anim_bgp $1b
+;	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+;	anim_obj ANIM_OBJ_LUNAR_DANCE, 90, 84, $30
+;	anim_wait 40
+;.loop
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 44, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 36, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 52, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 28, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 60, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 20, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RISING_SPARKLE, 68, 108, $6
+;	anim_wait 2
+;	anim_loop 4, .loop
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_GIGA_DRAIN
+;	anim_obj ANIM_OBJ_FLASH_CANNON, 48, 96, $4
+;	anim_wait 16
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_MOONBLAST
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+;	anim_sound 0, 0, SFX_METRONOME
+;	anim_obj ANIM_OBJ_HEAL_BLOCK, 132, 28, $0
+;	anim_wait 5
+;	anim_obj ANIM_OBJ_HEAL_BLOCK, 112, 60, $0
+;	anim_wait 5
+;	anim_obj ANIM_OBJ_HEAL_BLOCK, 144, 68, $0
+;	anim_wait 5
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 148, 32, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 116, 64, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 148, 64, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 116, 32, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 132, 48, $0
+;	anim_wait 32
 ;	anim_ret
 
 ;BattleAnim_Boomburst:
