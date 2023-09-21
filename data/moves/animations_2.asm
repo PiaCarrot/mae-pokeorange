@@ -3665,11 +3665,11 @@ BattleAnim_HealBlock:
 	anim_1gfx ANIM_GFX_SHINE
 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_sound 0, 0, SFX_METRONOME
-	anim_obj ANIM_OBJ_HEAL_BLOCK, 132, 28, $0
+	anim_obj ANIM_OBJ_GLIMMER_YFIX, 132, 28, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_HEAL_BLOCK, 112, 60, $0
+	anim_obj ANIM_OBJ_GLIMMER_YFIX, 112, 60, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_HEAL_BLOCK, 144, 68, $0
+	anim_obj ANIM_OBJ_GLIMMER_YFIX, 144, 68, $0
 	anim_wait 21
 	anim_sound 0, 0, SFX_METRONOME
 	anim_wait 5

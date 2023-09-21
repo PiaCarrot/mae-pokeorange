@@ -1366,7 +1366,7 @@ BattleAnim_LunarDance:
 	anim_clearenemyhud
 	anim_bgp $1b
 	anim_sound 0, 0, SFX_MOONLIGHT
-	anim_obj ANIM_OBJ_LUNAR_DANCE, 90, 84, $30
+	anim_obj ANIM_OBJ_RISING_MOON, 90, 84, $30
 	anim_wait 80
 	anim_sound 0, 0, SFX_METRONOME
 .loop
@@ -2521,30 +2521,30 @@ BattleAnim_Glimmer_branch3:
 ;.loop
 ;	anim_sound 0, 1, SFX_BONE_CLUB
 ;	anim_obj ANIM_OBJ_STAR_BURST, 128, 48, $28
-;	anim_obj ANIM_OBJ_HIT, 128, 48, $0
+;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 48, $0
 ;	anim_wait 3
 ;	anim_obj ANIM_OBJ_HEART_BURST, 144, 64, $5c
 ;	anim_wait 3
 ;	anim_obj ANIM_OBJ_STAR_BURST, 144, 64, $10
-;	anim_obj ANIM_OBJ_HIT, 144, 64, $0
+;	anim_obj ANIM_OBJ_HIT_YFIX, 144, 64, $0
 ;	anim_wait 3
 ;	anim_sound 0, 1, SFX_DOUBLESLAP
 ;	anim_obj ANIM_OBJ_HEART_BURST, 120, 52, $e8
 ;	anim_wait 3
 ;	anim_obj ANIM_OBJ_STAR_BURST, 120, 52, $9c
-;	anim_obj ANIM_OBJ_HIT, 120, 52, $0
+;	anim_obj ANIM_OBJ_HIT_YFIX, 120, 52, $0
 ;	anim_wait 3
 ;	anim_obj ANIM_OBJ_STAR_BURST, 152, 48, $d0
 ;	anim_wait 3
 ;	anim_sound 6, 2, SFX_SLUDGE_BOMB
 ;	anim_obj ANIM_OBJ_HEART_BURST, 152, 48, $1c
-;	anim_obj ANIM_OBJ_HIT, 152, 48, $0
+;	anim_obj ANIM_OBJ_HIT_YFIX, 152, 48, $0
 ;	anim_wait 3
 ;	anim_obj ANIM_OBJ_STAR_BURST, 136, 56, $50
 ;	anim_wait 3
 ;	anim_sound 0, 1, SFX_KARATE_CHOP
 ;	anim_obj ANIM_OBJ_HEART_BURST, 136, 56, $dc
-;	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 ;	anim_wait 3
 ;	anim_obj ANIM_OBJ_STAR_BURST, 128, 48, $90
 ;	anim_loop 2, .loop
@@ -2588,7 +2588,7 @@ BattleAnim_Glimmer_branch3:
 ;	anim_clearenemyhud
 ;	anim_bgp $1b
 ;	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
-;	anim_obj ANIM_OBJ_LUNAR_DANCE, 90, 84, $30
+;	anim_obj ANIM_OBJ_RISING_MOON, 90, 84, $30
 ;	anim_wait 40
 ;.loop
 ;	anim_obj ANIM_OBJ_RISING_SPARKLE, 44, 108, $6
@@ -2613,11 +2613,11 @@ BattleAnim_Glimmer_branch3:
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_MOONBLAST
 ;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 ;	anim_sound 0, 0, SFX_METRONOME
-;	anim_obj ANIM_OBJ_HEAL_BLOCK, 132, 28, $0
+;	anim_obj ANIM_OBJ_GLIMMER_YFIX, 132, 28, $0
 ;	anim_wait 5
-;	anim_obj ANIM_OBJ_HEAL_BLOCK, 112, 60, $0
+;	anim_obj ANIM_OBJ_GLIMMER_YFIX, 112, 60, $0
 ;	anim_wait 5
-;	anim_obj ANIM_OBJ_HEAL_BLOCK, 144, 68, $0
+;	anim_obj ANIM_OBJ_GLIMMER_YFIX, 144, 68, $0
 ;	anim_wait 5
 ;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 148, 32, $0
 ;	anim_wait 6
@@ -2670,6 +2670,9 @@ BattleAnim_Glimmer_branch3:
 ;BattleAnim_KingsShield:
 ;	anim_1gfx ANIM_GFX_KINGS_SHIELD
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_KINGS_SHIELD
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_clearenemyhud
 ;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 ;	anim_obj ANIM_OBJ_KINGS_SHIELD, 80, 80, $0
 ;	anim_sound 0, 0, SFX_PROTECT
@@ -2751,6 +2754,23 @@ BattleAnim_Glimmer_branch3:
 
 
 ; - Gen 7 Anims
+
+;BattleAnim_ShoreUp:
+;	anim_3gfx ANIM_GFX_POWDER, ANIM_GFX_SAND, ANIM_GFX_SHINE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_obj ANIM_OBJ_DIG_PILE, 48, 104, $0
+;.loop
+;	anim_sound 0, 0, SFX_MENU
+;	anim_obj ANIM_OBJ_SAND_TOMB, 48, 104, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_MENU
+;	anim_obj ANIM_OBJ_SAND_TOMB, 48, 96, $0
+;	anim_wait 4
+;	anim_loop 7, .loop
+;	anim_wait 40
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_call BattleAnim_ShowMon_0_3
+;	anim_jump BattleAnim_Glimmer_branch3
 
 ;BattleAnim_Leafage:
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
