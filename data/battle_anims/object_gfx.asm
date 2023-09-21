@@ -113,4 +113,5 @@ AnimObjGFX:
 	anim_obj_gfx 22, AnimObjObjects4GFX
 	anim_obj_gfx 16, AnimObjMoonGFX
 	anim_obj_gfx  4, AnimObjKingsShieldGFX
+	anim_obj_gfx 16, AnimObjSpikeShieldGFX
 	assert_table_length NUM_ANIM_GFX + 1
