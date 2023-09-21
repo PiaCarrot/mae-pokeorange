@@ -387,6 +387,7 @@ BattleAnimFrameData:
 	dw .Frameset_BigWhip2                ; BATTLEANIMFRAMESET_BIG_WHIP_2
 	dw .Frameset_PartingShot_Exclamation ; BATTLEANIMFRAMESET_PARTING_SHOT_EXCLAMATION
 	dw .Frameset_PartingShot_Star        ; BATTLEANIMFRAMESET_PARTING_SHOT_STAR
+	dw .Frameset_KingsShield             ; BATTLEANIMFRAMESET_KINGS_SHIELD
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2682,4 +2683,13 @@ BattleAnimFrameData:
 
 .Frameset_PartingShot_Star:
 	battleoamframe BATTLEANIMOAMSET_149,  8
+	battleoamend
+
+.Frameset_KingsShield
+	battleoamframe BATTLEANIMOAMSET_14A,  4
+	battleoamframe BATTLEANIMOAMSET_14B,  4
+	battleoamframe BATTLEANIMOAMSET_14C,  4
+	battleoamframe BATTLEANIMOAMSET_14D,  4
+	battleoamframe BATTLEANIMOAMSET_14E,  4
+	battleoamframe BATTLEANIMOAMSET_14F,  4
 	battleoamend

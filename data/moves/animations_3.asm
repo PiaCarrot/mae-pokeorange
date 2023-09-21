@@ -2667,6 +2667,15 @@ BattleAnim_Glimmer_branch3:
 ;	anim_wait 64
 ;	anim_ret
 
+;BattleAnim_KingsShield:
+;	anim_1gfx ANIM_GFX_KINGS_SHIELD
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_KINGS_SHIELD
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_obj ANIM_OBJ_KINGS_SHIELD, 80, 80, $0
+;	anim_sound 0, 0, SFX_PROTECT
+;	anim_wait 96
+;	anim_ret
+
 ;BattleAnim_DazzlingGleam:
 ;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_SHINE, ANIM_GFX_SPEED
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
