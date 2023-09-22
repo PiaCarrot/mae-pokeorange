@@ -484,16 +484,7 @@ BattleAnim_CrossPoison:
 	anim_obj ANIM_OBJ_CUT_LONG_UP_RIGHT, 118, 68, $0
 	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
 	anim_wait 24
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
-	anim_wait 32
-	anim_ret
+	anim_jump BattleAnim_Poison_Bubble_branch_short_3
 
 BattleAnim_GunkShot:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_PURPLE
@@ -1641,7 +1632,6 @@ BattleAnim_ShadowForce_branch_2:
 	anim_wait 12
 	anim_ret
 
-
 BattleAnim_Glimmer_branch3:
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj ANIM_OBJ_GLIMMER, 44, 64, $0
@@ -1650,6 +1640,33 @@ BattleAnim_Glimmer_branch3:
 	anim_wait 5
 	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
 	anim_wait 21
+	anim_ret
+
+BattleAnim_Poison_Bubble_branch_3:
+.loop
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 48
+	anim_ret
+
+BattleAnim_Poison_Bubble_branch_short_3:
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 48
 	anim_ret
 
 ;==========================
@@ -2668,16 +2685,16 @@ BattleAnim_Glimmer_branch3:
 ;	anim_ret
 
 ;BattleAnim_KingsShield:
-;	anim_1gfx ANIM_GFX_KINGS_SHIELD
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_KINGS_SHIELD
-;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 ;	anim_clearenemyhud
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_KINGS_SHIELD
+;	anim_1gfx ANIM_GFX_KINGS_SHIELD
 ;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 ;	anim_obj ANIM_OBJ_KINGS_SHIELD, 80, 80, $0
 ;	anim_sound 0, 0, SFX_PROTECT
 ;	anim_wait 96
 ;	anim_ret
+
 
 ;BattleAnim_DazzlingGleam:
 ;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_SHINE, ANIM_GFX_SPEED
@@ -2773,8 +2790,10 @@ BattleAnim_Glimmer_branch3:
 ;	anim_jump BattleAnim_Glimmer_branch3
 
 ;BattleAnim_BanefulBunker:
-;	anim_2gfx ANIM_GFX_SPIKE_SHIELD, ANIM_GFX_POISON
+;	anim_clearenemyhud
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+;	anim_2gfx ANIM_GFX_SPIKE_SHIELD, ANIM_GFX_POISON
 ;	anim_sound 0, 1, SFX_HORN_ATTACK
 ;	anim_obj ANIM_OBJ_SPIKE_SHIELD_NNE, 67, 68, $31
 ;	anim_wait 8
@@ -2821,6 +2840,30 @@ BattleAnim_Glimmer_branch3:
 ;	anim_loop 2, .loop
 ;	anim_wait 32
 ;	anim_ret
+
+;BattleAnim_ToxicThread:
+;	anim_2gfx ANIM_GFX_WEB, ANIM_GFX_POISON
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 6, 2, SFX_MENU
+;	anim_obj ANIM_OBJ_STRING_SHOT, 64, 80, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_MENU
+;	anim_obj ANIM_OBJ_STRING_SHOT, 132, 48, $1
+;	anim_wait 4
+;	anim_sound 6, 2, SFX_MENU
+;	anim_obj ANIM_OBJ_STRING_SHOT, 64, 88, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_MENU
+;	anim_obj ANIM_OBJ_STRING_SHOT, 132, 64, $1
+;	anim_wait 4
+;	anim_sound 6, 2, SFX_MENU
+;	anim_obj ANIM_OBJ_STRING_SHOT, 64, 84, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_MENU
+;	anim_obj ANIM_OBJ_STRING_SHOT, 132, 56, $2
+;	anim_wait 12
+;	anim_jump BattleAnim_Poison_Bubble_branch_short_3
 
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2

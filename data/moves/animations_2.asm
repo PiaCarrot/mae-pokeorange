@@ -1457,7 +1457,7 @@ BattleAnim_PoisonFang:
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 ;fallthrough
-BattleAnim_PoisonBubble_branch:
+BattleAnim_Poison_Bubble_branch_2:
 .loop
 	anim_sound 0, 1, SFX_TOXIC
 	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
@@ -2527,7 +2527,7 @@ BattleAnim_PoisonTail:
 	anim_wait 8
 	anim_incbgeffect ANIM_BG_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_0_2
-	anim_jump BattleAnim_PoisonBubble_branch
+	anim_jump BattleAnim_Poison_Bubble_branch_2
 
 BattleAnim_Covet:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_HIT
@@ -4003,7 +4003,7 @@ BattleAnim_ToxicSpikes:
 	anim_obj ANIM_OBJ_SPIKES, 48, 88, $28
 	anim_wait 40
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
-	anim_jump BattleAnim_PoisonBubble_branch
+	anim_jump BattleAnim_Poison_Bubble_branch_2
 
 BattleAnim_HeartSwap:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
@@ -4302,7 +4302,7 @@ BattleAnim_PoisonJab:
 	anim_obj ANIM_OBJ_POISON_JAB_S, 132, 56, $30
 	anim_wait 4
 	anim_loop 2, .loop
-	anim_jump BattleAnim_PoisonBubble_branch
+	anim_jump BattleAnim_Poison_Bubble_branch_2
 
 BattleAnim_DarkPulse:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE

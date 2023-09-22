@@ -2745,19 +2745,17 @@ BattleAnim_PsychicM:
 BattleAnim_Sludge:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_1gfx ANIM_GFX_POISON
-	anim_call BattleAnim_Poison_Bubble_branch
-	anim_wait 56
-	anim_ret
+	anim_jump BattleAnim_Poison_Bubble_branch
 
 BattleAnim_Toxic:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_1gfx ANIM_GFX_POISON
+	anim_obp0 $fc
 	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
 	anim_call BattleAnim_Acid_branch
 	anim_wait 32
-	anim_call BattleAnim_Poison_Bubble_branch
-	anim_wait 64
-	anim_ret
+	anim_obp0 $e4
+	anim_jump BattleAnim_Poison_Bubble_branch
 
 BattleAnim_Metronome:
 	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_SPEED
@@ -3264,9 +3262,7 @@ BattleAnim_SludgeBomb:
 	anim_sound 6, 2, SFX_SLUDGE_BOMB
 	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
 	anim_wait 36
-	anim_call BattleAnim_Poison_Bubble_branch
-	anim_wait 64
-	anim_ret
+	anim_jump BattleAnim_Poison_Bubble_branch
 
 BattleAnim_MudSlap:
 	anim_1gfx ANIM_GFX_SAND
@@ -4513,6 +4509,7 @@ BattleAnim_Poison_Bubble_branch:
 	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
 	anim_wait 8
 	anim_loop 5, .loop
+	anim_wait 48
 	anim_ret
 
 BattleAnim_Acid_branch:
