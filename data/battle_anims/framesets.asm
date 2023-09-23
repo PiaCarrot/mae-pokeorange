@@ -391,6 +391,10 @@ BattleAnimFrameData:
 	dw .Frameset_SpikeShield_NNE         ; BATTLEANIMFRAMESET_SPIKE_SHIELD_NNE
 	dw .Frameset_SpikeShield_NE          ; BATTLEANIMFRAMESET_SPIKE_SHIELD_NE
 	dw .Frameset_SpikeShield_E           ; BATTLEANIMFRAMESET_SPIKE_SHIELD_E
+	dw .Frameset_PollenPuff              ; BATTLEANIMFRAMESET_POLLEN_PUFF
+	dw .Frameset_AnchorShot              ; BATTLEANIMFRAMESET_ANCHOR_SHOT
+	dw .Frameset_Chains1                 ; BATTLEANIMFRAMESET_CHAINS_1
+	dw .Frameset_Chains2                 ; BATTLEANIMFRAMESET_CHAINS_2
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2707,4 +2711,29 @@ BattleAnimFrameData:
 
 .Frameset_SpikeShield_E
 	battleoamframe BATTLEANIMOAMSET_7F,  8, OAM_Y_FLIP
+	battleoamend
+
+.Frameset_PollenPuff:
+	battleoamframe BATTLEANIMOAMSET_03, 2
+	battleoamframe BATTLEANIMOAMSET_11F , 2
+	battleoamframe BATTLEANIMOAMSET_03, 2
+	battleoamrestart
+
+.Frameset_AnchorShot
+	battleoamframe BATTLEANIMOAMSET_150, 4
+	battleoamframe BATTLEANIMOAMSET_151, 4
+	battleoamframe BATTLEANIMOAMSET_152, 4
+	battleoamframe BATTLEANIMOAMSET_153, 4
+	battleoamdelete
+
+.Frameset_Chains1:
+	battleoamframe BATTLEANIMOAMSET_154,  1
+	battleoamframe BATTLEANIMOAMSET_155,  1
+	battleoamframe BATTLEANIMOAMSET_156,  1
+	battleoamend
+
+.Frameset_Chains2:
+	battleoamframe BATTLEANIMOAMSET_154,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_155,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_156,  1, OAM_X_FLIP
 	battleoamend

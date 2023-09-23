@@ -266,5 +266,10 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 24, 31, 31
 	RGB 22, 20, 28
 	RGB 00, 00, 00
+; pollenpuff
+	RGB 31, 31, 31
+	RGB 31, 30, 22
+	RGB 31, 26, 21
+	RGB 29, 24, 29
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

@@ -2865,6 +2865,47 @@ BattleAnim_Poison_Bubble_branch_short_3:
 ;	anim_wait 12
 ;	anim_jump BattleAnim_Poison_Bubble_branch_short_3
 
+;BattleAnim_PollenPuff:
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_POLLEN_PUFF
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+;	anim_2gfx ANIM_GFX_SMOKE_PUFF_BIG, ANIM_GFX_SMOKE
+;	anim_call BattleAnim_TargetObj_2Row_3
+;	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
+;	anim_sound 0, 0, SFX_RETURN
+;	anim_wait 64
+;	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+;	anim_call BattleAnim_ShowMon_0_3
+;	anim_clearobjs
+;	anim_wait 4
+;	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+;	anim_sound 0, 0, SFX_SWEET_SCENT
+;	anim_obj ANIM_OBJ_POLLEN_PUFF, 64, 92, $10
+;	anim_wait 32
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10
+;	anim_wait 24
+;	anim_ret
+
+;BattleAnim_AnchorShot:
+;	anim_1gfx ANIM_GFX_ANCHOR_SHOT
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BRIGHT
+;	anim_obj ANIM_OBJ_ANCHOR_SHOT, 80, 84, $0
+;.loop
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_wait 2
+;	anim_loop 8, .loop
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $2, $0
+;	anim_sound 0, 1, SFX_BIND
+;	anim_obj ANIM_OBJ_CHAINS1, 132, 64, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CHAINS2, 132, 52, $0
+;	anim_wait 8
+;	anim_obj ANIM_OBJ_CHAINS1, 132, 40, $0
+;	anim_wait 64
+;	anim_ret
+;	anim_ret
+
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
 ;	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE
