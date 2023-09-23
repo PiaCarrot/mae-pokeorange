@@ -16,6 +16,7 @@
 	const TILESET_LAB
 	const TILESET_HOUSES
 	const TILESET_CAVE_1
+	const TILESET_MIKAN_ISLAND
 DEF NUM_TILESETS EQU const_value - 1
 
 ; wTileset struct size

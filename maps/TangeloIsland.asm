@@ -613,8 +613,12 @@ TangeloIslandSignText:
 	done
 	
 TangeloCenterSignText:
-	text "TANGELO ISLAND"
-	line "#MON CENTER"
+	text "B CANCEL"
+	line "/ A SELECT"
+	
+	para "Cures paralysis."
+	line "FORAGE LOG"
+	cont "Spicy."
 	done
 	
 TraceyTangeloText1:

@@ -94,6 +94,7 @@ TilesetIcePathAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetValenciaMandarinNorthAnim:
+TilesetMikanIslandAnim:
 	dw vTiles2 tile $7e, WriteTileToBuffer
 	dw RSEWaterFrames, AnimateRSEWaterTiles
 	dw ShoreWaterFrames, AnimateShoreWaterTiles

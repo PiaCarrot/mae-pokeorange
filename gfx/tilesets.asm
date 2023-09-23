@@ -170,3 +170,14 @@ INCBIN "data/tilesets/cave_1_metatiles.bin"
 
 TilesetCave1Coll::
 INCLUDE "data/tilesets/cave_1_collision.asm"
+
+SECTION "Tileset Data 9", ROMX
+
+TilesetMikanIslandGFX::
+INCBIN "gfx/tilesets/mikan_island.2bpp.lz"
+
+TilesetMikanIslandMeta::
+INCBIN "data/tilesets/mikan_island_metatiles.bin"
+
+TilesetMikanIslandColl::
+INCLUDE "data/tilesets/mikan_island_collision.asm"

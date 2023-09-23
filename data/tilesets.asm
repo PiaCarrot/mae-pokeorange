@@ -30,4 +30,5 @@ Tilesets::
 	tileset TilesetLab
 	tileset TilesetHouses
 	tileset TilesetCave1
+	tileset TilesetMikanIsland
 	assert_table_length NUM_TILESETS + 1
