@@ -2904,7 +2904,6 @@ BattleAnim_Poison_Bubble_branch_short_3:
 ;	anim_obj ANIM_OBJ_CHAINS1, 132, 40, $0
 ;	anim_wait 64
 ;	anim_ret
-;	anim_ret
 
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2

@@ -1,3 +1,5 @@
+SECTION "Battle Anims 1", ROMX
+
 AnimObj00GFX:
 AnimObjHitGFX:            INCBIN "gfx/battle_anims/hit.2bpp.lz"
 AnimObjCutGFX:            INCBIN "gfx/battle_anims/cut.2bpp.lz"
@@ -103,4 +105,7 @@ AnimObjObjects4GFX:       INCBIN "gfx/battle_anims/objects4.2bpp.lz"
 AnimObjMoonGFX:           INCBIN "gfx/battle_anims/moon.2bpp.lz"
 AnimObjKingsShieldGFX:    INCBIN "gfx/battle_anims/kingsshield.2bpp.lz"
 AnimObjSpikeShieldGFX:    INCBIN "gfx/battle_anims/spikeshield.2bpp.lz"
+
+SECTION "Battle Anims 2", ROMX
+
 AnimObjAnchorShotGFX:     INCBIN "gfx/battle_anims/anchorshot.2bpp.lz"
