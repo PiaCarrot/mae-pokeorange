@@ -2727,13 +2727,13 @@ BattleAnimFrameData:
 	battleoamdelete
 
 .Frameset_Chains1:
-	battleoamframe BATTLEANIMOAMSET_154,  1
-	battleoamframe BATTLEANIMOAMSET_155,  1
-	battleoamframe BATTLEANIMOAMSET_156,  1
+	battleoamframe BATTLEANIMOAMSET_154,  2
+	battleoamframe BATTLEANIMOAMSET_155,  2
+	battleoamframe BATTLEANIMOAMSET_156,  2
 	battleoamend
 
 .Frameset_Chains2:
-	battleoamframe BATTLEANIMOAMSET_154,  1, OAM_X_FLIP
-	battleoamframe BATTLEANIMOAMSET_155,  1, OAM_X_FLIP
-	battleoamframe BATTLEANIMOAMSET_156,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_154,  2, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_155,  2, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_156,  2, OAM_X_FLIP
 	battleoamend

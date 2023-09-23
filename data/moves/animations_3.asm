@@ -2893,7 +2893,7 @@ BattleAnim_Poison_Bubble_branch_short_3:
 ;.loop
 ;	anim_sound 0, 1, SFX_KARATE_CHOP
 ;	anim_wait 2
-;	anim_loop 8, .loop
+;	anim_loop 6, .loop
 ;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 ;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $2, $0
 ;	anim_sound 0, 1, SFX_BIND
@@ -2903,7 +2903,6 @@ BattleAnim_Poison_Bubble_branch_short_3:
 ;	anim_wait 8
 ;	anim_obj ANIM_OBJ_CHAINS1, 132, 40, $0
 ;	anim_wait 64
-;	anim_ret
 ;	anim_ret
 
 ;BattleAnim_PsychicFangs:
