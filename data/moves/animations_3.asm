@@ -1669,6 +1669,21 @@ BattleAnim_Poison_Bubble_branch_short_3:
 	anim_wait 48
 	anim_ret
 
+BattleAnim_Beam_branch_3:
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 64, 92, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 80, 84, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 96, 76, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_BEAM, 112, 68, $0
+	anim_obj ANIM_OBJ_BEAM_TIP, 126, 62, $0
+	anim_ret
+
 ;==========================
 ;	New Moves End Here
 ;==========================
@@ -2903,6 +2918,47 @@ BattleAnim_Poison_Bubble_branch_short_3:
 ;	anim_wait 8
 ;	anim_obj ANIM_OBJ_CHAINS1, 132, 40, $0
 ;	anim_wait 64
+;	anim_ret
+
+;BattleAnim_BeakBlast:
+;	anim_if_param_equal $1, BattleAnim_BeakBlast_branch
+;	anim_2gfx ANIM_GFX_BEAK_BLAST, ANIM_GFX_BEAM
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_RED
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $2, $0
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_obj ANIM_OBJ_BEAK_BLAST_2, 56, 90, $0
+;	anim_wait 48
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_call BattleAnim_Beam_branch_3
+;	anim_wait 48
+;	anim_ret
+
+;BattleAnim_BeakBlast_branch:
+;	anim_2gfx ANIM_GFX_BEAK_BLAST, ANIM_GFX_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT, $0, $1, $40
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_obj ANIM_OBJ_BEAK_BLAST_1, 56, 90, $0
+;.loop
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 56, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 52, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 60, 108, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 48, 108, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 68, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 44, 108, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 72, 108, $8
+;	anim_wait 2
+;	anim_loop 3, .loop
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_RED
+;	anim_wait 48
 ;	anim_ret
 
 ;BattleAnim_PsychicFangs:

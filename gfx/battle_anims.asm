@@ -109,3 +109,4 @@ AnimObjSpikeShieldGFX:    INCBIN "gfx/battle_anims/spikeshield.2bpp.lz"
 SECTION "Battle Anims 2", ROMX
 
 AnimObjAnchorShotGFX:     INCBIN "gfx/battle_anims/anchorshot.2bpp.lz"
+AnimObjBeakBlastGFX:      INCBIN "gfx/battle_anims/beakblast.2bpp.lz"
