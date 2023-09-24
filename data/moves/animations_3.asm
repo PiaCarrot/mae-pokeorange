@@ -2922,24 +2922,64 @@ BattleAnim_Beam_branch_3:
 
 ;BattleAnim_BeakBlast:
 ;	anim_if_param_equal $1, BattleAnim_BeakBlast_branch
-;	anim_2gfx ANIM_GFX_BEAK_BLAST, ANIM_GFX_BEAM
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_RED
-;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
-;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $2, $0
+;	anim_3gfx ANIM_GFX_SMOKE_PUFF, ANIM_GFX_AURA_SPHERE, ANIM_GFX_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+;	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_HEAT_BG
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
 ;	anim_sound 0, 0, SFX_SWORDS_DANCE
-;	anim_obj ANIM_OBJ_BEAK_BLAST_2, 56, 90, $0
 ;	anim_wait 48
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 ;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-;	anim_call BattleAnim_Beam_branch_3
-;	anim_wait 48
+;	anim_sound 0, 1, SFX_TACKLE
+;	anim_obj ANIM_OBJ_AURA_SPHERE, 64, 88, $6
+;	anim_wait 12
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $28
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $30
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $38
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $20
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $8
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $18
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $4
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2b
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $14
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $3b
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $24
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $b
+;	anim_wait 32
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_DEFAULT
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+;	anim_sound 0, 1, SFX_POISON_STING
+;.loop
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 36, 84, $30
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_SCALD_STEAM, 60, 96, $30
+;	anim_wait 4
+;	anim_loop 6, .loop
+;	anim_wait 32
 ;	anim_ret
 
 ;BattleAnim_BeakBlast_branch:
-;	anim_2gfx ANIM_GFX_BEAK_BLAST, ANIM_GFX_FIRE
+;	anim_1gfx ANIM_GFX_FIRE
 ;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
-;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT, $0, $1, $40
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 ;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
-;	anim_obj ANIM_OBJ_BEAK_BLAST_1, 56, 90, $0
 ;.loop
 ;	anim_sound 0, 0, SFX_SWORDS_DANCE
 ;	anim_obj ANIM_OBJ_FLARE_BLITZ, 56, 108, $6
@@ -2957,8 +2997,47 @@ BattleAnim_Beam_branch_3:
 ;	anim_obj ANIM_OBJ_FLARE_BLITZ, 72, 108, $8
 ;	anim_wait 2
 ;	anim_loop 3, .loop
-;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_RED
+;	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
 ;	anim_wait 48
+;	anim_ret
+
+;BattleAnim_DragonHammer:
+;	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_SMOKE_PUFF
+;	anim_call BattleAnim_TargetObj_2Row_1
+;	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_TACKLE
+;	anim_wait 8
+;	anim_call BattleAnim_ShowMon_0_1
+;	anim_clearobjs
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_DRAGONBREATH
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+;	anim_sound 0, 0, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 08, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 16, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 24, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 32, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 40, $0
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
+;	anim_wait 1
+;	anim_sound 0, 1, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 60, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $60, $2, $20
+;	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+;	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+;	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+;	anim_wait 1
+;	anim_obj ANIM_OBJ_IMPACT_SMOKE, 116, 62, $28
+;	anim_obj ANIM_OBJ_IMPACT_SMOKE, 156, 62, $38
+;	anim_wait 44
 ;	anim_ret
 
 ;BattleAnim_PsychicFangs:
