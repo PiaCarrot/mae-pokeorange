@@ -271,5 +271,10 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 30, 22
 	RGB 31, 26, 21
 	RGB 29, 24, 29
+; spectralthief
+	RGB 31, 31, 31
+	RGB 30, 25, 06
+	RGB 06, 01, 08
+	RGB 02, 01, 07
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

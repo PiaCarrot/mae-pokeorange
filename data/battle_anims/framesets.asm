@@ -397,6 +397,7 @@ BattleAnimFrameData:
 	dw .Frameset_Chains2                 ; BATTLEANIMFRAMESET_CHAINS_2
 	dw .Frameset_ShellTrap               ; BATTLEANIMFRAMESET_SHELL_TRAP
 	dw .Frameset_ShellShot               ; BATTLEANIMFRAMESET_SHELL_SHOT
+	dw .Frameset_SpectralThief           ; BATTLEANIMFRAMESET_SPECTRAL_THIEF
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2746,4 +2747,8 @@ BattleAnimFrameData:
 
 .Frameset_ShellShot:
 	battleoamframe BATTLEANIMOAMSET_157,  1
+	battleoamend
+
+.Frameset_SpectralThief
+	battleoamframe BATTLEANIMOAMSET_158,  1
 	battleoamend

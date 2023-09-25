@@ -5009,6 +5009,7 @@ BattleAnim_FireFang:
 
 BattleAnim_ShadowSneak:
 	anim_2gfx ANIM_GFX_ANGELS, ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
 	anim_battlergfx_2row
 	anim_bgp $f8
 	anim_obp0 $ef

@@ -3221,6 +3221,45 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 16
 ;	anim_ret
 
+;BattleAnim_SpectralThief:
+;	anim_3gfx ANIM_GFX_ANGELS, ANIM_GFX_HIT, ANIM_GFX_SPECTRAL_THIEF
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PAYBACK
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_SPECTRAL_THIEF
+;	anim_bgp $f8
+;	anim_sound 0, 0, SFX_WARP_TO
+;	anim_bgeffect ANIM_BG_RETURN_MON, $0, $1, $0
+;	anim_wait 16
+;	anim_sound 6, 2, SFX_WHIRLWIND
+;.loop
+;	anim_obj ANIM_OBJ_SHADOW_SNEAK, 44, 120, $2
+;	anim_wait 2
+;	anim_loop 4, .loop
+;	anim_wait 32
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_SPECTRAL_THIEF, 140, 56, $30
+;	anim_obj ANIM_OBJ_HIT_YFIX, 140, 44, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_SPECTRAL_THIEF, 124, 56, $30
+;	anim_obj ANIM_OBJ_HIT_YFIX, 124, 60, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_SPECTRAL_THIEF, 144, 56, $30
+;	anim_obj ANIM_OBJ_HIT_YFIX, 140, 60, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_SPECTRAL_THIEF, 124, 56, $30
+;	anim_obj ANIM_OBJ_HIT_YFIX, 124, 44, $0
+;	anim_wait 4
+;	anim_sound 0, 1, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_SPECTRAL_THIEF, 132, 56, $30
+;	anim_obj ANIM_OBJ_HIT_YFIX, 132, 52, $0
+;	anim_wait 32
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_ret
+
 ; - Gen 9 Anims
 
 ;BattleAnim_WaveCrash:

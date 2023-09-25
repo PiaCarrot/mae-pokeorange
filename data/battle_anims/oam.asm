@@ -351,6 +351,7 @@ BattleAnimOAMData:
 	battleanimoam $00,  8, .OAMData_154 ; BATTLEANIMOAMSET_155
 	battleanimoam $00, 12, .OAMData_154 ; BATTLEANIMOAMSET_156
 	battleanimoam $09,  6, .OAMData_93  ; BATTLEANIMOAMSET_157
+	battleanimoam $00,  8, .OAMData_158 ; BATTLEANIMOAMSET_158
 
 	assert_table_length NUM_BATTLEANIMOAMSETS
 
@@ -2370,3 +2371,13 @@ BattleAnimOAMData:
 	dbsprite   1,   0, 4,  0, $0a, $0
 	dbsprite   2,  -1, 4,  0, $06, $0
 	dbsprite   2,   0, 4,  0, $0b, $0
+
+.OAMData_158:
+	dbsprite  -1,  -2, 0, 0, $00, $0
+	dbsprite   0,  -2, 0, 0, $01, $0
+	dbsprite  -1,  -1, 0, 0, $02, $0
+	dbsprite   0,  -1, 0, 0, $03, $0
+	dbsprite  -1,   0, 0, 0, $04, $0
+	dbsprite   0,   0, 0, 0, $05, $0
+	dbsprite  -1,   1, 0, 0, $06, $0
+	dbsprite   0,   1, 0, 0, $07, $0
