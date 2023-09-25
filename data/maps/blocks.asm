@@ -85,3 +85,6 @@ TraditionalHouse_Blocks:
 	
 AlteringCave_Blocks:
 	INCBIN "maps/AlteringCave.blk"
+	
+MikanIsland_Blocks:
+	INCBIN "maps/MikanIsland.blk"

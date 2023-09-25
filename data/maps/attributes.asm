@@ -112,6 +112,8 @@ ENDM
 	map_attributes TangeloIsland, TANGELO_ISLAND, $10, EAST
 	connection east, Route49North, ROUTE_49_NORTH, 1
 
+	map_attributes MikanIsland, MIKAN_ISLAND, $C8, 0
+
 	map_attributes BattleTowerOutside, BATTLE_TOWER_OUTSIDE, $05, 0
 
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0

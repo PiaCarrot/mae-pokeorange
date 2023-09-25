@@ -341,16 +341,17 @@ TangeloIslandSign:
 ;	clearevent EVENT_OBTAINED_GS_BALL
 ;	setscene SCENE_TANGELO_GS_BALL
 ;	giveitem PINKAN_BERRY
-	opentext
-	writetext BootedTerminalText
-	playsound SFX_BOOT_PC
-	waitsfx
-	writetext MysteryGiftTerminalText
-	yesorno
-	iftrue .TerminalAccept
-	playsound SFX_SHUT_DOWN_PC
-	waitsfx
-	closetext
+;	opentext
+;	writetext BootedTerminalText
+;	playsound SFX_BOOT_PC
+;	waitsfx
+;	writetext MysteryGiftTerminalText
+;	yesorno
+;	iftrue .TerminalAccept
+;	playsound SFX_SHUT_DOWN_PC
+;	waitsfx
+;	closetext
+	warp MIKAN_ISLAND, 25, 27
 	end
 	
 .TerminalAccept:
