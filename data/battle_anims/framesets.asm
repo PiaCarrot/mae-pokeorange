@@ -395,6 +395,8 @@ BattleAnimFrameData:
 	dw .Frameset_AnchorShot              ; BATTLEANIMFRAMESET_ANCHOR_SHOT
 	dw .Frameset_Chains1                 ; BATTLEANIMFRAMESET_CHAINS_1
 	dw .Frameset_Chains2                 ; BATTLEANIMFRAMESET_CHAINS_2
+	dw .Frameset_ShellTrap               ; BATTLEANIMFRAMESET_SHELL_TRAP
+	dw .Frameset_ShellShot               ; BATTLEANIMFRAMESET_SHELL_SHOT
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2736,4 +2738,12 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_154,  2, OAM_X_FLIP
 	battleoamframe BATTLEANIMOAMSET_155,  2, OAM_X_FLIP
 	battleoamframe BATTLEANIMOAMSET_156,  2, OAM_X_FLIP
+	battleoamend
+
+.Frameset_ShellTrap:
+	battleoamframe BATTLEANIMOAMSET_E7,  1
+	battleoamend
+
+.Frameset_ShellShot:
+	battleoamframe BATTLEANIMOAMSET_157,  1
 	battleoamend

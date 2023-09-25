@@ -347,9 +347,10 @@ BattleAnimOAMData:
 	battleanimoam $0c, 15, .OAMData_151 ; BATTLEANIMOAMSET_151
 	battleanimoam $0c, 19, .OAMData_152 ; BATTLEANIMOAMSET_152
 	battleanimoam $0c, 19, .OAMData_153 ; BATTLEANIMOAMSET_153
-	battleanimoam $00,  7, .OAMData_154  ; BATTLEANIMOAMSET_154
-	battleanimoam $00,  8, .OAMData_154  ; BATTLEANIMOAMSET_155
-	battleanimoam $00, 12, .OAMData_154  ; BATTLEANIMOAMSET_156
+	battleanimoam $00,  7, .OAMData_154 ; BATTLEANIMOAMSET_154
+	battleanimoam $00,  8, .OAMData_154 ; BATTLEANIMOAMSET_155
+	battleanimoam $00, 12, .OAMData_154 ; BATTLEANIMOAMSET_156
+	battleanimoam $09,  6, .OAMData_93  ; BATTLEANIMOAMSET_157
 
 	assert_table_length NUM_BATTLEANIMOAMSETS
 

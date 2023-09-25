@@ -3040,6 +3040,64 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 44
 ;	anim_ret
 
+;BattleAnim_ShellTrap:
+;	anim_if_param_equal $1, BattleAnim_ShellTrap_branch
+;	anim_3gfx ANIM_GFX_EXPLOSION, ANIM_GFX_FIRE, ANIM_GFX_SHELL_TRAP
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_HEAT_BG
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_HEAT_BG
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_obj ANIM_OBJ_SHELL_TRAP, 48, 92, $0
+;	anim_wait 16
+;	anim_sound 0, 0, SFX_EMBER
+;	anim_incobj 1
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $4, $10
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $28
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $10
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $18
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $38
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_RADIAL_FLAME, 48, 92, $2b
+;	anim_wait 2
+;.loop
+;	anim_obj ANIM_OBJ_SHELL_TRAP_SHOT, 52, 88, $18
+;	anim_wait 12
+;	anim_obj ANIM_OBJ_SHELL_TRAP_SHOT, 64, 92, $18
+;	anim_sound 0, 1, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_EXPLOSION2, 130, 50, $0
+;	anim_wait 12
+;	anim_obj ANIM_OBJ_SHELL_TRAP_SHOT, 56, 84, $18
+;	anim_sound 0, 1, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_EXPLOSION2, 136, 56, $0
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_EXPLOSION2, 128, 48, $0
+;	anim_loop 2, .loop
+;	anim_wait 16
+;	anim_ret
+
+;BattleAnim_ShellTrap_branch:
+;	anim_1gfx ANIM_GFX_SHELL_TRAP
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_HEAT_BG
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_obj ANIM_OBJ_SHELL_TRAP, 48, 92, $0
+;.loop
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_wait 14
+;	anim_loop 3, .loop
+;	anim_wait 48
+;	anim_ret
+
 ;BattleAnim_PsychicFangs:
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
 ;	anim_3gfx ANIM_GFX_CUT, ANIM_GFX_HIT, ANIM_GFX_FIRE

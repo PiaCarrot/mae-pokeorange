@@ -115,4 +115,5 @@ AnimObjGFX:
 	anim_obj_gfx  4, AnimObjKingsShieldGFX
 	anim_obj_gfx 16, AnimObjSpikeShieldGFX
 	anim_obj_gfx 33, AnimObjAnchorShotGFX
+	anim_obj_gfx 24, AnimObjShellTrapGFX
 	assert_table_length NUM_ANIM_GFX + 1
