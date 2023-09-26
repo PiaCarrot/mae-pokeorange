@@ -276,5 +276,15 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 30, 25, 06
 	RGB 06, 01, 08
 	RGB 02, 01, 07
+; appleacid
+	RGB 31, 31, 31
+	RGB 30, 31, 17
+	RGB 30, 31, 01
+	RGB 25, 27, 00
+; gravapple
+	RGB 31, 31, 31
+	RGB 31, 30, 14
+	RGB 23, 00, 00
+	RGB 00, 00, 00
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

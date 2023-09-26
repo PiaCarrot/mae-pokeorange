@@ -3276,6 +3276,73 @@ BattleAnim_Beam_branch_3:
 ;	anim_call BattleAnim_ShowMon_1_3
 ;	anim_ret
 
+;BattleAnim_AppleAcid:
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_APPLE_ACID
+;	anim_1gfx ANIM_GFX_POISON
+;.loop
+;	anim_sound 6, 2, SFX_BUBBLEBEAM
+;	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+;	anim_wait 6
+;	anim_loop 6, .loop
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+;.loop2
+;	anim_sound 6, 2, SFX_BUBBLEBEAM
+;	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 128, 32, $11
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 144, 32, $0f
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 124, 32, $11
+;	anim_wait 2
+;	anim_sound 6, 2, SFX_BUBBLEBEAM
+;	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 148, 32, $0f
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 120, 32, $11
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 152, 32, $0f
+;	anim_wait 2
+;	anim_loop 2, .loop2
+;	anim_sound 6, 2, SFX_BUBBLEBEAM
+;	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 132, 32, $11
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 140, 32, $0f
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 128, 32, $11
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 144, 32, $0f
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_GASTRO_ACID, 124, 32, $11
+;	anim_wait 64
+;	anim_ret
+
+;BattleAnim_GravApple:
+;	anim_2gfx ANIM_GFX_APPLE, ANIM_GFX_BUBBLE
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_APPLE_ACID
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_GRAV_APPLE
+;	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_GRAV_APPLE
+;	anim_sound 0, 0, SFX_KINESIS
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_GRAV_APPLE, 136, 230, $10
+;	anim_wait 16
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c, $1, $0
+;	anim_sound 0, 0, SFX_STOMP
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $5c
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $e8
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $d0
+;	anim_obj ANIM_OBJ_ROCK_SMASH, 136, 56, $50
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $5c
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $e8
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $d0
+;	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $50
+;	anim_wait 32
+;	anim_ret
+
+
 ; - Gen 9 Anims
 
 ;BattleAnim_WaveCrash:
