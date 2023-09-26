@@ -286,5 +286,15 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 30, 14
 	RGB 23, 00, 00
 	RGB 00, 00, 00
+; strangesteam
+	RGB 31, 13, 22
+	RGB 31, 13, 22
+	RGB 10, 31, 31
+	RGB 16, 17, 29
+; strangesteamBG
+	RGB 16, 21, 19
+	RGB 11, 15, 13
+	RGB 07, 09, 08
+	RGB 03, 04, 04
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

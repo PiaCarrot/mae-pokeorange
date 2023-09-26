@@ -3342,6 +3342,42 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 32
 ;	anim_ret
 
+;BattleAnim_StrangeSteam:
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BRIGHT
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_STRANGE_STEAM
+;	anim_setbgpal PAL_BATTLE_BG_PLAYER, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_ENEMY, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_ENEMY_HP, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_PLAYER_HP, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_EXP, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_5, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_6, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_setbgpal PAL_BATTLE_BG_TEXT, PAL_BTLCUSTOM_STRANGE_STEAM_BG
+;	anim_3gfx ANIM_GFX_STARS, ANIM_GFX_SPEED, ANIM_GFX_HAZE
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+;	anim_sound 0, 1, SFX_SURF
+;.loop
+;	anim_obj ANIM_OBJ_SHOOTING_MIST, 64, 80, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_MIST, 64, 96, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_MIST, 64, 88, $4
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+;	anim_wait 4
+;	anim_loop 5, .loop
+;	anim_sound 0, 1, SFX_ATTRACT
+;	anim_obj ANIM_OBJ_YAWN_2, 126, 46, $0
+;	anim_wait 16
+;	anim_obj ANIM_OBJ_YAWN_2, 146, 46, $0
+;	anim_wait 64
+;	anim_ret
+
 
 ; - Gen 9 Anims
 

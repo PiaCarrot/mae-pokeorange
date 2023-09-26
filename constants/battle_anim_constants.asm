@@ -601,6 +601,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SPECTRAL_THIEF
 	const ANIM_OBJ_SNAP_TRAP
 	const ANIM_OBJ_GRAV_APPLE
+	const ANIM_OBJ_SHOOTING_HAZE
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -1744,7 +1745,9 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_POLLEN_PUFF      ; 3b
 	const PAL_BTLCUSTOM_SPECTRAL_THIEF   ; 3c
 	const PAL_BTLCUSTOM_APPLE_ACID       ; 3d
-	const PAL_BTLCUSTOM_GRAV_APPLE       ; 3d
+	const PAL_BTLCUSTOM_GRAV_APPLE       ; 3e
+	const PAL_BTLCUSTOM_STRANGE_STEAM    ; 3f
+	const PAL_BTLCUSTOM_STRANGE_STEAM_BG ; 40
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
