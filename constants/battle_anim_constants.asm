@@ -599,6 +599,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SHELL_TRAP
 	const ANIM_OBJ_SHELL_TRAP_SHOT
 	const ANIM_OBJ_SPECTRAL_THIEF
+	const ANIM_OBJ_SNAP_TRAP
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -1106,6 +1107,7 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 	const BATTLEANIMFRAMESET_SHELL_TRAP
 	const BATTLEANIMFRAMESET_SHELL_TRAP_SHOT
 	const BATTLEANIMFRAMESET_SPECTRAL_THIEF
+	const BATTLEANIMFRAMESET_SNAP_TRAP
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1455,6 +1457,9 @@ DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 	const BATTLEANIMOAMSET_156
 	const BATTLEANIMOAMSET_157
 	const BATTLEANIMOAMSET_158
+	const BATTLEANIMOAMSET_159
+	const BATTLEANIMOAMSET_15A
+	const BATTLEANIMOAMSET_15B
 
 DEF NUM_BATTLEANIMOAMSETS EQU const_value
 
@@ -1629,6 +1634,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 	const ANIM_GFX_ANCHOR_SHOT
 	const ANIM_GFX_SHELL_TRAP
 	const ANIM_GFX_SPECTRAL_THIEF
+	const ANIM_GFX_SNAP_TRAP
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

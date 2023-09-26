@@ -111,3 +111,4 @@ SECTION "Battle Anims 2", ROMX
 AnimObjAnchorShotGFX:     INCBIN "gfx/battle_anims/anchorshot.2bpp.lz"
 AnimObjShellTrapGFX:      INCBIN "gfx/battle_anims/shelltrap.2bpp.lz"
 AnimObjSpectralThiefGFX:  INCBIN "gfx/battle_anims/spectralthief.2bpp.lz"
+AnimObjSnapTrapGFX:       INCBIN "gfx/battle_anims/snaptrap.2bpp.lz"

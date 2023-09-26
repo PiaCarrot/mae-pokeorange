@@ -3260,6 +3260,22 @@ BattleAnim_Beam_branch_3:
 ;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 ;	anim_ret
 
+
+; - Gen 8 Anims
+
+;BattleAnim_SnapTrap:
+;	anim_1gfx ANIM_GFX_SNAP_TRAP
+;	anim_call BattleAnim_UserObj_1Row_3
+;	anim_obj ANIM_OBJ_SNAP_TRAP, 132, 56, $0
+;	anim_wait 32
+;	anim_sound 0, 1, SFX_VICEGRIP
+;	anim_wait 8
+;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_wait 32
+;	anim_call BattleAnim_ShowMon_1_3
+;	anim_ret
+
 ; - Gen 9 Anims
 
 ;BattleAnim_WaveCrash:
