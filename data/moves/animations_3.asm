@@ -3393,6 +3393,115 @@ BattleAnim_Beam_branch_3:
 ;	anim_loop 8, .loop
 ;	anim_ret
 
+;BattleAnim_MeteorAssault:
+;	anim_4gfx ANIM_GFX_HIT_2, ANIM_GFX_LEEK, ANIM_GFX_SPEED, ANIM_GFX_SHINE
+;	anim_sound 0, 0, SFX_SWORDS_DANCE
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+;.loop
+;	anim_obj ANIM_OBJ_FOCUS, 44, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 36, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 52, 108, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 28, 108, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 60, 108, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 20, 108, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 68, 108, $8
+;	anim_wait 2
+;	anim_loop 3, .loop
+;	anim_incbgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING
+;	anim_sound 0, 1, SFX_FORESIGHT
+;	anim_obj ANIM_OBJ_FORESIGHT, 64, 88, $0
+;	anim_wait 32
+;	anim_sound 0, 1, SFX_MEGA_PUNCH
+;	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+;	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+;	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+;	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+;	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+;	anim_wait 12
+;	anim_sound 0, 0, SFX_RAZOR_WIND
+;	anim_obj ANIM_OBJ_LEEK, 64, 88, $8
+;	anim_wait 14
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $4, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $ff
+;.loop2
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 140, 44, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 124, 60, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 140, 60, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 124, 44, $0
+;	anim_wait 4
+;	anim_sound 0, 0, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 52, $0
+;	anim_wait 4
+;	anim_loop 3, .loop2
+;	anim_wait 32
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 1
+;	anim_ret
+
+;BattleAnim_ShellSideArm:
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_SHELL_SIDE_ARM
+;	anim_if_param_equal $1, BattleAnim_ShellSideArm_Special
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_SHELL_SIDE_ARM, ANIM_GFX_POISON
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_SHELL_SIDE_ARM_PHYSICAL, 72, 80, $1
+;	anim_wait 16
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+;	anim_sound 0, 1, SFX_AEROBLAST
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 52, $0
+;	anim_wait 8
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $5c
+;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $e8
+;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $d0
+;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $50
+;	anim_wait 16
+;	anim_ret
+
+;BattleAnim_ShellSideArm_Special:
+;	anim_4gfx ANIM_GFX_EGG, ANIM_GFX_SHELL_SIDE_ARM, ANIM_GFX_POISON, ANIM_GFX_SMOKE_PUFF
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+;	anim_sound 0, 1, SFX_HORN_ATTACK
+;	anim_obj ANIM_OBJ_SHELL_SIDE_ARM_SPECIAL, 52, 100, $0
+;	anim_wait 16
+;	anim_sound 6, 2, SFX_TACKLE
+;	anim_obj ANIM_OBJ_OCTAZOOKA, 64, 92, $4
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 64, 92, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 80, 84, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 96, 76, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 112, 68, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 126, 60, $0
+;	anim_wait 4
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+;	anim_sound 0, 0, SFX_AEROBLAST
+;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $5c
+;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $e8
+;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $d0
+;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $50
+;	anim_wait 40
+;	anim_ret
+
 
 ; - Gen 9 Anims
 

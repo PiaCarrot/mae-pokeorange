@@ -119,4 +119,6 @@ AnimObjGFX:
 	anim_obj_gfx  8, AnimObjSpectralThiefGFX
 	anim_obj_gfx 32, AnimObjSnapTrapGFX
 	anim_obj_gfx  5, AnimObjAppleGFX
+	anim_obj_gfx  9, AnimObjLeekGFX
+	anim_obj_gfx  9, AnimObjShellSideArmGFX
 	assert_table_length NUM_ANIM_GFX + 1
