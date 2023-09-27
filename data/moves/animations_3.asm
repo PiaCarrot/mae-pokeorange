@@ -3378,6 +3378,21 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 64
 ;	anim_ret
 
+;BattleAnim_Obstruct:
+;	anim_2gfx ANIM_GFX_OBJECTS_4, ANIM_GFX_CHARGE
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SIGNAL_BEAM_RED
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_obj ANIM_OBJ_OBSTRUCT, 80, 80, $0
+;	anim_sound 0, 0, SFX_PROTECT
+;.loop
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 80, 80, $20
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 80, 80, $10
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 80, 80, $0
+;	anim_obj ANIM_OBJ_ENERGY_ORB_TINY_OUT, 80, 80, $30
+;	anim_wait 12
+;	anim_loop 8, .loop
+;	anim_ret
+
 
 ; - Gen 9 Anims
 

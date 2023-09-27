@@ -399,6 +399,7 @@ BattleAnimFrameData:
 	dw .Frameset_ShellShot               ; BATTLEANIMFRAMESET_SHELL_SHOT
 	dw .Frameset_SpectralThief           ; BATTLEANIMFRAMESET_SPECTRAL_THIEF
 	dw .Frameset_SnapTrap                ; BATTLEANIMFRAMESET_SNAP_TRAP
+	dw .Frameset_Obstruct                ; BATTLEANIMFRAMESET_OBSTRUCT
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2758,4 +2759,8 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_159, 32
 	battleoamframe BATTLEANIMOAMSET_15A, 4
 	battleoamframe BATTLEANIMOAMSET_15B, 8
+	battleoamend
+
+.Frameset_Obstruct:
+	battleoamframe BATTLEANIMOAMSET_00,  1
 	battleoamend
