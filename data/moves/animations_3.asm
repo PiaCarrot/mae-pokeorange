@@ -3325,7 +3325,7 @@ BattleAnim_Beam_branch_3:
 ;	anim_sound 0, 0, SFX_KINESIS
 ;	anim_wait 16
 ;	anim_obj ANIM_OBJ_GRAV_APPLE, 136, 230, $10
-;	anim_wait 16
+;	anim_wait 14
 ;	anim_clearobjs
 ;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
 ;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $c, $1, $0
