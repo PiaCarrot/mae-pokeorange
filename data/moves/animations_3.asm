@@ -3454,7 +3454,7 @@ BattleAnim_Beam_branch_3:
 ;	anim_ret
 
 ;BattleAnim_ShellSideArm:
-;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_SHELL_SIDE_ARM
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
 ;	anim_if_param_equal $1, BattleAnim_ShellSideArm_Special
 ;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_SHELL_SIDE_ARM, ANIM_GFX_POISON
 ;	anim_sound 0, 1, SFX_HORN_ATTACK
@@ -3470,27 +3470,27 @@ BattleAnim_Beam_branch_3:
 ;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $e8
 ;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $d0
 ;	anim_obj ANIM_OBJ_INK_SPLASH, 136, 56, $50
-;	anim_wait 16
+;	anim_wait 32
 ;	anim_ret
 
 ;BattleAnim_ShellSideArm_Special:
 ;	anim_4gfx ANIM_GFX_EGG, ANIM_GFX_SHELL_SIDE_ARM, ANIM_GFX_POISON, ANIM_GFX_SMOKE_PUFF
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 ;	anim_sound 0, 1, SFX_HORN_ATTACK
-;	anim_obj ANIM_OBJ_SHELL_SIDE_ARM_SPECIAL, 52, 100, $0
+;	anim_obj ANIM_OBJ_SHELL_SIDE_ARM_SPECIAL, 58, 96, $0
 ;	anim_wait 16
 ;	anim_sound 6, 2, SFX_TACKLE
-;	anim_obj ANIM_OBJ_OCTAZOOKA, 64, 92, $4
+;	anim_obj ANIM_OBJ_OCTAZOOKA, 76, 80, $4
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 64, 92, $0
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 76, 84, $0
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 80, 84, $0
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 92, 76, $0
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 96, 76, $0
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 108, 68, $0
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 112, 68, $0
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 120, 60, $0
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 126, 60, $0
+;	anim_obj ANIM_OBJ_OCTAZOOKA_SMOKE, 132, 52, $0
 ;	anim_wait 4
 ;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 ;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
@@ -3499,7 +3499,7 @@ BattleAnim_Beam_branch_3:
 ;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $e8
 ;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $d0
 ;	anim_obj ANIM_OBJ_INK_SPLASH, 140, 56, $50
-;	anim_wait 40
+;	anim_wait 56
 ;	anim_ret
 
 
