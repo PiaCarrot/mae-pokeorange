@@ -936,7 +936,7 @@ BattleAnim_BugBite:
 
 BattleAnim_ChargeBeam:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_CHARGE
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, 4, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 	anim_sound 0, 0, SFX_ZAP_CANNON
 	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 96, $38
 	anim_wait 4
@@ -2977,9 +2977,8 @@ BattleAnim_Beam_branch_3:
 
 ;BattleAnim_BeakBlast_branch:
 ;	anim_1gfx ANIM_GFX_FIRE
-;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_FIRE
 ;	anim_bgeffect ANIM_BG_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
-;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 ;.loop
 ;	anim_sound 0, 0, SFX_SWORDS_DANCE
 ;	anim_obj ANIM_OBJ_FLARE_BLITZ, 56, 108, $6
@@ -3502,6 +3501,101 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 56
 ;	anim_ret
 
+;BattleAnim_FreezingGlare:
+;	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_BEAM
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PAYBACK
+;	anim_sound 0, 1, SFX_FORESIGHT
+;	anim_obj ANIM_OBJ_FORESIGHT, 64, 88, $0
+;	anim_obj ANIM_OBJ_FORESIGHT, 32, 88, $0
+;	anim_wait 32
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $2, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $20
+;	anim_obj ANIM_OBJ_LEER, 72, 84, $0
+;	anim_obj ANIM_OBJ_LEER, 64, 80, $0
+;	anim_obj ANIM_OBJ_LEER, 88, 76, $0
+;	anim_obj ANIM_OBJ_LEER, 80, 72, $0
+;	anim_obj ANIM_OBJ_LEER, 104, 68, $0
+;	anim_obj ANIM_OBJ_LEER, 96, 64, $0
+;	anim_obj ANIM_OBJ_LEER, 120, 60, $0
+;	anim_obj ANIM_OBJ_LEER, 112, 56, $0
+;	anim_obj ANIM_OBJ_LEER_TIP, 130, 54, $0
+;	anim_obj ANIM_OBJ_LEER_TIP, 122, 50, $0
+;	anim_sound 0, 1, SFX_RAGE
+;	anim_wait 8
+;	anim_sound 6, 2, SFX_LEER
+;	anim_wait 40
+;	anim_ret
+
+;BattleAnim_ThunderousKick:
+;	anim_3gfx ANIM_GFX_SPEED, ANIM_GFX_HIT, ANIM_GFX_LIGHTNING
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PEACH
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+;	anim_sound 0, 0, SFX_MENU
+;	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+;	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+;	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+;	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+;	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+;	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+;	anim_wait 12
+;.loop
+;	anim_sound 0, 0, SFX_RAGE
+;	anim_obj ANIM_OBJ_SHOOTING_SPARK, 64, 94, $18
+;	anim_wait 2
+;	anim_loop 4, .loop
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $40, $2, $0
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+;	anim_obj ANIM_OBJ_THUNDEROUS_KICK_SPARKS, 136, 56, $0
+;.loop2
+;	anim_sound 0, 1, SFX_EGG_BOMB
+;	anim_obj ANIM_OBJ_KICK, 136, 56, $0
+;	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_KICK, 136, 56, $0
+;	anim_wait 6
+;	anim_loop 3, .loop2
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_wait 16
+;	anim_ret
+
+;BattleAnim_FieryWrath:
+;	anim_1gfx ANIM_GFX_FIRE
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_DARK_PULSE
+;	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $6, $0
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+;.loop
+;	anim_sound 6, 2, SFX_EMBER
+;	anim_obj ANIM_OBJ_FLAME_CHARGE, 40, 86, $10
+;	anim_wait 3
+;	anim_sound 6, 2, SFX_EMBER
+;	anim_obj ANIM_OBJ_FLAME_CHARGE, 56, 86, $90
+;	anim_wait 3
+;	anim_loop 6, .loop
+;	anim_wait 80
+;	anim_sound 6, 2, SFX_EMBER
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $ff, $2, $0
+;.loop2
+;	anim_obj ANIM_OBJ_SACRED_FIRE, 132, 68, $0
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 132, 68, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 124, 68, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 140, 68, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 116, 68, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 148, 68, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 108, 68, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FLARE_BLITZ, 156, 68, $8
+;	anim_loop 3, .loop2
+;	anim_wait 48
+;	anim_ret
 
 ; - Gen 9 Anims
 
