@@ -3597,6 +3597,46 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 48
 ;	anim_ret
 
+;BattleAnim_EerieSpell:
+;	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_STATUS
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PAYBACK
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
+;	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $2, $0
+;	anim_sound 0, 0, SFX_SPITE
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 44, 88, $0
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 44, 88, $10
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 44, 88, $20
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 44, 88, $30
+;	anim_wait 64
+;	anim_clearobjs
+;	anim_sound 0, 0, SFX_PSYBEAM
+;	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 136, 48, $0
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 136, 48, $10
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 136, 48, $20
+;	anim_obj ANIM_OBJ_EERIE_SPELL, 136, 48, $30
+;.loop
+;	anim_obj ANIM_OBJ_FOCUS, 132, 68, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 124, 68, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 140, 68, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 116, 68, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 148, 68, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 108, 68, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 156, 68, $8
+;	anim_wait 2
+;	anim_loop 3, .loop
+;	anim_wait 32
+;	anim_clearobjs
+;	anim_incbgeffect ANIM_BG_PSYCHIC
+;	anim_wait 4
+;	anim_ret
+
 ; - Gen 9 Anims
 
 ;BattleAnim_WaveCrash:

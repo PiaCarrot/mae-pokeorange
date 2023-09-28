@@ -60,7 +60,7 @@ AnimObjGFX:
 	anim_obj_gfx 64, AnimObjRecycleGFX
 	anim_obj_gfx  5, AnimObjLavaRocksGFX
 	anim_obj_gfx 16, AnimObjSnatchGFX
-	anim_obj_gfx  9, AnimObjGlowGFX
+	anim_obj_gfx 10, AnimObjGlowGFX
 	anim_obj_gfx 13, AnimObjBigGlowGFX
 	anim_obj_gfx  9, AnimObjTearGFX
 	anim_obj_gfx 16, AnimObjBlastBurnGFX
