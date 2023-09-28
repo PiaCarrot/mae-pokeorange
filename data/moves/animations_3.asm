@@ -3616,19 +3616,19 @@ BattleAnim_Beam_branch_3:
 ;	anim_obj ANIM_OBJ_EERIE_SPELL, 136, 48, $20
 ;	anim_obj ANIM_OBJ_EERIE_SPELL, 136, 48, $30
 ;.loop
-;	anim_obj ANIM_OBJ_FOCUS, 132, 68, $6
+;	anim_obj ANIM_OBJ_FOCUS, 136, 68, $6
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_FOCUS, 124, 68, $6
+;	anim_obj ANIM_OBJ_FOCUS, 128, 68, $6
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_FOCUS, 140, 68, $8
+;	anim_obj ANIM_OBJ_FOCUS, 144, 68, $8
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_FOCUS, 116, 68, $8
+;	anim_obj ANIM_OBJ_FOCUS, 120, 68, $8
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_FOCUS, 148, 68, $6
+;	anim_obj ANIM_OBJ_FOCUS, 152, 68, $6
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_FOCUS, 108, 68, $8
+;	anim_obj ANIM_OBJ_FOCUS, 112, 68, $8
 ;	anim_wait 2
-;	anim_obj ANIM_OBJ_FOCUS, 156, 68, $8
+;	anim_obj ANIM_OBJ_FOCUS, 160, 68, $8
 ;	anim_wait 2
 ;	anim_loop 3, .loop
 ;	anim_wait 32
