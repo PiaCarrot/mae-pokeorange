@@ -2699,7 +2699,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_149,  8
 	battleoamend
 
-.Frameset_KingsShield
+.Frameset_KingsShield:
 	battleoamframe BATTLEANIMOAMSET_14A,  4
 	battleoamframe BATTLEANIMOAMSET_14B,  4
 	battleoamframe BATTLEANIMOAMSET_14C,  4
@@ -2708,15 +2708,15 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_14F,  4
 	battleoamend
 
-.Frameset_SpikeShield_NNE
+.Frameset_SpikeShield_NNE:
 	battleoamframe BATTLEANIMOAMSET_21,  8
 	battleoamend
 
-.Frameset_SpikeShield_NE
+.Frameset_SpikeShield_NE:
 	battleoamframe BATTLEANIMOAMSET_9A,  8
 	battleoamend
 
-.Frameset_SpikeShield_E
+.Frameset_SpikeShield_E:
 	battleoamframe BATTLEANIMOAMSET_7F,  8, OAM_Y_FLIP
 	battleoamend
 
@@ -2726,7 +2726,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_03, 2
 	battleoamrestart
 
-.Frameset_AnchorShot
+.Frameset_AnchorShot:
 	battleoamframe BATTLEANIMOAMSET_150, 4
 	battleoamframe BATTLEANIMOAMSET_151, 4
 	battleoamframe BATTLEANIMOAMSET_152, 4
@@ -2753,7 +2753,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_157,  1
 	battleoamend
 
-.Frameset_SpectralThief
+.Frameset_SpectralThief:
 	battleoamframe BATTLEANIMOAMSET_158,  1
 	battleoamend
 
