@@ -530,6 +530,7 @@ TangeloBallGuyScript:
 	writetext TangeloBallGuyDayText
 	waitbutton
 	verbosegiveitem POKE_BALL ;HEAL_BALL
+	iffalse .NoRoom
 	writetext TangeloBallGuyAlreadyGotText
 	waitbutton
 	closetext
@@ -539,6 +540,7 @@ TangeloBallGuyScript:
 	writetext TangeloBallGuyNightText
 	waitbutton
 	verbosegiveitem POKE_BALL ;DUSK_BALL
+	iffalse .NoRoom
 	writetext TangeloBallGuyAlreadyGotText
 	waitbutton
 	closetext
@@ -550,8 +552,19 @@ TangeloBallGuyScript:
 	closetext
 	end
 
+.NoRoom
+	writetext TangeloPokeballGuyNoRoom
+	waitbutton
+	closetext
+	end
+	
+TangeloPokeballGuyNoRoom:
+	text "You have no room"
+	line "for it!"
+	done
+
 TangeloHiddenBigMushroom:
-	hiddenitem BIG_MUSHROOM, EVENT_TANGELO_HIDDEN_BIG_MUSHROOM
+	hiddenitem BRICK_PIECE, EVENT_TANGELO_HIDDEN_BIG_MUSHROOM
 	
 TangeloHiddenTinyMushroom:
 	hiddenitem TINYMUSHROOM, EVENT_TANGELO_HIDDEN_TINY_MUSHROOM

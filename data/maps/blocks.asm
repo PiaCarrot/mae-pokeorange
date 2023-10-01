@@ -91,11 +91,11 @@ MikanIsland_Blocks:
 
 BeachHouse1_Blocks:
 TangeloIslandNorthHouse_Blocks:
+TangeloIslandWestHouse_Blocks:
 	INCBIN "maps/BeachHouse1.blk"
 
 BeachHouse2_Blocks:
 TangeloIslandEastHouse_Blocks:
-TangeloIslandWestHouse_Blocks:
 	INCBIN "maps/BeachHouse2.blk"
 
 BeachHouse3_Blocks:
