@@ -139,3 +139,7 @@ ENDM
 	map_attributes IvysLab, IVYS_LAB, $00, 0
 	map_attributes AlteringCave, ALTERING_CAVE, $03, 0
 	map_attributes ValenciaNeighborHouse, VALENCIA_NEIGHBOR_HOUSE, $00, 0
+	map_attributes TangeloIslandNorthHouse, TANGELO_ISLAND_NORTH_HOUSE, $00, 0
+	map_attributes TangeloIslandEastHouse, TANGELO_ISLAND_EAST_HOUSE, $00, 0
+	map_attributes TangeloIslandWestHouse, TANGELO_ISLAND_WEST_HOUSE, $00, 0
+	map_attributes TangeloIslandSouthHouse, TANGELO_ISLAND_SOUTH_HOUSE, $00, 0

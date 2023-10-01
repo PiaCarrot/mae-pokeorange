@@ -181,3 +181,12 @@ INCBIN "data/tilesets/mikan_island_metatiles.bin"
 
 TilesetMikanIslandColl::
 INCLUDE "data/tilesets/mikan_island_collision.asm"
+
+TilesetBeachHouseGFX::
+INCBIN "gfx/tilesets/beach_house.2bpp.lz"
+
+TilesetBeachHouseMeta::
+INCBIN "data/tilesets/beach_house_metatiles.bin"
+
+TilesetBeachHouseColl::
+INCLUDE "data/tilesets/beach_house_collision.asm"

@@ -23,6 +23,8 @@ LoadSpecialMapPalette:
 	jr z, .ice_path
 	cp TILESET_LAB
 	jr z, .lab
+	cp TILESET_BEACH_HOUSE
+	jr z, .beach_house
 	jr .do_nothing
 	
 .darkness
@@ -56,6 +58,11 @@ LoadSpecialMapPalette:
 	
 .lab
 	call LoadLabPalette
+	scf
+	ret
+	
+.beach_house
+	call LoadBeachHousePalette
 	scf
 	ret
 
@@ -122,6 +129,16 @@ LoadLabPalette:
 	
 LabPalette:
 INCLUDE "gfx/tilesets/lab.pal"
+
+LoadBeachHousePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, BeachHousePalette
+	ld bc, 8 palettes
+	jmp FarCopyWRAM
+	
+BeachHousePalette:
+INCLUDE "gfx/tilesets/beach_house.pal"
 
 LoadSpecialNPCPalette:
 	call GetMapTimeOfDay

@@ -46,6 +46,10 @@ SECTION "Map Scripts 6", ROMX
 INCLUDE "maps/TangeloIsland.asm"
 INCLUDE "maps/AlteringCave.asm"
 INCLUDE "maps/MikanIsland.asm"
+INCLUDE "maps/TangeloIslandNorthHouse.asm"
+INCLUDE "maps/TangeloIslandEastHouse.asm"
+INCLUDE "maps/TangeloIslandWestHouse.asm"
+INCLUDE "maps/TangeloIslandSouthHouse.asm"
 
 
 SECTION "Map Scripts 7", ROMX

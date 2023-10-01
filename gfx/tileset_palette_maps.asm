@@ -60,6 +60,9 @@ INCLUDE "gfx/tilesets/cave_1_palette_map.asm"
 TilesetMikanIslandPalMap:
 INCLUDE "gfx/tilesets/mikan_island_palette_map.asm"
 
+TilesetBeachHousePalMap:
+INCLUDE "gfx/tilesets/beach_house_palette_map.asm"
+
 MapGroupPalettes: ; unreferenced
 ; entries correspond to MAPGROUP_* constants
 rept NUM_MAP_GROUPS

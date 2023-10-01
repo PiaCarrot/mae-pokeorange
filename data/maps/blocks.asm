@@ -85,6 +85,22 @@ TraditionalHouse_Blocks:
 	
 AlteringCave_Blocks:
 	INCBIN "maps/AlteringCave.blk"
-	
+
 MikanIsland_Blocks:
 	INCBIN "maps/MikanIsland.blk"
+
+BeachHouse1_Blocks:
+TangeloIslandNorthHouse_Blocks:
+	INCBIN "maps/BeachHouse1.blk"
+
+BeachHouse2_Blocks:
+TangeloIslandEastHouse_Blocks:
+TangeloIslandWestHouse_Blocks:
+	INCBIN "maps/BeachHouse2.blk"
+
+BeachHouse3_Blocks:
+TangeloIslandSouthHouse_Blocks:
+	INCBIN "maps/BeachHouse3.blk"
+
+BeachHouseTrad_Blocks:
+	INCBIN "maps/BeachHouseTrad.blk"

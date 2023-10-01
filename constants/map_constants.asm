@@ -64,7 +64,11 @@ ENDM
 	newgroup TANGELO
 	map_const TANGELO_ISLAND,							   20, 20
 	map_const ALTERING_CAVE,							   15, 14
-	map_const MIKAN_ISLAND,							   17, 17
+	map_const TANGELO_ISLAND_NORTH_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_EAST_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_WEST_HOUSE,					4,  4
+	map_const TANGELO_ISLAND_SOUTH_HOUSE,					4,  4
+	map_const MIKAN_ISLAND,									17, 17
 	endgroup
 
 	newgroup INDIGO                                               ;  4
