@@ -191,6 +191,15 @@ Pokered_MonIndices:
 	db WEEPINBELL
 	db VICTREEBEL
 	assert_table_length 190 ; gen 1 mon indexes
+	db CHIKORITA
+	db BAYLEEF
+	db MEGANIUM
+	db CYNDAQUIL
+	db QUILAVA
+	db TYPHLOSION
+	db TOTODILE
+	db CROCONAW
+	db FERALIGATR
 	db SENTRET
 	db FURRET
 	db HOOTHOOT
@@ -237,15 +246,6 @@ Pokered_MonIndices:
 	db GLIGAR
 	db STEELIX
 	db QWILFISH
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
-	db WOBBUFFET
 	db WOBBUFFET
 	db WOBBUFFET
 	db WOBBUFFET

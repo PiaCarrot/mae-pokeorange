@@ -335,6 +335,24 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/kanto/mewtwo/shiny.pal"
 	INCBIN "gfx/pokemon/kanto/mew/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/kanto/mew/shiny.pal"
+	INCBIN "gfx/pokemon/johto/chikorita/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/chikorita/shiny.pal"
+	INCBIN "gfx/pokemon/johto/bayleef/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/bayleef/shiny.pal"
+	INCBIN "gfx/pokemon/johto/meganium/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/meganium/shiny.pal"
+	INCBIN "gfx/pokemon/johto/cyndaquil/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/cyndaquil/shiny.pal"
+	INCBIN "gfx/pokemon/johto/quilava/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/quilava/shiny.pal"
+	INCBIN "gfx/pokemon/johto/typhlosion/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/typhlosion/shiny.pal"
+	INCBIN "gfx/pokemon/johto/totodile/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/totodile/shiny.pal"
+	INCBIN "gfx/pokemon/johto/croconaw/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/croconaw/shiny.pal"
+	INCBIN "gfx/pokemon/johto/feraligatr/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/feraligatr/shiny.pal"
 	INCBIN "gfx/pokemon/johto/sentret/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/johto/sentret/shiny.pal"
 	INCBIN "gfx/pokemon/johto/furret/front.gbcpal", middle_colors

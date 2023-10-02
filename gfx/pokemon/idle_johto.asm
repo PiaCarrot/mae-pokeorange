@@ -1,6 +1,15 @@
 SECTION "Johto Idle AnimationIdles", ROMX
 
 JohtoAnimationIdlePointers:
+	dw ChikoritaAnimationIdle
+	dw BayleefAnimationIdle
+	dw MeganiumAnimationIdle
+	dw CyndaquilAnimationIdle
+	dw QuilavaAnimationIdle
+	dw TyphlosionAnimationIdle
+	dw TotodileAnimationIdle
+	dw CroconawAnimationIdle
+	dw FeraligatrAnimationIdle
 	dw SentretAnimationIdle
 	dw FurretAnimationIdle
 	dw HoothootAnimationIdle
@@ -86,6 +95,15 @@ JohtoAnimationIdlePointers:
 	dw CelebiAnimationIdle
 .IndirectEnd::
 
+ChikoritaAnimationIdle:  INCLUDE "gfx/pokemon/johto/chikorita/anim_idle.asm"
+BayleefAnimationIdle:    INCLUDE "gfx/pokemon/johto/bayleef/anim_idle.asm"
+MeganiumAnimationIdle:   INCLUDE "gfx/pokemon/johto/meganium/anim_idle.asm"
+CyndaquilAnimationIdle:  INCLUDE "gfx/pokemon/johto/cyndaquil/anim_idle.asm"
+QuilavaAnimationIdle:    INCLUDE "gfx/pokemon/johto/quilava/anim_idle.asm"
+TyphlosionAnimationIdle: INCLUDE "gfx/pokemon/johto/typhlosion/anim_idle.asm"
+TotodileAnimationIdle:   INCLUDE "gfx/pokemon/johto/totodile/anim_idle.asm"
+CroconawAnimationIdle:   INCLUDE "gfx/pokemon/johto/croconaw/anim_idle.asm"
+FeraligatrAnimationIdle: INCLUDE "gfx/pokemon/johto/feraligatr/anim_idle.asm"
 SentretAnimationIdle:    INCLUDE "gfx/pokemon/johto/sentret/anim_idle.asm"
 FurretAnimationIdle:     INCLUDE "gfx/pokemon/johto/furret/anim_idle.asm"
 HoothootAnimationIdle:   INCLUDE "gfx/pokemon/johto/hoothoot/anim_idle.asm"

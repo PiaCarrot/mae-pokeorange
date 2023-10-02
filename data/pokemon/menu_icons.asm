@@ -153,6 +153,15 @@ MonMenuIcons:
 	db ICON_DRAGONITE
 	db ICON_MEWTWO
 	db ICON_MEW
+	db ICON_NULL      ; CHIKORITA
+	db ICON_NULL      ; BAYLEEF
+	db ICON_NULL      ; MEGANIUM
+	db ICON_NULL         ; CYNDAQUIL
+	db ICON_NULL         ; QUILAVA
+	db ICON_NULL         ; TYPHLOSION
+	db ICON_NULL     ; TOTODILE
+	db ICON_NULL     ; CROCONAW
+	db ICON_NULL     ; FERALIGATR
 	db ICON_NULL         ; SENTRET
 	db ICON_NULL         ; FURRET
 	db ICON_NULL        ; HOOTHOOT

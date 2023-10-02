@@ -399,6 +399,6 @@ TangeloIslandWestHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  7,  1, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseOldmanScript, -1
+	object_event  7,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_OW_BROWN, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseOldmanScript, -1
 	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, 13, 11, PAL_OW_GREEN, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseCooltrainerFScript, -1
 	object_event 3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TangeloWestHouseLedgerScript, -1

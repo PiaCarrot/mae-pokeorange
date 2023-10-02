@@ -22,6 +22,7 @@ AlphabeticalPokedexOrder:
 	dw AZUMARILL
 	dw AZURILL
 	dw BANETTE
+	dw BAYLEEF
 	dw BEEDRILL
 	dw BELLSPROUT
 	dw BELLOSSOM
@@ -46,6 +47,7 @@ AlphabeticalPokedexOrder:
 	dw CHATOT
 	dw CHERRIM
 	dw CHERUBI
+	dw CHIKORITA
 	dw CHIMECHO
 	dw CHINCHOU
 	dw CHINGLING
@@ -58,9 +60,11 @@ AlphabeticalPokedexOrder:
 ;	dw CRAMORANT
 	dw CROAGUNK
 	dw CROBAT
+	dw CROCONAW
 	dw CUBONE
 ;	dw CURSOLA
 ;	dw CUTIEFLY
+	dw CYNDAQUIL
 	dw DEWGONG
 ;	dw DHELMISE
 	dw DIGLETT
@@ -94,6 +98,7 @@ AlphabeticalPokedexOrder:
 ;	dw FARIGIRAF
 	dw FEAROW
 	dw FEEBAS
+	dw FERALIGATR
 	dw FINNEON
 	dw FLAAFFY
 ;	dw FLAPPLE
@@ -208,6 +213,7 @@ AlphabeticalPokedexOrder:
 	dw MAROWAK
 ;	dw MARSHADOW
 	dw MASQUERAIN
+	dw MEGANIUM
 ;	dw MELMETAL
 ;	dw MELTAN
 	dw MEOWTH
@@ -279,6 +285,7 @@ AlphabeticalPokedexOrder:
 	dw PSYDUCK
 	dw PUPITAR
 	dw QUAGSIRE
+	dw QUILAVA
 	dw QWILFISH
 	dw RAICHU
 	dw RAIKOU
@@ -358,14 +365,15 @@ AlphabeticalPokedexOrder:
 	dw TOGEKISS
 	dw TOGEPI
 	dw TOGETIC
+	dw TOTODILE
 ;	dw TOUCANNON
 ;	dw TOXAPEX
 	dw TOXICROAK
 	dw TRAPINCH
 	dw TROPIUS
 ;	dw TRUMBEAK
-;	dw TSAREENA
 ;	dw TURTONATOR
+	dw TYPHLOSION
 	dw TYRANITAR
 	dw TYROGUE
 	dw UMBREON

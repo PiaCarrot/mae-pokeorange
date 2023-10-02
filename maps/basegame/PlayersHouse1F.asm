@@ -302,8 +302,8 @@ MomThirdBadgeText:
 	text "MOM: Hey, kiddo!"
 	line "So you got your"
 	cont "third badge, huh!"
-	cont "SPIKE SHELL…"
-	cont "I heard from LORI,"
+	cont "SPIKE SHELL… I"
+	cont "heard from PRIMA,"
 	cont "but you must be"
 	cont "getting strong!"
 	done

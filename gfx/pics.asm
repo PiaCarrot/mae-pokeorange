@@ -371,10 +371,27 @@ MewFrontpic:              INCBIN "gfx/pokemon/kanto/mew/front.animated.2bpp.lz"
 MewBackpic:               INCBIN "gfx/pokemon/kanto/mew/back.2bpp.lz"
 
 ; Johto Pokemon
-
+ChikoritaFrontpic:        INCBIN "gfx/pokemon/johto/chikorita/front.animated.2bpp.lz"
+ChikoritaBackpic:         INCBIN "gfx/pokemon/johto/chikorita/back.2bpp.lz"
+BayleefFrontpic:          INCBIN "gfx/pokemon/johto/bayleef/front.animated.2bpp.lz"
+BayleefBackpic:           INCBIN "gfx/pokemon/johto/bayleef/back.2bpp.lz"
+MeganiumFrontpic:         INCBIN "gfx/pokemon/johto/meganium/front.animated.2bpp.lz"
+MeganiumBackpic:          INCBIN "gfx/pokemon/johto/meganium/back.2bpp.lz"
+CyndaquilFrontpic:        INCBIN "gfx/pokemon/johto/cyndaquil/front.animated.2bpp.lz"
+CyndaquilBackpic:         INCBIN "gfx/pokemon/johto/cyndaquil/back.2bpp.lz"
+QuilavaFrontpic:          INCBIN "gfx/pokemon/johto/quilava/front.animated.2bpp.lz"
+QuilavaBackpic:           INCBIN "gfx/pokemon/johto/quilava/back.2bpp.lz"
 
 SECTION "Pokemon Pics 14", ROMX
 
+TyphlosionFrontpic:       INCBIN "gfx/pokemon/johto/typhlosion/front.animated.2bpp.lz"
+TyphlosionBackpic:        INCBIN "gfx/pokemon/johto/typhlosion/back.2bpp.lz"
+TotodileFrontpic:         INCBIN "gfx/pokemon/johto/totodile/front.animated.2bpp.lz"
+TotodileBackpic:          INCBIN "gfx/pokemon/johto/totodile/back.2bpp.lz"
+CroconawFrontpic:         INCBIN "gfx/pokemon/johto/croconaw/front.animated.2bpp.lz"
+CroconawBackpic:          INCBIN "gfx/pokemon/johto/croconaw/back.2bpp.lz"
+FeraligatrFrontpic:       INCBIN "gfx/pokemon/johto/feraligatr/front.animated.2bpp.lz"
+FeraligatrBackpic:        INCBIN "gfx/pokemon/johto/feraligatr/back.2bpp.lz"
 SentretFrontpic:          INCBIN "gfx/pokemon/johto/sentret/front.animated.2bpp.lz"
 SentretBackpic:           INCBIN "gfx/pokemon/johto/sentret/back.2bpp.lz"
 FurretFrontpic:           INCBIN "gfx/pokemon/johto/furret/front.animated.2bpp.lz"

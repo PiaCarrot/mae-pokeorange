@@ -1,6 +1,15 @@
 SECTION "Johto Bitmasks", ROMX
 
 JohtoBitmaskPointers:
+	dw ChikoritaBitmasks
+	dw BayleefBitmasks
+	dw MeganiumBitmasks
+	dw CyndaquilBitmasks
+	dw QuilavaBitmasks
+	dw TyphlosionBitmasks
+	dw TotodileBitmasks
+	dw CroconawBitmasks
+	dw FeraligatrBitmasks
 	dw SentretBitmasks
 	dw FurretBitmasks
 	dw HoothootBitmasks
@@ -86,6 +95,15 @@ JohtoBitmaskPointers:
 	dw CelebiBitmasks
 .IndirectEnd::
 
+ChikoritaBitmasks:  INCLUDE "gfx/pokemon/johto/chikorita/bitmask.asm"
+BayleefBitmasks:    INCLUDE "gfx/pokemon/johto/bayleef/bitmask.asm"
+MeganiumBitmasks:   INCLUDE "gfx/pokemon/johto/meganium/bitmask.asm"
+CyndaquilBitmasks:  INCLUDE "gfx/pokemon/johto/cyndaquil/bitmask.asm"
+QuilavaBitmasks:    INCLUDE "gfx/pokemon/johto/quilava/bitmask.asm"
+TyphlosionBitmasks: INCLUDE "gfx/pokemon/johto/typhlosion/bitmask.asm"
+TotodileBitmasks:   INCLUDE "gfx/pokemon/johto/totodile/bitmask.asm"
+CroconawBitmasks:   INCLUDE "gfx/pokemon/johto/croconaw/bitmask.asm"
+FeraligatrBitmasks: INCLUDE "gfx/pokemon/johto/feraligatr/bitmask.asm"
 SentretBitmasks:    INCLUDE "gfx/pokemon/johto/sentret/bitmask.asm"
 FurretBitmasks:     INCLUDE "gfx/pokemon/johto/furret/bitmask.asm"
 HoothootBitmasks:   INCLUDE "gfx/pokemon/johto/hoothoot/bitmask.asm"

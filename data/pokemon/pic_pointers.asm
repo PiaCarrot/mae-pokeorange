@@ -315,6 +315,24 @@ PokemonPicPointers::
 	dba MewtwoBackpic
 	dba MewFrontpic
 	dba MewBackpic
+	dba ChikoritaFrontpic
+	dba ChikoritaBackpic
+	dba BayleefFrontpic
+	dba BayleefBackpic
+	dba MeganiumFrontpic
+	dba MeganiumBackpic
+	dba CyndaquilFrontpic
+	dba CyndaquilBackpic
+	dba QuilavaFrontpic
+	dba QuilavaBackpic
+	dba TyphlosionFrontpic
+	dba TyphlosionBackpic
+	dba TotodileFrontpic
+	dba TotodileBackpic
+	dba CroconawFrontpic
+	dba CroconawBackpic
+	dba FeraligatrFrontpic
+	dba FeraligatrBackpic
 	dba SentretFrontpic
 	dba SentretBackpic
 	dba FurretFrontpic

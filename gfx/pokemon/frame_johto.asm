@@ -1,6 +1,15 @@
 SECTION "Johto Frames", ROMX
 
 JohtoFramePointers:
+	dw ChikoritaFrames
+	dw BayleefFrames
+	dw MeganiumFrames
+	dw CyndaquilFrames
+	dw QuilavaFrames
+	dw TyphlosionFrames
+	dw TotodileFrames
+	dw CroconawFrames
+	dw FeraligatrFrames
 	dw SentretFrames
 	dw FurretFrames
 	dw HoothootFrames
@@ -86,6 +95,15 @@ JohtoFramePointers:
 	dw CelebiFrames
 .IndirectEnd::
 
+ChikoritaFrames:  INCLUDE "gfx/pokemon/johto/chikorita/frames.asm"
+BayleefFrames:    INCLUDE "gfx/pokemon/johto/bayleef/frames.asm"
+MeganiumFrames:   INCLUDE "gfx/pokemon/johto/meganium/frames.asm"
+CyndaquilFrames:  INCLUDE "gfx/pokemon/johto/cyndaquil/frames.asm"
+QuilavaFrames:    INCLUDE "gfx/pokemon/johto/quilava/frames.asm"
+TyphlosionFrames: INCLUDE "gfx/pokemon/johto/typhlosion/frames.asm"
+TotodileFrames:   INCLUDE "gfx/pokemon/johto/totodile/frames.asm"
+CroconawFrames:   INCLUDE "gfx/pokemon/johto/croconaw/frames.asm"
+FeraligatrFrames: INCLUDE "gfx/pokemon/johto/feraligatr/frames.asm"
 SentretFrames:    INCLUDE "gfx/pokemon/johto/sentret/frames.asm"
 FurretFrames:     INCLUDE "gfx/pokemon/johto/furret/frames.asm"
 HoothootFrames:   INCLUDE "gfx/pokemon/johto/hoothoot/frames.asm"

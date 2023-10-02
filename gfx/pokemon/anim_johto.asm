@@ -1,6 +1,15 @@
 SECTION "Johto Animations", ROMX
 
 JohtoAnimationPointers:
+	dw ChikoritaAnimation
+	dw BayleefAnimation
+	dw MeganiumAnimation
+	dw CyndaquilAnimation
+	dw QuilavaAnimation
+	dw TyphlosionAnimation
+	dw TotodileAnimation
+	dw CroconawAnimation
+	dw FeraligatrAnimation
 	dw SentretAnimation
 	dw FurretAnimation
 	dw HoothootAnimation
@@ -86,6 +95,15 @@ JohtoAnimationPointers:
 	dw CelebiAnimation
 .IndirectEnd::
 
+ChikoritaAnimation:  INCLUDE "gfx/pokemon/johto/chikorita/anim.asm"
+BayleefAnimation:    INCLUDE "gfx/pokemon/johto/bayleef/anim.asm"
+MeganiumAnimation:   INCLUDE "gfx/pokemon/johto/meganium/anim.asm"
+CyndaquilAnimation:  INCLUDE "gfx/pokemon/johto/cyndaquil/anim.asm"
+QuilavaAnimation:    INCLUDE "gfx/pokemon/johto/quilava/anim.asm"
+TyphlosionAnimation: INCLUDE "gfx/pokemon/johto/typhlosion/anim.asm"
+TotodileAnimation:   INCLUDE "gfx/pokemon/johto/totodile/anim.asm"
+CroconawAnimation:   INCLUDE "gfx/pokemon/johto/croconaw/anim.asm"
+FeraligatrAnimation: INCLUDE "gfx/pokemon/johto/feraligatr/anim.asm"
 SentretAnimation:    INCLUDE "gfx/pokemon/johto/sentret/anim.asm"
 FurretAnimation:     INCLUDE "gfx/pokemon/johto/furret/anim.asm"
 HoothootAnimation:   INCLUDE "gfx/pokemon/johto/hoothoot/anim.asm"

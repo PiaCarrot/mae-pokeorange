@@ -1,6 +1,15 @@
 SECTION "Johto Egg Moves", ROMX
 
 JohtoEggMovePointers::
+	dw ChikoritaEggMoves
+	dw JohtoNoEggMoves
+	dw JohtoNoEggMoves
+	dw CyndaquilEggMoves
+	dw JohtoNoEggMoves
+	dw JohtoNoEggMoves
+	dw TotodileEggMoves
+	dw JohtoNoEggMoves
+	dw JohtoNoEggMoves
 	dw SentretEggMoves
 	dw JohtoNoEggMoves
 	dw HoothootEggMoves
@@ -85,6 +94,33 @@ JohtoEggMovePointers::
 	dw JohtoNoEggMoves
 	dw JohtoNoEggMoves
 .IndirectEnd::
+
+ChikoritaEggMoves:
+	dw VINE_WHIP
+	dw LEECH_SEED
+	dw COUNTER
+	dw ANCIENTPOWER
+	dw FLAIL
+	dw SWORDS_DANCE
+	dw -1 ; end
+
+CyndaquilEggMoves:
+	dw FURY_SWIPES
+	dw QUICK_ATTACK
+	dw REVERSAL
+	dw THRASH
+	dw FORESIGHT
+	dw SUBMISSION
+	dw -1 ; end
+
+TotodileEggMoves:
+	dw CRUNCH
+	dw THRASH
+	dw HYDRO_PUMP
+	dw ANCIENTPOWER
+	dw RAZOR_WIND
+	dw ROCK_SLIDE
+	dw -1 ; end
 
 SentretEggMoves:
 	dw DOUBLE_EDGE
