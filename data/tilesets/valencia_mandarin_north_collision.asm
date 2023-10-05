@@ -242,3 +242,7 @@
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; f1
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; f2
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f4
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f5
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f7

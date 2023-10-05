@@ -20,7 +20,7 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 13
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 14
 	tilecoll WALL, WALL, WALL, FLOOR ; 15
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 16
+	tilecoll WALL, WALL, WALL, FLOOR ; 16
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 17
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 18
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 19
@@ -29,14 +29,14 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 1c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1d
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 1e
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 1f
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 1f
 	tilecoll WALL, WALL, RADIO, TV ; 20
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 21
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 22
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 23
 	tilecoll WALL, WALL, WALL, WALL ; 24
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 25
-	tilecoll WALL, WALL, WALL, WALL ; 26
+	tilecoll WALL, WALL, WALL, FLOOR ; 26
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 27
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 28
 	tilecoll WALL, WALL, RADIO, FLOOR ; 29
@@ -46,3 +46,4 @@
 	tilecoll WALL, FLOOR, WALL, WALL ; 2d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2e
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 2f
+	tilecoll WALL, WALL, WALL, WALL ; 30

@@ -77,6 +77,7 @@ JohtoAnimationPointers:
 	dw DonphanAnimation
 	dw Porygon2Animation
 	dw StantlerAnimation
+	dw SmeargleAnimation
 	dw TyrogueAnimation
 	dw HitmontopAnimation
 	dw SmoochumAnimation
@@ -171,6 +172,7 @@ PhanpyAnimation:     INCLUDE "gfx/pokemon/johto/phanpy/anim.asm"
 DonphanAnimation:    INCLUDE "gfx/pokemon/johto/donphan/anim.asm"
 Porygon2Animation:   INCLUDE "gfx/pokemon/johto/porygon2/anim.asm"
 StantlerAnimation:   INCLUDE "gfx/pokemon/johto/stantler/anim.asm"
+SmeargleAnimation:   INCLUDE "gfx/pokemon/johto/smeargle/anim.asm"
 TyrogueAnimation:    INCLUDE "gfx/pokemon/johto/tyrogue/anim.asm"
 HitmontopAnimation:  INCLUDE "gfx/pokemon/johto/hitmontop/anim.asm"
 SmoochumAnimation:   INCLUDE "gfx/pokemon/johto/smoochum/anim.asm"

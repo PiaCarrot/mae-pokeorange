@@ -229,6 +229,7 @@ NewPokedexOrder:
 	dw DONPHAN
 	dw PORYGON2
 	dw STANTLER
+	dw SMEARGLE
 	dw TYROGUE
 	dw HITMONTOP
 	dw SMOOCHUM

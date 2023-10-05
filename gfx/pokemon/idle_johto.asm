@@ -77,6 +77,7 @@ JohtoAnimationIdlePointers:
 	dw DonphanAnimationIdle
 	dw Porygon2AnimationIdle
 	dw StantlerAnimationIdle
+	dw SmeargleAnimationIdle
 	dw TyrogueAnimationIdle
 	dw HitmontopAnimationIdle
 	dw SmoochumAnimationIdle
@@ -171,6 +172,7 @@ PhanpyAnimationIdle:     INCLUDE "gfx/pokemon/johto/phanpy/anim_idle.asm"
 DonphanAnimationIdle:    INCLUDE "gfx/pokemon/johto/donphan/anim_idle.asm"
 Porygon2AnimationIdle:   INCLUDE "gfx/pokemon/johto/porygon2/anim_idle.asm"
 StantlerAnimationIdle:   INCLUDE "gfx/pokemon/johto/stantler/anim_idle.asm"
+SmeargleAnimationIdle:   INCLUDE "gfx/pokemon/johto/smeargle/anim_idle.asm"
 TyrogueAnimationIdle:    INCLUDE "gfx/pokemon/johto/tyrogue/anim_idle.asm"
 HitmontopAnimationIdle:  INCLUDE "gfx/pokemon/johto/hitmontop/anim_idle.asm"
 SmoochumAnimationIdle:   INCLUDE "gfx/pokemon/johto/smoochum/anim_idle.asm"

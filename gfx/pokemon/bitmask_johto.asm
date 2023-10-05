@@ -77,6 +77,7 @@ JohtoBitmaskPointers:
 	dw DonphanBitmasks
 	dw Porygon2Bitmasks
 	dw StantlerBitmasks
+	dw SmeargleBitmasks
 	dw TyrogueBitmasks
 	dw HitmontopBitmasks
 	dw SmoochumBitmasks
@@ -170,6 +171,7 @@ KingdraBitmasks:    INCLUDE "gfx/pokemon/johto/kingdra/bitmask.asm"
 PhanpyBitmasks:     INCLUDE "gfx/pokemon/johto/phanpy/bitmask.asm"
 DonphanBitmasks:    INCLUDE "gfx/pokemon/johto/donphan/bitmask.asm"
 Porygon2Bitmasks:   INCLUDE "gfx/pokemon/johto/porygon2/bitmask.asm"
+SmeargleBitmasks:   INCLUDE "gfx/pokemon/johto/smeargle/bitmask.asm"
 StantlerBitmasks:   INCLUDE "gfx/pokemon/johto/stantler/bitmask.asm"
 TyrogueBitmasks:    INCLUDE "gfx/pokemon/johto/tyrogue/bitmask.asm"
 HitmontopBitmasks:  INCLUDE "gfx/pokemon/johto/hitmontop/bitmask.asm"

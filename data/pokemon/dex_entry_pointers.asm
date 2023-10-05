@@ -228,6 +228,7 @@ PokedexDataPointerTable:
 	dba DonphanPokedexEntry
 	dba Porygon2PokedexEntry
 	dba StantlerPokedexEntry
+	dba SmearglePokedexEntry
 	dba TyroguePokedexEntry
 	dba HitmontopPokedexEntry
 	dba SmoochumPokedexEntry

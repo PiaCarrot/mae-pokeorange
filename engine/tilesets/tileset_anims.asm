@@ -94,8 +94,31 @@ TilesetIcePathAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetValenciaMandarinNorthAnim:
+	dw vTiles2 tile $7e, WriteTileToBuffer
+	dw RSEWaterFrames, AnimateRSEWaterTiles
+	dw ShoreWaterFrames, AnimateShoreWaterTiles
+	dw DiveWaterFrames, AnimateDiveWaterTiles
+	dw RockTopsFrames, AnimateRockTopsTiles
+	dw RockLeftFrames, AnimateRockLeftTiles
+	dw RockBotLeftFrames, AnimateRockBotLeftTiles
+	dw RockBotRightFrames, AnimateRockBotRightTiles
+	dw RockRightFrames, AnimateRockRightTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw WhirlpoolFramesTop, AnimateWhirlpoolTiles
+	dw WhirlpoolFramesBottom, AnimateWhirlpoolTiles
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $7e, WriteTileFromBuffer
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+	
 TilesetMikanIslandAnim:
 	dw vTiles2 tile $7e, WriteTileToBuffer
+	dw SteamTileFrames, AnimateSteamTile
+	dw SteamTile2Frames, AnimateSteamTile2
 	dw RSEWaterFrames, AnimateRSEWaterTiles
 	dw ShoreWaterFrames, AnimateShoreWaterTiles
 	dw DiveWaterFrames, AnimateDiveWaterTiles
@@ -878,6 +901,7 @@ AnimateRSEBubbleTile:
 	jmp WriteTile
 
 RSEBubbleTileFrames:
+	INCBIN "gfx/tilesets/rse-bubble/5.2bpp"
 	INCBIN "gfx/tilesets/rse-bubble/1.2bpp"
 	INCBIN "gfx/tilesets/rse-bubble/2.2bpp"
 	INCBIN "gfx/tilesets/rse-bubble/3.2bpp"
@@ -885,7 +909,71 @@ RSEBubbleTileFrames:
 	INCBIN "gfx/tilesets/rse-bubble/5.2bpp"
 	INCBIN "gfx/tilesets/rse-bubble/5.2bpp"
 	INCBIN "gfx/tilesets/rse-bubble/5.2bpp"
-	INCBIN "gfx/tilesets/rse-bubble/5.2bpp"
+	
+AnimateSteamTile:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+$0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every frame
+	ld a, [wTileAnimationTimer]
+	and %111
+	swap a ; << 4 (16 bytes)
+	ld e, a
+	ld d, 0
+	ld hl, SteamTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $2C
+
+	jmp WriteTile
+
+SteamTileFrames:
+	INCBIN "gfx/tilesets/steam/1.2bpp"
+	INCBIN "gfx/tilesets/steam/2.2bpp"
+	INCBIN "gfx/tilesets/steam/3.2bpp"
+	INCBIN "gfx/tilesets/steam/4.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	
+AnimateSteamTile2:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+$0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every frame
+	ld a, [wTileAnimationTimer]
+	and %111
+	swap a ; << 4 (16 bytes)
+	ld e, a
+	ld d, 0
+	ld hl, SteamTile2Frames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $3F
+
+	jmp WriteTile
+
+SteamTile2Frames:
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+	INCBIN "gfx/tilesets/steam/1.2bpp"
+	INCBIN "gfx/tilesets/steam/2.2bpp"
+	INCBIN "gfx/tilesets/steam/3.2bpp"
+	INCBIN "gfx/tilesets/steam/4.2bpp"
+	INCBIN "gfx/tilesets/steam/5.2bpp"
+
 
 
 WriteTileFromBuffer: ; fc696

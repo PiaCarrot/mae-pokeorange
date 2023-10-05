@@ -227,6 +227,7 @@ FirstEvoStages::
 	dw PHANPY     ;e8
 	dw PORYGON
 	dw STANTLER
+	dw SMEARGLE
 	dw TYROGUE
 	dw TYROGUE
 	dw SMOOCHUM

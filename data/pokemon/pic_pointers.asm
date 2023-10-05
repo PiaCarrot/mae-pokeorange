@@ -471,6 +471,8 @@ PokemonPicPointers::
 	dba Porygon2Backpic
 	dba StantlerFrontpic
 	dba StantlerBackpic
+	dba SmeargleFrontpic
+	dba SmeargleBackpic
 	dba TyrogueFrontpic
 	dba TyrogueBackpic
 	dba HitmontopFrontpic

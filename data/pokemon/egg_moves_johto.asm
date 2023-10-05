@@ -77,6 +77,7 @@ JohtoEggMovePointers::
 	dw JohtoNoEggMoves
 	dw JohtoNoEggMoves
 	dw StantlerEggMoves
+	dw JohtoNoEggMoves
 	dw TyrogueEggMoves
 	dw JohtoNoEggMoves
 	dw SmoochumEggMoves

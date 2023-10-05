@@ -332,6 +332,7 @@ AlphabeticalPokedexOrder:
 	dw SLOWKING
 	dw SLOWPOKE
 	dw SLUGMA
+	dw SMEARGLE
 	dw SMOOCHUM
 	dw SNEASEL
 ;	dw SNEASLER

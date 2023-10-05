@@ -487,6 +487,8 @@ PokemonPalettes:
 	INCLUDE "gfx/pokemon/johto/porygon2/shiny.pal"
 	INCBIN "gfx/pokemon/johto/stantler/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/johto/stantler/shiny.pal"
+	INCBIN "gfx/pokemon/johto/smeargle/front.gbcpal", middle_colors
+	INCLUDE "gfx/pokemon/johto/smeargle/shiny.pal"
 	INCBIN "gfx/pokemon/johto/tyrogue/front.gbcpal", middle_colors
 	INCLUDE "gfx/pokemon/johto/tyrogue/shiny.pal"
 	INCBIN "gfx/pokemon/johto/hitmontop/front.gbcpal", middle_colors

@@ -77,6 +77,7 @@ JohtoFramePointers:
 	dw DonphanFrames
 	dw Porygon2Frames
 	dw StantlerFrames
+	dw SmeargleFrames
 	dw TyrogueFrames
 	dw HitmontopFrames
 	dw SmoochumFrames
@@ -171,6 +172,7 @@ PhanpyFrames:     INCLUDE "gfx/pokemon/johto/phanpy/frames.asm"
 DonphanFrames:    INCLUDE "gfx/pokemon/johto/donphan/frames.asm"
 Porygon2Frames:   INCLUDE "gfx/pokemon/johto/porygon2/frames.asm"
 StantlerFrames:   INCLUDE "gfx/pokemon/johto/stantler/frames.asm"
+SmeargleFrames:   INCLUDE "gfx/pokemon/johto/smeargle/frames.asm"
 TyrogueFrames:    INCLUDE "gfx/pokemon/johto/tyrogue/frames.asm"
 HitmontopFrames:  INCLUDE "gfx/pokemon/johto/hitmontop/frames.asm"
 SmoochumFrames:   INCLUDE "gfx/pokemon/johto/smoochum/frames.asm"

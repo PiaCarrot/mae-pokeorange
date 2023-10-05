@@ -548,6 +548,8 @@ Porygon2Frontpic:         INCBIN "gfx/pokemon/johto/porygon2/front.animated.2bpp
 Porygon2Backpic:          INCBIN "gfx/pokemon/johto/porygon2/back.2bpp.lz"
 StantlerFrontpic:         INCBIN "gfx/pokemon/johto/stantler/front.animated.2bpp.lz"
 StantlerBackpic:          INCBIN "gfx/pokemon/johto/stantler/back.2bpp.lz"
+SmeargleFrontpic:         INCBIN "gfx/pokemon/johto/smeargle/front.animated.2bpp.lz"
+SmeargleBackpic:          INCBIN "gfx/pokemon/johto/smeargle/back.2bpp.lz"
 TyrogueFrontpic:          INCBIN "gfx/pokemon/johto/tyrogue/front.animated.2bpp.lz"
 TyrogueBackpic:           INCBIN "gfx/pokemon/johto/tyrogue/back.2bpp.lz"
 HitmontopFrontpic:        INCBIN "gfx/pokemon/johto/hitmontop/front.animated.2bpp.lz"

@@ -77,6 +77,7 @@ JohtoEvosAttacksPointers::
 	dw DonphanEvosAttacks
 	dw Porygon2EvosAttacks
 	dw StantlerEvosAttacks
+	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
 	dw SmoochumEvosAttacks
@@ -1071,6 +1072,11 @@ StantlerEvosAttacks:
 	dbw 31, SAND_ATTACK
 	dbw 40, TAKE_DOWN
 	dbw 49, CONFUSE_RAY
+	db 0 ; no more level-up moves
+
+SmeargleEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SKETCH
 	db 0 ; no more level-up moves
 
 TyrogueEvosAttacks:
