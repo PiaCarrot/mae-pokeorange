@@ -1551,13 +1551,66 @@ FishFunction:
 	ret
 
 Script_NotEvenANibble:
+	callasm FishItemEncounter
+	iffalse .no_item
+	scall Script_FishCastRod
+	callasm Fishing_CheckFacingUp
+	iffalse .NotFacingUp
+	applymovement PLAYER, .Movement_FacingUp
+.NotFacingUp:
+	applymovement PLAYER, .Movement_NotFacingUp
+	pause 40
+	applymovement PLAYER, .Movement_RestoreRod
+	writetext RodBiteText
+	callasm PutTheRodAway
+	callasm FishItemEncounter
+	iffalse .line_snapped
+	writetext FishedAnItemText
+	waitbutton
+	verbosegiveitem ITEM_FROM_MEM
+	sjump Script_NotEvenANibble_FallThrough
+.no_item
 	scall Script_FishCastRod
 	writetext RodNothingText
 	sjump Script_NotEvenANibble_FallThrough
+.line_snapped
+	writetext LineSnappedText
+	waitbutton
+	sjump Script_NotEvenANibble_FallThrough
+	
+.Movement_NotFacingUp:
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	show_emote
+	step_end
+
+.Movement_FacingUp:
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	fish_got_bite
+	step_sleep 1
+	show_emote
+	step_end
+	
+.Movement_RestoreRod:
+	hide_emote
+	fish_cast_rod
+	step_end
 
 Script_NotEvenANibble2:
 	scall Script_FishCastRod
 	writetext RodNothingText
+	
+LineSnappedText:
+	text "The line snapped…"
+	done
+	
+FishedAnItemText:
+	text "Snagged an item!"
+	done
 
 Script_NotEvenANibble_FallThrough:
 	loademote EMOTE_SHADOW

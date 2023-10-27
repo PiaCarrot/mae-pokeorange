@@ -68,6 +68,9 @@ if DEF(_DEBUG)
 	giveitem HP_UP, 99
 	giveitem POKE_BALL, 2
 	giveitem TOWN_MAP, 1
+	giveitem OLD_ROD, 1
+	giveitem GOOD_ROD, 1
+	giveitem SUPER_ROD, 1
 	; all badges
 	; setflag ENGINE_ZEPHYRBADGE
 	; setflag ENGINE_HIVEBADGE

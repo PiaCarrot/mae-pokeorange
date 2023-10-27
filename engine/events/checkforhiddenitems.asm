@@ -134,3 +134,35 @@ RockItemEncounter:
 	db 48, SUN_STONE
 	db 64, MOON_STONE
 	db -1
+	
+FishItemEncounter:
+	ld hl, .FishItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.FishItems:
+	db 1, RARE_CANDY
+	db 2, NUGGET
+	db 4, ULTRA_BALL
+	db 6, STAR_PIECE
+	db 12, BIG_PEARL
+	db 18, ULTRA_BALL
+	db 24, DRAGON_SCALE
+	db 24, MYSTIC_WATER
+	db 48, PEARL
+	db 64, POKE_BALL
+	db -1
