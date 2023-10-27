@@ -1575,6 +1575,7 @@ Script_NotEvenANibble:
 	sjump Script_NotEvenANibble_FallThrough
 .line_snapped
 	writetext LineSnappedText
+	playsound SFX_RAZOR_WIND
 	waitbutton
 	sjump Script_NotEvenANibble_FallThrough
 	
