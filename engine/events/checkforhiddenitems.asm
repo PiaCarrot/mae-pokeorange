@@ -156,13 +156,43 @@ FishItemEncounter:
 	
 .FishItems:
 	db 1, RARE_CANDY
-	db 2, NUGGET
-	db 4, ULTRA_BALL
-	db 6, STAR_PIECE
-	db 12, BIG_PEARL
-	db 18, ULTRA_BALL
-	db 24, DRAGON_SCALE
-	db 24, MYSTIC_WATER
-	db 48, PEARL
-	db 64, POKE_BALL
+	db 1, NUGGET
+	db 2, ULTRA_BALL
+	db 4, STAR_PIECE
+	db 6, BIG_PEARL
+	db 8, GREAT_BALL
+	db 12, DRAGON_SCALE
+	db 12, MYSTIC_WATER
+	db 24, PEARL
+	db 48, POKE_BALL
+	db -1
+	
+
+TreeItemEncounter:
+	ld hl, .TreeItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.TreeItems:
+	db 16, BLK_APRICORN
+	db 16, RED_APRICORN
+	db 16, BLU_APRICORN
+	db 16, YLW_APRICORN
+	db 16, GRN_APRICORN
+	db 16, WHT_APRICORN
+	db 16, PNK_APRICORN
 	db -1

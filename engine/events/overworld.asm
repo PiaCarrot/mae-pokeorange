@@ -1264,6 +1264,12 @@ HeadbuttScript:
 	end
 
 .no_battle
+	callasm TreeItemEncounter
+	iffalse .no_item
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+.no_item
 	opentext
 	writetext HeadbuttNothingText
 	waitbutton
