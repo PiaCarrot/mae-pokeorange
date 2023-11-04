@@ -143,6 +143,8 @@ FishItemEncounter:
 	jr z, .GoodRodItems
 	cp $2
 	jr z, .SuperRodItems
+	cp $3
+	jr z, .ItemfinderRodItems
 .OldRodItems
 	ld hl, .OldRodItemTable
 	jr .continue
@@ -151,6 +153,9 @@ FishItemEncounter:
 	jr .continue
 .SuperRodItems
 	ld hl, .SuperRodItemTable
+	jr .continue
+.ItemfinderRodItems
+	ld hl, .ItemfinderRodItemTable
 .continue
 	call Random
 .loop
@@ -208,6 +213,18 @@ FishItemEncounter:
 	db 48, POKE_BALL
 	db -1
 	
+.ItemfinderRodItemTable:
+	db 1, NUGGET
+	db 1, STAR_PIECE
+	db 2, PP_UP
+	db 4, KINGS_ROCK
+	db 6, BIG_PEARL
+	db 8, ULTRA_BALL
+	db 12, HYPER_POTION
+	db 12, STARDUST
+	db 24, PEARL
+	db 48, BRICK_PIECE
+	db -1
 
 TreeItemEncounter:
 	ld a, [wMapNumber]

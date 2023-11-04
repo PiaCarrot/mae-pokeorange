@@ -1513,6 +1513,8 @@ FishFunction:
 .goodtofish
 	ld d, a
 	ld a, [wFishingRodUsed]
+	cp $3
+	jr z, .ItemfinderRod
 	ld e, a
 	farcall Fish
 	ld a, d
@@ -1542,6 +1544,7 @@ FishFunction:
 	ld a, $81
 	ret
 
+.ItemfinderRod:
 .FishNoBite:
 	ld a, $2
 	ld [wFishingResult], a

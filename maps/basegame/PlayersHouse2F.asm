@@ -71,6 +71,7 @@ if DEF(_DEBUG)
 	giveitem OLD_ROD, 1
 	giveitem GOOD_ROD, 1
 	giveitem SUPER_ROD, 1
+	giveitem ITEMFINDER, 1
 	; all badges
 	; setflag ENGINE_ZEPHYRBADGE
 	; setflag ENGINE_HIVEBADGE
