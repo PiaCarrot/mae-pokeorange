@@ -136,7 +136,22 @@ RockItemEncounter:
 	db -1
 	
 FishItemEncounter:
-	ld hl, .FishItems
+	ld a, [wFishingRodUsed]
+	cp $0
+	jr z, .OldRodItems
+	cp $1
+	jr z, .GoodRodItems
+	cp $2
+	jr z, .SuperRodItems
+.OldRodItems
+	ld hl, .OldRodItemTable
+	jr .continue
+.GoodRodItems
+	ld hl, .GoodRodItemTable
+	jr .continue
+.SuperRodItems
+	ld hl, .SuperRodItemTable
+.continue
 	call Random
 .loop
 	sub [hl]
@@ -154,7 +169,33 @@ FishItemEncounter:
 	ld [wScriptVar], a
 	ret
 	
-.FishItems:
+.OldRodItemTable:
+	db 1, PEARL
+	db 1, POTION
+	db 2, POKE_BALL
+	db 4, POTION
+	db 6, STARDUST
+	db 8, POKE_BALL
+	db 12, EVERSTONE
+	db 12, POTION
+	db 24, PEARL
+	db 48, POKE_BALL
+	db -1
+	
+.GoodRodItemTable:
+	db 1, STAR_PIECE
+	db 1, SUPER_POTION
+	db 2, GREAT_BALL
+	db 4, SUPER_POTION
+	db 6, STARDUST
+	db 8, GREAT_BALL
+	db 12, SUPER_POTION
+	db 12, STARDUST
+	db 24, PEARL
+	db 48, POKE_BALL
+	db -1
+	
+.SuperRodItemTable:
 	db 1, RARE_CANDY
 	db 1, NUGGET
 	db 2, ULTRA_BALL
