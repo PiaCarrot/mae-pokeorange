@@ -169,7 +169,14 @@ FishItemEncounter:
 	
 
 TreeItemEncounter:
+	ld a, [wMapNumber]
+	cp MAP_MIKAN_ISLAND
+	jr z, .bambootrees
 	ld hl, .TreeItems
+	jr .continue
+.bambootrees
+	ld hl, .BambooTreeItems
+.continue
 	call Random
 .loop
 	sub [hl]
@@ -195,4 +202,14 @@ TreeItemEncounter:
 	db 16, GRN_APRICORN
 	db 16, WHT_APRICORN
 	db 16, PNK_APRICORN
+	db -1
+	
+.BambooTreeItems:
+	db 16, ORAN_BERRY ;test
+	db 16, ORAN_BERRY
+	db 16, ORAN_BERRY
+	db 16, ORAN_BERRY
+	db 16, ORAN_BERRY
+	db 16, ORAN_BERRY
+	db 16, ORAN_BERRY
 	db -1

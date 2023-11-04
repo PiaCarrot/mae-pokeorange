@@ -1246,7 +1246,7 @@ HeadbuttNothingText:
 HeadbuttFromMenuScript:
 	reloadmappart
 	special UpdateTimePals
-	
+
 HeadbuttScript:
     callasm GetPartyNickname
     writetext UseHeadbuttText
@@ -1269,11 +1269,13 @@ HeadbuttScript:
 	opentext
 	verbosegiveitem ITEM_FROM_MEM
 	closetext
+	sjump .end
 .no_item
 	opentext
 	writetext HeadbuttNothingText
 	waitbutton
 	closetext
+.end
 	end
 
 TryHeadbuttOW::
