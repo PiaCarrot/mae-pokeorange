@@ -177,9 +177,17 @@ ErikaGroup:
 
 YoungsterGroup:
 	next_list_item ; YOUNGSTER (1)
-	db "JOEY@", TRAINERTYPE_NORMAL
+	db "DONNY@", TRAINERTYPE_NORMAL
 	db 5
-	dw PIKACHU
+	dw PIDGEY
+	db 3
+	dw ZIGZAGOON
+	db -1 ; end
+
+	next_list_item ; YOUNGSTER (2)
+	db "JAVI@", TRAINERTYPE_NORMAL
+	db 6
+	dw CHATOT
 	db -1 ; end
 
 	end_list_items
@@ -242,9 +250,11 @@ CooltrainerFGroup:
 
 BeautyGroup:
 	next_list_item ; BEAUTY (1)
-	db "VICTORIA@", TRAINERTYPE_NORMAL
+	db "ROSE@", TRAINERTYPE_NORMAL
 	db 5
-	dw PIKACHU
+	dw JIGGLYPUFF
+	db 5
+	dw FEEBAS
 	db -1 ; end
 
 	end_list_items
@@ -307,9 +317,15 @@ SabrinaGroup:
 
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1)
-	db "DON@", TRAINERTYPE_NORMAL
+	db "ASHTON@", TRAINERTYPE_NORMAL
 	db 5
-	dw PIKACHU
+	dw CATERPIE
+	db 4
+	dw SPINARAK
+	db 3
+	dw LEDYBA
+	db 2
+	dw WEEDLE
 	db -1 ; end
 
 	end_list_items

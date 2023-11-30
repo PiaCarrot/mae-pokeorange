@@ -85,9 +85,18 @@ TraditionalHouse_Blocks:
 	
 AlteringCave_Blocks:
 	INCBIN "maps/AlteringCave.blk"
+	
+Route50_Blocks:
+	INCBIN "maps/Route50.blk"
+	
+Route51_Blocks:
+	INCBIN "maps/Route51.blk"
 
 MikanIsland_Blocks:
 	INCBIN "maps/MikanIsland.blk"
+
+TangeloJungle_Blocks:
+	INCBIN "maps/TangeloJungle.blk"
 
 BeachHouse1_Blocks:
 TangeloIslandNorthHouse_Blocks:

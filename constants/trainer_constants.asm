@@ -90,7 +90,8 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const ERIKA1
 
 	trainerclass YOUNGSTER ; 16
-	const JOEY1
+	const DONNY
+	const JAVI
 
 	trainerclass SCHOOLBOY ; 17
 	const JACK1
@@ -111,7 +112,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const GWEN
 
 	trainerclass BEAUTY ; 1d
-	const VICTORIA
+	const ROSE
 
 	trainerclass POKEMANIAC ; 1e
 	const LARRY
@@ -132,7 +133,7 @@ DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 	const SABRINA1
 
 	trainerclass BUG_CATCHER ; 24
-	const DON
+	const ASHTON
 
 	trainerclass FISHER ; 25
 	const JUSTIN
