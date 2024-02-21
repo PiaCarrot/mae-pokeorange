@@ -1012,7 +1012,7 @@ BattleAnim_WoodHammer:
 
 BattleAnim_AquaJet:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
-	anim_1gfx ANIM_GFX_SPEED
+	anim_4gfx ANIM_GFX_HIT_2, ANIM_GFX_AQUA_JET, ANIM_GFX_BUBBLE, ANIM_GFX_SPEED
 	anim_sound 0, 0, SFX_MENU
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
 	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
@@ -1022,7 +1022,6 @@ BattleAnim_AquaJet:
 	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
 	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
 	anim_wait 6
-	anim_3gfx ANIM_GFX_HIT, ANIM_GFX_AQUA_JET, ANIM_GFX_BUBBLE
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BUBBLE
 	anim_sound 0, 1, SFX_SURF
 	anim_wait 1
