@@ -2125,12 +2125,12 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 4
 ;	anim_obj ANIM_OBJ_ENERGY_ORB, 48, 88, $30
 ;	anim_wait 4
+;	anim_wait 12
 ;	anim_sound 0, 0, SFX_ZAP_CANNON
 ;	anim_obj ANIM_OBJ_VOLT_SWITCH, 64, 92, $4
 ;	anim_wait 2
 ;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 64, 92, $5c
 ;	anim_wait 2
-;	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
 ;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 76, 84, $d0
 ;	anim_wait 2
 ;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 108, 76, $e8
@@ -2141,6 +2141,7 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 4
 ;	anim_sound 0, 0, SFX_THUNDERSHOCK
 ;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $10, $FF
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
 ;.loop
 ;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
 ;	anim_obj ANIM_OBJ_VOLT_SWITCH_SPARKS, 132, 56, $5c
