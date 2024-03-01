@@ -112,13 +112,14 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjPsystrikeGFX
 	anim_obj_gfx 22, AnimObjObjects4GFX
 	anim_obj_gfx 16, AnimObjMoonGFX
-	anim_obj_gfx  4, AnimObjKingsShieldGFX
-	anim_obj_gfx 16, AnimObjSpikeShieldGFX
-	anim_obj_gfx 33, AnimObjAnchorShotGFX
-	anim_obj_gfx 24, AnimObjShellTrapGFX
-	anim_obj_gfx  8, AnimObjSpectralThiefGFX
-	anim_obj_gfx 32, AnimObjSnapTrapGFX
-	anim_obj_gfx  5, AnimObjAppleGFX
-	anim_obj_gfx  9, AnimObjLeekGFX
-	anim_obj_gfx  9, AnimObjShellSideArmGFX
+;	anim_obj_gfx  4, AnimObjKingsShieldGFX
+;	anim_obj_gfx 16, AnimObjSpikeShieldGFX
+;	anim_obj_gfx 33, AnimObjAnchorShotGFX
+;	anim_obj_gfx 24, AnimObjShellTrapGFX
+;	anim_obj_gfx  8, AnimObjSpectralThiefGFX
+;	anim_obj_gfx 32, AnimObjSnapTrapGFX
+;	anim_obj_gfx  5, AnimObjAppleGFX
+;	anim_obj_gfx  9, AnimObjLeekGFX
+;	anim_obj_gfx  9, AnimObjShellSideArmGFX
+	anim_obj_gfx  6, AnimObjIcicleCrashGFX
 	assert_table_length NUM_ANIM_GFX + 1

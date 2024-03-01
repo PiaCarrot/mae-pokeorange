@@ -135,6 +135,7 @@ BattleBGEffects:
 	dw BattleBGEffect_WobblePlayer
 	dw BattleBGEffect_WobbleScreen
 	dw BattleBGEffect_HoverDown
+	dw BattleBGEffect_ShakeMonY
 
 BattleBGEffect_End:
 	jmp EndBattleBGEffect
@@ -2949,6 +2950,64 @@ BattleBGEffect_HoverDown:
 	add hl, bc
 	inc [hl]
 	ret
+
+.two
+	jmp BattleAnim_ResetLCDStatCustom
+
+BattleBGEffect_ShakeMonY:
+	call BattleBGEffects_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	call BattleBGEffects_IncAnonJumptableIndex
+	call BattleBGEffects_ClearLYOverrides
+	ld hl, rIE
+	set LCD_STAT, [hl]
+	ld a, $42
+	call BattleBGEffect_SetLCDStatCustoms2
+	ldh a, [hLYOverrideEnd]
+	inc a
+	ldh [hLYOverrideEnd], a
+	jr .reset_duration
+
+.reload_distance
+	; Toggles between distances.
+	ld hl, BG_EFFECT_STRUCT_PARAM
+	add hl, bc
+	ld a, $80
+	xor [hl]
+	ld [hl], a
+.reset_duration
+	; (Re)set shake duration.
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	ld a, [hl]
+	and $f0
+	ld [hl], a
+	swap a
+	or [hl]
+	ld [hl], a
+	ret
+
+.one
+	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
+	add hl, bc
+	dec [hl]
+	ld a, [hl]
+	and $f
+	call z, .reload_distance
+
+	ld hl, BG_EFFECT_STRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	bit 7, a
+	jr z, .got_distance
+	xor a
+.got_distance
+	jmp BGEffect_DisplaceLYOverridesBackup
 
 .two
 	jmp BattleAnim_ResetLCDStatCustom

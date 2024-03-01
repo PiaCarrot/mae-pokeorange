@@ -401,7 +401,10 @@ BattleAnimFrameData:
 	dw .Frameset_SnapTrap                ; BATTLEANIMFRAMESET_SNAP_TRAP
 	dw .Frameset_Obstruct                ; BATTLEANIMFRAMESET_OBSTRUCT
 	dw .Frameset_Leek                    ; BATTLEANIMFRAMESET_LEEK
-	dw .Frameset_ShellSideArm            ; BATTLEANIMFRAMESET_SHELL_SIDE_ARM
+;	dw .Frameset_ShellSideArm            ; BATTLEANIMFRAMESET_SHELL_SIDE_ARM
+;	dw .Frameset_IcicleCrash             ; BATTLEANIMFRAMESET_ICICLE_CRASH
+;	dw .Frameset_HoneClawsLeft           ; BATTLEANIMFRAMESET_HONE_CLAWS_LEFT
+;	dw .Frameset_HoneClawsRight          ; BATTLEANIMFRAMESET_HONE_CLAWS_RIGHT
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2774,3 +2777,21 @@ BattleAnimFrameData:
 .Frameset_ShellSideArm:
 	battleoamframe BATTLEANIMOAMSET_11F,  1
 	battleoamend
+
+.Frameset_IcicleCrash:
+	battleoamframe BATTLEANIMOAMSET_15D, 32
+	battleoamdelete
+
+.Frameset_HoneClawsLeft:
+	battleoamframe BATTLEANIMOAMSET_15E,  1
+	battleoamframe BATTLEANIMOAMSET_15F,  1
+	battleoamframe BATTLEANIMOAMSET_160,  2
+	battleoamframe BATTLEANIMOAMSET_161,  1
+	battleoamdelete
+
+.Frameset_HoneClawsRight:
+	battleoamframe BATTLEANIMOAMSET_15E,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_15F,  1, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_160,  2, OAM_X_FLIP
+	battleoamframe BATTLEANIMOAMSET_161,  1, OAM_X_FLIP
+	battleoamdelete

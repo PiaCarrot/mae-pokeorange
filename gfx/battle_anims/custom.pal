@@ -262,39 +262,44 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 10, 31, 31
 	RGB 16, 17, 29
 ; kingsshield
-	RGB 27, 31, 31
-	RGB 24, 31, 31
-	RGB 22, 20, 28
-	RGB 00, 00, 00
+;	RGB 27, 31, 31
+;	RGB 24, 31, 31
+;	RGB 22, 20, 28
+;	RGB 00, 00, 00
 ; pollenpuff
-	RGB 31, 31, 31
-	RGB 31, 30, 22
-	RGB 31, 26, 21
-	RGB 29, 24, 29
+;	RGB 31, 31, 31
+;	RGB 31, 30, 22
+;	RGB 31, 26, 21
+;	RGB 29, 24, 29
 ; spectralthief
 	RGB 31, 31, 31
 	RGB 30, 25, 06
 	RGB 06, 01, 08
 	RGB 02, 01, 07
 ; appleacid
-	RGB 31, 31, 31
-	RGB 30, 31, 17
-	RGB 30, 31, 01
-	RGB 25, 27, 00
+;	RGB 31, 31, 31
+;	RGB 30, 31, 17
+;	RGB 30, 31, 01
+;	RGB 25, 27, 00
 ; gravapple
-	RGB 31, 31, 31
-	RGB 31, 30, 14
-	RGB 23, 00, 00
-	RGB 00, 00, 00
+;	RGB 31, 31, 31
+;	RGB 31, 30, 14
+;	RGB 23, 00, 00
+;	RGB 00, 00, 00
 ; strangesteam
-	RGB 31, 13, 22
-	RGB 31, 13, 22
-	RGB 10, 31, 31
-	RGB 16, 17, 29
+;	RGB 31, 13, 22
+;	RGB 31, 13, 22
+;	RGB 10, 31, 31
+;	RGB 16, 17, 29
 ; strangesteamBG
-	RGB 16, 21, 19
-	RGB 11, 15, 13
-	RGB 07, 09, 08
-	RGB 03, 04, 04
+;	RGB 16, 21, 19
+;	RGB 11, 15, 13
+;	RGB 07, 09, 08
+;	RGB 03, 04, 04
+;; direclaw
+;	RGB 31, 31, 31
+;	RGB 00, 28, 22
+;	RGB 13, 02, 15
+;	RGB 00, 00, 00
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

@@ -119,7 +119,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_SpacialRend
 	dba BattleAnimFunction_SpacialRendCutter
 	dba BattleAnimFunction_CoinBurst
-	dba BattleAnimFunction_NightDaze
+;	dba BattleAnimFunction_NightDaze
 	assert_table_length NUM_BATTLEANIMFUNCS
 
 

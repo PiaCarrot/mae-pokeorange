@@ -32,7 +32,7 @@ MoveNames::
 	li "HORN ATTACK"
 	li "FURY ATTACK"
 	li "HORN DRILL"
-	li "TACKLE"
+	li "BULLDOZE"
 	li "BODY SLAM"
 	li "WRAP"
 	li "TAKE DOWN"

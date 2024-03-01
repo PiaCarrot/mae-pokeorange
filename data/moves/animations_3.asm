@@ -1694,6 +1694,40 @@ BattleAnim_Beam_branch_3:
 
 ; - Gen 5 Anims
 
+;BattleAnim_HoneClaws:
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+;	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_SPEED
+;	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+;	anim_sound 0, 1, SFX_SCRATCH
+;	anim_obj ANIM_OBJ_HONE_CLAWS_RIGHT, 24, 84, $0
+;	anim_wait 7
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_wait 5
+;	anim_sound 0, 1, SFX_SCRATCH
+;	anim_obj ANIM_OBJ_HONE_CLAWS_LEFT, 72, 84, $0
+;	anim_wait 7
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_wait 5
+;.loop
+;	anim_sound 0, 1, SFX_SCRATCH
+;	anim_obj ANIM_OBJ_HONE_CLAWS_RIGHT, 24, 84, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 20, 72, $0
+;	anim_wait 5
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 28, 104, $0
+;	anim_wait 5
+;	anim_sound 0, 1, SFX_SCRATCH
+;	anim_obj ANIM_OBJ_HONE_CLAWS_LEFT, 72, 84, $0
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 76, 72, $0
+;	anim_wait 5
+;	anim_sound 0, 1, SFX_SHINE
+;	anim_obj ANIM_OBJ_PULSING_SPARKLE_YFIX, 68, 104, $0
+;	anim_wait 5
+;	anim_loop 3, .loop
+;	anim_ret
+
 ;BattleAnim_Psyshock:
 ;	anim_2gfx ANIM_GFX_SHINE, ANIM_GFX_CHARGE
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PSYCHO_BOOST_2
@@ -2103,6 +2137,71 @@ BattleAnim_Beam_branch_3:
 ;	anim_incbgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING
 ;	anim_ret
 
+;BattleAnim_ShellSmash:
+;	anim_3gfx ANIM_GFX_REFLECT, ANIM_GFX_HIT, ANIM_GFX_ROCKS
+;	anim_bgeffect ANIM_BG_RETURN_MON, $0, $1, $0
+;	anim_wait 6
+;	anim_sound 0, 0, SFX_SHINE
+;	anim_obj ANIM_OBJ_SHELL_SMASH_SHELL, 48, 106, $0
+;	anim_wait 16
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $58, $2, $0
+;	anim_sound 0, 0, SFX_OUTRAGE
+;	anim_wait 72
+;	anim_clearobjs
+;	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $6, $0
+;	anim_incbgeffect ANIM_BG_SHAKE_SCREEN_X
+;	anim_wait 1
+;	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
+;	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_SHELL_SMASH_HIT, 48, 106, $0
+;	anim_obj ANIM_OBJ_SHELL_SMASH_DEBRIS, 48, 106, $5c
+;	anim_obj ANIM_OBJ_SHELL_SMASH_DEBRIS, 48, 106, $e8
+;	anim_obj ANIM_OBJ_SHELL_SMASH_DEBRIS, 48, 106, $d0
+;	anim_obj ANIM_OBJ_SHELL_SMASH_DEBRIS, 48, 106, $50
+;	anim_wait 12
+;	anim_bgeffect ANIM_BG_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+;	anim_call BattleAnim_ShowMon_0_1
+;	anim_ret
+
+;BattleAnim_Hex:
+;	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_SPEED
+;	anim_battlergfx_2row
+;	anim_bgp $f8
+;	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+;	anim_wait 8
+;	anim_sound 6, 2, SFX_SLUDGE_BOMB
+;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+;	anim_wait 40
+;	anim_bgp $1b
+;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PURPLE
+;	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
+;	anim_sound 0, 0, SFX_SPITE
+;	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+;	anim_obj ANIM_OBJ_BURNED, 116, 52, $10
+;	anim_obj ANIM_OBJ_BURNED, 148, 52, $90
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $55, $1, $0
+;.loop
+;	anim_obj ANIM_OBJ_FOCUS, 136, 72, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 128, 72, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 144, 72, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 120, 72, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 152, 72, $6
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 112, 72, $8
+;	anim_wait 2
+;	anim_obj ANIM_OBJ_FOCUS, 160, 72, $8
+;	anim_wait 2
+;	anim_loop 3, .loop
+;	anim_wait 8
+;	anim_wait 16
+;	anim_ret
+
 ;BattleAnim_VoltSwitch:
 ;	anim_3gfx ANIM_GFX_CHARGE, ANIM_GFX_VOLT_SWITCH, ANIM_GFX_LIGHTNING
 ;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
@@ -2373,6 +2472,48 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 4
 ;	anim_sound 0, 1, SFX_HORN_ATTACK
 ;	anim_obj ANIM_OBJ_HIT, 136, 56, $0
+;	anim_wait 32
+;	anim_ret
+
+;BattleAnim_IcicleCrash:
+;	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+;	anim_3gfx ANIM_GFX_HIT_2, ANIM_GFX_ICICLE_CRASH, ANIM_GFX_ICE
+;	anim_sound 0, 1, SFX_MEGA_PUNCH
+;	anim_obj ANIM_OBJ_ICICLE_CRASH,  128, 250, $10
+;	anim_wait 6
+;	anim_obj ANIM_OBJ_ICICLE_CRASH,  120, 250, $10
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 66, $0
+;	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 128, 66, $28
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 128, 66, $9c
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ICICLE_CRASH,  152, 250, $10
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 120, 66, $0
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 120, 66, $28
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 120, 66, $9c
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ICICLE_CRASH,  144, 250, $10
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 152, 66, $0
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 152, 66, $28
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 152, 66, $9c
+;	anim_wait 4
+;	anim_obj ANIM_OBJ_ICICLE_CRASH,  136, 250, $10
+;	anim_wait 2
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 144, 66, $0
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 144, 66, $28
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 136, 56, $9c
+;	anim_wait 6
+;	anim_sound 0, 1, SFX_KARATE_CHOP
+;	anim_obj ANIM_OBJ_HIT_YFIX, 136, 66, $0
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 136, 66, $28
+;	anim_obj ANIM_OBJ_ICE_SPLASH, 136, 66, $9c
 ;	anim_wait 32
 ;	anim_ret
 

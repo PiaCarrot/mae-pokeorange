@@ -1746,12 +1746,22 @@ BattleAnim_Headbutt:
 BattleAnim_Tackle:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row_1
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_TACKLE
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_bgeffect ANIM_BG_SHAKE_MON_Y, $0, $21, $4
+.loop
+	anim_sound 0, 1, SFX_SPARK
 	anim_wait 8
-	anim_call BattleAnim_ShowMon_0_1
+	anim_loop 6, .loop
+	anim_incbgeffect ANIM_BG_SHAKE_MON_Y
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_clearobjs
+	anim_wait 1
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $40, $3, $0
+.loop2
+	anim_sound 0, 1, SFX_SPARK
+	anim_wait 4
+	anim_loop 12, .loop2
+	anim_incbgeffect ANIM_BG_SHAKE_SCREEN_Y
+	anim_wait 16
 	anim_ret
 
 BattleAnim_BodySlam:
