@@ -2865,8 +2865,11 @@ BGEffect_DisplaceLYOverridesBackup:
 	ldh a, [hLYOverrideStart]
 	ld l, a
 	ld a, $90
+	inc e
+	jr .first_iteration
 .loop
 	ld [hli], a
+.first_iteration
 	dec e
 	jr nz, .loop
 	pop af
@@ -2881,8 +2884,8 @@ BGEffect_CheckBattleTurn:
 	ld hl, BG_EFFECT_STRUCT_BATTLE_TURN
 	add hl, bc
 	ldh a, [hBattleTurn]
-	and $1
 	xor [hl]
+	and $1
 	ret
 
 BGEffect_CheckFlyDigStatus:
@@ -2959,7 +2962,7 @@ BattleBGEffect_ShakeMonY:
 .anon_dw
 	dw .zero
 	dw .one
-	dw .two
+	dw BattleAnim_ResetLCDStatCustom
 
 .zero
 	call BattleBGEffects_IncAnonJumptableIndex
@@ -3008,6 +3011,3 @@ BattleBGEffect_ShakeMonY:
 	xor a
 .got_distance
 	jmp BGEffect_DisplaceLYOverridesBackup
-
-.two
-	jmp BattleAnim_ResetLCDStatCustom
