@@ -1744,24 +1744,34 @@ BattleAnim_Headbutt:
 	anim_ret
 
 BattleAnim_Tackle:
-	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_2Row_1
-	anim_bgeffect ANIM_BG_SHAKE_MON_Y, $0, $21, $4
-.loop
-	anim_sound 0, 1, SFX_SPARK
-	anim_wait 8
-	anim_loop 6, .loop
-	anim_incbgeffect ANIM_BG_SHAKE_MON_Y
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
-	anim_clearobjs
-	anim_wait 1
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $40, $3, $0
-.loop2
-	anim_sound 0, 1, SFX_SPARK
-	anim_wait 4
-	anim_loop 12, .loop2
-	anim_incbgeffect ANIM_BG_SHAKE_SCREEN_Y
-	anim_wait 16
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_COTTON_GUARD
+	anim_1gfx ANIM_GFX_COTTON
+	anim_sound 0, 1, SFX_SWEET_SCENT
+	anim_obj ANIM_OBJ_COTTON_GUARD, 52, 84, $38
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 36, 92, $20
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 60, 98, $8
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 52, 104, $10
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 38, 80, $28
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 64, 82, $0
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 44, 102, $18
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_obj ANIM_OBJ_COTTON_GUARD, 54, 72, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+	anim_wait 48
 	anim_ret
 
 BattleAnim_BodySlam:

@@ -106,6 +106,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_RadialMoveOut_Fast
 	dba BattleAnimFunction_RadialMoveOut_VeryFast_NoStop
 	dba BattleAnimFunction_RadialMoveIn
+	dba BattleAnimFunction_RadialMoveIn_Slow_Stay
 	dba BattleAnimFunction_RadialSpin
 	dba BattleAnimFunction_BubbleSplash
 	dba BattleAnimFunction_ObjectHover
@@ -3584,7 +3585,57 @@ BattleAnimFunction_RadialMoveIn:
 	ld [hld], a
 	ld [hl], d
 	ret
-	
+
+SECTION "BattleAnimFunction_RadialMoveIn_Slow_Stay", ROMX
+
+BattleAnimFunction_RadialMoveIn_Slow_Stay:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, 40
+	ld [hli], a
+	ld [hl], 0
+.one
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld d, [hl]
+	push af
+	push de
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	ld hl, -3.5
+	add hl, de
+	ret nc
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, e
+	ld [hld], a
+	ld [hl], d
+	ret
 
 SECTION "BattleAnimFunction_RadialSpin", ROMX
 

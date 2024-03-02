@@ -115,4 +115,5 @@ SECTION "Battle Anims 2", ROMX
 ;AnimObjAppleGFX:          INCBIN "gfx/battle_anims/apple.2bpp.lz"
 ;AnimObjLeekGFX:           INCBIN "gfx/battle_anims/leek.2bpp.lz"
 ;AnimObjShellSideArmGFX:   INCBIN "gfx/battle_anims/shellsidearm.2bpp.lz"
-AnimObjIcicleCrashGFX:    INCBIN "gfx/battle_anims/iciclecrash.2bpp.lz"
+;AnimObjIcicleCrashGFX:    INCBIN "gfx/battle_anims/iciclecrash.2bpp.lz"
+AnimObjCottonGFX:         INCBIN "gfx/battle_anims/cotton.2bpp.lz"

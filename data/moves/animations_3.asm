@@ -1775,6 +1775,34 @@ BattleAnim_Beam_branch_3:
 ;	anim_clearobjs
 ;	anim_ret
 
+;BattleAnim_Venoshock:
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+;	anim_1gfx ANIM_GFX_POISON
+;	anim_call BattleAnim_UserObj_1Row_1
+;	anim_bgeffect ANIM_BG_BLACK_HUES, $0, $8, $0
+;	anim_sound 6, 2, SFX_SLUDGE_BOMB
+;	anim_obj ANIM_OBJ_ACID, 64, 92, $10
+;	anim_wait 36
+;	anim_sound 0, 1, SFX_THUNDER
+;	anim_wait 8
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PSYCHO_BOOST_2
+;	anim_bgp $1b
+;.loop
+;	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+;	anim_sound 0, 1, SFX_TOXIC
+;	anim_obj ANIM_OBJ_SLUDGE, 132, 72, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_TOXIC
+;	anim_obj ANIM_OBJ_SLUDGE, 116, 72, $0
+;	anim_wait 8
+;	anim_sound 0, 1, SFX_TOXIC
+;	anim_obj ANIM_OBJ_SLUDGE, 148, 72, $0
+;	anim_wait 8
+;	anim_loop 4, .loop
+;	anim_wait 24
+;	anim_call BattleAnim_ShowMon_1_1
+;	anim_ret
+
 ;BattleAnim_SacredSword:
 ;	anim_2gfx ANIM_GFX_BIG_WHIP, ANIM_GFX_CUT
 ;	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
@@ -1811,6 +1839,37 @@ BattleAnim_Beam_branch_3:
 ;	anim_wait 8
 ;	anim_obj ANIM_OBJ_HIT_YFIX, 128, 32, $18
 ;	anim_wait 16
+;	anim_ret
+
+;BattleAnim_CottonGuard:
+;	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_COTTON_GUARD
+;	anim_1gfx ANIM_GFX_COTTON
+;	anim_sound 0, 1, SFX_SWEET_SCENT
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 52, 84, $38
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 36, 92, $20
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 60, 98, $8
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 52, 104, $10
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 38, 80, $28
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 64, 82, $0
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 44, 102, $18
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_obj ANIM_OBJ_COTTON_GUARD, 54, 72, $30
+;	anim_wait 12
+;	anim_sound 0, 1, SFX_JUMP_OVER_LEDGE
+;	anim_wait 48
 ;	anim_ret
 
 ;BattleAnim_NightDaze:
