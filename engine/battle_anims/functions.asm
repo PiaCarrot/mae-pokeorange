@@ -88,6 +88,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_EncoreBellyDrum
 	dba BattleAnimFunction_SwaggerMorningSun
 	dba BattleAnimFunction_HiddenPower
+	dba BattleAnimFunction_HiddenPower_Fast
 	dba BattleAnimFunction_Curse
 	dba BattleAnimFunction_PerishSong
 	dba BattleAnimFunction_RapidSpin
@@ -119,7 +120,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_BallSparkle
 	dba BattleAnimFunction_SpacialRend
 	dba BattleAnimFunction_SpacialRendCutter
-	dba BattleAnimFunction_CoinBurst
+;	dba BattleAnimFunction_CoinBurst
 ;	dba BattleAnimFunction_NightDaze
 	assert_table_length NUM_BATTLEANIMFUNCS
 
@@ -4109,6 +4110,46 @@ BattleAnimFunction_HiddenPower:
 	ld hl, BATTLEANIMSTRUCT_PARAM
 	add hl, bc
 	ld a, [hl]
+	inc [hl]
+	jmp BattleAnim_StepCircle
+
+.one
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], $18
+.two
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cp $80
+	jmp nc, DeinitBattleAnimation
+	ld d, a
+	add $8
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jmp BattleAnim_StepCircle
+
+
+SECTION "BattleAnimFunction_HiddenPower_Fast", ROMX
+
+BattleAnimFunction_HiddenPower_Fast:
+; Moves object in a ring around position slightly faster. Uses anim_incobj to move to second phase,  where it expands the radius 8 pixels at a time for 13 frames and then disappears
+; Obj Param: Defines starting position in circle
+	call BattleAnim_AnonJumptable
+.anon_dw
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	ld d, $18
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	inc [hl] ; increased rotation speed
 	inc [hl]
 	jmp BattleAnim_StepCircle
 

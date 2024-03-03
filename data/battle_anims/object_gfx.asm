@@ -122,5 +122,6 @@ AnimObjGFX:
 ;	anim_obj_gfx  9, AnimObjLeekGFX
 ;	anim_obj_gfx  9, AnimObjShellSideArmGFX
 ;	anim_obj_gfx  6, AnimObjIcicleCrashGFX
-	anim_obj_gfx  4, AnimObjCottonGFX
+;	anim_obj_gfx  4, AnimObjCottonGFX
+	anim_obj_gfx 18, AnimObjHurricaneGFX
 	assert_table_length NUM_ANIM_GFX + 1
