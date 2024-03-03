@@ -616,7 +616,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 ;	const ANIM_OBJ_HONE_CLAWS_RIGHT
 ;	const ANIM_OBJ_HONE_CLAWS_LEFT
 ;	const ANIM_OBJ_COTTON_GUARD
-	const ANIM_OBJ_HURRICANE
+;	const ANIM_OBJ_HURRICANE
+	const ANIM_OBJ_SHOOTING_HEART
 DEF NUM_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -1133,7 +1134,8 @@ DEF NUM_BATTLEANIMFUNCS EQU const_value
 ;	const BATTLEANIMFRAMESET_ICICLE_CRASH
 ;	const BATTLEANIMFRAMESET_HONE_CLAWS_RIGHT
 ;	const BATTLEANIMFRAMESET_HONE_CLAWS_LEFT
-	const BATTLEANIMFRAMESET_HURRICANE
+;	const BATTLEANIMFRAMESET_HURRICANE
+	const BATTLEANIMFRAMESET_GROWING_HEART
 DEF NUM_BATTLEANIMFRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1673,7 +1675,7 @@ DEF NUM_ANIM_BGS EQU const_value - 1
 ;	const ANIM_GFX_SHELL_SIDE_ARM
 ;	const ANIM_GFX_ICICLE_CRASH
 ;	const ANIM_GFX_COTTON
-	const ANIM_GFX_HURRICANE
+;	const ANIM_GFX_HURRICANE
 DEF NUM_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)

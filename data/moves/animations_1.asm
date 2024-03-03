@@ -1744,24 +1744,27 @@ BattleAnim_Headbutt:
 	anim_ret
 
 BattleAnim_Tackle:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BRIGHT
-	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
-	anim_2gfx ANIM_GFX_HURRICANE, ANIM_GFX_WIND_BG
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $90, $4, $10
-	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $4, $0
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PINK
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RED
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
-	anim_obj ANIM_OBJ_HURRICANE, 132, 56, $38
-	anim_obj ANIM_OBJ_AGILITY, 8, 24, $10
-	anim_obj ANIM_OBJ_AGILITY, 8, 48, $2
-	anim_wait 4
-	anim_obj ANIM_OBJ_AGILITY, 8, 56, $c
-	anim_obj ANIM_OBJ_AGILITY, 8, 80, $4
-	anim_obj ANIM_OBJ_AGILITY, 8, 104, $e
+	anim_2gfx ANIM_GFX_HEARTS, ANIM_GFX_PSYCHIC
+	anim_battlergfx_2row
 .loop
-	anim_sound 0, 1, SFX_THUNDER
-	anim_wait 4
-	anim_loop 18, .loop
-	anim_wait 24
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj ANIM_OBJ_SHOOTING_HEART, 64, 88, $4
+	anim_wait 6
+	anim_obj ANIM_OBJ_SHOOTING_HEART, 64, 80, $4
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 6
+	anim_obj ANIM_OBJ_SHOOTING_HEART, 64, 96, $4
+	anim_wait 6
+	anim_loop 3, .loop
+	anim_wait 16
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 6
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
+	anim_wait 32
+	anim_call BattleAnim_ShowMon_1_1
 	anim_ret
 
 BattleAnim_BodySlam:

@@ -117,4 +117,4 @@ SECTION "Battle Anims 2", ROMX
 ;AnimObjShellSideArmGFX:   INCBIN "gfx/battle_anims/shellsidearm.2bpp.lz"
 ;AnimObjIcicleCrashGFX:    INCBIN "gfx/battle_anims/iciclecrash.2bpp.lz"
 ;AnimObjCottonGFX:         INCBIN "gfx/battle_anims/cotton.2bpp.lz"
-AnimObjHurricaneGFX:      INCBIN "gfx/battle_anims/hurricane.2bpp.lz"
+;AnimObjHurricaneGFX:      INCBIN "gfx/battle_anims/hurricane.2bpp.lz"

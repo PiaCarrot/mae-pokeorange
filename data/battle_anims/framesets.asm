@@ -405,7 +405,8 @@ BattleAnimFrameData:
 ;	dw .Frameset_IcicleCrash             ; BATTLEANIMFRAMESET_ICICLE_CRASH
 ;	dw .Frameset_HoneClawsLeft           ; BATTLEANIMFRAMESET_HONE_CLAWS_LEFT
 ;	dw .Frameset_HoneClawsRight          ; BATTLEANIMFRAMESET_HONE_CLAWS_RIGHT
-	dw .Frameset_Hurricane               ; BATTLEANIMFRAMESET_HURRICANE
+;	dw .Frameset_Hurricane               ; BATTLEANIMFRAMESET_HURRICANE
+	dw .Frameset_GrowingHeart            ; BATTLEANIMFRAMESET_GROWING_HEART
 	assert_table_length NUM_BATTLEANIMFRAMESETS
 
 .Frameset_HitBig:
@@ -2801,3 +2802,8 @@ BattleAnimFrameData:
 	battleoamframe BATTLEANIMOAMSET_162, 2
 	battleoamframe BATTLEANIMOAMSET_162, 2, OAM_X_FLIP
 	battleoamrestart
+
+.Frameset_GrowingHeart:
+	battleoamframe BATTLEANIMOAMSET_0F,  6
+	battleoamframe BATTLEANIMOAMSET_1B,  6
+	battleoamdelete
