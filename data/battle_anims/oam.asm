@@ -249,7 +249,7 @@ BattleAnimOAMData:
 	battleanimoam $00,  8, .OAMData_ef  ; BATTLEANIMOAMSET_EF
 	battleanimoam $00, 12, .OAMData_f0  ; BATTLEANIMOAMSET_F0
 	battleanimoam $00, 16, .OAMData_f1  ; BATTLEANIMOAMSET_F1
-	battleanimoam $00, 27, .OAMData_f2  ; BATTLEANIMOAMSET_F2
+	battleanimoam $00, 26, .OAMData_f2  ; BATTLEANIMOAMSET_F2
 	battleanimoam $0a,  1, .OAMData_f3  ; BATTLEANIMOAMSET_F3
 	battleanimoam $0a,  1, .OAMData_60  ; BATTLEANIMOAMSET_F4
 	battleanimoam $09,  4, .OAMData_02  ; BATTLEANIMOAMSET_F5

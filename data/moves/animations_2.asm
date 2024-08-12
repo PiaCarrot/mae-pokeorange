@@ -641,8 +641,11 @@ BattleAnim_Wish:
 	anim_wait 16
 	anim_obj ANIM_OBJ_WISH_2, 130, 64, $0
 	anim_wait 80
-	anim_clearobjs
-	anim_obj ANIM_OBJ_COSMIC_POWER_BG, 61, 60, $30
+	anim_setobj 3, 3
+	anim_setobj 4, 3
+	anim_setobj 5, 3
+	anim_setobj 6, 3
+	anim_setobj 7, 3
 	anim_incbgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $0, $0
 	anim_sound 0, 0, SFX_MOONLIGHT

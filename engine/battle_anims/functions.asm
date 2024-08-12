@@ -3849,6 +3849,7 @@ BattleAnimFunction_ObjectHover:
 	dw .zero
 	dw .one
 	dw .two
+	dw .three
 
 .zero
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
@@ -3911,6 +3912,8 @@ BattleAnimFunction_ObjectHover:
 	ld a, 8
 	jmp BattleAnim_StepToTarget
 
+.three
+	jmp DeinitBattleAnimation
 
 SECTION "BattleAnimFunction_AirCutter", ROMX
 
